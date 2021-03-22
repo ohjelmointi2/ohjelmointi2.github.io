@@ -252,6 +252,10 @@ Bye!
 
 [Tutustu käyttöliittymän dokumentaatioon](./ostoslista-kayttoliittyma)
 
-### Tehtävän palauttaminen
+----
 
-Tämä on kaksiosaisen tehtävän ensimmäinen vaihe, joka palautetaan Teamsiin yhdessä seuraavan tehtävän kanssa. Tarkemmat palautusohjeet löydät seuraavan aiheen lopusta. Muista, että voit kysyä Teamsissa neuvoja tehtävään.
+## Tehtävän palauttaminen
+
+Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin määräaikaan mennessä. Palauta tiedostot yksittäin, eli ei pakattuna, äläkä palauta tietokantaa äläkä ajuria.
+
+Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen. Muista myös, että voit pyytää apua tehtävässä kohtaamiisi ongelmiin Teamsissa!

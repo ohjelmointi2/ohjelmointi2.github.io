@@ -17,15 +17,6 @@ Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettä
 * Git-versionhallinta
 
 
-<!--## Malliratkaisu
-
-Tämän tehtävän palautusaika on umpeutunut. Voit katsoa malliratkaisun lähdekoodit GitHubista:
-
-* [Servletit](https://github.com/haagahelia/embedded-tomcat-template/tree/kevat2020/src/main/java/servlet)
-* [JSP-sivut](https://github.com/haagahelia/embedded-tomcat-template/tree/kevat2020/src/main/webapp/WEB-INF)
--->
-
-
 ### Video 1: [Johdatus HTTP-protokollaan ja Tomcatiin + Git clone](https://web.microsoftstream.com/video/710ad286-f65f-442b-ba25-2fc5da82d522) <small>21:41</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/710ad286-f65f-442b-ba25-2fc5da82d522?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>

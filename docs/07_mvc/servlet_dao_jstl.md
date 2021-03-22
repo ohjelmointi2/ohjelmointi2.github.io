@@ -6,17 +6,6 @@ Tällä viikolla tavoitteinamme on rakentaa kolmikerrosarkkitehtuuria noudattava
 
 Jatkat siis tällä viikolla edellisellä viikolla aloittamasi web-projektin kehittämistä ja tarvitset myös shopping list -tietokantaluokkiasi. Mikäli aikaisemmat aiheet ovat jääneet sinulta kesken, voit hyödyntää tällä viikolla myös kurssin malliratkaisuja, jotka julkaistaan edellisten tehtävien määräajan päätyttyä.
 
-<!-- ## Malliratkaisu
-
-Tämän tehtävän palautusaika on umpeutunut. Voit katsoa malliratkaisun täältä:
-
-* [Video](https://web.microsoftstream.com/video/eae36e47-8f40-4d46-b010-ddea09587de7)
-* [Servletit](https://github.com/haagahelia/embedded-tomcat-template/tree/kevat2020/src/main/java/servlet)
-* [JSP-sivut](https://github.com/haagahelia/embedded-tomcat-template/tree/kevat2020/src/main/webapp/WEB-INF)
--->
-
-
-
 
 ## Sovelluksemme arkkitehtuuri
 

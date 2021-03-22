@@ -230,7 +230,7 @@ Kurssin työkalut ovat erittäin yleisesti käytössä, joten hyviä ohjeita ja 
 
 ## Git-versionhallinta
 
-Kurssin tehtäväpohjien ja malliratkaisujen jakelussa hyödynnetään ohjelmistokehityksen alalla erittäin vakiintunutta Git-versionhallintaa ja GitHub-palvelua. Voit kloonata itsellesi kurssin projektin osoitteesta [https://github.com/haagahelia/ohjelmointi2-3013](https://github.com/haagahelia/ohjelmointi2-3013). Kurssin edetessä projektiin lisätään uusia tiedostoja, jotka voit päivittää itsellesi Git:in avulla.
+Kurssin tehtäväpohjien ja malliratkaisujen jakelussa hyödynnetään ohjelmistokehityksen alalla erittäin vakiintunutta Git-versionhallintaa ja GitHub-palvelua. Kurssin edetessä projektiin lisätään uusia tiedostoja, jotka voit päivittää itsellesi Git:in avulla.
 
 Gitin käytön opetteluun voit käyttää esimerkiksi Helsingin yliopiston erinomaista "Tietokone Työvälineenä" -kurssin Git-materiaalia: [https://tkt-lapio.github.io/git/](https://tkt-lapio.github.io/git/). Vaikka Git tuntuisi aluksi vaikealta tai ahdistavalta, sinun ei tarvitse opetella kaikkea kerralla, vaan tee vain sen verran mistä on sinulle välitöntä hyötyä.
 

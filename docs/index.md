@@ -14,22 +14,22 @@ Vahvista osallistumisesi kurssille liittymällä kurssin Teams-ryhmään sekä V
 
 ## Kurssin aikataulu
 
-Tämä opintojakso alkaa 26.10. ja päättyy perjantaina 18.12.2020. Opintojakso toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
+Tämä opintojakso alkaa maanantaina 29.3.2021 ja päättyy perjantaina 21.5.2021. Opintojakso toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
 
 Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
 
 
-### Aihe 1: perintä ja rajapinnat <small>26.10. - 1.11.2020</small>
+### Aihe 1: perintä ja rajapinnat <small>29.3. - 4.4.</small>
 
 Ensimmäisellä viikolla syvennämme olio-ohjelmointiosaamistamme tutustumalla perintään ja rajapintoihin. Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
 
 [Siirry oppimateriaaliin ⇨](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
 
-Tehtävät [Viopessa](https://vw4.viope.com/) (DL 8.11. klo 23:59)
+Tehtävät [Viopessa](https://vw4.viope.com/) (DL 11.4. klo 23:59)
 
 &nbsp;
 
-### Aihe 2: Map-tietorakenne <small>2.11. - 8.11.2020</small>
+### Aihe 2: Map-tietorakenne <small>5.4. - 11.4.</small>
 
 > *Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo.*
 >
@@ -37,69 +37,69 @@ Tehtävät [Viopessa](https://vw4.viope.com/) (DL 8.11. klo 23:59)
 
 [Siirry oppimateriaaliin ⇨](02_map/map)
 
-Tehtävät [Viopessa](https://vw4.viope.com/) (DL 8.11. klo 23:59)
+Tehtävät [Viopessa](https://vw4.viope.com/)  (DL 11.4. klo 23:59)
 
 &nbsp;
 
-### Aihe 3: Yksikkötestaus <small>9.11. - 15.11.2020</small>
+### Aihe 3: Yksikkötestaus <small>12.4. - 18.4.</small>
 
 Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
 
 [Siirry oppimateriaaliin ⇨](03_yksikkotestaus/junit)
 
-Tehtävät Teamsissa (DL 15.11. klo 23:59)
+Tehtävät Teamsissa (DL 18.4. klo 23:59)
 
 &nbsp;
 
-### Aihe 4: tietokantaohjelmointi (JDBC) <small>16.11. - 22.11.2020</small>
+### Aihe 4: tietokantaohjelmointi (JDBC) <small>19.4. - 25.4.</small>
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). 
 
 [Siirry oppimateriaaliin ⇨](04_tietokantaohjelmointi/jdbc)
 
-Tehtävät Teamsissa (palautetaan yhdessä DAO-tehtävän kanssa)
+Tehtävät Teamsissa (DL 25.4. klo 23:59)
 
 &nbsp;
 
-### Aihe 5: tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit) <small>23.11. - 29.11.2020</small>
+### Aihe 5: tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit) <small>26.4. - 2.5.</small>
 
 Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
 
 [Siirry oppimateriaaliin ⇨](05_dao/dao)
 
-Tehtävät Teamsissa (DL 29.11. klo 23:59)
+Tehtävät Teamsissa (DL 2.5. klo 23:59)
 
 &nbsp;
 
-### Aihe 6: Verkkosovellus (Tomcat ja Servletit) <small>30.11. - 6.12.2020</small>
+### Aihe 6: Verkkosovellus (Tomcat ja Servletit) <small>3.5. - 9.5.</small>
 
 Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää ensimmäisellä viikolla esiteltyä `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
 
 [Siirry oppimateriaaliin ⇨](06_servletit/servletit)
 
-Tehtävät Teamsissa (DL 6.12. klo 23:59)
+Tehtävät Teamsissa (DL 9.5. klo 23:59)
 
 &nbsp;
 
 
-### Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP) <small>7.12. - 13.12.2020</small>
+### Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP) <small>10.5. - 16.5.</small>
 
 Verkkosovellusten toisella viikolla jatkokehitämme oman tietokantapohjaisen ostoslistasovelluksemme verkkopalveluksi. Luomme HTML-käyttöliittymät ostoslistan näyttämiseksi ja tuotteiden lisäämiseksi.
 
 [Siirry oppimateriaaliin ⇨](07_mvc/servlet_dao_jstl)
 
-Tehtävät Teamsissa (DL 13.12. klo 23:59)
+Tehtävät Teamsissa (DL 16.5. klo 23:59)
 
 &nbsp;
 
 
-### Aihe 8: Ajax ja JavaScript <small>14.12. - 18.12.2020</small>
+### Aihe 8: Ajax ja JavaScript <small>17.5. - 23.5.</small>
 
 Viimeinen harjoitusviikko käsittelee JavaScript-koodin avulla tehtäviä palvelinkutsuja, eli Ajax-kutsuja. Niiden avulla voimme päivittää ostoslistamme sisältöä tekemättä sivulatauksia. Toteutamme lisäksi verkkopalveluumme uuden ominaisuuden ostoslistan rivien poistamiseksi.
 
 [Siirry oppimateriaaliin ⇨](08_ajax/ajax)
 
-Tehtävät Teamsissa (DL 20.12. klo 23:59)
+Tehtävät Teamsissa (DL 23.5. klo 23:59)
 
 &nbsp;
 
@@ -110,7 +110,8 @@ Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja 
 
 [Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)
 
-Palautus Teamsiin (DL 20.12. klo 23:59)
+Palautus Teamsiin (DL 23.5. klo 23:59)
+
 
 &nbsp;
 

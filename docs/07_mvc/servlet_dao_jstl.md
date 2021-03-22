@@ -112,11 +112,11 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
 ```diff
  <properties>
      <!-- Tomcatin versionumero -->
-     <tomcat.version>9.0.31</tomcat.version>
+     <tomcat.version>8.5.64</tomcat.version>
 
     <!-- lisää nämä rivit: -->
-+    <sqlite.driver.version>3.30.1</sqlite.driver.version>
-+    <junit.jupiter.version>5.6.0</junit.jupiter.version>
++    <sqlite.driver.version>3.34.0</sqlite.driver.version>
++    <junit.jupiter.version>5.7.1</junit.jupiter.version>
 +    <jstl.api.version>1.2</jstl.api.version>
 ```
 
@@ -124,8 +124,8 @@ Yllä käytetty tapa esittää tiedoston uudet rivit vihreällä sekä `+`-merki
 
 Muuttuja                | Versionumero  | Tarkoitus
 ------------------------|---------------|----------
-sqlite.driver.version   | 3.30.1        | SQLite-ajuri JDBC-kirjastolle
-junit.jupiter.version   | 5.6.0         | JUnit-yksikkötestikirjasto
+sqlite.driver.version   | 3.34.0        | SQLite-ajuri JDBC-kirjastolle
+junit.jupiter.version   | 5.7.1         | JUnit-yksikkötestikirjasto
 jstl.api.version        | 1.2           | JSTL-tagikirjasto
 
 Itse riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat kolme riippuvuutta dependencies-tagin loppuun:

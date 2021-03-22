@@ -143,18 +143,11 @@ Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuih
 
 ### Viope
 
-Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat.
+Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat. 
 
-Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://vw4.viope.com/login?org=hh](https://vw4.viope.com/login?org=hh). Huomaa että rekisteröitymisosoitteessa on oltava parametri `?org=hh`, jotta pääset käsiksi Haaga-Helian kurssitarjontaan. Rekisteröityessäsi valitse tämä toteutus **Ohjelmointi 2, 3013 ❄️**.
-
-Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://vw4.viope.com/) **Ohjelmointi 2, 3013 ❄️** -linkin kautta.
+Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) **Ohjelmointi 2, 3014 🌍** -linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus **Ohjelmointi 2, 3014 🌍**.
 
 **Teknisistä syistä johtuen Viopeen palautettavista lähdekoodeista täytyy aina poistaa mahdolliset package -lauseet luokan yläpuolelta.** Viope on myös muilla tavoin erittäin tarkka ohjelmien oikeellisuudesta, mikä saattaa aiheuttaa ensimmäisillä viikoilla hämmennystä. Voit kysyä kurssin Teams-kanavalla neuvoa Viope-ongelmiin milloin tahansa.
-
-Viope-linkit:
-
-* rekisteröityminen: [https://vw4.viope.com/login?org=hh](https://vw4.viope.com/login?org=hh)
-* sisäänkirjautuminen: [https://vw4.viope.com/](https://vw4.viope.com/)
 
 
 ### Teams
@@ -193,17 +186,18 @@ Tehtävä                 |  Maksimipisteet       | DL        |   Järjestelmä
 Perintä ja rajapinnat   | 5                     | 8.11.     | Viope 
 Map                     | 5 (+2 bonusta)        | 8.11.     | Viope 
 Yksikkötestaus          | 5                     | 15.11.    | Teams 
-Tietokannat ja DAO      | 5                     | 29.11.    | Teams 
+Tietokannat (JDBC)      | 5                     | 29.11.    | Teams 
+Tietokannat (DAO)       | 5                     | 29.11.    | Teams 
 Servletit               | 5                     | 6.12.     | Teams 
 Servlet + jsp + dao     | 5                     | 13.12.    | Teams 
 Ajax ja JavaScript      | 5                     | 20.12.    | Teams 
 
 
-Tehtävien maksimipistemäärä on 35 (+ 2 bonuspistettä). Tehtävät arvioidaan siten, että 40 % suorituksella saa arvosanan 1 ja 100 % suorituksella arvosanan 5:
+Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävät arvioidaan siten, että 40 % suorituksella saa arvosanan 1 ja 100 % suorituksella arvosanan 5:
 
 ```java
 private static double calculateExerciseGrade(int myPoints) {
-    int maxPoints = 35;
+    int maxPoints = 40;
     double minPoints = maxPoints * 0.4;
 
     if (myPoints < minPoints) {
@@ -219,13 +213,11 @@ private static double calculateExerciseGrade(int myPoints) {
 
 Kurssin ohjeet ja esimerkit on tehty Eclipse-sovelluskehittimellä ja Windows-käyttöjärjestelmällä, joten Linux- tai Mac-käyttäjien tulee soveltaa ohjeita ja esimerkkejä omien käyttöjärjestelmiensä mukaisesti.
 
-Kurssilla tarvitset Java-version 9 tai uudemman. [Tarkista Javan versio](https://www.google.com/search?q=how+to+check+java+version) ja tarvittaessa [päivitä Java-asennuksesi](https://www.google.com/search?q=how+to+update+java).
+Kurssilla tarvitset Javan ohjelmointityökalut sisältävän JDK-paketin, jonka voit ladata itsellesi [Oraclen sivuilta](https://www.oracle.com/java/technologies/javase-downloads.html).
 
-Tarvitset myös web-ohjelmointia varten *"Eclipse IDE for Enterprise Java Developers"*, *"Eclipse Java EE IDE for Web Developers"* tai vastaavalla nimellä kutsutun jakelupaketin. Eclipsesi jakelupaketti selviää "Help"-valikosta kohdasta "About Eclipse IDE" ([lisäohjeita](https://stackoverflow.com/questions/12106980/how-to-see-my-eclipse-version/12107098)).
+Tarvitset myös web-ohjelmointia varten Eclipsen version *"Eclipse IDE for Enterprise Java and Web Developers"*. Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE" ([lisäohjeita](https://stackoverflow.com/questions/12106980/how-to-see-my-eclipse-version/12107098)). Muita soveltuvia versioita ovat mm. *"Eclipse IDE for Enterprise Java Developers"* ja *"Eclipse Java EE IDE for Web Developers"*.
 
-Mikäli Eclipse-versiosi ei ole soveltuva, asenna uusi versio osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
-
-Kurssin työkalut ovat erittäin yleisesti käytössä, joten hyviä ohjeita ja esimerkkejä löytyy melko varmasti netistä. Kannattaa myös kysyä ongelmatilanteissa apua Teamsissa.
+Mikäli Eclipse-versiosi ei ole soveltuva, asenna itsellesi uusi versio osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
 
 
 ## Git-versionhallinta
@@ -272,6 +264,7 @@ Yksikkötestauksessa käytettävä DayOfYear-esimerkkiluokka on lainattu [MIT:n 
 Collaboratively authored with contributions from: Saman Amarasinghe, Adam Chlipala, Srini Devadas, Michael Ernst, Max Goldman, John Guttag, Daniel Jackson, Rob Miller, Martin Rinard, and Armando Solar-Lezama.
 
 Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fi).
+
 
 ## Nimiaineiston lisenssi (etunimet.csv)
 

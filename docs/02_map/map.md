@@ -105,6 +105,10 @@ Tämän esimerkki on lainattu [Helsingin yliopiston Agile Education Research –
 
     Tässä tehtävässä harjoittelemme Map:in käyttämistä Sanakirja-olioiden sisäisenä tietovarastona. Tämä tehtävä on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/#exercise-3-sanakirja) ja se on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
 
+1. **Postinumerot**
+
+    Tässä tehtävässä harjoittelemme Map:in sisällön läpikäyntiä avain-arvo-pareina, ja etsimme kaikki tiettyyn postitoimipaikkaan liittyvät postinumerot Postin postinumeroaineistosta.
+
 1. **⭐ Bonus ⭐ Usean käännöksen sanakirja**
 
     Tämä on edistynyt bonustehtävä, jonka pisteet lasketaan mukaan tehtävien yhteispisteisiin, mutta jonka tekemättä jättäminen ei vaikuta arvosanaasi. Tehtävässä samalle avaimelle tallennetaan useita arvoja hyödyntämällä samalla sekä Map-tietorakennetta että listoja.

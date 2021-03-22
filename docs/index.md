@@ -108,7 +108,9 @@ Tehtävät Teamsissa (DL 23.5. klo 23:59)
 
 Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja toteutatte harjoitustyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvioidaan asteikolla 0-5.
 
-[Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)
+<!--[Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)-->
+
+Harjoitustyön tehtävänanto julkaistaan kurssin puolivälissä.
 
 Palautus Teamsiin (DL 23.5. klo 23:59)
 
@@ -184,14 +186,14 @@ Tehtävien pisteytys:
 
 Tehtävä                 |  Maksimipisteet       | DL        |   Järjestelmä
 ------------------------|-----------------------|-----------|---------------
-Perintä ja rajapinnat   | 5                     | 8.11.     | Viope 
-Map                     | 5 (+2 bonusta)        | 8.11.     | Viope 
-Yksikkötestaus          | 5                     | 15.11.    | Teams 
-Tietokannat (JDBC)      | 5                     | 29.11.    | Teams 
-Tietokannat (DAO)       | 5                     | 29.11.    | Teams 
-Servletit               | 5                     | 6.12.     | Teams 
-Servlet + jsp + dao     | 5                     | 13.12.    | Teams 
-Ajax ja JavaScript      | 5                     | 20.12.    | Teams 
+Perintä ja rajapinnat   | 5                     | 11.4.     | Viope 
+Map                     | 5 (+2 bonusta)        | 11.4.     | Viope 
+Yksikkötestaus          | 5                     | 18.4.     | Teams 
+Tietokannat (JDBC)      | 5                     | 25.4.     | Teams 
+Tietokannat (DAO)       | 5                     | 2.5.      | Teams 
+Servletit               | 5                     | 9.5.      | Teams 
+Servlet + jsp + dao     | 5                     | 16.5.     | Teams 
+Ajax ja JavaScript      | 5                     | 23.5.     | Teams 
 
 
 Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävät arvioidaan siten, että 40 % suorituksella saa arvosanan 1 ja 100 % suorituksella arvosanan 5:

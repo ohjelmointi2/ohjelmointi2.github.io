@@ -1,6 +1,6 @@
 # Tervetuloa kurssille!
 
-Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3013! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
+Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3014! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
 
 Tällä opintojaksolla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin. 
 

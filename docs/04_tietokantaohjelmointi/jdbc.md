@@ -47,9 +47,9 @@ Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
 Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Maven](https://maven.apache.org/) ja [Gradle](https://gradle.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös Eclipsessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
 
-Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan ajurin manuaalisesti Mavenin tietovarastosta. Web-ohjelmoinnin yhteydessä opettelemme lisäämään saman ajurin Mavenin avulla. Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan versioon (esim. 3.32.3.2) ja tallenna ajuri itsellesi linkistä "Jar (6.9 MB)". 
+Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan ajurin manuaalisesti Mavenin tietovarastosta. Web-ohjelmoinnin yhteydessä opettelemme lisäämään saman ajurin Mavenin avulla. Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan versioon (esim. 3.34.0) ja tallenna ajuri itsellesi linkistä "Jar (7.0 MB)". 
 
-Kirjoitushetkellä viimeisimmän *.jar*-paketin lataus tapahtuu suoraan [tästä linkistä](https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.32.3.2/sqlite-jdbc-3.32.3.2.jar).
+Kirjoitushetkellä viimeisimmän *.jar*-paketin lataus tapahtuu suoraan [tästä linkistä](https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.34.0/sqlite-jdbc-3.34.0.jar).
 
 Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "build path":iin. Build path on lista hakemistoista, joissa ohjelmasi käyttämät Java-luokat sijaitsevat. Helpoiten tämä onnistuu seuraavasti:
 

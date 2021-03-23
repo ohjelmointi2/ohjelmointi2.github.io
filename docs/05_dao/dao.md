@@ -139,7 +139,7 @@ Tutustu tarvittaessa vielä videoon 4, jossa käsitellään tämän luokan toimi
 Edellä esitetty `JDBCShoppingListItemDao` on JDBC-teknologiaa hyödyntävä luokka, joka toteuttaa `ShoppingListItemDao`-rajapinnan:
 
 ```java
-public class JDBCShoppingListItemDao implements ShoppingListItemDao 
+public class JDBCShoppingListItemDao implements ShoppingListItemDao {
                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 

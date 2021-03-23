@@ -2,9 +2,9 @@
 
 # Web-ohjelmointi servleteillä
 
-Huom! Tässä vaiheessa on hyvä varmistaa, että käytössäsi on *"Eclipse IDE for Enterprise Java Developers"*, *"Eclipse Java EE IDE for Web Developers"* tai vastaavalla nimellä kutsuttu jakelupaketti, joka sisältää verkkosovellusten tekoon tarvitut laajennukset. Tämä selviää "Help"-valikosta kohdasta "About Eclipse IDE" ([lisäohjeita](https://stackoverflow.com/questions/12106980/how-to-see-my-eclipse-version/12107098)).
+Tarvitset web-ohjelmointia varten Eclipsen version *"Eclipse IDE for Enterprise Java and Web Developers"*. Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita soveltuvia versioita ovat mm. *"Eclipse IDE for Enterprise Java Developers"* ja *"Eclipse Java EE IDE for Web Developers"*. 
 
-Mikäli Eclipse-versiosi ei ole soveltuva, asenna uusi versio osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
+Mikäli Eclipse-versiosi ei ole soveltuva, eli se ei sisällä web-ohjelmointiin tarvittavia osia, asenna itsellesi uusi versio osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
 
 
 ## Oppimistavoitteet
@@ -39,7 +39,6 @@ Projektipohjan asennustapa on todettu kohtuullisen helpoksi ja samat tavat ovat 
 
 Voit halutessasi lukea lisää Mavenista artikkelista ["Maven in 5 Minutes"](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) tai keskustelusta ["Is Maven similar to npm?"](https://stackoverflow.com/a/38392716)
 
-🛈 *Projektipohja tarvitsee toimiakseen Java-version 9 tai uudemman. Jos näyttää siltä, että projekti ei yksinkertaisesti toimi tai että siinä näkyy kasapäin virheitä, [tarkista Javan versio](https://www.google.com/search?q=how+to+check+java+version) ja tarvittaessa [päivitä Java-asennuksesi](https://www.google.com/search?q=how+to+update+java).*
 
 
 ### Video 2: [Maven ja Tomcat malliprojektissa](https://web.microsoftstream.com/video/527282e4-961e-453e-a350-af766e50559f) <small>15:31</small>

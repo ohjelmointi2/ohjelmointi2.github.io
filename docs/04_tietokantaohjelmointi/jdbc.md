@@ -47,17 +47,19 @@ Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
 Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Maven](https://maven.apache.org/) ja [Gradle](https://gradle.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös Eclipsessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
 
-Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan ajurin manuaalisesti Mavenin tietovarastosta. Web-ohjelmoinnin yhteydessä opettelemme lisäämään saman ajurin Mavenin avulla. Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan versioon (esim. 3.34.0) ja tallenna ajuri itsellesi linkistä "Jar (7.0 MB)". 
+Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan ajurin manuaalisesti Mavenin tietovarastosta. Web-ohjelmoinnin yhteydessä opettelemme lisäämään saman ajurin Mavenin avulla.
+
+Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan versioon (esim. 3.34.0) ja tallenna ajuri itsellesi linkistä "Jar (7.0 MB)". 
 
 Kirjoitushetkellä viimeisimmän *.jar*-paketin lataus tapahtuu suoraan [tästä linkistä](https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.34.0/sqlite-jdbc-3.34.0.jar).
 
 Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "build path":iin. Build path on lista hakemistoista, joissa ohjelmasi käyttämät Java-luokat sijaitsevat. Helpoiten tämä onnistuu seuraavasti:
 
-1. luo projektiisi uusi `lib`-hakemisto
-2. siirrä edellä tallentamasi `.jar`-tiedosto lib-hakemistoon
+1. luo projektiisi uusi hakemisto, esim. `lib`
+2. siirrä edellä tallentamasi `sqlite-jdbc-*.jar`-tiedosto luomaasi uuteen hakemistoon
 3. lisää lib-hakemisto projektisi "build path":iin [tämän Stack Overflow -viestin mukaisesti](https://stackoverflow.com/a/23420543).
 
-*Huom! Jar-tiedostot sisältävät suoritettavaa ohjelmakoodia, joten niiden kanssa tulee huomioida tietoturva, aivan kuten muidenkin suoritettavien ohjelmien kanssa. Jar-paketteja ei kannata ladata tuntemattomista lähteistä. Tunnettujen ja laajasti käytettyjen pakettien käyttäminen voi myös olla turvallisempaa kuin heikommin tunnettujen tai vähäisessä käytössä olevien. [Google-haku "Is Maven Safe?"](https://www.google.com/search?q=is+maven+safe)*
+⚠️ **Huom!** Jar-tiedostot sisältävät suoritettavaa ohjelmakoodia, joten niiden kanssa tulee huomioida tietoturva, aivan kuten muidenkin suoritettavien ohjelmien kanssa. Jar-paketteja ei kannata ladata tuntemattomista lähteistä. Tunnettujen ja laajasti käytettyjen pakettien käyttäminen voi myös olla turvallisempaa kuin heikommin tunnettujen tai vähäisessä käytössä olevien. [Google-haku "Is Maven Safe?"](https://www.google.com/search?q=is+maven+safe)
 
 
 ## Video 2: [SQLite tools ja uuden tietokannan luominen](https://web.microsoftstream.com/video/9735fb55-5e0c-4d7d-bc03-bb72bd1097a1) <small>8:38</small>
@@ -250,7 +252,7 @@ Bye!
 
 ```
 
-[Tutustu käyttöliittymän dokumentaatioon](./ostoslista-kayttoliittyma)
+Yllä esitetyn käyttöliittymän teknisen toteutuksen tueksi on kirjoitettu [oma ohjeistuksensa](./ostoslista-kayttoliittyma).
 
 ----
 

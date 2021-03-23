@@ -155,12 +155,16 @@ public class Country implements Comparable<Country> {
 Tässä tehtävässä sinun ei tarvitse toteuttaa lainkaan käyttöliittymää omaan ohjelmaasi. Voit Testata ratkaisuasi erillisellä testiluokalla, jonka main-metodissa lisäät `Country`-olioita listalle ja järjestät listan. Yksi mahdollisuus järjestelylogiikan testaamiseksi on esim. seuraava `main`-metodi, jota käytetään koodin testaamisessa myös Viopessa:
 
 ```java
+/*
+ * Väkilukujen lähde: Wikipedia. https://en.wikipedia.org/wiki/Nordic_countries.
+ * Luettu 23.3.2021.
+ */
 public static void main(String[] args) {
-    Country d = new Country("Denmark", 5_724_456);
-    Country f = new Country("Finland", 5_498_211);
-    Country i = new Country("Iceland", 335_878);
-    Country n = new Country("Norway", 5_265_158);
-    Country s = new Country("Sweden", 10_103_843);
+    Country d = new Country("Denmark", 5_809_502);
+    Country f = new Country("Finland", 5_537_364);
+    Country i = new Country("Iceland", 343_518);
+    Country n = new Country("Norway", 5_372_191);
+    Country s = new Country("Sweden", 10_313_447);
 
     List<Country> countries = Arrays.asList(d, f, i, n, s);
     Collections.sort(countries);
@@ -170,8 +174,6 @@ public static void main(String[] args) {
     }
 }
 ```
-
-Väkilukujen lähde: [Wikipedia](https://en.wikipedia.org/wiki/Nordic_countries). Luettu 9.3.2018.
 
 Palauta lopuksi Country-luokkasi Viopeen.
 

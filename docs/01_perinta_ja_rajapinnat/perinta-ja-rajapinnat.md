@@ -23,9 +23,9 @@ Perintää käytetään usein tilanteissa, joissa on olemassa jo jokin toteutus,
 &nbsp;
 
 
-### Viope-tehtävät
+### Perintään liittyvät tehtävät (Viope)
 
-Tämän tehtäväkierroksen tehtävänannot on lainattu Helsingin yliopiston mooc-kurssilta. Sinulle voi olla hyödyksi tutustua myös [HY:n oppimateriaaliin tästä aiheesta](https://ohjelmointi-20.mooc.fi/osa-9/1-perinta) tehtäviä ratkoessasi.
+Seuraavat tehtävät on lainattu Helsingin yliopiston mooc-kurssilta. Sinulle voi olla hyödyksi tutustua myös [HY:n oppimateriaaliin tästä aiheesta](https://ohjelmointi-20.mooc.fi/osa-9/1-perinta) tehtäviä ratkoessasi.
 
 1. **Henkilö-tehtävä**
 
@@ -48,7 +48,9 @@ Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viope
 Tehtävät on lainattu Helsingin Yliopiston Agile Education Research –tutkimusryhmän [oppimateriaalista](https://materiaalit.github.io/ohjelmointi-18/part10/), joka on lisensoitu [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi) -lisenssillä.
 
 
+&nbsp;
 
+---
 
 ## Rajapinnat
 
@@ -66,7 +68,7 @@ Tehtävät on lainattu Helsingin Yliopiston Agile Education Research –tutkimus
 Huom! Oheisella videolla mainitaan rajapintojen lisäksi abstraktit luokat, jotka eivät kuulu tämän kurssitoteutuksen sisältöön.
 
 
-### Viope-tehtävä: Maat (Comparable-rajapinta)
+### Tehtävä: Maat (Comparable-rajapinta)
 
 Täydennä valmista `Country`-luokkaa siten, että luokka täyttää [Javan standardikirjaston valmiin `Comparable`-rajapinnan](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html).
 
@@ -176,5 +178,5 @@ Palauta lopuksi Country-luokkasi Viopeen.
 
 ### Ohjelmalogiikan automatisoidusta testaamisesta
 
-Vaikka yllä oleva ratkaisu toivottavasti auttaa sinua ratkaisemaan tämän tehtävän, ohjelmistojen testaaminen `System.out.println`-metodin tulosteiden ja niiden manuaalisen läpikäynnin avulla on varsin työlästä. Vähänkään isomman ohjelman testeissä tulosteita olisi nopeasti satoja ellei tuhansia. Parempi tapa ohjelmistojen testaamiseen onkin ns. yksikkötestit, joihin perehdymme tämän kurssin seuraavassa aiheessa.
+Vaikka yllä oleva ratkaisu toivottavasti auttaa sinua ratkaisemaan tämän tehtävän, ohjelmistojen testaaminen `System.out.println`-metodin tulosteiden ja niiden manuaalisen läpikäynnin avulla on varsin työlästä. Vähänkään isomman ohjelman testeissä tulosteita olisi nopeasti satoja ellei tuhansia. Parempi tapa ohjelmistojen testaamiseen onkin ns. yksikkötestit, joihin perehdymme tämän kurssin seuraavissa vaiheissa.
 

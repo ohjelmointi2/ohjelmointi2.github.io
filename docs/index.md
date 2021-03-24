@@ -274,7 +274,7 @@ Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/dee
 Kurssin Viope-tehtävässä ja esimerkeissä hyödynnetään [Digi- ja väestötietoviraston](https://www.avoindata.fi/data/fi/organization/digi_ja_vaestotietovirasto) julkaisemaa tietoaineistoa [Väestötietojärjestelmän suomalaisten nimiaineistot](https://www.avoindata.fi/data/fi/dataset/none), joka on julkaistu lisenssillä [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 
-# Postinumeroaineiston tekijänoikeudet
+## Postinumeroaineiston tekijänoikeudet
 
 [Postinumerot-projektipohjassa](https://github.com/ohjelmointi2/postinumerot) hyödynnettävä postinumeroaineisto muodostettu [https://github.com/theikkila/postinumerot-projektin](https://github.com/theikkila/postinumerot-projektin) JSON-tiedostosta.
 

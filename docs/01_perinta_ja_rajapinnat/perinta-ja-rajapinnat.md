@@ -31,9 +31,13 @@ Seuraavat tehtävät on lainattu Helsingin yliopiston mooc-kurssilta. Sinulle vo
 
     Tässä tehtävässä kerrataan olio-ohjelmoinnin perusrakenteet (oliomuuttujat, konstruktori, metodit, toString) ja luodaan yliluokka, jota hyödynnetään seuraavissa tehtävissä.
 
+    Mikäli olio-ohjelmointitaitosi ovat ruosteessa, voit kerrata olio-ohjelmoinnin peruskäsitteet [tätä tehtävää käsittelevän videon](https://video.haaga-helia.fi/media/Henkilo-luokka/0_xe1vpvfl) avulla.
+
 1. **Opiskelija-tehtävä**
 
     Tässä tehtävässä harjoitellaan perimään valmis luokka ja toteutetaan aliluokkaan oma yksittäinen opintopisteet-ominaisuus.
+
+    Tehtävän avuksi on tarjolla [videotallenne](https://video.haaga-helia.fi/media/Luokan+periminenA+Opiskelija-luokka/0_pwgch6v9).
 
 1. **Opiskelijalle toString**
 

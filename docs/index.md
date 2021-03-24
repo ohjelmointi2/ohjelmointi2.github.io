@@ -257,7 +257,7 @@ Tällä kurssilla hyödynnetään avoimilla lisensseillä julkaistuja oppimateri
 
 ## Helsingin yliopiston oppimateriaalit
 
-Kurssin oppimateriaalissa ja tehtävissä hyödynnetään laajasti [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalia](https://ohjelmointi-20.mooc.fi/), joka on lisensoitu [Creative Commons BY-NC-SA 4.0 -lisenssillä](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi). 
+Kurssin oppimateriaalissa ja tehtävissä hyödynnetään laajasti [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaaleja](https://ohjelmointi-20.mooc.fi/), jotka on lisensoitu [Creative Commons BY-NC-SA 4.0 -lisenssillä](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi).
 
 
 ## DayOfYear-esimerkkiluokka (Smelly Example #1)
@@ -274,9 +274,11 @@ Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/dee
 Kurssin Viope-tehtävässä ja esimerkeissä hyödynnetään [Digi- ja väestötietoviraston](https://www.avoindata.fi/data/fi/organization/digi_ja_vaestotietovirasto) julkaisemaa tietoaineistoa [Väestötietojärjestelmän suomalaisten nimiaineistot](https://www.avoindata.fi/data/fi/dataset/none), joka on julkaistu lisenssillä [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 
-## Yrityspostinumerot
+# Postinumeroaineiston tekijänoikeudet
 
-Yrityspostinumeroita käsittelevässä esimerkissä hyödynnetty tekstimuotoinen listaus perustuu Posti Group Oyj:n verkkosivuston tietoihin osoitteesta [https://www.posti.fi/fi/yrityksille/monikanavainen-viestinta/viestit-monikanavaisesti/postin-vastaanottaminen/yrityspostinumero](https://www.posti.fi/fi/yrityksille/monikanavainen-viestinta/viestit-monikanavaisesti/postin-vastaanottaminen/yrityspostinumero).
+[Postinumerot-projektipohjassa](https://github.com/ohjelmointi2/postinumerot) hyödynnettävä postinumeroaineisto muodostettu [https://github.com/theikkila/postinumerot-projektin](https://github.com/theikkila/postinumerot-projektin) JSON-tiedostosta.
+
+Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot).
 
 
 ## SQLite-tietokanta-ajuri

@@ -4,4 +4,4 @@ Tällä opintojaksolla syvennämme olio-ohjelmointiosaamistamme ja sovellamme ai
 
 Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
 
-Kurssin kotisivu ja oppimateriaalit löytyvät osoitteesta https://haagahelia.github.io/ohjelmointi2-3013.
+Kurssin kotisivu ja oppimateriaalit löytyvät osoitteesta https://ohjelmointi2.github.io/.

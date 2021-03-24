@@ -276,7 +276,7 @@ Kurssin Viope-tehtävässä ja esimerkeissä hyödynnetään [Digi- ja väestöt
 
 ## Postinumeroaineiston tekijänoikeudet
 
-[Postinumerot-projektipohjassa](https://github.com/ohjelmointi2/postinumerot) hyödynnettävä postinumeroaineisto muodostettu [https://github.com/theikkila/postinumerot-projektin](https://github.com/theikkila/postinumerot-projektin) JSON-tiedostosta.
+[Postinumerot-projektipohjassa](https://github.com/ohjelmointi2/postinumerot) hyödynnettävä postinumeroaineisto muodostettu [https://github.com/theikkila/postinumerot](https://github.com/theikkila/postinumerot)-projektin JSON-tiedostosta.
 
 Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot).
 

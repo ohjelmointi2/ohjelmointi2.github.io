@@ -63,7 +63,7 @@ Toinen samankaltainen käyttötapaus avain-arvo-pareille on myöhemmin tällä k
 }
 ```
 
-Tämän esimerkki on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä. 
+<small>Tämä esimerkki on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.</small>
 
 ## Video: [Map, osa 1](https://video.haaga-helia.fi/media/Map%2C+osa+1/0_airjor6f) <small>9:01</small>
 
@@ -106,7 +106,7 @@ System.out.println(arvo);
 
 Get-metodille annetaan parametrina se avain, jonka arvoa haetaan.
 
-Tämä esimerkki on lainattu [Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
+<small>Tämä esimerkki on lainattu [Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.</small>
 
 
 ### Numeroiden käsitteleminen mapissa
@@ -154,7 +154,7 @@ String kaannos = numerot.get("Uno");
 System.out.println(kaannos); // Ein
 ```
 
-Tämä esimerkki on lainattu [Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
+<small>Tämä esimerkki on lainattu [Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.</small>
 
 
 ### Arvojen poistaminen (remove) ja tarkastaminen (containsKey)
@@ -347,6 +347,8 @@ Tarkat tehtävänannot ja tehtävissä tarvittavat tiedostot löytyvät [Viopest
 
     Tässä tehtävässä harjoittelemme aineiston lukemista CSV-tiedostosta ja Map-tietorakenteeseen. Opit myös päivittämään Map:issa olevaa valmista arvoa arvon korvaamisen sijaan.
 
+    Mikäli törmäät tehtävässä `java.nio.charset.MalformedInputException`-tyyppiseen virheeseen, varmista, että olet tallentanut etunimet.csv-tiedoston sellaisenaan ja oikeassa merkistössä (UTF-8). Jos tiedoston sisällön kopioi selaimessa ja liittää leikepöydän kautta tekstieditoriin, on monta mahdollisuutta sille, että joko selain, leikepöytä tai editori muokkaa merkit omaan merkistöönsä. Varminta on siis avata csv-tiedosto selaimessa ja käyttää selaimen "save as"-toimintoa, joka tallentaa tiedoston muuttamattomana.
+
     Tehtävästä on saatavilla [videotallenne](https://video.haaga-helia.fi/media/Map+ja+taulukotA+EtunimiTilasto/0_zkjqwbha), jota suositellaan katsottavaksi, mikäli et pääse tehtävässä eteenpäin.
 
 1. **Sanakirja**
@@ -357,9 +359,14 @@ Tarkat tehtävänannot ja tehtävissä tarvittavat tiedostot löytyvät [Viopest
 
     Tässä tehtävässä harjoittelemme projektin kloonaamista GitHubista. Toteutamme logiikan, joka selvittää Postin postinumeroaineistosta tiettyyn postinumeroon liittyvän postitoimipaikan nimen.
 
+    Aineisto ja valmis tehtäväpohja löytyvät GitHubista osoitteesta [https://github.com/ohjelmointi2/postinumerot](https://github.com/ohjelmointi2/postinumerot).
+
 1. **Postinumerot**
 
     Tässä tehtävässä harjoittelemme Map:in sisällön läpikäyntiä avain-arvo-pareina, ja etsimme kaikki tiettyyn postitoimipaikkaan liittyvät postinumerot Postin postinumeroaineistosta.
+
+    Aineisto ja valmis tehtäväpohja löytyvät GitHubista osoitteesta [https://github.com/ohjelmointi2/postinumerot](https://github.com/ohjelmointi2/postinumerot).
+
 
 1. **⭐ Bonus ⭐ Usean käännöksen sanakirja**
 

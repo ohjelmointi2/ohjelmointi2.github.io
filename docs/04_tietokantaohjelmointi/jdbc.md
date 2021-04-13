@@ -122,7 +122,7 @@ MySQL-tietokantaan yhdistettäisiin vastaavasti esim. osoitteella `"jdbc:mysql:/
 Seuraavalla viikolla opettelemme siirtämään ns. kovakoodatun tietokannan osoitteen lähdekoodista ympäristömuuttujaan:
 
 ```java
-// tästä lisää seuraavassa aiheessa:
+// tästä lisää seuraavalla viikolla:
 private static final String JDBC_URL = System.getenv("JDBC_DATABASE_URL");
 ```
 

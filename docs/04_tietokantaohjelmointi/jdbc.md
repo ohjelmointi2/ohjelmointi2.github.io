@@ -40,6 +40,8 @@ Videolla esiintyvän ajurin latauslinkki: [https://mvnrepository.com/artifact/or
 
 Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
+Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shpopingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
+
 &nbsp;
 
 
@@ -157,11 +159,9 @@ Class.forName("org.sqlite.JDBC");
 
 
 
-## Tehtävä: tietokantapohjainen ostoslistasovellus 1/2
+## Tehtävä: tietokantapohjainen ostoslistasovellus JDBC:llä
 
-Tämä on kaksiosaisen tehtävän ensimmäinen vaihe, joka palautetaan Teamsiin yhdessä seuraavan DAO-tehtävän kanssa. Tehtävän ratkaisemiseksi sinulle voi olla hyödyllistä tutustua myös videoon ["ShoppingListApp-sovelluksen ensimmäinen vaihe"](https://web.microsoftstream.com/video/8efb239a-4700-444a-a4a8-f6ef9bac10e9).
-
-Tarkemmat palautusohjeet löydät seuraavan aiheen lopusta. Muista, että voit kysyä Teamsissa neuvoja tehtävään.
+Tehtävän ratkaisemiseksi sinulle voi olla hyödyllistä tutustua myös sovelluksen käyttöliittymää ja toimintalogiikkaa selostavaan videoon ["ShoppingListApp-sovelluksen ensimmäinen vaihe"](https://web.microsoftstream.com/video/8efb239a-4700-444a-a4a8-f6ef9bac10e9). 
 
 
 ### Ostoslista ja CRUD-operaatiot
@@ -258,6 +258,6 @@ Yllä esitetyn käyttöliittymän teknisen toteutuksen tueksi on kirjoitettu [om
 
 ## Tehtävän palauttaminen
 
-Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin määräaikaan mennessä. Palauta tiedostot yksittäin, eli ei pakattuna, äläkä palauta tietokantaa äläkä ajuria.
+Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin määräaikaan mennessä. Palauta tiedostot yksittäin, eli ei pakattuna. Älä palauta tietokantaa äläkä ajuria.
 
 Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen. Muista myös, että voit pyytää apua tehtävässä kohtaamiisi ongelmiin Teamsissa!

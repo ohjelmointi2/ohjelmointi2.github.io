@@ -157,7 +157,9 @@ Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan 
 
 Kurssin tietokanta- ja web-ohjelmointitehtävät palautetaan Teamsissa sijaitseviin palautuslaatikoihin. Hyväksytyn tehtävän ei tarvitse olla oikein tehty täydellinen suoritus, vaan myös osittainen palautus hyväksytään, kunhan siinä näkyy riittävästi yritystä.
 
-Tehtävän esimerkkiratkaisu julkaistaan aina seuraavalla viikolla. Myöhästyneitä tehtäviä ei oteta vastaan, jotta mallivastauksen julkaisu ei antaisi etua myöhästyneille palautuksille.
+Mikäli tarvitset apua tehtävän palauttamisessa Teamsiin, tutustu Microsoftin artikkeliin ["Turn in an assignment in Microsoft Teams"](https://support.microsoft.com/en-us/topic/turn-in-an-assignment-in-microsoft-teams-e25f383a-b747-4a0b-b6d5-a2845a52092b). Apua ja vinkkejä on saatavilla myös Teams-keskustelualueellamme!
+
+Tehtävän esimerkkiratkaisut julkaistaan aina seuraavalla viikolla. Myöhästyneitä tehtäviä ei oteta vastaan, jotta mallivastauksen julkaisu ei antaisi etua myöhästyneille palautuksille.
 
 Useat kurssin tehtävät rakentuvat saman aihealueen ympärille ja edellisten tehtävien ratkaisuilla on merkitystä seuraavan tehtävän ratkaisemisen kannalta. Mikäli jokin tehtävä jää sinulta toimimattomaksi tai puutteelliseksi, voit hyödyntää malliratkaisua jatkaessasi seuraavan viikon tehtävän parissa. Merkitse kuitenkin myös mallivastauksen käyttäminen lähteeksi (ks. lähteiden käyttäminen).
 

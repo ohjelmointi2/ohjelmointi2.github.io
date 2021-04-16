@@ -220,6 +220,7 @@ Linkit:
 
 Palauta luokat `DayOfYear` ja `DayOfYearTest` Teamsissa olevaan palautuslaatikkoon erillisinä tiedostoina (ei pakattuna). Riittää että palautat tehtävien lopputuloksen. Eri vaiheiden tuloksia ei tarvitse palauttaa erikseen.
 
+Mikäli tarvitset apua tehtävän palauttamisessa Teamsiin, tutustu Microsoftin artikkeliin ["Turn in an assignment in Microsoft Teams"](https://support.microsoft.com/en-us/topic/turn-in-an-assignment-in-microsoft-teams-e25f383a-b747-4a0b-b6d5-a2845a52092b). Apua ja vinkkejä on saatavilla myös Teams-keskustelualueellamme!
 
 ## Arviointi
 

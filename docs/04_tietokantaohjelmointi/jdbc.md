@@ -40,7 +40,6 @@ Videolla esiintyvän ajurin latauslinkki: [https://mvnrepository.com/artifact/or
 
 Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
-Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shpopingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
 &nbsp;
 
@@ -70,10 +69,11 @@ Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "b
 
 Tällä videolla valmistellaan tietokanta, jota käytetään seuraavaksi Java-ohjelmasta käsin.
 
-Videolla käytettävän työkalun latauslinkki: [https://sqlite.org/download.html](https://sqlite.org/download.html)
+Videolla käytettävän komentorivityökalun latauslinkki: [https://sqlite.org/download.html](https://sqlite.org/download.html)
 
-[SQLite tools -komentorivityökalun "käyttöohje"](./komentorivityokalu)
+SQLite tools -komentorivityökalun ["käyttöohje"](./komentorivityokalu).
 
+Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shpopingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
 &nbsp;
 
@@ -132,6 +132,19 @@ private static final String JDBC_URL = System.getenv("JDBC_DATABASE_URL");
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ddf1432d-fc3e-4d34-9feb-9ec68701d57d?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
 Tällä videolla käsittelemme SQL injektioita, jotka aiheuttavat merkittäviä tietoturvauhkia tietokantapohjaisille järjestelmille. Opimme valmistelemaan kyselyt siten, että haitallista syötettä ei käsitellä SQL-komentoina vaan normaalina tekstinä.
+
+Älä koskaan muodosta SQL-kyselyitä käsin yhdistelemällä merkkijonoja, koska kyselyn teko merkkijonoja yhdistelemällä aiheuttaa mm. tietoturvaongelmia:
+
+<pre class="highlight" style="border: solid red 2px; color: red;"><code>// Ei näin!
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist WHERE Name = \"" + name + "\"");</code></pre>
+
+Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id tai nimi, ne tulee asettaa
+paikalleen PreparedStatement-luokan metodeilla. PreparedStatement-luokan SQL-kyselyihin parametrien tilalle kirjoitetaan kysymysmerkit (?), joiden kohdille asetetaan set-metodeilla arvot:
+
+```java
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist WHERE Name = ?");
+statement.setString(1, name);
+```
 
 Videolla esiintyvän lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit).
 

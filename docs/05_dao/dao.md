@@ -18,7 +18,7 @@ Tämän tehtävän palautusaika on umpeutunut. Voit katsoa malliratkaisun [tält
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/aea9daea-9811-4ba2-bd14-943658e381a1?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla kerrataan edellisessä aiheessa käsitellyt JDBC-aiheeseen liittyvät käsitteet ja työkalut kuten ajuri, tietokantatiedosto, build path, SQLite tools, yhteysosoite ja prepared statement. Mikäli edellisen JDBC-aiheen sisältö ehti jo unohtua, sinun kannattaa aloittaa tästä videosta.
+Tällä videolla kerrataan [edellisellä viikolla](../04_tietokantaohjelmointi/jdbc) käsitellyt JDBC-aiheeseen liittyvät käsitteet ja työkalut kuten ajuri, tietokantatiedosto, build path, SQLite tools, yhteysosoite ja prepared statement. Mikäli edellisen JDBC-aiheen sisältö ehti jo unohtua, sinun kannattaa aloittaa tästä videosta.
 
 &nbsp;
 

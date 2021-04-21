@@ -114,9 +114,15 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
      <!-- Tomcatin versionumero -->
      <tomcat.version>8.5.64</tomcat.version>
 
-    <!-- lisää nämä rivit: -->
+     <!-- Javan versionumero -->
+     <maven.compiler.target>11</maven.compiler.target>
+     <maven.compiler.source>11</maven.compiler.source>
+
+     <!-- JUnit-testikirjaston versio -->
+     <junit.jupiter.version>5.7.1</junit.jupiter.version>
+
+     <!-- lisää nämä rivit: -->
 +    <sqlite.driver.version>3.34.0</sqlite.driver.version>
-+    <junit.jupiter.version>5.7.1</junit.jupiter.version>
 +    <jstl.api.version>1.2</jstl.api.version>
 ```
 
@@ -125,7 +131,6 @@ Yllä käytetty tapa esittää tiedoston uudet rivit vihreällä sekä `+`-merki
 Muuttuja                | Versionumero  | Tarkoitus
 ------------------------|---------------|----------
 sqlite.driver.version   | 3.34.0        | SQLite-ajuri JDBC-kirjastolle
-junit.jupiter.version   | 5.7.1         | JUnit-yksikkötestikirjasto
 jstl.api.version        | 1.2           | JSTL-tagikirjasto
 
 Itse riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat kolme riippuvuutta dependencies-tagin loppuun:
@@ -135,16 +140,20 @@ Itse riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippu
          <artifactId>tomcat-jsp-api</artifactId>
          <version>${tomcat.version}</version>
      </dependency>
+
+     <!-- JUnit-testaustyökalu -->
+     <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter</artifactId>
+         <version>${junit.jupiter.version}</version>
+         <scope>test</scope>
+     </dependency>
+
+     <!-- lisää nämä riippuvuudet (SQLite ja JSTL): -->
 +    <dependency>
 +        <groupId>org.xerial</groupId>
 +        <artifactId>sqlite-jdbc</artifactId>
 +        <version>${sqlite.driver.version}</version>
-+    </dependency>
-+    <dependency>
-+        <groupId>org.junit.jupiter</groupId>
-+        <artifactId>junit-jupiter</artifactId>
-+        <version>${junit.jupiter.version}</version>
-+        <scope>test</scope>
 +    </dependency>
 +    <dependency>
 +        <groupId>javax.servlet</groupId>

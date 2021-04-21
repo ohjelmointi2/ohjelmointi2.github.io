@@ -23,17 +23,17 @@ Harjoitustyön tarkoituksena on oppia ja syventää osaamista seuraavissa aiheis
 1. **HTTP-pyyntöjen käsittely Javalla (Servletit)**
 
     * käyttäjältä saadun datan käsittely (HTTP parametrit, lomakkeet)
-    * datan välittäminen servletiltä käyttöliittymälle
+    * datan välittäminen servletiltä käyttöliittymälle<br />&nbsp;
 
 1. **Tietokantojen käyttö Javassa (JDBC)**
 
     * tietokantakerroksen eriyttäminen muusta logiikasta (DAO, data access object)
-    * kyselyiden kokoaminen turvallisesti (prepared statements)
+    * kyselyiden kokoaminen turvallisesti (prepared statements)<br />&nbsp;
 
 1. **Dynaamisten HTML-sivujen toteutus JSP:llä (JavaServer Pages)**
 
     * sivujen muodostaminen dynaamisesti JSP-teknologialla
-    * datan käsittely JSP-sivuilla JSTL-kirjaston avulla (JavaServer Pages Standard Tag Library)
+    * datan käsittely JSP-sivuilla JSTL-kirjaston avulla (JavaServer Pages Standard Tag Library)<br />&nbsp;
 
 Lisäksi voit hyödyntää seuraavia kurssilla esiintyneitä menetelmiä ja teknologioita:
 
@@ -67,6 +67,13 @@ Kurssin esimerkeissä olemme hyödyntäneet Sakura-nimistä CSS-kirjastoa:
 <!-- katso lisätiedot: https://github.com/oxalorg/sakura -->
 <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
 ```
+
+
+## Harjoitustyön projektipohja
+
+Hyödynnä harjoitustyössä [samaa projektipohjaa](https://github.com/ohjelmointi2/embedded-tomcat-template), jota olemme käyttäneet kurssin aikaisemmilla viikoilla. Voit joko jatkaa harjoitustyön koodaamista nykyiseen projektiisi tai kloonata GitHubista toisen kopion projektipohjasta. 
+
+Jos kloonaat projektipohjan toiseen kertaan, [nimeä nykyinen projektisi Eclipsessä uudelleen ennen kloonausta](https://help.eclipse.org/2021-03/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_proj_rename.htm). Eclipse ei hyväksy kahta samannimistä projektia yhdessä työtilassa.
 
 
 ## Valmis musiikkitietokanta
@@ -108,6 +115,8 @@ Taulut `Album` ja `Track` tulevat tarpeellisiksi tähdätessäsi korkeampiin arv
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d24cfa32-754d-44da-b74f-52d768f8a4d7?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
 Tällä videolla teemme pohjatyön harjoitustyöprojektin luomiseksi. Samalla kertaamme kurssin aikana opeteltuja asioita harjoitustyön näkökulmasta.
+
+Projektipohja löytyy osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
 &nbsp;
 
@@ -182,6 +191,8 @@ SELECT AlbumId, ArtistId, Title FROM Album
 ```java
 preparedStatement.setString(1, "%" + searchTerm + "%");
 ```
+
+Lisätietoa `LIKE`-operaatiosta löydät tarvittaessa esimerkiksi [SQLite tutoriaalista](https://www.sqlitetutorial.net/sqlite-like/).
 
 
 ## Versionhallinta, yksikkötestaus ja Ajax

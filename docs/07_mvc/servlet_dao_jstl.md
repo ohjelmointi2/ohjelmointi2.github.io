@@ -1,3 +1,5 @@
+<link href="/styles.css" rel="stylesheet">
+
 [⇦ takaisin kurssin etusivulle](../)
 
 # Verkkosovellus kolmikerrosarkkitehtuurilla

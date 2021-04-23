@@ -73,7 +73,7 @@ Tällä videolla valmistellaan tietokanta, jota käytetään seuraavaksi Java-oh
 
 Videolla käytettävän komentorivityökalun latauslinkki: [https://sqlite.org/download.html](https://sqlite.org/download.html)
 
-SQLite tools -komentorivityökalun ["käyttöohje"](./komentorivityokalu).
+Videolla esiintyvä SQLite tools -komentorivityökalun ohjesivu ["Extra: komentorivityökalun käyttö"](./komentorivityokalu).
 
 Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shpopingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 

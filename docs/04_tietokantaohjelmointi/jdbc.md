@@ -210,6 +210,19 @@ Kuva: Randall Munroe. Exploits of a Mom. [https://xkcd.com/327/](https://xkcd.co
 Muista siis käyttää oppimateriaaleissa esiteltyä `PreparedStatement`-luokkaa aina muodostaessasi kyselyitä, joihin syötetään dynaamisesti parametreja!
 
 
+### Rivien poistaminen
+
+Tässä tehtävässä ostoslistan rivien poistaminen voidaan tehdä SQL: `delete`-komennolla rivin `title`-arvon perusteella, esim:
+
+```sql
+DELETE FROM ShoppingListItem WHERE title = ?
+```
+
+Tämä käytäntö poistaa annetun merkkijonon perusteella ei ole yhtä "turvallinen" kuin esimerkiksi poisto pääavaimen perusteella. Jos poiston vaikutusta halutaan rajoittaa, SQL-kyselyyn voidaan laittaa esimerkiksi rajoite `LIMIT 1`. Näin poisto ei kohdistu useampaan kuin yhteen riviin kerrallaan. 
+
+Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai arkistointi, eli rivi merkitään poistetuksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli [Database design practice: soft-deletion, data archive, to delete or not to delete.](https://transang.me/database-design-practice-soft-deletion-to/).
+
+
 ### Esimerkkikäyttöliittymä
 
 Tämän tehtävän kannalta ei ole oleellista, minkälaisen käyttöliittymän rakennat, kunhan sen kautta pystyy käyttämään tietokantaa ja näkemään tehtyjen muutosten vaikutukset.

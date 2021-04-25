@@ -27,6 +27,8 @@ Tällä videolla tutustumme HTTP-protokollaan ja siihen liittyviin pyyntöihin j
 
 Projektipohjan dokumentaatio ja lähdekoodit löytyvät GitHub-palvelusta osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
+Huom! Videolla käytetään projektipohjaa eri osoitteesta (github.com/haagahelia/embedded-tomcat-template). Tämäkin projektipohja on edelleen toimiva, mutta sitä ei ylläpidetä aktiivisesti, joten siitä puuttuu tärkeitä päivityksiä.
+
 &nbsp;
 
 

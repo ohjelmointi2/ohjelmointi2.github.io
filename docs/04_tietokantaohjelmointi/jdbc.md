@@ -153,6 +153,60 @@ Videolla esiintyvän lähdekooditiedoston `TietokantaanYhdistaminen.java` löyd�
 &nbsp;
 
 
+## Yhteyksien sulkeminen (+ try with resources)
+
+> *"When you are done with using your Connection, you need to explicitly close it by calling its close() method in order to release any other database resources (cursors, handles, etc.) the connection may be holding on to.*
+>
+> *Actually, the safe pattern in Java is to close your ResultSet, Statement, and Connection (in that order) in a finally block when you are done with them."*
+>
+> Pascal Thivent. [Closing database connections in Java. StackOverflow.com](https://stackoverflow.com/questions/2225221/closing-database-connections-in-java/2225275#2225275)
+
+Yhteyksien sulkeminen kannattaa tehdä `try`-lohkon jälkeisessä `finally`-lohkossa, jotta yhteydet tulevat varmasti suljetuksi, vaikka koodissa olisi tapahtunut poikkeus. Sulkeminen voidaan tehdä esimerkiksi seuraavasti:
+
+```java
+try {
+   // tietokantaoperaatiot
+
+} catch (SQLException e) {
+   // poikkeusten käsittely
+
+} finally {
+   if (connection != null) {
+         try {
+            connection.close();
+         } catch (SQLException e) {
+            e.printStackTrace();
+         }
+   }
+
+   if (statement != null) {
+         try {
+            statement.close();
+         } catch (SQLException e) {
+            e.printStackTrace();
+         }
+   }
+
+   if (result != null) {
+         try {
+            result.close();
+         } catch (SQLException e) {
+            e.printStackTrace();
+         }
+   }
+}
+```
+
+Resurssien sulkeminen tulee tehdä kaikissa niissä metodeissa, joissa käytät tietokantayhteyksiä. Yllä olevan koodin toistaminen monessa eri paikassa ei ole tyylikästä, joten harkitse erillisen metodin toteuttamista, esimerkiksi seuraavasti:
+
+```java
+closeAll(connection, statement, result);
+```
+
+Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) -niminen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen. Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Saatatte kuitenkin hyötyä myös siihen tutustumisesta esimerkiksi tutustuessanne muissa lähteissä löytämiinne esimerkkeihin.
+
+Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](./try-with-resources).
+
 
 ## Lisämateriaali
 
@@ -220,7 +274,7 @@ DELETE FROM ShoppingListItem WHERE title = ?
 
 Tämä käytäntö poistaa annetun merkkijonon perusteella ei ole yhtä "turvallinen" kuin esimerkiksi poisto pääavaimen perusteella. Jos poiston vaikutusta halutaan rajoittaa, SQL-kyselyyn voidaan laittaa esimerkiksi rajoite `LIMIT 1`. Näin poisto ei kohdistu useampaan kuin yhteen riviin kerrallaan. 
 
-Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai arkistointi, eli rivi merkitään poistetuksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli [Database design practice: soft-deletion, data archive, to delete or not to delete.](https://transang.me/database-design-practice-soft-deletion-to/).
+Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai arkistointi, eli rivi merkitään poistetuksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli ["Database design practice: soft-deletion, data archive, to delete or not to delete"](https://transang.me/database-design-practice-soft-deletion-to/).
 
 
 ### Esimerkkikäyttöliittymä

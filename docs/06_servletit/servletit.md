@@ -25,9 +25,13 @@ Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettä
 
 Tällä videolla tutustumme HTTP-protokollaan ja siihen liittyviin pyyntöihin ja vastauksiin. Tutustumme siihen, miten sovelluspalvelin välittää HTTP-pyynnöt Java-ohjelmallemme ja miten ohjelmamme vastaa pyyntöön siten, että vastaus päätyy käyttäjän selaimelle. Kloonaamme myös GitHubista projektipohjan, jota käytämme jatkossa web-sovelluksemme pohjana.
 
-Projektipohjan dokumentaatio ja lähdekoodit löytyvät GitHub-palvelusta osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template).
+Videolla esiintyvät sivut:
+* HTTP Messages: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
+* Putty-sovellus, lataussivu: [https://www.ssh.com/academy/ssh/putty/download](https://www.ssh.com/academy/ssh/putty/download).
+* Java Servlets -tutoriaali: [http://tutorials.jenkov.com/java-servlets/](http://tutorials.jenkov.com/java-servlets/index.html).
+* Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template)
 
-Huom! Videolla käytetään projektipohjaa eri osoitteesta (github.com/haagahelia/embedded-tomcat-template). Tämäkin projektipohja on edelleen toimiva, mutta sitä ei ylläpidetä aktiivisesti, joten siitä puuttuu tärkeitä päivityksiä.
+Huom! Videolla käytetään vanhaa projektipohjaa eri osoitteesta (~~github.com/haagahelia/embedded-tomcat-template~~). Vanha projektipohja on edelleen toimiva, mutta sitä ei ylläpidetä aktiivisesti, joten siitä puuttuu tärkeitä päivityksiä.
 
 &nbsp;
 

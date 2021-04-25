@@ -208,6 +208,26 @@ Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase
 Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](./try-with-resources).
 
 
+## Javan moduulijärjestelmä (valinnainen)
+
+Mikäli hyödynnät Java-projektissasi Javan moduulijärjestelmää, eli valitsit projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä `module-info.java`-tiedostoosi seuraavat uudet rivit:
+
+```java
+module omamoduuli {
+    requires sqlite.jdbc;
+    requires java.sql;
+}
+```
+
+Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava kurssin esimerkeissä esiintyvä rivi aiheuttaa todennäköisesti poikkeuksen:
+
+```java
+Class.forName("org.sqlite.JDBC");
+```
+
+Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`- sekä `package-info.java`-tiedostot.
+
+
 ## Lisämateriaali
 
 [Jenkov.com](http://tutorials.jenkov.com/jdbc/index.html) -palvelussa on laaja tutoriaali JDBC-teknologioista ja se käsittelee kattavasti tietokantojen Javasta käyttämiseksi tarvittavat toimenpiteet. Tutoriaali itsessään käyttää H2-tietokantaa, mutta ei tietokanta-ajurin luokan nimeä ja yhteysosoitetta lukuun ottamatta poikkea SQLite:n käytöstä:

@@ -69,7 +69,7 @@ Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, ett
 
 [Siirry oppimateriaaliin ⇨](05_dao/dao)
 
-Tehtävät Teamsissa (DL 2.5. klo 23:59)
+Tehtävät Teamsissa (DL 3.5. klo 23:59)
 
 &nbsp;
 
@@ -79,7 +79,7 @@ Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia ser
 
 [Siirry oppimateriaaliin ⇨](06_servletit/servletit)
 
-Tehtävät Teamsissa (DL 9.5. klo 23:59)
+Tehtävät Teamsissa (DL 10.5. klo 23:59)
 
 &nbsp;
 
@@ -90,7 +90,7 @@ Verkkosovellusten toisella viikolla jatkokehitämme oman tietokantapohjaisen ost
 
 [Siirry oppimateriaaliin ⇨](07_mvc/servlet_dao_jstl)
 
-Tehtävät Teamsissa (DL 16.5. klo 23:59)
+Tehtävät Teamsissa (DL 17.5. klo 23:59)
 
 &nbsp;
 
@@ -101,7 +101,7 @@ Viimeinen harjoitusviikko käsittelee JavaScript-koodin avulla tehtäviä palvel
 
 [Siirry oppimateriaaliin ⇨](08_ajax/ajax)
 
-Tehtävät Teamsissa (DL 23.5. klo 23:59)
+Tehtävät Teamsissa (DL 24.5. klo 23:59)
 
 &nbsp;
 
@@ -110,11 +110,9 @@ Tehtävät Teamsissa (DL 23.5. klo 23:59)
 
 Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja toteutatte harjoitustyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvioidaan asteikolla 0-5.
 
-<!--[Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)-->
+[Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)
 
-Harjoitustyön tehtävänanto julkaistaan kurssin puolivälissä.
-
-Palautus Teamsiin (DL 23.5. klo 23:59)
+Palautus Teamsiin (DL 24.5. klo 23:59)
 
 
 &nbsp;
@@ -194,10 +192,10 @@ Perintä ja rajapinnat   | 5                     | 11.4.     | Viope
 Map                     | 5 (+2 bonusta)        | 11.4.     | Viope 
 Yksikkötestaus          | 5                     | 18.4.     | Teams 
 Tietokannat (JDBC)      | 5                     | 25.4.     | Teams 
-Tietokannat (DAO)       | 5                     | 2.5.      | Teams 
-Servletit               | 5                     | 9.5.      | Teams 
-Servlet + jsp + dao     | 5                     | 16.5.     | Teams 
-Ajax ja JavaScript      | 5                     | 23.5.     | Teams 
+Tietokannat (DAO)       | 5                     | 3.5.      | Teams 
+Servletit               | 5                     | 10.5.     | Teams 
+Servlet + jsp + dao     | 5                     | 17.5.     | Teams 
+Ajax ja JavaScript      | 5                     | 24.5.     | Teams 
 
 
 Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävät arvioidaan siten, että 40 % suorituksella saa arvosanan 1 ja 100 % suorituksella arvosanan 5:

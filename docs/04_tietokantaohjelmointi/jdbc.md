@@ -153,7 +153,7 @@ Videolla esiintyvän lähdekooditiedoston `TietokantaanYhdistaminen.java` löyd�
 &nbsp;
 
 
-## Yhteyksien sulkeminen (+ try with resources)
+## Yhteyksien sulkeminen
 
 > *"When you are done with using your Connection, you need to explicitly close it by calling its close() method in order to release any other database resources (cursors, handles, etc.) the connection may be holding on to.*
 >
@@ -200,8 +200,19 @@ try {
 Resurssien sulkeminen tulee tehdä kaikissa niissä metodeissa, joissa käytät tietokantayhteyksiä. Yllä olevan koodin toistaminen monessa eri paikassa ei ole tyylikästä, joten harkitse erillisen metodin toteuttamista, esimerkiksi seuraavasti:
 
 ```java
-closeAll(connection, statement, result);
+try {
+   // tietokantaoperaatiot
+
+} catch (SQLException e) {
+   // poikkeusten käsittely
+
+} finally {
+   // toteuta itsellesi closeAll-metodi, ja kutsu sitä eri metodeista:
+   closeAll(connection, statement, result);
+}
 ```
+
+### Try with resources (valinnainen)
 
 Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) -niminen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen. Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Saatatte kuitenkin hyötyä myös siihen tutustumisesta esimerkiksi tutustuessanne muissa lähteissä löytämiinne esimerkkeihin.
 

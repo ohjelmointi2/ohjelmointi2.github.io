@@ -188,7 +188,7 @@ Toteuta tämä metodi siten, että metodin sisällä etsit riviä, jonka `id`-sa
 
 #### addItem(ShoppingListItem lisattava)
 
-Toteuta tämä metodi siten, että metodin sisällä lisäät tietokantaan uuden rivin. Lisättävän rivin `title`-sarakkeen arvoksi laitetaan metodille annetun olion `title`.
+Toteuta tämä metodi siten, että metodin sisällä lisäät tietokantaan uuden rivin. Lisättävän rivin `title`-sarakkeen arvoksi laitetaan metodille annetun olion `title`. Mikäli lisääminen onnistuu, palauta tästä metodista `true`. Muussa tapauksessa palauta `false`.
 
 
 #### removeItem(ShoppingListItem poistettava)

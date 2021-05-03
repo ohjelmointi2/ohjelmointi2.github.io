@@ -185,6 +185,8 @@ Toteuta tämä metodi siten, että metodin sisällä luetaan tietokantataulun ka
 
 Toteuta tämä metodi siten, että metodin sisällä etsit riviä, jonka `id`-sarakkeen arvona on annettu arvo. Jos vastaava rivi löytyy, luo uusi `ShoppingListItem`-olio ja palauta se. Muussa tapauksessa palauta `null`.
 
+*Huom! Tätä getItem-metodia ei välttämättä tarvita vielä tällä viikolla ShoppingListApp-sovelluksessa, mutta se tulee todennäköisesti tarpeelliseksi, kun toteutamme ostoslistan web-sovelluksena. Varmista tämän metodin toimivuus parhaaksi katsomallasi tavalla, esim. yksikkötestillä tai erillisellä main-metodilla.*
+
 
 #### addItem(ShoppingListItem lisattava)
 

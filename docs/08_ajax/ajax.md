@@ -4,7 +4,9 @@
 
 # Ajax, JSON ja JavaScript
 
-Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Samalla törmäämme kokonaan uusiin käsitteisiin, kuten **asynkroniseen ohjelmointiin**, **tapahtumankuuntelijoihin** ja **promise-olioihin**. Ohjelmointikielen vaihtuminen ja uudet ohjelmointityylit kesken kurssin ovat merkittävä epäjatkuvuuskohta, jotka saattavat tehdä tästä aiheesta poikkeuksellisen haastavan. Älä kuitenkaan lannistu, mikäli aiheet ja tehtävät tuntuvat hankalilta. Ensimmäisessä tehtävässä ei ole lainkaan ohjelmointia ja seuraavatkin tehtävät ovat koodin määrässä mitattuina aikaisempia pienempiä. Voit myös aina kysyä vinkkejä Teamsissa, mikäli törmäät odottamattomaan virheilmoitukseen tai et tiedä miten edetä.
+Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Samalla törmäämme kokonaan uusiin käsitteisiin, kuten **asynkroniseen ohjelmointiin**, **tapahtumankuuntelijoihin** ja **promise-olioihin**. Ohjelmointikielen vaihtuminen ja uudet ohjelmointityylit kesken kurssin ovat merkittävä epäjatkuvuuskohta, jotka saattavat tehdä tästä aiheesta poikkeuksellisen haastavan. 
+
+Älä kuitenkaan lannistu, mikäli aiheet ja tehtävät tuntuvat hankalilta. Ensimmäisessä tehtävässä ei ole lainkaan ohjelmointia ja seuraavatkin tehtävät ovat koodin määrässä mitattuina aikaisempia pienempiä. Voit myös aina kysyä vinkkejä Teamsissa, mikäli törmäät odottamattomaan virheilmoitukseen tai et tiedä miten edetä.
 
 
 ## Tämän osion tavoitteet

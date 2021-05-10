@@ -75,7 +75,7 @@ Tehtävät Teamsissa (DL 3.5. klo 23:59)
 
 ### Aihe 6: Verkkosovellus (Tomcat ja Servletit) <small>3.5. - 9.5.</small>
 
-Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää ensimmäisellä viikolla esiteltyä `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
+Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää yksikkötestauksen yhteydessä refaktoroimaasi `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
 
 [Siirry oppimateriaaliin ⇨](06_servletit/servletit)
 

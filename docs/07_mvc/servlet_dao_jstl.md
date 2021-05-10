@@ -189,9 +189,11 @@ Seuraavalla videolla lisäämme verkkopalvelumme tarvitsemat riippuvuudet ohjeen
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/515b523d-bc9b-4892-a2cf-78e75206e9a9?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Videolla esitellään lisäksi tyypillinen ongelma Tomcatin käynnistämisessä, joka johtuu siitä, että vanha Tomcat-suoritus on edelleen käynnissä taustalla (kohta 15:30).
+Videolla esitellään kohdassa 15:30 tyypillinen ongelma Tomcatin käynnistämisessä, joka johtuu siitä, että vanha Tomcat-suoritus on edelleen käynnissä taustalla.
 
-Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta (Cross Site Scripting, XSS) esitellään videolla kohdassa 44:13.
+Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta ([Cross Site Scripting, XSS](https://owasp.org/www-community/attacks/xss/)) esitellään videolla kohdassa 44:13.
+
+💡 Videolla projektiin lisätään kolme riippuvuutta, joista `org.junit.jupiter` tulee projektipohjan nykyisessä versiossa valmiina. Sitä ei siis tarvitse lisätä enää tämän videon mukaisesti.
 
 &nbsp;
 
@@ -270,7 +272,7 @@ HTML-koodin yhteydessä onkin erittäin tärkeää huolehtia siitä, että kaikk
 
 > *"An HTML entity is a piece of text ("string") that begins with an ampersand (&) and ends with a semicolon (;) . Entities are frequently used to display reserved characters (which would otherwise be interpreted as HTML code), and invisible characters (like non-breaking spaces)."*
 >
-> *MDN web docs. Entity. [https://developer.mozilla.org/en-US/docs/Glossary/Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity)*
+> MDN web docs. Entity. [https://developer.mozilla.org/en-US/docs/Glossary/Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity)
 
 Esimerkiksi käyttäjän syöttämä tuotenimi `"Milk <script>alert('attack!');</script>"` ei siis saa tuottaa HTML-sivulle sisältöä:
 

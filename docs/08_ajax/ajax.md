@@ -128,15 +128,15 @@ Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuot
 
 ```html
 <!-- Painike, jota klikattaessa kutsutaan removeProduct-funktiota: -->
-<button onclick="removeProduct(100)">Remove</button>
+<button onclick="removeProduct(123)">Remove</button>
 ```
 
 Jotta saat jokaiseen painikkeeseen juuri kyseistä tuotetta vastaavan poistettavan id:n, voit kirjoittaa aikaisemmilta viikoilta tutun JSP expression language -lausekkeen JavaScript-kutsun sisään:
 
 ```html
 <!-- 
-    product.getId() on Javaa, ja se suoritetaan palvelimella. 
-    removeProduct() on JavaScriptiä, ja se suoritetaan selaimessa 
+    product.getId() on Javaa, ja se suoritetaan jo palvelimella. 
+    removeProduct() on JavaScriptiä, ja se suoritetaan selaimessa
 -->
 <button onclick="removeProduct(${ product.getId() })">Remove</button>
 ```
@@ -156,9 +156,11 @@ Tapahtumankäsittelijän tulee saada parametriarvona poistettavan tuoterivin `id
 
 ```javascript
 async function removeProduct(id) {
-    // TODO: kutsu JavaScriptin fetch-funktiota kahdella parametrilla. Ensimmäinen parametri on merkkijono, 
-    // joka määrittelee pyynnön osoitteen (esim. "/list?id=20"). Toinen parametri on objekti, johon
-    // määritellään pyynnön asetukset, tässä tapauksessa käytettävä metodi: { method: 'DELETE' }.
+    // TODO: kutsu JavaScriptin fetch-funktiota kahdella parametrilla. 
+    // Ensimmäinen parametri on merkkijono, joka määrittelee pyynnön 
+    // osoitteen (esim. "/list?id=20"). Toinen parametri on objekti, johon
+    // määritellään pyynnön asetukset, tässä tapauksessa käytettävä
+    // metodi: { method: 'DELETE' }.
     
     // esim: fetch(osoite + id, { method: 'DELETE' })
 }

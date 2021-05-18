@@ -156,9 +156,11 @@ Tapahtumankäsittelijän tulee saada parametriarvona poistettavan tuoterivin `id
 
 ```javascript
 async function removeProduct(id) {
-    // TODO: kutsu fetch-funktiota parametrilla { method: 'DELETE' }
-    // lähettääksesi poistopyynnön palvelimelle. Käytä parametrina saatua
-    // id-arvoa fetch-kutsussa yksilöidäksesi poistettavan rivin.
+    // TODO: kutsu JavaScriptin fetch-funktiota kahdella parametrilla. Ensimmäinen parametri on merkkijono, 
+    // joka määrittelee pyynnön osoitteen (esim. "/list?id=20"). Toinen parametri on objekti, johon
+    // määritellään pyynnön asetukset, tässä tapauksessa käytettävä metodi: { method: 'DELETE' }.
+    
+    // esim: fetch(osoite + id, { method: 'DELETE' })
 }
 ```
 
@@ -219,6 +221,8 @@ Edellisissä tehtävissä toteuttamasi `fetch`-palvelinkutsu tuottaa toistaiseks
 Servlet-puolella `DELETE`-tyyppinen pyyntö voidaan käsitellä toteuttamalla `doDelete`-niminen metodi, jonka sisällä poistetaan rivi hyödyntäen DAO-luokkaa:
 
 ```java
+/* tiedosto ShoppingListServlet.java (tai vastaava) */
+
 @Override
 protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
     // TODO: selvitä mikä `id` annettiin pyynnön mukana
@@ -278,15 +282,12 @@ Tämän jälkeen käytä saamaasi id-arvoa `removeProduct`-funktiossa poistaakse
 
 ```javascript
 async function removeProduct(id) {
-    // TODO: kutsu fetch-funktiota parametrilla { method: 'DELETE' }
-    // lähettääksesi poistopyynnön palvelimelle. Käytä parametrina saatua
-    // id-arvoa fetch-kutsussa yksilöidäksesi poistettavan rivin.
+    // esim: fetch(osoite + id, { method: 'DELETE' })
 
     let elementinId = "product-" + id;
 
     // TODO: käytä document.getElementById-metodia saadaksesi halutun elementin
-    // TODO: kutsu poistettavan elementin remove()-metodia poistaaksesi 
-    // sen sivulta
+    // TODO: kutsu poistettavan elementin remove()-metodia poistaaksesi sen sivulta
 }
 ```
 

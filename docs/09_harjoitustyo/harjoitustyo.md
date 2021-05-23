@@ -267,7 +267,7 @@ Jos käytit harjoitustyössäsi versionhallintaa (Git), aja projektisi juurihake
 
     git log --oneline --decorate > git-log.txt
 
-Edellä mainittu komento luo projektiisi tiedoston `git-log.txt`, joka sisältää listan tehdyistä commiteista. Jos käytit jotain graafista Git-työkalua, voit `git-log.txt`:n sijasta liittää projektiisi kuvankaappauksen työkalusi näkymästä. Jos koodisi on GitHubissa tai vastaavassa versionhallintapalvelussa, lisää myös tieto tästä `git-log.txt`-tiedostoosi.
+Edellä mainittu komento luo projektiisi tiedoston `git-log.txt`, joka sisältää listan tehdyistä commiteista. Voit halutessasi lukea komennon selityksen [Atlassianin artikkelista](https://www.atlassian.com/git/tutorials/git-log#formatting-log-output). Jos käytit työssäsi graafista Git-työkalua, voit `git-log.txt`-tiedoston sijasta liittää projektiisi kuvankaappauksen työkalusi näkymästä. Jos koodisi on GitHubissa tai vastaavassa versionhallintapalvelussa, lisää myös tieto tästä `git-log.txt`-tiedostoosi.
 
 Gitin käyttö huomioidaan positiivisesti harjoitustyön arvostelussa, mutta se ei ole vaatimuksena erinomaiseen arvosanaan. **Varmista myös seuraavassa vaiheessa, että myös luotu tiedosto git-log.txt tulee mukaan tekemääsi zip-pakettiin.**
 

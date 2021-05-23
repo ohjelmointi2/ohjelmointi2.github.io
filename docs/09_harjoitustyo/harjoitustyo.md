@@ -259,11 +259,9 @@ SELECT Artist.ArtistId, Name, COUNT(AlbumId) AS AlbumCount
     ORDER BY Name ASC;
 ```
 
-## Harjoitustyön palauttaminen
+## Harjoitustyön dokumentointi
 
-Harjoitustyön lähdekoodit palautetaan kokonaisuudessaan Teamsiin zip-pakettina. 
-
-Lähdekoodin lisäksi palauta erillisenä tiedostona kuvaus toteuttamasi web-sovelluksen ominaisuuksista ja niiden jakautumisesta eri luokkiin.
+Lisää projektiisi vielä erillinen tekstitiedosto `readme.txt` tai `readme.md`, jossa listaat toteuttamasi web-sovelluksen servletit, dao-luokat ja JSP-sivut. Kerro jokaisen tiedoston yhteydessä, mikä on sen rooli toteuttamassasi ratkaisussa. Mikäli noudatit kurssin tehtävänantoa tarkasti, yhden lauseen tai muutaman sanan kuvaus riittää.
 
 Jos käytit harjoitustyössäsi versionhallintaa (Git), aja projektisi juurihakemistossa komento:
 
@@ -276,7 +274,9 @@ Gitin käyttö huomioidaan positiivisesti harjoitustyön arvostelussa, mutta se 
 
 ## Projektin lähettäminen Teamsiin
 
-[Tee projektistasi zip-tiedosto](https://stackoverflow.com/a/5386448) valitsemalla Eclipsessä harjoitustyöprojektin nimen päällä *Export – Export.. – General – Archive file*. Tallenna tiedosto .zip-muotossa säilyttäen hakemistorakenne. Varmista, että zip-paketti sisältää kaikki ratkaisusi *.java*- ja *.jsp*-tiedostot. Palauta zip-paketti Teamsin palautuskansioon.
+Harjoitustyön lähdekoodit sisältäen edellä mainitun dokumentaation palautetaan kokonaisuudessaan Teamsiin zip-pakettina. 
+
+[Tee projektistasi zip-tiedosto](https://stackoverflow.com/a/5386448) valitsemalla Eclipsessä harjoitustyöprojektin nimen päällä *Export – Export.. – General – Archive file*. Tallenna tiedosto .zip-muotossa säilyttäen hakemistorakenne. Varmista, että zip-paketti sisältää dokumentaation ja kaikki ratkaisusi *.java*- ja *.jsp*-tiedostot. Palauta zip-paketti Teamsin palautuskansioon.
 
 Muistathan jättää lopuksi kurssista [opintojaksopalautetta MyNetissä](https://student.home.haaga-helia.fi/group/pakki/opintojaksopalaute)!
 

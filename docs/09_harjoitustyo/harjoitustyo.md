@@ -261,7 +261,7 @@ SELECT Artist.ArtistId, Name, COUNT(AlbumId) AS AlbumCount
 
 ## Harjoitustyön dokumentointi
 
-Lisää projektiisi vielä erillinen tekstitiedosto `readme.txt` tai `readme.md`, jossa listaat toteuttamasi web-sovelluksen servletit, dao-luokat ja JSP-sivut. Kerro jokaisen tiedoston yhteydessä, mikä on sen rooli toteuttamassasi ratkaisussa. Mikäli noudatit kurssin tehtävänantoa tarkasti, yhden lauseen tai muutaman sanan kuvaus riittää.
+Lisää projektiisi vielä erillinen tekstitiedosto `readme.txt` tai `readme.md`, jossa listaat toteuttamasi web-sovelluksen servletit, dao-luokat ja JSP-sivut. Kerro jokaisen Java-luokan tai sivun yhteydessä, mikä on sen rooli toteuttamassasi ratkaisussa. Mikäli noudatit kurssin tehtävänantoa tarkasti, yhden virkkeen kuvaus riittää. Jos sovelsit tehtävänantoa, kerro tässä miten ratkaisu poikkeaa tehtävänannosta.
 
 Jos käytit harjoitustyössäsi versionhallintaa (Git), aja projektisi juurihakemistossa komento:
 

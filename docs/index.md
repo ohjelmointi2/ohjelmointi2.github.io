@@ -202,12 +202,12 @@ Tehtävä                 | Maksimipisteet  | Minimipisteet   | DL        | Jär
 ------------------------|-----------------|-----------------|-----------|---------------
 Perintä ja rajapinnat   | 5               | 2               | 31.10.    | Viope 
 Map                     | 5 (+2 bonusta)  | 2               | 7.11.     | Viope 
-Yksikkötestaus          | 5               |                 | 14.11.    | Teams 
-Tietokannat (JDBC)      | 5               |                 | 21.11.    | Teams 
-Tietokannat (DAO)       | 5               |                 | 28.11.    | Teams 
-Servletit               | 5               |                 | 5.12.     | Teams 
-Servlet + jsp + dao     | 5               |                 | 12.12.    | Teams 
-Ajax ja JavaScript      | 5               |                 | 19.12.    | Teams 
+Yksikkötestaus          | 5               | -               | 14.11.    | Teams 
+Tietokannat (JDBC)      | 5               | -               | 21.11.    | Teams 
+Tietokannat (DAO)       | 5               | -               | 28.11.    | Teams 
+Servletit               | 5               | -               | 5.12.     | Teams 
+Servlet + jsp + dao     | 5               | -               | 12.12.    | Teams 
+Ajax ja JavaScript      | 5               | -               | 19.12.    | Teams 
 
 
 Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävien loppuarvosana muodostuu tehtäväpisteiden keskiarvosta.

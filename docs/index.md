@@ -118,7 +118,7 @@ Tehtävät Teamsissa (DL 19.12. klo 23:59)
 &nbsp;
 
 
-### Harjoitustyö
+### **Harjoitustyö**
 
 Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja toteutatte harjoitustyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvioidaan asteikolla 0-5.
 

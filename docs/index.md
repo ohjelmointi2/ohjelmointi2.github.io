@@ -2,7 +2,7 @@
 
 # Tervetuloa kurssille!
 
-Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3014! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
+Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3021! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
 
 Tällä opintojaksolla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin. 
 
@@ -11,27 +11,38 @@ Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.f
 
 ## Osallistumisen vahvistaminen
 
-Vahvista osallistumisesi kurssille liittymällä kurssin Teams-ryhmään sekä Viope-oppimisalustalle. Liittymisohjeet ja -koodin Teamsiin olet saanut sähköpostitse kurssin alkua edeltävällä viikolla. Liityttyäsi Teams-ryhmään saat myös katseluoikeudet kurssin Microsoft Stream -palvelussa sijaitseviin videoihin.
+Osallistuaksesi kurssille sinun tulee liittyä kurssin Teams-ryhmään sekä Viope-oppimisalustalle. Liittymisohjeet ja -koodin Teamsiin saat sähköpostitse kurssin alkua edeltävällä viikolla. Liityttyäsi Teams-ryhmään saat myös katseluoikeudet kurssin kotisivulla sijaitseviin MS Stream -videoihin.
+
+**Kurssin osallistumisen vahvistaminen edellyttää kahden ensimmäisen viikon tehtävien hyväksyttyä suoritusta määräaikaan mennessä.** Tehtäviin on saatavissa vinkkejä ja tukea kurssin Teams-kanavalla.
+
+> *"Opiskelija vahvistaa paikkansa opintojaksototeutuksella olemalla läsnä opetuksen alkaessa tai muutoin opettajan ilmoittamalla tavalla, joka voi esimerkiksi olla ensimmäisen oppimistehtävän palautus."*
+>
+> [Tutkintosääntö](https://www.haaga-helia.fi/sites/default/files/file/2021-04/final_www-sivulle_tutkintosaanto_010421.pdf)
+
+Tarkemman aikataulun ja pisterajat löydät alempaa tältä sivulta.
 
 
 ## Kurssin aikataulu
 
-Tämä opintojakso alkaa maanantaina 29.3.2021 ja päättyy perjantaina 21.5.2021. Opintojakso toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
+Tämä opintojakso alkaa maanantaina 25.10.2021 ja päättyy perjantaina 17.12.2021. Osallistumisen vahvistamiseksi vaaditut tehtävät on palautettava hyväksytysti viimeistään 7.11.2021.
+
+Opintojakso toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
 
 Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
 
+&nbsp;
 
-### Aihe 1: perintä ja rajapinnat <small>29.3. - 4.4.</small>
+### **Aihe 1: perintä ja rajapinnat** <small>25.10. - 31.10.</small>
 
 Ensimmäisellä viikolla syvennämme olio-ohjelmointiosaamistamme tutustumalla perintään ja rajapintoihin. Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
 
 [Siirry oppimateriaaliin ⇨](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
 
-Tehtävät [Viopessa](https://vw4.viope.com/) (DL 11.4. klo 23:59)
+Tehtävät [Viopessa](https://vw4.viope.com/) (DL 31.10. klo 23:59)
 
 &nbsp;
 
-### Aihe 2: Map-tietorakenne <small>5.4. - 11.4.</small>
+### **Aihe 2: Map-tietorakenne** <small>1.11. - 7.11.</small>
 
 > *Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo.*
 >
@@ -39,69 +50,70 @@ Tehtävät [Viopessa](https://vw4.viope.com/) (DL 11.4. klo 23:59)
 
 [Siirry oppimateriaaliin ⇨](02_map/map)
 
-Tehtävät [Viopessa](https://vw4.viope.com/)  (DL 11.4. klo 23:59)
+Tehtävät [Viopessa](https://vw4.viope.com/)  (DL 7.11. klo 23:59)
 
 &nbsp;
 
-### Aihe 3: Yksikkötestaus <small>12.4. - 18.4.</small>
+### **Aihe 3: Yksikkötestaus** <small>8.11. - 14.11.</small>
 
 Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
 
 [Siirry oppimateriaaliin ⇨](03_yksikkotestaus/junit)
 
-Tehtävät Teamsissa (DL 18.4. klo 23:59)
+Tehtävät Teamsissa (DL 14.11. klo 23:59)
 
 &nbsp;
 
-### Aihe 4: tietokantaohjelmointi (JDBC) <small>19.4. - 25.4.</small>
+### **Aihe 4: tietokantaohjelmointi (JDBC)** <small>15.11. - 21.11.</small>
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). 
 
 [Siirry oppimateriaaliin ⇨](04_tietokantaohjelmointi/jdbc)
 
-Tehtävät Teamsissa (DL 25.4. klo 23:59)
+Tehtävät Teamsissa (DL 21.11. klo 23:59)
 
 &nbsp;
 
-### Aihe 5: tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit) <small>26.4. - 2.5.</small>
+### **Aihe 5: tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)** <small>22.11. - 28.11.</small>
 
 Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
 
 [Siirry oppimateriaaliin ⇨](05_dao/dao)
 
-Tehtävät Teamsissa (DL 3.5. klo 23:59)
+Tehtävät Teamsissa (DL 28.11. klo 23:59)
 
 &nbsp;
 
-### Aihe 6: Verkkosovellus (Tomcat ja Servletit) <small>3.5. - 9.5.</small>
+### **Aihe 6: Verkkosovellus (Tomcat ja Servletit)** <small>29.11. - 5.12.</small>
 
 Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää yksikkötestauksen yhteydessä refaktoroimaasi `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
 
 [Siirry oppimateriaaliin ⇨](06_servletit/servletit)
 
-Tehtävät Teamsissa (DL 10.5. klo 23:59)
+Tehtävät Teamsissa (DL 5.12. klo 23:59)
 
 &nbsp;
 
 
-### Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP) <small>10.5. - 16.5.</small>
+### **Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP)** <small>6.12. - 12.12.</small>
 
 Verkkosovellusten toisella viikolla jatkokehitämme oman tietokantapohjaisen ostoslistasovelluksemme verkkopalveluksi. Luomme HTML-käyttöliittymät ostoslistan näyttämiseksi ja tuotteiden lisäämiseksi.
 
 [Siirry oppimateriaaliin ⇨](07_mvc/servlet_dao_jstl)
 
-Tehtävät Teamsissa (DL 17.5. klo 23:59)
+Tehtävät Teamsissa (DL 12.12. klo 23:59)
 
 &nbsp;
 
 
-### Aihe 8: Ajax ja JavaScript <small>17.5. - 23.5.</small>
+### **Aihe 8: Ajax ja JavaScript** <small>13.12. - 19.12.</small>
 
 Viimeinen harjoitusviikko käsittelee JavaScript-koodin avulla tehtäviä palvelinkutsuja, eli Ajax-kutsuja. Niiden avulla voimme päivittää ostoslistamme sisältöä tekemättä sivulatauksia. Toteutamme lisäksi verkkopalveluumme uuden ominaisuuden ostoslistan rivien poistamiseksi.
 
-[Siirry oppimateriaaliin ⇨](08_ajax/ajax)
+<!--[Siirry oppimateriaaliin ⇨](08_ajax/ajax)-->
+Materiaali päivitetään kurssin sivuille marraskuussa 2021.
 
-Tehtävät Teamsissa (DL 24.5. klo 23:59)
+Tehtävät Teamsissa (DL 19.12. klo 23:59)
 
 &nbsp;
 
@@ -112,7 +124,7 @@ Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja 
 
 [Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)
 
-Palautus Teamsiin (DL 24.5. klo 23:59)
+Palautus Teamsiin (DL 19.12. klo 23:59)
 
 
 &nbsp;
@@ -148,7 +160,7 @@ Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuih
 
 Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat. 
 
-Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) **Ohjelmointi 2, 3014 🌍** -linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus **Ohjelmointi 2, 3014 🌍**.
+Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) **Ohjelmointi 2, 3021 🌍** -linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus **Ohjelmointi 2, 3021 🌍**.
 
 **Teknisistä syistä johtuen Viopeen palautettavista lähdekoodeista täytyy aina poistaa mahdolliset package -lauseet luokan yläpuolelta.** Viope on myös muilla tavoin erittäin tarkka ohjelmien oikeellisuudesta, mikä saattaa aiheuttaa ensimmäisillä viikoilla hämmennystä. Voit kysyä kurssin Teams-kanavalla neuvoa Viope-ongelmiin milloin tahansa.
 
@@ -180,39 +192,46 @@ Tarkempi ohjeistus arvioinnin perusteista ja toteutettavan työn ominaisuuksista
 
 ## Arviointi
 
-Kurssin tehtävät sekä harjoitustyö arvioidaan asteikolla 0-5. Harjoitustyön arviointikriteerit julkaistaan harjoitustyön tehtävänannon yhteydessä.
+Kurssin tehtävät sekä harjoitustyö arvioidaan asteikolla 0-5. Harjoitustyön arviointikriteerit löydät harjoitustyön tehtävänannon yhteydestä.
 
 Kurssin loppuarvosana lasketaan tehtävien ja harjoitustyön keskiarvosta ja pyöristetään lähimpään kokonaiseen arvosanaan. Molempien osasuoritusten painoarvo on 50 % loppuarvosanasta.
 
-Tehtävien pisteytys:
+Tehtävien pisteytys ja aikataulu:
 
-Tehtävä                 |  Maksimipisteet       | DL        |   Järjestelmä
-------------------------|-----------------------|-----------|---------------
-Perintä ja rajapinnat   | 5                     | 11.4.     | Viope 
-Map                     | 5 (+2 bonusta)        | 11.4.     | Viope 
-Yksikkötestaus          | 5                     | 18.4.     | Teams 
-Tietokannat (JDBC)      | 5                     | 25.4.     | Teams 
-Tietokannat (DAO)       | 5                     | 3.5.      | Teams 
-Servletit               | 5                     | 10.5.     | Teams 
-Servlet + jsp + dao     | 5                     | 17.5.     | Teams 
-Ajax ja JavaScript      | 5                     | 24.5.     | Teams 
+Tehtävä                 | Maksimipisteet  | Minimipisteet   | DL        | Järjestelmä
+------------------------|-----------------|-----------------|-----------|---------------
+Perintä ja rajapinnat   | 5               | 2               | 31.10.    | Viope 
+Map                     | 5 (+2 bonusta)  | 2               | 7.11.     | Viope 
+Yksikkötestaus          | 5               |                 | 14.11.    | Teams 
+Tietokannat (JDBC)      | 5               |                 | 21.11.    | Teams 
+Tietokannat (DAO)       | 5               |                 | 28.11.    | Teams 
+Servletit               | 5               |                 | 5.12.     | Teams 
+Servlet + jsp + dao     | 5               |                 | 12.12.    | Teams 
+Ajax ja JavaScript      | 5               |                 | 19.12.    | Teams 
 
 
-Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävät arvioidaan siten, että 40 % suorituksella saa arvosanan 1 ja 100 % suorituksella arvosanan 5:
+Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävien loppuarvosana muodostuu tehtäväpisteiden keskiarvosta.
+
+## Kurssin työmäärä
+
+Opintojakso kestää 8 viikkoa ja on laajuudeltaan 5 opintopistettä, joten sen [laskennallinen työmäärä on noin 135 tuntia](https://www.haaga-helia.fi/fi/ects-jarjestelma-ja-tutkintotodistuksen-liite-eli-diploma-supplement). Viikkoa kohden työmäärä vastaa laskennallisesti jopa 17 tuntia, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
 ```java
-private static double calculateExerciseGrade(int myPoints) {
-    int maxPoints = 40;
-    double minPoints = maxPoints * 0.4;
+public class KurssinTyomaara {
 
-    if (myPoints < minPoints) {
-        return 0;
-    } else {
-        return Math.min(5, 1 + 4 * (myPoints - minPoints) / (maxPoints - minPoints));
+    public static void main(String[] args) {
+        int kestoViikkoina = 8;
+        int opintopisteita = 5;
+        int tyomaaraPerPiste = 27;
+
+        int kokonaistyomaara = opintopisteita * tyomaaraPerPiste;
+        System.out.println(kokonaistyomaara); // 135 tuntia
+
+        double tyomaaraPerViikko = 1.0 * kokonaistyomaara / kestoViikkoina;
+        System.out.println(tyomaaraPerViikko); // 16.875 tuntia per viikko
     }
 }
 ```
-
 
 ## Tekniset työkalut
 

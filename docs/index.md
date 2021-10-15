@@ -9,7 +9,11 @@ h3 small {
 
 Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3021! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
 
-Tällä opintojaksolla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin. 
+Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin. 
+
+Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
+
+Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
 
 Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033).
 
@@ -18,24 +22,20 @@ Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.f
 
 Osallistuaksesi kurssille sinun tulee liittyä kurssin Teams-ryhmään sekä Viope-oppimisalustalle. Liittymisohjeet ja -koodin Teamsiin saat sähköpostitse kurssin alkua edeltävällä viikolla. Liityttyäsi Teams-ryhmään saat myös katseluoikeudet kurssin kotisivulla sijaitseviin MS Stream -videoihin.
 
-Kurssin osallistumisen vahvistaminen edellyttää lisäksi vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä ja toiselta viikolta tehtävien määräaikaan mennessä. Tehtäviin on saatavissa vinkkejä ja tukea kurssin Teams-kanavalla. Lisäksi ensimmäisten tehtävänantojen lopusta löytyy linkkejä videoihin, joissa käydään seikkaperäisesti tehtävien ratkaisuvaiheita läpi.
+Kurssin osallistumisen vahvistaminen edellyttää lisäksi vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä ja toiselta viikolta tehtävien määräaikaan mennessä. Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla kyseisten tehtävien idea selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin Teams-kanavalla.
 
 > *"Opiskelija vahvistaa paikkansa opintojaksototeutuksella olemalla läsnä opetuksen alkaessa tai muutoin opettajan ilmoittamalla tavalla, joka voi esimerkiksi olla ensimmäisen oppimistehtävän palautus."*
 >
 > [Tutkintosääntö](https://www.haaga-helia.fi/sites/default/files/file/2021-04/final_www-sivulle_tutkintosaanto_010421.pdf)
 
-Tarkemman aikataulun ja pisterajat löydät alempaa tältä sivulta.
-
 
 ## Kurssin aikataulu
 
-Tämä opintojakso alkaa maanantaina 25.10.2021 ja päättyy perjantaina 17.12.2021. Osallistumisen vahvistamiseksi vaaditut tehtävät on palautettava hyväksytysti viimeistään 7.11.2021.
+Tämä kurssi alkaa maanantaina 25.10.2021 ja päättyy perjantaina 17.12.2021. Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti jopa 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
-Opintojakso toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
-
-Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
 
 &nbsp;
+
 
 ### <small>25.10. - 31.10.</small> **Aihe 1: perintä ja rajapinnat**
 
@@ -268,7 +268,7 @@ Nettilähteiden hyödyntäminen ja niistä mallin ottaminen on sallittua ja kann
 
 ## Esitietovaatimukset
 
-> Opiskelija on suorittanut opintojakson Ohjelmointi 1 (SWD4TN032) tai hänellä on vastaavat tiedot ja taidot. Opiskelija suorittaa samanaikaisesti opintojakson Tietokannat ja tiedonhallinta (SWD1TN003) tai hänellä on vastaavat tiedot ja taidot.
+> *"Opiskelija on suorittanut opintojakson Ohjelmointi 1 (SWD4TN032) tai hänellä on vastaavat tiedot ja taidot. Opiskelija suorittaa samanaikaisesti opintojakson Tietokannat ja tiedonhallinta (SWD1TN003) tai hänellä on vastaavat tiedot ja taidot."*
 >
 > [*opintojaksokuvaus*](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033) 
 

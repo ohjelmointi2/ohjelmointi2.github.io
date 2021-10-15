@@ -8,10 +8,10 @@ Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai tauluko
 
 [Java Collections Framework](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/package-summary.html#CollectionsFramework) sisältää mm. seuraavat rajapinnat ja luokat:
 
-* [List](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/List.html) (ArrayList ja LinkedList)
-* [Map](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Map.html) (HashMap ja TreeMap)
-* [Set](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Set.html) (HashSet ja TreeSet)
-* [Queue](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Queue.html), [Stack](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Stack.html), jne (ei käsitellä tällä kurssilla)
+* [List](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/List.html) *(ArrayList ja LinkedList)*
+* [Map](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Map.html) *(HashMap ja TreeMap)*
+* [Set](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Set.html) *(HashSet ja TreeSet)*
+* [Queue](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Queue.html), [Stack](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Stack.html), jne *(ei käsitellä tällä kurssilla)*
 
 Tällä kurssilla keskitymme Javan Map-tietorakenteeseen ja erityisesti sen HashMap-toteutukseen, eli ns. hajautustauluun.
 
@@ -20,9 +20,9 @@ Opiskelun tueksi erinomainen lisämateriaali hajautustauluista on Helsingin ylio
 
 ## Map-tietorakenne
 
-> *Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo.*
+> *"Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
 >
-> [Agile Education Research –tutkimusryhmä, mooc.fi](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu)
+> *[Agile Education Research –tutkimusryhmä, mooc.fi](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu)*
 
 `HashMap` ja `Map` voidaan ottaa käyttöön `import`-komennolla seuraavasti:
 

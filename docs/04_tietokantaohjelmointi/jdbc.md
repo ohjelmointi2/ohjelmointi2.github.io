@@ -52,7 +52,7 @@ Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Er
 
 Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan ajurin manuaalisesti Mavenin tietovarastosta. Web-ohjelmoinnin yhteydessä opettelemme lisäämään saman ajurin Mavenin avulla.
 
-Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan versioon (esim. 3.X.Y.Z) ja tallenna ajuri itsellesi linkistä "Jar (X MB)". 
+Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan versioon (esim. 3.x.y.z) ja tallenna ajuri itsellesi linkistä "Jar (x MB)". 
 
 Kirjoitushetkellä viimeisimmän *.jar*-paketin lataus tapahtuu suoraan [tästä linkistä](https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.34.0/sqlite-jdbc-3.34.0.jar).
 

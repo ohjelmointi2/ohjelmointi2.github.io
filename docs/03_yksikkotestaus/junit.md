@@ -229,3 +229,5 @@ Mikäli tarvitset apua tehtävän palauttamisessa Teamsiin, tutustu Microsoftin 
 Tehtävä arvioidaan asteikolla 0-5. Arvioinnissa suurin painoarvo on testien kirjoittamisella sekä bugien korjauksella (60 %). Koodin laadun parantamisella on pienempi painoarvo (40 %).
 
 Täysiin pisteisiin tehtävässä riittää, että kirjoitat muutaman toimivan testimetodin, korjaat löytämäsi bugit ja parannat annettua koodia yhden laatuongelman osalta. Osittain valmiit ratkaisut pisteytetään suhteessa niiden valmiusasteeseen.
+
+<script src="/scripts.js"></script>

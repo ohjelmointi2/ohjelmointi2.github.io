@@ -341,3 +341,5 @@ Palauta kaikki tehtävissä kirjoittamasi lähdekoodit Teamsiin määräaikaan m
 
 Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen.
 
+
+<script src="/scripts.js"></script>

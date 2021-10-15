@@ -358,3 +358,5 @@ Palauta tehtävää varten toteuttamasi Servlet-luokat **ChristmasCountdownServl
 ## Loppusanat
 
 Olemme nyt toteuttaneet pienen verkkosovelluksen sekä komentorivillä toimivan tietokantapohjaisen ostoslistasovelluksen. Seuraavassa vaiheessa yhdistämme osaamisemme ja toteutamme ostoslistasovelluksen verkkopalveluna! 
+
+<script src="/scripts.js"></script>

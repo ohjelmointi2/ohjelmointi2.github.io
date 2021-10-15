@@ -283,3 +283,6 @@ Muistathan jättää lopuksi kurssista [opintojaksopalautetta MyNetissä](https:
 ## Tietokannan lisenssi
 
 Chinook-tietokannan on luonut [Luis Rocha](https://github.com/lerocha) ja se on lisensoitu avoimena lähdekoodina [MIT-lisenssillä](https://github.com/lerocha/chinook-database/blob/master/LICENSE.md).
+
+
+<script src="/scripts.js"></script>

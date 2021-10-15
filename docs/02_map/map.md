@@ -377,3 +377,5 @@ Tarkat tehtävänannot ja tehtävissä tarvittavat tiedostot löytyvät [Viopest
     Tämä tehtävä on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/#exercise-3-sanakirja) ja se on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
 
 Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viopesta](https://vw4.viope.com/).
+
+<script src="/scripts.js"></script>

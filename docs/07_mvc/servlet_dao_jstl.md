@@ -363,3 +363,6 @@ Käytännössä `"/polku/johon/ohjataan"` on tyypillisesti sama polku, joka on m
 Olemme nyt jatkokehittäneet aikaisemmin toteuttamamme komentorivikäyttöliittymällä toimivan logiikan web-sovellukseksi. Ohjelmiston tarkoituksenmukainen rakenne on mahdollistanut koodin hyödyntämisen erilaisissa käyttötarkoituksissa.
 
 Jotta ohjelma olisi lopulta hyödyllinen ostoslistasovellus, siihen tulisi vielä lisätä lukuisia ominaisuuksia, kuten tuoterivin poistaminen. Tutustumme hieman myöhemmin myös `doDelete`-metodiin, jonka avulla toteutamme rivien poistamisen ostoslistalta.
+
+
+<script src="/scripts.js"></script>

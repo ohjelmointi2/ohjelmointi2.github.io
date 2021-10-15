@@ -315,3 +315,6 @@ Mikäli kirjoitit JavaScript-koodisi erilliseen tiedostoon, lisää tarvittaessa
 ## Loppusanat
 
 Olemme tässä tehtävässä toteuttaneet yksittäisen ominaisuuden hyödyntäen Ajax-teknologioita. Sovelluksemme pääsääntöisesti noudattaa edelleen aikaisemmilta viikoilta tuttua arkkitehtuuria ja toimintamallia. Voit halutessasi jatkokehittää sovellukseesi lisää dynaamisia ominaisuuksia hyödyntäen esimerkkiprojektia ja löytämiäsi ohjeita.
+
+
+<script src="/scripts.js"></script>

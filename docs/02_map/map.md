@@ -6,12 +6,12 @@
 
 Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai taulukoita (`String[]`), kun olemme halunneet käsitellä useita saman typpisiä asioita. Javassa on myös lukuisia muita **kokoelmia**, joihin voimme koota dataa. Kokoelma tarkoittaa yksinkertaisesti oliota, joka kokoaa alkioita yhteen ([Oracle.com](https://docs.oracle.com/javase/tutorial/collections/intro/index.html)).
 
-Java Collections Framework sisältää mm. seuraavat rajapinnat ja luokat:
+[Java Collections Framework](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/package-summary.html#CollectionsFramework) sisältää mm. seuraavat rajapinnat ja luokat:
 
-* List (ArrayList ja LinkedList)
-* Map (HashMap ja TreeMap)
-* Set (HashSet ja TreeSet)
-* Queue, Stack, jne (ei käsitellä tällä kurssilla)
+* [List](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/List.html) (ArrayList ja LinkedList)
+* [Map](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Map.html) (HashMap ja TreeMap)
+* [Set](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Set.html) (HashSet ja TreeSet)
+* [Queue](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Queue.html), [Stack](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Stack.html), jne (ei käsitellä tällä kurssilla)
 
 Tällä kurssilla keskitymme Javan Map-tietorakenteeseen ja erityisesti sen HashMap-toteutukseen, eli ns. hajautustauluun.
 

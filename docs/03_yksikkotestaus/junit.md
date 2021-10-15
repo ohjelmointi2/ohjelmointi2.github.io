@@ -71,7 +71,7 @@ Videoilla käsitellyt lähdekoodit löytyvät [täältä](./yksikkotestaus_lahde
 
 &nbsp;
 
-**Huom!** Näiden videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
+🔐 **Huom!** Näiden videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
 
 
 **[EtunimiTilasto-tehtävän yksikkötestaus, osa 1/3](https://web.microsoftstream.com/video/80c680e7-a853-4962-a9fb-19e7ef1f8d0b)** <small>19:06</small>

@@ -11,7 +11,7 @@ Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3021! Opettajana tällä kurssilla
 
 Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin. 
 
-Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä lähiopetusta kampuksella eikä videoyhteydellä. Lähiopetuksen sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
+Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä oppitunteja kampuksella eikä videoyhteydellä. Oppituntien sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
 
 Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
 

@@ -192,4 +192,4 @@ Vaikka yllä oleva ratkaisu toivottavasti auttaa sinua ratkaisemaan tämän teht
 
 ----
 
-<a href="{{site.github.repository_url}}/blob/main/{{page.path}}.md">Ehdota muutosta tälle sivulle</a>
+<a href="{{site.github.repository_url}}/blob/main/docs/{{page.path}}">Ehdota muutosta tälle sivulle</a>

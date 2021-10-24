@@ -13,7 +13,7 @@ Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjel
 
 Javan standardikirjastoon määritelty JDBC (Java Database Connectivity) -ohjelmointirajapinta mahdollistaa Java-sovellusten yhdistämisen eri tyyppisiin SQL-tietokantoihin ja erilaisten kyselyiden sekä päivitysten tekemisen Java-koodista käsin. 
 
-JDBC ei rajoita sitä, minkä SQL-pohjaisten tietokantojen kanssa sitä voidaan käyttää, vaan eri tietokantoja voidaan hyödyntää käyttämällä niille toteutettuja valmiita ajureita. Sillä ei siis Java-koodisi näkökulmasta ole eroa, käytätkö esimerkiksi tietokantana esimerkiksi MySQL- vai SQLite-tyyppistä tietokantaa. Tällä kurssilla hyödynnämme SQLite-tietokantoja niiden tiedostopohjaisuuden ja helppokäyttöisyyden vuoksi.
+JDBC ei rajoita sitä, minkä SQL-pohjaisten tietokantojen kanssa sitä voidaan käyttää, vaan eri tietokantoja voidaan hyödyntää käyttämällä niille toteutettuja valmiita ajureita. Sillä ei siis Java-koodisi näkökulmasta ole eroa, käytätkö tietokantana esimerkiksi [MySQL](https://www.mysql.com/)-, [PostgreSQL](https://www.postgresql.org/)- vai [SQLite](https://www.sqlite.org/index.html)-tyyppistä tietokantaa. Tällä kurssilla hyödynnämme **SQLite**-tietokantoja niiden tiedostopohjaisuuden ja helppokäyttöisyyden vuoksi.
 
 
 ## SQLite
@@ -26,9 +26,11 @@ SQLite-tietokanta on paikallinen muisti- tai tiedostopohjainen tietokanta, joka 
 >
 > [https://en.wikipedia.org/wiki/SQLite](https://en.wikipedia.org/wiki/SQLite)
 
-SQLite toimii oleellisilta osin tavoin täysin samalla tavalla kuin erilliset tietokantapalvelimet. Myös SQL-kyselyt ovat pääosin samat, esimerkiksi `SELECT id, name FROM Person`.
+SQLite toimii Java-ohjelman näkökulmasta samalla tavalla kuin erilliset tietokantapalvelimet. Myös SQL-kyselyt ovat pääosin samat, esimerkiksi `SELECT id, name FROM Person`.
 
-SQLiten kanssa emme tarvitse erillistä tietokantapalvelinta, joten meidän ei tarvitse huolehtia verkkoyhteyksistä tai salasanoista. SQLite ei myöskään edellytä asennuksia, vaan riittää, että lisäämme SQLite-ajurin Java-projektiimme. Toteutamme tietokantalogiikan Java-koodeissamme kuitenkin siten, että samat koodirivit toimisivat esim. MySQL tai MariaDB –tietokantoja hyödyntäen. Tietokannan vaihtaminen olisi myöhemmin Java-koodin kannalta suoraviivaista: sinun tulisi vain vaihtaa uusi tietokanta-ajuri ja yhteysosoitteet, joita käsitellään seuraavissa kappaleissa.
+SQLiten kanssa emme tarvitse erillistä tietokantapalvelinta, joten meidän ei tarvitse huolehtia verkkoyhteyksistä tai salasanoista. SQLite ei myöskään edellytä asennuksia, vaan riittää, että lisäämme SQLite-ajurin Java-projektiimme. 
+
+Toteutamme tällä kurssilla tietokantalogiikan Java-koodeissamme siten, että samat koodirivit toimisivat esim. MySQL tai MariaDB –tietokantoja hyödyntäen. Tietokannan vaihtaminen olisi myöhemmin Java-koodin kannalta suoraviivaista: sinun tulisi vain vaihtaa uusi tietokanta-ajuri ja yhteysosoitteet, joita käsitellään seuraavissa kappaleissa.
 
 <!-- Suorituskyvyn puolesta SQLite ei olisi hyvä valinta julkisen web-järjestelmän tietokannaksi. SQLite soveltuu kuitenkin erinomaisesti moniin erilaisiin tarpeisiin ja esimerkiksi lukuisat mobiilisovellukset ja nettiselaimet käyttävät SQLite:ä paikallisena tietokantanaan. -->
 
@@ -221,10 +223,10 @@ Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen 
 
 ## Javan moduulijärjestelmä (valinnainen)
 
-Mikäli hyödynnät Java-projektissasi Javan moduulijärjestelmää, eli valitsit projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä `module-info.java`-tiedostoosi seuraavat uudet rivit:
+Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
 
 ```java
-module omamoduuli {
+module oman_moduulisi_nimi_tassa {
     requires sqlite.jdbc;
     requires java.sql;
 }
@@ -236,7 +238,7 @@ Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `
 Class.forName("org.sqlite.JDBC");
 ```
 
-Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`- sekä `package-info.java`-tiedostot.
+Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`- sekä `package-info.java`-tiedostot. Kurssin esimerkeistä `module-info.java`- ja `package-info.java` on poistettu.
 
 
 ## Lisämateriaali

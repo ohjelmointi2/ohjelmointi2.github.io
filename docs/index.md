@@ -310,7 +310,7 @@ Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttö
 
 ## SQLite-tietokanta-ajuri
 
-Tietokanta-ajuri `sqlite-jdbc-\*.jar` noudattaa lisenssiä [Apache License version 2.0](http://www.apache.org/licenses/). Lisätiedot: [https://xerial.org/software/](https://xerial.org/software/)
+Tietokanta-ajuri `sqlite-jdbc-*.jar` noudattaa lisenssiä [Apache License version 2.0](http://www.apache.org/licenses/). Lisätiedot: [https://xerial.org/software/](https://xerial.org/software/)
 
 
 ## Chinook-tietokanta
@@ -321,3 +321,5 @@ Chinook-tietokannan on luonut [Luis Rocha](https://github.com/lerocha) ja se on 
 ## Tämän oppimateriaalin lisenssi
 
 Tämän oppimateriaalin on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä.
+
+Sivuston lähdekoodit löydät osoitteesta [https://github.com/ohjelmointi2/ohjelmointi2.github.io](https://github.com/ohjelmointi2/ohjelmointi2.github.io).

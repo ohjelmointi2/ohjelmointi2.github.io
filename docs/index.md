@@ -276,6 +276,7 @@ Mikäli et osaa Javan perusteita, nousee tämän kurssin suorittamisessa nopeast
 
 Mikäli SQL-osaamisessasi on puutteita, suosittelen perehtymään netistä vapaasti löytyviin lähteisiin sekä tutoriaaleihin, kuten [sqlzoo.net](https://sqlzoo.net/).
 
+&nbsp;
 
 # Lisenssit ja tekijänoikeudet
 

@@ -1,8 +1,9 @@
+# Tietokantaohjelmointi
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
 
-# Tietokantaohjelmointi
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement.
 

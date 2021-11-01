@@ -1,9 +1,8 @@
+# Tietokannat ja DAO-malli 
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
-
-
-# Tietokannan eriyttäminen ja DAO-pattern 
 
 Tähän mennessä kurssia olemme tutustuneet ymmärrettävän ja ylläpidettävän koodin kirjoittamiseen, koodin testaamiseen ja tietokantaohjelmointiin. Seuraavaksi rakennamme pienen tietokantaa hyödyntävän komentorivisovelluksen, jonka logiikkaa on mahdollista uudelleenkäyttää ja testata.
 

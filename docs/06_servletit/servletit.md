@@ -1,8 +1,9 @@
+# Web-ohjelmointi servleteillä
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
 
-# Web-ohjelmointi servleteillä
 
 Tarvitset web-ohjelmointia varten Eclipsen version *"Eclipse IDE for Enterprise Java and Web Developers"*. Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita soveltuvia versioita ovat mm. *"Eclipse IDE for Enterprise Java Developers"* ja *"Eclipse Java EE IDE for Web Developers"*. 
 

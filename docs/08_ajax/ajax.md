@@ -1,8 +1,9 @@
+# Ajax, JSON ja JavaScript
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
 
-# Ajax, JSON ja JavaScript
 
 Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Samalla törmäämme kokonaan uusiin käsitteisiin, kuten **asynkroniseen ohjelmointiin**, **tapahtumankuuntelijoihin** ja **promise-olioihin**. Ohjelmointikielen vaihtuminen ja uudet ohjelmointityylit kesken kurssin ovat merkittävä epäjatkuvuuskohta, jotka saattavat tehdä tästä aiheesta poikkeuksellisen haastavan. 
 

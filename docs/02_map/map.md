@@ -1,4 +1,4 @@
-# Javan kokoelmat ja Map
+# Map-tietorakenne
 
 <link href="/styles.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@ Tällä kurssilla keskitymme Javan Map-tietorakenteeseen ja erityisesti sen Hash
 Opiskelun tueksi erinomainen lisämateriaali hajautustauluista on Helsingin yliopiston MOOC-oppimateriaali [https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu), jonka sisältöä on lainattu myös tässä materiaalissa ja materiaaliin liittyvissä videoissa ja tehtävissä.
 
 
-## Map-tietorakenne
+## Hajautustaulu eli HashMap
 
 > *"Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
 >

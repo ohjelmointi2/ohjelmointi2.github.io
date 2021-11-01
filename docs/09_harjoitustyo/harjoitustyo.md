@@ -1,8 +1,8 @@
+# Harjoitustyö
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
-
-# Harjoitustyö
 
 Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvostellaan asteikolla 0-5 ja sen painoarvo on 50 % kurssin loppuarvosanasta. 
 

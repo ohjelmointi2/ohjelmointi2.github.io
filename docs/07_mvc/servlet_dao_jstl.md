@@ -1,8 +1,8 @@
+# Verkkosovellus kolmikerrosarkkitehtuurilla
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
-
-# Verkkosovellus kolmikerrosarkkitehtuurilla
 
 Tällä viikolla tavoitteinamme on rakentaa kolmikerrosarkkitehtuuria noudattava web-sovellus, joka yhdistää tähän mennessä opettelemamme erilliset tietokanta- ja web-teknologiat yhdeksi loogiseksi kokonaisuudeksi.
 

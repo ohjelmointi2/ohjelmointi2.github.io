@@ -1,6 +1,7 @@
+# SQLite-komentorivityökalun käyttö
+
 <link href="/styles.css" rel="stylesheet">
 
-# SQLite-komentorivityökalun käyttö
 
 Seuraavassa videossa sekä siihen liittyvässä komentoriviesimerkissä hyödynnetään SQLite-komentorivityökalua sekä valmista Chinook-tietokantaa.
 

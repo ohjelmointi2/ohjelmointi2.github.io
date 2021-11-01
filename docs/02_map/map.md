@@ -1,8 +1,9 @@
+# Javan kokoelmat ja Map
+
 <link href="/styles.css" rel="stylesheet">
 
 [⇦ takaisin kurssin etusivulle](../)
 
-# Javan kokoelmat ja Map
 
 Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai taulukoita (`String[]`), kun olemme halunneet käsitellä useita saman typpisiä asioita. Javassa on myös lukuisia muita **kokoelmia**, joihin voimme koota dataa. Kokoelma tarkoittaa yksinkertaisesti oliota, joka kokoaa alkioita yhteen ([Oracle.com](https://docs.oracle.com/javase/tutorial/collections/intro/index.html)).
 

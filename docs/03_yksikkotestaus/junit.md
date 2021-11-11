@@ -177,7 +177,9 @@ Metodissa on oletettavasti bugeja, jotka tulee löytää omilla testeillä. Saat
 
 Tallenna itsellesi kopio testattavasta luokasta omaan koodieditoriisi. Kirjoita uusi testiluokka `DayOfYearTest`, jossa hyödynnät opetusvideoilla esiteltyä JUnit-testikirjastoa testataksesi valmiin metodin toimivuuden osoittamiseksi vaadittavat testitapaukset.
 
-**Kirjoittamasi testiluokan tulee osoittaa testattavan luokan virheellisyys**. Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa. Virheiden etsimiseksi sinun kannattaa testata ainakin erilaisia päivämääriä vuoden alussa, keskellä ja lopussa niin tavallisina- kuin karkausvuosina.
+**Kirjoittamasi testiluokan tulee osoittaa testattavan luokan virheellisyys**. Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa. 
+
+Virheiden etsimiseksi sinun kannattaa testata ainakin erilaisia päivämääriä vuoden alussa, keskellä ja lopussa niin tavallisina- kuin karkausvuosina.
 
 
 ## Vaihe 2: korjaa dayOfYear-luokan bugi(t)

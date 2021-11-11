@@ -72,8 +72,11 @@ Videoilla käsitellyt lähdekoodit löytyvät [täältä](./yksikkotestaus_lahde
 
 &nbsp;
 
-🔐 **Huom!** Näiden videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
+> 🔐 **Huom!** Seuraavien videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun @myy.haaga-helia.fi- käyttäjätunnuksellasi. Jos videot eivät aukea, selaimesi tai selaimen lisäosat saattavat estää evästeiden välittämisen videopalveluun. Kokeile tässä tapauksessa avata videon suoraan MS Stream:issa klikkaamalla videon yllä olevaa otsikkoa tai videon oikeassa yläkulmassa olevaa 🗗-kuvaketta.
+>
+> Mikäli olet tai olet ollut samanaikaisesti kirjautuneena kaksilla eri Microsoft-tunnuksilla, voi ongelma johtua siitä, että Stream tunnistaa sinut tunnuksella, jolla ei ole katseluoikeutta. Kokeile tässä tapauksessa avata video "incognito"-näkymässä, jossa nykyiset kirjautumisesi eivät ole voimassa. Klikkaa siis videon otsikkoa kakkospainikkeella ja valitse linkin avaaminen yksityisessä tilassa. Sen jälkeen sinun tulee kirjautua sisään @myy.haaga-helia.fi-tunnuksellasi.
 
+&nbsp;
 
 **[EtunimiTilasto-tehtävän yksikkötestaus, osa 1/3](https://web.microsoftstream.com/video/80c680e7-a853-4962-a9fb-19e7ef1f8d0b)** <small>19:06</small>
 

@@ -204,6 +204,7 @@ Mikäli löysit testiesi avulla bugeja edellisessä osassa, kaikki testitapaukse
 
 Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista `Year`-luokasta ja sen `isLeap`-metodista. Katso ohje sen käyttämiseksi esimerkiksi sivulta [tutorialspoint.com](https://www.tutorialspoint.com/javatime/javatime_year_isleap.htm).
 
+Tarkista myös eri kuukausien todelliset pituudet esimerkiksi [Wikipediasta](https://fi.wikipedia.org/wiki/Kuukausi).
 
 ## Vaihe 3: koodin refaktorointi hyvien käytäntöjen mukaiseksi
 

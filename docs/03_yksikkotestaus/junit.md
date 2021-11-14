@@ -157,11 +157,11 @@ public class DayOfYear {
 }
 ```
 
-Lisää tarpeen mukaan luokkaan `package`-rivi vastaamaan oman Java-projektisi hakemistorakennetta.
+Voit ladata luokan lähdekoodin itsellesi [tästä](https://gist.githubusercontent.com/swd1tn002/06bf2e70f2fd683bffba946bb5307eb6/raw/97af3932d59a6e4206dea63bdc4c799c018d2288/DayOfYear.java). Lisää tarpeen mukaan luokkaan `package`-rivi vastaamaan oman Java-projektisi hakemistorakennetta.
 
-Yksinkertaisuudessaan `dayOfYear`-metodi saa parametreinaan päivämäärän kolmena kokonaislukuna, ja palauttaa annetun päivämäärän järjestysnumeron kyseisenä vuonna (1-366). 
+Yksinkertaisuudessaan yllä `dayOfYear`-metodi saa parametreinaan päivämäärän kolmena kokonaislukuna, ja palauttaa annetun päivämäärän järjestysnumeron kyseisenä vuonna (1-366). 
 
-Metodissa on oletettavasti bugeja, jotka tulee löytää omilla testeillä. Saatat lisäksi huomata luokan koodaustyylissä merkittäviä heikkouksia, joihin paneudutaan tehtävässä 3.
+Metodissa on bugeja, jotka tulee löytää omilla testeillä. Saatat lisäksi huomata luokan koodaustyylissä merkittäviä heikkouksia, joihin paneudutaan tehtävän 3. osassa.
 
 ### Staattisen metodin kutsumisesta
 
@@ -171,31 +171,38 @@ Metodissa on oletettavasti bugeja, jotka tulee löytää omilla testeillä. Saat
 >
 > Agile Education Research -tutkimusryhmä. [Luokka- ja oliometodit: määre static](https://ohjelmointi-19.mooc.fi/osa-6/1-luokka-ja-oliometodit). [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi)
 
-`dayOfYear`-metodin kutsu omasta luokastasi käsin tehdään siis luokan nimen avulla, esimerkiksi `DayOfYear.dayOfYear(12, 31, 2020)`.
+`dayOfYear`-metodin kutsu omasta luokastasi käsin tehdään siis luokan nimen avulla, esimerkiksi `int tulos = DayOfYear.dayOfYear(12, 31, 2020)`.
 
 ## Vaihe 1: kirjoita dayOfYear-metodille JUnit-yksikkötestit
 
-Tallenna itsellesi kopio testattavasta *DayOfYear*-luokasta omaan koodieditoriisi. Kirjoita lisäksi uusi testiluokka `DayOfYearTest`, jossa hyödynnät  JUnit-testikirjastoa testataksesi dayOfYear-metodin toimivuutta erilaisilla testitapauksilla.
+Tallenna itsellesi kopio testattavasta *DayOfYear*-luokasta [tästä](https://gist.githubusercontent.com/swd1tn002/06bf2e70f2fd683bffba946bb5307eb6/raw/97af3932d59a6e4206dea63bdc4c799c018d2288/DayOfYear.java). Kirjoita lisäksi uusi testiluokka `DayOfYearTest`, jossa hyödynnät  JUnit-testikirjastoa testataksesi dayOfYear-metodin toimivuutta erilaisilla testitapauksilla.
 
-Valmiissa koodissa on virheitä, joten kirjoittamasi testiluokan tavoitteena on löytää näitä virheitä. Virheiden etsimiseksi sinun kannattaa testata ainakin erilaisia päivämääriä vuoden alussa, keskellä ja lopussa niin tavallisina- kuin karkausvuosina.
+DayOfYear-luokan `dayOfYear`-metodissa on virheitä, joten testiluokkasi tavoitteena on löytää nämä virheet erilaisten testitapausten avulla.
 
-Kukin testitapaus voi käytännössä koostua vain kahdesta rivistä. Ensimmäisellä rivillä kutsut testattavaa dayOfYear-metodia, ja toisella rivillä tarkistat, onko metodista saatu tulos on oikea. Jos haluat varmistaa, että metodi antaa tammikuun 1. päivälle tuloksen 1, kutsu testin sisällä metodia esim. seuraavasti:
+Kukin testitapaus, eli testimetodi, voi käytännössä koostua vain kahdesta rivistä. Ensimmäisellä rivillä kutsut testattavaa dayOfYear-metodia, ja toisella rivillä tarkistat, onko metodista saatu tulos on oikea. 
+
+Jos haluat esimerkiksi varmistaa, että metodi antaa tammikuun 1. päivälle tuloksen 1, kutsu testin sisällä metodia seuraavasti:
  
 ```java
-int vastaus = DayOfYear.dayOfYear(1, 1, 2021); // tuloksen pitäisi olla 1
+int tulos = DayOfYear.dayOfYear(1, 1, 2021); // tammikuun 1. päivä on vuoden 1. päivä
 ```
 
-Seuraavaksi sinun täytyy tarkistaa, että saatu vastaus oli 1. Tätä varten käytetään `assertEquals`-metodia, jolle voidaan antaa sekä tunnettu oikea vastaus, eli 1, että metodista saamamme tulos.
+Jotta testi oikeasti huomaa virheet, sinun pitää tarkastaa, että saatu tulos on 1. Tätä varten käytämme `assertEquals`-metodia, jolle annetaan sekä tunnettu oikea arvo (eli 1), että metodista saamamme tulos:
 
 ```java
-assertEquals(1, vastaus);
+assertEquals(1, tulos); // varmistaa että saatu `tulos` on 1
 ```
+
+`dayOfYear`-metodissa on ainakin kaksi virhettä. Virheiden etsimiseksi sinun kannattaa testata erilaisia päivämääriä vuoden alussa, keskellä ja lopussa niin tavallisina- kuin karkausvuosina. Kirjoita eri testitapaukset kukin omaan `@Test`-metodiin.
 
 Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa. 
 
+
 ## Vaihe 2: korjaa dayOfYear-luokan bugi(t)
 
-Korjattuasi `DayOfYear`-luokkaan löytämäsi bugit. Bugien korjaamisen jälkeen edellisessä vaiheessa kirjoittamasi testiluokan kaikkien testien tulee mennä hyväksytysti läpi.
+Mikäli löysit testiesi avulla bugeja edellisessä osassa, kaikki testitapauksesi eivät mene vielä läpi. Korjaa seuraavaksi `dayOfYear`-metodista löytämäsi bugit. Bugien korjaamisen jälkeen edellisessä vaiheessa kirjoittamasi testiluokan kaikkien testien tulisi mennä hyväksytysti läpi.
+
+Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista `Year`-luokasta ja sen `isLeap`-metodista. Katso ohje sen käyttämiseksi esimerkiksi sivulta [tutorialspoint.com](https://www.tutorialspoint.com/javatime/javatime_year_isleap.htm).
 
 
 ## Vaihe 3: koodin refaktorointi hyvien käytäntöjen mukaiseksi
@@ -234,6 +241,7 @@ Linkit:
 * [Year-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/Year.html)
 * [Month-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/Month.html)
 * [YearMonth-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html)
+
 
 ## Tehtävän palauttaminen
 

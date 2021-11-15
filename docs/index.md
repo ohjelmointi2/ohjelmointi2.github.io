@@ -41,7 +41,7 @@ Tämä kurssi alkaa maanantaina 25.10.2021 ja päättyy perjantaina 17.12.2021. 
 &nbsp;
 
 
-### <small>25.10. - 31.10.</small> **Aihe 1: perintä ja rajapinnat**
+### <small>25.10. - 31.10.</small> **Aihe 1: Perintä ja rajapinnat**
 
 Ensimmäisellä viikolla syvennämme olio-ohjelmointiosaamistamme tutustumalla perintään ja rajapintoihin. Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
 
@@ -73,7 +73,7 @@ Tehtävät Teamsissa (DL 14.11. klo 23:59)
 
 &nbsp;
 
-### <small>15.11. - 21.11.</small> **Aihe 4: tietokantaohjelmointi (JDBC)** 
+### <small>15.11. - 21.11.</small> **Aihe 4: Tietokantaohjelmointi (JDBC)** 
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). 
 
@@ -83,7 +83,7 @@ Tehtävät Teamsissa (DL 21.11. klo 23:59)
 
 &nbsp;
 
-### <small>22.11. - 28.11.</small> **Aihe 5: tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)** 
+### <small>22.11. - 28.11.</small> **Aihe 5: Tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)** 
 
 Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
 

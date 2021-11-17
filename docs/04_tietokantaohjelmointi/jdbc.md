@@ -114,11 +114,9 @@ Tällä videolla esitellään Javan luokat, joita tarvitset tietokantayhteyksien
 
 Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit). Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
-&nbsp;
+### module-info.java ja ClassNotFoundException
 
-#### module-info.java ja ClassNotFoundException
-
-Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
+Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luodessasi vaihtoehdon *"Create a new module-info.java file"*, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
 
 ```java
 module oman_moduulisi_nimi_tassa {
@@ -127,13 +125,16 @@ module oman_moduulisi_nimi_tassa {
 }
 ```
 
-Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava kurssin esimerkeissä esiintyvä rivi aiheuttaa todennäköisesti poikkeuksen:
+Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava rivi aiheuttaa todennäköisesti poikkeuksen:
 
 ```java
 Class.forName("org.sqlite.JDBC");
 ```
 
-Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeistä `module-info.java` on poistettu.
+Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeissä `module-info.java` on poistettu.
+
+&nbsp;
+
 
 ## SQLite-tietokannan yhteysosoite
 

@@ -149,7 +149,7 @@ private static final String JDBC_URL = "jdbc:sqlite:C:\\sqlite\\shoppingList.sql
 
 MySQL-tietokantaan yhdistettäisiin vastaavasti esim. osoitteella `"jdbc:mysql://127.0.0.1:3306/shoppinglist"`. Tällöin sinun tulee myös [lisätä projektiisi MySQL-ajuri](https://www.mysql.com/products/connector/), aivan kuten lisäsimme aikaisemmin SQLite-ajurin.
 
-*Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten seuraavalla viikolla opettelemme siirtämään ns. kovakoodatun tietokannan osoitteen lähdekoodista ympäristömuuttujaan:*
+Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten seuraavalla viikolla opettelemme siirtämään ns. kovakoodatun tietokannan osoitteen lähdekoodista ympäristömuuttujaan:
 
 ```java
 // tästä lisää seuraavalla viikolla:

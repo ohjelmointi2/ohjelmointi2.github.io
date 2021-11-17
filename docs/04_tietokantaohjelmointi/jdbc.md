@@ -58,9 +58,9 @@ Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan a
 
 **Ajurin tallentaminen**
 
-Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest). Tallenna ajuri itsellesi linkistä "Jar (x MB)". 
+Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest). Tallenna ajuri itsellesi linkistä "Jar (x MB)":
 
-<img src="maven-sqlite-jdbc.png" style="max-width: 450px" />
+<img src="maven-sqlite-jdbc.png" style="max-width: 450px" alt="Lataa ajuri JAR-linkkiä klikkaamalla" />
 
 
 **Ajurin lisääminen Eclipse-projektiin**
@@ -87,6 +87,26 @@ Videolla esiintyvä SQLite tools -komentorivityökalun ohjesivu ["Extra: komento
 Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shoppingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
 &nbsp;
+
+**Mahdollinen virhetilanne: ClassNotFoundException**
+
+Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
+
+```java
+module oman_moduulisi_nimi_tassa {
+    requires sqlite.jdbc;
+    requires java.sql;
+}
+```
+
+Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava kurssin esimerkeissä esiintyvä rivi aiheuttaa todennäköisesti poikkeuksen:
+
+```java
+Class.forName("org.sqlite.JDBC");
+```
+
+Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`- sekä `package-info.java`-tiedostot. Kurssin esimerkeistä `module-info.java`- ja `package-info.java` on poistettu.
+
 
 
 ### SQLite-tietokannan käyttäminen Javan ulkopuolelta (valinnainen)
@@ -228,25 +248,6 @@ Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase
 
 Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](./try-with-resources).
 
-
-## Javan moduulijärjestelmä (valinnainen)
-
-Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
-
-```java
-module oman_moduulisi_nimi_tassa {
-    requires sqlite.jdbc;
-    requires java.sql;
-}
-```
-
-Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava kurssin esimerkeissä esiintyvä rivi aiheuttaa todennäköisesti poikkeuksen:
-
-```java
-Class.forName("org.sqlite.JDBC");
-```
-
-Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`- sekä `package-info.java`-tiedostot. Kurssin esimerkeistä `module-info.java`- ja `package-info.java` on poistettu.
 
 
 ## Lisämateriaali

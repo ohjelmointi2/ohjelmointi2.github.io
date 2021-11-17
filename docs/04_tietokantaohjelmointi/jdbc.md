@@ -105,7 +105,7 @@ Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `
 Class.forName("org.sqlite.JDBC");
 ```
 
-Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`- sekä `package-info.java`-tiedostot. Kurssin esimerkeistä `module-info.java`- ja `package-info.java` on poistettu.
+Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeistä `module-info.java` on poistettu.
 
 
 

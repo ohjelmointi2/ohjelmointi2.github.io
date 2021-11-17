@@ -116,7 +116,7 @@ Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löyd�
 
 &nbsp;
 
-#### Mahdollinen virhetilanne: ClassNotFoundException
+#### module-info.java ja ClassNotFoundException
 
 Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
 

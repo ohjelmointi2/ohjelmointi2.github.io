@@ -41,7 +41,7 @@ Toteutamme tällä kurssilla tietokantalogiikan Java-koodeissamme siten, että s
 
 Tällä videolla esitellään JDBC-teknologian perusidea ja käsitteistöä ja valmistellaan Eclipse-projekti tietokantaohjelmointia varten.
 
-Videolla esiintyvän ajurin latauslinkki: [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc)
+Videolla esiintyvän ajurin latauslinkki: [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest)
 
 Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
@@ -58,9 +58,9 @@ Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan a
 
 **Ajurin tallentaminen**
 
-Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc). Siirry sieltä uusimpaan eli ylimpään versioon (esim. 3.36.0.3) ja tallenna ajuri itsellesi linkistä "Jar (x MB)". 
+Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest). Tallenna ajuri itsellesi linkistä "Jar (x MB)". 
 
-Kirjoitushetkellä viimeisimmän *.jar*-paketin lataus tapahtuu suoraan [tästä linkistä](https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.36.0.3/sqlite-jdbc-3.36.0.3.jar).
+<img src="maven-sqlite-jdbc.png" style="max-width: 450px" />
 
 
 **Ajurin lisääminen Eclipse-projektiin**

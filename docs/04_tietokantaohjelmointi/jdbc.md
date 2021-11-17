@@ -88,7 +88,7 @@ Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingLi
 
 &nbsp;
 
-**Mahdollinen virhetilanne: ClassNotFoundException**
+#### Mahdollinen virhetilanne: ClassNotFoundException
 
 Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
 

@@ -116,10 +116,10 @@ Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löyd�
 
 ### module-info.java ja ClassNotFoundException
 
-Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luodessasi vaihtoehdon *"Create a new module-info.java file"*, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
+Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luodessasi vaihtoehdon *"Create a new module-info.java file"*, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet `requires`-rivit:
 
 ```java
-module oman_moduulisi_nimi_tassa {
+module omamoduuli {
     requires sqlite.jdbc;
     requires java.sql;
 }
@@ -128,7 +128,7 @@ module oman_moduulisi_nimi_tassa {
 Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava rivi aiheuttaa todennäköisesti poikkeuksen:
 
 ```java
-Class.forName("org.sqlite.JDBC");
+Class.forName("org.sqlite.JDBC"); // Saattaa aiheuttaa ClassNotFoundException-poikkeuksen!
 ```
 
 Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeissä `module-info.java` on poistettu.

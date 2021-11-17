@@ -88,25 +88,6 @@ Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingLi
 
 &nbsp;
 
-#### Mahdollinen virhetilanne: ClassNotFoundException
-
-Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
-
-```java
-module oman_moduulisi_nimi_tassa {
-    requires sqlite.jdbc;
-    requires java.sql;
-}
-```
-
-Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava kurssin esimerkeissä esiintyvä rivi aiheuttaa todennäköisesti poikkeuksen:
-
-```java
-Class.forName("org.sqlite.JDBC");
-```
-
-Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeistä `module-info.java` on poistettu.
-
 
 
 ### SQLite-tietokannan käyttäminen Javan ulkopuolelta (valinnainen)
@@ -135,6 +116,24 @@ Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löyd�
 
 &nbsp;
 
+#### Mahdollinen virhetilanne: ClassNotFoundException
+
+Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luotaessasi vaihtoehdon **"Create a new module-info.java file"**, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet rivit:
+
+```java
+module oman_moduulisi_nimi_tassa {
+    requires sqlite.jdbc;
+    requires java.sql;
+}
+```
+
+Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava kurssin esimerkeissä esiintyvä rivi aiheuttaa todennäköisesti poikkeuksen:
+
+```java
+Class.forName("org.sqlite.JDBC");
+```
+
+Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeistä `module-info.java` on poistettu.
 
 ## SQLite-tietokannan yhteysosoite
 

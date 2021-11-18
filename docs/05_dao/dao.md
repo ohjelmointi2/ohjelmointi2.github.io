@@ -71,29 +71,37 @@ Tällä videolla parannamme ShoppingListApp-sovelluksemme rakennetta hyödyntäm
 
 ### Lisämateriaali
 
-Lue DAO-suunnittelumallin esittely esimerkkikoodeineen osoittessa [https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm). Kyseisen tutoriaalin koodiesimerkit eivät hyödynnä oikeaa tietokantaa, vaan tavallista `ArrayList`-listaa. Vastaavalla tavalla toteutettu listapohjainen DAO-luokka ostoslistasta on nähtävissä esimerkkisovelluksen lähdekoodeissa: [FakeShoppingListItemDao.java](https://github.com/haagahelia/ShoppingListExample/blob/master/src/main/java/database/FakeShoppingListItemDao.java).
+Lue DAO-suunnittelumallin esittely esimerkkikoodeineen osoittessa [https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm). Kyseisen tutoriaalin koodiesimerkit eivät hyödynnä oikeaa tietokantaa, vaan tavallista `ArrayList`-listaa.
+
+<!--Vastaavalla tavalla toteutettu listapohjainen DAO-luokka ostoslistasta on nähtävissä esimerkkisovelluksen lähdekoodeissa: [FakeShoppingListItemDao.java](https://github.com/haagahelia/ShoppingListExample/blob/master/src/main/java/database/FakeShoppingListItemDao.java).-->
 
 
 
 ## Palautettava tehtävä
 
-Tällä kertaa jatkamme edellisessä JDBC-aiheessa aloittamaamme ostoslistasovellusta, joka hyödyntää `shoppingList.sqlite`-tietokantaa ja siinä olevaa `ShoppingListItem`-tietokantataulua. Aikaisemman toteutuksen sijaan ohjelman logiikka halutaan nyt jäsennellä uudelleen siten, että ohjelman käyttöliittymä on erillään ohjelman tietokantalogiikasta. Käyttöliittymä ja tietokantakerros (DAO) kommunikoivat keskenään tavallisten Java-olioiden, kuten listojen ja ShoppingListItem-olioiden avulla. Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan.
+Tällä kertaa jatkamme edellisessä JDBC-aiheessa aloittamaamme ostoslistasovellusta, joka hyödyntää *shoppingList.sqlite*-tietokantatiedostoa ja siinä olevaa `ShoppingListItem`-tietokantataulua.
 
-Varsinaisen DAO-osuuden lisäksi tehtävänannossa on kaksi vapaaehtoista bonustehtävää: ympäristömuuttujien hyödyntäminen sekä tietokantalogiikan yksikkötestaus. Nämä syventävät tehtävät eivät ole kurssin oppimistavoitteiden kannalta pakollisia, mutta ne syventävät kurssin aiheita ammatillisesti hyödyllisillä tavoilla.
+Edellisestä tehtävästä poiketen ohjelman logiikka halutaan nyt jäsennellä uudelleen siten, että ohjelman __käyttöliittymä on erillään ohjelman tietokantalogiikasta__. Käyttöliittymä ja tietokantakerros (DAO) kommunikoivat keskenään tavallisten Java-olioiden, kuten listojen ja ShoppingListItem-olioiden avulla.
 
-💡 Tehtävänannossa ei ole kuvailtu tarkemmin mahdollisia yksityisia apumetodeja tai apuluokkia, jotka voivat tehdä koodistasi helpommin ymmärrettävää tai ylläpidettävää. Voit tehtävänannossa mainittujen luokkien ja metodien lisäksi luoda esimerkiksi `Database`-luokan, jonne sijoitat tietokannan yhteyksien avaamiseen ja sulkemiseen liittyvän logiikan. Vaihtoehtoisesti voit toteuttaa halutessasi DAO-luokkaasi erilliset metodit yhteyksien avaamiseksi ja resurssien sulkemiseksi, jotta tätä samaa logiikkaa ei tarvitse toistaa kaikissa tietokantaa käsittelevissä metodeissa.
+Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Varsinaisen DAO-osuuden lisäksi tehtävänannossa on kaksi vapaaehtoista bonustehtävää: ympäristömuuttujien hyödyntäminen sekä tietokantalogiikan yksikkötestaus. Nämä syventävät tehtävät eivät ole kurssin oppimistavoitteiden kannalta pakollisia, mutta ne syventävät kurssin aiheita ammatillisesti hyödyllisillä tavoilla.
+
+💡 Huomaa, että tällä kertaa tehtävänannossa ei ole kuvailtu tarkemmin mahdollisia yksityisia apumetodeja tai apuluokkia, jotka voivat tehdä koodistasi helpommin ymmärrettävää tai ylläpidettävää. Voit tehtävänannossa mainittujen luokkien ja metodien lisäksi luoda esimerkiksi `Database`-luokan, jonne sijoitat tietokannan yhteyksien avaamiseen ja sulkemiseen liittyvän logiikan. Vaihtoehtoisesti voit toteuttaa halutessasi DAO-luokkaasi erilliset metodit yhteyksien avaamiseksi ja resurssien sulkemiseksi, jotta tätä samaa logiikkaa ei tarvitse toistaa kaikissa tietokantaa käsittelevissä metodeissa.
 
 
 ### Model-luokka
 
-Kaikki tietokannasta luetut tiedot mallinnetaan DAO-mallissa olio-ohjelmointiparadigman mukaisesti olioina, joten tarvitset myös uutta `ShoppingListItem`-luokkaa. Tämän luokan oliot mallintavat yksittäisiä tietokannan tuoterivejä, eli ohjelman dataa. Vastaavista luokista käytetään usein termejä [bean, business object tai entity](https://en.wikipedia.org/wiki/Business_object).
+Kaikki tietokannasta luetut tiedot mallinnetaan DAO-mallissa olio-ohjelmointiparadigman mukaisesti olioina, joten tarvitset DAO-mallia soveltaessasi uuden `ShoppingListItem`-luokan. Tämän luokan oliot mallintavat yksittäisiä tietokannan tuoterivejä, eli ohjelman dataa.
 
 Jokaisella ostoslistan rivillä on sekä `id` että tuotteen nimi `title`, joten lisää nämä tietueet myös omaan `ShoppingListItem`-luokkaasi. Lisäksi tarvitset konstruktoreja, gettereitä ja settereitä, jotka voit toteuttaa oman ohjelmasi tarpeiden mukaisesti.
+
+Vastaavista dataa mallintavista luokista käytetään usein myös nimiä [bean, business object tai entity](https://en.wikipedia.org/wiki/Business_object).
 
 
 ### DAO-luokka
 
-DAO-mallissa tietokantaoperaatiot kirjoitetaan omaan luokkaansa, joka palauttaa metodeistaan tavallisia Java-olioita. Tämän ohjelman tapauksessa DAO-luokkasi palauttaa edellä esiteltyjä ShoppingListItem-olioita sekä yksitellen että listoina. Toteuta ShoppingListItemDao-luokka ja sen tarvitsemat tietokantaa käsittelevät metodit alla esitetyn keskeneräisen rungon mukaisesti. Muuta tarvittaessa yksityiskohdat vastaamaan omaa projektiasi:
+DAO-mallissa tietokantaoperaatiot kirjoitetaan omaan luokkaansa, joka palauttaa metodeistaan tavallisia Java-olioita. Tämän ohjelman tapauksessa DAO-luokkasi palauttaa edellä esiteltyjä ShoppingListItem-olioita sekä yksitellen että listoina.
+
+Toteuta JDBCShoppingListItemDao-luokka ja sen tarvitsemat tietokantaa käsittelevät metodit alla esitetyn keskeneräisen rungon mukaisesti. Muuta tarvittaessa yksityiskohdat vastaamaan omaa projektiasi:
 
 ```java
 // tiedosto JDBCShoppingListItemDao.java
@@ -167,7 +175,7 @@ public interface ShoppingListItemDao {
 }
 ```
 
-Muuta jälleen yksityiskohdat, kuten package, vastaamaan omaa projektiasi. Mikäli rajapinnat eivät ole sinulle tässä vaiheessa täysin tuttuja, riittää että tiedät, että rajapinta määrittelee metodit, jotka sen toteuttavien luokkien on toteutettava samoilla parametriarvoilla ja paluuarvoilla.
+Muuta jälleen yksityiskohdat, kuten package, vastaamaan omaa projektiasi. Mikäli rajapinnat eivät ole sinulle tässä vaiheessa vielä tuttuja, riittää että tiedät, että rajapinta määrittelee metodit, jotka sen toteuttavien luokkien on toteutettava samoilla parametriarvoilla ja paluuarvoilla.
 
 
 ### DAO-luokan metodien toteuttaminen

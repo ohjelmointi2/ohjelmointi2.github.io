@@ -314,9 +314,9 @@ Tässä tehtävässä ostoslistan rivien poistaminen voidaan tehdä SQL: `delete
 DELETE FROM ShoppingListItem WHERE title = ?
 ```
 
-Tämä käytäntö poistaa annetun merkkijonon perusteella ei ole yhtä "turvallinen" kuin esimerkiksi poisto pääavaimen perusteella. Jos poiston vaikutusta halutaan rajoittaa, SQL-kyselyyn voidaan laittaa esimerkiksi rajoite `LIMIT 1`. Näin poisto ei kohdistu useampaan kuin yhteen riviin kerrallaan. 
+Tämä käytäntö poistaa annetun merkkijonon perusteella ei ole yhtä "turvallinen" kuin esimerkiksi poisto pääavaimen perusteella, koska sen seurauksena saatetaan poistaa yksi tai useampia rivejä.
 
-Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai arkistointi, eli rivi merkitään poistetuksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli ["Database design practice: soft-deletion, data archive, to delete or not to delete"](https://transang.me/database-design-practice-soft-deletion-to/).
+Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai "arkistointi", eli rivi merkitään poistetuksi tai arkistoiduksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli ["Database design practice: soft-deletion, data archive, to delete or not to delete"](https://transang.me/database-design-practice-soft-deletion-to/).
 
 
 ### Esimerkkikäyttöliittymä

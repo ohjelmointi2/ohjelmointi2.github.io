@@ -10,3 +10,7 @@ iframe {
 #content img {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
+
+.main-content h3 a {
+    color: #159957;
+}

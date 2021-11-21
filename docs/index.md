@@ -41,7 +41,7 @@ Tämä kurssi alkaa maanantaina 25.10.2021 ja päättyy perjantaina 17.12.2021. 
 &nbsp;
 
 
-### <small>25.10. - 31.10.</small> **Aihe 1: Perintä ja rajapinnat**
+### <small>25.10. - 31.10.</small> [**Aihe 1: Perintä ja rajapinnat**](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
 
 Ensimmäisellä viikolla syvennämme olio-ohjelmointiosaamistamme tutustumalla perintään ja rajapintoihin. Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
 
@@ -51,7 +51,7 @@ Tehtävät [Viopessa](https://vw4.viope.com/) (DL 31.10. klo 23:59)
 
 &nbsp;
 
-### <small>1.11. - 7.11.</small> **Aihe 2: Map-tietorakenne** 
+### <small>1.11. - 7.11.</small> [**Aihe 2: Map-tietorakenne**](02_map/map)
 
 > *"Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
 >
@@ -63,7 +63,7 @@ Tehtävät [Viopessa](https://vw4.viope.com/)  (DL 7.11. klo 23:59)
 
 &nbsp;
 
-### <small>8.11. - 14.11.</small> **Aihe 3: Yksikkötestaus**
+### <small>8.11. - 14.11.</small> [**Aihe 3: Yksikkötestaus**](03_yksikkotestaus/junit)
 
 Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
 
@@ -73,7 +73,7 @@ Tehtävät Teamsissa (DL 14.11. klo 23:59)
 
 &nbsp;
 
-### <small>15.11. - 21.11.</small> **Aihe 4: Tietokantaohjelmointi (JDBC)** 
+### <small>15.11. - 21.11.</small> [**Aihe 4: Tietokantaohjelmointi (JDBC)**](04_tietokantaohjelmointi/jdbc)
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). 
 
@@ -83,7 +83,7 @@ Tehtävät Teamsissa (DL 21.11. klo 23:59)
 
 &nbsp;
 
-### <small>22.11. - 28.11.</small> **Aihe 5: Tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)** 
+### <small>22.11. - 28.11.</small> [**Aihe 5: Tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)**](05_dao/dao)
 
 Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
 
@@ -93,7 +93,7 @@ Tehtävät Teamsissa (DL 28.11. klo 23:59)
 
 &nbsp;
 
-### <small>29.11. - 5.12.</small> **Aihe 6: Verkkosovellus (Tomcat ja Servletit)** 
+### <small>29.11. - 5.12.</small> [**Aihe 6: Verkkosovellus (Tomcat ja Servletit)**](06_servletit/servletit)
 
 Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää yksikkötestauksen yhteydessä refaktoroimaasi `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
 
@@ -104,7 +104,7 @@ Tehtävät Teamsissa (DL 5.12. klo 23:59)
 &nbsp;
 
 
-### <small>6.12. - 12.12.</small> **Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP)** 
+### <small>6.12. - 12.12.</small> [**Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP)**](07_mvc/servlet_dao_jstl)
 
 Verkkosovellusten toisella viikolla jatkokehitämme oman tietokantapohjaisen ostoslistasovelluksemme verkkopalveluksi. Luomme HTML-käyttöliittymät ostoslistan näyttämiseksi ja tuotteiden lisäämiseksi.
 
@@ -127,7 +127,7 @@ Tehtävät Teamsissa (DL 19.12. klo 23:59)
 &nbsp;
 
 
-### **Harjoitustyö**
+### [**Harjoitustyö**](09_harjoitustyo/harjoitustyo)
 
 Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja toteutatte harjoitustyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvioidaan asteikolla 0-5.
 

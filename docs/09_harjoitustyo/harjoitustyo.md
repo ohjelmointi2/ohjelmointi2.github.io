@@ -261,15 +261,20 @@ SELECT Artist.ArtistId, Name, COUNT(AlbumId) AS AlbumCount
 
 ## Harjoitustyön dokumentointi
 
-Lisää projektiisi vielä erillinen tekstitiedosto `readme.txt` tai `readme.md`, jossa listaat toteuttamasi web-sovelluksen servletit, dao-luokat ja JSP-sivut. Kerro jokaisen Java-luokan tai sivun yhteydessä, mikä on sen rooli toteuttamassasi ratkaisussa. Mikäli noudatit kurssin tehtävänantoa tarkasti, yhden virkkeen kuvaus riittää. Jos sovelsit tehtävänantoa, kerro tässä miten ratkaisu poikkeaa tehtävänannosta.
+Lisää projektiisi vielä erillinen tekstitiedosto `readme.txt` tai `readme.md`, jossa listaat toteuttamasi web-sovelluksen servletit, dao-luokat ja JSP-sivut. Kerro jokaisen Java-luokan tai sivun yhteydessä, mikä on sen rooli toteuttamassasi ratkaisussa. Mikäli noudatit kurssin tehtävänantoa tarkasti, yhden lauseen kuvaus riittää. Jos sovelsit tehtävänantoa, kerro tässä miten ratkaisu poikkeaa tehtävänannosta.
 
-Jos käytit harjoitustyössäsi versionhallintaa (Git), aja projektisi juurihakemistossa komento:
+
+## Versionhallinnan dokumentointi
+
+Jos käytit harjoitustyössäsi versionhallintaa (Git), aja komentorivillä projektisi juurihakemistossa komento:
 
     git log --oneline --decorate > git-log.txt
 
-Edellä mainittu komento luo projektiisi tiedoston `git-log.txt`, joka sisältää listan tehdyistä commiteista. Voit halutessasi lukea komennon selityksen [Atlassianin artikkelista](https://www.atlassian.com/git/tutorials/git-log#formatting-log-output). Jos käytit työssäsi graafista Git-työkalua, voit `git-log.txt`-tiedoston sijasta liittää projektiisi kuvankaappauksen työkalusi näkymästä. Jos koodisi on GitHubissa tai vastaavassa versionhallintapalvelussa, lisää myös tieto tästä `git-log.txt`-tiedostoosi.
+Edellä mainittu komento luo projektiisi tiedoston `git-log.txt`, joka sisältää listan tehdyistä commiteista. Voit halutessasi lukea komennon selityksen [Atlassianin artikkelista](https://www.atlassian.com/git/tutorials/git-log#formatting-log-output). 
 
-Gitin käyttö huomioidaan positiivisesti harjoitustyön arvostelussa, mutta se ei ole vaatimuksena erinomaiseen arvosanaan. **Varmista myös seuraavassa vaiheessa, että myös luotu tiedosto git-log.txt tulee mukaan tekemääsi zip-pakettiin.**
+Jos käytit työssäsi komentorivin sijasta jotain muuta työkalua, voit `git-log.txt`-tiedoston sijasta liittää projektiisi kuvankaappauksen työkalusi näkymästä. Jos koodisi on GitHubissa tai vastaavassa versionhallintapalvelussa, riittää, että mainitset sen osoitteineen `git-log.txt`-tiedostossasi.
+
+Gitin käyttö huomioidaan positiivisesti harjoitustyön arvostelussa, mutta se ei ole vaatimuksena erinomaiseen arvosanaan. **Varmista myös seuraavassa vaiheessa, että myös tiedosto git-log.txt tai kuvankaappaus tulee mukaan tekemääsi zip-pakettiin.**
 
 
 ## Projektin lähettäminen Teamsiin

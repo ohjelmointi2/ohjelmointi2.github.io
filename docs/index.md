@@ -169,7 +169,7 @@ Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuih
 
 Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat. 
 
-Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) **Ohjelmointi 2, 3021 💎** -linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus **Ohjelmointi 2, 3021 💎**.
+Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) "Ohjelmointi 2, 3021 💎"-linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus "Ohjelmointi 2, 3021 💎".
 
 **Teknisistä syistä johtuen Viopeen palautettavista lähdekoodeista täytyy aina poistaa mahdolliset package -lauseet luokan yläpuolelta.** Viope on myös muilla tavoin erittäin tarkka ohjelmien oikeellisuudesta, mikä saattaa aiheuttaa ensimmäisillä viikoilla hämmennystä. Voit kysyä kurssin Teams-kanavalla neuvoa Viope-ongelmiin milloin tahansa.
 

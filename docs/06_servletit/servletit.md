@@ -228,7 +228,7 @@ Tällä videolla käsittelemme harjoitustehtävän tehtävänantoa. Videolla teh
 import static java.time.temporal.ChronoUnit.DAYS;
 ```
 
-Voit lukea staattisista `import`-komennoista lisää [tästä keskustelusta](https://stackoverflow.com/a/162195) ja tustua DAYS-olion dokumentaatioon [Javan ChronoUnit-luokan dokumentaatiossa](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html).
+Voit lukea staattisista `import`-komennoista lisää [tästä keskustelusta](https://stackoverflow.com/a/162195) ja tutustua DAYS-olion dokumentaatioon [Javan ChronoUnit-luokan dokumentaatiossa](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html).
 
 Päivämäärien erotusten laskemiseksi on Javassa lukuisia tapoja, ja tyyli on niiden suhteen vapaa.
 
@@ -237,7 +237,7 @@ Päivämäärien erotusten laskemiseksi on Javassa lukuisia tapoja, ja tyyli on 
 
 ### Osa 1: toimiva verkkokehitysympäristö
 
-Rakenna itsellesi toimiva web-kehitysympäristö servlettien ja JSP-sivujen käyttämiseksi (JavaServer Pages). Suosittelen vahvasti seuraamaan yllä olevien vidoiden ja [projektipohjan ohjeita ja esimerkkejä](https://github.com/ohjelmointi2/embedded-tomcat-template).
+Rakenna itsellesi toimiva web-kehitysympäristö servlettien ja JSP-sivujen käyttämiseksi (JavaServer Pages). Suosittelen vahvasti seuraamaan yllä olevien videoiden ja [projektipohjan ohjeita ja esimerkkejä](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
 Kun saat projektipohjan etusivun aukeamaan omalla koneellasi osoitteessa [http://localhost:8080/](http://localhost:8080/), voit siirtyä seuraavaan vaiheeseen.
 
@@ -255,7 +255,6 @@ Välitä servletissä laskettu arvo, eli jäljellä olevien päivien määrä, t
 Arvojen ja pyynnön välittäminen servletiltä JSP-sivulle on esitelty projektipohjassa ja yllä videolla ["Datan välittäminen servletiltä JSP-sivulle"](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1). Aiheesta löytyy myös [paljon muita ohjeita](https://www.google.com/search?q=pass+data+from+servlet+to+jsp+tutorial). Oppimistavoitteiden kannalta tärkeintä on, että päivien laskentaan liittyvä logiikka toteutetaan servletissä, josta tieto välitetään attribuuttina näkymälle (jsp-sivu).
 
 
-
 **Muista palvelimen uudelleenkäynnistys**
 
 Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uuden servletin. Ohjeet Tomcat-palvelimen uudelleenkäynnistämiseksi ja koodimuutosten testauksen nopeuttamiseksi löydät yllä olevilta videoilta.
@@ -265,6 +264,9 @@ Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uu
 
 Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ does not declare a static final serialVersionUID field of type long"*, voit jättää varoituksen huomioimatta. `serialVersionUID` nimistä muuttujaa käytetään luokasta luotujen olioiden versiointiin. Lue tarvittaessa lisää [tästä StackOverflow-vastauksesta](https://stackoverflow.com/a/285809).
 
+🎅 🎄 🎁
+
+Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-kuvia, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
 
 ### Osa 3: DaysUntilServlet
 
@@ -347,9 +349,9 @@ Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil
     <div>
         <p>Count days between today and any other date:</p>
         <form action="/daysUntil" method="get">
-            <label>Year: <input type="number" name="year"></label>
+            <label>Year:  <input type="number" name="year"></label>
             <label>Month: <input type="number" name="month" min="1" max="12"></label>
-            <label>Day: <input type="number" name="day" min="1" max="31"></label>
+            <label>Day:   <input type="number" name="day" min="1" max="31"></label>
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -367,6 +369,9 @@ Suosittelen lukemaan twilio.com:in artikkelin ["How to read and understand a Jav
 ## Tehtävien palauttaminen
 
 Palauta tehtävää varten toteuttamasi Servlet-luokat **ChristmasCountdownServlet** ja **DaysUntilServlet** sekä niiden hyödyntämät **JSP-tiedostot** Teamsiin erillisinä tiedostoina, eli __ei pakattuna__. Projektipohjan muita tiedostoja ei tule palauttaa.
+
+Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen.
+
 
 ## Loppusanat
 

@@ -266,7 +266,7 @@ Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ d
 
 **Emojit** 🎅 🎄 🎁
 
-Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-kuvia, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
+Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-merkkejä, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
 
 ### Osa 3: DaysUntilServlet
 

@@ -217,6 +217,8 @@ Tämä Mozillan kehittäjäsivu esittelee lyhyesti webin taustalla olevan HTTP-p
 
 ## Tehtävät
 
+Tämän viikon tehtävissä käsitellään päivämääriä servlettien ja JSP-sivujen yhteydessä. Tehtäviä on kolme, ja ensimmäinen osa koostuu esimerkkiprojektin kloonaamisesta, minkä oletkin mahdollisesti jo tehnyt videoiden katsomisen yhteydessä.
+
 
 ### Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>
 
@@ -235,14 +237,14 @@ Päivämäärien erotusten laskemiseksi on Javassa lukuisia tapoja, ja tyyli on 
 &nbsp;
 
 
-### Osa 1: toimiva verkkokehitysympäristö
+### **Osa 1 / 3**: toimiva verkkokehitysympäristö
 
 Rakenna itsellesi toimiva web-kehitysympäristö servlettien ja JSP-sivujen käyttämiseksi (JavaServer Pages). Suosittelen vahvasti seuraamaan yllä olevien videoiden ja [projektipohjan ohjeita ja esimerkkejä](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
 Kun saat projektipohjan etusivun aukeamaan omalla koneellasi osoitteessa [http://localhost:8080/](http://localhost:8080/), voit siirtyä seuraavaan vaiheeseen.
 
 
-### Osa 2: "christmas countdown" -servletti
+### **Osa 2 / 3**: "christmas countdown" -servletti
 
 Kun olet saanut itsellesi toimivan kehitysympäristön, toteuta uusi servlet `ChristmasCountdownServlet`, joka kertoo kuinka monta yötä jouluun on. Voit itse valita missä polussa servlettisi on palvelimella (esim. http://localhost:8080/christmas). Polku määritellään servlet-luokan yläpuolella [@WebServlet-annotaatiolla](https://www.codejava.net/java-ee/servlet/webservlet-annotation-examples).
 
@@ -268,7 +270,7 @@ Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ d
 
 Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-merkkejä, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
 
-### Osa 3: DaysUntilServlet
+### **Osa 3 / 3**: DaysUntilServlet
 
 Tämän viikon viimeisessä osatehtävässä toteutetaan edellisen servletin kaltainen päivälaskuri, jonka avulla voidaan laskea kesto mihin tahansa käyttäjän valitsemaan päivään.
 

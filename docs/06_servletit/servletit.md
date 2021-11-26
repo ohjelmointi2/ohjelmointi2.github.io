@@ -217,7 +217,7 @@ Tämä Mozillan kehittäjäsivu esittelee lyhyesti webin taustalla olevan HTTP-p
 
 ## Tehtävät
 
-Tämän viikon tehtävissä käsitellään päivämääriä servlettien ja JSP-sivujen yhteydessä. Tehtäviä on kolme, ja ensimmäinen osa koostuu esimerkkiprojektin kloonaamisesta, minkä oletkin mahdollisesti jo tehnyt videoiden katsomisen yhteydessä.
+Tämän viikon tehtävissä käsitellään päivämääriä servlettien ja JSP-sivujen yhteydessä. Tehtäviä on kolme, ja ensimmäinen niistä on esimerkkiprojektin kloonaaminen, jonka oletkin mahdollisesti tehnyt jo videoiden katsomisen yhteydessä.
 
 
 ### Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>

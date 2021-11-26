@@ -4,57 +4,14 @@
 
 [⇦ takaisin kurssin etusivulle](../)
 
-
-Tarvitset web-ohjelmointia varten Eclipsen version *"Eclipse IDE for Enterprise Java and Web Developers"*. Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita soveltuvia versioita ovat mm. *"Eclipse IDE for Enterprise Java Developers"* ja *"Eclipse Java EE IDE for Web Developers"*. 
-
-Mikäli Eclipse-versiosi ei ole soveltuva, eli se ei sisällä web-ohjelmointiin tarvittavia osia, asenna itsellesi uusi versio osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
-
-
-## Oppimistavoitteet
-
 Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettäviin työkaluihin ja termistöön:
 
 * Servlet
-* JSP: JavaServer Pages
+* JavaServer Pages (JSP)
 * Tomcat
 * Git-versionhallinta
 
-
-### Video 1: [Johdatus HTTP-protokollaan ja Tomcatiin + Git clone](https://web.microsoftstream.com/video/710ad286-f65f-442b-ba25-2fc5da82d522) <small>21:41</small>
-
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/710ad286-f65f-442b-ba25-2fc5da82d522?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
-
-Tällä videolla tutustumme HTTP-protokollaan ja siihen liittyviin pyyntöihin ja vastauksiin. Tutustumme siihen, miten sovelluspalvelin välittää HTTP-pyynnöt Java-ohjelmallemme ja miten ohjelmamme vastaa pyyntöön siten, että vastaus päätyy käyttäjän selaimelle. Kloonaamme myös GitHubista projektipohjan, jota käytämme jatkossa web-sovelluksemme pohjana.
-
-Videolla esiintyvät sivut:
-* HTTP Messages: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
-* Putty-sovellus, lataussivu: [https://www.ssh.com/academy/ssh/putty/download](https://www.ssh.com/academy/ssh/putty/download).
-* Java Servlets -tutoriaali: [http://tutorials.jenkov.com/java-servlets/](http://tutorials.jenkov.com/java-servlets/index.html).
-* Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template)
-
-Huom! Videolla käytetään vanhaa projektipohjaa eri osoitteesta (~~github.com/haagahelia/embedded-tomcat-template~~). Vanha projektipohja on edelleen toimiva, mutta sitä ei ylläpidetä aktiivisesti, joten siitä puuttuu tärkeitä päivityksiä.
-
-&nbsp;
-
-
-
-## Kurssin projektipohja
-
-[Kurssin projektipohja](https://github.com/ohjelmointi2/embedded-tomcat-template) käyttää Tomcat-sovelluspalvelinta "upotettuna" Java-projektiisi (embedded Tomcat). Projekti on rakennettu siten, että sen riippuvuuksia hallitaan automaattisesti Maven-työkalun avulla. Maven-työkalun avulla projektin riippuvuudet, kuten web-palvelin, on mahdollista asentaa automaattisesti.
-
-Maven-plugin löytyy Eclipsestä valmiiksi asennettuna, joten et tarvitse Mavenin käyttämiseksi erillisiä asennuksia tai asetuksia. Eclipse osaa siis Mavenin kanssa asentaa mm. Tomcatin ja muut projektin mahdolliset riippuvuudet automaattisesti. Tomcatia voitaisiin käyttää myös lukuisilla muilla tavoilla, joten löydät mahdollisesti netistä ohjeita, jotka eivät täysin vastaa omia asetuksiasi ja asennustapojasi. 
-
-Projektipohjan asennustapa on todettu kohtuullisen helpoksi ja samat tavat ovat hyödynnettävissä myös muilla kehitystyökaluilla (esim. [VS Code](https://code.visualstudio.com/), [IntelliJ IDEA](https://www.jetbrains.com/idea/)) ja erilaisissa suoritusympäristöissä (esim. [Heroku-pilvialusta](https://devcenter.heroku.com/articles/create-a-java-web-application-using-embedded-tomcat), [Spring boot -sovelluskehys](https://www.springboottutorial.com/spring-boot-with-embedded-servers-tomcat-jetty)).
-
-Voit halutessasi lukea lisää Mavenista artikkelista ["Maven in 5 Minutes"](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) tai keskustelusta ["Is Maven similar to npm?"](https://stackoverflow.com/a/38392716)
-
-
-
-### Video 2: [Maven ja Tomcat malliprojektissa](https://web.microsoftstream.com/video/527282e4-961e-453e-a350-af766e50559f) <small>15:31</small>
-
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/527282e4-961e-453e-a350-af766e50559f?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
-
-Tällä videolla tutustumme web-projektimme hakemisto- ja luokkarakenteeseen. Selvitämme, miten web-sovelluksemme käynnistetään sekä mitkä hakemistot ovat julkisia ja mitkä vain palvelimen sisäistä käyttöä varten. Tutustumme myös tapaan, jolla Tomcat-sovelluspalvelin välittää pyynnöt omille Java-luokillemme.
+💡 *Tarvitset web-ohjelmointia varten Eclipsen version "Eclipse IDE for Enterprise Java and Web Developers". Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita web-ohjelmointiin soveltuvia versioita ovat mm. "Eclipse IDE for Enterprise Java Developers" ja "Eclipse Java EE IDE for Web Developers". Mikäli Eclipse-versiosi ei sisällä web-ohjelmointiin tarvittavia osia, suosittelen asentamaan uuden version osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).*
 
 
 ## Git
@@ -63,21 +20,61 @@ Tällä videolla tutustumme web-projektimme hakemisto- ja luokkarakenteeseen. Se
 >
 > [git-scm.com](https://git-scm.com)
 
-Gitin avulla ohjelmistokehittäjät hallinnoivat ohjelmistojensa versioita ja jakavat koodin useiden kehittäjien välillä. Git mahdollistaa myös samalle ohjelmistolle useat kehityshaarat (branch), joiden avulla ohjelmiston eri ominaisuuksia voidaan kehittää samanaikaisesti toisistaan riippumatta. Gitin avulla eri kehityshaaroja voidaan yhdistellä (merge) kätevästi eri ominaisuuksien valmistuttua.
+Gitin avulla ohjelmistokehittäjät hallinnoivat ohjelmistojensa versioita ja jakavat koodin useiden kehittäjien välillä. Git mahdollistaa myös samalle ohjelmistolle useat rinnakkaiset kehityshaarat (branch), joiden avulla ohjelmiston eri ominaisuuksia voidaan kehittää samanaikaisesti toisistaan riippumatta.
 
-Yksi tämän kurssin tavoitteista on tutustuttaa sinut versionhallinnan perusteisiin. Siksi kaikki kurssin materiaalit ja esimerkkikoodit jaetaan gitin avulla. Jotta sinä pääset käsiksi koodeihin ja tehtävänantoihin, on ne laitettu saataville tänne GitHub-palveluun. GitHub on yksi palveluntarjoaja versionhallinnan keskitetyille varastoille (remote repository).
-
-Saadaksesi kurssin web-projektipohjan koodit itsellesi, sinun tulee kloonata (clone) valmis projektipohja GitHubista. Perehdy seuraavaksi kurssin web-sovelluksen projektipohjan dokumentaatioon osoitteessa [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template) ja luo itsellesi toimiva web-kehitysympäristö edellä esitettyjen videoiden ja projektipohjan ohjeiden mukaisesti.
+Yksi tämän kurssin tavoitteista on tutustuttaa sinut versionhallinnan perusteisiin. Siksi kaikki kurssin materiaalit ja esimerkkikoodit jaetaan gitin avulla GitHub-palvelussa. Tällä viikolla käytettävä web-projektipohja löytyy GitHubista osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template). Kurssin tehtävien suorittamiseksi sinun ei tarvitse rekisteröityä GitHubiin, vaan riittää että kloonaat valmiit koodit itsellesi tämän viikon ensimmäisten videoiden esimerkkien mukaisesti.
 
 
-### Video 3: [Uuden kehityshaaran luonti ja vieminen GitHubiin (Git & branch)](https://web.microsoftstream.com/video/e404ae09-df29-49d5-abc9-10d0f5d43010) <small>5:38
+
+## Video 1: [Johdatus HTTP-protokollaan ja Tomcatiin + Git clone](https://web.microsoftstream.com/video/710ad286-f65f-442b-ba25-2fc5da82d522) <small>21:41</small>
+
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/710ad286-f65f-442b-ba25-2fc5da82d522?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+Tällä videolla tutustumme HTTP-protokollaan ja siihen liittyviin pyyntöihin ja vastauksiin. Tutustumme siihen, miten sovelluspalvelin välittää HTTP-pyynnöt Java-ohjelmallemme ja miten ohjelmamme vastaa pyyntöön siten, että vastaus päätyy käyttäjän selaimelle. Kloonaamme myös GitHubista projektipohjan, jota käytämme jatkossa web-sovelluksemme pohjana.
+
+Videolla esiintyvät sivut:
+
+* HTTP Messages: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
+* Putty-sovellus, lataussivu: [https://www.ssh.com/academy/ssh/putty/download](https://www.ssh.com/academy/ssh/putty/download).
+* Hello world: [https://myy.haaga-helia.fi/~h01581/index.html](https://myy.haaga-helia.fi/~h01581/index.html)
+* Java Servlets -tutoriaali: [http://tutorials.jenkov.com/java-servlets/](http://tutorials.jenkov.com/java-servlets/index.html).
+* Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template)
+
+**Huom!** Videolla käytetään vanhaa projektipohjaa eri osoitteesta (~~github.com/haagahelia/embedded-tomcat-template~~). Vanha projektipohja on edelleen toimiva, mutta sitä ei ylläpidetä aktiivisesti, joten siitä puuttuu tärkeitä päivityksiä.
+
+&nbsp;
+
+
+
+## Kurssin projektipohja
+
+Edellisellä videolla kloonattu [kurssin projektipohja](https://github.com/ohjelmointi2/embedded-tomcat-template) käyttää Tomcat-sovelluspalvelinta "upotettuna" Java-projektiisi (embedded Tomcat). Projekti on rakennettu siten, että sen riippuvuuksia hallitaan automaattisesti Maven-työkalun avulla. Maven-työkalun avulla projektin riippuvuudet, kuten tässä web-palvelin, on mahdollista asentaa osaksi omaa sovellustasi, joten sitä ei tarvitse asentaa käyttöjärjestelmääsi erillisenä ohjelmana.
+
+Eclipse sisältää Maven-työkalun sisäänrakennettuna, joten et tarvitse Mavenin käyttämiseksi erillisiä asennuksia. Eclipse osaa Mavenin avulla asentaa Tomcatin ja muut projektin automaattisesti kloonattuasi projektin. 
+
+Projektipohjan asennustapa on todettu kohtuullisen helpoksi ja samat tavat ovat hyödynnettävissä myös muilla kehitystyökaluilla (esim. [VS Code](https://code.visualstudio.com/), [IntelliJ IDEA](https://www.jetbrains.com/idea/)) ja erilaisissa suoritusympäristöissä (esim. [Heroku-pilvialusta](https://devcenter.heroku.com/articles/create-a-java-web-application-using-embedded-tomcat), [Spring boot -sovelluskehys](https://www.springboottutorial.com/spring-boot-with-embedded-servers-tomcat-jetty)).
+
+Voit halutessasi lukea lisää Mavenista artikkelista ["Maven in 5 Minutes"](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) tai keskustelusta ["Is Maven similar to npm?"](https://stackoverflow.com/a/38392716)
+
+💡 *Tomcatia voitaisiin käyttää myös erikseen asennettavana ohjelmana, joten löydät mahdollisesti netistä ohjeita, jotka eivät täysin vastaa tämän kurssin työtapoja.*
+
+
+## Video 2: [Maven ja Tomcat malliprojektissa](https://web.microsoftstream.com/video/527282e4-961e-453e-a350-af766e50559f) <small>15:31</small>
+
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/527282e4-961e-453e-a350-af766e50559f?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+Tällä videolla tutustumme web-projektimme hakemisto- ja luokkarakenteeseen. Selvitämme, miten web-sovelluksemme käynnistetään sekä mitkä hakemistot ovat julkisia ja mitkä vain palvelimen sisäistä käyttöä varten. Tutustumme myös tapaan, jolla Tomcat-sovelluspalvelin välittää pyynnöt omille Java-luokillemme.
+
+Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template)
+
+
+<!-- ## Video 3: [Uuden kehityshaaran luonti ja vieminen GitHubiin (Git & branch)](https://web.microsoftstream.com/video/e404ae09-df29-49d5-abc9-10d0f5d43010) <small>5:38
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e404ae09-df29-49d5-abc9-10d0f5d43010?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
 Tällä videolla luomme projektiin itsellemme uuden kehityshaaran ja viemme sen GitHub:iin. 
 
-
-&nbsp;
+&nbsp;-->
 
 
 ## MVC-arkkitehtuuri (Model, View, Controller)
@@ -98,7 +95,7 @@ Tällä kurssilla sovellamme MVC-mallia siten, että **käsittelijät toteutetaa
 Seuraavilla videoilla käsittelemme servlet-luokkien erityispiirteitä, tiedonvälitystä selaimelta servlet-luokalle sekä Tomcat-palvelinohjelmiston hyödyntämistä omien servlettien kanssa.
 
 
-### Video 4: [Servletin anatomia: HttpServlet, @WebServlet, doGet...](https://web.microsoftstream.com/video/c040b244-2592-46a4-b271-22af48a7b574) <small>19:40
+## Video 3: [Servletin anatomia: HttpServlet, @WebServlet, doGet...](https://web.microsoftstream.com/video/c040b244-2592-46a4-b271-22af48a7b574) <small>19:40
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c040b244-2592-46a4-b271-22af48a7b574?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -109,7 +106,7 @@ Videolla hyödynnetään tutoriaalia [http://tutorials.jenkov.com/java-servlets/
 &nbsp;
 
 
-### Video 5: [Tomcatin "reload" ja muuttuneiden koodien vaihtaminen lennossa](https://web.microsoftstream.com/video/c26141c3-2681-45f6-8aef-8e40b72bff88) <small><small>7:56</small>
+## Video 4: [Tomcatin "reload" ja muuttuneiden koodien vaihtaminen lennossa](https://web.microsoftstream.com/video/c26141c3-2681-45f6-8aef-8e40b72bff88) <small><small>7:56</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c26141c3-2681-45f6-8aef-8e40b72bff88?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -127,7 +124,7 @@ Monissa tapauksissa luokkien uudelleenlataaminen riittää, mutta uusia servlett
 &nbsp;
 
 
-### Video 6: [HTTP-pyynnön parametrien käsittely servleteissä](https://web.microsoftstream.com/video/8fed5e77-69ae-415f-8a48-418ea39330a4) <small>14:46</small>
+## Video 5: [HTTP-pyynnön parametrien käsittely servleteissä](https://web.microsoftstream.com/video/8fed5e77-69ae-415f-8a48-418ea39330a4) <small>14:46</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fed5e77-69ae-415f-8a48-418ea39330a4?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -141,7 +138,7 @@ Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia param
 Servlettien yhteydessä HTML-koodi halutaan eriyttää muusta Java-koodista omiksi tiedostoikseen. Näiden HTML-tiedostojen muoto on usein JSP, eli JavaServer Pages. Servletit voivat kutsua JSP-sivuja sisäisesti ja välittää niille tietoa, kuten sivuilla näytettäviä merkkijonoja tai muita olioita. Seuraavilla videoilla perehdymme dynaamisten HTML-muotoisten vastausten muodostamiseen verkkopalvelussamme.
 
 
-### Video 7: [Lomakkeen näyttäminen ja lomakedatan käsittely servletillä](https://web.microsoftstream.com/video/44037d9b-8237-4f63-9d45-75d35ccb447d) <small>18:27</small>
+## Video 6: [Lomakkeen näyttäminen ja lomakedatan käsittely servletillä](https://web.microsoftstream.com/video/44037d9b-8237-4f63-9d45-75d35ccb447d) <small>18:27</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/44037d9b-8237-4f63-9d45-75d35ccb447d?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -150,7 +147,7 @@ Tällä videolla luomme HTML-lomakkeen, jolla lähetämme dataa servletillemme. 
 &nbsp;
 
 
-### Video 8: [Datan välittäminen servletiltä JSP-sivulle (doPost, setAttribute)](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1) <small>14:18</small>
+## Video 7: [Datan välittäminen servletiltä JSP-sivulle (doPost, setAttribute)](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1) <small>14:18</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -206,7 +203,7 @@ Tämä Mozillan kehittäjäsivu esittelee lyhyesti webin taustalla olevan HTTP-p
 ## Tehtävät
 
 
-### Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>
+## Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 

@@ -213,7 +213,7 @@ Tämän tutoriaalin kappaleet 1-9 ovat Ohjelmointi 2 -kurssin kannalta hyvää s
 
 Tämä Mozillan kehittäjäsivu esittelee lyhyesti webin taustalla olevan HTTP-protokollan toimintaa.
 
-
+&nbsp;
 
 ## Tehtävät
 

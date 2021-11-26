@@ -11,10 +11,12 @@ Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettä
 * Tomcat
 * Git-versionhallinta
 
-💡 *Tarvitset web-ohjelmointia varten Eclipsen version "Eclipse IDE for Enterprise Java and Web Developers". Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita web-ohjelmointiin soveltuvia versioita ovat mm. "Eclipse IDE for Enterprise Java Developers" ja "Eclipse Java EE IDE for Web Developers". Mikäli Eclipse-versiosi ei sisällä web-ohjelmointiin tarvittavia osia, suosittelen asentamaan uuden version osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).*
+Tarvitset web-ohjelmointia varten Eclipsen version "Eclipse IDE for Enterprise Java and Web Developers". Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita web-ohjelmointiin soveltuvia versioita ovat mm. "Eclipse IDE for Enterprise Java Developers" ja "Eclipse Java EE IDE for Web Developers". Mikäli Eclipse-versiosi ei sisällä web-ohjelmointiin tarvittavia osia, suosittelen asentamaan uuden version osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
+
+Oppitunnin esimerkkien ideoita on lainattu [Telusko](https://www.youtube.com/channel/UC59K-uG2A5ogwIrHw4bmlEg)-kanavan YouTube-videoista [Introduction to Servlets](https://youtu.be/7TOmdDJc14s) ja [Servlet and JSP Tutorial | Get and Post](https://youtu.be/_6ISkXSC1js).
 
 
-## Git
+## Versionhallinta ja Git
 
 > *Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.*
 >
@@ -22,11 +24,13 @@ Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettä
 
 Gitin avulla ohjelmistokehittäjät hallinnoivat ohjelmistojensa versioita ja jakavat koodin useiden kehittäjien välillä. Git mahdollistaa myös samalle ohjelmistolle useat rinnakkaiset kehityshaarat (branch), joiden avulla ohjelmiston eri ominaisuuksia voidaan kehittää samanaikaisesti toisistaan riippumatta.
 
-Yksi tämän kurssin tavoitteista on tutustuttaa sinut versionhallinnan perusteisiin. Siksi kaikki kurssin materiaalit ja esimerkkikoodit jaetaan gitin avulla GitHub-palvelussa. Tällä viikolla käytettävä web-projektipohja löytyy GitHubista osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template). Kurssin tehtävien suorittamiseksi sinun ei tarvitse rekisteröityä GitHubiin, vaan riittää että kloonaat valmiit koodit itsellesi tämän viikon ensimmäisten videoiden esimerkkien mukaisesti.
+Yksi tämän kurssin tavoitteista on tutustuttaa sinut versionhallinnan perusteisiin. Siksi kaikki kurssin materiaalit ja esimerkkikoodit jaetaan gitin avulla GitHub-palvelussa. Tällä viikolla käytettävä web-projektipohja löytyy GitHubista osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template). 
+
+Kurssin tehtävien suorittamiseksi sinun ei tarvitse rekisteröityä GitHubiin, vaan riittää että kloonaat valmiit koodit itsellesi tämän viikon ensimmäisten videoiden esimerkkien mukaisesti. Sinun ei myöskään tarvitse asentaa Git-työkaluja, vaan ne löytyvät Eclipsestä valmiina.
 
 
 
-## Video 1: [Johdatus HTTP-protokollaan ja Tomcatiin + Git clone](https://web.microsoftstream.com/video/710ad286-f65f-442b-ba25-2fc5da82d522) <small>21:41</small>
+### Video 1: [Johdatus HTTP-protokollaan ja Tomcatiin + Git clone](https://web.microsoftstream.com/video/710ad286-f65f-442b-ba25-2fc5da82d522) <small>21:41</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/710ad286-f65f-442b-ba25-2fc5da82d522?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -56,10 +60,10 @@ Projektipohjan asennustapa on todettu kohtuullisen helpoksi ja samat tavat ovat 
 
 Voit halutessasi lukea lisää Mavenista artikkelista ["Maven in 5 Minutes"](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) tai keskustelusta ["Is Maven similar to npm?"](https://stackoverflow.com/a/38392716)
 
-💡 *Tomcatia voitaisiin käyttää myös erikseen asennettavana ohjelmana, joten löydät mahdollisesti netistä ohjeita, jotka eivät täysin vastaa tämän kurssin työtapoja.*
+💡 *Tomcatia voitaisiin käyttää myös erikseen asennettavana ohjelmana, joten löydät mahdollisesti netistä ohjeita, jotka eivät täysin vastaa tämän kurssin esimerkkejä.*
 
 
-## Video 2: [Maven ja Tomcat malliprojektissa](https://web.microsoftstream.com/video/527282e4-961e-453e-a350-af766e50559f) <small>15:31</small>
+### Video 2: [Maven ja Tomcat malliprojektissa](https://web.microsoftstream.com/video/527282e4-961e-453e-a350-af766e50559f) <small>15:31</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/527282e4-961e-453e-a350-af766e50559f?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -68,7 +72,7 @@ Tällä videolla tutustumme web-projektimme hakemisto- ja luokkarakenteeseen. Se
 Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template)
 
 
-<!-- ## Video 3: [Uuden kehityshaaran luonti ja vieminen GitHubiin (Git & branch)](https://web.microsoftstream.com/video/e404ae09-df29-49d5-abc9-10d0f5d43010) <small>5:38
+<!-- ### Video 3: [Uuden kehityshaaran luonti ja vieminen GitHubiin (Git & branch)](https://web.microsoftstream.com/video/e404ae09-df29-49d5-abc9-10d0f5d43010) <small>5:38
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e404ae09-df29-49d5-abc9-10d0f5d43010?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -95,7 +99,7 @@ Tällä kurssilla sovellamme MVC-mallia siten, että **käsittelijät toteutetaa
 Seuraavilla videoilla käsittelemme servlet-luokkien erityispiirteitä, tiedonvälitystä selaimelta servlet-luokalle sekä Tomcat-palvelinohjelmiston hyödyntämistä omien servlettien kanssa.
 
 
-## Video 3: [Servletin anatomia: HttpServlet, @WebServlet, doGet...](https://web.microsoftstream.com/video/c040b244-2592-46a4-b271-22af48a7b574) <small>19:40
+### Video 3: [Servletin anatomia: HttpServlet, @WebServlet, doGet...](https://web.microsoftstream.com/video/c040b244-2592-46a4-b271-22af48a7b574) <small>19:40
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c040b244-2592-46a4-b271-22af48a7b574?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -106,7 +110,7 @@ Videolla hyödynnetään tutoriaalia [http://tutorials.jenkov.com/java-servlets/
 &nbsp;
 
 
-## Video 4: [Tomcatin "reload" ja muuttuneiden koodien vaihtaminen lennossa](https://web.microsoftstream.com/video/c26141c3-2681-45f6-8aef-8e40b72bff88) <small><small>7:56</small>
+### Video 4: [Tomcatin "reload" ja muuttuneiden koodien vaihtaminen lennossa](https://web.microsoftstream.com/video/c26141c3-2681-45f6-8aef-8e40b72bff88) <small><small>7:56</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c26141c3-2681-45f6-8aef-8e40b72bff88?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -124,11 +128,13 @@ Monissa tapauksissa luokkien uudelleenlataaminen riittää, mutta uusia servlett
 &nbsp;
 
 
-## Video 5: [HTTP-pyynnön parametrien käsittely servleteissä](https://web.microsoftstream.com/video/8fed5e77-69ae-415f-8a48-418ea39330a4) <small>14:46</small>
+### Video 5: [HTTP-pyynnön parametrien käsittely servleteissä](https://web.microsoftstream.com/video/8fed5e77-69ae-415f-8a48-418ea39330a4) <small>14:46</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fed5e77-69ae-415f-8a48-418ea39330a4?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia parametreja servletissämme. Videolla koodattavat [Servlet-luokat löydät täältä](https://gist.github.com/swd1tn002/ef056a7262b8c27a2dd66c6772343807).
+Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia parametreja servletissämme. 
+
+Videolla koodattavat [Servlet-luokat löydät täältä](https://gist.github.com/swd1tn002/ef056a7262b8c27a2dd66c6772343807).
 
 &nbsp;
 
@@ -138,20 +144,29 @@ Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia param
 Servlettien yhteydessä HTML-koodi halutaan eriyttää muusta Java-koodista omiksi tiedostoikseen. Näiden HTML-tiedostojen muoto on usein JSP, eli JavaServer Pages. Servletit voivat kutsua JSP-sivuja sisäisesti ja välittää niille tietoa, kuten sivuilla näytettäviä merkkijonoja tai muita olioita. Seuraavilla videoilla perehdymme dynaamisten HTML-muotoisten vastausten muodostamiseen verkkopalvelussamme.
 
 
-## Video 6: [Lomakkeen näyttäminen ja lomakedatan käsittely servletillä](https://web.microsoftstream.com/video/44037d9b-8237-4f63-9d45-75d35ccb447d) <small>18:27</small>
+### Video 6: [Lomakkeen näyttäminen ja lomakedatan käsittely servletillä](https://web.microsoftstream.com/video/44037d9b-8237-4f63-9d45-75d35ccb447d) <small>18:27</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/44037d9b-8237-4f63-9d45-75d35ccb447d?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla luomme HTML-lomakkeen, jolla lähetämme dataa servletillemme. Opettelemme myös välittämään servleteille tulleet pyynnöt palvelimen sisäisesti JSP-sivulle. Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.github.com/swd1tn002/fed086e14a8de2a12a0d4db2e59951e1).
+Tällä videolla luomme HTML-lomakkeen, jolla lähetämme dataa servletillemme. Opettelemme myös välittämään servleteille tulleet pyynnöt palvelimen sisäisesti JSP-sivulle. 
+
+Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.github.com/swd1tn002/fed086e14a8de2a12a0d4db2e59951e1).
 
 &nbsp;
 
 
-## Video 7: [Datan välittäminen servletiltä JSP-sivulle (doPost, setAttribute)](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1) <small>14:18</small>
+### Video 7: [Datan välittäminen servletiltä JSP-sivulle (doPost, setAttribute)](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1) <small>14:18</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla opettelemme välittämään dataa servletiltä JSP-sivulle muodostaaksemme HTML-sivuja dynaamisella sisällöllä. Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.github.com/swd1tn002/fed086e14a8de2a12a0d4db2e59951e1).
+Tällä videolla opettelemme välittämään dataa servletiltä JSP-sivulle muodostaaksemme HTML-sivuja dynaamisella sisällöllä.
+
+Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.github.com/swd1tn002/fed086e14a8de2a12a0d4db2e59951e1).
+
+> *"Huomaa, että JSP-sivussa käytetyt attribuutit ovat täysin erillisiä servletin sisältämistä muuttujista ja niiden nimistä. Yhteys näiden kahden välille muodostuu ainoastaan setAttribute-metodin kutsujen myötä. Selkeyden vuoksi on kuitenkin hyvä idea nimetä sekä normaalit Java-muuttujat että JSP-sivun käyttämät attribuutit samaan tapaan."*
+>
+> [David Consuegra and others](http://advancedkittenry.github.io/credits.html). [Näkymien tekeminen ja JSP](https://advancedkittenry.github.io/koodaaminen/java/nakymat.html). [CC BY-SA](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+
 
 Lisätietoa JSP-sivuilla käytettävästä Expression Language -kielestä löydät Oraclen dokumentaatiosta ["Unified Expression Language"](https://docs.oracle.com/javaee/5/tutorial/doc/bnahq.html).
 
@@ -203,7 +218,7 @@ Tämä Mozillan kehittäjäsivu esittelee lyhyesti webin taustalla olevan HTTP-p
 ## Tehtävät
 
 
-## Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>
+### Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
@@ -213,23 +228,25 @@ Tällä videolla käsittelemme harjoitustehtävän tehtävänantoa. Videolla teh
 import static java.time.temporal.ChronoUnit.DAYS;
 ```
 
-Voit lukea staattisista `import`-komennoista lisää [tästä keskustelusta](https://stackoverflow.com/a/162195).
+Voit lukea staattisista `import`-komennoista lisää [tästä keskustelusta](https://stackoverflow.com/a/162195) ja tustua DAYS-olion dokumentaatioon [Javan ChronoUnit-luokan dokumentaatiossa](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html).
+
+Päivämäärien erotusten laskemiseksi on Javassa lukuisia tapoja, ja tyyli on niiden suhteen vapaa.
 
 &nbsp;
 
 
-### Tehtävä 1: toimiva verkkokehitysympäristö
+### Osa 1: toimiva verkkokehitysympäristö
 
-Rakenna itsellesi toimiva web-kehitysympäristö servlettien ja JSP-sivujen käyttämiseksi (JavaServer Pages). Suosittelen vahvasti seuraamaan [projektipohjan ohjeita ja esimerkkejä](https://github.com/ohjelmointi2/embedded-tomcat-template), vaikka projektipohja ei ole ainoa oikea tapa tehdä asioita. 
+Rakenna itsellesi toimiva web-kehitysympäristö servlettien ja JSP-sivujen käyttämiseksi (JavaServer Pages). Suosittelen vahvasti seuraamaan yllä olevien vidoiden ja [projektipohjan ohjeita ja esimerkkejä](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
 Kun saat projektipohjan etusivun aukeamaan omalla koneellasi osoitteessa [http://localhost:8080/](http://localhost:8080/), voit siirtyä seuraavaan vaiheeseen.
 
 
-### Tehtävä 2: "christmas countdown" -servletti
+### Osa 2: "christmas countdown" -servletti
 
 Kun olet saanut itsellesi toimivan kehitysympäristön, toteuta uusi servlet `ChristmasCountdownServlet`, joka kertoo kuinka monta yötä jouluun on. Voit itse valita missä polussa servlettisi on palvelimella (esim. http://localhost:8080/christmas). Polku määritellään servlet-luokan yläpuolella [@WebServlet-annotaatiolla](https://www.codejava.net/java-ee/servlet/webservlet-annotation-examples).
 
-Voit hyödyntää aikaisemmin käyttämäämme `dayOfYear`-luokkaa laskemalla erotuksen kuluvan päivän ja jouluaaton välillä. Voit myös käyttää Javan valmiita luokkia, kuten [tässä StackOverflow-ketjussa ehdotetaan](https://stackoverflow.com/a/27006098).
+Voit hyödyntää yksikkötestaustehtävässä käyttämäämme `DayOfYear`-luokkaa laskemalla erotuksen kuluvan päivän ja jouluaaton välillä. Voit myös käyttää Javan valmiita luokkia, kuten [tässä StackOverflow-ketjussa ehdotetaan](https://stackoverflow.com/a/27006098).
 
 Välitä servletissä laskettu arvo, eli jäljellä olevien päivien määrä, tätä tarkoitusta varten toteuttamallesi uudelle JSP-sivulle. Voit toteuttaa sivun haluamallasi tavalla, mutta se voi näyttää esimeriksi tältä:
 
@@ -237,47 +254,49 @@ Välitä servletissä laskettu arvo, eli jäljellä olevien päivien määrä, t
 
 Arvojen ja pyynnön välittäminen servletiltä JSP-sivulle on esitelty projektipohjassa ja yllä videolla ["Datan välittäminen servletiltä JSP-sivulle"](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1). Aiheesta löytyy myös [paljon muita ohjeita](https://www.google.com/search?q=pass+data+from+servlet+to+jsp+tutorial). Oppimistavoitteiden kannalta tärkeintä on, että päivien laskentaan liittyvä logiikka toteutetaan servletissä, josta tieto välitetään attribuuttina näkymälle (jsp-sivu).
 
-> *"Huomaa, että JSP-sivussa käytetyt attribuutit ovat täysin erillisiä servletin sisältämistä muuttujista ja niiden nimistä. Yhteys näiden kahden välille muodostuu ainoastaan setAttribute-metodin kutsujen myötä. Selkeyden vuoksi on kuitenkin hyvä idea nimetä sekä normaalit Java-muuttujat että JSP-sivun käyttämät attribuutit samaan tapaan."*
->
-> [David Consuegra and others](http://advancedkittenry.github.io/credits.html). [Näkymien tekeminen ja JSP](https://advancedkittenry.github.io/koodaaminen/java/nakymat.html). [CC BY-SA](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+
 
 **Muista palvelimen uudelleenkäynnistys**
 
-Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uuden servletin. Projektipohjan dokumentaatiossa on kuvattu [toimet palvelimen käynnistämiseksi ja uudelleenkäynnistämiseksi](https://github.com/ohjelmointi2/embedded-tomcat-template#palvelinohjelmiston-uudelleenk%C3%A4ynnistys).
+Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uuden servletin. Ohjeet Tomcat-palvelimen uudelleenkäynnistämiseksi ja koodimuutosten testauksen nopeuttamiseksi löydät yllä olevilta videoilta.
 
 
 **The serializable class does not declare a static final serialVersionUID field of type long**
 
-Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ does not declare a static final serialVersionUID field of type long"*, voit jättää varoituksen huomioimatta. `serialVersionUID` nimistä muuttujaa käytetään luokasta luotujen olioiden versiointiin, lue tarvittaessa lisää [täältä](https://stackoverflow.com/a/285809).
+Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ does not declare a static final serialVersionUID field of type long"*, voit jättää varoituksen huomioimatta. `serialVersionUID` nimistä muuttujaa käytetään luokasta luotujen olioiden versiointiin. Lue tarvittaessa lisää [tästä StackOverflow-vastauksesta](https://stackoverflow.com/a/285809).
 
 
-### Tehtävä 3: HTTP-pyynnön parametrien ja lomaketietojen hyödyntäminen
+### Osa 3: DaysUntilServlet
 
-HTTP:n GET-tyyppisen pyynnön mukana voidaan välittää parametreja URL-osoitteen lopussa, kuten `http://localhost:8080/hello?firstName=John&lastName=Doe`. `?`-merkki erottaa [query string](https://en.wikipedia.org/wiki/Query_string)-osan polusta, ja `&`-merkit erottelevat eri parametrit toisistaan.
+Tämän viikon viimeisessä osatehtävässä toteutetaan edellisen servletin kaltainen päivälaskuri, jonka avulla voidaan laskea kesto mihin tahansa käyttäjän valitsemaan päivään.
+
+HTTP:n GET-tyyppisen pyynnön mukana voidaan välittää parametreja URL-osoitteen lopussa, kuten `http://localhost:8080/hello?firstName=John&lastName=Doe`. 
+
+Kysymysmerkki `?` erottaa [parametrit](https://en.wikipedia.org/wiki/Query_string) polusta, ja `&`-merkit erottelevat eri parametrit toisistaan.
 
 Edellä esitelty osoite koostuu seuraavista osista:
 
 Protokolla  | Host      | Portti | Polku    | Parametrit
 ------------|-----------|--------|----------|-----------
-http        | localhost | 8080   | /hello   | firstName: "John", lastName: "Doe"
+http        | localhost | 8080   | /hello   | firstName: "John"<br /> lastName: "Doe"
 
-POST-tyyppisissä pyynnöissä parametrit välitetään pyynnön "body"-osassa, jolloin ne eivät ole näkyvissä osoiterivillä, mutta tieto on silti palvelimella käsiteltävissä.
+💡 POST-tyyppisissä pyynnöissä parametrit välitetään pyynnön "body"-osassa, jolloin ne eivät ole näkyvissä osoiterivillä, mutta tieto on silti palvelimella käsiteltävissä.
 
 Pyyntöä käsittelevän servletin `doPost`- ja `doGet`-metodeissa parametrit voidaan pyytää `HttpRequest`-oliolta `getParameter`-metodilla:
 
 ```java
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-    String first = req.getParameter("firstName");
-    String last = req.getParameter("lastName");
+    String first = req.getParameter("firstName");   // "John"
+    String last = req.getParameter("lastName");     // "Doe"
 }
 ```
 
-HTTP-pyynnön parametrit ovat **aina merkkijonoja**, vaikka niissä esiintyisikin esim. numeroita: 
+Huomaa, että HTTP-pyynnön parametrit ovat **aina merkkijonoja**, vaikka niissä esiintyisikin esim. numeroita: 
 
     http://localhost:8080/sum?a=3&b=4
 
-Tarvittaessa numeeriset parametrit voidaan muuttaa kokonaisluvuiksi kuten muussakin Java-koodissa, eli `Integer`-luokan `parseInt`-metodilla: 
+Tarvittaessa numeeriset parametrit voidaan muuttaa kokonaisluvuiksi kuten muussakin Java-koodissa, eli esimerkiksi `Integer`-luokan `parseInt`-metodilla: 
 
 ```java
 @Override
@@ -291,29 +310,27 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
 Huomioi parametriarvoja käyttäessäsi, että *mikäli arvoa ei ole asetettu pyynnössä*, palauttaa `getParameter`-metodi `null`-arvoja, jotka aiheuttavat poikkeuksia esimerkiksi numeroiksi muutettaessa.
 
-#### `DaysUntilServlet`-luokan toteuttaminen
 
-Tässä tehtävän viimeisessä osassa sinun tulee luoda jälleen uusi servlet `DaysUntilServlet`, joka saa parametreinaan päivän, kuukauden ja vuoden esimerkiksi seuraavalla pyynnöllä:
+#### DaysUntilServlet-luokan toteuttaminen
+
+Toteuta uusi servlet `DaysUntilServlet`, joka saa parametreinaan päivän, kuukauden ja vuoden esimerkiksi seuraavalla pyynnöllä:
 
     http://localhost:8080/daysUntil?year=2020&month=12&day=24
 
-Kun olet saanut parametrit `year`, `month` ja `day` muutettua kokonaisluvuiksi, voit muodostaa niitä vastaava päivämäärä esim. [LocalDate-luokan](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) avulla.
+Kun olet saanut parametrit `year`, `month` ja `day` muutettua kokonaisluvuiksi, voit muodostaa niitä vastaavan päivämäärän esim. [LocalDate-luokan](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) avulla.
 
-Toisin kuin joululaskurissa, tässä servletissä lasket päivien määrän annetun päivämäärän ja nykyisen päivämäärän välillä. Päivien välin laskemisessa voit käyttää [DAYS.between(dateBefore, dateAfter)](https://stackoverflow.com/a/27006098) -metodia. Toteuta myös uusi JSP-sivu sekä datan välittäminen servletiltä sivulle edellisen tehtävän mukaisesti. Koska `DAYS` ei ole luokka, vaan ChronoUnit-luokan vakio, sen import-käsky tehdään luokan alussa seuraavasti:
-
-```java
-import static java.time.temporal.ChronoUnit.DAYS;
-```
+Toisin kuin joululaskurissa, tässä servletissä lasket päivien määrän annetun päivämäärän ja nykyisen päivämäärän välillä. Päivien välin laskemisessa voit käyttää [DAYS.between(today, otherDate)](https://stackoverflow.com/a/27006098) -metodia. Toteuta myös uusi JSP-sivu sekä datan välittäminen servletiltä sivulle edellisen tehtävän mukaisesti. 
 
 Lopputulos voi näyttää esimerkiksi tältä:
 
 ![Days until given date](img/daysUntil.png)
 
-**["How to handle HTML form data with Java Servlet"](https://www.codejava.net/java-ee/servlet/handling-html-form-data-with-java-servlet)**-tutoriaalissa käsitellään monipuolisesti lomake- ja parametritietojen käsittelyä servleteillä. Tutoriaali esittelee teknisen toiminnallisuuden hyvin, mutta älä ota mallia siinä sovelletuista salasanojen käsittelyyn ja näyttämiseen liittyvistä käytännöistä.
+Tutoriaalissa ["How to handle HTML form data with Java Servlet"](https://www.codejava.net/java-ee/servlet/handling-html-form-data-with-java-servlet) käsitellään tarkemmin lomake- ja parametritietojen käsittelyä servleteillä. Tutoriaali esittelee teknisen toiminnallisuuden hyvin, mutta älä ota mallia siinä sovelletuista salasanojen käsittelyyn ja näyttämiseen liittyvistä huonoista käytännöistä.
+
 
 #### Valinnainen HTML-lomake
 
-Voit käyttää alla olevaa lomaketta päivämääräparametrien välittämisen testaamisessa. Tallennat html-koodi esimerkiksi tiedostoon `src/main/webapp/form.html`, jolloin se tulee saataville selaimella osoitteessa http://localhost:8080/form.html. 
+Voit käyttää alla olevaa lomaketta päivämääräparametrien välittämisen testaamisessa. Tallennat html-koodi esimerkiksi tiedostoon `src/main/webapp/form.html`, jolloin se tulee saataville selaimella osoitteessa [http://localhost:8080/form.html](http://localhost:8080/form.html).
 
 Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil` siten, että lomakkeeseen syötetyt arvot tulevat pyynnön parametreiksi:
 
@@ -342,19 +359,18 @@ Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil
 
 ### Bonus: artikkeli virheiden paikantamisesta
 
-Tästä viikosta alkaen käytämme koodissa merkittävästi enemmän valmiita kirjastoja, joiden myötä ohjelman virheiden tulkitseminen tulee usein hankalammaksi. Kun virheilmoitus liittyy jossain muussa kirjastossa ilmenneeseen virheeseen, voi olla vaikeaa hahmottaa, missä kohdassa omaa koodiasi on syy tuolle virheelle. Suosittelen lukemaan artikkelin ["How to read and understand a Java stacktrace"](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace), joka opettaa lukemaan Javan pitkiä mutta hyviä virheilmoituksia. Jakakaa myös Teamsissa kopioita virheilmoituksista tai kuvankaappauksia, mikäli ette saa virheilmoituksia tulkittua.
+Tästä viikosta alkaen käytämme koodissa merkittävästi enemmän valmiita kirjastoja, joiden myötä ohjelman virheiden tulkitseminen tulee usein hankalammaksi. Kun virheilmoitus liittyy jossain muussa kirjastossa ilmenneeseen virheeseen, voi olla vaikeaa hahmottaa, missä kohdassa omaa koodiasi on syy tuolle virheelle.
 
-
+Suosittelen lukemaan twilio.com:in artikkelin ["How to read and understand a Java stacktrace"](https://www.twilio.com/blog/how-to-read-and-understand-a-java-stacktrace), joka opettaa lukemaan Javan pitkiä mutta tarkkoja virheilmoituksia. Jakakaa myös Teamsissa kopioita virheilmoituksista tai kuvankaappauksia niistä, mikäli ette saa virheilmoituksia tulkittua.
 
 
 ## Tehtävien palauttaminen
 
-Palauta tehtävää varten toteuttamasi Servlet-luokat **ChristmasCountdownServlet** ja **DaysUntilServlet** sekä **JSP-tiedostot** Teamsiin erillisinä tiedostoina, eli __ei pakattuna__. Projektipohjan muita tiedostoja ei tule palauttaa.
-
----
+Palauta tehtävää varten toteuttamasi Servlet-luokat **ChristmasCountdownServlet** ja **DaysUntilServlet** sekä niiden hyödyntämät **JSP-tiedostot** Teamsiin erillisinä tiedostoina, eli __ei pakattuna__. Projektipohjan muita tiedostoja ei tule palauttaa.
 
 ## Loppusanat
 
 Olemme nyt toteuttaneet pienen verkkosovelluksen sekä komentorivillä toimivan tietokantapohjaisen ostoslistasovelluksen. Seuraavassa vaiheessa yhdistämme osaamisemme ja toteutamme ostoslistasovelluksen verkkopalveluna! 
+
 
 <script src="/scripts.js"></script>

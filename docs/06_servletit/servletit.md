@@ -264,7 +264,7 @@ Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uu
 
 Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ does not declare a static final serialVersionUID field of type long"*, voit jättää varoituksen huomioimatta. `serialVersionUID` nimistä muuttujaa käytetään luokasta luotujen olioiden versiointiin. Lue tarvittaessa lisää [tästä StackOverflow-vastauksesta](https://stackoverflow.com/a/285809).
 
-🎅 🎄 🎁
+**Emojit** 🎅 🎄 🎁
 
 Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-kuvia, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
 

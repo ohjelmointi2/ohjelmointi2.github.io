@@ -302,7 +302,7 @@ Merkkijonot tuleekin aina käsitellä `c:out`-tagin avulla, jolloin niissä mahd
 </li>
 ```
 
-Selain tulkitsee yllä olevasta koodista `c:out`-tagin ulkopuoliset `<li>`-elementit HTML-koodina, mutta esimerkiksi `&lt;` näytetään sivulla tavallisena "pienempi kuin"-merkkinä.
+Selain tulkitsee yllä olevasta koodista `c:out`-tagin ulkopuoliset `<li>`-elementit HTML-koodina, mutta `c:out`-tagin tuottama `&lt;` näytetään sivulla tavallisena turvallisena "pienempi kuin"-merkkinä.
 
 Lue myös tarvittaessa keskustelu aiheesta ["what exactly does the &lt;c:out&gt; do?"](https://stackoverflow.com/q/291031)
 

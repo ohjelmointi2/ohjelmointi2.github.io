@@ -114,7 +114,7 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
 ```diff
  <properties>
      <!-- Tomcatin versionumero -->
-     <tomcat.version>8.5.64</tomcat.version>
+     <tomcat.version>8.5.73</tomcat.version>
 
      <!-- Javan versionumero -->
      <maven.compiler.target>11</maven.compiler.target>
@@ -124,24 +124,26 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
      <junit.jupiter.version>5.7.1</junit.jupiter.version>
 
      <!-- lisää nämä rivit: -->
-+    <sqlite.driver.version>3.34.0</sqlite.driver.version>
++    <sqlite.driver.version>3.36.0.3</sqlite.driver.version>
 +    <jstl.api.version>1.2</jstl.api.version>
+
+    <!-- Projektin merkistökoodaus -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 ```
 
 Yllä käytetty tapa esittää tiedoston uudet rivit vihreällä sekä `+`-merkillä on myös gitin tapa esittää tiedostojen muutoksia. Lisätyt tagit määrittelevät seuraavat kolme uutta muuttujaa versionumeroita varten:
 
 Muuttuja                | Versionumero  | Tarkoitus
 ------------------------|---------------|----------
-sqlite.driver.version   | 3.34.0        | SQLite-ajuri JDBC-kirjastolle
-jstl.api.version        | 1.2           | JSTL-tagikirjasto
+`sqlite.driver.version` | 3.36.0.3      | Aikaisemmilta viikoilta tuttu SQLite-ajuri JDBC-kirjastolle
+`jstl.api.version`      | 1.2           | JSTL-tagikirjasto
 
 Itse riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat kolme riippuvuutta dependencies-tagin loppuun:
 
 
 ```diff
-         <artifactId>tomcat-jsp-api</artifactId>
-         <version>${tomcat.version}</version>
-     </dependency>
+<!-- Tiedoston alkuosa jätetty pois... -->
 
      <!-- JUnit-testaustyökalu -->
      <dependency>

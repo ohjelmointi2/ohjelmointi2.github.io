@@ -340,7 +340,7 @@ Tutoriaalissa ["How to handle HTML form data with Java Servlet"](https://www.cod
 
 #### Valinnainen HTML-lomake
 
-Voit käyttää alla olevaa lomaketta päivämääräparametrien välittämisen testaamisessa. Tallennat html-koodi esimerkiksi tiedostoon `src/main/webapp/form.html`, jolloin se tulee saataville selaimella osoitteessa [http://localhost:8080/form.html](http://localhost:8080/form.html).
+Voit käyttää alla olevaa lomaketta päivämääräparametrien välittämisen testaamisessa. Tallenna html-koodi esimerkiksi tiedostoon `src/main/webapp/form.html`, jolloin se tulee saataville selaimella osoitteessa [http://localhost:8080/form.html](http://localhost:8080/form.html).
 
 Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil` siten, että lomakkeeseen syötetyt arvot tulevat pyynnön parametreiksi:
 

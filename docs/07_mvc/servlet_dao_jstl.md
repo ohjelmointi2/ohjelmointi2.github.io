@@ -187,15 +187,17 @@ Katso seuraava video, jossa esitellään tagikirjaston käyttöönotto sekä sen
 
 ## Video 2: [Tietokantapohjaisen servletin toteuttaminen ja tulosten näyttäminen JSP-sivulla](https://web.microsoftstream.com/video/515b523d-bc9b-4892-a2cf-78e75206e9a9) <small>58:31</small>
 
-Seuraavalla videolla lisäämme verkkopalvelumme tarvitsemat riippuvuudet ohjeen mukaisesti Maven-työkalun avulla. Tietokantaluokat kopioidaan aikaisemmista harjoituksistamme ja kopioinnin onnistuminen varmistetaan yksikkötesteillä. Lopulta näytämme tietokannasta löytyvät ostoslistan rivit HTML-muodossa JSP-sivulla:
+Seuraavalla videolla lisäämme verkkopalvelumme tarvitsemat riippuvuudet ohjeen mukaisesti Maven-työkalun avulla. Tietokantaluokat kopioidaan aikaisemmista harjoituksistamme ja kopioinnin onnistuminen varmistetaan yksikkötesteillä.
+
+Lopulta näytämme tietokannasta löytyvät ostoslistan rivit HTML-muodossa JSP-sivulla.
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/515b523d-bc9b-4892-a2cf-78e75206e9a9?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Videolla esitellään kohdassa 15:30 tyypillinen ongelma Tomcatin käynnistämisessä, joka johtuu siitä, että vanha Tomcat-suoritus on edelleen käynnissä taustalla.
+Videolla esitellään kohdassa **15:30** tyypillinen ongelma Tomcatin käynnistämisessä, joka johtuu siitä, että vanha Tomcat-suoritus on edelleen käynnissä taustalla.
 
-Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta ([Cross Site Scripting, XSS](https://owasp.org/www-community/attacks/xss/)) esitellään videolla kohdassa 44:13.
+Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta ([Cross Site Scripting, XSS](https://owasp.org/www-community/attacks/xss/)) esitellään videolla kohdassa **44:13**.
 
-💡 Videolla projektiin lisätään kolme riippuvuutta, joista `org.junit.jupiter` tulee projektipohjan nykyisessä versiossa valmiina. Sitä ei siis tarvitse lisätä enää tämän videon mukaisesti.
+💡 *Videolla projektiin lisätään kolme riippuvuutta, joista `org.junit.jupiter` tulee projektipohjan nykyisessä versiossa valmiina. Sitä ei siis tarvitse lisätä enää tämän videon mukaisesti.*
 
 &nbsp;
 
@@ -217,12 +219,14 @@ Tällä videolla toteutamme servletin, joka välittää JSP-sivulle useita attri
 
 Näissä tehtävissä tarvitset aikaisempina viikkoina toteutettuja tietokantaluokkia. Mikäli tehtävät jäivät sinulta kesken tai et ole tyytyväinen koodisi toimintaan, voit käyttää tehtävän pohjana malliratkaisun lähdekoodeja, jotka julkaistaan kurssin Teams-kanavalla tehtävien määräajan päätyttyä.
 
-Tehtävät liittyvät vahvasti edellä esitettyihin videoihin, joten videoiden katsominen on suositeltavaa.
+**Tehtävät liittyvät vahvasti edellä esitettyihin videoihin, joten videoiden katsominen on erittäin suositeltavaa.**
 
 
 ### Osa 1: Toteuta ostoslistan sisällön hakeva servletti ja sen `doGet`-metodi
 
-Tarvitset ostoslistan esittämistä varten uuden servletin, joka voi löytyä palvelimeltasi esimerkiksi juuresta (`/`) tai polusta (`/list`). Voit vapaasti valita haluamasi polun, joka määritellään kuten edellisessä tehtävässä, eli `@WebServlet("/")`-annotaation avulla. Ylempänä esitetyssä esimerkkihakemistorakenteessa tämän servletin tiedostonimi on `ShoppingListServlet.java`, mutta voit nimetä tiedoston haluamallasi tavalla.
+Tarvitset ostoslistan esittämistä varten uuden servletin, joka voi löytyä palvelimeltasi esimerkiksi polusta (`/list`). Voit vapaasti valita haluamasi polun, joka määritellään kuten edellisessä tehtävässä, eli esimerkiksi `@WebServlet("/list")`-annotaation avulla. 
+
+Tämän sivun yläosassa esitetyssä esimerkkihakemistorakenteessa tämän servletin nimi on `ShoppingListServlet`, mutta voit nimetä luokan haluamallasi tavalla.
 
 Tarvitset servletissä aikaisemmin toteuttamaasi DAO-luokkaa tuotteiden hakemista ja lisäämistä varten. Lisää servlet-luokkaan tarvittavat `import`-komennot DAO-luokkaa sekä model-luokkaa varten.
 
@@ -244,7 +248,7 @@ Sivun HTML-rakenteella ei ole tämän tehtävän kannalta suurta merkitystä, ku
 ```html
 <!-- lista -->
 <ul>
-    <!-- TODO: Nämä rivit tulee generoida c:forEach-tagin avulla -->
+    <!-- TODO: Nämä rivit tulee generoida c:forEach- ja c:out-tagien avulla -->
     <li>Milk</li>
     <li>Eggs</li>
 </ul>
@@ -259,7 +263,7 @@ Vaihtoehtoisesti voit luoda `<table>`-taulukkorakenteen esimerkiksi seuraavasti 
         <tr><th>Product</th></tr>
     </thead>
     <tbody>
-        <!-- TODO: Nämä rivit tulee generoida c:forEach-tagin avulla -->
+    <!-- TODO: Nämä rivit tulee generoida c:forEach- ja c:out-tagien avulla -->
         <tr><td>Milk</td></tr>
         <tr><td>Eggs</td></tr>
     </tbody>
@@ -276,17 +280,29 @@ HTML-koodin yhteydessä onkin erittäin tärkeää huolehtia siitä, että kaikk
 >
 > MDN web docs. Entity. [https://developer.mozilla.org/en-US/docs/Glossary/Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity)
 
-Esimerkiksi käyttäjän syöttämä tuotenimi `"Milk <script>alert('attack!');</script>"` ei siis saa tuottaa HTML-sivulle sisältöä:
+Esimerkiksi haitallista koodia sisältävä tuotenimi `"Milk <script>alert('attack!');</script>"` ei siis saa tuottaa HTML-sivulle seuraavaa sisältöä:
+
+<pre class="highlight" style="border: solid red 2px; color: red;"><code>&lt;li&gt;
+    Milk &lt;script&gt;alert('attack!');&lt;/script&gt;
+&lt;/li&gt;</code></pre>
+
+Yllä oleva koodi sisältää sivulle kuulumatonta JavaScriptiä, joka voi huonossa tapauksessa esimerkiksi kaapata käyttäjän istunnon tai suorittaa sivustolla toimenpiteitä käyttäjän nimissä.
+
+Merkkijonot tuleekin aina käsitellä `c:out`-tagin avulla, jolloin niissä mahdollisesti olevat HTML-rakenteet muutetaan erikoismerkeiksi, jotka selain osaa tulkita tavallisena tekstinä:
 
 ```html
-<li>Milk <script>alert('attack!');</script></li>
+<li>
+    <c:out value="${ item.getTitle() }" />
+</li>
 ```
-
-`c:out`-tagin avulla käyttäjän syöte voidaan muuttaa turvalliseksi:
 
 ```html
-<li>Milk &lt;script&gt;alert(&#039;attack!&#039;);&lt;/script&gt;</li>
+<li>
+    Milk &lt;script&gt;alert(&#039;attack!&#039;);&lt;/script&gt;
+</li>
 ```
+
+Selain tulkitsee yllä olevasta koodista `c:out`-tagin ulkopuoliset `<li>`-elementit HTML-koodina, mutta esimerkiksi `&lt;` näytetään sivulla tavallisena "suurempi kuin"-merkkinä `>`.
 
 Lue myös tarvittaessa keskustelu aiheesta ["what exactly does the &lt;c:out&gt; do?"](https://stackoverflow.com/q/291031)
 
@@ -304,16 +320,25 @@ Voit lisätä lomakkeen samalle JSP-sivulle, jolla näytät myös tuotelistan. L
 </form>
 ```
 
-Tällä `form`-tagilla ei ole `action`-attribuuttia, joten sen lähettäminen tekee `post`-tyyppisen HTTP-pyynnön samaan osoitteeseen, josta sivu on ladattu. Voit tarvittaessa määritellä eri osoitteen lisäämällä `action`-attribuutin.
+Valmis lomake näyttää suurin piirtein seuraavalta:
 
-Pyynnön mukana välitetään käyttäjän kirjoittama tuotenimi, joka on palvelimella käsiteltävissä sillä nimellä, joka on määritetty kyseisen tekstikentän `name`-attribuutin arvoksi:
+<form method="post" action="http://localhost:8080/list">
+    <fieldset>
+        <legend>Esimerkki lomakkeesta:</legend>
+        <input name="title" type="text" required placeholder="type item here..." /> 
+        <input type="submit" value="Add to list" />
+    </fieldset>
+</form>
+
+<!--Esimerkin `form`-tagilla ei ole `action`-attribuuttia, joten sen lähettäminen tekee `post`-tyyppisen HTTP-pyynnön samaan osoitteeseen, josta sivu on ladattu. Voit tarvittaessa määritellä eri osoitteen lisäämällä `action`-attribuutin.-->
+
+Kun lomake lähetetään, HTTP-pyynnön mukana välitetään käyttäjän kirjoittama teksti. Kunkin tekstikentän sisältö on palvelimella käsiteltävissä sillä nimellä, joka on määritetty kyseisen tekstikentän `name`-attribuutin arvoksi:
 
 ```html
-<!-- muut attribuutit on jätetty tässä pois -->
 <input name="title" />
 ```
 
-Tässä tapauksessa tekstikentän nimeksi on asetettu on `"title"`, joten kyseiseen tekstikenttään syötetty teksti saadaan servletissä luettua esimerkiksi seuraavasti:
+Yllä tekstikentän nimeksi on asetettu on `"title"`, joten siihen syötetty teksti saadaan servletissä luettua esimerkiksi seuraavasti:
 
 ```java
 String itemTitle = req.getParameter("title");
@@ -327,17 +352,19 @@ Lomakkeen lähetyksen jälkeen se käsitellään palvelimella joko `doGet` tai `
 
 ```html
 <form method="post">
+    <!-- lomakkeen sisältö -->
+</form>
 ```
 
-Jos et määritellyt lomakkeelle erillistä `action`-attribuuttia, lähetetään pyyntö samaan osoitteeseen josta HTML-sivu ladattiin. Meidän tapauksessamme pyyntö päätyy siis samalle servletille, tällä kertaa `doPost`-metodille.
+Jos et määrittele lomakkeelle valinnaista `action`-attribuuttia, lähetetään pyyntö samaan osoitteeseen josta kyseinen HTML-sivu ladattiin. Meidän tapauksessamme emme määrittele action-attribuuttia, joten pyyntö päätyy samalle servletille, mutta tällä kertaa `doPost`-metodiin.
 
-Lisää omaan servlettiisi uusi `doPost`-metodi, joka lukee parametrina lähetetyn tuotenimen ja lisää tietokantaan uuden tuoterivin kyseisellä nimellä. Huom! Noudata MVC-mallia ja hyödynnä DAO-luokkaa, äläkä tee tietokantaoperaatiota servlet-luokassasi:
+Lisää lomakkeella lähetettyjen tietojen käsittelemiseksi omaan servlettiisi uusi `doPost`-metodi, joka lukee parametrina lähetetyn tuotenimen ja lisää tietokantaan uuden tuoterivin kyseisellä nimellä. Huom! Noudata MVC-mallia ja hyödynnä DAO-luokkaa, äläkä tee tietokantaoperaatiota servlet-luokassasi:
 
 ```java
 public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    // todo: get the product title from request parameters
-    // todo: use the title to create a new product object
-    // todo: use the DAO to store the product object into the database
+    // todo: hae tuotteen  nimi req-objektilta
+    // todo: käytä tuotenimeä luodaksesi uuden ShoppingListItem-olion
+    // todo: tallenna luomasi olio tietokantaan DAO-luokkasi avulla
 }
 ```
 

@@ -36,6 +36,12 @@ Kurssin tehtävien suorittamiseksi sinun ei tarvitse rekisteröityä GitHubiin, 
 
 Tällä videolla tutustumme HTTP-protokollaan ja siihen liittyviin pyyntöihin ja vastauksiin. Tutustumme siihen, miten sovelluspalvelin välittää HTTP-pyynnöt Java-ohjelmallemme ja miten ohjelmamme vastaa pyyntöön siten, että vastaus päätyy käyttäjän selaimelle. Kloonaamme myös GitHubista projektipohjan, jota käytämme jatkossa web-sovelluksemme pohjana.
 
+Projektipohjan kloonauksessa kopioi Eclipseen seuraava Git-osoite:
+
+```
+https://github.com/ohjelmointi2/embedded-tomcat-template.git
+```
+
 Videolla esiintyvät sivut:
 
 * HTTP Messages: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)

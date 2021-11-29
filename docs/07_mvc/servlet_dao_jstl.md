@@ -283,7 +283,7 @@ HTML-koodin yhteydessä onkin erittäin tärkeää huolehtia siitä, että kaikk
 Esimerkiksi haitallista koodia sisältävä tuotenimi `"Milk <script>alert('attack!');</script>"` ei siis saa tuottaa HTML-sivulle seuraavaa sisältöä:
 
 <pre class="highlight" style="border: solid red 2px; color: red;"><code>&lt;li&gt;
-    Milk &lt;script&gt;alert('attack!');&lt;/script&gt;
+    Milk <span style="color: red">&lt;script&gt;alert('attack!');&lt;/script&gt;</span>
 &lt;/li&gt;</code></pre>
 
 Yllä oleva koodi sisältää sivulle kuulumatonta JavaScriptiä, joka voi huonossa tapauksessa esimerkiksi kaapata käyttäjän istunnon tai suorittaa sivustolla toimenpiteitä käyttäjän nimissä.
@@ -302,7 +302,7 @@ Merkkijonot tuleekin aina käsitellä `c:out`-tagin avulla, jolloin niissä mahd
 </li>
 ```
 
-Selain tulkitsee yllä olevasta koodista `c:out`-tagin ulkopuoliset `<li>`-elementit HTML-koodina, mutta esimerkiksi `&lt;` näytetään sivulla tavallisena "suurempi kuin"-merkkinä `>`.
+Selain tulkitsee yllä olevasta koodista `c:out`-tagin ulkopuoliset `<li>`-elementit HTML-koodina, mutta esimerkiksi `&lt;` näytetään sivulla tavallisena "pienempi kuin"-merkkinä.
 
 Lue myös tarvittaessa keskustelu aiheesta ["what exactly does the &lt;c:out&gt; do?"](https://stackoverflow.com/q/291031)
 

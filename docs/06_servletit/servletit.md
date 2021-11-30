@@ -367,6 +367,19 @@ Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil
 </html>
 ```
 
+HTML-sivulla esitettynä lomake näyttää suunnilleen tältä:
+
+<div style="padding: 0.8rem; background-color: #f3f6fa; border: solid 1px #dce6f0;">
+    Count days between today and any other date:
+    <form action="http://localhost:8080/daysUntil" method="get">
+        <label>Year:  <input type="number" name="year"></label>
+        <label>Month: <input type="number" name="month" min="1" max="12"></label>
+        <label>Day:   <input type="number" name="day" min="1" max="31"></label>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
 ### Bonus: artikkeli virheiden paikantamisesta
 
 Tästä viikosta alkaen käytämme koodissa merkittävästi enemmän valmiita kirjastoja, joiden myötä ohjelman virheiden tulkitseminen tulee usein hankalammaksi. Kun virheilmoitus liittyy jossain muussa kirjastossa ilmenneeseen virheeseen, voi olla vaikeaa hahmottaa, missä kohdassa omaa koodiasi on syy tuolle virheelle.

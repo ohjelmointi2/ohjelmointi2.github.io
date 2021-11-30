@@ -325,7 +325,7 @@ Huomioi parametriarvoja käyttäessäsi, että *mikäli arvoa ei ole asetettu py
 
 Toteuta uusi servlet `DaysUntilServlet`, joka saa parametreinaan päivän, kuukauden ja vuoden esimerkiksi seuraavalla pyynnöllä:
 
-    http://localhost:8080/daysUntil?year=2020&month=12&day=24
+    http://localhost:8080/daysUntil?year=2030&month=12&day=6
 
 Kun olet saanut parametrit `year`, `month` ja `day` muutettua kokonaisluvuiksi, voit muodostaa niitä vastaavan päivämäärän esim. [LocalDate-luokan](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) avulla.
 

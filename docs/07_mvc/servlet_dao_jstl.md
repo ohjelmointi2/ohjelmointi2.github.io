@@ -133,7 +133,7 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
 
     &lt;!-- JUnit-testikirjaston versio --&gt;
     &lt;junit.jupiter.version&gt;5.7.1&lt;/junit.jupiter.version&gt;
-<span style="color: green">
+<span style="color: darkgreen; font-weight: bold;">
     &lt;!-- lis&auml;&auml; n&auml;m&auml; rivit: --&gt;
     &lt;sqlite.driver.version&gt;3.36.0.3&lt;/sqlite.driver.version&gt;
     &lt;jstl.api.version&gt;1.2&lt;/jstl.api.version&gt;
@@ -163,7 +163,7 @@ Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä
         &lt;version&gt;${junit.jupiter.version}&lt;/version&gt;
         &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
-<span style="color: green">
+<span style="color: darkgreen; font-weight: bold;">
     &lt;!-- lis&auml;&auml; n&auml;m&auml; riippuvuudet (SQLite ja JSTL): --&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;org.xerial&lt;/groupId&gt;
@@ -274,7 +274,7 @@ Vaihtoehtoisesti voit luoda `<table>`-taulukkorakenteen esimerkiksi seuraavasti 
         <tr><th>Product</th></tr>
     </thead>
     <tbody>
-    <!-- TODO: Nämä rivit tulee generoida c:forEach- ja c:out-tagien avulla -->
+        <!-- TODO: Nämä rivit tulee generoida c:forEach- ja c:out-tagien avulla -->
         <tr><td>Milk</td></tr>
         <tr><td>Eggs</td></tr>
     </tbody>

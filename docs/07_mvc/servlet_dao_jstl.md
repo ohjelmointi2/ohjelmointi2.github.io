@@ -19,7 +19,7 @@ Sovellusten kehitettävyyden ja ylläpidettävyyden kannalta on tärkeää, ett�
 >
 > [Hurja.fi, 2020. MVC for dummies: malli, näkymä ja ohjain -arkkitehtuuri web-sovelluksissa](https://www.hurja.fi/blogi/mvc-for-dummies-malli-nakyma-ja-ohjain-arkkitehtuuri-web-sovelluksissa/)
 
-Model-View-Controller -suunnittelumallissa (MVC) sovelluksen eri vastuualueet eriytetään toisistaan sovelluksen sisällä kolmikerrosarkkitehtuurin mukaisesti malleihin (model), näkymiin (vies), ja ohjauslogiikkaan (controller).
+Model-View-Controller -suunnittelumallissa (MVC) sovelluksen eri vastuualueet eriytetään toisistaan sovelluksen sisällä kolmikerrosarkkitehtuurin mukaisesti malleihin (models), näkymiin (views) ja ohjauslogiikkaan (controllers).
 
 Tämä suunnittelumalli on tyypillinen erityisesti olio-ohjelmointiparadigmaa noudattavissa web-sovelluksissa ja suosittelen lukemaan aiheesta blogikirjoituksen ["MVC for dummies: malli, näkymä ja ohjain -arkkitehtuuri web-sovelluksissa" (Hurja, 2020)](https://www.hurja.fi/blogi/mvc-for-dummies-malli-nakyma-ja-ohjain-arkkitehtuuri-web-sovelluksissa/).
 

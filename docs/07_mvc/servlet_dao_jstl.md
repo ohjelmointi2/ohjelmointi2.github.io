@@ -6,18 +6,22 @@
 
 Tällä viikolla tavoitteinamme on rakentaa kolmikerrosarkkitehtuuria noudattava web-sovellus, joka yhdistää tähän mennessä opettelemamme erilliset tietokanta- ja web-teknologiat yhdeksi loogiseksi kokonaisuudeksi.
 
-Jatkat siis tällä viikolla edellisellä viikolla aloittamasi web-projektin kehittämistä ja tarvitset myös shopping list -tietokantaluokkiasi. Mikäli aikaisemmat aiheet ovat jääneet sinulta kesken, voit hyödyntää tällä viikolla myös kurssin malliratkaisuja, jotka julkaistaan edellisten tehtävien määräajan päätyttyä.
+Jatkat siis tällä viikolla edellisellä viikolla aloittamasi web-projektin kehittämistä ja tarvitset myös aikaisempia shopping list -tietokantaluokkiasi. Mikäli aikaisemmat tehtävät ovat jääneet sinulta kesken, voit hyödyntää tällä viikolla myös kurssin malliratkaisuja, jotka on julkaistu edellisten tehtävien määräaikojen päätyttyä kurssin Teams-kanavalla.
 
 
 ## Sovelluksemme arkkitehtuuri
 
 Sovellusten kehitettävyyden ja ylläpidettävyyden kannalta on tärkeää, että ne noudattavat jotain tiettyä arkkitehtuuria ja että niissä erilliset loogiset kokonaisuudet on toteutettu toisistaan irrallaan. Meidän ostoslistasovelluksessamme noudatamme kolmikerrosarkkitehtuuria ja MVC-mallia:
 
-> *"Three-tier architecture is a client-server software architecture pattern in which the user interface (presentation), functional process logic ("business rules"), computer data storage and data access are developed and maintained as independent modules, most often on separate platforms."*
+> *"Ammattilaisten kehittämä sovellus ei ole pelkkä satunnainen kasa koodia, vaan rakentuu valittujen arkkitehtuurimallien ympärille. Arkkitehtuuri auttaa pitämään sovelluksen sisäisen rakenteen loogisena ja helpottaa sovelluksen ylläpidettävyyttä ja jatkokehitettävyyttä.*
 >
-> [Multitier architecture, Wikipedia](https://en.wikipedia.org/wiki/Multitier_architecture#Three-tier_architecture)
+> *Model-View-Controller (MVC) on perinteinen ohjelmistokehityksen suunnittelumalli, jonka tärkein tehtävä on eriyttää sovelluksen esitys- ja logiikkakerros toisistaan ja delegoida sovelluksen sisäisiä vastuita eri osa-alueille."*
+>
+> [Hurja.fi, 2020. MVC for dummies: malli, näkymä ja ohjain -arkkitehtuuri web-sovelluksissa](https://www.hurja.fi/blogi/mvc-for-dummies-malli-nakyma-ja-ohjain-arkkitehtuuri-web-sovelluksissa/)
 
-Model-View-Controller -suunnittelumallissa (MVC) sovelluksen eri vastuualueet eriytetään toisistaan sovelluksen sisällä kolmikerrosarkkitehtuurin mukaisesti malleihin, näkymiin, ja ohjauslogiikkaan. Tämä suunnittelumalli on tyypillinen erityisesti olio-ohjelmointiparadigmaa noudattavissa web-sovelluksissa ja suosittelen lukemaan aiheesta blogikirjoituksen ["MVC for dummies: malli, näkymä ja ohjain -arkkitehtuuri web-sovelluksissa " (Hurja, 2020)](https://www.hurja.fi/blogi/mvc-for-dummies-malli-nakyma-ja-ohjain-arkkitehtuuri-web-sovelluksissa/).
+Model-View-Controller -suunnittelumallissa (MVC) sovelluksen eri vastuualueet eriytetään toisistaan sovelluksen sisällä kolmikerrosarkkitehtuurin mukaisesti malleihin (model), näkymiin (vies), ja ohjauslogiikkaan (controller).
+
+Tämä suunnittelumalli on tyypillinen erityisesti olio-ohjelmointiparadigmaa noudattavissa web-sovelluksissa ja suosittelen lukemaan aiheesta blogikirjoituksen ["MVC for dummies: malli, näkymä ja ohjain -arkkitehtuuri web-sovelluksissa" (Hurja, 2020)](https://www.hurja.fi/blogi/mvc-for-dummies-malli-nakyma-ja-ohjain-arkkitehtuuri-web-sovelluksissa/).
 
 Näiden arkkitehtuurimallien mukaisesti sovelluksemme kolme osakokonaisuutta ovat siis:
 
@@ -27,16 +31,19 @@ Näiden arkkitehtuurimallien mukaisesti sovelluksemme kolme osakokonaisuutta ova
 
 Seuraavissa kappaleissa ja videoissa käsittelemme jo aikaisemmin toteuttamamme datan tallennuskerroksen tuomisen osaksi web-sovellustamme.
 
+
 ## Projektipohja
 
-Tällä viikolla tarkoituksena on jatkaa web-sovelluksen kehittämistä viime viikolla käyttämääsi projektipohjaan. Mikäli edellinen tehtävä jäi sinulta ratkaisematta tai haluat aloittaa puhtaalta pöydältä, voit kloonata itsellesi uuden kopion [kurssin projektipohjasta](https://github.com/ohjelmointi2/embedded-tomcat-template) edellisen viikon ohjevideoiden mukaisesti.
+Tällä viikolla tarkoituksena on jatkaa web-sovelluksen kehittämistä viime viikolla käyttämääsi projektipohjaan. Mikäli edellinen tehtävä jäi sinulta ratkaisematta tai haluat aloittaa puhtaalta pöydältä, voit kloonata itsellesi uuden kopion [kurssin projektipohjasta](https://github.com/ohjelmointi2/embedded-tomcat-template) edellisen viikon ohjevideoiden mukaisesti. 
+
+💡 *Jos kloonaat projektipohjan uudelleen, nimeä ensin nykyinen projektisi Eclipsessä uudelleen, koska Eclipse-työtilassa ei voi olla kahta samannimistä projektia.*
 
 
 ## DAO- ja Model-luokkien lisääminen projektiin
 
-Olet aikaisemmassa tehtävässä luonut `ShoppingListITem`-luokan, joka mallintaa yksittäisiä tietokannassa olevia rivejä. Olet lisäksi luonut DAO-luokan, jonka avulla pystyt tekemään CRUD-operaatioita tietokantaasi. Tulet tällä viikolla tarvitsemaan näitä luokkia osana isompaa sovellusta. Mikäli aikaisemmat aiheet ovat jääneet sinulta kesken, hyödynnä kurssin malliratkaisuja osana omaa projektiasi.
+Olet aikaisemmassa tehtävässä luonut `ShoppingListITem`-luokan, joka mallintaa yksittäisiä tietokannassa olevia rivejä. Olet lisäksi luonut DAO-luokan, jonka avulla pystyt tekemään CRUD-operaatioita tietokantaasi (CRUD = Create, Read, Update, Delete).
 
-Saat valmiit luokat helpoiten käyttöön web-projektissasi kopioimalla luokkien pakettirakenteen `src/main/java`-hakemiston alle. Mahdollisesti toteuttamasi JUnit-testiluokat puolestaan kuuluvat `src/test/java`-hakemiston alle.
+Saat valmiit luokat helpoiten käyttöön web-projektissasi kopioimalla luokkien pakettirakenteen web-projektiisi `src/main/java`-hakemiston alle. Mahdollisesti toteuttamasi JUnit-testiluokat puolestaan kuuluvat `src/test/java`-hakemiston alle.
 
 Ohjelmasi hakemistorakenne voi olla luokkien lisäämisen jälkeen esimerkiksi seuraava:
 
@@ -71,7 +78,7 @@ src
          └───database
                  JDBCShoppingListItemDaoTest.java *
 
----
+---------------------------------------------------
 
 *  toteutettu vapaaehtoisena tehtävänä
 ** luodaan tällä harjoituskierroksella
@@ -79,7 +86,9 @@ src
 
 **Ympäristömuuttujan lisääminen**
 
-Mikäli toteutit DAO-tehtävän bonus-osuuden ja käytit `JDBCShoppingListItemDao`-luokkasi kanssa `JDBC_DATABASE_URL`-ympäristömuuttujaa, määrittele sama ympäristömuuttuja myös `Main`-luokan ympäristömuuttujiin. Eclipsen ympäristömuuttujat ovat luokkakohtaisia ja aikaisempi ympäristömuuttujasi ei ole automaattisesti `Main`-luokan käytettävissä. Ohjeet muuttujan määrittelemiseksi löydät myös seuraavalta videolta.
+Mikäli toteutit DAO-tehtävän bonus-osuuden ja käytit `JDBCShoppingListItemDao`-luokkasi kanssa `JDBC_DATABASE_URL`-ympäristömuuttujaa, määrittele sama ympäristömuuttuja myös web-projektin `Main`-luokan ympäristömuuttujiin. Eclipsen ympäristömuuttujat ovat luokkakohtaisia ja aikaisempi ympäristömuuttujasi ei ole automaattisesti `Main`-luokan käytettävissä.
+
+Ohjeet muuttujan asettamiseksi löydät myös seuraavalta videolta.
 
 
 ## Video 1: [Tietokantaluokkien tuominen web-sovellukseen](https://web.microsoftstream.com/video/3998be63-0576-44e2-8e05-fb3da6008789) <small>10:33</small>
@@ -96,12 +105,14 @@ Tällä videolla esiintyvät lähdekoodit löydät JDBC ja DAO -tehtävien malli
 
 ## Riippuvuuksien asentaminen
 
-Omien lähdekooditiedostojemme lisäksi tarvitsemme web-projektiimme sen ulkoiset riippuvuudet, eli SQLite-ajurin ja JUnit-testikirjaston. Projektipohjassa on valmiiksi käytössä Maven-automaatiotyökalu riippuvuuksien hallitsemiseksi. Aikaisempien riippuvuuksien ja uuden JSTL-tagikirjaston (JSP Standard Tag Library) asennus sujuu helpoiten lisäämällä se riippuvuutena Mavenin hyödyntämään `pom.xml`-tiedostoon. 
+Omien lähdekooditiedostojemme lisäksi tarvitsemme web-projektiimme sen ulkoiset riippuvuudet, eli SQLite-ajurin ja JUnit-testikirjaston. Kuten viime viikon materiaalissa totesimme, projektipohjassa on valmiiksi käytössä Maven-automaatiotyökalu riippuvuuksien hallitsemiseksi. 
+
+Aikaisempien riippuvuuksien ja uuden JSTL-tagikirjaston (JSP Standard Tag Library) asennus sujuu helpoiten lisäämällä ne riippuvuuksina Mavenin hyödyntämään `pom.xml`-tiedostoon.
 
 <!--Toinen vaihtoehto olisi tallentaa riippuvuudet .jar-paketteina (Java Archive), kuten aikaisemmin tällä kurssilla teimme SQLite-kirjaston kanssa.-->
 
 
-### Riippuvuuksien määrittely pom.xml:ään
+### Riippuvuuksien määrittely pom.xml:ään (Project Object Model)
 
 Tomcat-projektipohjan juurihakemistossa sijaitseva `pom.xml`-projektitiedosto on normaali XML-tiedosto, jota voit muokata esimerkiksi Eclipsen tekstieditorilla. Avatessasi tiedostoa Eclipse saattaa avata sen "Overview"-näkymässä, jolloin voit vaihtaa näkymän klikkaamalla sen alalaidan `pom.xml`-välilehteä [tämän videon mukaisesti](https://javavids.com/video/open-xml-in-pomxml-by-default-in-eclipse).
 
@@ -109,63 +120,63 @@ Tehdessäsi muutoksia ja tallentaessasi tiedoston Eclipsen Maven-lisäosa asenta
 
 ### Versionumeroiden määritteleminen
 
-Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<properties>`-tagin sisään ja itse riippuvuudet `<dependencies>`-tagin sisään. Lisää plus-merkillä merkityt rivit pom.xml-tiedostoosi properties-tagin sisään (huom, jätä `+`-merkit pois rivien alusta):
+Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<properties>`-tagin sisään ja itse riippuvuudet `<dependencies>`-tagin sisään. Lisää vihreällä korostetut rivit pom.xml-tiedostoosi properties-tagin sisään:
 
-```diff
- <properties>
-     <!-- Tomcatin versionumero -->
-     <tomcat.version>8.5.73</tomcat.version>
+<pre>
+&lt;properties&gt;
+    &lt;!-- Tomcatin versionumero --&gt;
+    &lt;tomcat.version&gt;8.5.73&lt;/tomcat.version&gt;
 
-     <!-- Javan versionumero -->
-     <maven.compiler.target>11</maven.compiler.target>
-     <maven.compiler.source>11</maven.compiler.source>
+    &lt;!-- Javan versionumero --&gt;
+    &lt;maven.compiler.target&gt;11&lt;/maven.compiler.target&gt;
+    &lt;maven.compiler.source&gt;11&lt;/maven.compiler.source&gt;
 
-     <!-- JUnit-testikirjaston versio -->
-     <junit.jupiter.version>5.7.1</junit.jupiter.version>
+    &lt;!-- JUnit-testikirjaston versio --&gt;
+    &lt;junit.jupiter.version&gt;5.7.1&lt;/junit.jupiter.version&gt;
+<span style="color: green">
+    &lt;!-- lis&auml;&auml; n&auml;m&auml; rivit: --&gt;
+    &lt;sqlite.driver.version&gt;3.36.0.3&lt;/sqlite.driver.version&gt;
+    &lt;jstl.api.version&gt;1.2&lt;/jstl.api.version&gt;
+</span>
+    &lt;!-- Projektin merkist&ouml;koodaus --&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+</pre>
 
-     <!-- lisää nämä rivit: -->
-+    <sqlite.driver.version>3.36.0.3</sqlite.driver.version>
-+    <jstl.api.version>1.2</jstl.api.version>
-
-    <!-- Projektin merkistökoodaus -->
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-```
-
-Yllä käytetty tapa esittää tiedoston uudet rivit vihreällä sekä `+`-merkillä on myös gitin tapa esittää tiedostojen muutoksia. Lisätyt tagit määrittelevät seuraavat kolme uutta muuttujaa versionumeroita varten:
+Lisäämäsi tagit määrittelevät seuraavat uudet muuttujat versionumeroita varten:
 
 Muuttuja                | Versionumero  | Tarkoitus
 ------------------------|---------------|----------
 `sqlite.driver.version` | 3.36.0.3      | Aikaisemmilta viikoilta tuttu SQLite-ajuri JDBC-kirjastolle
 `jstl.api.version`      | 1.2           | JSTL-tagikirjasto
 
-Itse riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat kolme riippuvuutta dependencies-tagin loppuun:
+Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä. Riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat plus-merkein korostetut riippuvuudet dependencies-tagin loppuun:
 
 
-```diff
-<!-- Tiedoston alkuosa jätetty pois... -->
+<pre>
+&lt;!-- Tiedoston alkuosa j&auml;tetty pois... --&gt;
 
-     <!-- JUnit-testaustyökalu -->
-     <dependency>
-         <groupId>org.junit.jupiter</groupId>
-         <artifactId>junit-jupiter</artifactId>
-         <version>${junit.jupiter.version}</version>
-         <scope>test</scope>
-     </dependency>
-
-     <!-- lisää nämä riippuvuudet (SQLite ja JSTL): -->
-+    <dependency>
-+        <groupId>org.xerial</groupId>
-+        <artifactId>sqlite-jdbc</artifactId>
-+        <version>${sqlite.driver.version}</version>
-+    </dependency>
-+    <dependency>
-+        <groupId>javax.servlet</groupId>
-+        <artifactId>jstl</artifactId>
-+        <version>${jstl.api.version}</version>
-+    </dependency>
- </dependencies>
-```
+    &lt;!-- JUnit-testausty&ouml;kalu --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+        &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+        &lt;version&gt;${junit.jupiter.version}&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+<span style="color: green">
+    &lt;!-- lis&auml;&auml; n&auml;m&auml; riippuvuudet (SQLite ja JSTL): --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.xerial&lt;/groupId&gt;
+        &lt;artifactId&gt;sqlite-jdbc&lt;/artifactId&gt;
+        &lt;version&gt;${sqlite.driver.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+        &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+        &lt;version&gt;${jstl.api.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+</span>&lt;/dependencies&gt;
+</pre>
 
 **Huom!** Esimerkkikoodien vihreiden rivien vasemmassa laidassa olevat plus-merkit (`+`) ovat osa muuttuneita rivejä korostavaa diff-syntaksia, jotka eivät kuulu mukaan pom-tiedostoon. 
 

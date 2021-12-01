@@ -117,7 +117,7 @@ Jos muutoksesi toimivat oikein, niiden jälkeen [selaimen lähdekoodinäkymäss�
 
 ### Osa 2: JavaScript-koodi
 
-Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi. JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin.
+Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi. JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin:
 
 ```javascript
 async function removeProduct(id) {
@@ -143,7 +143,7 @@ function removeProductElement(id) {
 }
 ```
 
-Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/main/webapp/scripts/app.js`. Tämän jälkeen lisää JSP-sivullesi `<head>`-osioon tagi, jonka avulla selain osaa ladata koodin osaksi sivua:
+Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/main/webapp/scripts/app.js`. Voit myös tallentaa koodin itsellesi erillisenä tiedostona [tästä](app.js). Lisää lopuksi JSP-sivullesi `<head>`-osioon tagi, jonka avulla selain osaa ladata koodin osaksi ostoslistasivua:
 
 ```html
 <script src="/scripts/app.js"></script>

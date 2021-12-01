@@ -357,9 +357,9 @@ Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil
     <div>
         <p>Count days between today and any other date:</p>
         <form action="/daysUntil" method="get">
-            <label>Year:  <input type="number" name="year"></label>
-            <label>Month: <input type="number" name="month" min="1" max="12"></label>
-            <label>Day:   <input type="number" name="day" min="1" max="31"></label>
+            <label>Year:  <input type="number" name="year" max="9999" required></label>
+            <label>Month: <input type="number" name="month" min="1" max="12" required></label>
+            <label>Day:   <input type="number" name="day" min="1" max="31" required></label>
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -372,9 +372,9 @@ HTML-sivulla esitettynä lomake näyttää suunnilleen tältä:
 <div style="padding: 0.8rem; border: solid 1px #dce6f0;">
     Count days between today and any other date:
     <form action="http://localhost:8080/daysUntil" method="get">
-        <label>Year:  <input type="number" name="year"></label>
-        <label>Month: <input type="number" name="month" min="1" max="12"></label>
-        <label>Day:   <input type="number" name="day" min="1" max="31"></label>
+        <label>Year:  <input type="number" name="year" max="9999" required></label>
+        <label>Month: <input type="number" name="month" min="1" max="12" required></label>
+        <label>Day:   <input type="number" name="day" min="1" max="31" required></label>
         <input type="submit" value="Submit">
     </form>
 </div>

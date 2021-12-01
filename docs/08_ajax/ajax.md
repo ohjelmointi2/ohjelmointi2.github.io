@@ -149,6 +149,7 @@ Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/ma
 <script src="/scripts/app.js"></script>
 ```
 
+Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi osoite [http://localhost:8080/scripts/app.js](http://localhost:8080/scripts/app.js). Sinun tulisi nähdä lisäämäsi JS-lähdekoodi sellaisenaan.
 
 
 ### Osa 3: doDelete-metodin toteuttaminen servletissä

@@ -115,12 +115,11 @@ Tehtävät Teamsissa (DL 12.12. klo 23:59)
 &nbsp;
 
 
-### <small>13.12. - 19.12.</small> **Aihe 8: Ajax ja JavaScript** 
+### <small>13.12. - 19.12.</small> [**Aihe 8: Ajax ja JavaScript**](08_ajax/ajax)
 
 Viimeinen harjoitusviikko käsittelee JavaScript-koodin avulla tehtäviä palvelinkutsuja, eli Ajax-kutsuja. Niiden avulla voimme päivittää ostoslistamme sisältöä tekemättä sivulatauksia. Toteutamme lisäksi verkkopalveluumme uuden ominaisuuden ostoslistan rivien poistamiseksi.
 
-<!--[Siirry oppimateriaaliin ⇨](08_ajax/ajax)-->
-Materiaali päivitetään kurssin sivuille marraskuussa 2021.
+[Siirry oppimateriaaliin ⇨](08_ajax/ajax)
 
 Tehtävät Teamsissa (DL 19.12. klo 23:59)
 

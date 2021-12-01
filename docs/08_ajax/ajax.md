@@ -69,7 +69,7 @@ Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Valmiin koodin muokkaaminen on myös sallittua.
 
 
-### Osa 1: tapahtumankuuntelija
+### Osa 1 / 4: tapahtumankuuntelija
 
 Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuotteen poistamiseksi ostoslistalta. Painike voi olla toteutettu esimerkiksi `<button>`-elementtinä, mutta voit halutessasi käyttää myös muita elementtejä:
 
@@ -92,10 +92,10 @@ Lisää seuraavaksi painikkeelle `onclick`-tapahtumankuuntelija, jonka klikkaami
 Yllä olevassa esimerkkikoodissa painikkeen painaminen käynnistää `removeProduct`-funktion kutsun, ja antaa sille esimerkin vuoksi parametrina kovakoodatun luvun 7. Tässä tapauksessa haluamme oikeasti välittää funktiolle poistettavan rivin id:n, joka voidaan lisätä `ShoppingListItem`-luokan id:n avulla. Kirjoita siis edellisiltä viikoilta tuttu JSP expression language -lauseke (`${ }`) funktiokutsun sisään:
 
 ```html
-<button onclick="removeProduct(${ product.getId() })">Remove</button>
+<button onclick="removeProduct(${ item.getId() })">Remove</button>
 ```
 
-Huomaa että yllä olevassa koodinpätkässä `product.getId()` on Javaa, ja se korvataan metodin palauttamalla numerolla jo *palvelimella*. `removeProduct()` puolestaan on JavaScriptiä, ja se suoritetaan *selaimessa* elementtiä klikattaessa.
+Huomaa että yllä olevassa koodinpätkässä `item.getId()` on Javaa, ja se korvataan metodin palauttamalla numerolla jo *palvelimella*. `removeProduct()` puolestaan on JavaScriptiä, ja se suoritetaan *selaimessa* elementtiä klikattaessa. Huomaa myös, että omassa koodissasi ShoppingListItem-olio ei välttämättä ole samannimisessä muuttujassa kuin tässä esimerkissä.
 
 Jos muutoksesi toimivat oikein, niiden jälkeen [selaimen lähdekoodinäkymässä](https://neilpatel.com/blog/how-to-read-source-code/) jokaisen ostoslistan rivin kohdalla näkyy funktio oikean parametrin kanssa, esimerkiksi seuraavasti:
 
@@ -112,10 +112,14 @@ Jos muutoksesi toimivat oikein, niiden jälkeen [selaimen lähdekoodinäkymäss�
 </ul>
 ```
 
+Lisäyksen jälkeen sivusi pitäisi näyttää esimerkiksi tältä:
+
+![Poistonapit lisätty](remove-button.jpg)
+
 *Mikäli haluat perehtyä onclick-attribuuttiin tarkemmin, voit perehtyä niihin [W3Schools-sivustolla](https://www.w3schools.com/jsref/event_onclick.asp) tai videolla [JavaScript Tutorial For Beginners #40 - The onClick Event](https://youtu.be/XQEfWd1lh4Q)*
 
 
-### Osa 2: JavaScript-koodi
+### Osa 2 / 4: JavaScript-koodi
 
 Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi. JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin:
 
@@ -138,7 +142,7 @@ function removeProductElement(id) {
     if (element) {
         element.remove();
     } else {
-        alert(`Could not find element by id ${elementId}`);
+        alert(`Could not find element by id "${elementId}"`);
     }
 }
 ```
@@ -152,7 +156,7 @@ Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/ma
 Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi osoite [http://localhost:8080/scripts/app.js](http://localhost:8080/scripts/app.js). Sinun tulisi nähdä lisäämäsi JS-lähdekoodi sellaisenaan.
 
 
-### Osa 3: doDelete-metodin toteuttaminen servletissä
+### Osa 3 / 4: doDelete-metodin toteuttaminen servletissä
 
 Mikäli tähänastiset vaiheet on toteutettu onnistuneesti, painikkeen kokeileminen tässä vaiheessa aiheuttaa HTTP-virheen 405 (Method Not Allowed). Tämä johtuu siitä, että `removeProduct`-funktiossamme kutsutaan JavaScriptin `fetch`-funktiota käyttäen `DELETE`-metodia:
 
@@ -179,7 +183,7 @@ resp.getWriter().println("{ \"success\": true }");
 ```
 
 
-### Osa 4: sivun sisällön päivittäminen poiston jälkeen
+### Osa 4 / 4: sivun sisällön päivittäminen poiston jälkeen
 
 Kun pyyntö ostoslistan tuotteen poistamiseksi on lähetetty palvelimelle ja rivi on poistettu tietokannasta, on poistettu tuoterivi edelleen paikallaan HTML-sivulla 😲. Tämä johtuu siitä, että `fetch`-funktiolla tehty pyyntö ei aiheuttanut uutta sivulatausta. Sivun sisältö on siis edelleen sama kuin ennen painikkeen painamista, vaikka data poistui tietokannasta.
 
@@ -215,6 +219,10 @@ Jos käytit sivullasi taulukkorakennetta, lisää id:t vastaavasti taulukon rive
     <td><button onclick="removeProduct(3)">Remove</button></td>
 </tr>
 ```
+
+Teknisesti tämä ratkaistaan JSP-sivulla hyvin samalla tavalla, kuin miten ratkaisit id:n lisäämisen `onclick`-attribuuttiin.
+
+Tämän osan jälkeen painikkeen painamisen pitäisi poistaa ostoslistan rivit myös tietokannasta. Varmista lopuksi päivittämällä sivu selaimessa, että poisto on oikeasti tapahtunut, eikä rivit vain poistuneet näkyvistä selaimessa.
 
 
 ### Tehtävän palauttaminen

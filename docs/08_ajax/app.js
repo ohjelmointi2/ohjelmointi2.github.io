@@ -16,6 +16,6 @@ function removeProductElement(id) {
     if (element) {
         element.remove();
     } else {
-        alert(`Could not find element by id ${elementId}`);
+        alert(`Could not find element by id "${elementId}"`);
     }
 }

@@ -39,13 +39,13 @@ Sovelluslogiikan sijaitessa käyttäjän selaimessa, kohdistuu selaimen ja palve
 
 Voit halutessasi katsoa seuraavat videot, joka käsittelevät tiedonsiirron peruskäsitteitä sekä REST-suunnitteluperiaatteita, joiden mukaisesti sovellukset vaihtavat usein tietoa koneluettavassa muodossa:
 
-**[WebConcepts: REST API concepts and examples](https://youtu.be/7YcW25PHnAA)**
+**[WebConcepts: REST API concepts and examples](https://youtu.be/7YcW25PHnAA)** (valinnainen)
 
 [![WebConcepts: REST API concepts and examples](https://img.youtube.com/vi/7YcW25PHnAA/hq1.jpg)](https://youtu.be/7YcW25PHnAA)
 
 &nbsp;
 
-**[Traversy Media: What Is A RESTful API? Explanation of REST & HTTP](https://youtu.be/Q-BpqyOT3a8)**
+**[Traversy Media: What Is A RESTful API? Explanation of REST & HTTP](https://youtu.be/Q-BpqyOT3a8)** (valinnainen)
 
 [![Traversy Media: What Is A RESTful API? Explanation of REST & HTTP](https://img.youtube.com/vi/Q-BpqyOT3a8/hq3.jpg)](https://youtu.be/Q-BpqyOT3a8)
 

@@ -61,13 +61,12 @@ Tehtävä koostuu useammasta osasta, joiden tuloksena edellisillä viikoilla alo
 
 Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 
-1. Sivulle lisätään painike, jonka klikkaaminen kutsuu `removeProduct`-funktiota
-1. `removeProduct`-funktio tekee `DELETE`-tyyppisen pyynnön palvelimelle
+1. kunkin ostoslistan tuoterivin yhteyteen lisätään painike, jonka klikkaaminen kutsuu JavaScript-funktiota
+1. JS-funktio tekee `DELETE`-tyyppisen Ajax-pyynnön palvelimelle poistaakseen halutun rivin
 1. Servlet käsittelee poistopyynnön uudessa `doDelete`-metodissa ja poistaa pyydetyn tuoterivin tietokannasta
-1. `removeProduct` poistaa tuotteen HTML-sivulta ilman, että sivua ladataan uudelleen
+1. JavaScript-funktio poistaa tuotteen HTML-sivulta ilman, että sivua ladataan uudelleen
 
 Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Valmiin koodin muokkaaminen on myös sallittua.
-
 
 
 ### Osa 1: tapahtumankuuntelija

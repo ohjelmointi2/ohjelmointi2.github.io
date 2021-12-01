@@ -5,48 +5,39 @@
 [⇦ takaisin kurssin etusivulle](../)
 
 
-Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Samalla törmäämme kokonaan uusiin käsitteisiin, kuten **asynkroniseen ohjelmointiin**, **tapahtumankuuntelijoihin** ja **promise-olioihin**. Ohjelmointikielen vaihtuminen ja uudet ohjelmointityylit kesken kurssin ovat merkittävä epäjatkuvuuskohta, jotka saattavat tehdä tästä aiheesta poikkeuksellisen haastavan. 
+Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Vaikka JavaScript muistuttaa nimeltään ja syntaksiltaan monilta osin Javaa, ovat ne kaksi täysin eri ohjelmointikieltä. Tämän viikon tavoitteena ei ole oppia itse JavaScriptiä, vaan tutustua siihen, miten web-sovelluksissa voidaan hyödyntää selainpäässä suoritettavaa JavaScript-koodia käyttöliittymän päivittämiseksi ilman sivulatauksia.
 
-Älä kuitenkaan lannistu, mikäli aiheet ja tehtävät tuntuvat hankalilta. Ensimmäisessä tehtävässä ei ole lainkaan ohjelmointia ja seuraavatkin tehtävät ovat koodin määrässä mitattuina aikaisempia pienempiä. Voit myös aina kysyä vinkkejä Teamsissa, mikäli törmäät odottamattomaan virheilmoitukseen tai et tiedä miten edetä.
 
 
 ## Tämän osion tavoitteet
 
-JavaScript-ohjelmointi, sivujen rakentaminen HTML-elementteinä ja elementtien ulkoasun määrittely CSS-tyyleillä ovat erittäin laajoja aiheita, joita käsitellään muilla kursseilla. Pyrimmekin tällä kurssilla minimoimaan sivun rakenteeseen ja ulkoasuun liittyvät aiheet, kuten HTML:n ja CSS:n. Sen sijaan tavoitteenamme on tutustua selaimen ja palvelimen väliseen tiedonsiirtoon ja siihen, miten voimme tehdä JavaScriptin avulla vaiheita sivun sisällön päivittämiseksi ja miten vastaamme näihin tarpeisiin palvelimellamme.
+JavaScript-ohjelmointi, sivujen rakentaminen HTML-elementteinä ja elementtien ulkoasun määrittely CSS-tyyleillä ovat erittäin laajoja aiheita, joita käsitellään muilla kursseilla. Pyrimmekin tällä kurssilla minimoimaan sivun rakenteeseen ja ulkoasuun liittyvät aiheet, kuten HTML:n ja CSS:n. Sen sijaan tavoitteenamme on tutustua selaimen ja palvelimen väliseen tiedonsiirtoon ja siihen, miten voimme tehdä JavaScriptin avulla hyvin pienimuotoisia palvelinkutsuja sekä muutoksia sivurakenteeseen.
 
+> *"AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files. AJAX’s most appealing characteristic is its "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.*"
+>
+> [What's AJAX?](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/MDN/About/contributors.txt). [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
 
-&nbsp;
-
-
-## Video 1: [Johdanto single page app -sovelluksiin](https://web.microsoftstream.com/video/29e3d53f-0f16-4cea-8015-d3a1399ccf44) <small>26 min</small>
-
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/29e3d53f-0f16-4cea-8015-d3a1399ccf44?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
-
-Tällä videolla teemme yleiskatsauksen viikon aiheeseen, materiaaleihin sekä tehtäviin.
-
-Videolla esitettävää esimerkkisovellusta voi kokeilla osoitteessa [https://shoppinglist-example.herokuapp.com/](https://shoppinglist-example.herokuapp.com/). Esimerkkisovelluksen käynnistyminen saattaa kestää hetken ja siinä ei ole tukea eri käyttäjille, eli muiden käyttäjien lisäämät ja poistamat tuotteet vaikuttavat myös omaan ostoslistaasi. Esimerkkiprojektin dokumentaatio ja lähdekoodit löytyvät GitHubista osoitteesta [https://github.com/haagahelia/ShoppingListExample](https://github.com/haagahelia/ShoppingListExample).
-
-
-&nbsp;
+Ammattimaisessa web-kehityksessä JavaScript-ohjelmointiin käytetään erilaisia ohjelmistokehyksiä tai kirjastoja, kuten [React](https://reactjs.org/). Tällä kurssilla hyödynnämme kuitenkin ainoastaan selainten sisäänrakennettuja ominaisuuksia.
 
 
 
 ## Sovellusarkkitehtuurit: SPA ja MPA
 
-Web-sovelluksia voidaan rakentaa hyvin erilaisilla arkkitehtuureilla. Tomcat, servletit ja JSP-sivut rakennetaan tyypillisesti [asiakas-palvelin-arkkitehtuurilla](https://www.google.com/search?q=client+server+architecture), jossa sovellus ja kaikki siihen liittyvä data sijaitsevat palvelimella, jolle asiakas tekee pyyntöjä. Palvelin suorittaa pyynnön täyttämiseksi tarvittavan logiikan ja muodostaa HTML-sivuja, jotka asiakas, eli selain, näyttää sellaisenaan käyttäjälle.
+Web-sovelluksia voidaan rakentaa hyvin erilaisilla arkkitehtuureilla. Tomcat, servletit ja JSP-sivut rakennetaan tyypillisesti [asiakas-palvelin-arkkitehtuurilla (client-server)](https://www.google.com/search?q=client+server+architecture), jossa sovellus ja kaikki siihen liittyvä data sijaitsevat palvelimella, jolle asiakas (selain) tekee pyyntöjä. Palvelin suorittaa pyynnön täyttämiseksi tarvittavan logiikan ja muodostaa HTML-sivuja, jotka asiakas (selain), näyttää renderöitynä käyttäjälle.
 
-On olemassa myös muita tapoja rakentaa web-sovelluksia ja jakaa niitä osiin. Toinen tyypillinen arkkitehtuuri on Single Page Application (SPA). SPA-sovelluksissa osa sovelluslogiikasta suoritetaan käyttäjän selaimessa JavaScript-koodina, joka kommunikoi tarvittaessa taustapalvelimen kanssa. Tällöin selaimessa toimiva koodi vastaa tyypillisesti käyttöliittymästä, eli palvelin ei enää generoi HTML-sivuja, vaan tyypillisesti JSON- tai XML-muotoista dataa. Seuraavassa osiossa perehdymme JSON-tietomalliin ja REST-rajapintoihin.
+On olemassa myös muita tapoja rakentaa web-sovelluksia ja jakaa niitä osiin. Toinen tyypillinen arkkitehtuuri on ns. Single Page Application eli SPA. SPA-sovelluksissa osa sovelluslogiikasta suoritetaan käyttäjän selaimessa JavaScript-koodina, joka kommunikoi tarvittaessa taustapalvelimen kanssa. SPA-sovelluksissa selaimessa toimiva koodi vastaa tyypillisesti käyttöliittymästä ja palvelin datasta, joten palvelimen sijasta HTML-rakenteet muodostetaan selaimessa. Selaimen ja palvelimen välillä välitetään tyypillisesti JSON- tai XML-muotoista dataa ja harvemmin valmiita HTML-rakenteita.
 
 Voit halutessasi perehtyä MPA- ja SPA-ohjelmistoarkkitehtuureihin syvemmin artikkelilla ["Single-page application vs. multiple-page application" (Neoteric, 2016)](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58) tai videolla ["SPAs vs MPAs/MVC - Are Single Page Apps always better?" (Academin, 2017)](https://youtu.be/F_BYg2QGsC0).
 
 &nbsp;
 
 
-## Koneluettavat rajapinnat, REST ja JSON
+
+## Koneluettavat rajapinnat, REST ja JSON (valinnainen)
 
 Sovelluslogiikan sijaitessa käyttäjän selaimessa, kohdistuu selaimen ja palvelimen väliseen tiedonsiirtoon erilaisia tarpeita. HTML-sivurakenteen sijasta JavaScript-koodissa halutaankin tyypillisesti käsitellä dataa olioina eikä HTML-elementteinä. Tätä tarkoitusta varten on kehitetty helposti koneluettava [JSON-tiedostomuoto (JavaScript Object Notation)](https://www.w3schools.com/js/js_json_intro.asp) sekä vakiintuneita tapoja JSON-vastausten hakemiseksi palvelimilta.
 
-Katso seuraavat videot, joka käsittelevät tiedonsiirron peruskäsitteitä sekä REST-suunnitteluperiaatteet, joiden mukaisesti sovellukset vaihtavat usein tietoa koneluettavassa muodossa:
+Voit halutessasi katsoa seuraavat videot, joka käsittelevät tiedonsiirron peruskäsitteitä sekä REST-suunnitteluperiaatteita, joiden mukaisesti sovellukset vaihtavat usein tietoa koneluettavassa muodossa:
 
 **[WebConcepts: REST API concepts and examples](https://youtu.be/7YcW25PHnAA)**
 
@@ -61,248 +52,179 @@ Katso seuraavat videot, joka käsittelevät tiedonsiirron peruskäsitteitä sek�
 &nbsp;
 
 
-### JSON ja REST verkkosivujen ulkopuolella
 
-Vaikka tällä viikolla käsittelemme tiedonsiirtoa verkkosivun näkökulmasta, REST-rajapinnat ja JSON-formaatti eivät suinkaan rajoitu pelkästään web-ohjelmointiin. JSON-tietoa voidaan käsitellä helposti käytännössä kaikilla moderneilla ohjelmointikielillä ja REST-rajapintoja hyödynnetään verkkosivujen lisäksi niin mobiilisovelluksissa, työpöytäsovelluksissa,  älykelloissa kuin muissakin sovellusympäristöissä.
+## Tehtävä
 
+Kuten johdannossa jo todettiin, tämän viikon tehtävissä käytetään eri ohjelmointikieltä kuin aikaisemmilla viikoilla. Samalla sivuamme kokonaan uusia käsitteisiin, kuten asynkronista ohjelmointia ja tapahtumankuuntelijoita. Älä lannistu, mikäli aiheet eivät täysin aukea tämän tehtävän puitteissa.
 
+Tehtävä koostuu useammasta osasta, joiden tuloksena edellisillä viikoilla aloittamaasi ostoslistasovellukseen syntyy uusi Ajax-pohjainen ominaisuus ostoslistan tuoterivien poistamiseksi.
 
-## Video 2: [Single Page App -esimerkkisovellus osa 1: JavaScript- ja REST-ohjelmointi](https://web.microsoftstream.com/video/16aed7e1-55bc-4348-a0d9-876076fcb970) <small>34 min</small>
+Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/16aed7e1-55bc-4348-a0d9-876076fcb970?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+1. Sivulle lisätään painike, jonka klikkaaminen kutsuu `removeProduct`-funktiota
+1. `removeProduct`-funktio tekee `DELETE`-tyyppisen pyynnön palvelimelle
+1. Servlet käsittelee poistopyynnön uudessa `doDelete`-metodissa ja poistaa pyydetyn tuoterivin tietokannasta
+1. `removeProduct` poistaa tuotteen HTML-sivulta ilman, että sivua ladataan uudelleen
 
-Tällä videolla tutustumme JSON-rajapinnan toteuttamiseen Java-sovelluksessa sekä rajapintaa hyödyntävän JavaScript-sovelluksen toimintalogiikkaan.
-
-&nbsp;
-
-
-### Video 3: [Single Page App -esimerkkisovellus osa 2: asynkroninen ohjelmointi, promiset ja async/await](https://web.microsoftstream.com/video/37d88eb6-d63c-4bb1-a654-dbb7e8e21687) <small>31 min</small>
-
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/37d88eb6-d63c-4bb1-a654-dbb7e8e21687?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;" allowfullscreen style="border:none;"></iframe>
-
-Tällä videolla käsittelemme tarkemmin JavaScript-koodin avulla tehtäviä palvelinkutsuja, joiden avulla voimme esimerkiksi päivittää ostoslistamme sisältöä tekemättä sivulatauksia.
-
-&nbsp;
+Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Valmiin koodin muokkaaminen on myös sallittua.
 
 
-## Esimerkkiprojekti
 
-Ajax-aiheen käsittelyä varten tälle kurssille on luotu oma erillinen esimerkkiprojekti. Projektin aihe on ostoslistasovellus, kuten aikaisemmissa harjoituksissamme, mutta tämä esimerkki on toteutettu hyödyntäen Ajax-teknologioita. Lue esimerkkiprojektin dokumentaatio osoitteessa [https://github.com/haagahelia/ShoppingListExample](https://github.com/haagahelia/ShoppingListExample). Samasta osoitteesta löydät myös lähdekoodit, jotka voit kloonata itsellesi ohjelman suorittamista ja muokkaamista varten. 
+### Osa 1: tapahtumankuuntelija
 
-Jos et halua asentaa itsellesi omaa kopiota esimerkkisovelluksesta, voit käyttää sitä myös osoitteessa [https://shoppinglist-example.herokuapp.com/](https://shoppinglist-example.herokuapp.com/). Tämä versio on asennettu [Heroku](https://heroku.com/)-pilvipalveluun ilmaisena sovelluksena, joten sen käynnistyminen saattaa kestää hetken. Huomaathan myös, että ostoslistasovelluksessa ei ole tukea useille käyttäjille, eli muiden käyttäjien lisäämät ja poistamat tuotteet vaikuttavat myös omaan ostoslistaasi. Demosovelluksen ostoslistan sisältö palautetaan takaisin alkutilaan satunnaisin väliajoin.
-
-Kun olet tutustunut esimerkkiprojektiin ja sen dokumentaatioon, etene seuraaviin kappaleisiin.
-
-
-## Tehtävät
-
-**Huom!** Kuten johdannossa jo todettiin, tämän viikon tehtävissä käytetään eri ohjelmointikieltä kuin aikaisemmilla viikoilla. Samalla törmäämme kokonaan uusiin käsitteisiin, kuten asynkroniseen ohjelmointiin, tapahtumankuuntelijoihin ja promise-olioihin. Älä lannistu, mikäli aiheet ja tehtävät osoittautuvat ylitsepääsemättömiksi. Perehdy asiaan parhaasi mukaan ja palauta ratkaisut niihin tehtäviin, jotka pystyt ratkaisemaan tälle kurssille varaamallasi työpanoksella.
-
-Kurssin esimerkeissä ja ohjeissa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) avulla. 
-
-### Video 4: [Ajax-tehtävien ohjeistus](https://web.microsoftstream.com/video/d25ce171-5ab8-4171-a1a9-179d8041ea45) <small>14 min</small>
-
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d25ce171-5ab8-4171-a1a9-179d8041ea45?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
-
-&nbsp;
-
-### Tehtävä 1: verkkoliikenteen tutkiminen
-
-Tässä tehtävässä tutustumme esimerkkiprojektin tiedonsiirtoon sekä nettiselaimesi kehittäjätyökaluihin. Kehittäjätyökalujen tunteminen on erittäin tärkeää selainlogiikkaa kehitettäessä, koska esimerkiksi virheilmoitukset ja tiedonsiirrossa tapahtuneet virheet löytyvät ainoastaan kehittäjätyökalujen kautta.
-
-Referenssiselaimena käytämme [Chromea](https://www.google.com/intl/fi_fi/chrome/) ja sen [DevTools](https://developers.google.com/web/tools/chrome-devtools)-työkaluja, mutta voit tehdä tehtävän millä tahansa selaimella, kunhan löydät ohjeet oman selaimesi vastaavien ominaisuuksien käyttämiseksi.
-
-Katso video Chromen kehitystyökalujen käytöstä verkkoliikenteen tutkimiseksi:
-
-**[Google Chrome Developer: Inspect Network Activity - Chrome DevTools 101](https://youtu.be/e1gAyQuIFQo)**
-
-[![Google Chrome Developer: Inspect Network Activity - Chrome DevTools 101](https://img.youtube.com/vi/e1gAyQuIFQo/hq1.jpg)](https://youtu.be/e1gAyQuIFQo)
-
-Hyödynnä videolla esitettyä työkalua ja tutki, mitä verkkoliikenteessä tapahtuu, kun lisäät [Ajax-esimerkkisovelluksessa](https://shoppinglist-example.herokuapp.com/) ostoslistalle uuden tuotteen. Selvitä, onko palvelimelle lähetettävässä POST-pyynnössä uudella tuoterivillä `id`-attribuuttia, ja jos on, mikä sen arvo on. [Ota kuvankaappaus](https://kb.iu.edu/d/afws) selaimesi kehittäjätyökalun näkymästä, jossa näkyy palvelimelta tullut vastaus JSON-muodossa. **Liitä kuvankaappaus tehtävän vastaukseesi Teamsiin.**
-
-
-### Tehtävä 2: tapahtumankuuntelija
-
-Toteuta edellisillä viikoilla aloittamaasi ostoslistasovellukseen uusi ominaisuus ostoslistan tuoterivien poistamiseksi. Mikäli ohjelmasi toimii puutteellisesti, voit hyödyntää tässä tehtävässä aikaisemman tehtävän malliratkaisua tai sen osia.
-
-Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuotteen poistamiseksi ostoslistalta. Lisää painikkeelle `onclick`-tapahtumankuuntelija, jonka klikkaaminen käynnistää JavaScript-funktion tuoterivin poistamiseksi. Tapahtumankuuntelija voidaan asettaa JavaScriptin avulla tai [kirjoittaa suoraan HTML-elementtiin](https://www.w3schools.com/jsref/event_onclick.asp):
+Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuotteen poistamiseksi ostoslistalta. Painike voi olla toteutettu esimerkiksi `<button>`-elementtinä, mutta voit halutessasi käyttää myös muita elementtejä:
 
 ```html
-<!-- Painike, jota klikattaessa kutsutaan removeProduct-funktiota: -->
-<button onclick="removeProduct(123)">Remove</button>
+<button>Remove</button>
 ```
 
-Jotta saat jokaiseen painikkeeseen juuri kyseistä tuotetta vastaavan poistettavan id:n, voit kirjoittaa aikaisemmilta viikoilta tutun JSP expression language -lausekkeen JavaScript-kutsun sisään:
+Lisää seuraavaksi painikkeelle `onclick`-tapahtumankuuntelija, jonka klikkaaminen käynnistää JavaScript-funktion tuoterivin poistamiseksi. Jos toteutit tuotelistauksen `<li>`-elementeillä, tulos voi näyttää seuraavalta:
 
 ```html
-<!-- 
-    product.getId() on Javaa, ja se suoritetaan jo palvelimella. 
-    removeProduct() on JavaScriptiä, ja se suoritetaan selaimessa
--->
+<li>
+    Milk
+
+    <!-- Painike, jota klikattaessa kutsutaan removeProduct-funktiota: -->
+    <button onclick="removeProduct(7)">Remove</button>
+</li>
+
+```
+
+Yllä olevassa esimerkkikoodissa painikkeen painaminen käynnistää `removeProduct`-funktion kutsun, ja antaa sille esimerkin vuoksi parametrina kovakoodatun luvun 7. Tässä tapauksessa haluamme oikeasti välittää funktiolle poistettavan rivin id:n, joka voidaan lisätä `ShoppingListItem`-luokan id:n avulla. Kirjoita siis edellisiltä viikoilta tuttu JSP expression language -lauseke (`${ }`) funktiokutsun sisään:
+
+```html
 <button onclick="removeProduct(${ product.getId() })">Remove</button>
 ```
 
-Videosuositus: [JavaScript Tutorial For Beginners #40 - The onClick Event](https://youtu.be/XQEfWd1lh4Q)
+Huomaa että yllä olevassa koodinpätkässä `product.getId()` on Javaa, ja se korvataan metodin palauttamalla numerolla jo *palvelimella*. `removeProduct()` puolestaan on JavaScriptiä, ja se suoritetaan *selaimessa* elementtiä klikattaessa.
+
+Jos muutoksesi toimivat oikein, niiden jälkeen [selaimen lähdekoodinäkymässä](https://neilpatel.com/blog/how-to-read-source-code/) jokaisen ostoslistan rivin kohdalla näkyy funktio oikean parametrin kanssa, esimerkiksi seuraavasti:
+
+```html
+<ul>
+    <li>
+        Milk
+        <button onclick="removeProduct(7)">Remove</button>
+    </li>
+    <li>
+        Eggs
+        <button onclick="removeProduct(8)">Remove</button>
+    </li>
+</ul>
+```
+
+*Mikäli haluat perehtyä onclick-attribuuttiin tarkemmin, voit perehtyä niihin [W3Schools-sivustolla](https://www.w3schools.com/jsref/event_onclick.asp) tai videolla [JavaScript Tutorial For Beginners #40 - The onClick Event](https://youtu.be/XQEfWd1lh4Q)*
 
 
-### Tehtävä 3: tapahtumankäsittelijä
+### Osa 2: JavaScript-koodi
 
-Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sinun kirjoittaa `removeProduct`-funktion varsinainen koodi. Voit kirjoittaa funktion samalle sivulle `<script>`-tagin sisään, tai [erilliseen JavaScript-tiedostoon](https://www.w3schools.com/tags/att_script_src.asp). JavaScript-koodisi voit kirjoittaa esimerkiksi hakemistoon `src/main/webapp/scripts/app.js`. Lisää tällöin JSP-sivullesi koodi:
+Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi. JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin.
+
+```javascript
+async function removeProduct(id) {
+    let response = await fetch(`?id=${id}`, { method: 'DELETE' });
+
+    if (response.status === 200) {
+        removeProductElement(id);
+    } else {
+        alert(`Ajax call failed. Please check the console. Error code ${response.status}`);
+        console.log(response);
+    }
+}
+
+function removeProductElement(id) {
+    let elementId = `product-${id}`;
+    let element = document.getElementById(elementId);
+
+    if (element) {
+        element.remove();
+    } else {
+        alert(`Could not find element by id ${elementId}`);
+    }
+}
+```
+
+Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/main/webapp/scripts/app.js`. Tämän jälkeen lisää JSP-sivullesi `<head>`-osioon tagi, jonka avulla selain osaa ladata koodin osaksi sivua:
 
 ```html
 <script src="/scripts/app.js"></script>
 ```
 
-Tapahtumankäsittelijän tulee saada parametriarvona poistettavan tuoterivin `id`, joka välitetään palvelimelle, jossa `id`-arvoa vastaava rivi poistetaan tietokannasta:
 
-```javascript
-async function removeProduct(id) {
-    // TODO: kutsu JavaScriptin fetch-funktiota kahdella parametrilla. 
-    // Ensimmäinen parametri on merkkijono, joka määrittelee pyynnön 
-    // osoitteen (esim. "/list?id=20"). Toinen parametri on objekti, johon
-    // määritellään pyynnön asetukset, tässä tapauksessa käytettävä
-    // metodi: { method: 'DELETE' }.
-    
-    // esim: fetch(osoite + id, { method: 'DELETE' })
-}
+
+### Osa 3: doDelete-metodin toteuttaminen servletissä
+
+Mikäli tähänastiset vaiheet on toteutettu onnistuneesti, painikkeen kokeileminen tässä vaiheessa aiheuttaa HTTP-virheen 405 (Method Not Allowed). Tämä johtuu siitä, että `removeProduct`-funktiossamme kutsutaan JavaScriptin `fetch`-funktiota käyttäen `DELETE`-metodia:
+
+```js
+let response = await fetch(`?id=${id}`, { method: 'DELETE' });
 ```
 
-Kutsu JavaScript-koodista palvelimelle kannattaa tehdä JavaScriptin `fetch`-funktiolla, jota käsitellään seuraavaksi.
-
-#### DELETE-pyyntö, fetch ja promiset
-
-Kuten ["What Is A RESTful API?"](https://youtu.be/Q-BpqyOT3a8)-videossa esitettiin, voidaan HTTP-protokollalla tuttujen `GET`- ja `POST`-pyyntöjen lisäksi lähettää myös mm. `DELETE`-tyyppisiä pyyntöjä. `DELETE`-pyyntöjä voidaan tehdä selaimella ainoastaan JavaScriptin avulla, eli niitä ei voida toteuttaa linkkien ja lomakkeiden avulla.
-
-Käytä tuotteen poistopyynnön tekemisessä JavaScriptin `fetch`-funktiota, jolle voit määritellä vapaasti pyynnössä käytettävän HTTP-metodin. Katso seuraavat videot `fetch`-funktion ja sen palauttamien `Promise`-olioiden käyttämisestä:
-
-**[Google Chrome Developers: Using the Fetch API](https://youtu.be/Ri7WRoRcl_U)**
-
-[![Google Chrome Developers: Using the Fetch API](https://img.youtube.com/vi/Ri7WRoRcl_U/hqdefault.jpg)](https://youtu.be/Ri7WRoRcl_U)
-
-> *"The Fetch API is a modern replacement for XMLHttpRequest. It includes much of the code you used to write for yourself: handling redirection and error codes, and decoding the result. This video gives you an easy introduction."*
->
-> [Google Chrome Developers](https://youtu.be/Ri7WRoRcl_U)
-
-&nbsp;
-
-**[Google Chrome Developers: Intro to Promises (incl async/await)](https://youtu.be/7unX6hn5NA8)**
-
-[![Google Chrome Developers: Intro to Promises (incl async/await)](https://img.youtube.com/vi/7unX6hn5NA8/hqdefault.jpg)](https://youtu.be/7unX6hn5NA8)
-
-> *"Promises make asynchronous programming much easier than the traditional event-listener or callback approaches. This video explains promises, promise-chaining, and complex error-handling."*
->
-> [Google Chrome Developers](https://youtu.be/7unX6hn5NA8)
-
-&nbsp;
-
-**[Google Chrome Developers: Get Started with Debugging JavaScript in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/)**
-
-[![Google Chrome Developers: Get Started with Debugging JavaScript in Chrome DevTools](https://img.youtube.com/vi/H0XScE08hy8/hqdefault.jpg)](https://developers.google.com/web/tools/chrome-devtools/javascript/)
-
-
-> *"This tutorial teaches you the basic workflow for debugging any JavaScript issue in DevTools."*
-
-&nbsp;
-
-<!-- &nbsp;
-
-**[Yhteenveto: Fetch-kutsut, Promiset ja Async/Await](https://web.microsoftstream.com/video/374c83a6-86b1-41a1-bd44-1d7a22d7ce05)** <small>15:09</small>
-
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/374c83a6-86b1-41a1-bd44-1d7a22d7ce05?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
-
-Tällä videolla esitellään fetch-kutsuja sekä niiden käsittelyä promise-olioiden ja await-avainsanan avulla konkreettisesti Shopping List App -esimerkkisovellusta käyttäen.
--->
-
-
-<!--Voit lisäksi tutustua esimerkkisovelluksen `deleteItem`-funktioon [GitHubissa](https://github.com/haagahelia/ShoppingListExample/blob/master/src/main/webapp/js/app.js#L70-L81). Huomaa, että vaikka esimerkkiprojekti on toteutettu luokan ja olioiden avulla, ei sinun tarvitse tätä tehtävää varten toteuttaa muuta kuin yksittäinen funktio ilman luokkaa tai muita funktioita.-->
-
-
-### Tehtävä 4: `doDelete`-metodin toteuttaminen servletissä
-
-Edellisissä tehtävissä toteuttamasi `fetch`-palvelinkutsu tuottaa toistaiseksi HTTP-virheen 405, "Method Not Allowed". Tämä johtuu siitä, että toteuttamamme servletti pystyy toistaiseksi käsittelemään vain `POST`- ja `GET`-tyyppisiä pyyntöjä, mutta ei vielä lähettämäämme `DELETE`-pyyntöä.
-
-Servlet-puolella `DELETE`-tyyppinen pyyntö voidaan käsitellä toteuttamalla `doDelete`-niminen metodi, jonka sisällä poistetaan rivi hyödyntäen DAO-luokkaa:
+Tämä tekee servletille **delete**-tyyppisen HTTP-pyynnön, jota servlettimme ei vielä osaa käsitellä. Servlet-puolella `DELETE`-tyyppinen pyyntö käsitellään `doGet`- ja `doPost`-metodien tavoin `doDelete`-nimisellä metodilla, joten lisää `ShoppingListServlet`-servlettiisi seuraava metodi:
 
 ```java
-/* tiedosto ShoppingListServlet.java (tai vastaava) */
-
 @Override
 protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
     // TODO: selvitä mikä `id` annettiin pyynnön mukana
-    // TODO: käytä dao-olioita id-arvoa vastaavan olion poistamiseksi kannasta
+    // TODO: poista id:tä vastaava rivi tietokannasta dao-luokan avulla
 }
 ```
 
-`doDelete` toimii kuten `doGet` ja `doPost`, eli voit hyödyntää parametrina saamaasi request-oliota ja sen `getParameter`-metodia selvittääksesi poistettavan rivin id:n. Id:n muuttaminen kokonaisluvuksi sekä DAO-olion kutsut tapahtuvat kuten aikaisemmilla viikoilla. Muista, että voit hyödyntää aikaisempien viikkojen malliratkaisuja, mikäli oma koodisi ei sisällä kaikkia tarvitsemiasi osia.
+`doDelete` toimii kuten `doGet` ja `doPost`, eli voit hyödyntää parametrina saamaasi request-oliota ja sen `getParameter`-metodia selvittääksesi poistettavan rivin id:n. Muista, että tässäkin tapauksessa parametrina saatu id on merkkijono, joka tulee muuttaa kokonaisluvuksi kuten aikaisemmilla viikoilla päivämääriä käsiteltäessä. Voit hyödyntää ostoslistalogiikan aikaisempien viikkojen malliratkaisuja esimerkiksi tietokantalogiikan osalta, mikäli oma koodisi ei sisällä kaikkia tarvitsemiasi osia.
 
+`doDelete`-metodissa sinun ei välttämättä tarvitse palauttaa vastausta, mutta halutessasi voit kirjoittaa vastaukseen esimerkiksi JSON-olion `{ "success": true }` seuraavasti:
 
-### Tehtävä 5: sivun sisällön päivittäminen poiston jälkeen
-
-Kun pyyntö ostoslistan tuotteen poistamiseksi on lähetetty palvelimelle ja rivi on poistettu tietokannasta, on poistettu tuoterivi edelleen paikallaan HTML-sivulla 😕. Tämä johtuu siitä, että Ajax-pyyntö ei aiheuttanut uutta sivulatausta, eli sivun rakenne on edelleen sama kuin ennen painikkeen painamista.
-
-Oikean rivin poistaminen HTML-sivulta on helppoa, mikäli rivillä on yksilöllinen `id`- tai `class`-attribuutti. Näin HTML-rakenteessa olevaa elementtiä pystytään käsittelemään JavaScript-koodissa suoraviivaisesti esimerkiksi `document.getElementById()`-metodin avulla. Metodi palauttaa sivulla olevan elementin JavaScript-oliona, ja sen sisältöä voidaan muuttaa tai se voidaan poistaa ohjelmallisesti. Voit lukea lisää `getElementById`-metodista [MDN web docs -palvelusta](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById).
-
-Seuraavassa esimerkkirakenteessa jokaiselle riville (`tr`) on lisätty yksilöllinen `id`-attribuutti:
-
-```html
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="list-items">
-        <tr id="product-1">
-            <td class="title">Milk</td>
-            <td><button onclick="removeProduct(1)">×</button></td>
-        </tr>
-        <tr id="product-2">
-            <td class="title">Eggs</td>
-            <td><button onclick="removeProduct(2)">×</button></td>
-        </tr>
-        <tr id="product-3">
-            <td class="title">Bread</td>
-            <td><button onclick="removeProduct(3)">×</button></td>
-        </tr>
-    </tbody>
-</table>
+```java
+resp.getWriter().println("{ \"success\": true }");
 ```
 
-Tällä rakenteella Milk-rivin sisältävää taulukon riviä voidaan käsitellä JavaScript-koodissa seuraavasti:
+
+### Osa 4: sivun sisällön päivittäminen poiston jälkeen
+
+Kun pyyntö ostoslistan tuotteen poistamiseksi on lähetetty palvelimelle ja rivi on poistettu tietokannasta, on poistettu tuoterivi edelleen paikallaan HTML-sivulla 😲. Tämä johtuu siitä, että `fetch`-funktiolla tehty pyyntö ei aiheuttanut uutta sivulatausta. Sivun sisältö on siis edelleen sama kuin ennen painikkeen painamista, vaikka data poistui tietokannasta.
+
+Elementin poistaminen sivulta JavaScriptin avulla on helppoa, mikäli rivillä on yksilöllinen `id`- tai `class`-attribuutti. JS-koodissamme elementin poistaminen tehdään `getElementById` ja `remove`-metodien avulla seuraavasti:
 
 ```js
-let ekaRivi = document.getElementById('product-1');
+let elementId = `product-${id}`;
+let element = document.getElementById(elementId);
+
+if (element) {
+    element.remove();
+}
 ```
 
-Mikäli käytit tuotelistan rakenteessasi `<ul>`- ja `<li>`-elementtejä, sovella `id`-attribuutteja esimerkiksi näin: 
+Toistaiseksi koodi ei toimi, koska rivillä JavaScriptin sisäänrakennettu `getElementById`-metodi ei löydä sivultasi poistettavaa elementtiä. Tämä johtuu siitä, että sivun html-elementeiltä puuttuu id-attribuutit. Sinun tuleekin seuraavaksi lisätä sivulle yksilölliset id-attribuutit koodinpätkässä määritellyssä muodossa, eli `product-X`, joissa X vastaa yksittäisen ostoslistan rivin id:tä. 
+
+Jos käytit sivullasi taulukkorakennetta, lisää id:t vastaavasti taulukon riveille eli `<tr>`-elementeille:
+
 
 ```html
-<li id="product-3">Bread</li>
-```
+<tr id="product-1">
+    <td class="title">Milk</td>
+    <td><button onclick="removeProduct(1)">Remove</button></td>
+</tr>
 
-Tämän jälkeen käytä saamaasi id-arvoa `removeProduct`-funktiossa poistaaksesi yksittäisen tuoterivin taulukosta [getElementById- sekä remove-metodien avulla](https://www.w3schools.com/jsref/met_element_remove.asp):
+<tr id="product-2">
+    <td class="title">Eggs</td>
+    <td><button onclick="removeProduct(2)">Remove</button></td>
+</tr>
 
-```javascript
-async function removeProduct(id) {
-    // esim: fetch(osoite + id, { method: 'DELETE' })
-
-    let elementinId = "product-" + id;
-
-    // TODO: käytä document.getElementById-metodia saadaksesi halutun elementin
-    // TODO: kutsu poistettavan elementin remove()-metodia poistaaksesi sen sivulta
-}
+<tr id="product-3">
+    <td class="title">Bread</td>
+    <td><button onclick="removeProduct(3)">Remove</button></td>
+</tr>
 ```
 
 
 ### Tehtävän palauttaminen
 
-Palauta tähän tehtävään kuuluvat osat 1-5 Teams-palautuslaatikkoon erillisinä tiedostoina. Myös osittaiset ratkaisut arvostellaan, joten voit palautta myös vain osan tehtävistä.
+Palauta tähän tehtävään kuuluvat tiedostot Teams-palautuslaatikkoon erillisinä tiedostoina. Myös osittaiset ratkaisut arvostellaan, joten voit palautta myös vain osan tehtävistä.
 
 Mikäli kirjoitit JavaScript-koodisi erilliseen tiedostoon, lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`). Muista lisätä palautukseen myös tehtävässä 1 ottamasi kuvankaappaus. **Älä palauta koko projektia äläkä pakkaa tiedostoja.**
 
 
-## Lisämateriaalit
+## Valinnaiset lisämateriaalit
 
 [DWB, fetch API](https://davidwalsh.name/fetch)
 

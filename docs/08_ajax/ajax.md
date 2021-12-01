@@ -69,7 +69,7 @@ Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Valmiin koodin muokkaaminen on myös sallittua.
 
 
-### Osa 1 / 4: tapahtumankuuntelija
+### Osa 1 / 4: painike tuotteiden poistamiseksi
 
 Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuotteen poistamiseksi ostoslistalta. Painike voi olla toteutettu esimerkiksi `<button>`-elementtinä, mutta voit halutessasi käyttää myös muita elementtejä:
 
@@ -77,7 +77,7 @@ Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuot
 <button>Remove</button>
 ```
 
-Lisää seuraavaksi painikkeelle `onclick`-tapahtumankuuntelija, jonka klikkaaminen käynnistää JavaScript-funktion tuoterivin poistamiseksi. Jos toteutit tuotelistauksen `<li>`-elementeillä, tulos voi näyttää seuraavalta:
+Lisää seuraavaksi painikkeelle `onclick`-käsittelijä, joka kutsuu `removeProduct`-funktiota tuoterivin poistamiseksi. Jos toteutit tuotelistauksen `<li>`-elementeillä, tulos voi näyttää seuraavalta:
 
 ```html
 <li>

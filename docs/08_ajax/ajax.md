@@ -55,7 +55,7 @@ Voit halutessasi katsoa seuraavat videot, joka käsittelevät tiedonsiirron peru
 
 ## Tehtävä
 
-Kuten johdannossa jo todettiin, tämän viikon tehtävissä käytetään eri ohjelmointikieltä kuin aikaisemmilla viikoilla. Samalla sivuamme kokonaan uusia käsitteisiin, kuten asynkronista ohjelmointia ja tapahtumankuuntelijoita. Älä lannistu, mikäli aiheet eivät täysin aukea tämän tehtävän puitteissa.
+Kuten johdannossa jo todettiin, tämän viikon tehtävissä käytetään eri ohjelmointikieltä kuin aikaisemmilla viikoilla. Samalla sivuamme kokonaan uusia käsitteisiin, kuten asynkronista ohjelmointia ja tapahtumankuuntelijoita. Älä lannistu, mikäli aiheet eivät täysin aukea tämän tehtävän puitteissa. 
 
 Tehtävä koostuu useammasta osasta, joiden tuloksena edellisillä viikoilla aloittamaasi ostoslistasovellukseen syntyy uusi Ajax-pohjainen ominaisuus ostoslistan tuoterivien poistamiseksi.
 
@@ -67,6 +67,11 @@ Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 1. JavaScript-funktio poistaa tuotteen HTML-sivulta ilman, että sivua ladataan uudelleen
 
 Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Valmiin koodin muokkaaminen on myös sallittua.
+
+
+### Esimerkkitoteutus
+
+Tästä tehtävästä on julkaistu esimerkkitoteutus [https://shoppinglist-ajax.herokuapp.com/list](https://shoppinglist-ajax.herokuapp.com/list), jonka tutkiminen [selaimen kehittäjätyökaluilla](https://developer.chrome.com/docs/devtools/overview/) saattaa auttaa tehtävän hahmottamisessa. Esimerkkitoteutus toimii [Heroku-palvelun](https://www.heroku.com/) ilmaisilla resursseilla, joten sen käynnistyminen lepotilasta voi kestää hetken.
 
 
 ### Osa 1 / 4: painike tuotteiden poistamiseksi
@@ -124,22 +129,31 @@ Lisäyksen jälkeen sivusi pitäisi näyttää esimerkiksi tältä:
 Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi. JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin:
 
 ```javascript
-async function removeProduct(id) {
-    let response = await fetch(`?id=${id}`, { method: 'DELETE' });
+async function removeProduct(productId) {
+    let success = await removeFromServer(productId);
 
-    if (response.status === 200) {
-        removeProductElement(id);
-    } else {
-        alert(`Ajax call failed. Please check the console. Error code ${response.status}`);
-        console.log(response);
+    if (success) {
+        removeFromPage(productId);
     }
 }
 
-function removeProductElement(id) {
-    let elementId = `product-${id}`;
+async function removeFromServer(productId) {
+    let response = await fetch(`?id=${productId}`, { method: 'DELETE' });
+
+    if (response.status === 200) {
+        return true;
+    } else {
+        alert(`Ajax call failed. Please check the console. Error code ${response.status}.`);
+        console.log(response);
+        return false;
+    }
+}
+
+function removeFromPage(productId) {
+    let elementId = `product-${productId}`;
     let element = document.getElementById(elementId);
 
-    if (element) {
+    if (element !== null) {
         element.remove();
     } else {
         alert(`Could not find element by id "${elementId}"`);
@@ -161,7 +175,7 @@ Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi
 Mikäli tähänastiset vaiheet on toteutettu onnistuneesti, painikkeen kokeileminen tässä vaiheessa aiheuttaa HTTP-virheen 405 (Method Not Allowed). Tämä johtuu siitä, että `removeProduct`-funktiossamme kutsutaan JavaScriptin `fetch`-funktiota käyttäen `DELETE`-metodia:
 
 ```js
-let response = await fetch(`?id=${id}`, { method: 'DELETE' });
+let response = await fetch(`?id=${productId}`, { method: 'DELETE' });
 ```
 
 Tämä tekee servletille **delete**-tyyppisen HTTP-pyynnön, jota servlettimme ei vielä osaa käsitellä. Servlet-puolella `DELETE`-tyyppinen pyyntö käsitellään `doGet`- ja `doPost`-metodien tavoin `doDelete`-nimisellä metodilla, joten lisää `ShoppingListServlet`-servlettiisi seuraava metodi:
@@ -174,7 +188,7 @@ protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws
 }
 ```
 
-`doDelete` toimii kuten `doGet` ja `doPost`, eli voit hyödyntää parametrina saamaasi request-oliota ja sen `getParameter`-metodia selvittääksesi poistettavan rivin id:n. Muista, että tässäkin tapauksessa parametrina saatu id on merkkijono, joka tulee muuttaa kokonaisluvuksi kuten aikaisemmilla viikoilla päivämääriä käsiteltäessä. Voit hyödyntää ostoslistalogiikan aikaisempien viikkojen malliratkaisuja esimerkiksi tietokantalogiikan osalta, mikäli oma koodisi ei sisällä kaikkia tarvitsemiasi osia.
+`doDelete` toimii kuten `doGet` ja `doPost`, eli voit hyödyntää parametrina saamaasi request-oliota ja sen `getParameter("id")`-metodia selvittääksesi poistettavan rivin id:n. Muista, että tässäkin tapauksessa parametrina saatu id on merkkijono, joka tulee muuttaa kokonaisluvuksi kuten aikaisemmilla viikoilla päivämääriä käsiteltäessä. Voit hyödyntää ostoslistalogiikan aikaisempien viikkojen malliratkaisuja esimerkiksi tietokantalogiikan osalta, mikäli oma koodisi ei sisällä kaikkia tarvitsemiasi osia esimerkiksi ostoslistan rivien poistamiseksi.
 
 `doDelete`-metodissa sinun ei välttämättä tarvitse palauttaa vastausta, mutta halutessasi voit kirjoittaa vastaukseen esimerkiksi JSON-olion `{ "success": true }` seuraavasti:
 
@@ -190,10 +204,10 @@ Kun pyyntö ostoslistan tuotteen poistamiseksi on lähetetty palvelimelle ja riv
 Elementin poistaminen sivulta JavaScriptin avulla on helppoa, mikäli rivillä on yksilöllinen `id`- tai `class`-attribuutti. JS-koodissamme elementin poistaminen tehdään `getElementById` ja `remove`-metodien avulla seuraavasti:
 
 ```js
-let elementId = `product-${id}`;
+let elementId = `product-${productId}`;
 let element = document.getElementById(elementId);
 
-if (element) {
+if (element !== null) {
     element.remove();
 }
 ```

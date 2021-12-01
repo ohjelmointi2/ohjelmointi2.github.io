@@ -1,19 +1,28 @@
-async function removeProduct(id) {
-    let response = await fetch(`?id=${id}`, { method: 'DELETE' });
+async function removeProduct(productId) {
+    let success = await removeFromServer(productId);
 
-    if (response.status === 200) {
-        removeProductElement(id);
-    } else {
-        alert(`Ajax call failed. Please check the console. Error code ${response.status}`);
-        console.log(response);
+    if (success) {
+        removeFromPage(productId);
     }
 }
 
-function removeProductElement(id) {
-    let elementId = `product-${id}`;
+async function removeFromServer(productId) {
+    let response = await fetch(`?id=${productId}`, { method: 'DELETE' });
+
+    if (response.status === 200) {
+        return true;
+    } else {
+        alert(`Ajax call failed. Please check the console. Error code ${response.status}.`);
+        console.log(response);
+        return false;
+    }
+}
+
+function removeFromPage(productId) {
+    let elementId = `product-${productId}`;
     let element = document.getElementById(elementId);
 
-    if (element) {
+    if (element !== null) {
         element.remove();
     } else {
         alert(`Could not find element by id "${elementId}"`);

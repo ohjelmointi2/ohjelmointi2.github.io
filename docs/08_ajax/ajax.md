@@ -212,27 +212,27 @@ if (element !== null) {
 }
 ```
 
-Toistaiseksi koodi ei toimi, koska rivillä JavaScriptin sisäänrakennettu `getElementById`-metodi ei löydä sivultasi poistettavaa elementtiä. Tämä johtuu siitä, että sivun html-elementeiltä puuttuu id-attribuutit. Sinun tuleekin seuraavaksi lisätä sivulle yksilölliset id-attribuutit koodinpätkässä määritellyssä muodossa, eli `product-X`, joissa X vastaa yksittäisen ostoslistan rivin id:tä. 
+Toistaiseksi koodi ei toimi, koska `getElementById`-metodi ei löydä sivultasi poistettavaa elementtiä. Tämä puolestaan johtuu siitä, että sivun html-elementeiltä puuttuu id-attribuutit. Sinun tuleekin seuraavaksi lisätä sivulle yksilölliset id-attribuutit koodinpätkässä määritellyssä muodossa, eli `product-X`, joissa X vastaa yksittäisen ostoslistan rivin id:tä.
 
-Jos käytit sivullasi taulukkorakennetta, lisää id:t vastaavasti taulukon riveille eli `<tr>`-elementeille:
+Jos käytit sivullasi taulukkorakennetta, lisää id:t taulukon riveille eli `<tr>`-elementeille:
 
 
 ```html
 <tr id="product-1">
-    <td class="title">Milk</td>
+    <td>Milk</td>
     <td><button onclick="removeProduct(1)">Remove</button></td>
 </tr>
-
-<tr id="product-2">
-    <td class="title">Eggs</td>
-    <td><button onclick="removeProduct(2)">Remove</button></td>
-</tr>
-
-<tr id="product-3">
-    <td class="title">Bread</td>
-    <td><button onclick="removeProduct(3)">Remove</button></td>
-</tr>
 ```
+
+Jos taas käytit listarakennetta, lisää id:t `<li>`-elementeille:
+
+```html
+<li id="product-1">
+    Milk
+    <button onclick="removeProduct(1)">Remove</button>
+</li>
+```
+
 
 Teknisesti tämä ratkaistaan JSP-sivulla hyvin samalla tavalla, kuin miten ratkaisit id:n lisäämisen `onclick`-attribuuttiin.
 
@@ -241,9 +241,11 @@ Tämän osan jälkeen painikkeen painamisen pitäisi poistaa ostoslistan rivit m
 
 ### Tehtävän palauttaminen
 
-Palauta tähän tehtävään kuuluvat tiedostot Teams-palautuslaatikkoon erillisinä tiedostoina. Myös osittaiset ratkaisut arvostellaan, joten voit palautta myös vain osan tehtävistä.
+Palauta tähän tehtävään kuuluvat servlet- ja JSP-tiedostot Teams-palautuslaatikkoon erillisinä tiedostoina. Myös osittaiset ratkaisut arvostellaan, joten voit palautta vain osan tehtävistä.
 
-Mikäli kirjoitit JavaScript-koodisi erilliseen tiedostoon, lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`). Muista lisätä palautukseen myös tehtävässä 1 ottamasi kuvankaappaus. **Älä palauta koko projektia äläkä pakkaa tiedostoja.**
+Mikäli muutit JavaScript-koodia, palauta myös muutettu JS-tiedosto. Lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`). 
+
+**Älä palauta koko projektia äläkä pakkaa tiedostoja.**
 
 
 ## Valinnaiset lisämateriaalit

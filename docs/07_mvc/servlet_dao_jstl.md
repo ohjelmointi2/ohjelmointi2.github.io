@@ -204,6 +204,8 @@ Lopulta näytämme tietokannasta löytyvät ostoslistan rivit HTML-muodossa JSP-
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/515b523d-bc9b-4892-a2cf-78e75206e9a9?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
+Videon kohdassa **10:35** määritellään testiluokalle `JDBC_DATABASE_URL`-ympäristömuuttujaksi arvo `jdbc:sqlite:C:\sqlite\shoppingListTest.sqlite`. Kyseinen shoppingList**Test**-tiedosto on luotu dao-tehtävän malliratkaisuvideolla. Jos sinulla ei ole tätä tiedostoa, tai jos testitiedostosi on kooltaan 0 Kt, voit yksinkertaisesti kopioida varsinaisen sqlite-tiedostosi tälle uudelle nimelle.
+
 Videolla esitellään kohdassa **15:30** tyypillinen ongelma Tomcatin käynnistämisessä, joka johtuu siitä, että vanha Tomcat-suoritus on edelleen käynnissä taustalla.
 
 Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta ([Cross Site Scripting, XSS](https://owasp.org/www-community/attacks/xss/)) esitellään videolla kohdassa **44:13**.

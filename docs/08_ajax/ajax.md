@@ -55,7 +55,7 @@ Voit halutessasi katsoa seuraavat videot, joka käsittelevät tiedonsiirron peru
 
 ## Tehtävä
 
-Kuten johdannossa jo todettiin, tämän viikon tehtävissä käytetään eri ohjelmointikieltä kuin aikaisemmilla viikoilla. Samalla sivuamme kokonaan uusia käsitteisiin, kuten asynkronista ohjelmointia ja tapahtumankuuntelijoita. Älä lannistu, mikäli aiheet eivät täysin aukea tämän tehtävän puitteissa. 
+Kuten johdannossa jo todettiin, tämän viikon tehtävissä hyödynnetään eri ohjelmointikieltä kuin aikaisemmilla viikoilla. Samalla sivuamme kokonaan uusia käsitteisiin, kuten asynkronista ohjelmointia ja tapahtumankuuntelijoita. Älä lannistu, mikäli aiheet eivät täysin aukea tämän tehtävän puitteissa.
 
 Tehtävä koostuu useammasta osasta, joiden tuloksena edellisillä viikoilla aloittamaasi ostoslistasovellukseen syntyy uusi Ajax-pohjainen ominaisuus ostoslistan tuoterivien poistamiseksi.
 
@@ -66,7 +66,7 @@ Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 1. Servlet käsittelee poistopyynnön uudessa `doDelete`-metodissa ja poistaa pyydetyn tuoterivin tietokannasta
 1. JavaScript-funktio poistaa tuotteen HTML-sivulta ilman, että sivua ladataan uudelleen
 
-Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Valmiin koodin muokkaaminen on myös sallittua.
+Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Tehtävässä annettavan valmiin koodin muokkaaminen on myös sallittua.
 
 
 ### Esimerkkitoteutus
@@ -76,7 +76,7 @@ Tästä tehtävästä on julkaistu esimerkkitoteutus [https://shoppinglist-ajax.
 
 ### Osa 1 / 4: painike tuotteiden poistamiseksi
 
-Lisää JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuotteen poistamiseksi ostoslistalta. Painike voi olla toteutettu esimerkiksi `<button>`-elementtinä, mutta voit halutessasi käyttää myös muita elementtejä:
+Lisää ostoslistasovelluksen JSP-sivupohjaasi jokaisen tuoterivin kohdalle uusi painike kyseisen tuotteen poistamiseksi ostoslistalta. Painike voi olla toteutettu esimerkiksi `<button>`-elementtinä, mutta voit halutessasi käyttää myös muita elementtejä:
 
 ```html
 <button>Remove</button>
@@ -100,7 +100,7 @@ Yllä olevassa esimerkkikoodissa painikkeen painaminen käynnistää `removeProd
 <button onclick="removeProduct(${ item.getId() })">Remove</button>
 ```
 
-Huomaa että yllä olevassa koodinpätkässä `item.getId()` on Javaa, ja se korvataan metodin palauttamalla numerolla jo *palvelimella*. `removeProduct()` puolestaan on JavaScriptiä, ja se suoritetaan *selaimessa* elementtiä klikattaessa. Huomaa myös, että omassa koodissasi ShoppingListItem-olio ei välttämättä ole samannimisessä muuttujassa kuin tässä esimerkissä.
+Huomaa että yllä olevassa koodinpätkässä `item.getId()` on Javaa, ja se korvataan metodin palauttamalla numerolla jo *palvelimella*. `removeProduct()` puolestaan on JavaScriptiä, ja se suoritetaan *selaimessa* elementtiä klikattaessa. **Huomaa myös, että omassa koodissasi ShoppingListItem-olio ei välttämättä ole samannimisessä muuttujassa kuin tässä esimerkissä.** Sovella esimerkkiä JSP-sivullasi siten, että tarkastat oman muuttujasi nimen `c:forEach`-tagisi `var`-attribuutista.
 
 Jos muutoksesi toimivat oikein, niiden jälkeen [selaimen lähdekoodinäkymässä](https://neilpatel.com/blog/how-to-read-source-code/) jokaisen ostoslistan rivin kohdalla näkyy funktio oikean parametrin kanssa, esimerkiksi seuraavasti:
 
@@ -126,9 +126,17 @@ Lisäyksen jälkeen sivusi pitäisi näyttää esimerkiksi tältä:
 
 ### Osa 2 / 4: JavaScript-koodi
 
-Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi. JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin:
+Kun olet toteuttanut painikkeen ja `onclick`-attribuutin, täytyy sivulle lisätä `removeProduct`-funktion varsinainen koodi.
+
+JavaScript-koodi annetaan tässä tehtävässä valmiina, koska kurssin oppimistavoitteet rajoittuvat Java- ja JSP-osioihin:
 
 ```javascript
+/**
+ * Poistaa annettua id:tä vastaavan ostoslistan rivin palvelimelta, ja jos poisto
+ * onnistuu, poistaa myös poistetun tuoterivin sivulta.
+ *
+ * @param {number} productId Poistettavan tuoterivin id
+ */
 async function removeProduct(productId) {
     let success = await removeFromServer(productId);
 
@@ -137,6 +145,13 @@ async function removeProduct(productId) {
     }
 }
 
+/**
+ * Tekee DELETE-tyyppisen palvelinkutsun, jossa annettua id:tä vastaava ostoslistan rivi
+ * poistetaan tietokannasta. Palauttaa true tai false riippuen siitä, onnistuiko poisto.
+ *
+ * @param {number} productId Poistettavan tuoterivin id
+ * @return {boolean} true, mikäli poisto onnistui
+ */
 async function removeFromServer(productId) {
     let response = await fetch(`?id=${productId}`, { method: 'DELETE' });
 
@@ -149,17 +164,28 @@ async function removeFromServer(productId) {
     }
 }
 
+/**
+ * Etsii sivulta annettua id:tä vastaavan ostoslistan rivin ja poistaa sen sivulta, 
+ * mikäli poistettava rivi löytyi. Palauttaa true tai false riippuen siitä, onnistuiko operaatio.
+ * 
+ * @param {number} productId Poistettavan tuoterivin id
+ * @return {boolean} true, mikäli poisto onnistui
+ */
 function removeFromPage(productId) {
     let elementId = `product-${productId}`;
     let element = document.getElementById(elementId);
 
     if (element !== null) {
         element.remove();
+        return true;
     } else {
         alert(`Could not find element by id "${elementId}"`);
+        return false;
     }
 }
 ```
+
+Näistä kolmesta funktiosta `removeProduct` on ainoa, jota sinun tulee kutsua itse. `removeProduct` kutsuu puolestasi `removeFromServer` ja `removeFromPage` funktioita.
 
 Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/main/webapp/scripts/app.js`. Voit myös tallentaa koodin itsellesi erillisenä tiedostona [tästä](app.js). Lisää lopuksi JSP-sivullesi `<head>`-osioon tagi, jonka avulla selain osaa ladata koodin osaksi ostoslistasivua:
 
@@ -167,7 +193,7 @@ Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/ma
 <script src="/scripts/app.js"></script>
 ```
 
-Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi osoite [http://localhost:8080/scripts/app.js](http://localhost:8080/scripts/app.js). Sinun tulisi nähdä lisäämäsi JS-lähdekoodi sellaisenaan.
+Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi osoite [http://localhost:8080/scripts/app.js](http://localhost:8080/scripts/app.js). Sinun tulisi nähdä lisäämäsi JS-lähdekoodi sellaisenaan. Huomaa, että Java-sovelluksesi tulee olla käynnissä jotta palvelin vastaa pyyntöön.
 
 
 ### Osa 3 / 4: doDelete-metodin toteuttaminen servletissä
@@ -190,11 +216,13 @@ protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws
 
 `doDelete` toimii kuten `doGet` ja `doPost`, eli voit hyödyntää parametrina saamaasi request-oliota ja sen `getParameter("id")`-metodia selvittääksesi poistettavan rivin id:n. Muista, että tässäkin tapauksessa parametrina saatu id on merkkijono, joka tulee muuttaa kokonaisluvuksi kuten aikaisemmilla viikoilla päivämääriä käsiteltäessä. Voit hyödyntää ostoslistalogiikan aikaisempien viikkojen malliratkaisuja esimerkiksi tietokantalogiikan osalta, mikäli oma koodisi ei sisällä kaikkia tarvitsemiasi osia esimerkiksi ostoslistan rivien poistamiseksi.
 
-`doDelete`-metodissa sinun ei välttämättä tarvitse palauttaa vastausta, mutta halutessasi voit kirjoittaa vastaukseen esimerkiksi JSON-olion `{ "success": true }` seuraavasti:
+`doDelete`-metodissa sinun ei välttämättä tarvitse tämän tehtävän osalta palauttaa vastausta, mutta halutessasi voit kirjoittaa vastaukseen esimerkiksi JSON-olion `{ "success": true }` tai `{ "success": false }` seuraavasti:
 
 ```java
 resp.getWriter().println("{ \"success\": true }");
 ```
+
+Oikeassa web-sovelluksessa muodostaisimme JSON-vastauksen omatekoisen merkkijonon sijasta Java-oliona, mihin paneudutaankin tarkemmin palvelinohjelmointikurssilla.
 
 
 ### Osa 4 / 4: sivun sisällön päivittäminen poiston jälkeen
@@ -234,16 +262,16 @@ Jos taas käytit listarakennetta, lisää id:t `<li>`-elementeille:
 ```
 
 
-Teknisesti tämä ratkaistaan JSP-sivulla hyvin samalla tavalla, kuin miten ratkaisit id:n lisäämisen `onclick`-attribuuttiin.
+Teknisesti tuotekohtaisen id:n lisääminen ratkaistaan sivulla hyvin samalla tavalla, kuin miten ratkaisit edellä id:n lisäämisen `onclick`-attribuuttiin.
 
-Tämän osan jälkeen painikkeen painamisen pitäisi poistaa ostoslistan rivit myös tietokannasta. Varmista lopuksi päivittämällä sivu selaimessa, että poisto on oikeasti tapahtunut, eikä rivit vain poistuneet näkyvistä selaimessa.
+Tämän osan jälkeen painikkeen painamisen pitäisi poistaa ostoslistan rivit tietokannan lisäksi myös sivulta.
 
 
 ### Tehtävän palauttaminen
 
 Palauta tähän tehtävään kuuluvat servlet- ja JSP-tiedostot Teams-palautuslaatikkoon erillisinä tiedostoina. Myös osittaiset ratkaisut arvostellaan, joten voit palautta vain osan tehtävistä.
 
-Mikäli muutit JavaScript-koodia, palauta myös muutettu JS-tiedosto. Lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`). 
+Mikäli muutit annettua JavaScript-koodia, palauta myös muutettu JS-tiedosto. Lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`). 
 
 **Älä palauta koko projektia äläkä pakkaa tiedostoja.**
 

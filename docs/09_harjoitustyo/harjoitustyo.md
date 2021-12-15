@@ -173,9 +173,11 @@ Lisäksi tietokantayhteyden muodostaminen ja yhteyksien sulkeminen suositellaan 
 
 ### Tavoitearvosana 5
 
-Toteuta edellisten ominaisuuksien lisäksi ominaisuus, jolla käyttäjä pystyy hakemaan artisteja ja/tai albumeita niiden nimien perusteella. Hakutulokset tulee esittää JSP-sivulla, jossa artistien ja albumien nimien tulee toimia linkkeinä edellisessä kohdassa kuvatulle tietyn artistin kaikki albumit listaavalle sivulle, esim. `/albums?ArtistId=50`.
+Toteuta edellisten ominaisuuksien lisäksi ominaisuus, jolla käyttäjä pystyy hakemaan artisteja ja/tai albumeita niiden nimien perusteella.
 
-Hakulomake saa olla vapaasti valitsemallasi sivulla, esim. hakutulosten yhteydessä, etusivulla tai vaikka jokaisella palvelun sivulla.
+Hakutulokset tulee esittää JSP-sivulla, jossa hakusanaa vastaavien artistien tai albumien nimien tulee toimia linkkeinä harjoitustyöohjeen edellisessä kohdassa kuvatulle sivulle, esimerkiksi. `/albums?ArtistId=50`.
+
+Toteuta hakuominaisuutta varten myös lomake, joka saa olla vapaasti valitsemallasi sivulla, esimerkiksi etusivulla tai vaikka palvelusi jokaisella sivulla.
 
 Esimerkkikyselyitä hakujen tekemiseksi:
 

@@ -281,7 +281,7 @@ Gitin käyttö huomioidaan positiivisesti harjoitustyön arvostelussa, mutta se 
 
 ## Projektin lähettäminen Teamsiin
 
-💡 *Ennen projektin paketointia sinun kannattaa päivittää Eclipsen tiedostonäkymä valitsemalla projektikansiosi ja painamalla <key>F5</key>-painiketta. Tämä auttaa välttämään mahdollisen ["resource is out of sync with the filesystem"](https://www.viralpatel.net/eclipse-resource-is-out-of-sync-with-the-filesystem/)-virheen.*
+> 💡 *Ennen projektin paketointia sinun kannattaa päivittää Eclipsen tiedostonäkymä valitsemalla projektisi ja painamalla `F5`-painiketta. Tämä auttaa välttämään mahdollisen ["resource is out of sync with the filesystem"](https://www.viralpatel.net/eclipse-resource-is-out-of-sync-with-the-filesystem/)-virheen.*
 
 Harjoitustyön lähdekoodit ja edellä mainitut tekstitiedostot palautetaan Teamsiin yhtenä zip-pakettina seuraavasti:
 

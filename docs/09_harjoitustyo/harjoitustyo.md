@@ -281,7 +281,9 @@ Gitin käyttö huomioidaan positiivisesti harjoitustyön arvostelussa, mutta se 
 
 ## Projektin lähettäminen Teamsiin
 
-Harjoitustyön lähdekoodit sisältäen edellä mainitun dokumentaation palautetaan kokonaisuudessaan Teamsiin zip-pakettina. 
+💡 *Ennen projektin paketointia sinun kannattaa päivittää Eclipsen tiedostonäkymä valitsemalla projektikansiosi ja painamalla <key>F5</key>. Tämä auttaa välttämään mahdollisen ["resource is out of sync with the filesystem"](https://www.viralpatel.net/eclipse-resource-is-out-of-sync-with-the-filesystem/)-virheen.*
+
+Harjoitustyön lähdekoodit ja edellä mainitut tekstitiedostot palautetaan Teamsiin yhtenä zip-pakettina seuraavasti:
 
 [Tee projektistasi zip-tiedosto](https://stackoverflow.com/a/5386448) valitsemalla Eclipsessä harjoitustyöprojektin nimen päällä *Export – Export.. – General – Archive file*. Tallenna tiedosto .zip-muotossa säilyttäen hakemistorakenne. Varmista, että zip-paketti sisältää dokumentaation ja kaikki ratkaisusi *.java*- ja *.jsp*-tiedostot. Palauta zip-paketti Teamsin palautuskansioon.
 

@@ -35,7 +35,7 @@ Kurssin osallistumisen vahvistaminen edellyttää lisäksi vähintään kahden V
 
 ## Kurssin aikataulu
 
-Tämä kurssi alkaa maanantaina 25.10.2021 ja päättyy perjantaina 17.12.2021. Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti jopa 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
+Tämä kurssi alkaa maanantaina 28.3.2022 ja päättyy perjantaina 20.5.2022. Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti jopa 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
 
 &nbsp;

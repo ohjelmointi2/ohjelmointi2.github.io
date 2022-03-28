@@ -14,13 +14,17 @@ Perintää käytetään usein tilanteissa, joissa on olemassa jo jokin toteutus,
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/788b9504-8600-4419-8e96-673ecd0a1ea2?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tämän esimerkin lähdekoodit löytyvät [gist.github.com-palvelusta](https://gist.github.com/swd1tn002/01ee568bd1ec63eab9e16743aec6772c).
+💡 Videon katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
+
+Videolla esiintyvät lähdekoodit löytyvät [gist.github.com-palvelusta](https://gist.github.com/swd1tn002/01ee568bd1ec63eab9e16743aec6772c).
 
 ## Oppitunti 2: [metodien ylikirjoittaminen](https://web.microsoftstream.com/video/10d75407-1851-44b6-b43c-d9401fa46160) <small>33:39</small>
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/10d75407-1851-44b6-b43c-d9401fa46160?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tämän esimerkin lähdekoodit löytyvät [gist.github.com-palvelusta](https://gist.github.com/swd1tn002/01ee568bd1ec63eab9e16743aec6772c).
+💡 Videon katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
+
+Videolla esiintyvät lähdekoodit löytyvät [gist.github.com-palvelusta](https://gist.github.com/swd1tn002/01ee568bd1ec63eab9e16743aec6772c).
 
 ## Perintä
 

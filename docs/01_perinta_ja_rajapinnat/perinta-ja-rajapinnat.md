@@ -4,12 +4,23 @@
 
 [⇦ takaisin kurssin etusivulle](../)
 
-
 Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
 
 Jos esimerkiksi netin kauppapaikalla on myynnissä monenlaisia tuotteita esineistä asuntoihin ja ajoneuvoihin, voidaan kaikille tuotteille yhteiset ominaisuudet toteuttaa yhteen luokkaan, jota voidaan laajentaa tapauskohtaisten aliluokkien avulla. Näin vältetään toteuttamasta samoja yhteisiä ominaisuuksia moneen luokkaan. Samalla koodin yhteensopivuus paranee, kun aliluokkien oliot ovat yhteensopivia yliluokan olioiden kanssa. Perinnän avulla sekä autoja, asuntoja että muita tuotteita voidaan tarvittaessa käsitellä esimerkiksi samalla listalla.
 
 Perintää käytetään usein tilanteissa, joissa on olemassa jo jokin toteutus, jota halutaan laajentaa erityistapauksen avulla. Rajapintoja puolestaan käytetään usein tilanteissa, joissa selvää yhteistä toteutusta ei ole. Toisin kuin luokat, rajapinnat ovat abstrakteja, eli niistä ei voida luoda olioita. Rajapintojen avulla voidaan kuitenkin määritellä yksi tai useampia metodeja, jotka rajapinnan täyttävien luokkien on toteutettava.
+
+## Oppitunti 1: [eri lähestymistavat tuotetietojen mallintamiseen](https://web.microsoftstream.com/video/788b9504-8600-4419-8e96-673ecd0a1ea2) <small>41:44</small>
+
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/788b9504-8600-4419-8e96-673ecd0a1ea2?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+Tämän esimerkin lähdekoodit löytyvät [gist.github.com-palvelusta](https://gist.github.com/swd1tn002/01ee568bd1ec63eab9e16743aec6772c).
+
+## Oppitunti 2: [metodien ylikirjoittaminen](https://web.microsoftstream.com/video/10d75407-1851-44b6-b43c-d9401fa46160) <small>33:39</small>
+
+<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/10d75407-1851-44b6-b43c-d9401fa46160?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+
+Tämän esimerkin lähdekoodit löytyvät [gist.github.com-palvelusta](https://gist.github.com/swd1tn002/01ee568bd1ec63eab9e16743aec6772c).
 
 ## Perintä
 

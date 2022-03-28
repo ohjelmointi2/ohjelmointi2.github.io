@@ -257,7 +257,9 @@ Mikäli Eclipse-versiosi ei ole soveltuva, asenna itsellesi uusi versio osoittee
 
 Kurssin tehtäväpohjien ja malliratkaisujen jakelussa hyödynnetään ohjelmistokehityksen alalla erittäin vakiintunutta Git-versionhallintaa ja GitHub-palvelua. Kurssin edetessä projektiin lisätään uusia tiedostoja, jotka voit päivittää itsellesi Git:in avulla.
 
-Gitin käytön opetteluun voit käyttää esimerkiksi Helsingin yliopiston erinomaista "Tietokone Työvälineenä" -kurssin Git-materiaalia: [https://tkt-lapio.github.io/git/](https://tkt-lapio.github.io/git/). Vaikka Git tuntuisi aluksi vaikealta tai ahdistavalta, sinun ei tarvitse opetella kaikkea kerralla, vaan tee vain sen verran mistä on sinulle välitöntä hyötyä.
+Gitin käytön opetteluun voit käyttää esimerkiksi Haaga-Helian tietojenkäsittelyn opiskelijoiden kollektiivisesti kirjoittamaa [Git 101 -opasta](https://github.com/mruonavaara/git101) tai Helsingin yliopiston "Tietokone Työvälineenä" -kurssin [Git-materiaalia](https://tkt-lapio.github.io/git/).
+
+Vaikka Git tuntuisi aluksi vaikealta tai ahdistavalta, sinun ei tarvitse opetella kaikkea kerralla, vaan tee vain sen verran mistä on sinulle välitöntä hyötyä.
 
 
 ## Lähteiden käyttäminen

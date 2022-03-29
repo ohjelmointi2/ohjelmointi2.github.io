@@ -32,7 +32,7 @@ Videolla esiintyvät lähdekoodit löytyvät [gist.github.com-palvelusta](https:
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/10d75407-1851-44b6-b43c-d9401fa46160?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla muodostamme eri tyyppisille ilmoituksille omat HTML-esityksensä, ja ylikirjoitamme yliluokan metodeja eri aliluokkien tarpeita huomioiden.
+Tällä videolla muodostamme eri tyyppisille ilmoituksille omat HTML-esityksensä ja ylikirjoitamme yliluokan metodeja eri aliluokkien tarpeet huomioiden. Sivuamme samalla myös for-each-toistorakennetta, `@Override`-annotaatiota ja monirivisiä merkkijonoja.
 
 💡 Videon katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
 

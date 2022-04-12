@@ -221,7 +221,7 @@ Ajax ja JavaScript      | 5               | -               | 22.5.     | Teams
 Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävien loppuarvosana muodostuu tehtäväpisteiden keskiarvosta. Kaksi ensimmäistä tehtäväkierrosta täytyy saada läpi vähintään minimipistein, mutta muuten yksittäinen arvosana 0 ei ole esteenä kurssin suorittamiselle.
 
 
-## ⏱ Kurssin työmäärä
+## ⏱️ Kurssin työmäärä
 
 Opintojakso kestää 8 viikkoa ja on laajuudeltaan 5 opintopistettä, joten sen [laskennallinen työmäärä on noin 135 tuntia](https://www.haaga-helia.fi/fi/ects-jarjestelma-ja-tutkintotodistuksen-liite-eli-diploma-supplement). Viikkoa kohden työmäärä vastaa laskennallisesti jopa 17 tuntia, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
@@ -283,7 +283,7 @@ Mikäli SQL-osaamisessasi on puutteita, suosittelen perehtymään netistä vapaa
 
 &nbsp;
 
-# ⚖ Lisenssit ja tekijänoikeudet
+# ⚖️ Lisenssit ja tekijänoikeudet
 
 Tällä kurssilla hyödynnetään avoimilla lisensseillä julkaistuja oppimateriaaleja, dataa ja ohjelmakoodia.
 

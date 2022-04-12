@@ -5,7 +5,7 @@ h3 small {
 }
 </style>
 
-# Tervetuloa kurssille!
+# 👋 Tervetuloa kurssille!
 
 Tervetuloa kurssille Ohjelmointi 2, SWD4TN033-3022! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
 

@@ -26,11 +26,13 @@ Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.f
 
 Osallistuaksesi kurssille sinun tulee liittyä kurssin Teams-ryhmään sekä Viope-oppimisalustalle. Liittymisohjeet ja -koodin Teamsiin saat sähköpostitse kurssin alkua edeltävällä viikolla. Liityttyäsi Teams-ryhmään saat myös katseluoikeudet kurssin kotisivulla sijaitseviin MS Stream -videoihin.
 
-Kurssin osallistumisen vahvistaminen edellyttää lisäksi vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä ja toiselta viikolta tehtävien määräaikaan mennessä. Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla kyseisten tehtävien idea selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin Teams-kanavalla.
+**Kurssin osallistumisen vahvistaminen edellyttää lisäksi vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä sekä toiselta viikolta tehtävien määräaikaan mennessä.** Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla kyseisten tehtävien idea selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin Teams-kanavalla.
 
 > *"Opiskelija vahvistaa paikkansa opintojaksototeutuksella olemalla läsnä opetuksen alkaessa tai muutoin opettajan ilmoittamalla tavalla, joka voi esimerkiksi olla ensimmäisen oppimistehtävän palautus."*
 >
 > [Tutkintosääntö](https://www.haaga-helia.fi/sites/default/files/file/2021-04/final_www-sivulle_tutkintosaanto_010421.pdf)
+
+Tämän käytännön ei ole tarkoitus estää ketään opiskelemasta tai suorittamasta kurssia, vaan sen on tarkoitus varmistaa, että kurssi lähtee kaikilla onnistuneesti käyntiin
 
 
 ## Kurssin aikataulu

@@ -22,7 +22,7 @@ Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opet
 Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033).
 
 
-## Osallistumisen vahvistaminen
+## ✅ Osallistumisen vahvistaminen
 
 Osallistuaksesi kurssille sinun tulee liittyä kurssin Teams-ryhmään sekä Viope-oppimisalustalle. Liittymisohjeet ja -koodin Teamsiin saat sähköpostitse kurssin alkua edeltävällä viikolla. Liityttyäsi Teams-ryhmään saat myös katseluoikeudet kurssin kotisivulla sijaitseviin MS Stream -videoihin.
 
@@ -35,7 +35,7 @@ Osallistuaksesi kurssille sinun tulee liittyä kurssin Teams-ryhmään sekä Vio
 Tämän käytännön ei ole tarkoitus estää ketään opiskelemasta tai suorittamasta kurssia, vaan sen on tarkoitus varmistaa, että kurssi lähtee kaikilla onnistuneesti käyntiin
 
 
-## Kurssin aikataulu
+## 📅 Kurssin aikataulu
 
 Tämä kurssi alkaa maanantaina 28.3.2022 ja päättyy perjantaina 20.5.2022. Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti jopa 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
@@ -148,7 +148,7 @@ Palautus Teamsiin (DL 22.5. klo 23:59)
 
 
 
-## Viestintäkanavat
+## 💬 Viestintäkanavat
 
 Tällä kurssilla viestintä tapahtuu MS Teams -palvelussa. Teams tarjoaa luontevan kanavan kysyä ja keskustella ajankohdasta riippumatta. Jos jäät jumiin koodisi kanssa tai et ymmärrä materiaaleja tai tehtävänantoja, kysy rohkeasti vinkkejä Teamsissa. Todennäköisesti samaa ongelmaa pohtii kanssasi myös moni muu, joten lähetäthän sisältöä ja tehtävänantoja koskevat kysymykset yhteiselle kanavalle eikä yksityisviestinä.
 
@@ -161,7 +161,7 @@ Liittymiskoodi kurssin tiimiin löytyy sähköpostitse lähetetystä tiedotteest
 * [Teams-lataussivu](https://teams.microsoft.com/downloads)
 
 
-## Palautettavat tehtävät
+## 📥 Palautettavat tehtävät
 
 Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuihin määräaikoihin mennessä. Osa tehtävistä palautetaan Viope-järjestelmään ja osa kurssin Teams-työtilaan.
 
@@ -188,19 +188,17 @@ Useat kurssin tehtävät rakentuvat saman aihealueen ympärille ja edellisten te
 Apua tehtävien tekoon on saatavissa kurssin Teams-kanavalla niin opettajalta kuin muiltakin opiskelijoilta.
 
 
-## Kurssin videot
+## 📼 Kurssin videot
 
 Osa kurssin omista videoista sijaitsee Haaga-Helian videopalvelussa ja loput Microsoft Stream -palvelussa. Stream-palvelun videoilla saatat mahdollisesti törmätä virheeseen "A setting in your browser is blocking cookies. Please disable this setting or open in a new window." Tämä johtuu selaimesi evästeasetuksista ja voit joko muuttaa asetukset tai siirtyä katsomaan videon Stream-palveluun. Saat lisäohjeita klikkaamalla virheilmoituksessa olevaa linkkiä.
 
 
-## Kurssin harjoitustyö
+## 🎶 Kurssin harjoitustyö
 
-Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerkiksi Teamsissa kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että jokainen kirjoittaa itse oman koodinsa.
-
-Tarkempi ohjeistus arvioinnin perusteista ja toteutettavan työn ominaisuuksista julkaistaan kurssin aikana.
+Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Sovelluksen aiheena on musiikkitietopalvelu. Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerkiksi Teamsissa kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että jokainen kirjoittaa itse oman koodinsa.
 
 
-## Arviointi
+## 📊 Arviointi
 
 Kurssin tehtävät sekä harjoitustyö arvioidaan asteikolla 0-5. Harjoitustyön arviointikriteerit löydät harjoitustyön tehtävänannon yhteydestä.
 
@@ -223,7 +221,7 @@ Ajax ja JavaScript      | 5               | -               | 22.5.     | Teams
 Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävien loppuarvosana muodostuu tehtäväpisteiden keskiarvosta. Kaksi ensimmäistä tehtäväkierrosta täytyy saada läpi vähintään minimipistein, mutta muuten yksittäinen arvosana 0 ei ole esteenä kurssin suorittamiselle.
 
 
-## Kurssin työmäärä
+## ⏱ Kurssin työmäärä
 
 Opintojakso kestää 8 viikkoa ja on laajuudeltaan 5 opintopistettä, joten sen [laskennallinen työmäärä on noin 135 tuntia](https://www.haaga-helia.fi/fi/ects-jarjestelma-ja-tutkintotodistuksen-liite-eli-diploma-supplement). Viikkoa kohden työmäärä vastaa laskennallisesti jopa 17 tuntia, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
@@ -244,7 +242,7 @@ public class KurssinTyomaara {
 }
 ```
 
-## Tekniset työkalut
+## 🔨 Tekniset työkalut
 
 Kurssin ohjeet ja esimerkit on tehty Eclipse-sovelluskehittimellä ja Windows-käyttöjärjestelmällä, joten Linux- tai Mac-käyttäjien tulee soveltaa ohjeita ja esimerkkejä omien käyttöjärjestelmiensä mukaisesti.
 
@@ -255,7 +253,7 @@ Tarvitset myös web-ohjelmointia varten Eclipsen version *"Eclipse IDE for Enter
 Mikäli Eclipse-versiosi ei ole soveltuva, asenna itsellesi uusi versio osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
 
 
-## Git-versionhallinta
+## 🔀 Git-versionhallinta
 
 Kurssin tehtäväpohjien ja malliratkaisujen jakelussa hyödynnetään ohjelmistokehityksen alalla erittäin vakiintunutta Git-versionhallintaa ja GitHub-palvelua. Kurssin edetessä projektiin lisätään uusia tiedostoja, jotka voit päivittää itsellesi Git:in avulla.
 
@@ -264,7 +262,7 @@ Gitin käytön opetteluun voit käyttää esimerkiksi Haaga-Helian tietojenkäsi
 Vaikka Git tuntuisi aluksi vaikealta tai ahdistavalta, sinun ei tarvitse opetella kaikkea kerralla, vaan tee vain sen verran mistä on sinulle välitöntä hyötyä.
 
 
-## Lähteiden käyttäminen
+## 📑 Lähteiden käyttäminen
 
 Tämän kurssin materiaali perustuu suurelta osin valmiisiin netistä löytyviin dokumentaatioihin ja tutoriaaleihin. Tällä sivulla eri aihealueiden yhteydessä tarjotaan linkkejä aihetta koskeviin materiaaleihin, mutta **joudut sen lisäksi merkittävissä määrin etsimään itse tietoa aiheista**.
 
@@ -273,7 +271,7 @@ Ohjelmointiongelmiin löytyy usein valmiita tai osittaisia ratkaisuja ympäri In
 Nettilähteiden hyödyntäminen ja niistä mallin ottaminen on sallittua ja kannustettavaa, mutta et saa vain kopioida ratkaisuja, vaan sinun tulee ymmärtää, miten koodisi toimii. Lisäksi, erityisesti koska kyseessä on korkeakoulun opintojakso, sinun tulee merkitä lähteet lainatessasi esimerkiksi StackOverflow:sta löytämääsi koodia. Lähdeviitteeksi riittää esimerkiksi verkkosivun osoite Java-kommenttina lainatun koodin yhteydessä, tai käyttämäsi lähteen käyttöehtojen mukainen muu lähdeviite.
 
 
-## Esitietovaatimukset
+## 🧠 Esitietovaatimukset
 
 > *"Opiskelija on suorittanut opintojakson Ohjelmointi 1 (SWD4TN032) tai hänellä on vastaavat tiedot ja taidot. Opiskelija suorittaa samanaikaisesti opintojakson Tietokannat ja tiedonhallinta (SWD1TN003) tai hänellä on vastaavat tiedot ja taidot."*
 >
@@ -285,7 +283,7 @@ Mikäli SQL-osaamisessasi on puutteita, suosittelen perehtymään netistä vapaa
 
 &nbsp;
 
-# Lisenssit ja tekijänoikeudet
+# ⚖ Lisenssit ja tekijänoikeudet
 
 Tällä kurssilla hyödynnetään avoimilla lisensseillä julkaistuja oppimateriaaleja, dataa ja ohjelmakoodia.
 

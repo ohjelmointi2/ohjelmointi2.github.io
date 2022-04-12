@@ -58,6 +58,17 @@ Useille testimetodeille yhteisten alustustoimenpiteiden tekeminen erillisessä a
 <!-- palindromi-video: https://video.haaga-helia.fi/media/t/0_m8y5zv8k -->
 
 
+<div class="info">
+
+**module-info.java ja "The import cannot be resolved"-virhe**
+
+Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit projektia luodessasi vaihtoehdon *"Create a new module-info.java file"*, saatat joutua tekemään muutoksia `module-info.java`-tiedostoon jotta Java löytää JUnit-kirjaston. Kurssin esimerkeissä moduulijärjestelmää ei hyödynnetä, joten niissä `module-info.java`-tiedostoa ei ole. Voit korjata ongelman poistamalla kyseisen tiedoston, tai tutustua muihin vaihtoehtoihin mm. [tässä keskustelussa](https://stackoverflow.com/a/52581442).
+
+</div>
+
+&nbsp;
+
+
 ## Testaaminen käytännössä:
 
 "Oikean ohjelman" testaamisessa haastetta tuo usein ohjelman rakenne, joka voi tehdä siitä vaikeasti testattavan. Seuraavilla videoesimerkeillä esitellään Map-aiheen yhteydessä luodun EtunimiTilasto-sovelluksen testausta yksikkötestien avulla ja muodostetaan ohjelman rakenne siten, että sen osat ovat testattavissa, laajennettavissa ja uudelleenkäytettävissä. 

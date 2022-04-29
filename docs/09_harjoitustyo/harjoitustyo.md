@@ -53,7 +53,8 @@ Harjoitustyön teknisen toteutuksen tavoitteet ovat seuraavat:
 * palvelu hyödyntää SQL-tietokantaa
 * tietokantaoperaatiot toteutetaan Javalla hyödyntäen JDBC-teknologiaa
 * palvelun HTTP-pyyntöjen käsittely toteutetaan servletteillä
-* palvelun käyttöliittymäkerros toteutetaan JSP-sivuina JSTL-kirjaston avulla.
+* palvelun käyttöliittymäkerros toteutetaan JSP-sivuina JSTL-kirjaston avulla
+* palvelun lähdekoodi on asiallisesti muotoiltu ja kommentoitu, eikä se sisällä kriittisiä käännösvirheitä tai -varoituksia.
 
 Jotta harjoitustyö ei olisi tarpeettoman laaja ja jotta se vastaisi kurssin oppimistavoitteita, siinä minimoidaan ja rajataan seuraavia ominaisuuksia:
 
@@ -73,9 +74,11 @@ Kurssin esimerkeissä olemme hyödyntäneet Sakura-nimistä CSS-kirjastoa:
 
 ## Harjoitustyön projektipohja
 
-Hyödynnä harjoitustyössä [samaa projektipohjaa](https://github.com/ohjelmointi2/embedded-tomcat-template), jota olemme käyttäneet kurssin aikaisemmilla viikoilla. Voit joko jatkaa harjoitustyön koodaamista nykyiseen projektiisi tai kloonata GitHubista toisen kopion projektipohjasta. 
+Hyödynnä harjoitustyössä [samaa projektipohjaa](https://github.com/ohjelmointi2/embedded-tomcat-template), jota olemme käyttäneet kurssin aikaisemmilla viikoilla. Kloonaa GitHubista toinen kopio projektipohjasta tai kopioi projekti Eclipsessä.
 
 Jos kloonaat projektipohjan toiseen kertaan, [nimeä nykyinen projektisi Eclipsessä uudelleen ennen kloonausta](https://help.eclipse.org/2021-03/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_proj_rename.htm). Eclipse ei hyväksy kahta samannimistä projektia yhdessä työtilassa.
+
+Poista projektipohjasta omaan harjoitustyöhönsi kuulumattomat tiedostot, kuten mahdolliset aikaisemmat viikkoharjoitukset, esimerkkiservletti ja jsp-sivut. Korvaa readme-tiedoston sisältö oman projektisi kuvauksella.
 
 
 ## Valmis musiikkitietokanta
@@ -125,7 +128,9 @@ Projektipohja löytyy osoitteesta [https://github.com/ohjelmointi2/embedded-tomc
 
 ## Harjoitustyön toiminnalliset vaatimukset
 
-Harjoitustyön arviointi perustuu sekä toteutettuihin toiminnallisuuksiin että saavutettuun laatuun. Voit toteuttaa palveluun alla esitettyjen ominaisuuksien lisäksi vapaavalintaisia lisäominaisuuksia, jotka huomioidaan tapauskohtaisesti myös arvioinnissa.
+Harjoitustyön arviointi perustuu sekä toteutettuihin toiminnallisuuksiin että saavutettuun laatuun. Seuraavissa kappaleissa esitetyt eri toiminnallisuuksien arvosanat edellyttävät projektin perusasioiden olevan kunnossa mm. sisennysten, kääntäjän antamien varoitusten ja koodin muotoilun osalta.
+
+Voit toteuttaa palveluun alla esitettyjen ominaisuuksien lisäksi vapaavalintaisia lisäominaisuuksia, jotka huomioidaan arvioinnissa tapauskohtaisesti. Voit halutessasi tiedustella etukäteen eri lisäominaisuuksien pisteytyksestä Teamsissa.
 
 
 ### Tavoitearvosana 1
@@ -210,7 +215,20 @@ Versionhallinnan, yksikkötestauksen ja Ajax-kutsujen soveltaminen katsotaan edu
 
 Vaikka edellä esitetyt tavoitearvosanat liittyvät palvelun toiminnallisuuteen, harjoitustyön arvioinnissa huomioidaan myös toteutuksen laatu. Laadukas ja toimiva toteutus katsotaan arvosanaa nostavaksi, kun taas laatuongelmat heikentävät arvosanaa.
 
+Vähimmäisvaatimus laadun suhteen on asianmukaisesti muotoillut lähdekooditiedostot, sisältäen mm. Javan käytäntöjen mukaiset sisennykset ja nimeämisen. Projektista ei tule löytyä siihen kuulumattomia Java-luokkia ja muita tiedostoja, kuten aikaisempien viikkojen viikkoharjoituksia.
+
+
+### Kääntäjän virheet ja varoitukset
+
+**Java-kääntäjän antamia virheitä (error), jotka estävät projektin kääntämisen ja suorittamisen ei sallita.** Tällaisissa tapauksissa pyydä apua Teamsissa, jotta ongelma saadaan korjattua ennen työn palautusta. Java-kääntäjän varoitukset (warning) katsotaan pääasiassa arvosanaa laskeviksi. Varoitus `"A serializable class can declare its own serialVersionUID explicitly by declaring a field named "serialVersionUID"` ei haittaa, mutta esimerkiksi `"ArrayList is a raw type. References to generic type ArrayList<E> should be parameterized"` tulee korjata.
+
+
+### Ajonaikaiset virheet (poikkeukset)
+
 Palvelun tulee selvitä normaaleista käyttötapauksista ilman poikkeuksia. Normaalit käyttötapaukset tarkoittavat mm. linkkien klikkaamista ja lomakkeiden lähettämistä **millä tahansa syötteillä**. Normaaliin käyttöön ei lasketa sitä, jos käyttäjä syöttää esimerkiksi suoraan selaimen osoiteriville virheellisen id:n.
+
+
+### Suorituskyky ja ulkoasu
 
 Suorituskyvyllä tai tietokantakyselyiden optimoinnilla ei ole painoarvoa. Käyttöliittymän visuaalisuutta ei arvioida, kunhan tarvittavat elementit löytyvät (tekstit, linkit, lomakkeet).
 

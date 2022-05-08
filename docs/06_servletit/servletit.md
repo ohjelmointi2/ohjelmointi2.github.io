@@ -263,17 +263,17 @@ Välitä servletissä laskettu arvo, eli jäljellä olevien päivien määrä, t
 Arvojen ja pyynnön välittäminen servletiltä JSP-sivulle on esitelty projektipohjassa ja yllä videolla ["Datan välittäminen servletiltä JSP-sivulle"](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1). Aiheesta löytyy myös [paljon muita ohjeita](https://www.google.com/search?q=pass+data+from+servlet+to+jsp+tutorial). Oppimistavoitteiden kannalta tärkeintä on, että päivien laskentaan liittyvä logiikka toteutetaan servletissä, josta tieto välitetään attribuuttina näkymälle (jsp-sivu).
 
 
-**Muista palvelimen uudelleenkäynnistys**
+#### Muista palvelimen uudelleenkäynnistys
 
 Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uuden servletin. Ohjeet Tomcat-palvelimen uudelleenkäynnistämiseksi ja koodimuutosten testauksen nopeuttamiseksi löydät yllä olevilta videoilta.
 
 
-**The serializable class does not declare a static final serialVersionUID field of type long**
+#### *"The serializable class does not declare a static final serialVersionUID field of type long"*
 
 Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ does not declare a static final serialVersionUID field of type long"*, voit jättää varoituksen huomioimatta. `serialVersionUID` nimistä muuttujaa käytetään luokasta luotujen olioiden versiointiin. Lue tarvittaessa lisää [tästä StackOverflow-vastauksesta](https://stackoverflow.com/a/285809).
 
 
-**Enkoodaus ja emojit** 🎅 🎄 🎁
+#### Enkoodaus ja emojit 🎅 🎄 🎁
 
 Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-merkkejä, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
 

@@ -277,7 +277,9 @@ Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ d
 
 Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-merkkejä, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
 
-Emoji-merkit auttavat varmistamaan, että web-sovelluksesi käsittelee kaikki eri merkit oikein, mikä varmistaa samalla myös ääkkösten toimivuuden. Erikoismerkit vaativat todennäköisesti sivun alkuun ns. page-direktiivin:
+Emoji-merkit auttavat varmistamaan, että web-sovelluksesi käsittelee kaikki eri merkit oikein, mikä varmistaa samalla myös mm. ääkkösten toimivuuden.
+
+Erikoismerkit vaativat tyypillisesti jokaisen sivun alkuun ns. page-direktiivin:
 
 ```
 <%@ page contentType="text/html; encoding=utf-8" pageEncoding="utf-8" %>

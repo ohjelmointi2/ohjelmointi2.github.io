@@ -272,9 +272,19 @@ Joudut käynnistämään palvelimesi uudelleen vähintään silloin, kun luot uu
 
 Mikäli Java varoittaa luokkasi kanssa seuraavaa: *"The serializable class XYZ does not declare a static final serialVersionUID field of type long"*, voit jättää varoituksen huomioimatta. `serialVersionUID` nimistä muuttujaa käytetään luokasta luotujen olioiden versiointiin. Lue tarvittaessa lisää [tästä StackOverflow-vastauksesta](https://stackoverflow.com/a/285809).
 
-**Emojit** 🎅 🎄 🎁
+
+**Enkoodaus ja emojit** 🎅 🎄 🎁
 
 Jos haluat käyttää sovelluksessasi kuvankaappausten mukaisia jouluaiheisia emoji-merkkejä, voit kopioida niitä esimerkiksi osoitteesta [https://emojipedia.org/christmas/](https://emojipedia.org/christmas/). Tämä on kuitenkin täysin ylimääräinen osa tehtävää.
+
+Emoji-merkit auttavat varmistamaan, että web-sovelluksesi käsittelee kaikki eri merkit oikein, mikä varmistaa samalla myös ääkkösten toimivuuden. Erikoismerkit vaativat todennäköisesti sivun alkuun ns. page-direktiivin:
+
+```
+<%@ page contentType="text/html; encoding=utf-8" pageEncoding="utf-8" %>
+```
+
+Yllä `contentType` lisää selaimille "otsikon" (header), jossa kerrotaan sivun merkistö. `pageEncoding` puolestaan kertoo Tomcatille, millä merkistöllä JSP-sivu on tallennettu.
+
 
 ### **Osa 3 / 3**: DaysUntilServlet
 

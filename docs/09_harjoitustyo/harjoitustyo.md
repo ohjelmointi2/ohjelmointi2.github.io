@@ -305,7 +305,7 @@ Harjoitustyön lähdekoodit ja edellä mainitut tekstitiedostot palautetaan Team
 
 [Tee projektistasi zip-tiedosto](https://stackoverflow.com/a/5386448) valitsemalla Eclipsessä harjoitustyöprojektin nimen päällä *Export – Export.. – General – Archive file*. Tallenna tiedosto .zip-muotossa säilyttäen hakemistorakenne. Varmista, että zip-paketti sisältää dokumentaation ja kaikki ratkaisusi *.java*- ja *.jsp*-tiedostot. Palauta zip-paketti Teamsin palautuskansioon.
 
-Muistathan jättää lopuksi kurssista [opintojaksopalautetta MyNetissä](https://student.home.haaga-helia.fi/group/pakki/opintojaksopalaute)!
+Muistathan jättää lopuksi kurssista [opintojaksopalautetta MyNetissä](https://mynet.haaga-helia.fi/group/pakki/opintopalaute)!
 
 ## Tietokannan lisenssi
 

@@ -76,9 +76,9 @@ Kurssin esimerkeissä olemme hyödyntäneet Sakura-nimistä CSS-kirjastoa:
 
 Hyödynnä harjoitustyössä [samaa projektipohjaa](https://github.com/ohjelmointi2/embedded-tomcat-template), jota olemme käyttäneet kurssin aikaisemmilla viikoilla. Kloonaa GitHubista toinen kopio projektipohjasta tai kopioi projekti Eclipsessä.
 
-Jos kloonaat projektipohjan toiseen kertaan, [nimeä nykyinen projektisi Eclipsessä uudelleen ennen kloonausta](https://help.eclipse.org/2021-03/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_proj_rename.htm). Eclipse ei hyväksy kahta samannimistä projektia yhdessä työtilassa.
+Jos kloonaat projektipohjan toiseen kertaan, [nimeä nykyinen projektisi Eclipsessä uudelleen ennen kloonausta](https://help.eclipse.org/2021-03/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_proj_rename.htm). Eclipse ei hyväksy kahta samannimistä projektia yhdessä työtilassa. Muista myös lisätä SQLite-ajuri tähän uuteen projektiin [viikon 7 ohjeiden mukaisesti](https://ohjelmointi2.github.io/07_mvc/servlet_dao_jstl#versionumeroiden-m%C3%A4%C3%A4ritteleminen), tai törmäät myöhemmin *"java.sql.SQLException: No suitable driver found for jdbc:sqlite:..."*-virheeseen.
 
-Poista projektipohjasta omaan harjoitustyöhönsi kuulumattomat tiedostot, kuten mahdolliset aikaisemmat viikkoharjoitukset, esimerkkiservletti ja jsp-sivut. Korvaa readme-tiedoston sisältö oman projektisi kuvauksella.
+Poista myös projektipohjasta omaan harjoitustyöhönsi kuulumattomat tiedostot, kuten mahdolliset aikaisemmat viikkoharjoitukset, esimerkkiservletti ja jsp-sivut. Korvaa readme-tiedoston sisältö oman projektisi lyhyellä kuvauksella.
 
 
 ## Valmis musiikkitietokanta

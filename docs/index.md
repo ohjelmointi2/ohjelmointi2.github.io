@@ -156,7 +156,7 @@ Kurssilla suositellaan käytettävän Teamsin työpöytäsovellusta. Kirjautumin
 
 Liittymiskoodi kurssin tiimiin löytyy sähköpostitse lähetetystä tiedotteesta sekä kurssin Moodle-työtilasta.
 
-* [Teams Quick Start -ohje (pdf)](https://download.microsoft.com/download/D/9/F/D9FE8B9E-22F5-47BF-A1AB-09539C41FCD0/Teams%20QS.pdf)
+* [Teams Quick Start -ohje (pdf)](https://go.microsoft.com/fwlink/?linkid=2131456)
 * [Teams](https://teams.microsoft.com/)
 * [Teams-lataussivu](https://teams.microsoft.com/downloads)
 
@@ -196,6 +196,8 @@ Osa kurssin omista videoista sijaitsee Haaga-Helian videopalvelussa ja loput Mic
 ## 🎶 Kurssin harjoitustyö
 
 Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Sovelluksen aiheena on musiikkitietopalvelu. Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerkiksi Teamsissa kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että jokainen kirjoittaa itse oman koodinsa.
+
+[Harjoitustyön tarkempi tehtävänanto löytyy omalta sivultaan.](09_harjoitustyo/harjoitustyo)
 
 
 ## 📊 Arviointi

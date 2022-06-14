@@ -27,7 +27,10 @@ Mikäli olisimme kehittämässä esimerkiksi verkkokauppaa ja siihen liittyvää
 
 ## Oppimateriaalit
 
-[PowerPoint-kalvot (PDF)](./yksikkotestaus.pdf)
+Yksikkötestausta käsitellään tämän kurssin näkökulmasta oheisissa [PowerPoint-kalvoissa (PDF)](./yksikkotestaus.pdf).
+
+Lisäksi suosittelen perehtymään [JUnit-testaustyökalun omiin käyttöohjeisiin](https://junit.org/junit5/docs/current/user-guide/).
+
 
 ### JUnit-teoriavideot
 

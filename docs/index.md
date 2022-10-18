@@ -19,7 +19,7 @@ Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä oppitunteja kampu
 
 Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
 
-Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033).
+Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A](https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A).
 
 
 ## ✅ Osallistumisen vahvistaminen
@@ -103,7 +103,7 @@ Tehtävät Teamsissa (DL 28.11. klo 23:59)
 
 &nbsp;
 
-### <small>28.11.-4.12.</small> [**Aihe 6: Verkkosovellus (Tomcat ja Servletit)**](06_servletit/servletit)
+### <small>28.11.-4.12.</small> [**Aihe 6: Web-ohjelmointi servleteillä**](06_servletit/servletit)
 
 Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää yksikkötestauksen yhteydessä refaktoroimaasi `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
 
@@ -178,7 +178,7 @@ Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuih
 
 Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat. 
 
-Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) <del>"Ohjelmointi 2, 3022 🕊️"</del>-linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus <del>"Ohjelmointi 2, 3022 🕊️"</del>.
+Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) "Ohjelmointi 2, 3009 🎈"-linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus "Ohjelmointi 2, 3009 🎈".
 
 **Teknisistä syistä johtuen Viopeen palautettavista lähdekoodeista täytyy aina poistaa mahdolliset package -lauseet luokan yläpuolelta.** Viope on myös muilla tavoin erittäin tarkka ohjelmien oikeellisuudesta, mikä saattaa aiheuttaa ensimmäisillä viikoilla hämmennystä. Voit kysyä kurssin Teams-kanavalla neuvoa Viope-ongelmiin milloin tahansa.
 

@@ -122,7 +122,7 @@ Lisäksi sinun kannattaa tutustua tämän viikon tehtävän alkuperäiseen läht
 
 # Tehtävä
 
-Tämän viikon tehtävänäsi on toteuttaa JUnit-yksikkötestit tälle heikosti toteutetulle esimerkkiluokalle:
+Tämän viikon tehtävänäsi on toteuttaa JUnit-yksikkötestit valmiiksi annetulle esimerkkiluokalle ja korjata sieltä löytämäsi virheet. Testattavana luokkana käytämme seuraavaa `DayOfYear`-luokkaa:
 
 ```java
 /**
@@ -187,6 +187,10 @@ Kuten toivottavasti muistat edeltävältä ohjelmointikurssilta, `dayOfYear`-met
 > Agile Education Research -tutkimusryhmä. [Luokka- ja oliometodit: määre static](https://ohjelmointi-19.mooc.fi/osa-6/1-luokka-ja-oliometodit). [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi)
 
 `dayOfYear`-metodin kutsu omasta luokastasi käsin tehdään siis luokan nimen avulla, esimerkiksi `int tulos = DayOfYear.dayOfYear(12, 31, 2022)`.
+
+### Tehtävän vaiheet
+
+Tämä tehtävä on jaettu kolmeen eri vaiheeseen, jotka voit halutessasi tehdä yksi kerrallaan tai haluamassasi järjestyksessä. Vain lopputulos palautetaan, joten ei ole käytännön merkitystä, kirjoitatko ensin kaikki testitapaukset ja sen jälkeen korjaat bugit, vai testaatko ohjelmaa ja korjaat bugeja yksi kerrallaan. Jako vaiheisiin toivottavasti auttaa kuitenkin tehtävänannon seuraamisessa.
 
 
 ## Vaihe 1: kirjoita dayOfYear-metodille JUnit-yksikkötestit

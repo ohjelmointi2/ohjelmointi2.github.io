@@ -170,19 +170,24 @@ public class DayOfYear {
 
 Voit ladata luokan lähdekoodin itsellesi [tästä](https://gist.githubusercontent.com/swd1tn002/06bf2e70f2fd683bffba946bb5307eb6/raw/97af3932d59a6e4206dea63bdc4c799c018d2288/DayOfYear.java). Lisää tarpeen mukaan luokkaan `package`-rivi vastaamaan oman Java-projektisi hakemistorakennetta.
 
-Yksinkertaisuudessaan yllä `dayOfYear`-metodi saa parametreinaan päivämäärän kolmena kokonaislukuna, ja palauttaa annetun päivämäärän järjestysnumeron kyseisenä vuonna (1-366). 
+Yksinkertaisuudessaan yllä `dayOfYear`-metodi saa parametreinaan päivämäärän kolmena kokonaislukuna, ja palauttaa annetun päivämäärän järjestysnumeron kyseisenä vuonna (1-366). Voit tutkia eri päivämääriä vastaavia "day of year"-lukuja esimerkiksi [Day of the Year (DOY) calendar -kalenterista](https://nsidc.org/data/user-resources/help-center/day-year-doy-calendar) (National Snow and Ice Data Center). Huomaa, että maaliskuusta alkaen eri päivien numerot vaihtelevat tavallisina- ja karkausvuosina.
 
-Metodissa on bugeja, jotka tulee löytää omilla testeillä. Saatat lisäksi huomata luokan koodaustyylissä merkittäviä heikkouksia, joihin paneudutaan tehtävän 3. osassa.
+> *"Some data sets specify dates using the year and day of year rather than the year, month, and day of month. The day of year (DOY) is the sequential day number starting with day 1 on January 1st."*
+>
+> [Day of the Year (DOY) calendar. National Snow and Ice Data Center](https://nsidc.org/data/user-resources/help-center/day-year-doy-calendar)
+
+Annetussa metodissa on bugeja, jotka tässä tehtävässä tulee löytää omilla JUnit-testeillä. Saatat lisäksi huomata luokan koodaustyylissä merkittäviä heikkouksia, joihin paneudutaan tehtävän 3. osassa.
 
 ### Staattisen metodin kutsumisesta
 
-`dayOfYear`-metodin otsikossa esiintyy avainsana `static`, joten se on **staattinen luokkametodi**:
+Kuten toivottavasti muistat edeltävältä ohjelmointikurssilta, `dayOfYear`-metodin otsikossa esiintyvä avainsana `static` tarkoittaa, että se on **staattinen eli luokkametodi**:
 
 > *"Koska luokkametodi ei liity mihinkään olioon, ei sitä kutsuta oliometodien tapaan olionNimi.metodinNimi(), vaan sen kutsumisessa (saman luokan sisällä) käytetään pelkkää metodin nimeä. Mikäli luokkametodin koodi on eri luokan sisällä kuin sitä kutsuva metodi, voi luokkametodia kutsua muodossa LuokanNimi.staattisenMetodinNimi().*"
 >
 > Agile Education Research -tutkimusryhmä. [Luokka- ja oliometodit: määre static](https://ohjelmointi-19.mooc.fi/osa-6/1-luokka-ja-oliometodit). [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi)
 
-`dayOfYear`-metodin kutsu omasta luokastasi käsin tehdään siis luokan nimen avulla, esimerkiksi `int tulos = DayOfYear.dayOfYear(12, 31, 2020)`.
+`dayOfYear`-metodin kutsu omasta luokastasi käsin tehdään siis luokan nimen avulla, esimerkiksi `int tulos = DayOfYear.dayOfYear(12, 31, 2022)`.
+
 
 ## Vaihe 1: kirjoita dayOfYear-metodille JUnit-yksikkötestit
 
@@ -192,13 +197,13 @@ DayOfYear-luokan `dayOfYear`-metodissa on virheitä, joten testiluokkasi tavoitt
 
 Kukin testitapaus, eli testimetodi, voi käytännössä koostua vain kahdesta rivistä. Ensimmäisellä rivillä kutsut testattavaa dayOfYear-metodia, ja toisella rivillä tarkistat, onko metodista saatu tulos on oikea. 
 
-Jos haluat esimerkiksi varmistaa, että metodi antaa tammikuun 1. päivälle tuloksen 1, kutsu testin sisällä metodia seuraavasti:
+Jos haluat esimerkiksi varmistaa, että metodi antaa tammikuun 1. päivälle tuloksen 1, kutsu testin sisällä testattavaa metodia seuraavasti:
  
 ```java
-int tulos = DayOfYear.dayOfYear(1, 1, 2021); // tammikuun 1. päivä on vuoden 1. päivä
+int tulos = DayOfYear.dayOfYear(1, 1, 2023); // tammikuun 1. päivä on vuoden 1. päivä
 ```
 
-Jotta testi oikeasti huomaa virheet, sinun pitää tarkastaa, että saatu tulos on 1. Tätä varten käytämme `assertEquals`-metodia, jolle annetaan sekä tunnettu oikea arvo (eli 1), että metodista saamamme tulos:
+Jotta testi oikeasti huomaa virheet, sinun pitää vielä varmistaa, että saatu tulos on 1. Tätä varten käytämme `assertEquals`-metodia, jolle annetaan sekä tunnettu oikea arvo (eli 1), että metodista saamamme tulos:
 
 ```java
 assertEquals(1, tulos); // varmistaa että saatu `tulos` on 1
@@ -211,17 +216,18 @@ Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa.
 
 ## Vaihe 2: korjaa dayOfYear-luokan bugi(t)
 
-Mikäli löysit testiesi avulla bugeja edellisessä osassa, kaikki testitapauksesi eivät mene vielä läpi. Korjaa seuraavaksi `dayOfYear`-metodista löytämäsi bugit. Bugien korjaamisen jälkeen edellisessä vaiheessa kirjoittamasi testiluokan kaikkien testien tulisi mennä hyväksytysti läpi.
+Mikäli löysit testiesi avulla bugeja edellisessä osassa, kaikki testitapauksesi eivät mene korjausten jälkeen läpi. Korjaa seuraavaksi `dayOfYear`-metodista löytämäsi bugit. Bugien korjaamisen jälkeen edellisessä vaiheessa kirjoittamasi testiluokan kaikkien testien tulisi mennä hyväksytysti läpi.
 
 Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista `Year`-luokasta ja sen `isLeap`-metodista. Katso ohje sen käyttämiseksi esimerkiksi sivulta [tutorialspoint.com](https://www.tutorialspoint.com/javatime/javatime_year_isleap.htm).
 
 Tarkista myös eri kuukausien todelliset pituudet esimerkiksi [Wikipediasta](https://fi.wikipedia.org/wiki/Kuukausi).
 
+
 ## Vaihe 3: koodin refaktorointi hyvien käytäntöjen mukaiseksi
 
-Tähän asti olet ohjelmointiopinnoissasi kenties keskittynyt lähinnä saamaan ohjelmasi toimimaan tehtävänannon mukaisesti kiinnittämättä suurempaa huomiota sen ymmärrettävyyteen tai jatkokehitettävyyteen. Voimme olettaa myös `dayOfYear`-metodin syntyneen näin. Ammatillisessa ohjelmistokehityksessä on harvinaista, että samaa koodia työstettäisiin vain kerran tai vain yhden kehittäjän toimesta. Päinvastoin, koodia kirjoitetaan isoissa tiimeissä, joissa kehittäjät vaihtuvat ja olemassa oleviin ominaisuuksiin tehdään jatkuvasti muutoksia. 
+Tähän asti olet ohjelmointiopinnoissasi kenties keskittynyt lähinnä saamaan ohjelmasi toimimaan tehtävänannon mukaisesti kiinnittämättä suurempaa huomiota sen ymmärrettävyyteen tai jatkokehitettävyyteen. Voimme olettaa myös annetun `dayOfYear`-metodin syntyneen näin. Ammatillisessa ohjelmistokehityksessä on harvinaista, että samaa koodia työstettäisiin vain kerran tai vain yhden kehittäjän toimesta. Päinvastoin, koodia kirjoitetaan tiimeissä, joissa kehittäjät vaihtuvat ja olemassa oleviin ominaisuuksiin tehdään jatkuvasti muutoksia.
 
-Tulet siis itse jatkokehittämään jonkun toisen vuosia sitten kirjoittamaa koodia, aivan kuten joku muu tulee jatkokehittämään sinun koodiasi. Tällöin on erittäin tärkeää, että koodi on muokattavissa ilman odottamattomia rikkoutumisia ja että muut kehittäjät ymmärtävät toistensa koodia ja pystyvät muokkaamaan sitä uusien vaatimusten mukaiseksi.
+Tulet siis itse jatkokehittämään jonkun toisen vuosia sitten kirjoittamaa koodia, aivan kuten joku muu tulee jatkokehittämään sinun koodiasi. Tällöin on erittäin tärkeää, että koodi on muokattavissa ilman odottamattomia rikkoutumisia ja että muut kehittäjät ymmärtävät toistensa koodia ja pystyvät hyödyntämään ja muokkaamaan sitä.
 
 Kun luet `dayOfYear`-metodin sisältämää koodia tarkemmin, huomaat, että siinä on käytetty ohjelmoinnin perusrakenteita melko suppeasti. Koodi koostuukin erittäin pitkästä `if-else`-rakenteesta sekä samanlaisista kokonaislukujen yhteenlaskuista. Samat numerot myös esiintyvät koodissa toistuvasti ja saattavat olla virheellisiä.
 
@@ -244,15 +250,17 @@ Edellä mainittu lista on käyty läpi tämän saman esimerkkikoodin avulla osoi
 
 &nbsp;
 
-**Huom!** Javan standardikirjastossa on olemassa useita valmiita toimivia toteutuksia päivän järjestysnumeron laskemiselle. Oikeassa ohjelmistoprojektissa sinun tulisi luonnollisesti käyttää tällaisessa tapauksessa valmista ratkaisua, eikä yrittää toteuttaa omaa versiotasi. Tämän harjoituksen tavoitteena on kuitenkin opetella testaamaan ja jäsentämään koodi uudella tavalla.
+**Huom!** Javan standardikirjastossa on olemassa useita valmiita toimivia toteutuksia päivän järjestysnumeron laskemiselle. Oikeassa ohjelmistoprojektissa sinun tulisi luonnollisesti käyttää valmista ratkaisua, eikä yrittää keksiä pyörää uudestaan. Tämän harjoituksen tavoitteena on kuitenkin opetella testaamaan ja refaktoroimaan koodia, joten suosittelen muodostamaan oman ratkaisun annettua koodia muokkaamalla.
 
-**Huom!** Javan `java.time`-paketista löytyvät `Month`-, `YearMonth` ja `Year`-luokat voivat olla refaktoroinnissa hyödyllisiä. `Year`-luokan `isLeap`-metodin avulla voit selvittää onko tietty vuosi karkausvuosi, ja `length()` sekä `lengthOfMonth()`-metodit auttavat kuukauden pituuden selvittämisessä ilman kovakoodattuja numeroita.
+**Huom!** Mikäli päädyt poistamaan annetun koodin kokonaisuudessaan ja korvaamaan sen Javan valmiita luokkia hyödyntävällä logiikalla, on arvioinnin kannalta erityisen tärkeää, että testisi osoittavat sinun löytäneen alkuperäisessä koodissa olleet bugit!
+
+**Huom!** Javan `java.time`-paketista löytyvät `Month`-, `YearMonth` ja `Year`-luokat voivat olla refaktoroinnissa hyödyllisiä. `Year`-luokan `isLeap`-metodin avulla voit selvittää onko tietty vuosi karkausvuosi. `length()` ja `lengthOfMonth()`-metodit puolestaan auttavat kuukauden pituuden selvittämisessä ilman kovakoodattuja numeroita.
 
 Linkit:
 
-* [Year-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/Year.html)
-* [Month-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/Month.html)
-* [YearMonth-luokka](https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html)
+* [Year-luokka](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/Year.html)
+* [Month-luokka](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/Month.html)
+* [YearMonth-luokka](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/YearMonth.html)
 
 
 ## Tehtävän palauttaminen
@@ -265,6 +273,6 @@ Mikäli tarvitset apua tehtävän palauttamisessa Teamsiin, tutustu Microsoftin 
 
 Tehtävä arvioidaan asteikolla 0-5. Arvioinnissa suurin painoarvo on testien kirjoittamisella sekä bugien korjauksella (60 %). Koodin laadun parantamisella on pienempi painoarvo (40 %).
 
-Täysiin pisteisiin tehtävässä riittää, että kirjoitat muutaman toimivan testimetodin, korjaat löytämäsi bugit ja parannat annettua koodia yhden laatuongelman osalta. Osittain valmiit ratkaisut pisteytetään suhteessa niiden valmiusasteeseen.
+Täysiin pisteisiin tehtävässä riittää, että kirjoitat muutaman toimivan testimetodin, korjaat löytämäsi bugit ja parannat annettua koodia ainakin yhden laatuongelman osalta. Osittain valmiit ratkaisut pisteytetään suhteessa niiden valmiusasteeseen.
 
 <script src="/scripts.js"></script>

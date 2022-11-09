@@ -222,9 +222,11 @@ Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa.
 
 Mikäli löysit testiesi avulla bugeja edellisessä osassa, kaikki testitapauksesi eivät mene korjausten jälkeen läpi. Korjaa seuraavaksi `dayOfYear`-metodista löytämäsi bugit. Bugien korjaamisen jälkeen edellisessä vaiheessa kirjoittamasi testiluokan kaikkien testien tulisi mennä hyväksytysti läpi.
 
-Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista `Year`-luokasta ja sen `isLeap`-metodista. Katso ohje sen käyttämiseksi esimerkiksi sivulta [tutorialspoint.com](https://www.tutorialspoint.com/javatime/javatime_year_isleap.htm).
+Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista `Year`-luokasta ja sen `isLeap`-metodista. Katso ohje sen käyttämiseksi esimerkiksi sivulta [tutorialspoint.com](https://www.tutorialspoint.com/javatime/javatime_year_isleap.htm). Tarkista myös eri kuukausien todelliset pituudet esimerkiksi [Wikipediasta](https://fi.wikipedia.org/wiki/Kuukausi).
 
-Tarkista myös eri kuukausien todelliset pituudet esimerkiksi [Wikipediasta](https://fi.wikipedia.org/wiki/Kuukausi).
+**Virheelliset parametrit &mdash; bugi vai ominaisuus?**
+
+Esimerkkikoodin [lähteessä](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/#fail_fast) tuodaan esiin fail fast -ajattelutapa, jonka mukaisesti ongelmat on sitä helpompi korjata mitä aikaisemmin ne havaitaan. Tämän metodin tapauksessa metodi palauttaa arvoja riippumatta siitä, ovatko kuukausien ja päivien numerot annettu oikeassa järjestyksessä tai ovatko ne sallituilta väleiltä. Voit halutessasi lisätä metodiin tarkastuksia, ja heittää esimerkiksi `IllegalArgumentException`-poikkeuksen virheellisen päivämäärän saatuasi. Tämä ei kuitenkaan ole tehtävän kannalta välttämätöntä, emmekä laske virheellisiä syötteitä tämän metodin bugeiksi.
 
 
 ## Vaihe 3: koodin refaktorointi hyvien käytäntöjen mukaiseksi

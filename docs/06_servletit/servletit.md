@@ -384,12 +384,22 @@ HTML-sivulla esitettynä lomake näyttää suunnilleen tältä:
 <div style="padding: 0.8rem; border: solid 1px #dce6f0;">
     Count days between today and any other date:
     <form action="http://localhost:8080/daysUntil" method="get">
-        <label>Year:  <input type="number" name="year" max="9999" required></label>
-        <label>Month: <input type="number" name="month" min="1" max="12" required></label>
-        <label>Day:   <input type="number" name="day" min="1" max="31" required></label>
+        <label>Year:  <input type="number" name="year" max="9999" required></label><br />
+        <label>Month: <input type="number" name="month" min="1" max="12" required></label><br />
+        <label>Day:   <input type="number" name="day" min="1" max="31" required></label><br />
         <input type="submit" value="Submit">
     </form>
 </div>
+
+#### Valinnainen "date picker" -elementti
+
+Edellä esitetyssä esimerkissä päivämäärän valinta tapahtuu kolmella erillisellä input-elementillä. HTML-standardissa on myös **date**-tyyppinen elementti, joka näyttää käyttäjälle kalenterin eli ns. "date picker" elementin:
+
+<div style="padding: 0.8rem; border: solid 1px #dce6f0;">
+    <input type="date" name="date">
+</div>
+
+Voit halutessasi hyödyntää myös tätä elementtiä. Tutustu lisää sen toimintaan ja lähetettävän päivämäärän muotoon (yyyy-mm-dd) osoitteessa [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date).
 
 
 ### Bonus: artikkeli virheiden paikantamisesta

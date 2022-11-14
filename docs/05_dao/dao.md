@@ -6,9 +6,9 @@
 
 Tähän mennessä kurssia olemme tutustuneet ymmärrettävän ja ylläpidettävän koodin kirjoittamiseen, koodin testaamiseen ja tietokantaohjelmointiin. Seuraavaksi rakennamme pienen tietokantaa hyödyntävän komentorivisovelluksen, jonka logiikkaa on mahdollista uudelleenkäyttää ja testata.
 
-Lopulta tavoitteenamme on sovellus, joka on ensinnäkin toimiva, mutta sen lisäksi ylläpidettävissä ja laajennettavissa elinkaarensa aikana. Seuraavissa vaiheissa jatkammekin saman sovelluksen kehittämistä web-pohjaiseksi palveluksi. Voit tutustua tavoittelemaamme lopputulokseen jo etukäteen osoitteessa [https://shoppinglist-example.herokuapp.com/](https://shoppinglist-example.herokuapp.com/)!
+Lopulta tavoitteenamme on sovellus, joka on ensinnäkin toimiva, mutta sen lisäksi ylläpidettävissä ja laajennettavissa elinkaarensa aikana. Seuraavissa vaiheissa jatkammekin saman sovelluksen kehittämistä web-pohjaiseksi palveluksi.
 
-**Huom!** Videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
+Voit tutustua tavoittelemaamme lopputulokseen jo etukäteen osoitteessa [https://shoppinglist-6xnh.onrender.com/](https://shoppinglist-6xnh.onrender.com/)! *Huom, tämä sovellus toimii [render](https://render.com/)-pilvipalvelun ilmaisilla resursseilla, ja sen käynnistyminen voi kestää jopa minuutin.*
 
 <!--## Malliratkaisu
 
@@ -32,7 +32,7 @@ Tietokantalogiikan eriyttämiseksi muusta koodista käytetään usein ns. **DAO*
 
 > *"DAO stands for **Data Access Object**. DAO Design Pattern is used to separate the data persistence logic in a separate layer. This way, the service remains completely in dark about how the low-level operations to access the database is done. This is known as the principle of **Separation of Logic**."*
 >
-> JournalDEV. DAO Design Pattern. [https://www.journaldev.com/16813/dao-design-pattern](https://www.journaldev.com/16813/dao-design-pattern)
+> DigitalOcean. DAO Design Pattern. [https://www.digitalocean.com/community/tutorials/dao-design-pattern](https://www.digitalocean.com/community/tutorials/dao-design-pattern)
 
 
 ## Video 2: [Intro DAO-patterniin](https://web.microsoftstream.com/video/ec6e052c-ba95-4c59-975f-6322c81097e6?st=33) <small>3:53</small>
@@ -71,7 +71,7 @@ Tällä videolla parannamme ShoppingListApp-sovelluksemme rakennetta hyödyntäm
 
 ### Lisämateriaali
 
-Lue DAO-suunnittelumallin esittely esimerkkikoodeineen osoittessa [https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm). Kyseisen tutoriaalin koodiesimerkit eivät hyödynnä oikeaa tietokantaa, vaan tavallista `ArrayList`-listaa.
+Lue DAO-suunnittelumallin esittely esimerkkikoodeineen osoittessa [https://www.digitalocean.com/community/tutorials/dao-design-pattern#dao-pattern-implementation](https://www.digitalocean.com/community/tutorials/dao-design-pattern#dao-pattern-implementation). Kyseisen tutoriaalin BookDaoImpl-luokka ei hyödynnä oikeaa tietokantaa, vaan tavallista `ArrayList`-listaa.
 
 <!--Vastaavalla tavalla toteutettu listapohjainen DAO-luokka ostoslistasta on nähtävissä esimerkkisovelluksen lähdekoodeissa: [FakeShoppingListItemDao.java](https://github.com/haagahelia/ShoppingListExample/blob/master/src/main/java/database/FakeShoppingListItemDao.java).-->
 

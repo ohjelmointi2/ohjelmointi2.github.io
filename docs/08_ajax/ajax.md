@@ -68,11 +68,11 @@ Poisto-ominaisuuden toteutus koostuu seuraavista vaiheista:
 
 Tehtävänannossa hyödynnetään ainoastaan JavaScriptin standardikirjastoa, mutta voit halutessasi toteuttaa omat harjoituksesi esimerkiksi [jQuery-kirjaston](https://jquery.com/) tai [Reactin](https://reactjs.org/) avulla. Näihin ei kuitenkaan tarjota tukea kurssin puolesta. Tehtävässä annettavan valmiin koodin muokkaaminen on myös sallittua.
 
-
+<!--
 ### Esimerkkitoteutus
 
 Tästä tehtävästä on julkaistu esimerkkitoteutus [https://shoppinglist-ajax.herokuapp.com/list](https://shoppinglist-ajax.herokuapp.com/list), jonka tutkiminen [selaimen kehittäjätyökaluilla](https://developer.chrome.com/docs/devtools/overview/) saattaa auttaa tehtävän hahmottamisessa. Esimerkkitoteutus toimii [Heroku-palvelun](https://www.heroku.com/) ilmaisilla resursseilla, joten sen käynnistyminen lepotilasta voi kestää hetken.
-
+-->
 
 ### Osa 1 / 4: painike tuotteiden poistamiseksi
 

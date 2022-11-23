@@ -89,13 +89,13 @@ Tällä videolla luomme projektiin itsellemme uuden kehityshaaran ja viemme sen 
 
 ## MVC-arkkitehtuuri (Model, View, Controller)
 
-> *"Web-sovellusten suunnittelussa noudatetaan useita arkkitehtuurimalleja. Tyypillisimpiä näistä ovat MVC-arkkitehtuuri sekä kerrosarkkitehtuuri. Kummassakin perusperiaatteena on vastuiden jako selkeisiin osakokonaisuuksiin.*
+> *"Web-sovellusten suunnittelussa noudatetaan useita arkkitehtuurimalleja. Tyypillisimpiä näistä ovat MVC-arkkitehtuuri sekä kerrosarkkitehtuuri. Kummassakin perusperiaatteena on vastuiden jako selkeisiin osakokonaisuuksiin."*
 >
-> *MVC-arkkitehtuurin tavoitteena on käyttöliittymän erottaminen sovelluksen toiminnasta siten, että käyttöliittymät eivät sisällä sovelluksen toiminnan kannalta tärkeää sovelluslogiikkaa. MVC-arkkitehtuurissa ohjelmisto jaetaan kolmeen osaan: malliin (model, tiedon tallennus- ja hakutoiminnallisuus), näkymään (view, käyttöliittymän ulkoasu ja tiedon esitystapa) ja käsittelijään (controller, käyttäjältä saatujen käskyjen käsittely sekä sovelluslogiikka).*
+> *"MVC-arkkitehtuurin tavoitteena on käyttöliittymän erottaminen sovelluksen toiminnasta siten, että käyttöliittymät eivät sisällä sovelluksen toiminnan kannalta tärkeää sovelluslogiikkaa. MVC-arkkitehtuurissa ohjelmisto jaetaan kolmeen osaan: malliin (model, tiedon tallennus- ja hakutoiminnallisuus), näkymään (view, käyttöliittymän ulkoasu ja tiedon esitystapa) ja käsittelijään (controller, käyttäjältä saatujen käskyjen käsittely sekä sovelluslogiikka)."*
 > 
-> *Web-sovelluksissa käyttäjän pyyntö ohjautuu kontrollerille, joka sisältää sovelluslogiikkaa. Kontrolleri kutsuu pyynnöstä riippuen mallin toiminnallisuuksia ja hakee sieltä esimerkiksi tietoa. Tämän jälkeen pyyntö ohjataan näkymän luomisesta vastuulle olevalle komponentilla ja näkymä luodaan. Lopulta näkymä palautetaan vastauksena käyttäjän tekemälle pyynnölle."*
+> *"Web-sovelluksissa käyttäjän pyyntö ohjautuu kontrollerille, joka sisältää sovelluslogiikkaa. Kontrolleri kutsuu pyynnöstä riippuen mallin toiminnallisuuksia ja hakee sieltä esimerkiksi tietoa. Tämän jälkeen pyyntö ohjataan näkymän luomisesta vastuulle olevalle komponentilla ja näkymä luodaan. Lopulta näkymä palautetaan vastauksena käyttäjän tekemälle pyynnölle."*
 >
-> Lähde: Helsingin yliopiston Agile Education Research -tutkimusryhmä. [Sovelluksen rakenne, Web-palvelinohjelmointi Java 2019](https://web-palvelinohjelmointi-19.mooc.fi/osa-4/3-sovelluksen-rakenne). [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi)
+> Lähde: Helsingin yliopiston Agile Education Research -tutkimusryhmä. [Sovelluksen rakenne, Web-palvelinohjelmointi Java 2021](https://web-palvelinohjelmointi-21.mooc.fi/osa-4/3-sovelluksen-rakenne). [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi)
 
 Tällä kurssilla sovellamme MVC-mallia siten, että **käsittelijät toteutetaan Servlet-luokilla** ja **näkymät toteutetaan JSP-sivuina** (JavaServer Pages). Malleina tulemme seuraavasta viikosta alkaen käyttämään aikaisemmilla viikoilla toteuttamiamme DAO- sekä ShoppingListItem-luokkia.
 
@@ -366,30 +366,30 @@ Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil
 <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
 </head>
 <body>
-    <div>
-        <p>Count days between today and any other date:</p>
-        <form action="/daysUntil" method="get">
+    <form action="/daysUntil" method="get">
+        <fieldset>
+            <legend>Count days between today and any other date:</legend>
             <label>Year:  <input type="number" name="year" max="9999" required></label>
             <label>Month: <input type="number" name="month" min="1" max="12" required></label>
             <label>Day:   <input type="number" name="day" min="1" max="31" required></label>
             <input type="submit" value="Submit">
-        </form>
-    </div>
+        </fieldset>
+    </form>
 </body>
 </html>
 ```
 
 HTML-sivulla esitettynä lomake näyttää suunnilleen tältä:
 
-<div style="padding: 0.8rem; border: solid 1px #dce6f0;">
-    Count days between today and any other date:
+<fieldset style="padding: 0.8rem; border: solid 1px #dce6f0;">
+    <legend>Count days between today and any other date:</legend>
     <form action="http://localhost:8080/daysUntil" method="get">
-        <label>Year:  <input type="number" name="year" max="9999" required></label><br />
-        <label>Month: <input type="number" name="month" min="1" max="12" required></label><br />
-        <label>Day:   <input type="number" name="day" min="1" max="31" required></label><br />
-        <input type="submit" value="Submit">
+        <p><label>Year:  <input type="number" name="year" max="9999" required></label></p>
+        <p><label>Month: <input type="number" name="month" min="1" max="12" required></label></p>
+        <p><label>Day:   <input type="number" name="day" min="1" max="31" required></label></p>
+        <p><input type="submit" value="Submit"></p>
     </form>
-</div>
+</fieldset>
 
 #### Valinnainen "date picker" -elementti
 
@@ -399,11 +399,13 @@ Edellä esitetyssä esimerkissä päivämäärän valinta tapahtuu kolmella eril
     <input type="date" name="full-date">
 </div>
 
+Yllä esitetty input-elementti on luotu HTML-koodilla:
+
 ```html
 <input type="date" name="full-date">
 ```
 
-Voit halutessasi hyödyntää myös tätä elementtiä. Tutustu lisää sen toimintaan ja lähetettävän päivämäärän muotoon (yyyy-mm-dd) osoitteessa [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date).
+Voit halutessasi hyödyntää myös date-tyyppistä elementtiä. Tutustu lisää sen toimintaan ja lähetettävän päivämäärän muotoon (`yyyy-mm-dd`) [Mozillan dokumentaatiossa](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date).
 
 
 ### Bonus: artikkeli virheiden paikantamisesta

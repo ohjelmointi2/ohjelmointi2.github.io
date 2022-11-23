@@ -135,7 +135,7 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
     &lt;junit.jupiter.version&gt;5.7.1&lt;/junit.jupiter.version&gt;
 <span style="color: darkgreen; font-weight: bold;">
     &lt;!-- lis&auml;&auml; n&auml;m&auml; rivit: --&gt;
-    &lt;sqlite.driver.version&gt;3.36.0.3&lt;/sqlite.driver.version&gt;
+    &lt;sqlite.driver.version&gt;3.40.0.0&lt;/sqlite.driver.version&gt;
     &lt;jstl.api.version&gt;1.2&lt;/jstl.api.version&gt;
 </span>
     &lt;!-- Projektin merkist&ouml;koodaus --&gt;
@@ -147,14 +147,14 @@ Lisäämäsi tagit määrittelevät seuraavat uudet muuttujat versionumeroita va
 
 Muuttuja                | Versionumero  | Tarkoitus
 ------------------------|---------------|----------
-`sqlite.driver.version` | 3.36.0.3      | Aikaisemmilta viikoilta tuttu SQLite-ajuri JDBC-kirjastolle
+`sqlite.driver.version` | 3.40.0.0      | Aikaisemmilta viikoilta tuttu SQLite-ajuri JDBC-kirjastolle
 `jstl.api.version`      | 1.2           | JSTL-tagikirjasto
 
 Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä. Riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat plus-merkein korostetut riippuvuudet dependencies-tagin loppuun:
 
 
 <pre>
-&lt;!-- Tiedoston alkuosa j&auml;tetty pois... --&gt;
+&lt;!-- Tiedoston alkuosa jätetty pois... --&gt;
 
     &lt;!-- JUnit-testausty&ouml;kalu --&gt;
     &lt;dependency&gt;
@@ -164,7 +164,7 @@ Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä
         &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
 <span style="color: darkgreen; font-weight: bold;">
-    &lt;!-- lis&auml;&auml; n&auml;m&auml; riippuvuudet (SQLite ja JSTL): --&gt;
+    &lt;!-- lisää nämä riippuvuudet (SQLite ja JSTL): --&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;org.xerial&lt;/groupId&gt;
         &lt;artifactId&gt;sqlite-jdbc&lt;/artifactId&gt;

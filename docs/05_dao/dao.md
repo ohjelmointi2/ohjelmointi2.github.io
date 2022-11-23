@@ -214,21 +214,21 @@ SQLite-tietokantamme huolehtii automaattisesti sinne lisättyjen rivien `id`-arv
 Voit selvittää insert-komennon jälkeen lisätyn rivin id:n `Statement.RETURN_GENERATED_KEYS`-arvon ja `.getGeneratedKeys()`-metodin avulla seuraavasti:
 
 ```java
-// By Yishai & Lukas Eder, cc by-sa 4.0. https://stackoverflow.com/a/1376241/12748248
-String sql = "INSERT INTO table (column1, column2) values(?, ?)";
+// lisätään PreparedStatement'iin RETURN_GENERATED_KEYS-optio:
+PreparedStatement insertStatement = conn.prepareStatement("INSERT INTO ShoppingListItem (title) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+insertStatement.setString(1, "Coffee");
 
-PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-stmt.executeUpdate();
+insertStatement.executeUpdate();
 
 // haetaan generoidut pääavaimet
-ResultSet rs = stmt.getGeneratedKeys();
-rs.next();
+ResultSet generatedKeys = insertStatement.getGeneratedKeys();
+generatedKeys.next();
 
-// lisäämämme rivin id saadaan kutsumalla getInt(1)
-int automaticallyGeneratedId = rs.getInt(1);
+// lisätyn rivin id saadaan kutsumalla getLong(1)
+long generatedId = generatedKeys.getLong(1);
 ```
 
-Voit tutustua aiheeseen tarkemmin tässä [StackOverflow-keskustelussa](https://stackoverflow.com/questions/1376218/is-there-a-way-to-retrieve-the-autoincrement-id-from-a-prepared-statement).
+Tämä koodiesimerkki perustuu käyttäjien [Yishai sekä Lukas Eder StackOverflow-vastaukseen](https://stackoverflow.com/a/1376241/12748248), joka on lisensoitu cc by-sa 4.0 -lisenssillä. Voit tutustua aiheeseen tarkemmin tässä [StackOverflow-keskustelussa](https://stackoverflow.com/questions/1376218/is-there-a-way-to-retrieve-the-autoincrement-id-from-a-prepared-statement).
 
 
 ### Ostoslistasovelluksen liittäminen DAO-luokkaan
@@ -239,7 +239,7 @@ Sen sijaan käyttöliittymäluokkasi tulee hyödyntää uutta DAO-luokkaa tietok
 
 ----
 
-### ⭐ Vapaahetoinen tehtävä 1: ympäristömuuttujat
+### ⭐ Vapaaehtoinen tehtävä 1: ympäristömuuttujat
 
 *Tämä osa on valinnainen, mutta sitä suositellaan, mikäli olet saanut kaikki tähänastiset harjoitukset tehtyä.*
 

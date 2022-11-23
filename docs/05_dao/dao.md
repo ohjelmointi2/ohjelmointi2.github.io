@@ -204,7 +204,7 @@ Toteuta tämä metodi siten, että metodin sisällä lisäät tietokantaan uuden
 
 Toteuta tämä metodi siten, että metodin sisällä poistat tietokannasta metodille annettua `ShoppingListItem`-oliota vastaavan rivin. Poistettavan tietokantarivin id:n saat selville olion `id`-attribuutista. Mikäli poistaminen onnistuu, palauta tästä metodista `true`. Muussa tapauksessa palauta `false`.
 
-> 💡 Tämän poistologiikan toteuttaminen osaksi ostoslistasovelluksen käyttöliittymää voi olla hankalaa, mikäli toteutit poistamisen edellisessä tehtävässä tuoterivin nimen etkä id:n perusteella. Tässä tehtävässä on OK tehdä muutoksia myös edellisessä tehtävässä aloittamaasi tekstikäyttöliittymään. Voits siis oman harkintasi mukaan muuttaa käyttöliittymääsi niin, että käyttäjä syöttää poistettavan tuoterivin id:n eikä nimeä. Käyttäjän kirjoittama poistokomento voi siis perustua joko tuotenimeen `remove coffee` tai id-arvoon `remove 2`.
+> 💡 Tämän poistologiikan toteuttaminen osaksi ostoslistasovelluksen käyttöliittymää voi olla hankalaa, mikäli toteutit poistamisen edellisessä tehtävässä esimerkin mukaisesti tuotteen nimen etkä id:n perusteella. Tässä tehtävässä on OK tehdä muutoksia myös edellisessä tehtävässä aloittamaasi tekstikäyttöliittymään. Voit siis oman harkintasi mukaan muuttaa käyttöliittymääsi niin, että käyttäjä syöttää poistettavan tuoterivin id:n (`remove 2`) eikä nimeä (`remove coffee`).
 
 
 #### Extra: lisätyn rivin automaattisen id:n selvittäminen

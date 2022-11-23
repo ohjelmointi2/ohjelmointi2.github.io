@@ -308,13 +308,18 @@ Muista siis käyttää oppimateriaaleissa esiteltyä `PreparedStatement`-luokkaa
 
 ### Rivien poistaminen
 
-Tässä tehtävässä ostoslistan rivien poistaminen voidaan tehdä SQL: `delete`-komennolla rivin `title`-arvon perusteella, esim:
+Tässä tehtävässä ostoslistan rivien poistaminen voidaan tehdä SQL: `DELETE`-komennolla ja joko rivin `title`- tai `id`-arvon perusteella, esim:
+
+```sql
+DELETE FROM ShoppingListItem WHERE id = ?
+```
+
 
 ```sql
 DELETE FROM ShoppingListItem WHERE title = ?
 ```
 
-Tämä käytäntö poistaa annetun merkkijonon perusteella ei ole yhtä "turvallinen" kuin esimerkiksi poisto pääavaimen perusteella, koska sen seurauksena saatetaan poistaa yksi tai useampia rivejä.
+Jos poisto tehdään tuoterivin nimen perusteella, kuten alemmassa esimerkissä, voisi olla perusteltua asettaa myös rajoite `LIMIT 1`. Näin varmistetaan, että poisto koskee korkeintaan yhtä riviä. Käytännössä rajoitteen käyttö kuitenkin edellyttäisi, että [SQLite:n SQLITE_ENABLE_UPDATE_DELETE_LIMIT-asetus olisi kytketty päälle SQLite-ajuria luotaessa](https://www.sqlite.org/lang_delete.html#optional_limit_and_order_by_clauses).
 
 Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai "arkistointi", eli rivi merkitään poistetuksi tai arkistoiduksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli ["Database design practice: soft-deletion, data archive, to delete or not to delete"](https://transang.me/database-design-practice-soft-deletion-to/).
 
@@ -330,7 +335,7 @@ Welcome to the shopping list app!
 Available commands:
  list
  add [product name]
- remove [product name]
+ remove [name or id]
  quit
 
 > list

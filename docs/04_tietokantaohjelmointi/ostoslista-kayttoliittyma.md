@@ -11,7 +11,7 @@ Welcome to the shopping list app!
 Available commands:
  list
  add [product name]
- remove [product name]
+ remove [name or id]
  help
  quit
 

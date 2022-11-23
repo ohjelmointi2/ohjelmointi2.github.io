@@ -396,13 +396,13 @@ HTML-sivulla esitettynä lomake näyttää suunnilleen tältä:
 Edellä esitetyssä esimerkissä päivämäärän valinta tapahtuu kolmella erillisellä input-elementillä. HTML-standardissa on myös **date**-tyyppinen elementti, joka näyttää käyttäjälle kalenterin eli ns. "date picker" elementin:
 
 <div style="padding: 0.8rem; border: solid 1px #dce6f0;">
-    <input type="date" name="full-date">
+    <input type="date" name="full-date" value="2023-12-24">
 </div>
 
 Yllä esitetty input-elementti on luotu HTML-koodilla:
 
 ```html
-<input type="date" name="full-date">
+<input type="date" name="full-date" value="2023-12-24">
 ```
 
 Voit halutessasi hyödyntää myös date-tyyppistä elementtiä. Tutustu lisää sen toimintaan ja lähetettävän päivämäärän muotoon (`yyyy-mm-dd`) [Mozillan dokumentaatiossa](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date).

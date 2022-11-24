@@ -250,11 +250,13 @@ Sen sijaan käyttöliittymäluokkasi tulee hyödyntää uutta DAO-luokkaa tietok
 
 *Tämä osa on valinnainen, mutta sitä suositellaan, mikäli olet saanut kaikki tähänastiset harjoitukset tehtyä.*
 
-Usein samaa koodia suoritetaan lukuisissa erilaisissa ympäristöissä, kuten useiden eri kehittäjien omilla Windows-, Mac- ja Linux- koneilla. Kehittäjien henkilökohtaisten koneiden lisäksi sama koodi toimii tuotantoympäristössä, joka saattaa sijaita pilvipalvelussa tai konesalissa. Eri ympäristöissä tarvitaankin eri yhteysosoitteet, käyttäjätunnukset ja muita muuttuvia tietoja esimerkiksi tietokantojen käyttämiseksi.
+Usein samaa koodia suoritetaan lukuisissa erilaisissa ympäristöissä, kuten useiden eri kehittäjien omilla Windows-, Mac- ja Linux- koneilla. Kehittäjien henkilökohtaisten koneiden lisäksi sama koodi toimii tuotantoympäristössä, joka saattaa sijaita pilvipalvelussa tai omassa konesalissa. Eri ympäristöissä käytetään eri tietokantoja ja asetuksia, joten niissä tarvitaan eri yhteysosoitteet, käyttäjätunnukset ja muita muuttuvia tietoja esimerkiksi tietokantojen käyttämiseksi.
 
-Ympäristökohtaisia asetuksia ei haluta kirjoittaa suoraan ohjelmakoodiin, jotta koodia ei jouduta muuttamaan jokaista suoritusympäristöä varten. Toisaalta arkaluontoisia tietoja, kuten tietokantojen salasanoja, ei koskaan haluta tallentaa selkokielisinä ohjelmakoodiin tai versionhallintaan.
+Ympäristökohtaisia asetuksia ei kirjoiteta suoraan ohjelmakoodiin, jotta koodia ei jouduta muuttamaan, kääntämään ja paketoimaan jokaista suoritusympäristöä varten.
 
-Yleinen tapa ratkaista edellä esitetty ongelma on asettaa ympäristökohtaisesti vaihtuvat arvot käyttöjärjestelmän **ympäristömuuttujiin**. Sovellus voi ympäristömuuttujien avulla käyttää esimerkiksi kehitys-, testi- tai tuotantokantaa ilman, että ohjelmakoodia muutetaan. Salaiset tiedot, kuten salasanat, jäävät myös pois ohjelmakoodista.
+Käyttäessämme SQLite-tietokantaa emme tarvitse erillisiä tunnuksia, koska tietokanta on käytännössä vain tiedosto paikallisessa järjestelmässä. Monien muiden tietokantaratkaisujen käyttämiseksi tarvitsisimme kuitenkin käyttäjätunnuksia ja salasanoja. **Salasanoja ei koskaan haluta tallentaa selkokielisinä ohjelmakoodiin tai versionhallintaan.**
+
+Yleinen tapa ratkaista edellä esitettyjä ongelmia on asettaa ympäristökohtaisesti vaihtuvat sekä salaiset arvot käyttöjärjestelmän **ympäristömuuttujiin**. Sovellus voi ympäristömuuttujien avulla käyttää esimerkiksi kehitys-, testi- tai tuotantokantaa ilman, että ohjelmakoodia muutetaan. Salaiset tiedot, kuten salasanat, jäävät myös pois ohjelmakoodista.
 
 
 #### Ympäristömuuttujien hyödyntäminen
@@ -297,9 +299,15 @@ Kun koodi on asetettu lukemaan tietokannan sijainti ympäristömuuttujasta, täy
 
 Voit Eclipsessä lisätä ohjelmallesi ympäristömuuttujia tämän [Stack Overflow -ketjun](https://stackoverflow.com/a/12810433) ohjeiden mukaisesti. Pidempi ohje löytyy tarvittaessa esimerkiksi [javacodegeeks.com:ista](https://examples.javacodegeeks.com/desktop-java/ide/eclipse/eclipse-environment-variable-setup-example/).
 
-Määrittele siis edellä mainitun ohjeen mukaisesti itsellesi Eclipseen ympäristömuuttuja `JDBC_DATABASE_URL`, joka sisältää JDBC-yhteysrivin esimerkiksi muodossa `jdbc:sqlite:c:\polku\tiedosto.sqlite`. Huomaa, että koska ympäristömuuttuja ei ole Javan merkkijono, ei sen ympärille kirjoiteta lainausmerkkejä eikä kenoviivaa `\` kirjoiteta tuplana ~~`\\`~~.
+Määrittele siis edellä mainitun ohjeen mukaisesti itsellesi Eclipseen ympäristömuuttuja `JDBC_DATABASE_URL`, joka sisältää JDBC-yhteysrivin esimerkiksi muodossa `jdbc:sqlite:c:\polku\tiedosto.sqlite`. Huomaa, että koska ympäristömuuttuja ei ole Javan merkkijono, ei sen ympärille kirjoiteta lainausmerkkejä, eikä kenoviivaa `\` kirjoiteta tuplana ~~`\\`~~.
 
-Vaihtoehtoisesti ympäristömuuttujia voidaan määritellä koko järjestelmän tasolla [Windowsissa](https://docs.oracle.com/en/database/oracle/r-enterprise/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0), [Linuxissa](https://www.google.com/search?q=linux+set+environment+variable) ja [MacOS:ssa](https://www.google.com/search?q=macos+set+environment+variable). Tätä tapaa ei kuitenkaan suositella tällä kurssilla.
+💡 Vaihtoehtoisesti ympäristömuuttujia voidaan määritellä koko järjestelmän tasolla:
+
+* [Windowsissa](https://www.google.com/search?q=windows+set+environment+variable)
+* [Linuxissa](https://www.google.com/search?q=linux+set+environment+variable)
+* [MacOS:ssa](https://www.google.com/search?q=macos+set+environment+variable).
+
+Tällä kurssilla voi kuitenkin olla yksinkertaista asettaa ympäristömuuttuja vain Eclipseen.
 
 ----
 

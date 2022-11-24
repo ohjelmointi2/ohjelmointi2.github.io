@@ -214,17 +214,24 @@ SQLite-tietokantamme huolehtii automaattisesti sinne lisättyjen rivien `id`-arv
 Voit selvittää insert-komennon jälkeen lisätyn rivin id:n `Statement.RETURN_GENERATED_KEYS`-arvon ja `.getGeneratedKeys()`-metodin avulla seuraavasti:
 
 ```java
-// lisätään PreparedStatement'iin RETURN_GENERATED_KEYS-optio:
-PreparedStatement insertStatement = conn.prepareStatement("INSERT INTO ShoppingListItem (title) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+// lisää tiedoston alkuun `import java.sql.Statement;`
+
+
+// lisätään RETURN_GENERATED_KEYS-optio:
+PreparedStatement insertStatement = conn.prepareStatement(
+    "INSERT INTO ShoppingListItem (title) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+
+// asetetaan "Coffee" `title`-sarakkeen arvoksi:
 insertStatement.setString(1, "Coffee");
 
+// suoritetaan lisäys:
 insertStatement.executeUpdate();
 
-// haetaan generoidut pääavaimet
+// haetaan generoidut pääavaimet:
 ResultSet generatedKeys = insertStatement.getGeneratedKeys();
 generatedKeys.next();
 
-// lisätyn rivin id saadaan kutsumalla getLong(1)
+// uuden rivin id saadaan nyt kutsumalla `getLong(1)`
 long generatedId = generatedKeys.getLong(1);
 ```
 

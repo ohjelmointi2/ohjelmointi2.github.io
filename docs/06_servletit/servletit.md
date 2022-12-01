@@ -302,7 +302,7 @@ Protokolla  | Host      | Portti | Polku    | Parametrit
 ------------|-----------|--------|----------|-----------
 http        | localhost | 8080   | /hello   | firstName: "John"<br /> lastName: "Doe"
 
-💡 POST-tyyppisissä pyynnöissä parametrit välitetään pyynnön "body"-osassa, jolloin ne eivät ole näkyvissä osoiterivillä, mutta tieto on silti palvelimella käsiteltävissä.
+💡 Toisin kuin yllä, POST-tyyppisissä pyynnöissä parametrit välitetään pyynnön rungossa (body), jolloin ne eivät ole näkyvissä osoiterivillä, mutta tieto on silti palvelimella käsiteltävissä.
 
 Pyyntöä käsittelevän servletin `doPost`- ja `doGet`-metodeissa parametrit voidaan pyytää `HttpRequest`-oliolta `getParameter`-metodilla:
 
@@ -348,6 +348,22 @@ Lopputulos voi näyttää esimerkiksi tältä:
 ![Days until given date](img/daysUntil.png)
 
 Tutoriaalissa ["How to handle HTML form data with Java Servlet"](https://www.codejava.net/java-ee/servlet/handling-html-form-data-with-java-servlet) käsitellään tarkemmin lomake- ja parametritietojen käsittelyä servleteillä. Tutoriaali esittelee teknisen toiminnallisuuden hyvin, mutta älä ota mallia siinä sovelletuista salasanojen käsittelyyn ja näyttämiseen liittyvistä huonoista käytännöistä.
+
+
+#### GET vai POST?
+
+Tämä tehtävä voidaan ratkaista hyvin joko `doGet` tai `doPost`-metodilla. HTTP-protokollassa GET- ja POST-metodien tyypillinen käyttötapa kuitenkin poikkeaa toisistaan siten, että GET-pyyntöjä tehdään tiedon hakemiseen ja POST-pyyntöjä tiedon lähettämiseksi palvelimelle:
+
+> *"The HTTP GET method requests a representation of the specified resource. Requests using GET should only be used to request data."*
+>
+> [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
+
+> *"A POST request is typically sent via an HTML form and results in a change on the server."*
+>
+> [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+
+POST siis tyypillisesti aiheuttaa palvelimella sivuvaikutuksen, kuten tiedon lisäämisen tietokantaan. Tämän vuoksi tässä tehtävässä on luontevampaa käyttää `GET`-metodia.
+
 
 
 #### Valinnainen HTML-lomake

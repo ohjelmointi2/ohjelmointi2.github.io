@@ -7,9 +7,9 @@ h3 small {
 
 # 👋 Tervetuloa kurssille!
 
-Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A-3009! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
+Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A-3010! Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-helia.fi).
 
-Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin. 
+Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin.
 
 Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä oppitunteja kampuksella eikä videoyhteydellä. Oppituntien sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
 
@@ -41,27 +41,27 @@ Kurssin keskeyttäminen ei ole Haaga-Helian linjauksia noudattaen mahdollista en
 > [https://mynet.haaga-helia.fi/group/pakki/toteutukselle-ilmoittautuminen](https://mynet.haaga-helia.fi/group/pakki/toteutukselle-ilmoittautuminen)
 
 
-## 📅 Kurssin aikataulu
+## 📅 Kurssin aikataulu ja työmäärä
 
-Tämä kurssi alkaa maanantaina 24.10.2022 ja päättyy 16.12.2022.
+Tämä kurssi alkaa maanantaina 27.3.2023 ja päättyy 19.5.2023.
 
-Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti jopa 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
+Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti noin 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
 
 &nbsp;
 
 
-### <small>24.-30.10.</small> [**Aihe 1: Perintä ja rajapinnat**](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
+### <small>27.3.-2.4.</small> [**Aihe 1: Perintä ja rajapinnat**](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
 
 Ensimmäisellä viikolla syvennämme olio-ohjelmointiosaamistamme tutustumalla perintään ja rajapintoihin. Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
 
 [Siirry oppimateriaaliin ⇨](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
 
-Tehtävät [Viopessa](https://vw4.viope.com/) (DL 31.10. klo 23:59)
+Tehtävät [Viopessa](https://vw4.viope.com/) (DL 3.4. klo 23:59)
 
 &nbsp;
 
-### <small>31.10.-6.11.</small> [**Aihe 2: Map-tietorakenne**](02_map/map)
+### <small>3.-9.4.</small> [**Aihe 2: Map-tietorakenne**](02_map/map)
 
 > *"Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
 >
@@ -69,69 +69,69 @@ Tehtävät [Viopessa](https://vw4.viope.com/) (DL 31.10. klo 23:59)
 
 [Siirry oppimateriaaliin ⇨](02_map/map)
 
-Tehtävät [Viopessa](https://vw4.viope.com/)  (DL 7.11. klo 23:59)
+Tehtävät [Viopessa](https://vw4.viope.com/)  (DL 10.4. klo 23:59)
 
 &nbsp;
 
-### <small>7.-13.11.</small> [**Aihe 3: Yksikkötestaus**](03_yksikkotestaus/junit)
+### <small>10.-16.4.</small> [**Aihe 3: Yksikkötestaus**](03_yksikkotestaus/junit)
 
 Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
 
 [Siirry oppimateriaaliin ⇨](03_yksikkotestaus/junit)
 
-Tehtävät Teamsissa (DL 14.11. klo 23:59)
+Tehtävät Teamsissa (DL 17.4. klo 23:59)
 
 &nbsp;
 
-### <small>14.-20.11.</small> [**Aihe 4: Tietokantaohjelmointi (JDBC)**](04_tietokantaohjelmointi/jdbc)
+### <small>17.-23.4.</small> [**Aihe 4: Tietokantaohjelmointi (JDBC)**](04_tietokantaohjelmointi/jdbc)
 
-Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). 
+Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete).
 
 [Siirry oppimateriaaliin ⇨](04_tietokantaohjelmointi/jdbc)
 
-Tehtävät Teamsissa (DL 21.11. klo 23:59)
+Tehtävät Teamsissa (DL 24.4. klo 23:59)
 
 &nbsp;
 
-### <small>21.-27.11.</small> [**Aihe 5: Tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)**](05_dao/dao)
+### <small>24.-30.4.</small> [**Aihe 5: Tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)**](05_dao/dao)
 
 Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
 
 [Siirry oppimateriaaliin ⇨](05_dao/dao)
 
-Tehtävät Teamsissa (DL 28.11. klo 23:59)
+Tehtävät Teamsissa (DL 1.5. klo 23:59)
 
 &nbsp;
 
-### <small>28.11.-4.12.</small> [**Aihe 6: Web-ohjelmointi servleteillä**](06_servletit/servletit)
+### <small>1.-7.5.</small> [**Aihe 6: Web-ohjelmointi servleteillä**](06_servletit/servletit)
 
 Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää yksikkötestauksen yhteydessä refaktoroimaasi `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
 
 [Siirry oppimateriaaliin ⇨](06_servletit/servletit)
 
-Tehtävät Teamsissa (DL 5.12. klo 23:59)
+Tehtävät Teamsissa (DL 8.5. klo 23:59)
 
 &nbsp;
 
 
-### <small>5.-11.12.</small> [**Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP)**](07_mvc/servlet_dao_jstl)
+### <small>8.-14.5.</small> [**Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP)**](07_mvc/servlet_dao_jstl)
 
 Verkkosovellusten toisella viikolla jatkokehitämme oman tietokantapohjaisen ostoslistasovelluksemme verkkopalveluksi. Luomme HTML-käyttöliittymät ostoslistan näyttämiseksi ja tuotteiden lisäämiseksi.
 
 [Siirry oppimateriaaliin ⇨](07_mvc/servlet_dao_jstl)
 
-Tehtävät Teamsissa (DL 12.12. klo 23:59)
+Tehtävät Teamsissa (DL 15.5. klo 23:59)
 
 &nbsp;
 
 
-### <small>12.-18.12.</small> [**Aihe 8: Ajax ja JavaScript**](08_ajax/ajax)
+### <small>15.-21.5.</small> [**Aihe 8: Ajax ja JavaScript**](08_ajax/ajax)
 
 Viimeinen harjoitusviikko käsittelee JavaScript-koodin avulla tehtäviä palvelinkutsuja, eli Ajax-kutsuja. Niiden avulla voimme päivittää ostoslistamme sisältöä tekemättä sivulatauksia. Toteutamme lisäksi verkkopalveluumme uuden ominaisuuden ostoslistan rivien poistamiseksi.
 
 [Siirry oppimateriaaliin ⇨](08_ajax/ajax)
 
-Tehtävät Teamsissa (DL 18.12. klo 23:59)
+Tehtävät Teamsissa (DL 22.5. klo 23:59)
 
 &nbsp;
 
@@ -142,7 +142,7 @@ Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja 
 
 [Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)
 
-Palautus Teamsiin (DL 18.12. klo 23:59)
+Palautus Teamsiin (DL 22.5. klo 23:59)
 
 
 &nbsp;
@@ -176,9 +176,9 @@ Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuih
 
 ### Viope
 
-Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat. 
+Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat.
 
-Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) "Ohjelmointi 2, 3009 🎈"-linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus "Ohjelmointi 2, 3009 🎈".
+Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) "Ohjelmointi 2, 3010 🌴"-linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus "Ohjelmointi 2, 3010 🌴".
 
 **Teknisistä syistä johtuen Viopeen palautettavista lähdekoodeista täytyy aina poistaa mahdolliset package -lauseet luokan yläpuolelta.** Viope on myös muilla tavoin erittäin tarkka ohjelmien oikeellisuudesta, mikä saattaa aiheuttaa ensimmäisillä viikoilla hämmennystä. Voit kysyä kurssin Teams-kanavalla neuvoa Viope-ongelmiin milloin tahansa.
 
@@ -285,7 +285,7 @@ Nettilähteiden hyödyntäminen ja niistä mallin ottaminen on sallittua ja kann
 
 > *"Opiskelija on suorittanut opintojakson Ohjelmointi 1 (SWD4TN032) tai hänellä on vastaavat tiedot ja taidot. Opiskelija suorittaa samanaikaisesti opintojakson Tietokannat ja tiedonhallinta (SWD1TN003) tai hänellä on vastaavat tiedot ja taidot."*
 >
-> [*opintojaksokuvaus*](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033) 
+> [*opintojaksokuvaus*](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033)
 
 Mikäli et osaa Javan perusteita, nousee tämän kurssin suorittamisessa nopeasti seinä vastaan.
 

@@ -11,13 +11,13 @@ Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A!
 
 Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin.
 
-Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä oppitunteja kampuksella eikä videoyhteydellä. Oppituntien sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
+<!--Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä oppitunteja kampuksella eikä videoyhteydellä. Oppituntien sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
 
 > *"VIRTUAL on itsenäistä opiskelua toteutuksen aukioloaikana. Virtuaalitoteutuksissa ei ole lukujärjestykseen merkittyä pakollista opetusta tai muuta tapaamista verkossa, vaan opiskelijat suorittavat tehtäviä toteutussuunnitelman aikataulun ja määräaikojen mukaan. Samaan aikaan opiskelevat voivat olla yhteydessä toisiinsa ja virtuaaliopiskelun ohjaajaan keskustelualueen kautta."*
 >
 > [https://mynet.haaga-helia.fi/group/pakki/lukkarikone](https://mynet.haaga-helia.fi/group/pakki/lukkarikone)
 
-Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.
+Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opettajan että muut opiskelijat. Ohjausta ja apua on saatavilla Teamsin kautta lyhyellä vasteajalla.-->
 
 Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A](https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A).
 

@@ -24,9 +24,7 @@ Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.f
 
 ## ✅ Osallistumisen vahvistaminen
 
-Osallistuaksesi kurssille sinun tulee liittyä kurssin Teams-ryhmään sekä Viope-oppimisalustalle. Liittymisohjeet ja -koodin Teamsiin saat sähköpostitse kurssin alkua edeltävällä viikolla. Liityttyäsi Teams-ryhmään saat myös katseluoikeudet kurssin kotisivulla sijaitseviin MS Stream -videoihin.
-
-**Kurssin osallistumisen vahvistaminen edellyttää lisäksi vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä sekä toiselta viikolta tehtävien määräaikaan mennessä.** Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla kyseisten tehtävien idea selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin Teams-kanavalla.
+**Kurssin osallistumisen vahvistaminen edellyttää vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä sekä toiselta viikolta tehtävien määräaikaan mennessä.** Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla kyseisten tehtävien idea selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin keskustelukanavalla.
 
 > *"Opiskelija vahvistaa paikkansa opintojaksototeutuksella olemalla läsnä opetuksen alkaessa tai muutoin opettajan ilmoittamalla tavalla, joka voi esimerkiksi olla ensimmäisen oppimistehtävän palautus."*
 >
@@ -158,11 +156,9 @@ Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja 
 
 ## 💬 Viestintäkanavat
 
-Tällä kurssilla viestintä tapahtuu MS Teams -palvelussa. Teams tarjoaa luontevan kanavan kysyä ja keskustella ajankohdasta riippumatta. Jos jäät jumiin koodisi kanssa tai et ymmärrä materiaaleja tai tehtävänantoja, kysy rohkeasti vinkkejä Teamsissa. Todennäköisesti samaa ongelmaa pohtii kanssasi myös moni muu, joten lähetäthän sisältöä ja tehtävänantoja koskevat kysymykset yhteiselle kanavalle eikä yksityisviestinä.
+Tällä kurssilla viestintä tapahtuu toteutuksesta riippuen Moodlessa tai MS Teams -palvelussa. Jos jäät jumiin koodisi kanssa tai et ymmärrä materiaaleja tai tehtävänantoja, kysy rohkeasti vinkkejä. Todennäköisesti samaa ongelmaa pohtii kanssasi myös moni muu, joten lähetäthän sisältöä ja tehtävänantoja koskevat kysymykset yhteiselle kanavalle eikä yksityisviestinä.
 
-Kurssilla suositellaan käytettävän Teamsin työpöytäsovellusta. Kirjautuminen Teamsiin tapahtuu Haaga-Helian opiskelijatunnuksella.
-
-Liittymiskoodi kurssin tiimiin löytyy sähköpostitse lähetetystä tiedotteesta sekä kurssin Moodle-työtilasta.
+**Virtuaalikurssilla** suositellaan käytettävän Teamsin työpöytäsovellusta. Kirjautuminen Teamsiin tapahtuu Haaga-Helian opiskelijatunnuksella. Liittymiskoodi kurssin tiimiin löytyy sähköpostitse lähetetystä tiedotteesta sekä kurssin Moodle-työtilasta.
 
 * [Teams Quick Start -ohje (pdf)](https://go.microsoft.com/fwlink/?linkid=2131456)
 * [Teams](https://teams.microsoft.com/)
@@ -171,29 +167,34 @@ Liittymiskoodi kurssin tiimiin löytyy sähköpostitse lähetetystä tiedotteest
 
 ## 📥 Palautettavat tehtävät
 
-Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuihin määräaikoihin mennessä. Osa tehtävistä palautetaan Viope-järjestelmään ja osa kurssin Teams-työtilaan.
+Kurssilla on kahdenlaisia pakollisia tehtäviä, jotka tulee palauttaa annettuihin määräaikoihin mennessä. Osa tehtävistä palautetaan Viope-järjestelmään ja osa Teamsiin (virtuaalikurssi) tai Moodleen (contact-kurssi). Tarkemmat ohjeet löydät oman toteutuksesi ohjeista.
 
 
 ### Viope
 
 Kurssin ensimmäisten harjoitustehtävien tehtävänannot löytyvät Viope-järjestelmästä, jonne tehtävät myös palautetaan. Viope tarkistaa tehtävät automaattisesti ja voit lähettää ratkaisusi tarkistettavaksi niin monta kertaa kuin haluat.
 
-Mikäli sinulla on jo Viope-tunnukset, voit liittyä tämän kurssin työtilaan [etusivulta](https://hh.viope.com/) "Ohjelmointi 2, 3010 🌴"-linkin kautta. Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/). Rekisteröityessäsi valitse toteutus "Ohjelmointi 2, 3010 🌴".
+Mikäli sinulla on jo Viope-tunnukset, voit liittyä kurssille [Viopen etusivulta](https://hh.viope.com/). Mikäli sinulla ei ole vielä tunnuksia Viopeen, rekisteröidy osoitteessa: [https://hh.viope.com/](https://hh.viope.com/).
+
+Valitse Viopesta oikea kurssi:
+
+* CONTACT-toteutus / Heikki: "Ohjelmointi 2, kevät 2023, Heikki"
+* VIRTUAL-toteutus / Teemu: "Ohjelmointi 2, 3010 🌴"
 
 **Teknisistä syistä johtuen Viopeen palautettavista lähdekoodeista täytyy aina poistaa mahdolliset package -lauseet luokan yläpuolelta.** Viope on myös muilla tavoin erittäin tarkka ohjelmien oikeellisuudesta, mikä saattaa aiheuttaa ensimmäisillä viikoilla hämmennystä. Voit kysyä kurssin Teams-kanavalla neuvoa Viope-ongelmiin milloin tahansa.
 
 
-### Teams
+### Tietokanta- ja web-tehtävien palautus
 
-Kurssin tietokanta- ja web-ohjelmointitehtävät palautetaan Teamsissa sijaitseviin palautuslaatikoihin. Hyväksytyn tehtävän ei tarvitse olla oikein tehty täydellinen suoritus, vaan myös osittainen palautus hyväksytään, kunhan siinä näkyy riittävästi yritystä.
+Kurssin tietokanta- ja web-ohjelmointitehtävät palautetaan Teamsissa tai Moodlessa sijaitseviin palautuslaatikoihin. Tarkempi tieto palautustavasta löytyy oman toteutuksesi ohjeistuksesta. Hyväksytyn tehtävän ei tarvitse olla oikein tehty täydellinen suoritus, vaan myös osittainen palautus hyväksytään, kunhan siinä näkyy riittävästi yritystä.
 
-Mikäli tarvitset apua tehtävän palauttamisessa Teamsiin, tutustu Microsoftin artikkeliin ["Turn in an assignment in Microsoft Teams"](https://support.microsoft.com/en-us/topic/turn-in-an-assignment-in-microsoft-teams-e25f383a-b747-4a0b-b6d5-a2845a52092b). Apua ja vinkkejä on saatavilla myös Teams-keskustelualueellamme!
-
-Tehtävän esimerkkiratkaisut julkaistaan aina seuraavalla viikolla. Myöhästyneitä tehtäviä ei oteta vastaan, jotta mallivastauksen julkaisu ei antaisi etua myöhästyneille palautuksille.
+Myöhästyneitä tehtäviä ei oteta vastaan, jotta tehtävien mallivastausten julkaisu ei antaisi etua myöhästyneille palautuksille.
 
 Useat kurssin tehtävät rakentuvat saman aihealueen ympärille ja edellisten tehtävien ratkaisuilla on merkitystä seuraavan tehtävän ratkaisemisen kannalta. Mikäli jokin tehtävä jää sinulta toimimattomaksi tai puutteelliseksi, voit hyödyntää malliratkaisua jatkaessasi seuraavan viikon tehtävän parissa. Merkitse kuitenkin myös mallivastauksen käyttäminen lähteeksi (ks. lähteiden käyttäminen).
 
-Apua tehtävien tekoon on saatavissa kurssin Teams-kanavalla niin opettajalta kuin muiltakin opiskelijoilta.
+Mikäli tarvitset apua tehtävän palauttamisessa Teamsiin, tutustu Microsoftin artikkeliin ["Turn in an assignment in Microsoft Teams"](https://support.microsoft.com/en-us/topic/turn-in-an-assignment-in-microsoft-teams-e25f383a-b747-4a0b-b6d5-a2845a52092b). Apua ja vinkkejä on saatavilla myös kurssin keskustelualueella.
+
+Apua tehtävien tekoon on saatavissa kurssin keskustelukanavalla niin opettajalta kuin muiltakin opiskelijoilta.
 
 
 ## 📼 Kurssin videot
@@ -203,7 +204,7 @@ Osa kurssin omista videoista sijaitsee Haaga-Helian videopalvelussa ja loput Mic
 
 ## 🎶 Kurssin harjoitustyö
 
-Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Sovelluksen aiheena on musiikkitietopalvelu. Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerkiksi Teamsissa kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että jokainen kirjoittaa itse oman koodinsa.
+Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Sovelluksen aiheena on musiikkitietopalvelu. Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että jokainen kirjoittaa itse oman koodinsa.
 
 [Harjoitustyön tarkempi tehtävänanto löytyy omalta sivultaan.](09_harjoitustyo/harjoitustyo)
 
@@ -220,13 +221,14 @@ Tehtävä                 | Maksimipisteet  | Minimipisteet | Järjestelmä
 ------------------------|-----------------|---------------|---------------
 Perintä ja rajapinnat   | 5               | 2             | Viope
 Map                     | 5 (+2 bonusta)  | 2             | Viope
-Yksikkötestaus          | 5               | -             | Teams
-Tietokannat (JDBC)      | 5               | -             | Teams
-Tietokannat (DAO)       | 5               | -             | Teams
-Servletit               | 5               | -             | Teams
-Servlet + jsp + dao     | 5               | -             | Teams
-Ajax ja JavaScript      | 5               | -             | Teams
+Yksikkötestaus          | 5               | -             | Teams / Moodle \*
+Tietokannat (JDBC)      | 5               | -             | Teams / Moodle \*
+Tietokannat (DAO)       | 5               | -             | Teams / Moodle \*
+Servletit               | 5               | -             | Teams / Moodle \*
+Servlet + jsp + dao     | 5               | -             | Teams / Moodle \*
+Ajax ja JavaScript      | 5               | -             | Teams / Moodle \*
 
+\* Toteutuksesta riippuen palautus tehdään joko Teamsiin tai Moodleen. Tarkemmat ohjeet löytyvät oman toteutuksesi ohjeista.
 
 Tehtävien maksimipistemäärä on 40 (+ 2 bonuspistettä). Tehtävien loppuarvosana muodostuu tehtäväpisteiden keskiarvosta. Kaksi ensimmäistä tehtäväkierrosta täytyy saada läpi vähintään minimipistein, mutta muuten yksittäinen arvosana 0 ei ole esteenä kurssin suorittamiselle.
 

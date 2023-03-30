@@ -12,7 +12,7 @@ Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjel
 
 ## JDBC – Java Database Connectivity
 
-Javan standardikirjastoon määritelty JDBC (Java Database Connectivity) -ohjelmointirajapinta mahdollistaa Java-sovellusten yhdistämisen eri tyyppisiin SQL-tietokantoihin ja erilaisten kyselyiden sekä päivitysten tekemisen Java-koodista käsin. 
+Javan standardikirjastoon määritelty JDBC (Java Database Connectivity) -ohjelmointirajapinta mahdollistaa Java-sovellusten yhdistämisen eri tyyppisiin SQL-tietokantoihin ja erilaisten kyselyiden sekä päivitysten tekemisen Java-koodista käsin.
 
 JDBC ei rajoita sitä, minkä SQL-pohjaisten tietokantojen kanssa sitä voidaan käyttää, vaan eri tietokantoja voidaan hyödyntää käyttämällä niille toteutettuja valmiita ajureita. Sillä ei siis Java-koodisi näkökulmasta ole eroa, käytätkö tietokantana esimerkiksi [MySQL](https://www.mysql.com/)-, [PostgreSQL](https://www.postgresql.org/)- vai [SQLite](https://www.sqlite.org/index.html)-tyyppistä tietokantaa. Tällä kurssilla hyödynnämme **SQLite**-tietokantoja niiden tiedostopohjaisuuden ja helppokäyttöisyyden vuoksi.
 
@@ -22,7 +22,7 @@ JDBC ei rajoita sitä, minkä SQL-pohjaisten tietokantojen kanssa sitä voidaan 
 SQLite-tietokanta on paikallinen muisti- tai tiedostopohjainen tietokanta, joka ei vaadi erillistä palvelinta, vaan se voidaan "sulauttaa" osaksi omaa sovellustamme:
 
 > *"In contrast to many other database management systems, SQLite is not a client–server database engine. Rather, it is embedded into the end program."*
-> 
+>
 > *"SQLite is a popular choice as embedded database software for local/client storage in application software such as web browsers. It is arguably the most widely deployed database engine, as it is used today by several widespread browsers, operating systems, and embedded systems (such as mobile phones), among others. SQLite has bindings to many programming languages.*"
 >
 > [https://en.wikipedia.org/wiki/SQLite](https://en.wikipedia.org/wiki/SQLite)
@@ -110,7 +110,7 @@ Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [h
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/581f69fe-9594-4488-b841-e44954f303f2?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla esitellään Javan luokat, joita tarvitset tietokantayhteyksien ja -kyselyiden muodostamiseksi. 
+Tällä videolla esitellään Javan luokat, joita tarvitset tietokantayhteyksien ja -kyselyiden muodostamiseksi.
 
 Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit). Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
 
@@ -244,7 +244,7 @@ Toinen vaihtoehto yhteyksien sulkemisen suoraviivaistamiseksi on Javan Try with 
 
 ### Try with resources (valinnainen)
 
-Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) -niminen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen. 
+Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) -niminen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen.
 
 Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](./try-with-resources).
 
@@ -270,9 +270,9 @@ Hyviä ohjeita löytyy myös YouTubesta sekä Googlettamalla tarkemmin yksittäi
 
 ## Tehtävä: tietokantapohjainen ostoslistasovellus JDBC:llä
 
-Tällä viikolla sinun tulee toteuttaa Java-ohjelma, joka toimii käyttöliittymänä ostoslistan tuotteita sisältävälle tietokannalle. Tietokannassa on vain yksi taulu eikä sinun tarvitse huolehtia esimerkiksi siitä, voisiko ohjelmassa olla samanaikaisesti useita eri käyttäjien ostoslistoja. 
+Tällä viikolla sinun tulee toteuttaa Java-ohjelma, joka toimii käyttöliittymänä ostoslistan tuotteita sisältävälle tietokannalle. Tietokannassa on vain yksi taulu eikä sinun tarvitse huolehtia esimerkiksi siitä, voisiko ohjelmassa olla samanaikaisesti useita eri käyttäjien ostoslistoja.
 
-Tämän tehtävän ratkaisemiseksi sinulle voi olla hyödyllistä tutustua myös sovelluksen käyttöliittymää ja toimintalogiikkaa selostavaan videoon ["ShoppingListApp-sovelluksen ensimmäinen vaihe"](https://web.microsoftstream.com/video/8efb239a-4700-444a-a4a8-f6ef9bac10e9). 
+Tämän tehtävän ratkaisemiseksi sinulle voi olla hyödyllistä tutustua myös sovelluksen käyttöliittymää ja toimintalogiikkaa selostavaan videoon ["ShoppingListApp-sovelluksen ensimmäinen vaihe"](https://web.microsoftstream.com/video/8efb239a-4700-444a-a4a8-f6ef9bac10e9).
 
 
 ### Ostoslista ja CRUD-operaatiot
@@ -290,7 +290,7 @@ CREATE TABLE ShoppingListItem (
 
 Valmiin tietokantatiedoston voit ladata itsellesi [tästä](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shoppingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
-Varmista myös, että olet varmasti ladannut edellä [olevan ohjeistuksen mukaisesti](#jdbcn-sqlite-ajuri) SQLite-ajurin ja olet sijoittanut sen lib-kansioon, joka on projektisi build pathissa. 
+Varmista myös, että olet varmasti ladannut edellä [olevan ohjeistuksen mukaisesti](#jdbcn-sqlite-ajuri) SQLite-ajurin ja olet sijoittanut sen lib-kansioon, joka on projektisi build pathissa.
 
 
 ### SQL-kyselyiden tietoturva
@@ -317,9 +317,9 @@ DELETE FROM ShoppingListItem WHERE id = ?
 DELETE FROM ShoppingListItem WHERE title = ?
 ```
 
-Jos poisto tehdään tuoterivin nimen perusteella, kuten alemmassa esimerkissä, voisi olla perusteltua asettaa myös rajoite `LIMIT 1`. Näin varmistetaan, että poisto koskee korkeintaan yhtä riviä. Käytännössä rajoitteen käyttö kuitenkin edellyttäisi, että [SQLite:n SQLITE_ENABLE_UPDATE_DELETE_LIMIT-asetus olisi kytketty päälle SQLite-ajuria luotaessa](https://www.sqlite.org/lang_delete.html#optional_limit_and_order_by_clauses).
+<!--💡 Jos poisto tehdään tuoterivin nimen perusteella, kuten alemmassa esimerkissä, voisi olla perusteltua asettaa myös rajoite `LIMIT 1`. Näin varmistettaisiin, että poisto koskee korkeintaan yhtä riviä. SQLite-ajurissa LIMIT-ominaisuus ole kuitenkaan oletuksena käytössä. [Ominaisuuden kytkemiseksi päälle ajuri jouduttaisiin kääntämään itse c-koodista](https://www.sqlite.org/lang_delete.html#optional_limit_and_order_by_clauses), mikä olisi tämän kurssin kannalta tarpeettoman monimutkaista.-->
 
-Tuotantokäytössä olevissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai "arkistointi", eli rivi merkitään poistetuksi tai arkistoiduksi, mutta sitä ei poisteta oikeasti. Tästä on esim. hyvä artikkeli ["Database design practice: soft-deletion, data archive, to delete or not to delete"](https://transang.me/database-design-practice-soft-deletion-to/).
+💡 Monissa sovelluksissa poistamisen sijaan usein tehdään "soft delete" tai "arkistointi", eli rivi merkitään poistetuksi tai arkistoiduksi sen sijaan, että tieto poistettaisiin oikeasti tietokannasta. Aiheeseen liittyen löytyy hyviä artikkeleita, esim. ["To delete or not to delete - practical data archive in database design"](https://transang.me/to-delete-or-not-to-delete-practical-data-archive-in-database-design/).
 
 
 ### Esimerkkikäyttöliittymä

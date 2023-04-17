@@ -34,7 +34,7 @@ Seuraavissa kappaleissa ja videoissa käsittelemme jo aikaisemmin toteuttamamme 
 
 ## Projektipohja
 
-Tällä viikolla tarkoituksena on jatkaa web-sovelluksen kehittämistä viime viikolla käyttämääsi projektipohjaan. Mikäli edellinen tehtävä jäi sinulta ratkaisematta tai haluat aloittaa puhtaalta pöydältä, voit kloonata itsellesi uuden kopion [kurssin projektipohjasta](https://github.com/ohjelmointi2/embedded-tomcat-template) edellisen viikon ohjevideoiden mukaisesti. 
+Tällä viikolla tarkoituksena on jatkaa web-sovelluksen kehittämistä viime viikolla käyttämääsi projektipohjaan. Mikäli edellinen tehtävä jäi sinulta ratkaisematta tai haluat aloittaa puhtaalta pöydältä, voit kloonata itsellesi uuden kopion [kurssin projektipohjasta](https://github.com/ohjelmointi2/embedded-tomcat-template) edellisen viikon ohjevideoiden mukaisesti.
 
 💡 *Jos kloonaat projektipohjan uudelleen, nimeä ensin nykyinen projektisi Eclipsessä uudelleen, koska Eclipse-työtilassa ei voi olla kahta samannimistä projektia.*
 
@@ -105,7 +105,7 @@ Tällä videolla esiintyvät lähdekoodit löydät JDBC ja DAO -tehtävien malli
 
 ## Riippuvuuksien asentaminen
 
-Omien lähdekooditiedostojemme lisäksi tarvitsemme web-projektiimme sen ulkoiset riippuvuudet, eli SQLite-ajurin ja JUnit-testikirjaston. Kuten viime viikon materiaalissa totesimme, projektipohjassa on valmiiksi käytössä Maven-automaatiotyökalu riippuvuuksien hallitsemiseksi. 
+Omien lähdekooditiedostojemme lisäksi tarvitsemme web-projektiimme sen ulkoiset riippuvuudet, eli SQLite-ajurin ja JUnit-testikirjaston. Kuten viime viikon materiaalissa totesimme, projektipohjassa on valmiiksi käytössä Maven-automaatiotyökalu riippuvuuksien hallitsemiseksi.
 
 Aikaisempien riippuvuuksien ja uuden JSTL-tagikirjaston (JSP Standard Tag Library) asennus sujuu helpoiten lisäämällä ne riippuvuuksina Mavenin hyödyntämään `pom.xml`-tiedostoon.
 
@@ -125,17 +125,17 @@ Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<proper
 <pre>
 &lt;properties&gt;
     &lt;!-- Tomcatin versionumero --&gt;
-    &lt;tomcat.version&gt;8.5.73&lt;/tomcat.version&gt;
+    &lt;tomcat.version&gt;8.5.87&lt;/tomcat.version&gt;
 
     &lt;!-- Javan versionumero --&gt;
     &lt;maven.compiler.target&gt;11&lt;/maven.compiler.target&gt;
     &lt;maven.compiler.source&gt;11&lt;/maven.compiler.source&gt;
 
     &lt;!-- JUnit-testikirjaston versio --&gt;
-    &lt;junit.jupiter.version&gt;5.7.1&lt;/junit.jupiter.version&gt;
+    &lt;junit.jupiter.version&gt;5.9.2&lt;/junit.jupiter.version&gt;
 <span style="color: darkgreen; font-weight: bold;">
     &lt;!-- lis&auml;&auml; n&auml;m&auml; rivit: --&gt;
-    &lt;sqlite.driver.version&gt;3.40.0.0&lt;/sqlite.driver.version&gt;
+    &lt;sqlite.driver.version&gt;3.41.2.1&lt;/sqlite.driver.version&gt;
     &lt;jstl.api.version&gt;1.2&lt;/jstl.api.version&gt;
 </span>
     &lt;!-- Projektin merkist&ouml;koodaus --&gt;
@@ -147,7 +147,7 @@ Lisäämäsi tagit määrittelevät seuraavat uudet muuttujat versionumeroita va
 
 Muuttuja                | Versionumero  | Tarkoitus
 ------------------------|---------------|----------
-`sqlite.driver.version` | 3.40.0.0      | Aikaisemmilta viikoilta tuttu SQLite-ajuri JDBC-kirjastolle
+`sqlite.driver.version` | 3.41.2.1      | Aikaisemmilta viikoilta tuttu SQLite-ajuri JDBC-kirjastolle
 `jstl.api.version`      | 1.2           | JSTL-tagikirjasto
 
 Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä. Riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat plus-merkein korostetut riippuvuudet dependencies-tagin loppuun:
@@ -178,7 +178,7 @@ Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä
 </span>&lt;/dependencies&gt;
 </pre>
 
-**Huom!** Esimerkkikoodien vihreiden rivien vasemmassa laidassa olevat plus-merkit (`+`) ovat osa muuttuneita rivejä korostavaa diff-syntaksia, jotka eivät kuulu mukaan pom-tiedostoon. 
+**Huom!** Esimerkkikoodien vihreiden rivien vasemmassa laidassa olevat plus-merkit (`+`) ovat osa muuttuneita rivejä korostavaa diff-syntaksia, jotka eivät kuulu mukaan pom-tiedostoon.
 
 Tallennettuasi muutetun `pom.xml`-tiedoston Eclipse käynnistää Maven-pluginin asentaakseen uudet riippuvuudet. Varmuuden vuoksi aina tämän tiedoston muokkaamisen jälkeen kannattaa vielä klikata projektia Eclipsen hakemistopuussa hiiren kakkospainikkeella ja valita [Maven-valikosta kohta "Update Project"](https://stackoverflow.com/a/20547404).
 
@@ -221,7 +221,7 @@ Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta ([Cr
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d4adda6c-9b93-4a0a-a92a-57067f3493fb?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla toteutamme servletin, joka välittää JSP-sivulle useita attribuutteja. Tutustumme myös `c:if`-ehtorakenteisiin ja JSP-sivujen virheenkäsittelyyn. 
+Tällä videolla toteutamme servletin, joka välittää JSP-sivulle useita attribuutteja. Tutustumme myös `c:if`-ehtorakenteisiin ja JSP-sivujen virheenkäsittelyyn.
 
 <!--Videolla käsiteltävän [SummerCountdownServlet.java-luokan ja countdown.jsp-sivun löydät täältä](https://gist.github.com/swd1tn002/1a9eac1b32179a8411e6f611ef0f731a).-->
 
@@ -237,7 +237,7 @@ Näissä tehtävissä tarvitset aikaisempina viikkoina toteutettuja tietokantalu
 
 ### Osa 1: Toteuta ostoslistan sisällön hakeva servletti ja sen `doGet`-metodi
 
-Tarvitset ostoslistan esittämistä varten uuden servletin, joka voi löytyä palvelimeltasi esimerkiksi polusta (`/list`). Voit vapaasti valita haluamasi polun, joka määritellään kuten edellisessä tehtävässä, eli esimerkiksi `@WebServlet("/list")`-annotaation avulla. 
+Tarvitset ostoslistan esittämistä varten uuden servletin, joka voi löytyä palvelimeltasi esimerkiksi polusta (`/list`). Voit vapaasti valita haluamasi polun, joka määritellään kuten edellisessä tehtävässä, eli esimerkiksi `@WebServlet("/list")`-annotaation avulla.
 
 Tämän sivun yläosassa esitetyssä esimerkkihakemistorakenteessa tämän servletin nimi on `ShoppingListServlet`, mutta voit nimetä luokan haluamallasi tavalla.
 
@@ -328,7 +328,7 @@ Voit lisätä lomakkeen samalle JSP-sivulle, jolla näytät myös tuotelistan. L
 
 ```html
 <form method="post">
-    <input name="title" type="text" required placeholder="type item here..." autofocus /> 
+    <input name="title" type="text" required placeholder="type item here..." autofocus />
     <input type="submit" value="Add to list" />
 </form>
 ```
@@ -338,7 +338,7 @@ Valmis lomake näyttää suurin piirtein seuraavalta:
 <form method="post" action="http://localhost:8080/list">
     <fieldset>
         <legend>Esimerkki lomakkeesta:</legend>
-        <input name="title" type="text" required placeholder="type item here..." /> 
+        <input name="title" type="text" required placeholder="type item here..." />
         <input type="submit" value="Add to list" />
     </fieldset>
 </form>

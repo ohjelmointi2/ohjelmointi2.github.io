@@ -125,7 +125,7 @@ Aikaisempien riippuvuuksien ja uuden JSTL-tagikirjaston (JSP Standard Tag Librar
 
 ### Riippuvuuksien määrittely pom.xml:ään (Project Object Model)
 
-Tomcat-projektipohjan juurihakemistossa sijaitseva `pom.xml`-projektitiedosto on normaali XML-tiedosto, jota voit muokata esimerkiksi Eclipsen tekstieditorilla. Avatessasi tiedostoa Eclipse saattaa avata sen "Overview"-näkymässä, jolloin voit vaihtaa näkymän klikkaamalla sen alalaidan `pom.xml`-välilehteä [tämän videon mukaisesti](https://javavids.com/video/open-xml-in-pomxml-by-default-in-eclipse).
+Tomcat-projektipohjan juurihakemistossa sijaitseva `pom.xml`-projektitiedosto on normaali XML-tiedosto, jota voit muokata esimerkiksi Eclipsen tekstieditorilla. Avatessasi tiedostoa Eclipse saattaa avata sen "Overview"-näkymässä, jolloin voit vaihtaa näkymän klikkaamalla sen alalaidan `pom.xml`-välilehteä.
 
 Tehdessäsi muutoksia ja tallentaessasi tiedoston Eclipsen Maven-lisäosa asentaa automaattisesti uudet riippuvuudet projektiisi.
 

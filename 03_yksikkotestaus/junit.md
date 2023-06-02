@@ -86,13 +86,13 @@ Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://ww
 
 "Oikean ohjelman" testaamisessa haastetta tuo usein ohjelman rakenne, joka voi tehdä siitä vaikeasti testattavan. Seuraavilla videoesimerkeillä esitellään Map-aiheen yhteydessä luodun EtunimiTilasto-sovelluksen testausta yksikkötestien avulla ja muodostetaan ohjelman rakenne siten, että sen osat ovat testattavissa, laajennettavissa ja uudelleenkäytettävissä.
 
-Videoilla käsitellyt lähdekoodit löytyvät [täältä](./yksikkotestaus_lahdekoodit):
+Videoilla käsitellyt lähdekoodit löytyvät [täältä](/03_yksikkotestaus/yksikkotestaus_lahdekoodit):
 
-* [📝 `Sanakirja.java`](./yksikkotestaus_lahdekoodit)
-* [📝 `SanakirjaTest.java`](./yksikkotestaus_lahdekoodit)
-* [📝 `EtunimiTilastoTest.java`](./yksikkotestaus_lahdekoodit)
-* [📝 `EtunimiTilasto.java`](./yksikkotestaus_lahdekoodit)
-* [📝 `Tekstikayttoliittyma.java`](./yksikkotestaus_lahdekoodit)
+* [📝 `Sanakirja.java`](/03_yksikkotestaus/yksikkotestaus_lahdekoodit)
+* [📝 `SanakirjaTest.java`](/03_yksikkotestaus/yksikkotestaus_lahdekoodit)
+* [📝 `EtunimiTilastoTest.java`](/03_yksikkotestaus/yksikkotestaus_lahdekoodit)
+* [📝 `EtunimiTilasto.java`](/03_yksikkotestaus/yksikkotestaus_lahdekoodit)
+* [📝 `Tekstikayttoliittyma.java`](/03_yksikkotestaus/yksikkotestaus_lahdekoodit)
 
 &nbsp;
 

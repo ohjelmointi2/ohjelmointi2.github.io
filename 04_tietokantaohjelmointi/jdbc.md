@@ -72,7 +72,7 @@ Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan a
 
 Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest). Tallenna ajuri itsellesi linkistä "Jar (x MB)":
 
-<img src="maven-sqlite-jdbc.png" style="max-width: 450px" alt="Lataa ajuri JAR-linkkiä klikkaamalla" />
+![Lataa ajuri JAR-linkkiä klikkaamalla](/img/maven-sqlite-jdbc.png)
 
 
 **Ajurin lisääminen Eclipse-projektiin**
@@ -94,7 +94,7 @@ Tällä videolla valmistellaan tietokanta, jota käytetään seuraavaksi Java-oh
 
 Videolla käytettävän valinnaisen komentorivityökalun latauslinkki: [https://sqlite.org/download.html](https://sqlite.org/download.html)
 
-Videolla esiintyvä SQLite tools -komentorivityökalun ohjesivu ["Extra: komentorivityökalun käyttö"](./komentorivityokalu).
+Videolla esiintyvä SQLite tools -komentorivityökalun ohjesivu ["Extra: komentorivityökalun käyttö"](/04_tietokantaohjelmointi/komentorivityokalu).
 
 Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shoppingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
@@ -110,7 +110,7 @@ Tietokannan käyttäminen Java-ohjelmasi ulkopuolella ei ole tällä kurssilla v
 
 Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [https://sqlite.org/download.html](https://sqlite.org/download.html). Työkalut löytyvät esimerkiksi Windowsille otsikon "Precompiled Binaries for Windows" alta (sqlite-tools-win32-x86-VERSIO.zip). Pura `sqlite3.exe`-tiedosto zip-paketista esimerkiksi samaan kansioon tietokantasi kanssa. Jos käytät eri käyttöjärjestelmää, sovella ohjeita oman käyttöjärjestelmäsi työkaluversion mukaisesti.
 
-[Tällä sivulla](./komentorivityokalu) on esimerkki SQLite-komentorivityökalun käyttämisestä tämän kurssin harjoitustyötietokannan kanssa. Lisää ohjeita löydät SQLiten omilta sivuilta osoitteesta [https://sqlite.org/cli.html](https://sqlite.org/cli.html) ja alla olevista videoista.
+[Tällä sivulla](/04_tietokantaohjelmointi/komentorivityokalu) on esimerkki SQLite-komentorivityökalun käyttämisestä tämän kurssin harjoitustyötietokannan kanssa. Lisää ohjeita löydät SQLiten omilta sivuilta osoitteesta [https://sqlite.org/cli.html](https://sqlite.org/cli.html) ja alla olevista videoista.
 
 <!--[![SQLite tools](https://api.kaltura.nordu.net/p/288/sp/28800/thumbnail/entry_id/0_pez4r54j/version/100012/width/435/height/260)](https://video.haaga-helia.fi/media/SQLite+tools/0_pez4r54j)
 
@@ -124,7 +124,7 @@ Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [h
 
 Tällä videolla esitellään Javan luokat, joita tarvitset tietokantayhteyksien ja -kyselyiden muodostamiseksi.
 
-Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit). Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
+Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](/04_tietokantaohjelmointi/videoiden_lahdekoodit). Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
 ### module-info.java ja ClassNotFoundException
 
@@ -188,7 +188,7 @@ PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist 
 statement.setString(1, name);
 ```
 
-Videolla esiintyvän lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit).
+Videolla esiintyvän lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](/04_tietokantaohjelmointi/videoiden_lahdekoodit).
 
 &nbsp;
 
@@ -258,15 +258,15 @@ Toinen vaihtoehto yhteyksien sulkemisen suoraviivaistamiseksi on Javan Try with 
 
 Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) -niminen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen.
 
-Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](./try-with-resources).
+Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](/04_tietokantaohjelmointi/try-with-resources).
 
 
 
 ## Lisämateriaali
 
-[Jenkov.com](http://tutorials.jenkov.com/jdbc/index.html) -palvelussa on laaja tutoriaali JDBC-teknologioista ja se käsittelee kattavasti tietokantojen Javasta käyttämiseksi tarvittavat toimenpiteet. Tutoriaali itsessään käyttää H2-tietokantaa, mutta ei tietokanta-ajurin luokan nimeä ja yhteysosoitetta lukuun ottamatta poikkea SQLite:n käytöstä:
+[Jenkov.com](https://jenkov.com/tutorials/jdbc/index.html) -palvelussa on laaja tutoriaali JDBC-teknologioista ja se käsittelee kattavasti tietokantojen Javasta käyttämiseksi tarvittavat toimenpiteet. Tutoriaali itsessään käyttää H2-tietokantaa, mutta ei tietokanta-ajurin luokan nimeä ja yhteysosoitetta lukuun ottamatta poikkea SQLite:n käytöstä:
 
-[http://tutorials.jenkov.com/jdbc/index.html](http://tutorials.jenkov.com/jdbc/index.html)
+[https://jenkov.com/tutorials/jdbc/index.html](https://jenkov.com/tutorials/jdbc/index.html)
 
 Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodirivi `Class.forName("org.h2.Driver");`. Ajurin lataus manuualisesti ei usein ole erikseen tarpeellista, mutta vastaava rivi SQLite-tietokannan ajurin lataamiseksi on:
 
@@ -338,7 +338,7 @@ DELETE FROM ShoppingListItem WHERE title = ?
 
 Tämän tehtävän kannalta ei ole oleellista, minkälaisen käyttöliittymän rakennat, kunhan sen kautta pystyy käyttämään tietokantaa ja näkemään tehtyjen muutosten vaikutukset.
 
-Ohjelman esimerkkikäyttöliittymästä on [erillinen ohjedokumentti](./ostoslista-kayttoliittyma). Voit toteuttaa ohjelmasi omien mieltymystesi mukaan tai noudattaa seuraavan esimerkkisovelluksen toiminnallisuuksia:
+Ohjelman esimerkkikäyttöliittymästä on [erillinen ohjedokumentti](/04_tietokantaohjelmointi/ostoslista-kayttoliittyma). Voit toteuttaa ohjelmasi omien mieltymystesi mukaan tai noudattaa seuraavan esimerkkisovelluksen toiminnallisuuksia:
 
 ```
 Welcome to the shopping list app!
@@ -391,7 +391,7 @@ Bye!
 
 ```
 
-Yllä esitetyn käyttöliittymän teknisen toteutuksen tueksi on kirjoitettu [oma ohjeistuksensa](./ostoslista-kayttoliittyma).
+Yllä esitetyn käyttöliittymän teknisen toteutuksen tueksi on kirjoitettu [oma ohjeistuksensa](/04_tietokantaohjelmointi/ostoslista-kayttoliittyma).
 
 ----
 

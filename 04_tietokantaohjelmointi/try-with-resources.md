@@ -1,5 +1,5 @@
 ---
-title: "Extra: Try with resources"
+title: "Try with resources"
 layout: default
 parent: Tietokantaohjelmointi
 ---
@@ -10,7 +10,7 @@ Javassa on olemassa try-with-resources -tyyppinen rakenne, joka huolehtii automa
 
 Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Saatatte kuitenkin hyötyä myös siihen tutustumisesta esimerkiksi tutustuessanne muissa lähteissä löytämiinne esimerkkeihin.
 
-Voit halutessasi tutustua tähän rakenteeseen tarkemmin esimerkiksi [Jenkov.com](http://tutorials.jenkov.com/java-exception-handling/try-with-resources.html)-palvelussa tai [Baeldung.com](https://www.baeldung.com/java-try-with-resources)-palvelussa.
+Voit halutessasi tutustua tähän rakenteeseen tarkemmin esimerkiksi [Jenkov.com](https://jenkov.com/tutorials/java-exception-handling/try-with-resources.html)-palvelussa tai [Baeldung.com](https://www.baeldung.com/java-try-with-resources)-palvelussa.
 
 ## Close-metodin kutsuminen finally-lohkossa ilman try-with-resources -rakennetta
 

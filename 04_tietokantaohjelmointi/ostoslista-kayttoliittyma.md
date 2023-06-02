@@ -1,5 +1,5 @@
 ---
-title: Ostoslistasovelluksen käyttöliittymän luonti Scanner-luokan avulla
+title: Ostoslistan käyttöliittymä
 layout: default
 parent: Tietokantaohjelmointi
 ---

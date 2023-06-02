@@ -32,7 +32,7 @@ Tämän tehtävän palautusaika on umpeutunut. Voit katsoa malliratkaisun [tält
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/aea9daea-9811-4ba2-bd14-943658e381a1?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla kerrataan [edellisellä viikolla](../04_tietokantaohjelmointi/jdbc) käsitellyt JDBC-aiheeseen liittyvät käsitteet ja työkalut kuten ajuri, tietokantatiedosto, build path, SQLite tools, yhteysosoite ja prepared statement. Mikäli edellisen JDBC-aiheen sisältö ehti jo unohtua, sinun kannattaa aloittaa tästä videosta.
+Tällä videolla kerrataan [edellisellä viikolla](/04_tietokantaohjelmointi/jdbc) käsitellyt JDBC-aiheeseen liittyvät käsitteet ja työkalut kuten ajuri, tietokantatiedosto, build path, SQLite tools, yhteysosoite ja prepared statement. Mikäli edellisen JDBC-aiheen sisältö ehti jo unohtua, sinun kannattaa aloittaa tästä videosta.
 
 &nbsp;
 
@@ -52,7 +52,7 @@ Tietokantalogiikan eriyttämiseksi muusta koodista käytetään usein ns. **DAO*
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ec6e052c-ba95-4c59-975f-6322c81097e6?st=33&amp;autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla esitellään motivaatio tietokantapohjaisen Java-ohjelman rakenteen parantamiseksi DAO-kehitysmallin avulla. Videolla käsiteltävän luokan `TietokantaanYhdistaminen.java` löydät [täältä](../04_tietokantaohjelmointi/videoiden_lahdekoodit).
+Tällä videolla esitellään motivaatio tietokantapohjaisen Java-ohjelman rakenteen parantamiseksi DAO-kehitysmallin avulla. Videolla käsiteltävän luokan `TietokantaanYhdistaminen.java` löydät [täältä](/04_tietokantaohjelmointi/videoiden_lahdekoodit).
 
 &nbsp;
 

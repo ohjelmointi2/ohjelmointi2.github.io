@@ -60,7 +60,7 @@ Videolla esiintyvät sivut:
 * HTTP Messages: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
 * Putty-sovellus, lataussivu: [https://www.ssh.com/academy/ssh/putty/download](https://www.ssh.com/academy/ssh/putty/download).
 * Hello world: [https://myy.haaga-helia.fi/~h01581/index.html](https://myy.haaga-helia.fi/~h01581/index.html)
-* Java Servlets -tutoriaali: [http://tutorials.jenkov.com/java-servlets/](http://tutorials.jenkov.com/java-servlets/index.html).
+* Java Servlets -tutoriaali: [https://jenkov.com/tutorials/jdbc/index.html](https://jenkov.com/tutorials/jdbc/index.html).
 * Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template)
 
 **Huom!** Videolla käytetään vanhaa projektipohjaa eri osoitteesta (~~github.com/haagahelia/embedded-tomcat-template~~). Vanha projektipohja on edelleen toimiva, mutta sitä ei ylläpidetä aktiivisesti, joten siitä puuttuu tärkeitä päivityksiä.
@@ -124,7 +124,7 @@ Seuraavilla videoilla käsittelemme servlet-luokkien erityispiirteitä, tiedonv�
 
 Tällä videolla tutustumme servlettien rakenteeseen, perintään, annotaatioihin ja pyyntöjä käsitteleviin metodeihin. Käsittelemme tyypillisimmät virhetilanteet (virheet 404 ja 405) ja ratkaisut niiden korjaamiseksi.
 
-Videolla hyödynnetään tutoriaalia [http://tutorials.jenkov.com/java-servlets/index.html](http://tutorials.jenkov.com/java-servlets/index.html).
+Videolla hyödynnetään tutoriaalia [https://jenkov.com/tutorials/jdbc/index.html](https://jenkov.com/tutorials/jdbc/index.html).
 
 &nbsp;
 
@@ -184,7 +184,7 @@ Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.gi
 
 > *"Huomaa, että JSP-sivussa käytetyt attribuutit ovat täysin erillisiä servletin sisältämistä muuttujista ja niiden nimistä. Yhteys näiden kahden välille muodostuu ainoastaan setAttribute-metodin kutsujen myötä. Selkeyden vuoksi on kuitenkin hyvä idea nimetä sekä normaalit Java-muuttujat että JSP-sivun käyttämät attribuutit samaan tapaan."*
 >
-> [David Consuegra and others](http://advancedkittenry.github.io/credits.html). [Näkymien tekeminen ja JSP](https://advancedkittenry.github.io/koodaaminen/java/nakymat.html). [CC BY-SA](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+> [David Consuegra and others](https://advancedkittenry.github.io/credits.html). [Näkymien tekeminen ja JSP](https://advancedkittenry.github.io/koodaaminen/java/nakymat.html). [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
 
 
 Lisätietoa JSP-sivuilla käytettävästä Expression Language -kielestä löydät Oraclen dokumentaatiosta ["Unified Expression Language"](https://docs.oracle.com/javaee/5/tutorial/doc/bnahq.html).
@@ -223,7 +223,7 @@ Video esittelee, miten JSTL tagikirjasto lisätään JSP-sivulle `taglib`-direkt
 Tämä video esittelee HTML-lomakkeen lähettämisen palvelimelle POST- ja GET-metodeilla sekä servlettien `doPost`- ja `doGet`-metodit. **Huom!** Videossa käytetään `web.xml`-tiedostoa, jota et tarvitse, mikäli käytät `@WebServlet`-annotaatiota projektipohjan ohjeistuksen mukaisesti.
 
 
-**[Jenkov.com: Java Servlets](http://tutorials.jenkov.com/java-servlets/index.html)**
+**[Jenkov.com: Java Servlets](https://jenkov.com/tutorials/jdbc/index.html)**
 
 Tämän tutoriaalin kappaleet 1-9 ovat Ohjelmointi 2 -kurssin kannalta hyvää sisältöä.
 
@@ -260,12 +260,12 @@ Päivämäärien erotusten laskemiseksi on Javassa lukuisia tapoja, ja tyyli on 
 
 Rakenna itsellesi toimiva web-kehitysympäristö servlettien ja JSP-sivujen käyttämiseksi (JavaServer Pages). Suosittelen vahvasti seuraamaan yllä olevien videoiden ja [projektipohjan ohjeita ja esimerkkejä](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
-Kun saat projektipohjan etusivun aukeamaan omalla koneellasi osoitteessa [http://localhost:8080/](http://localhost:8080/), voit siirtyä seuraavaan vaiheeseen.
+Kun saat projektipohjan etusivun aukeamaan omalla koneellasi osoitteessa `http://localhost:8080/`, voit siirtyä seuraavaan vaiheeseen.
 
 
 ### **Osa 2 / 3**: "christmas countdown" -servletti
 
-Kun olet saanut itsellesi toimivan kehitysympäristön, toteuta uusi servlet `ChristmasCountdownServlet`, joka kertoo kuinka monta yötä jouluun on. Voit itse valita missä polussa servlettisi on palvelimella (esim. http://localhost:8080/christmas). Polku määritellään servlet-luokan yläpuolella [@WebServlet-annotaatiolla](https://www.codejava.net/java-ee/servlet/webservlet-annotation-examples).
+Kun olet saanut itsellesi toimivan kehitysympäristön, toteuta uusi servlet `ChristmasCountdownServlet`, joka kertoo kuinka monta yötä jouluun on. Voit itse valita missä polussa servlettisi on palvelimella (esim. `http://localhost:8080/christmas`). Polku määritellään servlet-luokan yläpuolella [@WebServlet-annotaatiolla](https://www.codejava.net/java-ee/servlet/webservlet-annotation-examples).
 
 Voit hyödyntää yksikkötestaustehtävässä käyttämäämme `DayOfYear`-luokkaa laskemalla erotuksen kuluvan päivän ja jouluaaton välillä. Voit myös käyttää Javan valmiita luokkia, kuten [tässä StackOverflow-ketjussa ehdotetaan](https://stackoverflow.com/a/27006098).
 
@@ -381,7 +381,7 @@ POST siis tyypillisesti aiheuttaa palvelimella sivuvaikutuksen, kuten tiedon lis
 
 #### Valinnainen HTML-lomake
 
-Voit käyttää alla olevaa lomaketta päivämääräparametrien välittämisen testaamisessa. Tallenna html-koodi esimerkiksi tiedostoon `src/main/webapp/form.html`, jolloin se tulee saataville selaimella osoitteessa [http://localhost:8080/form.html](http://localhost:8080/form.html).
+Voit käyttää alla olevaa lomaketta päivämääräparametrien välittämisen testaamisessa. Tallenna html-koodi esimerkiksi tiedostoon `src/main/webapp/form.html`, jolloin se tulee saataville selaimella osoitteessa `http://localhost:8080/form.html`.
 
 Tämän lomakkeen lähettäminen saa aikaiseksi GET-pyynnön polkuun `/daysUntil` siten, että lomakkeeseen syötetyt arvot tulevat pyynnön parametreiksi:
 

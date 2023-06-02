@@ -2,12 +2,12 @@ title: Ohjelmointi 2
 description: Haaga-Helia / Ohjelmointi 2 (SOF001AS3A)
 theme: just-the-docs
 repository: ohjelmointi2/ohjelmointi2.github.io
-url: https://ohjelmointi2.github.io/
+url: https://ohjelmointi2.github.io
 
 aux_links:
   Opintojaksokuvaus: https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A
 
-permalink: /:title/
+permalink: /:title
 
 plugins:
   - jekyll-target-blank

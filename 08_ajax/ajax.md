@@ -23,7 +23,7 @@ JavaScript-ohjelmointi, sivujen rakentaminen HTML-elementteinä ja elementtien u
 
 > *"AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files. AJAX’s most appealing characteristic is its "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.*"
 >
-> [What's AJAX?](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/MDN/About/contributors.txt). [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+> [What's AJAX?](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) Mozilla Contributors. [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
 
 Ammattimaisessa web-kehityksessä JavaScript-ohjelmointiin käytetään erilaisia ohjelmistokehyksiä tai kirjastoja, kuten [React](https://reactjs.org/). Tällä kurssilla hyödynnämme kuitenkin ainoastaan selainten sisäänrakennettuja ominaisuuksia.
 
@@ -127,7 +127,7 @@ Jos muutoksesi toimivat oikein, niiden jälkeen [selaimen lähdekoodinäkymäss�
 
 Lisäyksen jälkeen sivusi pitäisi näyttää esimerkiksi tältä:
 
-![Poistonapit lisätty](remove-button.jpg)
+![Poistonapit lisätty](/img/remove-button.jpg)
 
 *Mikäli haluat perehtyä onclick-attribuuttiin tarkemmin, voit perehtyä niihin [W3Schools-sivustolla](https://www.w3schools.com/jsref/event_onclick.asp) tai videolla [JavaScript Tutorial For Beginners #40 - The onClick Event](https://youtu.be/XQEfWd1lh4Q)*
 
@@ -195,13 +195,13 @@ function removeFromPage(productId) {
 
 Näistä kolmesta funktiosta `removeProduct` on ainoa, jota sinun tulee kutsua itse. `removeProduct` kutsuu puolestasi `removeFromServer` ja `removeFromPage` funktioita.
 
-Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/main/webapp/scripts/app.js`. Voit myös tallentaa koodin itsellesi erillisenä tiedostona [tästä](app.js). Lisää lopuksi JSP-sivullesi `<head>`-osioon tagi, jonka avulla selain osaa ladata koodin osaksi ostoslistasivua:
+Lisää yllä oleva JavaScript-lähdekoodi projektiisi uuteen tiedostoon `src/main/webapp/scripts/app.js`. Voit myös tallentaa koodin itsellesi erillisenä tiedostona [tästä](/08_ajax/app.js). Lisää lopuksi JSP-sivullesi `<head>`-osioon tagi, jonka avulla selain osaa ladata koodin osaksi ostoslistasivua:
 
 ```html
 <script src="/scripts/app.js"></script>
 ```
 
-Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi osoite [http://localhost:8080/scripts/app.js](http://localhost:8080/scripts/app.js). Sinun tulisi nähdä lisäämäsi JS-lähdekoodi sellaisenaan. Huomaa, että Java-sovelluksesi tulee olla käynnissä jotta palvelin vastaa pyyntöön.
+Varmista vielä lopuksi, että tiedosto lisättiin oikein avaamalla selaimessasi osoite `http://localhost:8080/scripts/app.js`. Sinun tulisi nähdä lisäämäsi JS-lähdekoodi sellaisenaan. Huomaa, että Java-sovelluksesi tulee olla käynnissä, jotta palvelin vastaa pyyntöön.
 
 
 ### Osa 3 / 4: doDelete-metodin toteuttaminen servletissä

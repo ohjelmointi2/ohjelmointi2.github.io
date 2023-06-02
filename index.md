@@ -5,6 +5,7 @@ nav_order: 0
 ---
 
 # 👋 Tervetuloa kurssille!
+{: .no_toc }
 
 Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A!
 {: .fs-6 }
@@ -23,6 +24,15 @@ Kurssin keskustelukanavana toimii Teams-ryhmä, jonka kautta tavoitat sekä opet
 
 Kurssin opintojaksokuvaus löytyy osoitteesta [https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A](https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A).
 
+{: .huom }
+Kevään 2023 kurssi on päättynyt. Kurssin sisältöä päivitetään syksyksi 2023.
+
+---
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
 
 ## ✅ Osallistumisen vahvistaminen
 
@@ -47,105 +57,6 @@ Tämä kurssi alkaa maanantaina 27.3.2023 ja päättyy 19.5.2023.
 
 Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti noin 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 
-
-&nbsp;
-
-
-### [**Aihe 1: Perintä ja rajapinnat**](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
-
-Ensimmäisellä viikolla syvennämme olio-ohjelmointiosaamistamme tutustumalla perintään ja rajapintoihin. Perintä ja rajapinnat ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
-
-[Siirry oppimateriaaliin ⇨](01_perinta_ja_rajapinnat/perinta-ja-rajapinnat)
-
-<!-- Tehtävät [Viopessa](https://hh.viope.com/) (DL 3.4. klo 23:59) -->
-
-&nbsp;
-
-### [**Aihe 2: Map-tietorakenne**](02_map/map)
-
-> *"Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
->
-> [*Agile Education Research –tutkimusryhmä, mooc.fi*](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu)
-
-[Siirry oppimateriaaliin ⇨](02_map/map)
-
-<!--Tehtävät [Viopessa](https://hh.viope.com/)  (DL 10.4. klo 23:59)-->
-
-&nbsp;
-
-### [**Aihe 3: Yksikkötestaus**](03_yksikkotestaus/junit)
-
-Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
-
-[Siirry oppimateriaaliin ⇨](03_yksikkotestaus/junit)
-
-<!--Tehtävät Teamsissa (DL 17.4. klo 23:59)-->
-
-&nbsp;
-
-### [**Aihe 4: Tietokantaohjelmointi (JDBC)**](04_tietokantaohjelmointi/jdbc)
-
-Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete).
-
-[Siirry oppimateriaaliin ⇨](04_tietokantaohjelmointi/jdbc)
-
-<!--Tehtävät Teamsissa (DL 24.4. klo 23:59)-->
-
-&nbsp;
-
-### [**Aihe 5: Tietokantalogiikan eriyttäminen ja testaaminen (DAO & JUnit)**](05_dao/dao)
-
-Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
-
-[Siirry oppimateriaaliin ⇨](05_dao/dao)
-
-<!--Tehtävät Teamsissa (DL 1.5. klo 23:59)-->
-
-&nbsp;
-
-### [**Aihe 6: Web-ohjelmointi servleteillä**](06_servletit/servletit)
-
-Verkkosovellusten osuuden ensimmäisellä viikolla toteutamme yksinkertaisia servlettejä päivämäärien laskemiseksi. Voimme halutessamme hyödyntää yksikkötestauksen yhteydessä refaktoroimaasi `dayOfYear`-metodia tai Javan valmiita päivämääräluokkia.
-
-[Siirry oppimateriaaliin ⇨](06_servletit/servletit)
-
-<!--Tehtävät Teamsissa (DL 8.5. klo 23:59)-->
-
-&nbsp;
-
-
-### [**Aihe 7: Verkkosovellus kolmikerrosarkkitehtuurilla (Servletit, DAO, JSP)**](07_mvc/servlet_dao_jstl)
-
-Verkkosovellusten toisella viikolla jatkokehitämme oman tietokantapohjaisen ostoslistasovelluksemme verkkopalveluksi. Luomme HTML-käyttöliittymät ostoslistan näyttämiseksi ja tuotteiden lisäämiseksi.
-
-[Siirry oppimateriaaliin ⇨](07_mvc/servlet_dao_jstl)
-
-<!--Tehtävät Teamsissa (DL 15.5. klo 23:59)-->
-
-&nbsp;
-
-
-### [**Aihe 8: Ajax ja JavaScript**](08_ajax/ajax)
-
-Viimeinen harjoitusviikko käsittelee JavaScript-koodin avulla tehtäviä palvelinkutsuja, eli Ajax-kutsuja. Niiden avulla voimme päivittää ostoslistamme sisältöä tekemättä sivulatauksia. Toteutamme lisäksi verkkopalveluumme uuden ominaisuuden ostoslistan rivien poistamiseksi.
-
-[Siirry oppimateriaaliin ⇨](08_ajax/ajax)
-
-<!--Tehtävät Teamsissa (DL 22.5. klo 23:59)-->
-
-&nbsp;
-
-
-### [**Harjoitustyö**](09_harjoitustyo/harjoitustyo)
-
-Kurssin jälkimmäisellä puoliskolla vahvistatte kurssilla opittuja taitoja ja toteutatte harjoitustyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvioidaan asteikolla 0-5.
-
-[Siirry harjoitustyön tehtävänantoon ⇨](09_harjoitustyo/harjoitustyo)
-
-<!--Palautus Teamsiin (DL 22.5. klo 23:59)-->
-
-
-&nbsp;
 
 <!-- ### Kertaus
 
@@ -330,7 +241,7 @@ Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttö
 
 ## SQLite-tietokanta-ajuri
 
-Tietokanta-ajuri `sqlite-jdbc-*.jar` noudattaa lisenssiä [Apache License version 2.0](http://www.apache.org/licenses/). Lisätiedot: [https://xerial.org/software/](https://xerial.org/software/)
+Tietokanta-ajuri `sqlite-jdbc-*.jar` noudattaa lisenssiä [Apache License version 2.0](https://www.apache.org/licenses/). Lisätiedot: [https://xerial.org/software/](https://xerial.org/software/)
 
 
 ## Chinook-tietokanta

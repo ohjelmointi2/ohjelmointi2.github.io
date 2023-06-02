@@ -5,11 +5,20 @@ nav_order: 7
 ---
 
 # Verkkosovellus kolmikerrosarkkitehtuurilla
+{: .no_toc }
 
 Tällä viikolla tavoitteinamme on rakentaa kolmikerrosarkkitehtuuria noudattava web-sovellus, joka yhdistää tähän mennessä opettelemamme erilliset tietokanta- ja web-teknologiat yhdeksi loogiseksi kokonaisuudeksi.
+{: .fs-6 }
 
 Jatkat siis tällä viikolla edellisellä viikolla aloittamasi web-projektin kehittämistä ja tarvitset myös aikaisempia shopping list -tietokantaluokkiasi. Mikäli aikaisemmat tehtävät ovat jääneet sinulta kesken, voit hyödyntää tällä viikolla myös kurssin malliratkaisuja, jotka on julkaistu edellisten tehtävien määräaikojen päätyttyä kurssin Teams-kanavalla.
 
+---
+
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
 
 ## Sovelluksemme arkkitehtuuri
 
@@ -124,26 +133,27 @@ Tehdessäsi muutoksia ja tallentaessasi tiedoston Eclipsen Maven-lisäosa asenta
 
 Riippuvuuksien versionumerot on tapana määritellä projektitiedostoon `<properties>`-tagin sisään ja itse riippuvuudet `<dependencies>`-tagin sisään. Lisää vihreällä korostetut rivit pom.xml-tiedostoosi properties-tagin sisään:
 
-<pre>
-&lt;properties&gt;
-    &lt;!-- Tomcatin versionumero --&gt;
-    &lt;tomcat.version&gt;8.5.87&lt;/tomcat.version&gt;
+```xml
+<properties>
+    <!-- Tomcatin versionumero -->
+    <tomcat.version>8.5.87</tomcat.version>
 
-    &lt;!-- Javan versionumero --&gt;
-    &lt;maven.compiler.target&gt;11&lt;/maven.compiler.target&gt;
-    &lt;maven.compiler.source&gt;11&lt;/maven.compiler.source&gt;
+    <!-- Javan versionumero -->
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
 
-    &lt;!-- JUnit-testikirjaston versio --&gt;
-    &lt;junit.jupiter.version&gt;5.9.2&lt;/junit.jupiter.version&gt;
-<span style="color: darkgreen; font-weight: bold;">
-    &lt;!-- lis&auml;&auml; n&auml;m&auml; rivit: --&gt;
-    &lt;sqlite.driver.version&gt;3.41.2.1&lt;/sqlite.driver.version&gt;
-    &lt;jstl.api.version&gt;1.2&lt;/jstl.api.version&gt;
-</span>
-    &lt;!-- Projektin merkist&ouml;koodaus --&gt;
-    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
-</pre>
+    <!-- JUnit-testikirjaston versio -->
+    <junit.jupiter.version>5.9.2</junit.jupiter.version>
+
+<!-- ✂ Lisää nämä rivit: -->
+    <sqlite.driver.version>3.41.2.1</sqlite.driver.version>
+    <jstl.api.version>1.2</jstl.api.version>
+<!-- ✂ -->
+
+    <!-- Projektin merkistökoodaus -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+```
 
 Lisäämäsi tagit määrittelevät seuraavat uudet muuttujat versionumeroita varten:
 
@@ -155,30 +165,32 @@ Muuttuja                | Versionumero  | Tarkoitus
 Näitä muuttujia voidaan hyödyntää alempana riippuvuuksia määriteltäessä. Riippuvuudet määritellään `<dependencies>`-tagin sisään, kukin riippuvuus omana `<dependency>`-tagina. Lisää seuraavat plus-merkein korostetut riippuvuudet dependencies-tagin loppuun:
 
 
-<pre>
-&lt;!-- Tiedoston alkuosa jätetty pois... --&gt;
+```xml
+<!-- Tiedoston alkuosa jätetty pois... -->
 
-    &lt;!-- JUnit-testausty&ouml;kalu --&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
-        &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
-        &lt;version&gt;${junit.jupiter.version}&lt;/version&gt;
-        &lt;scope&gt;test&lt;/scope&gt;
-    &lt;/dependency&gt;
-<span style="color: darkgreen; font-weight: bold;">
-    &lt;!-- lisää nämä riippuvuudet (SQLite ja JSTL): --&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.xerial&lt;/groupId&gt;
-        &lt;artifactId&gt;sqlite-jdbc&lt;/artifactId&gt;
-        &lt;version&gt;${sqlite.driver.version}&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-        &lt;artifactId&gt;jstl&lt;/artifactId&gt;
-        &lt;version&gt;${jstl.api.version}&lt;/version&gt;
-    &lt;/dependency&gt;
-</span>&lt;/dependencies&gt;
-</pre>
+    <!-- JUnit-testaustyökalu -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>${junit.jupiter.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+<!-- ✂ lisää nämä riippuvuudet (SQLite ja JSTL): -->
+    <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>${sqlite.driver.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>${jstl.api.version}</version>
+    </dependency>
+<!-- ✂ -->
+
+</dependencies>
+```
 
 
 Tallennettuasi muutetun `pom.xml`-tiedoston Eclipse käynnistää Maven-pluginin asentaakseen uudet riippuvuudet. Varmuuden vuoksi aina tämän tiedoston muokkaamisen jälkeen kannattaa vielä klikata projektia Eclipsen hakemistopuussa hiiren kakkospainikkeella ja valita [Maven-valikosta kohta "Update Project"](https://stackoverflow.com/a/20547404).
@@ -294,11 +306,15 @@ HTML-koodin yhteydessä onkin erittäin tärkeää huolehtia siitä, että kaikk
 >
 > MDN web docs. Entity. [https://developer.mozilla.org/en-US/docs/Glossary/Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity)
 
-Esimerkiksi haitallista koodia sisältävä tuotenimi `"Milk <script>alert('attack!');</script>"` ei siis saa tuottaa HTML-sivulle seuraavaa sisältöä:
 
-<pre class="highlight" style="border: solid red 2px; color: red;"><code>&lt;li&gt;
-    Milk <span style="color: red">&lt;script&gt;alert('attack!');&lt;/script&gt;</span>
-&lt;/li&gt;</code></pre>
+{: .warning }
+> Esimerkiksi haitallista koodia sisältävä tuotenimi `"Milk <script>alert('attack!');</script>"` ei siis saa tuottaa HTML-sivulle seuraavaa sisältöä:
+>
+> ```html
+> <li>
+>     Milk <script>alert('attack!');</script>
+> </li>
+> ```
 
 Yllä oleva koodi sisältää sivulle kuulumatonta JavaScriptiä, joka voi huonossa tapauksessa esimerkiksi kaapata käyttäjän istunnon tai suorittaa sivustolla toimenpiteitä käyttäjän nimissä.
 

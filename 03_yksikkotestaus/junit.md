@@ -5,6 +5,18 @@ nav_order: 3
 ---
 
 # Yksikkötestauksen perusteet
+{: .no_toc }
+
+Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
+{: .fs-6 }
+
+---
+
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
 
 Tähän mennessä olemme ohjelmointikursseilla testanneet kirjoittamiamme ohjelmia suorittamalla niitä, antamalla niille syötteitä ja tarkistamalla ohjelman tulosteita manuaalisesti. Tehtävien arvioinnissa on hyödynnetty Viope-järjestelmää, jossa testausmenetelmä on hyvin samankaltainen: ohjelma suoritetaan, sille annetaan syötteitä ja lopulta ohjelman tulosteet tarkistetaan.
 
@@ -28,7 +40,7 @@ Mikäli olisimme kehittämässä esimerkiksi verkkokauppaa ja siihen liittyvää
 
 ## Oppimateriaalit
 
-Yksikkötestausta käsitellään tämän kurssin näkökulmasta oheisissa [PowerPoint-kalvoissa (PDF)](./yksikkotestaus.pdf).
+Yksikkötestausta käsitellään tämän kurssin näkökulmasta oheisissa [PowerPoint-kalvoissa (PDF)](/kalvot/yksikkotestaus.pdf).
 
 Lisäksi suosittelen perehtymään [JUnit-testaustyökalun omiin käyttöohjeisiin](https://junit.org/junit5/docs/current/user-guide/).
 
@@ -121,7 +133,7 @@ Tällä videolla toteutetaan ja yksikkötestataan EtunimiTilasto-tehtävän tied
 Lisäksi sinun kannattaa tutustua tämän viikon tehtävän alkuperäiseen lähteeseen, josta löydät tekstimateriaaleja sekä videoita tehtävään liittyen: [https://web.mit.edu/6.005/www/fa16/classes/04-code-review/](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/)
 
 
-# Tehtävä
+## Tehtävä
 
 Tämän viikon tehtävänäsi on toteuttaa JUnit-yksikkötestit valmiiksi annetulle esimerkkiluokalle ja korjata sieltä löytämäsi virheet. Testattavana luokkana käytämme seuraavaa `DayOfYear`-luokkaa:
 

@@ -5,11 +5,21 @@ nav_order: 9
 ---
 
 # Harjoitustyö
+{: .no_toc }
 
 Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvostellaan asteikolla 0-5 ja sen painoarvo on 50 % kurssin loppuarvosanasta.
+{: .fs-6 }
 
+
+{: .highlight }
 Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerkiksi Teamsissa kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että *jokainen kirjoittaa itse oman koodinsa*.
 
+---
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
 
 ## Video 1: [Harjoitustyön tehtävänanto](https://web.microsoftstream.com/video/d2c07537-4300-493a-957b-61b5153b4a16) <small>22:44</small>
 

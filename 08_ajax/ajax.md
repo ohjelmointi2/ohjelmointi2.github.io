@@ -5,10 +5,17 @@ nav_order: 8
 ---
 
 # Ajax, JSON ja JavaScript
+{: .no_toc }
 
 Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Vaikka JavaScript muistuttaa nimeltään ja syntaksiltaan monilta osin Javaa, ovat ne kaksi täysin eri ohjelmointikieltä. Tämän viikon tavoitteena ei ole oppia itse JavaScriptiä, vaan tutustua siihen, miten web-sovelluksissa voidaan hyödyntää selainpäässä suoritettavaa JavaScript-koodia käyttöliittymän päivittämiseksi ilman sivulatauksia.
+{: .fs-6 }
 
+---
+## Tällä sivulla:
+{: .no_toc .text-delta }
 
+* Sisällysluettelo
+{:toc}
 
 ## Tämän osion tavoitteet
 

@@ -7,9 +7,12 @@ nav_order: 0
 # 👋 Tervetuloa kurssille!
 
 Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A!
+{: .fs-6 }
 
 Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin.
+{: .fs-6 }
 
+---
 <!--Kurssi toteutetaan täysin virtuaalisesti, eli se ei sisällä oppitunteja kampuksella eikä videoyhteydellä. Oppituntien sijaan saatavillasi on lukuisia videoita ja tekstimuotoista oppimateriaalia.
 
 > *"VIRTUAL on itsenäistä opiskelua toteutuksen aukioloaikana. Virtuaalitoteutuksissa ei ole lukujärjestykseen merkittyä pakollista opetusta tai muuta tapaamista verkossa, vaan opiskelijat suorittavat tehtäviä toteutussuunnitelman aikataulun ja määräaikojen mukaan. Samaan aikaan opiskelevat voivat olla yhteydessä toisiinsa ja virtuaaliopiskelun ohjaajaan keskustelualueen kautta."*

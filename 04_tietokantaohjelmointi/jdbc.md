@@ -6,11 +6,21 @@ has_children: true
 ---
 
 # Tietokantaohjelmointi
+{: .no_toc }
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement.
+{: .fs-6 }
 
+---
+
+{: .highlight }
 **Huom!** Materiaalissa olevien videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
 
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
 
 ## JDBC – Java Database Connectivity
 
@@ -45,7 +55,7 @@ Tällä videolla esitellään JDBC-teknologian perusidea ja käsitteistöä ja v
 
 Videolla esiintyvän ajurin latauslinkki: [https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/latest)
 
-Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
+Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
 
 &nbsp;
@@ -114,7 +124,7 @@ Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [h
 
 Tällä videolla esitellään Javan luokat, joita tarvitset tietokantayhteyksien ja -kyselyiden muodostamiseksi.
 
-Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit). Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](./jdbc.pdf).
+Videolla valmistuvan lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](./videoiden_lahdekoodit). Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
 ### module-info.java ja ClassNotFoundException
 

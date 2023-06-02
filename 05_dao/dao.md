@@ -5,6 +5,17 @@ nav_order: 5
 ---
 
 # Tietokannat ja DAO-malli
+{: .no_toc }
+
+Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete).
+{: .fs-6 }
+
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
+---
 
 Tähän mennessä kurssia olemme tutustuneet ymmärrettävän ja ylläpidettävän koodin kirjoittamiseen, koodin testaamiseen ja tietokantaohjelmointiin. Seuraavaksi rakennamme pienen tietokantaa hyödyntävän komentorivisovelluksen, jonka logiikkaa on mahdollista uudelleenkäyttää ja testata.
 
@@ -50,7 +61,7 @@ Tällä videolla esitellään motivaatio tietokantapohjaisen Java-ohjelman raken
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8efb239a-4700-444a-a4a8-f6ef9bac10e9?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla toteutamme ShoppingListApp-sovelluksen käyttöliittymän ensimmäisiä komentoja [switch-case-rakenteella](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html). Videoilla esiintyvä PowerPoint-esitys on ladattavissa [tästä](../04_tietokantaohjelmointi/jdbc.pdf). Käyttöliittymän erillinen ohje löytyy [täältä](../04_tietokantaohjelmointi/ostoslista-kayttoliittyma).
+Tällä videolla toteutamme ShoppingListApp-sovelluksen käyttöliittymän ensimmäisiä komentoja [switch-case-rakenteella](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html). Videoilla esiintyvä PowerPoint-esitys on ladattavissa [tästä](/kalvot/jdbc.pdf). Käyttöliittymän erillinen ohje löytyy omalta sivultaan.
 
 Videon lopussa käsitellään `finally`-lohkon käyttämistä JDBC-resurssien sulkemiseen kyselyn tekemisen jälkeen. Vaikka videon alkuosa olisi sinulle jo tuttua, katso yhteyksien sulkemista koskeva osuus kohdasta 29:50 alkaen.
 

@@ -5,6 +5,17 @@ nav_order: 6
 ---
 
 # Web-ohjelmointi servleteillä
+{: .no_toc }
+
+Tällä viikolla jatkokehitämme ostoslistasovelluksen arkkitehtuuria siten, että tietokantalogiikkamme eriytetään tekstikäyttöliittymästä. Eriyttäminen mahdollistaa tietokantalogiikan testaamisen yksikkötesteillä sekä myöhemmin saman koodin uudelleenkäytön web-pohjaisella käyttöliittymällä.
+{: .fs-6 }
+
+---
+## Tällä sivulla:
+{: .no_toc .text-delta }
+
+* Sisällysluettelo
+{:toc}
 
 Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettäviin työkaluihin ja termistöön:
 
@@ -260,7 +271,7 @@ Voit hyödyntää yksikkötestaustehtävässä käyttämäämme `DayOfYear`-luok
 
 Välitä servletissä laskettu arvo, eli jäljellä olevien päivien määrä, tätä tarkoitusta varten toteuttamallesi uudelle JSP-sivulle. Voit toteuttaa sivun haluamallasi tavalla, mutta se voi näyttää esimeriksi tältä:
 
-![Christmas countdown](img/christmasCountdown.png)
+![Christmas countdown](/img/christmasCountdown.png)
 
 Arvojen ja pyynnön välittäminen servletiltä JSP-sivulle on esitelty projektipohjassa ja yllä videolla ["Datan välittäminen servletiltä JSP-sivulle"](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1). Aiheesta löytyy myös [paljon muita ohjeita](https://www.google.com/search?q=pass+data+from+servlet+to+jsp+tutorial). Oppimistavoitteiden kannalta tärkeintä on, että päivien laskentaan liittyvä logiikka toteutetaan servletissä, josta tieto välitetään attribuuttina näkymälle (jsp-sivu).
 
@@ -347,7 +358,7 @@ Toisin kuin joululaskurissa, tässä servletissä lasket päivien määrän anne
 
 Lopputulos voi näyttää esimerkiksi tältä:
 
-![Days until given date](img/daysUntil.png)
+![Days until given date](/img/daysUntil.png)
 
 Tutoriaalissa ["How to handle HTML form data with Java Servlet"](https://www.codejava.net/java-ee/servlet/handling-html-form-data-with-java-servlet) käsitellään tarkemmin lomake- ja parametritietojen käsittelyä servleteillä. Tutoriaali esittelee teknisen toiminnallisuuden hyvin, mutta älä ota mallia siinä sovelletuista salasanojen käsittelyyn ja näyttämiseen liittyvistä huonoista käytännöistä.
 

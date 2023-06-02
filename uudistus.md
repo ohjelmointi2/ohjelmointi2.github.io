@@ -6,7 +6,8 @@
     * hakemistojen ja tiedostojen käsittely:
         * etsi hakemistosta ja alihakemistoista tiedostot, joiden päätteenä on X tai joiden nimessä on Y
 * annotaatiot @SerializedName, @Expose, @Until, @Since, @JsonAdapter
-* Maven
+* Gradle / Maven
+    * Gradle tutorial for complete beginners https://youtu.be/-dtcEMLNmn0
     * riippuvuudet ja riippuvuuksien riippuvuudet
     * tietokanta
     * gson
@@ -18,6 +19,33 @@
     * tiedoston lukija annetaan parametrina (ei tarvite tietää tiedoston formaattia tai sijaintia)
 
 
+# Tehtäväideat
+
+* Lämmittely
+    * Pokeri (väri, suora, värisuora)
+    * Kivi, paperi sakset
+
+* Tietorakenteet ja algoritmit
+    * Tapahtuma-aineisto
+        * Suodatusfunktio
+        * Lajittelufunktio
+    * Sanaruudukko
+        * Sanojen etsiminen vaaka- ja pystysuunnassa
+
+* Rajapinnat
+    * Sudoku-ruudukon tallennus
+        * 1-ulotteinen merkkijono, jossa numeroiden indeksit "kovakoodattu"
+        * 2-ulotteinen merkkijono
+    * Kaupunkisuunnitelman tallentaminen
+        * "Talo siellä, talo täällä"
+        ```
+        🏠             🏠🌳🌳         🌳🌳🏠        🌳🌳🌳🌳       🏠
+               🏠🏠🏠       🏠            🏠🏠🏠🏠🏠🌳🌳🌳🌳🌳🌳🌳🌳
+        ```
+
+* Pokeri
+    * Pari, kolme, neljä, täyskäsi
+    * Väri, suora, värisuora
 
 ## Sisältö
 

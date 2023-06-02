@@ -338,12 +338,13 @@ Tietokanta-ajuri `sqlite-jdbc-*.jar` noudattaa lisenssiä [Apache License versio
 Chinook-tietokannan on luonut [Luis Rocha](https://github.com/lerocha) ja se on lisensoitu avoimena lähdekoodina [MIT-lisenssillä](https://github.com/lerocha/chinook-database/blob/master/LICENSE.md).
 
 
+## Just the Docs -teema
+
+Sivuston sivupohjana käytetään [Just the Docs](https://github.com/just-the-docs/just-the-docs) -nimistä teemaa, joka on lisensoitu [MIT-lisenssillä](https://github.com/just-the-docs/just-the-docs/blob/main/LICENSE.txt).
+
+
 ## Tämän oppimateriaalin lisenssi
 
 Tämän oppimateriaalin on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä.
 
 Sivuston lähdekoodit löydät osoitteesta [https://github.com/ohjelmointi2/ohjelmointi2.github.io](https://github.com/ohjelmointi2/ohjelmointi2.github.io).
-
-## Kurssin kuvakkeen lisenssi
-
-Kurssin sivujen favicon-kuvake on lisensoitu [CC-BY 4.0 -lisenssillä](favicon-license.txt).

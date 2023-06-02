@@ -1,3 +1,9 @@
+---
+title: Videoiden lähdekoodit
+layout: default
+parent: Tietokantaohjelmointi
+---
+
 # Videoiden lähdekoodit
 
 ## TietokantaanYhdistaminen.java

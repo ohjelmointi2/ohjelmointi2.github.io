@@ -1,10 +1,12 @@
+---
+title: Harjoitustyö
+layout: default
+nav_order: 9
+---
+
 # Harjoitustyö
 
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
-
-Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvostellaan asteikolla 0-5 ja sen painoarvo on 50 % kurssin loppuarvosanasta. 
+Kurssin viimeisillä viikoilla vahvistatte aikaisempina viikkoina opittuja taitoja toteuttaessanne yksilötyönä oman tietokantapohjaisen web-sovelluksen. Harjoitustyö arvostellaan asteikolla 0-5 ja sen painoarvo on 50 % kurssin loppuarvosanasta.
 
 Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerkiksi Teamsissa kuten aikaisemmilla tehtäväkierroksilla. Kriteerinä on, että *jokainen kirjoittaa itse oman koodinsa*.
 
@@ -86,14 +88,14 @@ Poista myös projektipohjasta omaan harjoitustyöhönsi kuulumattomat tiedostot,
 Käytämme harjoitustyössä valmista musiikkitietokantaa nimeltä [**Chinook**](https://github.com/lerocha/chinook-database):
 
 > *"Chinook is a sample database available for SQL Server, Oracle, MySQL, etc."*
-> 
+>
 > *"The Chinook data model represents a digital media store, including tables for artists, albums, media tracks, invoices and customers."*
-> 
+>
 > [Luis Rocha, Chinook Database](https://github.com/lerocha/chinook-database)
 
-Lataa itsellesi valmis tietokanta [SQLite-muodossa tästä](https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite). 
+Lataa itsellesi valmis tietokanta [SQLite-muodossa tästä](https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite).
 
-Chinook-tietokanta sisältää lukuisia tietokantatauluja ja paljon valmista dataa, mutta **tässä harjoitustyössä ainoastaan `Artist`-taulu on luonteeltaan pakollinen**. 
+Chinook-tietokanta sisältää lukuisia tietokantatauluja ja paljon valmista dataa, mutta **tässä harjoitustyössä ainoastaan `Artist`-taulu on luonteeltaan pakollinen**.
 
 Taulut `Album` ja `Track` tulevat tarpeellisiksi tähdätessäsi korkeampiin arvosanoihin. Kaikki muut taulut voit jättää harjoitustyössäsi huomioimatta.
 
@@ -108,7 +110,7 @@ Taulut `Album` ja `Track` tulevat tarpeellisiksi tähdätessäsi korkeampiin arv
 
 * [SQLite tools -video](https://video.haaga-helia.fi/media/SQLite+tools/0_pez4r54j)
 
-    Samaa Chinook-tietokantaa käytetään tässä [SQLite tools -videossa](https://video.haaga-helia.fi/media/SQLite+tools/0_pez4r54j). Tästä videosta voi olla sinulle hyötyä myös tämän tehtävän tekemisessä. 
+    Samaa Chinook-tietokantaa käytetään tässä [SQLite tools -videossa](https://video.haaga-helia.fi/media/SQLite+tools/0_pez4r54j). Tästä videosta voi olla sinulle hyötyä myös tämän tehtävän tekemisessä.
 
 * [SQLite tools -komentorivityökalut](https://sqlite.org/download.html)
 
@@ -167,7 +169,7 @@ Toteutuksessa tietokantaoperaatiot suositellaan jaettavaksi kahteen erilliseen D
 
 * **ArtistDao**
 
-    `Artist`-tauluun liittyvät operaatiot 
+    `Artist`-tauluun liittyvät operaatiot
 
 * **AlbumDao**
 
@@ -188,16 +190,16 @@ Esimerkkikyselyitä hakujen tekemiseksi:
 
 ```sql
 -- artistien hakeminen osittaisen nimen perusteella:
-SELECT ArtistId, Name FROM Artist 
-    WHERE Name LIKE ? 
+SELECT ArtistId, Name FROM Artist
+    WHERE Name LIKE ?
     ORDER BY Name ASC;
 
 -- albumien hakeminen osittaisen title:n perusteella:
-SELECT AlbumId, ArtistId, Title FROM Album 
+SELECT AlbumId, ArtistId, Title FROM Album
     WHERE Title LIKE ? ORDER BY Title ASC;
 ```
 
-**Huom!** Muista lisätä `LIKE`-kyselyyn hakusanan alkuun ja loppuun prosenttimerkit, jotta löydät myös osittaiset osumat: 
+**Huom!** Muista lisätä `LIKE`-kyselyyn hakusanan alkuun ja loppuun prosenttimerkit, jotta löydät myös osittaiset osumat:
 
 ```java
 preparedStatement.setString(1, "%" + searchTerm + "%");
@@ -244,7 +246,7 @@ Muista siis hyödyntää aikaisemmilta viikoilta tuttuja `PreparedStatement`-luo
 
 Harjoitustyöstä on tehty referenssitoteutus nimeltä "Music catalog". Referenssitoteutus on **laajuudeltaan suurempi, kuin mitä edellytetään tällä kurssilla**. Emme ole käsitelleet mm. istuntoja, joita tarvittaisiin käyttäjäkohtaisen hakuhistorian tai suosikkilistan toteuttamiseksi.
 
-Voit katsoa harjoitustyön referenssitoteutuksen esittelyn tästä videosta: 
+Voit katsoa harjoitustyön referenssitoteutuksen esittelyn tästä videosta:
 
 **[Harjoitustyön esittely (ohjelmointi 2)](https://video.haaga-helia.fi/media/t/0_x0ojb3pq)**
 
@@ -272,10 +274,10 @@ INSERT INTO Artist (Name) VALUES (?);
 INSERT INTO Album (Title, ArtistId) VALUES (?, ?);
 
 -- kaikkien artistien hakeminen yhdistettynä tietoon albumien määrästä (bonus):
-SELECT Artist.ArtistId, Name, COUNT(AlbumId) AS AlbumCount 
-    FROM Artist 
-    LEFT JOIN Album ON Album.ArtistId = Artist.ArtistId 
-    GROUP BY Artist.ArtistId 
+SELECT Artist.ArtistId, Name, COUNT(AlbumId) AS AlbumCount
+    FROM Artist
+    LEFT JOIN Album ON Album.ArtistId = Artist.ArtistId
+    GROUP BY Artist.ArtistId
     ORDER BY Name ASC;
 ```
 
@@ -290,7 +292,7 @@ Jos käytit harjoitustyössäsi versionhallintaa (Git), aja komentorivillä proj
 
     git log --oneline --decorate > git-log.txt
 
-Edellä mainittu komento luo projektiisi tiedoston `git-log.txt`, joka sisältää listan tehdyistä commiteista. Voit halutessasi lukea komennon selityksen [Atlassianin artikkelista](https://www.atlassian.com/git/tutorials/git-log#formatting-log-output). 
+Edellä mainittu komento luo projektiisi tiedoston `git-log.txt`, joka sisältää listan tehdyistä commiteista. Voit halutessasi lukea komennon selityksen [Atlassianin artikkelista](https://www.atlassian.com/git/tutorials/git-log#formatting-log-output).
 
 Jos käytit työssäsi komentorivin sijasta jotain muuta työkalua, voit `git-log.txt`-tiedoston sijasta liittää projektiisi kuvankaappauksen työkalusi näkymästä. Jos koodisi on GitHubissa tai vastaavassa versionhallintapalvelussa, riittää, että mainitset sen osoitteineen `git-log.txt`-tiedostossasi.
 
@@ -312,4 +314,3 @@ Muistathan jättää lopuksi kurssista [opintojaksopalautetta MyNetissä](https:
 Chinook-tietokannan on luonut [Luis Rocha](https://github.com/lerocha) ja se on lisensoitu avoimena lähdekoodina [MIT-lisenssillä](https://github.com/lerocha/chinook-database/blob/master/LICENSE.md).
 
 
-<script src="/scripts.js"></script>

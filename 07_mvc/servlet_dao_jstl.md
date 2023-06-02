@@ -1,8 +1,10 @@
+---
+title: Verkkosovellus kolmikerrosarkkitehtuurilla
+layout: default
+nav_order: 7
+---
+
 # Verkkosovellus kolmikerrosarkkitehtuurilla
-
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
 
 Tällä viikolla tavoitteinamme on rakentaa kolmikerrosarkkitehtuuria noudattava web-sovellus, joka yhdistää tähän mennessä opettelemamme erilliset tietokanta- ja web-teknologiat yhdeksi loogiseksi kokonaisuudeksi.
 
@@ -406,4 +408,3 @@ Olemme nyt jatkokehittäneet aikaisemmin toteuttamamme komentorivikäyttöliitty
 Jotta ohjelma olisi lopulta hyödyllinen ostoslistasovellus, siihen tulisi vielä lisätä lukuisia ominaisuuksia, kuten tuoterivin poistaminen. Tutustumme hieman myöhemmin myös `doDelete`-metodiin, jonka avulla toteutamme rivien poistamisen ostoslistalta.
 
 
-<script src="/scripts.js"></script>

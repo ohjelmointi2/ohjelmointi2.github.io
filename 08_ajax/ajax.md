@@ -1,9 +1,10 @@
+---
+title: Ajax, JSON ja JavaScript
+layout: default
+nav_order: 8
+---
+
 # Ajax, JSON ja JavaScript
-
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
-
 
 Tämän viikon tehtävissä käytetään Javan lisäksi JavaScriptiä. Vaikka JavaScript muistuttaa nimeltään ja syntaksiltaan monilta osin Javaa, ovat ne kaksi täysin eri ohjelmointikieltä. Tämän viikon tavoitteena ei ole oppia itse JavaScriptiä, vaan tutustua siihen, miten web-sovelluksissa voidaan hyödyntää selainpäässä suoritettavaa JavaScript-koodia käyttöliittymän päivittämiseksi ilman sivulatauksia.
 
@@ -165,9 +166,9 @@ async function removeFromServer(productId) {
 }
 
 /**
- * Etsii sivulta annettua id:tä vastaavan ostoslistan rivin ja poistaa sen sivulta, 
+ * Etsii sivulta annettua id:tä vastaavan ostoslistan rivin ja poistaa sen sivulta,
  * mikäli poistettava rivi löytyi. Palauttaa true tai false riippuen siitä, onnistuiko operaatio.
- * 
+ *
  * @param {number} productId Poistettavan tuoterivin id
  * @return {boolean} true, mikäli poisto onnistui
  */
@@ -271,7 +272,7 @@ Tämän osan jälkeen painikkeen painamisen pitäisi poistaa ostoslistan rivit t
 
 Palauta tähän tehtävään kuuluvat servlet- ja JSP-tiedostot Teams-palautuslaatikkoon erillisinä tiedostoina. Myös osittaiset ratkaisut arvostellaan, joten voit palautta vain osan tehtävistä.
 
-Mikäli muutit annettua JavaScript-koodia, palauta myös muutettu JS-tiedosto. Lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`). 
+Mikäli muutit annettua JavaScript-koodia, palauta myös muutettu JS-tiedosto. Lisää tarvittaessa tiedostopäätteeksi `.txt`, jos Teams ei hyväksy `.js`-päätteistä tiedostoa (esim. `app.js.txt`).
 
 **Älä palauta koko projektia äläkä pakkaa tiedostoja.**
 
@@ -292,4 +293,3 @@ Mikäli muutit annettua JavaScript-koodia, palauta myös muutettu JS-tiedosto. L
 Olemme tässä tehtävässä toteuttaneet yksittäisen ominaisuuden hyödyntäen Ajax-teknologioita. Sovelluksemme pääsääntöisesti noudattaa edelleen aikaisemmilta viikoilta tuttua arkkitehtuuria ja toimintamallia. Voit halutessasi jatkokehittää sovellukseesi lisää dynaamisia ominaisuuksia hyödyntäen esimerkkiprojektia ja löytämiäsi ohjeita.
 
 
-<script src="/scripts.js"></script>

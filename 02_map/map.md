@@ -1,9 +1,10 @@
+---
+title: Map-tietorakenne
+layout: default
+nav_order: 2
+---
+
 # Map-tietorakenne
-
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
-
 
 Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai taulukoita (`String[]`), kun olemme halunneet käsitellä useita saman typpisiä asioita. Javassa on myös lukuisia muita **kokoelmia**, joihin voimme koota dataa. Kokoelma tarkoittaa yksinkertaisesti oliota, joka kokoaa alkioita yhteen ([Oracle.com](https://docs.oracle.com/javase/tutorial/collections/intro/index.html)).
 
@@ -98,7 +99,7 @@ Map<String, String> tietovarasto = new HashMap<String, String>();
 tietovarasto.put("avain", "arvo");
 ```
 
-Mikäli mapissa on jo valmiiksi olemassa sille annettu arvo, vanha arvo korvataan uudella. 
+Mikäli mapissa on jo valmiiksi olemassa sille annettu arvo, vanha arvo korvataan uudella.
 
 Arvojen hakeminen mapista puolestaan tehdään `get`-metodilla:
 
@@ -374,9 +375,8 @@ Tarkat tehtävänannot ja tehtävissä tarvittavat tiedostot löytyvät [Viopest
 1. **⭐ Bonus ⭐ Usean käännöksen sanakirja**
 
     Tämä on edistynyt bonustehtävä, jonka pisteet lasketaan mukaan tehtävien yhteispisteisiin, mutta jonka tekemättä jättäminen ei vaikuta arvosanaasi. Tehtävässä samalle avaimelle tallennetaan useita arvoja hyödyntämällä samalla sekä Map-tietorakennetta että listoja.
-    
+
     Tämä tehtävä on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/#exercise-3-sanakirja) ja se on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
 
 Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viopesta](https://vw4.viope.com/).
 
-<script src="/scripts.js"></script>

@@ -1,8 +1,10 @@
+---
+title: Web-ohjelmointi servleteillä
+layout: default
+nav_order: 6
+---
+
 # Web-ohjelmointi servleteillä
-
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
 
 Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettäviin työkaluihin ja termistöön:
 
@@ -24,7 +26,7 @@ Oppitunnin esimerkkien ideoita on lainattu [Telusko](https://www.youtube.com/cha
 
 Gitin avulla ohjelmistokehittäjät hallinnoivat ohjelmistojensa versioita ja jakavat koodin useiden kehittäjien välillä. Git mahdollistaa myös samalle ohjelmistolle useat rinnakkaiset kehityshaarat (branch), joiden avulla ohjelmiston eri ominaisuuksia voidaan kehittää samanaikaisesti toisistaan riippumatta.
 
-Yksi tämän kurssin tavoitteista on tutustuttaa sinut versionhallinnan perusteisiin. Siksi kaikki kurssin materiaalit ja esimerkkikoodit jaetaan gitin avulla GitHub-palvelussa. Tällä viikolla käytettävä web-projektipohja löytyy GitHubista osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template). 
+Yksi tämän kurssin tavoitteista on tutustuttaa sinut versionhallinnan perusteisiin. Siksi kaikki kurssin materiaalit ja esimerkkikoodit jaetaan gitin avulla GitHub-palvelussa. Tällä viikolla käytettävä web-projektipohja löytyy GitHubista osoitteesta [https://github.com/ohjelmointi2/embedded-tomcat-template](https://github.com/ohjelmointi2/embedded-tomcat-template).
 
 Kurssin tehtävien suorittamiseksi sinun ei tarvitse rekisteröityä GitHubiin, vaan riittää että kloonaat valmiit koodit itsellesi tämän viikon ensimmäisten videoiden esimerkkien mukaisesti. Sinun ei myöskään tarvitse asentaa Git-työkaluja, vaan ne löytyvät Eclipsestä valmiina.
 
@@ -60,7 +62,7 @@ Videolla esiintyvät sivut:
 
 Edellisellä videolla kloonattu [kurssin projektipohja](https://github.com/ohjelmointi2/embedded-tomcat-template) käyttää Tomcat-sovelluspalvelinta "upotettuna" Java-projektiisi (embedded Tomcat). Projekti on rakennettu siten, että sen riippuvuuksia hallitaan automaattisesti Maven-työkalun avulla. Maven-työkalun avulla projektin riippuvuudet, kuten tässä web-palvelin, on mahdollista asentaa osaksi omaa sovellustasi, joten sitä ei tarvitse asentaa käyttöjärjestelmääsi erillisenä ohjelmana.
 
-Eclipse sisältää Maven-työkalun sisäänrakennettuna, joten et tarvitse Mavenin käyttämiseksi erillisiä asennuksia. Eclipse osaa Mavenin avulla asentaa Tomcatin ja muut projektin automaattisesti kloonattuasi projektin. 
+Eclipse sisältää Maven-työkalun sisäänrakennettuna, joten et tarvitse Mavenin käyttämiseksi erillisiä asennuksia. Eclipse osaa Mavenin avulla asentaa Tomcatin ja muut projektin automaattisesti kloonattuasi projektin.
 
 Projektipohjan asennustapa on todettu kohtuullisen helpoksi ja samat tavat ovat hyödynnettävissä myös muilla kehitystyökaluilla (esim. [VS Code](https://code.visualstudio.com/), [IntelliJ IDEA](https://www.jetbrains.com/idea/)) ja erilaisissa suoritusympäristöissä (esim. [Heroku-pilvialusta](https://devcenter.heroku.com/articles/create-a-java-web-application-using-embedded-tomcat), [Spring boot -sovelluskehys](https://www.springboottutorial.com/spring-boot-with-embedded-servers-tomcat-jetty)).
 
@@ -82,7 +84,7 @@ Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https:
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e404ae09-df29-49d5-abc9-10d0f5d43010?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla luomme projektiin itsellemme uuden kehityshaaran ja viemme sen GitHub:iin. 
+Tällä videolla luomme projektiin itsellemme uuden kehityshaaran ja viemme sen GitHub:iin.
 
 &nbsp;-->
 
@@ -92,7 +94,7 @@ Tällä videolla luomme projektiin itsellemme uuden kehityshaaran ja viemme sen 
 > *"Web-sovellusten suunnittelussa noudatetaan useita arkkitehtuurimalleja. Tyypillisimpiä näistä ovat MVC-arkkitehtuuri sekä kerrosarkkitehtuuri. Kummassakin perusperiaatteena on vastuiden jako selkeisiin osakokonaisuuksiin."*
 >
 > *"MVC-arkkitehtuurin tavoitteena on käyttöliittymän erottaminen sovelluksen toiminnasta siten, että käyttöliittymät eivät sisällä sovelluksen toiminnan kannalta tärkeää sovelluslogiikkaa. MVC-arkkitehtuurissa ohjelmisto jaetaan kolmeen osaan: malliin (model, tiedon tallennus- ja hakutoiminnallisuus), näkymään (view, käyttöliittymän ulkoasu ja tiedon esitystapa) ja käsittelijään (controller, käyttäjältä saatujen käskyjen käsittely sekä sovelluslogiikka)."*
-> 
+>
 > *"Web-sovelluksissa käyttäjän pyyntö ohjautuu kontrollerille, joka sisältää sovelluslogiikkaa. Kontrolleri kutsuu pyynnöstä riippuen mallin toiminnallisuuksia ja hakee sieltä esimerkiksi tietoa. Tämän jälkeen pyyntö ohjataan näkymän luomisesta vastuulle olevalle komponentilla ja näkymä luodaan. Lopulta näkymä palautetaan vastauksena käyttäjän tekemälle pyynnölle."*
 >
 > Lähde: Helsingin yliopiston Agile Education Research -tutkimusryhmä. [Sovelluksen rakenne, Web-palvelinohjelmointi Java 2021](https://web-palvelinohjelmointi-21.mooc.fi/osa-4/3-sovelluksen-rakenne). [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi)
@@ -138,7 +140,7 @@ Monissa tapauksissa luokkien uudelleenlataaminen riittää, mutta uusia servlett
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fed5e77-69ae-415f-8a48-418ea39330a4?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia parametreja servletissämme. 
+Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia parametreja servletissämme.
 
 Videolla koodattavat [Servlet-luokat löydät täältä](https://gist.github.com/swd1tn002/ef056a7262b8c27a2dd66c6772343807).
 
@@ -154,7 +156,7 @@ Servlettien yhteydessä HTML-koodi halutaan eriyttää muusta Java-koodista omik
 
 <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/44037d9b-8237-4f63-9d45-75d35ccb447d?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
 
-Tällä videolla luomme HTML-lomakkeen, jolla lähetämme dataa servletillemme. Opettelemme myös välittämään servleteille tulleet pyynnöt palvelimen sisäisesti JSP-sivulle. 
+Tällä videolla luomme HTML-lomakkeen, jolla lähetämme dataa servletillemme. Opettelemme myös välittämään servleteille tulleet pyynnöt palvelimen sisäisesti JSP-sivulle.
 
 Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.github.com/swd1tn002/fed086e14a8de2a12a0d4db2e59951e1).
 
@@ -193,7 +195,7 @@ Tämä video esittelee perusteet HTTP-palvelimen toiminnassa dynaamisten sivujen
 
 <!--[![YouTube: JSTL tutorial part 1](https://img.youtube.com/vi/KmREMEhj5eE/hq3.jpg)](https://youtu.be/KmREMEhj5eE)-->
 
-Tämä video esittelee Java-muuttujien välittämisen JSP-sivuille ja niiden arvojen näyttämisen sivulla.  
+Tämä video esittelee Java-muuttujien välittämisen JSP-sivuille ja niiden arvojen näyttämisen sivulla.
 
 
 **[YouTube: JSTL Tutorial part 2 Core Tags](https://youtu.be/R0EnI9_ZMA0)**
@@ -292,7 +294,7 @@ Yllä `contentType` lisää selaimille "otsikon" (header), jossa kerrotaan sivun
 
 Tämän viikon viimeisessä osatehtävässä toteutetaan edellisen servletin kaltainen päivälaskuri, jonka avulla voidaan laskea kesto mihin tahansa käyttäjän valitsemaan päivään.
 
-HTTP:n GET-tyyppisen pyynnön mukana voidaan välittää parametreja URL-osoitteen lopussa, kuten `http://localhost:8080/hello?firstName=John&lastName=Doe`. 
+HTTP:n GET-tyyppisen pyynnön mukana voidaan välittää parametreja URL-osoitteen lopussa, kuten `http://localhost:8080/hello?firstName=John&lastName=Doe`.
 
 Kysymysmerkki `?` erottaa [parametrit](https://en.wikipedia.org/wiki/Query_string) polusta, ja `&`-merkit erottelevat eri parametrit toisistaan.
 
@@ -314,11 +316,11 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 }
 ```
 
-Huomaa, että HTTP-pyynnön parametrit ovat **aina merkkijonoja**, vaikka niissä esiintyisikin esim. numeroita: 
+Huomaa, että HTTP-pyynnön parametrit ovat **aina merkkijonoja**, vaikka niissä esiintyisikin esim. numeroita:
 
     http://localhost:8080/sum?a=3&b=4
 
-Tarvittaessa numeeriset parametrit voidaan muuttaa kokonaisluvuiksi kuten muussakin Java-koodissa, eli esimerkiksi `Integer`-luokan `parseInt`-metodilla: 
+Tarvittaessa numeeriset parametrit voidaan muuttaa kokonaisluvuiksi kuten muussakin Java-koodissa, eli esimerkiksi `Integer`-luokan `parseInt`-metodilla:
 
 ```java
 @Override
@@ -341,7 +343,7 @@ Toteuta uusi servlet `DaysUntilServlet`, joka saa parametreinaan päivän, kuuka
 
 Kun olet saanut parametrit `year`, `month` ja `day` muutettua kokonaisluvuiksi, voit muodostaa niitä vastaavan päivämäärän esim. [LocalDate-luokan](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) avulla.
 
-Toisin kuin joululaskurissa, tässä servletissä lasket päivien määrän annetun päivämäärän ja nykyisen päivämäärän välillä. Päivien välin laskemisessa voit käyttää [DAYS.between(today, otherDate)](https://stackoverflow.com/a/27006098) -metodia. Toteuta myös uusi JSP-sivu sekä datan välittäminen servletiltä sivulle edellisen tehtävän mukaisesti. 
+Toisin kuin joululaskurissa, tässä servletissä lasket päivien määrän annetun päivämäärän ja nykyisen päivämäärän välillä. Päivien välin laskemisessa voit käyttää [DAYS.between(today, otherDate)](https://stackoverflow.com/a/27006098) -metodia. Toteuta myös uusi JSP-sivu sekä datan välittäminen servletiltä sivulle edellisen tehtävän mukaisesti.
 
 Lopputulos voi näyttää esimerkiksi tältä:
 
@@ -440,7 +442,6 @@ Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan
 
 ## Loppusanat
 
-Olemme nyt toteuttaneet pienen verkkosovelluksen sekä komentorivillä toimivan tietokantapohjaisen ostoslistasovelluksen. Seuraavassa vaiheessa yhdistämme osaamisemme ja toteutamme ostoslistasovelluksen verkkopalveluna! 
+Olemme nyt toteuttaneet pienen verkkosovelluksen sekä komentorivillä toimivan tietokantapohjaisen ostoslistasovelluksen. Seuraavassa vaiheessa yhdistämme osaamisemme ja toteutamme ostoslistasovelluksen verkkopalveluna!
 
 
-<script src="/scripts.js"></script>

@@ -1,8 +1,10 @@
-# Tietokannat ja DAO-malli 
+---
+title: Tietokannat ja DAO-malli
+layout: default
+nav_order: 5
+---
 
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
+# Tietokannat ja DAO-malli
 
 Tähän mennessä kurssia olemme tutustuneet ymmärrettävän ja ylläpidettävän koodin kirjoittamiseen, koodin testaamiseen ja tietokantaohjelmointiin. Seuraavaksi rakennamme pienen tietokantaa hyödyntävän komentorivisovelluksen, jonka logiikkaa on mahdollista uudelleenkäyttää ja testata.
 
@@ -240,7 +242,7 @@ Tämä koodiesimerkki perustuu käyttäjien [Yishai sekä Lukas Eder StackOverfl
 
 ### Ostoslistasovelluksen liittäminen DAO-luokkaan
 
-Muuta tunnilla esiteltyä ja edellisessä tehtävässä kehittämääsi `ShoppingListApp`-ostoslistasovellusta siten, että **tietokantakyselyitä ei suoriteta enää samassa luokassa käyttöliittymän kanssa**. 
+Muuta tunnilla esiteltyä ja edellisessä tehtävässä kehittämääsi `ShoppingListApp`-ostoslistasovellusta siten, että **tietokantakyselyitä ei suoriteta enää samassa luokassa käyttöliittymän kanssa**.
 
 Sen sijaan käyttöliittymäluokkasi tulee hyödyntää uutta DAO-luokkaa tietokannan käsittelyyn ja toimia olio-ohjelmointikäytäntöjen mukaisesti hyödyntäen listoja ja `ShoppingListItem`-olioita.
 
@@ -261,7 +263,7 @@ Yleinen tapa ratkaista edellä esitettyjä ongelmia on asettaa ympäristökohtai
 
 #### Ympäristömuuttujien hyödyntäminen
 
-Ympäristömuuttujat ovat eräänlainen käyttöjärjestelmäkohtainen Map-tietorakenne, jossa eri arvoja voidaan käsitellä avainten, eli ympäristömuuttujien nimien, avulla. Ympäristömuuttujien arvoja voidaan Javassa lukea `System.getenv`-metodilla esimerkiksi seuraavasti. 
+Ympäristömuuttujat ovat eräänlainen käyttöjärjestelmäkohtainen Map-tietorakenne, jossa eri arvoja voidaan käsitellä avainten, eli ympäristömuuttujien nimien, avulla. Ympäristömuuttujien arvoja voidaan Javassa lukea `System.getenv`-metodilla esimerkiksi seuraavasti.
 
 ```diff
 
@@ -290,7 +292,7 @@ public class JDBCShoppingListItemDao implements ShoppingListItemDao {
         return DriverManager.getConnection(JDBC_URL);
     }
 }
-``` 
+```
 
 Kun koodi on asetettu lukemaan tietokannan sijainti ympäristömuuttujasta, täytyy tämä sijainti lisätä seuraavaksi `JDBC_DATABASE_URL`-nimiseen ympäristömuuttujaan.
 
@@ -315,7 +317,7 @@ Tällä kurssilla voi kuitenkin olla yksinkertaista asettaa ympäristömuuttuja 
 
 *Tämä osa on valinnainen, mutta sitä suositellaan, mikäli olet saanut kaikki tähänastiset harjoitukset tehtyä.*
 
-Nyt kun tietokannan sijainti on konfiguroitavissa ympäristömuuttujilla, voit toteuttaa DAO-luokkasi metodeille yksikkötestit, jotka käyttävät eri tietokantaa kuin varsinainen `ShoppingListApp`-ohjelmaluokka. 
+Nyt kun tietokannan sijainti on konfiguroitavissa ympäristömuuttujilla, voit toteuttaa DAO-luokkasi metodeille yksikkötestit, jotka käyttävät eri tietokantaa kuin varsinainen `ShoppingListApp`-ohjelmaluokka.
 
 Luo itsellesi testejä varten kopio SQLite-tietokannasta (tiedostosta `shoppingList.sqlite`). Näin voit poistaa ja lisätä rivejä testeissäsi ilman, että se vaikuttaa ohjelman normaaliin käyttöön.
 
@@ -323,7 +325,7 @@ Aseta Eclipseen testiluokan suoritusasetuksista ympäristömuuttujaan testitieto
 
 #### Tietokannan alustaminen testeissä
 
-Tietokantaa hyödyntävän koodin testaaminen voi olla vaikeaa, mikäli tietokantaan jää edellisten testikertojen jäljiltä dataa, joka vaikuttaa testien suoritukseen seuraavalla kerralla. Tämän vuoksi [testitietokanta tyypillisesti tyhjennetään ja alustetaan aina samalla datalla](https://www.google.com/search?q=reset+database+between+junit+tests) ennen jokaista testitapausta. 
+Tietokantaa hyödyntävän koodin testaaminen voi olla vaikeaa, mikäli tietokantaan jää edellisten testikertojen jäljiltä dataa, joka vaikuttaa testien suoritukseen seuraavalla kerralla. Tämän vuoksi [testitietokanta tyypillisesti tyhjennetään ja alustetaan aina samalla datalla](https://www.google.com/search?q=reset+database+between+junit+tests) ennen jokaista testitapausta.
 
 Voit kirjoittaa testiluokkaasi testien alustuksen erilliseen metodiin [`@BeforeEach`](https://howtodoinjava.com/junit5/before-each-annotation-example/)-annotaation avulla. JUnit suorittaa `@BeforeEach`-metodisi automaattisesti ennen jokaista `@Test`-metodia, joten tietokannassa on ennen jokaista testiä aina ennalta tiedossa oleva sisältö.
 
@@ -337,10 +339,10 @@ class JDBCShoppingListItemDaoTest {
     /**
      * This method clears the test database and inserts two rows directly in the
      * database before each test with a delete statement.
-     * 
+     *
      * This way every time the tests are executed they have exactly the same data to
      * work with.
-     * 
+     *
      * !! Make sure to always use a different database environment variable for each
      * execution environment to prevent data loss or corruption !!
      */
@@ -366,4 +368,3 @@ Palauta kaikki tehtävissä kirjoittamasi lähdekoodit Teamsiin määräaikaan m
 Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen.
 
 
-<script src="/scripts.js"></script>

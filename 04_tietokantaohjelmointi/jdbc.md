@@ -1,9 +1,11 @@
+---
+title: Tietokantaohjelmointi
+layout: default
+nav_order: 4
+has_children: true
+---
+
 # Tietokantaohjelmointi
-
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
-
 
 Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement.
 
@@ -389,4 +391,3 @@ Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin määräaika
 
 Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen. Muista myös, että voit pyytää apua tehtävässä kohtaamiisi ongelmiin Teamsissa!
 
-<script src="/scripts.js"></script>

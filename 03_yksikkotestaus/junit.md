@@ -1,9 +1,10 @@
+---
+title: Yksikkötestauksen perusteet
+layout: default
+nav_order: 3
+---
+
 # Yksikkötestauksen perusteet
-
-<link href="/styles.css" rel="stylesheet">
-
-[⇦ takaisin kurssin etusivulle](../)
-
 
 Tähän mennessä olemme ohjelmointikursseilla testanneet kirjoittamiamme ohjelmia suorittamalla niitä, antamalla niille syötteitä ja tarkistamalla ohjelman tulosteita manuaalisesti. Tehtävien arvioinnissa on hyödynnetty Viope-järjestelmää, jossa testausmenetelmä on hyvin samankaltainen: ohjelma suoritetaan, sille annetaan syötteitä ja lopulta ohjelman tulosteet tarkistetaan.
 
@@ -71,7 +72,7 @@ Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://ww
 
 ## Testaaminen käytännössä:
 
-"Oikean ohjelman" testaamisessa haastetta tuo usein ohjelman rakenne, joka voi tehdä siitä vaikeasti testattavan. Seuraavilla videoesimerkeillä esitellään Map-aiheen yhteydessä luodun EtunimiTilasto-sovelluksen testausta yksikkötestien avulla ja muodostetaan ohjelman rakenne siten, että sen osat ovat testattavissa, laajennettavissa ja uudelleenkäytettävissä. 
+"Oikean ohjelman" testaamisessa haastetta tuo usein ohjelman rakenne, joka voi tehdä siitä vaikeasti testattavan. Seuraavilla videoesimerkeillä esitellään Map-aiheen yhteydessä luodun EtunimiTilasto-sovelluksen testausta yksikkötestien avulla ja muodostetaan ohjelman rakenne siten, että sen osat ovat testattavissa, laajennettavissa ja uudelleenkäytettävissä.
 
 Videoilla käsitellyt lähdekoodit löytyvät [täältä](./yksikkotestaus_lahdekoodit):
 
@@ -127,13 +128,13 @@ Tämän viikon tehtävänäsi on toteuttaa JUnit-yksikkötestit valmiiksi annetu
 ```java
 /**
  * Smelly Example #1
- * 
+ *
  * https://web.mit.edu/6.005/www/fa16/classes/04-code-review/
- * 
+ *
  * Collaboratively authored with contributions from: Saman Amarasinghe, Adam
  * Chlipala, Srini Devadas, Michael Ernst, Max Goldman, John Guttag, Daniel
  * Jackson, Rob Miller, Martin Rinard, and Armando Solar-Lezama.
- * 
+ *
  * This work is licensed under CC BY-SA 4.0.
  */
 public class DayOfYear {
@@ -199,10 +200,10 @@ Tallenna itsellesi kopio testattavasta *DayOfYear*-luokasta [tästä](https://gi
 
 DayOfYear-luokan `dayOfYear`-metodissa on virheitä, joten testiluokkasi tavoitteena on löytää nämä virheet erilaisten testitapausten avulla.
 
-Kukin testitapaus, eli testimetodi, voi käytännössä koostua vain kahdesta rivistä. Ensimmäisellä rivillä kutsut testattavaa dayOfYear-metodia, ja toisella rivillä tarkistat, onko metodista saatu tulos on oikea. 
+Kukin testitapaus, eli testimetodi, voi käytännössä koostua vain kahdesta rivistä. Ensimmäisellä rivillä kutsut testattavaa dayOfYear-metodia, ja toisella rivillä tarkistat, onko metodista saatu tulos on oikea.
 
 Jos haluat esimerkiksi varmistaa, että metodi antaa tammikuun 1. päivälle tuloksen 1, kutsu testin sisällä testattavaa metodia seuraavasti:
- 
+
 ```java
 int tulos = DayOfYear.dayOfYear(1, 1, 2023); // tammikuun 1. päivä on vuoden 1. päivä
 ```
@@ -215,7 +216,7 @@ assertEquals(1, tulos); // varmistaa että saatu `tulos` on 1
 
 `dayOfYear`-metodissa on ainakin kaksi virhettä. Virheiden etsimiseksi sinun kannattaa testata erilaisia päivämääriä vuoden alussa, keskellä ja lopussa niin tavallisina- kuin karkausvuosina. Kirjoita eri testitapaukset kukin omaan `@Test`-metodiin.
 
-Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa. 
+Testiluokkasi saa sijaita projektissasi vapaasti valitsemassasi paketissa.
 
 
 ## Vaihe 2: korjaa dayOfYear-luokan bugi(t)
@@ -281,4 +282,3 @@ Tehtävä arvioidaan asteikolla 0-5. Arvioinnissa suurin painoarvo on testien ki
 
 Täysiin pisteisiin tehtävässä riittää, että kirjoitat muutaman toimivan testimetodin, korjaat löytämäsi bugit ja parannat annettua koodia ainakin yhden laatuongelman osalta. Osittain valmiit ratkaisut pisteytetään suhteessa niiden valmiusasteeseen.
 
-<script src="/scripts.js"></script>

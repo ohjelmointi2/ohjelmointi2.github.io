@@ -1,18 +1,22 @@
+---
+title: SQLite-komentorivityökalun käyttö
+layout: default
+parent: Tietokantaohjelmointi
+---
+
+
 # SQLite-komentorivityökalun käyttö
-
-<link href="/styles.css" rel="stylesheet">
-
 
 Seuraavassa videossa sekä siihen liittyvässä komentoriviesimerkissä hyödynnetään SQLite-komentorivityökalua sekä valmista Chinook-tietokantaa.
 
 Komentorivityökalun avulla voit antaa kahdenlaisia komentoja:
 
-1. SQL-kyselyitä 
+1. SQL-kyselyitä
 
     * normaali SQL-kysely, joka päättyy puolipisteeseen
     * esimerkiksi `SELECT * FROM Artist LIMIT 3;`
 
-2. Komentorivityökalun omia komentoja 
+2. Komentorivityökalun omia komentoja
 
     * rivi aloitetaan pisteellä, loppuun ei puolipistettä
     * esimerkiksi `.open Chinook_Sqlite.sqlite`, `.tables` tai `.help`
@@ -35,7 +39,7 @@ Video on katsottavissa myös [video.haaga-helia.fi-palvelussa](https://video.haa
 
 ## Komentoriviesimerkki
 
-Seuraavassa komentorivi-istunnossa lyhyt esimerkki [Chinook-tietokannan](https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite) avaamisesta (`.open Chinook_Sqlite.sqlite`), tulosteiden muotoilusta (`.headers on` ja `.mode column`), rakenteen tutkimisesta (`.tables`, `.schema Artist`) sekä kyselyiden tekemisestä (`SELECT * FROM Artist LIMIT 3;`). 
+Seuraavassa komentorivi-istunnossa lyhyt esimerkki [Chinook-tietokannan](https://github.com/lerocha/chinook-database/raw/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite) avaamisesta (`.open Chinook_Sqlite.sqlite`), tulosteiden muotoilusta (`.headers on` ja `.mode column`), rakenteen tutkimisesta (`.tables`, `.schema Artist`) sekä kyselyiden tekemisestä (`SELECT * FROM Artist LIMIT 3;`).
 
 
 ```

@@ -1,6 +1,12 @@
+---
+title: "Extra: Try with resources"
+layout: default
+parent: Tietokantaohjelmointi
+---
+
 # Extra: Try with resources
 
-Javassa on olemassa try-with-resources -tyyppinen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen. 
+Javassa on olemassa try-with-resources -tyyppinen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen.
 
 Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Saatatte kuitenkin hyötyä myös siihen tutustumisesta esimerkiksi tutustuessanne muissa lähteissä löytämiinne esimerkkeihin.
 
@@ -20,7 +26,7 @@ import java.sql.SQLException;
 public class TryWithResources {
 
     public static void main(String[] args) {
-      
+
         final String SELECT_ALL = "select * from ShoppingListItem order by id asc";
 
         Connection connection = null;

@@ -1,3 +1,9 @@
+---
+title: Ostoslistasovelluksen käyttöliittymän luonti Scanner-luokan avulla
+layout: default
+parent: Tietokantaohjelmointi
+---
+
 # Ostoslistasovelluksen käyttöliittymän luonti Scanner-luokan avulla
 
 Tämän tehtävän kannalta ei ole oleellista, minkälaisen käyttöliittymän rakennat, kunhan sen kautta pystyy käyttämään tietokantaa ja näkemään tehtyjen muutosten vaikutukset.
@@ -43,7 +49,7 @@ Could not remove Cookies
 Bye!
 ```
 
-Esimerkkisovelluksessa käyttäjän syötettä pyydettäessä ruudulle tulostetaan `>` merkki syötteen odottamisen merkiksi: 
+Esimerkkisovelluksessa käyttäjän syötettä pyydettäessä ruudulle tulostetaan `>` merkki syötteen odottamisen merkiksi:
 
 ```java
 System.out.print("> ");

@@ -1,3 +1,9 @@
+---
+title: Esimerkkikoodit
+layout: default
+nav_exclude: true
+---
+
 ## src/main/java/map/Sanakirja.java
 
 ```java

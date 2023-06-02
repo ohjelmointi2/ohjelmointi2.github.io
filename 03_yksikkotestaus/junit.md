@@ -104,7 +104,7 @@ Videoilla käsitellyt lähdekoodit löytyvät [täältä](/03_yksikkotestaus/yks
 
 **[EtunimiTilasto-tehtävän yksikkötestaus, osa 1/3](https://web.microsoftstream.com/video/80c680e7-a853-4962-a9fb-19e7ef1f8d0b)** <small>19:06</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/80c680e7-a853-4962-a9fb-19e7ef1f8d0b?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="80c680e7-a853-4962-a9fb-19e7ef1f8d0b" %}
 
 Tällä videolla sovelletaan yksikkötestausta käytännössä Map-tehtävistä tutun EtunimiTilasto-tehtävän kanssa. Videolla huomataan, että yksikkötestaus voi olla haastavaa, mikäli ohjelman rakenne ei mahdollista sen osien käsittelyä toisistaan irrallisina. Videolla pilkotaan ohjelma testattaviin paloihin, joille kirjoitetaan testejä.
 
@@ -112,7 +112,7 @@ Tällä videolla sovelletaan yksikkötestausta käytännössä Map-tehtävistä 
 
 **[EtunimiTilasto-tehtävän yksikkötestaus, osa 2/3](https://web.microsoftstream.com/video/144d7504-7f0f-465d-a473-130e9fd3a2b8)** <small>17:56</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/144d7504-7f0f-465d-a473-130e9fd3a2b8?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="144d7504-7f0f-465d-a473-130e9fd3a2b8" %}
 
 Tällä videolla toteutetaan logiikka CSV-rivien muuttamiseksi `HashMap`-tietorakenteeksi siten, että logiikka on yksikkötesttavissa.
 
@@ -120,7 +120,7 @@ Tällä videolla toteutetaan logiikka CSV-rivien muuttamiseksi `HashMap`-tietora
 
 **[EtunimiTilasto-tehtävän tiedostonkäsittely, osa 3/3](https://web.microsoftstream.com/video/2180450b-4663-430d-9cb4-a5aa89db17f3)** <small>12:26</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/2180450b-4663-430d-9cb4-a5aa89db17f3?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="2180450b-4663-430d-9cb4-a5aa89db17f3" %}
 
 Tällä videolla toteutetaan ja yksikkötestataan EtunimiTilasto-tehtävän tiedostojenkäsittelyä koskeva osuus. Videolla käsitellään aineistona [etunimet.csv-tiedostoa](https://gist.githubusercontent.com/swd1tn002/f6b4c367cba9eecce0c2a1ba9de6854a/raw/fecefc85b1915bfcaf9aaf2ede7bf7503c2bffb0/etunimet.csv). Valmis TiedostonLukija.java -apuluokka löytyy [täältä](https://gist.github.com/swd1tn002/5842d9bb5d4152799e11d0f7742ecc91).
 

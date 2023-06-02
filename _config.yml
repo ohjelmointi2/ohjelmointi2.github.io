@@ -25,7 +25,7 @@ callouts:
     title: Note
     color: purple
   warning:
-    title: Warning
+    title: Varoitus!
     color: red
   esim:
     title: Esimerkki

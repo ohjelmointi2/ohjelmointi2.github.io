@@ -23,7 +23,7 @@ Vaikka harjoitustyö tehdään itsenäisesti, saatte keskustella siitä esimerki
 
 ## Video 1: [Harjoitustyön tehtävänanto](https://web.microsoftstream.com/video/d2c07537-4300-493a-957b-61b5153b4a16) <small>22:44</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d2c07537-4300-493a-957b-61b5153b4a16?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="d2c07537-4300-493a-957b-61b5153b4a16" %}
 
 Tällä videolla käymme läpi tällä sivulla esitetyn harjoitustyön tehtävänannon ja arviontikriteeristön.
 
@@ -129,7 +129,7 @@ Taulut `Album` ja `Track` tulevat tarpeellisiksi tähdätessäsi korkeampiin arv
 
 ## Video 2: [Harjoitustyön pohja ja Chinook-tietokanta](https://web.microsoftstream.com/video/d24cfa32-754d-44da-b74f-52d768f8a4d7) <small>38:18</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d24cfa32-754d-44da-b74f-52d768f8a4d7?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="d24cfa32-754d-44da-b74f-52d768f8a4d7" %}
 
 Tällä videolla teemme pohjatyön harjoitustyöprojektin luomiseksi. Samalla kertaamme kurssin aikana opeteltuja asioita harjoitustyön näkökulmasta.
 

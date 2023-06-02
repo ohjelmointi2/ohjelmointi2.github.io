@@ -104,7 +104,7 @@ Ohjeet muuttujan asettamiseksi löydät myös seuraavalta videolta.
 
 ## Video 1: [Tietokantaluokkien tuominen web-sovellukseen](https://web.microsoftstream.com/video/3998be63-0576-44e2-8e05-fb3da6008789) <small>10:33</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/3998be63-0576-44e2-8e05-fb3da6008789?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="3998be63-0576-44e2-8e05-fb3da6008789" %}
 
 Tässä videossa lisäämme verkkopalveluumme aikaisemmalla viikolla toteuttamamme tietokantaluokat. Lisäämme `Main`-luokallemme `JDBC_DATABASE_URL`-ympäristömuuttujan, jonka avulla verkkosovellus hyödyntää samaa tietokantaa kuin aikaisempi tekstikäyttöliittymämme.
 
@@ -215,7 +215,7 @@ Seuraavalla videolla lisäämme verkkopalvelumme tarvitsemat riippuvuudet ohjeen
 
 Lopulta näytämme tietokannasta löytyvät ostoslistan rivit HTML-muodossa JSP-sivulla.
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/515b523d-bc9b-4892-a2cf-78e75206e9a9?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="515b523d-bc9b-4892-a2cf-78e75206e9a9" %}
 
 Videon kohdassa **10:35** määritellään testiluokalle `JDBC_DATABASE_URL`-ympäristömuuttujaksi arvo `jdbc:sqlite:C:\sqlite\shoppingListTest.sqlite`. Kyseinen shoppingList**Test**-tiedosto on luotu dao-tehtävän malliratkaisuvideolla. Jos sinulla ei ole tätä tiedostoa, tai jos testitiedostosi on kooltaan 0 Kt, voit yksinkertaisesti kopioida varsinaisen sqlite-tiedostosi tälle uudelle nimelle.
 
@@ -232,7 +232,7 @@ Tärkeä aihe web-palvelun suojaamiseksi haitallisilta JavaScript-koodeilta ([Cr
 
 ## Video 3: [JSP-sivujen ehtorakenteet ja "fail silently"-ominaisuus](https://web.microsoftstream.com/video/d4adda6c-9b93-4a0a-a92a-57067f3493fb) <small>31:21</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/d4adda6c-9b93-4a0a-a92a-57067f3493fb?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="d4adda6c-9b93-4a0a-a92a-57067f3493fb" %}
 
 Tällä videolla toteutamme servletin, joka välittää JSP-sivulle useita attribuutteja. Tutustumme myös `c:if`-ehtorakenteisiin ja JSP-sivujen virheenkäsittelyyn.
 

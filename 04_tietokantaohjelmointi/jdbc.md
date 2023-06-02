@@ -13,8 +13,8 @@ Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjel
 
 ---
 
-{: .highlight }
-**Huom!** Materiaalissa olevien videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
+{: .huom }
+Materiaalissa olevien videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
 
 ## Tällä sivulla:
 {: .no_toc .text-delta }
@@ -49,7 +49,7 @@ Toteutamme tällä kurssilla tietokantalogiikan Java-koodeissamme siten, että s
 
 ## Video 1: [JDBC ja SQLite](https://web.microsoftstream.com/video/4906ef8a-22f3-4322-9673-df55481b3624) <small>8:12</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/4906ef8a-22f3-4322-9673-df55481b3624?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="4906ef8a-22f3-4322-9673-df55481b3624" %}
 
 Tällä videolla esitellään JDBC-teknologian perusidea ja käsitteistöä ja valmistellaan Eclipse-projekti tietokantaohjelmointia varten.
 
@@ -58,7 +58,6 @@ Videolla esiintyvän ajurin latauslinkki: [https://mvnrepository.com/artifact/or
 Videolla esiintyvä [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
 
-&nbsp;
 
 
 ## JDBC:n SQLite-ajuri
@@ -88,7 +87,7 @@ Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "b
 
 ## Video 2: [SQLite tools ja uuden tietokannan luominen](https://web.microsoftstream.com/video/9735fb55-5e0c-4d7d-bc03-bb72bd1097a1) <small>8:38</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/9735fb55-5e0c-4d7d-bc03-bb72bd1097a1?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="9735fb55-5e0c-4d7d-bc03-bb72bd1097a1" %}
 
 Tällä videolla valmistellaan tietokanta, jota käytetään seuraavaksi Java-ohjelmasta käsin.
 
@@ -98,7 +97,6 @@ Videolla esiintyvä SQLite tools -komentorivityökalun ohjesivu ["Extra: komento
 
 Voit ladata videolla luotavan tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shoppingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
-&nbsp;
 
 
 
@@ -120,7 +118,7 @@ Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [h
 
 ## Video 3: [Tietokantaan yhdistäminen ja kyselyn tekeminen](https://web.microsoftstream.com/video/581f69fe-9594-4488-b841-e44954f303f2) <small>27:52</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/581f69fe-9594-4488-b841-e44954f303f2?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="581f69fe-9594-4488-b841-e44954f303f2" %}
 
 Tällä videolla esitellään Javan luokat, joita tarvitset tietokantayhteyksien ja -kyselyiden muodostamiseksi.
 
@@ -145,7 +143,6 @@ Class.forName("org.sqlite.JDBC"); // Saattaa aiheuttaa ClassNotFoundException-po
 
 Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeissä `module-info.java` on poistettu.
 
-&nbsp;
 
 
 ## SQLite-tietokannan yhteysosoite
@@ -172,25 +169,29 @@ private static final String JDBC_URL = System.getenv("JDBC_DATABASE_URL");
 
 ## Video 4: [Turvalliset parametrisoidut tietokantakyselyt: prepared statement](https://web.microsoftstream.com/video/ddf1432d-fc3e-4d34-9feb-9ec68701d57d) <small>15:37</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/ddf1432d-fc3e-4d34-9feb-9ec68701d57d?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="ddf1432d-fc3e-4d34-9feb-9ec68701d57d" %}
 
 Tällä videolla käsittelemme SQL injektioita, jotka aiheuttavat merkittäviä tietoturvauhkia tietokantapohjaisille järjestelmille. Opimme valmistelemaan kyselyt siten, että haitallista syötettä ei käsitellä SQL-komentoina vaan normaalina tekstinä.
 
 Älä koskaan muodosta SQL-kyselyitä käsin yhdistelemällä merkkijonoja, koska kyselyn teko merkkijonoja yhdistelemällä aiheuttaa mm. tietoturvaongelmia:
 
-<pre class="highlight" style="border: solid red 2px; color: red;"><code>// Tietoturvaongelma: `name` saattaa sisältää haitallista SQL-koodia!
-PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist WHERE Name = \"" + name + "\"");</code></pre>
+{: .warning :}
+> Seuraavassa esimerkissä on SQL-haavoittuvuus. `name` saattaa sisältää haitallista SQL-koodia, joka päätyy osaksi kyselyä!
+> ```java
+> PreparedStatement statement = connection.prepareStatement(
+>   "SELECT * FROM Artist WHERE Name = \"" + name + "\"");
+> ```
 
 Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id tai nimi, ne tulee asettaa paikalleen PreparedStatement-luokan metodeilla. PreparedStatement-luokan SQL-kyselyihin parametrien tilalle kirjoitetaan kysymysmerkit (?), joiden kohdille asetetaan set-metodeilla arvot:
 
-```java
-PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist WHERE Name = ?");
-statement.setString(1, name);
-```
+{: .esim :}
+> ```java
+> PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist WHERE Name = ?");
+> statement.setString(1, name);
+> ```
 
 Videolla esiintyvän lähdekooditiedoston `TietokantaanYhdistaminen.java` löydät [täältä](/04_tietokantaohjelmointi/videoiden_lahdekoodit).
 
-&nbsp;
 
 
 ## Yhteyksien sulkeminen
@@ -278,7 +279,6 @@ Jenkov.com:in tutoriaalin lisäksi myös Oraclella on [kattava oppimateriaali](h
 
 Hyviä ohjeita löytyy myös YouTubesta sekä Googlettamalla tarkemmin yksittäisiä JDBC-aiheita.
 
-&nbsp;
 
 ## Tehtävä: tietokantapohjainen ostoslistasovellus JDBC:llä
 

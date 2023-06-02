@@ -32,7 +32,8 @@ Perintää käytetään usein tilanteissa, joissa on olemassa jo jokin toteutus,
 
 ### Perintä osa 1: [eri lähestymistavat tuotetietojen mallintamiseen](https://web.microsoftstream.com/video/788b9504-8600-4419-8e96-673ecd0a1ea2) <small>41:44</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/788b9504-8600-4419-8e96-673ecd0a1ea2?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="788b9504-8600-4419-8e96-673ecd0a1ea2" %}
+
 
 Tällä videolla perehdymme siihen, minkälaisia hyötyjä perintä tarjoaa tiedon mallintamiseen. Esimerkkeinä käytämme verkkopalvelua, jossa on tarjolla laaja valikoima myynti-ilmoituksia asunnoista autoihin. Sekä autoilla että asunnoilla on omat attribuuttinsa (oliomuuttujat), mutta ne ovat silti yhteensopivia keskenään ja muiden ilmoitustyyppien kanssa perinnän kautta.
 
@@ -42,7 +43,9 @@ Videolla esiintyvät lähdekoodit löytyvät [gist.github.com-palvelusta](https:
 
 ### Perintä osa 2: [metodien ylikirjoittaminen](https://web.microsoftstream.com/video/10d75407-1851-44b6-b43c-d9401fa46160) <small>33:39</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/10d75407-1851-44b6-b43c-d9401fa46160?autoplay=false&showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="788b9504-8600-4419-8e96-673ecd0a1ea2" %}
+
+{% include msstream.html id="10d75407-1851-44b6-b43c-d9401fa46160" %}
 
 Tällä videolla muodostamme eri tyyppisille ilmoituksille omat HTML-esityksensä ja ylikirjoitamme yliluokan metodeja eri aliluokkien tarpeet huomioiden. Sivuamme samalla myös for-each-toistorakennetta, `@Override`-annotaatiota ja monirivisiä merkkijonoja.
 

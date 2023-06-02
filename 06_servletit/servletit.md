@@ -45,7 +45,7 @@ Kurssin tehtävien suorittamiseksi sinun ei tarvitse rekisteröityä GitHubiin, 
 
 ### Video 1: [Johdatus HTTP-protokollaan ja Tomcatiin + Git clone](https://web.microsoftstream.com/video/710ad286-f65f-442b-ba25-2fc5da82d522) <small>21:41</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/710ad286-f65f-442b-ba25-2fc5da82d522?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="710ad286-f65f-442b-ba25-2fc5da82d522" %}
 
 Tällä videolla tutustumme HTTP-protokollaan ja siihen liittyviin pyyntöihin ja vastauksiin. Tutustumme siihen, miten sovelluspalvelin välittää HTTP-pyynnöt Java-ohjelmallemme ja miten ohjelmamme vastaa pyyntöön siten, että vastaus päätyy käyttäjän selaimelle. Kloonaamme myös GitHubista projektipohjan, jota käytämme jatkossa web-sovelluksemme pohjana.
 
@@ -84,7 +84,7 @@ Voit halutessasi lukea lisää Mavenista artikkelista ["Maven in 5 Minutes"](htt
 
 ### Video 2: [Maven ja Tomcat malliprojektissa](https://web.microsoftstream.com/video/527282e4-961e-453e-a350-af766e50559f) <small>15:31</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/527282e4-961e-453e-a350-af766e50559f?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="527282e4-961e-453e-a350-af766e50559f" %}
 
 Tällä videolla tutustumme web-projektimme hakemisto- ja luokkarakenteeseen. Selvitämme, miten web-sovelluksemme käynnistetään sekä mitkä hakemistot ovat julkisia ja mitkä vain palvelimen sisäistä käyttöä varten. Tutustumme myös tapaan, jolla Tomcat-sovelluspalvelin välittää pyynnöt omille Java-luokillemme.
 
@@ -93,7 +93,7 @@ Projektipohja: [https://github.com/ohjelmointi2/embedded-tomcat-template](https:
 
 <!-- ### Video 3: [Uuden kehityshaaran luonti ja vieminen GitHubiin (Git & branch)](https://web.microsoftstream.com/video/e404ae09-df29-49d5-abc9-10d0f5d43010) <small>5:38
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/e404ae09-df29-49d5-abc9-10d0f5d43010?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="e404ae09-df29-49d5-abc9-10d0f5d43010" %}
 
 Tällä videolla luomme projektiin itsellemme uuden kehityshaaran ja viemme sen GitHub:iin.
 
@@ -120,7 +120,7 @@ Seuraavilla videoilla käsittelemme servlet-luokkien erityispiirteitä, tiedonv�
 
 ### Video 3: [Servletin anatomia: HttpServlet, @WebServlet, doGet...](https://web.microsoftstream.com/video/c040b244-2592-46a4-b271-22af48a7b574) <small>19:40
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c040b244-2592-46a4-b271-22af48a7b574?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="c040b244-2592-46a4-b271-22af48a7b574" %}
 
 Tällä videolla tutustumme servlettien rakenteeseen, perintään, annotaatioihin ja pyyntöjä käsitteleviin metodeihin. Käsittelemme tyypillisimmät virhetilanteet (virheet 404 ja 405) ja ratkaisut niiden korjaamiseksi.
 
@@ -131,7 +131,7 @@ Videolla hyödynnetään tutoriaalia [https://jenkov.com/tutorials/jdbc/index.ht
 
 ### Video 4: [Tomcatin "reload" ja muuttuneiden koodien vaihtaminen lennossa](https://web.microsoftstream.com/video/c26141c3-2681-45f6-8aef-8e40b72bff88) <small><small>7:56</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/c26141c3-2681-45f6-8aef-8e40b72bff88?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="c26141c3-2681-45f6-8aef-8e40b72bff88" %}
 
 Mikäli haluat nopeuttaa kehityssykliäsi, voit konfiguroida Tomcatin lataamaan muuttuneet luokat automaattisesti uudelleen tehtyäsi niihin muutoksia. Poista kommentit seuraavalta riviltä `Main.java`-tiedostossa ottaaksesi tämän ominaisuuden käyttöön:
 
@@ -149,7 +149,7 @@ Monissa tapauksissa luokkien uudelleenlataaminen riittää, mutta uusia servlett
 
 ### Video 5: [HTTP-pyynnön parametrien käsittely servleteissä](https://web.microsoftstream.com/video/8fed5e77-69ae-415f-8a48-418ea39330a4) <small>14:46</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8fed5e77-69ae-415f-8a48-418ea39330a4?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="8fed5e77-69ae-415f-8a48-418ea39330a4" %}
 
 Tällä videolla opettelemme käsittelemään HTTP-pyynnön mukana tulevia parametreja servletissämme.
 
@@ -165,7 +165,7 @@ Servlettien yhteydessä HTML-koodi halutaan eriyttää muusta Java-koodista omik
 
 ### Video 6: [Lomakkeen näyttäminen ja lomakedatan käsittely servletillä](https://web.microsoftstream.com/video/44037d9b-8237-4f63-9d45-75d35ccb447d) <small>18:27</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/44037d9b-8237-4f63-9d45-75d35ccb447d?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="44037d9b-8237-4f63-9d45-75d35ccb447d" %}
 
 Tällä videolla luomme HTML-lomakkeen, jolla lähetämme dataa servletillemme. Opettelemme myös välittämään servleteille tulleet pyynnöt palvelimen sisäisesti JSP-sivulle.
 
@@ -176,7 +176,7 @@ Videolla koodattavan [Servletin ja JSP-sivut löydät täältä](https://gist.gi
 
 ### Video 7: [Datan välittäminen servletiltä JSP-sivulle (doPost, setAttribute)](https://web.microsoftstream.com/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1) <small>14:18</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/72ecee3d-98b1-4d97-8a55-214fc4ca90a1?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="72ecee3d-98b1-4d97-8a55-214fc4ca90a1" %}
 
 Tällä videolla opettelemme välittämään dataa servletiltä JSP-sivulle muodostaaksemme HTML-sivuja dynaamisella sisällöllä.
 
@@ -241,7 +241,7 @@ Tämän viikon tehtävissä käsitellään päivämääriä servlettien ja JSP-s
 
 ### Video 9: [Servlet-tehtävänannot ja staattisen HTML-sivun lisääminen](https://web.microsoftstream.com/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5) <small>13:13</small>
 
-<iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/8a8c1674-e137-4fbd-af51-d0774fc0c5c5?autoplay=false&amp;showinfo=true" allowfullscreen style="border:none;"></iframe>
+{% include msstream.html id="8a8c1674-e137-4fbd-af51-d0774fc0c5c5" %}
 
 Tällä videolla käsittelemme harjoitustehtävän tehtävänantoa. Videolla tehtävä import-komento on seuraava:
 

@@ -56,6 +56,7 @@ Opintojaksolla syvennetään olio-ohjelmoinnin perusosaamista Java-ohjelmointiki
 * Rajapinta
     * Comparable
     * FunctionalInterface
+    * oletustoteutus?
 * Maven:in käyttö Java-projekteissa
 * Annotaatiot
     * GSON: @SerializedName, @Expose, (transient)

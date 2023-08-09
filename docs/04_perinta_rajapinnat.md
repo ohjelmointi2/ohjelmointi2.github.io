@@ -1,9 +1,11 @@
 ---
 title: Perintä ja rajapinnat
 layout: default
-nav_order: 1
-parent: Arkisto
+nav_order: 4
+permalink: /perintä-ja-rajapinnat/
 ---
+
+
 
 # Perintä ja rajapinnat
 {: .no_toc }
@@ -225,4 +227,3 @@ Palauta lopuksi Country-luokkasi Viopeen.
 ### Ohjelmalogiikan automatisoidusta testaamisesta
 
 Vaikka yllä oleva ratkaisu toivottavasti auttaa sinua ratkaisemaan tämän tehtävän, ohjelmistojen testaaminen `System.out.println`-metodin tulosteiden ja niiden manuaalisen läpikäynnin avulla on varsin työlästä. Vähänkään isomman ohjelman testeissä tulosteita olisi nopeasti satoja ellei tuhansia. Parempi tapa ohjelmistojen testaamiseen onkin ns. yksikkötestit, joihin perehdymme tämän kurssin seuraavissa vaiheissa.
-

@@ -7,6 +7,17 @@ Opettajana tällä kurssilla toimii Teemu Havulinna (etunimi.sukunimi@haaga-heli
 Kurssin kotisivu ja oppimateriaalit löytyvät osoitteesta https://ohjelmointi2.github.io/.
 
 
+## Materiaalin muokkaaminen paikallisesti
+
+Oppimateriaali generoidaan HTML-sivustoksi markdown-muotoisten tekstitiedostojen pohjalta. Sivuston teemana käytetään [Just the Docs](https://github.com/just-the-docs/just-the-docs)-nimistä [Jekyll](https://jekyllrb.com/)-pohjaa. Molemmat ovat hyvin dokumentoituja ja niihin löytyy runsaasti oppaita.
+
+Sivusto saadaan päivitettyä ja tarjoiltua paikallisesti portista 4000 seuraavalla komennolla:
+
+```
+$ bundle exec jekyll serve
+```
+
+
 ## Lisenssit
 
 The [favicon graphics](https://github.com/twitter/twemoji/) are from the open source project [Twemoji](https://twemoji.twitter.com/). The graphics are copyright 2020 Twitter, Inc and other contributors. The graphics are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Favicon downloaded from [https://favicon.io/emoji-favicons/](https://favicon.io/emoji-favicons/).

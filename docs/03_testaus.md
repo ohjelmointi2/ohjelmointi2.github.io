@@ -1,9 +1,11 @@
 ---
-title: Yksikkötestauksen perusteet
+title: Yksikkötestaus
 layout: default
 nav_order: 3
-parent: Arkisto
+permalink: /testaus/
 ---
+
+
 
 # Yksikkötestauksen perusteet
 {: .no_toc }
@@ -38,6 +40,14 @@ Tällä viikolla perehdymme tarkemmin yksikkötestaukseen ja Javan [JUnit-kirjas
 
 Mikäli olisimme kehittämässä esimerkiksi verkkokauppaa ja siihen liittyvää laskujen viitenumeroiden generointia, voisi viitenumeroiden generoinnin testaaminen käyttöliittymän kautta edellyttää meiltä esimerkiksi sisäänkirjautumista, tuotteiden lisäämistä ostoskoriin, toimitustavan valintaa ja lukuisia muita erillisiä työvaiheita ennen pääsyä varsinaiseen testattavaan osaan. Testaus käyttöliittymän kautta onkin monessa tapauksessa erittäin aikaavievää. Yksikkötestauksen avulla voimme testata viitenumeroiden generoinnin erillään kaikesta muusta koodista, omana yksikkönään.
 
+
+```quiz
+### Miksi yksikkötestaus on tärkeä osa ohjelmistokehitystä?
+
+- [ ] Yksikkötestit varmistavat, että koko järjestelmä toimii oikein.
+- [x] Yksikkötestit helpottavat koodin ylläpitoa ja mahdollistavat muutosten tekemisen ilman hajoamisia.
+- [ ] Yksikkötestit optimoivat ohjelmiston suorituskyvyn.
+```
 
 ## Oppimateriaalit
 
@@ -103,6 +113,14 @@ Videoilla käsitellyt lähdekoodit löytyvät [täältä](/03_yksikkotestaus/yks
 
 &nbsp;
 
+```quiz
+### Mikä on JUnitin rooli ohjelmistokehityksessä?
+
+- [ ] JUnit on työkalu ohjelmistotuotannon automatisoimiseen.
+- [x] JUnit on työkalu yksikkötestien kirjoittamiseen ja suorittamiseen.
+- [ ] JUnit on työkalu tietokantojen hallintaan.
+```
+
 **[EtunimiTilasto-tehtävän yksikkötestaus, osa 1/3](https://web.microsoftstream.com/video/80c680e7-a853-4962-a9fb-19e7ef1f8d0b)** <small>19:06</small>
 
 {% include msstream.html id="80c680e7-a853-4962-a9fb-19e7ef1f8d0b" %}
@@ -132,6 +150,15 @@ Tällä videolla toteutetaan ja yksikkötestataan EtunimiTilasto-tehtävän tied
 ### Lisämateriaali
 
 Lisäksi sinun kannattaa tutustua tämän viikon tehtävän alkuperäiseen lähteeseen, josta löydät tekstimateriaaleja sekä videoita tehtävään liittyen: [https://web.mit.edu/6.005/www/fa16/classes/04-code-review/](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/)
+
+
+```quiz
+### Miten JUnit-testit yleensä kirjoitetaan?
+
+- [ ] JUnit-testit kirjoitetaan erillisiin tiedostoihin .junit-päätteellä.
+- [x] JUnit-testit kirjoitetaan Java-luokkiin, jotka sisältävät testimetodeja, jotka on merkattu @Test-annotaatiolla.
+- [ ] JUnit-testit kirjoitetaan komentoriviltä suoritettaviin tiedostoihin.
+```
 
 
 ## Tehtävä
@@ -295,3 +322,4 @@ Tehtävä arvioidaan asteikolla 0-5. Arvioinnissa suurin painoarvo on testien ki
 
 Täysiin pisteisiin tehtävässä riittää, että kirjoitat muutaman toimivan testimetodin, korjaat löytämäsi bugit ja parannat annettua koodia ainakin yhden laatuongelman osalta. Osittain valmiit ratkaisut pisteytetään suhteessa niiden valmiusasteeseen.
 
+{% include quiz.html %}

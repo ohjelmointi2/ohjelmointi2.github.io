@@ -2,6 +2,7 @@
 title: Tietokannat ja DAO-malli
 layout: default
 nav_order: 5
+parent: Arkisto
 ---
 
 # Tietokannat ja DAO-malli

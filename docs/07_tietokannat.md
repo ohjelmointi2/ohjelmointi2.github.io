@@ -1,10 +1,10 @@
 ---
-title: Tietokantaohjelmointi
+title: Tietokannat
 layout: default
-nav_order: 4
-has_children: true
-parent: Arkisto
+nav_order: 7
+permalink: /tietokannat/
 ---
+
 
 # Tietokantaohjelmointi
 {: .no_toc }
@@ -401,4 +401,3 @@ Yllä esitetyn käyttöliittymän teknisen toteutuksen tueksi on kirjoitettu [om
 Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin määräaikaan mennessä. Palauta tiedostot yksittäin, eli ei pakattuna. Älä palauta tietokantaa äläkä ajuria.
 
 Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen. Muista myös, että voit pyytää apua tehtävässä kohtaamiisi ongelmiin Teamsissa!
-

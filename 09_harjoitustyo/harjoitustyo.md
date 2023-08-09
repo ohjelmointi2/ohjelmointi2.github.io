@@ -2,6 +2,7 @@
 title: Harjoitustyö
 layout: default
 nav_order: 9
+parent: Arkisto
 ---
 
 # Harjoitustyö

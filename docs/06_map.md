@@ -1,9 +1,10 @@
 ---
-title: Map-tietorakenne
+title: Map
 layout: default
-nav_order: 2
-parent: Arkisto
+nav_order: 6
+permalink: /map/
 ---
+
 
 # Map-tietorakenne
 {: .no_toc }
@@ -88,6 +89,16 @@ Toinen samankaltainen käyttötapaus avain-arvo-pareille on myöhemmin tällä k
 
 [PowerPoint-kalvot](/kalvot/map.pdf)
 
+
+```quiz
+### Mikä on Javan Map-tietorakenteen tarkoitus?
+
+- [ ] Map on tietorakenne, joka säilyttää alkioita järjestettynä listana.
+- [x] Map on tietorakenne, joka yhdistää avain-arvo -pareja.
+- [ ] Map on tietorakenne, joka tallentaa alkioita taulukkomuodossa.
+```
+
+
 ## Mapin tyypin määrittely
 
 Hajautustaulua luodessa tarvitaan kaksi tyyppiparametria:
@@ -125,6 +136,18 @@ Get-metodille annetaan parametrina se avain, jonka arvoa haetaan.
 
 <small>Tämä esimerkki on lainattu [Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.</small>
 
+
+```quiz
+### Miten uusi avain-arvo -pari lisätään Map-tietorakenteeseen?
+- [ ] Käyttämällä metodia add(key, value)
+- [ ] Käyttämällä metodia insert(key, value)
+- [x] Käyttämällä metodia put(key, value)
+
+### Kuinka saadaan arvo Map-tietorakenteesta annetun avaimen perusteella?
+- [x] Käyttämällä metodia get(key)
+- [ ] Käyttämällä metodia retrieve(key)
+- [ ] Käyttämällä metodia fetch(key)
+```
 
 ### Numeroiden käsitteleminen mapissa
 
@@ -393,3 +416,5 @@ Tarkat tehtävänannot ja tehtävissä tarvittavat tiedostot löytyvät [Viopest
 
 Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viopesta](https://vw4.viope.com/).
 
+
+{% include quiz.html %}

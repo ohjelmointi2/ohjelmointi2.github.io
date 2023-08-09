@@ -1,0 +1,17 @@
+<script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+
+
+<script type="text/javascript">
+    let quizzes = document.querySelectorAll('.language-quiz');
+
+    for (let quiz of quizzes) {
+        let pre = quiz.parentNode;
+
+        let div = document.createElement('div');
+        div.classList = 'quizdown';
+        div.innerHTML = quiz.innerHTML;
+
+        pre.parentNode.replaceChild(div, pre);
+    }
+    quizdown.init();
+</script>

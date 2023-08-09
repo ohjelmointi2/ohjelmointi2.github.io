@@ -2,6 +2,7 @@
 title: Ajax, JSON ja JavaScript
 layout: default
 nav_order: 8
+parent: Arkisto
 ---
 
 # Ajax, JSON ja JavaScript

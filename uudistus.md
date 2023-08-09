@@ -32,6 +32,10 @@
     * Sanaruudukko
         * Sanojen etsiminen vaaka- ja pystysuunnassa
 
+* Perintä
+    * Treenipäiväkirja
+        * Juoksu, uinti,
+
 * Rajapinnat
     * Sudoku-ruudukon tallennus
         * 1-ulotteinen merkkijono, jossa numeroiden indeksit "kovakoodattu"

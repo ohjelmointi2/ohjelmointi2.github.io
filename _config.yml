@@ -12,6 +12,10 @@ permalink: /:title
 plugins:
   - jekyll-target-blank
 
+mermaid:
+  version: "10.3.0"
+
+
 callouts:
   highlight:
     color: yellow

@@ -10,7 +10,7 @@ nav_order: 0
 Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A!
 {: .fs-6 }
 
-Tällä kurssilla syvennämme olio-ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja tietokantojen ja verkkopalveluiden parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen sekä versionhallinnan alkeisiin.
+Tällä kurssilla syvennämme ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja mm. tietokantojen parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen, automaatiotyökaluihin sekä versionhallintaan.
 {: .fs-6 }
 
 ---
@@ -36,13 +36,13 @@ Kevään 2023 kurssi on päättynyt. Kurssin sisältöä päivitetään syksyksi
 
 ## ✅ Osallistumisen vahvistaminen
 
-**Kurssin osallistumisen vahvistaminen edellyttää vähintään kahden Viope-tehtävän hyväksyttyä suoritusta ensimmäiseltä sekä toiselta viikolta tehtävien määräaikaan mennessä.** Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla kyseisten tehtävien idea selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin keskustelukanavalla.
+**Kurssin osallistumisen vahvistaminen edellyttää kahden ensimmäisen viikon tehtävien palauttamista määräaikaan mennessä.** Jotta tämä ei olisi liian vaikeaa, ensimmäisten tehtävien lopusta löytyy linkit videoihin, joilla tehtävien vaiheita selitetään seikkaperäisesti. Tehtäviin on lisäksi saatavissa vinkkejä ja tukea kurssin keskustelukanavalla.
 
 > *"Opiskelija vahvistaa paikkansa opintojaksototeutuksella olemalla läsnä opetuksen alkaessa tai muutoin opettajan ilmoittamalla tavalla, joka voi esimerkiksi olla ensimmäisen oppimistehtävän palautus."*
 >
 > [Tutkintosääntö](https://www.haaga-helia.fi/fi/tutkintosaanto-noudatettavat-normit-ja-muutoksenhaku)
 
-Tämän käytännön ei ole tarkoitus estää ketään opiskelemasta tai suorittamasta kurssia, vaan sen on tarkoitus varmistaa, että kurssi lähtee kaikilla onnistuneesti käyntiin
+Tämän käytännön ei ole tarkoitus estää ketään opiskelemasta tai suorittamasta kurssia, vaan sen on tarkoitus varmistaa, että kurssi lähtee kaikilla onnistuneesti käyntiin.
 
 Kurssin keskeyttäminen ei ole Haaga-Helian linjauksia noudattaen mahdollista enää osallistumisen vahvistamisen jälkeen:
 
@@ -53,7 +53,7 @@ Kurssin keskeyttäminen ei ole Haaga-Helian linjauksia noudattaen mahdollista en
 
 ## 📅 Kurssin aikataulu ja työmäärä
 
-Tämä kurssi alkaa maanantaina 27.3.2023 ja päättyy 19.5.2023.
+<!--Tämä kurssi alkaa maanantaina 27.3.2023 ja päättyy 19.5.2023.-->
 
 Kurssi on laajuudeltaan 5 opintopistettä, joten sen laskennallinen työmäärä on noin 135 tuntia. Kahdeksalle viikolle jaettuna työmäärä vastaa laskennallisesti noin 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko.
 

@@ -65,6 +65,33 @@ Videolla esiintyvät [PowerPoint-kalvot löydät täältä](/kalvot/perinta-ja-r
 
 
 
+### Exercise ja sen aliluokat
+
+```mermaid
+classDiagram
+    class Exercise {
+        +String name
+        +int durationMinutes
+        +double calculateCaloriesBurned()
+    }
+
+    class RunningExercise {
+        +double distanceKm
+    }
+
+    class SwimmingExercise {
+        +double distanceKm
+    }
+
+    class PadelExercise {
+        +int sets
+    }
+
+    Exercise <|-- RunningExercise
+    Exercise <|-- SwimmingExercise
+    Exercise <|-- PadelExercise
+```
+
 ### Perintään liittyvät tehtävät (Viope)
 
 Seuraavat tehtävät on lainattu Helsingin yliopiston mooc-kurssilta. Sinulle voi olla hyödyksi tutustua myös [HY:n oppimateriaaliin tästä aiheesta](https://ohjelmointi-20.mooc.fi/osa-9/1-perinta) tehtäviä ratkoessasi.

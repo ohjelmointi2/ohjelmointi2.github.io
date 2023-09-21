@@ -91,9 +91,9 @@ Nettilähteiden hyödyntäminen ja niistä mallin ottaminen on sallittua ja kann
 
 ## 🧠 Esitietovaatimukset
 
-> *"Opiskelija on suorittanut opintojakson Ohjelmointi 1 (SWD4TN032) tai hänellä on vastaavat tiedot ja taidot. Opiskelija suorittaa samanaikaisesti opintojakson Tietokannat ja tiedonhallinta (SWD1TN003) tai hänellä on vastaavat tiedot ja taidot."*
+> *"Opiskelija on suorittanut opintojakson Ohjelmointi 1 (SOF005AS2A/SWD4TN032) tai hänellä on vastaavat tiedot ja taidot. Opiskelija suorittaa samanaikaisesti opintojakson Tietokannat ja tiedonhallinta (SOF001AS2A/ SWD1TN003) tai hänellä on vastaavat tiedot ja taidot."*
 >
-> [*opintojaksokuvaus*](https://opinto-opas.haaga-helia.fi/course_unit/SWD4TN033)
+> [*opintojaksokuvaus*](https://opinto-opas.haaga-helia.fi/course_unit/SOF001AS3A)
 
 Mikäli sinulla ei ole sujuvaa osaamista Ohjelmointi 1 -opintojaksolta, vaatii tämä kurssi erityisen paljon työtä ja omaa panostusta.
 

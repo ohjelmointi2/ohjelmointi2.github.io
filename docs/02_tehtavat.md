@@ -5,11 +5,11 @@ nav_order: 2
 permalink: /tehtavat/
 ---
 
-# GitHub classroom -tehtävien suorittaminen
+# GitHub classroom -tehtävät
 {: .no_toc }
 
-
-{: .fs-6 }
+Osa opintojakson tehtävänannoista löytyy GitHub-palvelusta, kukin omana repositorionaan. Kyseisissä tehtävissä hyödynnetään tehtävien automaattista tarkastusta [GitHub classroom](https://classroom.github.com/) -palvelun avulla. Tehtäväkohtaiset ohjeet löydät aina kustakin repositoriosta, mutta tehtävien yhteiset ohjeet on kirjattu alle.
+{: .fs-5 }
 
 ---
 
@@ -19,19 +19,20 @@ permalink: /tehtavat/
 * Sisällysluettelo
 {:toc}
 
+{: .vinkki }
+Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa seuraamalla [VS Code:n omia ohjeita](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git) tai lukuisia [Eclipsen ohjeita](https://www.google.com/search?q=eclipse+git).
 
-
-**Vaihe 1: Tehtävän hyväksyminen**
+## Vaihe 1: Tehtävän hyväksyminen
 
 1. Kirjaudu sisään GitHub-tilillesi.
 
 2. Avaa linkki, jonka opettajasi on antanut sinulle päästäksesi tehtävään käsiksi.
 
-3. Klikkaa "Hyväksy tämä tehtävä" -painiketta. Tämä luo sinulle yksityisen versionhallintarepositorion, jossa voit työskennellä tehtävän parissa.
+3. Klikkaa "Accept" -painiketta. Tämä luo sinulle yksityisen kopion repositoriosta, jossa voit työskennellä tehtävän parissa.
 
-**Vaihe 2: Kloonaa repositorio**
+## Vaihe 2: Kloonaa repositorio
 
-4. Avaa terminaali tai Git Bash tietokoneellasi.
+4. Avaa terminaali, Git Bash tai Git-työkalu tietokoneellasi.
 
 5. Siirry hakemistoon, johon haluat tallentaa tehtäväsi.
 
@@ -41,17 +42,22 @@ permalink: /tehtavat/
    git clone <repository_url>
    ```
 
-**Vaihe 3: Tee muutoksia**
+   Huom! Tehtävän kloonaamiseksi sinun tulee olla kirjautuneena GitHubiin myös Git-työkalullasi. Seuraa tarpeen mukaan työkalun ohjeita.
 
-7. Avaa tehtävässä annetut tiedostot valitsemassasi Java-kehitysympäristössä (esim. IntelliJ IDEA, Eclipse, VS Code).
 
-8. Kirjoita Java-koodi, jotta saat tehtävän valmiiksi opettajan antamien ohjeiden mukaisesti.
+## Vaihe 3: Tee muutoksia
 
-**Vaihe 4: Suorita testit paikallisesti**
+7. Avaa tehtävässä annetut tiedostot valitsemassasi Java-kehitysympäristössä.
 
-9. Koodin kirjoittamisen jälkeen testaa se paikallisesti varmistaaksesi, että se toimii odotetusti. Käytä mahdollisesti tehtäväohjeissa määriteltyjä testauskehyksiä tai työkaluja.
+8. Kirjoita ohjelmakoodia tehtävänannon ohjeiden mukaisesti.
 
-**Vaihe 5: Lisää ja sitouta muutokset**
+
+## Vaihe 4: Suorita testit paikallisesti
+
+9. Koodin kirjoittamisen jälkeen testaa se paikallisesti varmistaaksesi, että se toimii odotetusti. Ohjeet ratkaisun testaamiseksi löydät tehtävänannosta.
+
+
+## Vaihe 5: `git status`, `git add` ja `git commit`
 
 10. Terminaalissa tai Git Bashissa siirry tehtävähakemistoon:
 
@@ -62,37 +68,38 @@ permalink: /tehtavat/
 11. Käytä seuraavia komentoja muutosten lisäämiseen ja sitouttamiseen:
 
     ```bash
-    git add .
-    git commit -m "Suoritettu tehtävä"
+    git status     # näyttää muuttuneet tiedostot
+    git add <muutettu tiedosto>
+    git commit -m "Tehtävä suoritettu"
     ```
 
-**Vaihe 6: Päivitä etärepoitorioon**
+## Vaihe 6: Päivitä muutoksesi etärepoitorioon
 
-12. Päivitä sitoutetut muutokset etärepositorioon GitHubissa:
+12. Päivitä tekemäsi commit etärepositorioon GitHubissa:
 
     ```bash
     git push origin main
     ```
 
-   Huomioi, että haaran nimi voi vaihdella riippuen tehtävästä.
+   Huomioi, että `main`-kehityshaaran nimi voi vaihdella riippuen tehtävästä.
 
-**Vaihe 7: Tarkastele automaattisen arvioinnin tuloksia**
 
-13. Odota, että automaattinen arviointiprosessi suoritetaan. Opettajasi saattaa olla määrittänyt automaattisia testejä, jotka tarkistavat koodisi tiettyjen kriteerien suhteen.
+## Vaihe 7: Tarkastele automaattisen arvioinnin tuloksia
 
-14. Tarkastele automaattisen arvioinnin tuloksia vierailemalla tehtäväsivulla GitHubissa. Sinun pitäisi nähdä palautetta ja mahdollisia testituloksia, jotka automatisoitu järjestelmä on tuottanut.
+13. Odota, että automaattinen arviointiprosessi suoritetaan GitHub actions -työkalulla.
 
-**Vaihe 8: Tee korjauksia (tarvittaessa)**
+14. Tarkastele automaattisen arvioinnin tuloksia käymällä oman repositoriosi sivulla GitHubissa. Löydät automaattisten testien tuottamat tulokset ja pistemäärän "actions"-välilehden alta.
+
+
+## Vaihe 8: Tee korjauksia (tarvittaessa)
 
 15. Mikäli automaattinen arviointi paljastaa ongelmia tai virheitä, palaa takaisin koodiisi, tee tarvittavat korjaukset ja toista vaiheet 4–7.
 
-**Vaihe 9: Lähetä tehtävä**
 
-16. Kun olet tyytyväinen koodiisi ja automaattiset testit läpäisevät, voit pitää tehtävän suoritettuna.
+## Vaihe 9: Lähetä tehtävä
 
-17. Ilmoita opettajallesi tehtävän suorituksesta ja noudata mahdollisia lisätoimittamisohjeita, jotka hän on antanut.
+16. Kun olet tyytyväinen koodiisi ja testien tuloksiin, tehtävä on suoritettu.
 
-Noudattamalla näitä ohjeita voit suorittaa Java-ohjelmointitehtäviä GitHub Classroomissa tehokkaasti ja varmistaa, että koodisi testataan ja arvioidaan opettajan vaatimusten mukaisesti.
-
+17. Noudata mahdollisia kurssitoteutuskohtaisia lisäohjeita, kuten repositorion linkin lisääminen Teamsiin tai Moodleen.
 
 Tämä ohjeistus luotiin [ChatGPT:n](https://chat.openai.com/) avulla.

@@ -26,6 +26,7 @@ Tällä viikolla päätavoitteena on tutustua Javan web-kehityksessä käytettä
 * Git-versionhallinta
 
 Tarvitset web-ohjelmointia varten Eclipsen version "Eclipse IDE for Enterprise Java and Web Developers". Oman Eclipse-asennuksesi tyyppi selviää "Help"-valikosta kohdasta "About Eclipse IDE". Muita web-ohjelmointiin soveltuvia versioita ovat mm. "Eclipse IDE for Enterprise Java Developers" ja "Eclipse Java EE IDE for Web Developers". Mikäli Eclipse-versiosi ei sisällä web-ohjelmointiin tarvittavia osia, suosittelen asentamaan uuden version osoitteesta [https://www.eclipse.org/downloads/packages/](https://www.eclipse.org/downloads/packages/).
+HUOM: VS Code toimii myös editorina ja on jatkossa suosituseditori.
 
 Oppitunnin esimerkkien ideoita on lainattu [Telusko](https://www.youtube.com/channel/UC59K-uG2A5ogwIrHw4bmlEg)-kanavan YouTube-videoista [Introduction to Servlets](https://youtu.be/7TOmdDJc14s) ja [Servlet and JSP Tutorial \| Get and Post](https://youtu.be/_6ISkXSC1js).
 

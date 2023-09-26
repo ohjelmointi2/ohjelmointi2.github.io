@@ -49,6 +49,12 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 
 7. Avaa tehtävässä annetut tiedostot valitsemassasi Java-kehitysympäristössä.
 
+    * VS Code -koodieditorin Java-ohjeistus löytyy sivustolta [Java in Visual Studio Code ](https://code.visualstudio.com/docs/languages/java). Seuraa sivun ohjeita ja asenna itsellesi editorin suosittelema Java-laajennus ["Language Support for Java"](https://marketplace.visualstudio.com/items?itemName=redhat.java).
+
+    * Eclipse -koodieditorille löytyy [lukuisia epävirallisia ohjeita](https://www.google.com/search?q=eclipse+smart+import+project) Java-projektin lisäämiseksi työtilaan.
+
+      Suosittelemme, että kloonaat projektin ensin Eclipsen ulkopuolella ja lisäät kloonatun projektin Eclipseen seuraavasti: `File` - `Import` - `Gradle` - `Existing Gradle Project`. Mikäli käytät Windows-käyttöjärjestelmää, joudut mahdollisesti asettamaan Eclipsen työtilaan UTF-8-merkistökoodauksen, jotta ääkköset ja erikoismerkit toimivat oikein. Merkistökoodaus asetetaan `Window`-valikon `Preferences`-kohdasta [tämän kuvan mukaisesti](/img/eclipse-workspace-encoding.jpg).
+
 8. Kirjoita ohjelmakoodia tehtävänannon ohjeiden mukaisesti.
 
 

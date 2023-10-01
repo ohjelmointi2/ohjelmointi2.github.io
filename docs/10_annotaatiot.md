@@ -22,12 +22,14 @@ public String toString() {
 Yllä oleva Pelaaja-luokka kääntyy, vaikka annotaation ottaa pois lähdekoodista. @Override-annotaatio kuitenkin kannattaa laittaa koodiin, koska silloin kääntäjä pystyy tarkistamaan että kantaluokassa (yliluokassa) on varmasti sama metodi ylikirjoitettavaksi. Jos ei ole, niin kääntäjä antaa virheilmoituksen. Samalla tällä annotaatiolla dokumentoit omaan koodiisi ylikirjoitettavat metodit.
 
 Jokainen annotaatio on määritelty, otetaan esimerkiksi edellä esitelty @Override. Sen määritelmä on:
+
 ```java
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.SOURCE)
 public @interface Override {
 }
 ```
+
 Tässä @Target-annotaatiolla määritellään mihin koodinosaan @Override:n voi liittää (metodiin) ja @Retention:lla määritetään pysyvyys, SOURCE on vain käännösaikana käytössä, eikä talletu käännettyy koodiin.
 On mahdollista tehdä myös omia annotaatioita, toki yleensä käytetään valmiiksi määriteltyjä jotka ovat erilaisissa kirjatoissa. Esimerkkeinä vaikka Spring Boot-kirjasto tai JSON-käsittelykirjastot.
 

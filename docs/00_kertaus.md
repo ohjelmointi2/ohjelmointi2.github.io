@@ -5,14 +5,14 @@ nav_order: 1
 permalink: /kertaus/
 ---
 
-#Kertaus Ohjelmointi 1 -kurssin asioista
+# Kertaus Ohjelmointi 1 -kurssin asioista
 
-##Esitietovaatimukset
+## Esitietovaatimukset
 Ohjelmointi 2 -kurssi jatkaa siitä, mihin Ohjelmointi 1 päättyi. Tällä kurssilla oletetaan, että Ohjelmointi 1 -kurssin asiat ovat hallussa. Toki kaikkia asioita kerrataan ja vahvistetaan vielä tämän kurssin aikana, sekä käsitellään syvällisemmin kuin edellisellä kurssilla.
 
-##Muistilista Ohjelmointi 1 -kurssin aiheista
+## Muistilista Ohjelmointi 1 -kurssin aiheista
 
-###Muuttujat
+### Muuttujat
 * muuttujien tyypit ja arvoalueet
 * primitiivityypit, niiden wrapper-luokat (kääreluokat)
 * oliot (esim. String tai LocalDate)
@@ -25,26 +25,26 @@ Ohjelmointi 2 -kurssi jatkaa siitä, mihin Ohjelmointi 1 päättyi. Tällä kurs
 * while ja for-silmukat, kumpaa kannattaa käyttää missäkin tilanteessa
 * foreach-silmukka, käytetään varmasti tällä kurssilla
 
-###poikkeuskäsittely
+### poikkeuskäsittely
 * try/catch -rakenne
 * poikkeuksiin varautuminen
 * poikkeuksen käsittely
 
-###metodit ja parametrit
+### metodit ja parametrit
 * metodin määritys ja käyttö
 * parametrit
 * paluuarvo
 
-###taulukot ja listat
+### taulukot ja listat
 * taulukon käyttäminen
 * mitä eroa on taulukolla ja kokoelmaluokilla 
 * List<> ja ArrrayList<>, dynaamiset kokoelmat
 
-###tiedostokäsittely
+### tiedostokäsittely
 * tekstitiedoston lukeminen (java-nio-paketti)
 * tekstitiedoston kirjoittaminen
 
-###olio-ohjelmoinnin perusteet
+### olio-ohjelmoinnin perusteet
 * luokka
 * luokan jäsenet (kentät ja metodit)
 * konstruktorit ja luokan alustaminen 
@@ -58,7 +58,7 @@ Muuttujat, kontrollirakenteet, metodit parametreineen ja paluuarvoineen oletetaa
 
 Tämän kurssin aikana ei käytetä Scanner-luokkaa kovinkaan paljoa. Koodia testataan enemmän yksikkötestauksen avulla, se helpottaa koodin testaamista huomattavasti kun ei joka kerta erikseen tarvitse kirjoittaa syötteitä uudelleen, vaan samoja testitapauksia voidaan helposti suorittaa uudelleen. Yksikkötestaaminen kuuluu jokaisen ohjelmoijan perustaitoihin, siksi tällä kurssilla se onkin käytössä. 
 
-##Kertauskysymyksiä
+## Kertauskysymyksiä
 
 ```quiz
 ### Mikä on Java-metodien nimeämiskäytäntö?

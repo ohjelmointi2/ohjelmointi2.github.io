@@ -26,7 +26,7 @@ Materiaalissa olevien videoiden katsomiseksi sinun täytyy kirjautua sisään Mi
 ## JDBC – Java Database Connectivity
 
 Javan standardikirjastoon määritelty JDBC (Java Database Connectivity) -ohjelmointirajapinta mahdollistaa Java-sovellusten yhdistämisen eri tyyppisiin SQL-tietokantoihin ja erilaisten kyselyiden sekä päivitysten tekemisen Java-koodista käsin.
-
+ 
 ```mermaid
 flowchart TD
     A[Sovellus] -->B(JDBC API/Driver)

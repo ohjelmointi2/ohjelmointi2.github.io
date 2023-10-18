@@ -3,6 +3,8 @@ title: Web-ohjelmointi servleteillä
 layout: default
 nav_order: 6
 parent: Arkisto
+search_exclude: true
+nav_exclude: true
 ---
 
 # Web-ohjelmointi servleteillä

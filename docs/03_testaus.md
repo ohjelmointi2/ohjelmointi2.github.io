@@ -27,7 +27,9 @@ Vaikka käyttämämme testaustapa auttaa sinua ratkaisemaan tehtävät, vähänk
 
 Ohjelmistotestauksen käsitteistöön kuuluu oleellisena osana eri testausmenetelmät, joilla erityisesti automatisoitua testausta suoritetaan. Yleisesti käytettyyn jakoon kuuluvat **järjestelmätestaus**, **integraatiotestaus** ja **yksikkötestaus**. Lisäksi testauksessa voidaan keskittyä tiettyihin tarkempiin kohteisiin, kuten käytettävyyteen, tietoturvaan tai tehokkuuteen. Voit lukea näistä lisää esimerkiksi Vertics Oy:n blogikirjoituksesta ["Ohjelmistotestauksen perusteet"](https://vertics.co/ohjelmistotestauksen-perusteet/).
 
-Tällä viikolla perehdymme tarkemmin yksikkötestaukseen ja Javan [JUnit-kirjastoon](https://junit.org/junit5/), joka on vakiintunut ratkaisu yksikkötestien toteuttamiseksi Javalla. JUnit integroituu moniin laadunvarmistusjärjestelmiin ja sovelluskehittimiin, minkä vuoksi samat testit voidaan suorittaa automatisoidusti niin kehittäjän omalla koneella kuin erillisessä testausympäristössä. Myös Eclipsessä on erittäin hyvät työkalut JUnit-testien kirjoittamiseksi ja suorittamiseksi. Lisäksi tutustumme koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
+Tällä viikolla perehdymme tarkemmin yksikkötestaukseen ja Javan [JUnit-kirjastoon](https://junit.org/junit5/), joka on vakiintunut ratkaisu yksikkötestien toteuttamiseksi Javalla. JUnit integroituu moniin laadunvarmistusjärjestelmiin ja sovelluskehittimiin, minkä vuoksi samat testit voidaan suorittaa automatisoidusti niin kehittäjän omalla koneella kuin erillisessä testausympäristössä. Myös VS Codessa ja Eclipsessä on erittäin hyvät työkalut JUnit-testien kirjoittamiseksi ja suorittamiseksi. Lisäksi tutustumme koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
+
+Missä tahansa Java-projektissa voi olla yksikkötestajä. On kuitenkin luontevinta käyttää jotain projektityökalua, joka jo valmiiksi tukee testaamista. Esimerkiksi Maven ja Gradle-projektit sisältävät valmiiksi JUnit-kirjaston ja testihakemiston ja -luokan. 
 
 
 ## Yksikkötestaus
@@ -39,6 +41,17 @@ Tällä viikolla perehdymme tarkemmin yksikkötestaukseen ja Javan [JUnit-kirjas
 > Jyväskylän Yliopisto, Informaatioteknologian tiedekunta. Testauksen tasot. http://smarteducation.jyu.fi/projektit/systech/Periaatteet/suunnittelun-periaatteet/testaus/testauksen-tasot
 
 Mikäli olisimme kehittämässä esimerkiksi verkkokauppaa ja siihen liittyvää laskujen viitenumeroiden generointia, voisi viitenumeroiden generoinnin testaaminen käyttöliittymän kautta edellyttää meiltä esimerkiksi sisäänkirjautumista, tuotteiden lisäämistä ostoskoriin, toimitustavan valintaa ja lukuisia muita erillisiä työvaiheita ennen pääsyä varsinaiseen testattavaan osaan. Testaus käyttöliittymän kautta onkin monessa tapauksessa erittäin aikaavievää. Yksikkötestauksen avulla voimme testata viitenumeroiden generoinnin erillään kaikesta muusta koodista, omana yksikkönään.
+
+##Testit
+Testi on jossain luokassa oleva metodi, joka määritellään testiksi @Test annotaatiolla. Yleensä kuitenkin on käytössä Maven- tai Gradle-projekti, joissa testit ovat omassa hakemistorakenteessaan, näin saadaan helpommin ylläpidettävä projekti. 
+Testit voidaan ajaa VS Codessa ja Eclipsessä yksi kerrallaan vain vaikka kaikki yhdellä komennolla. Jos testi menee läpi, näkyy se testityökalussa vihreänä, muutoin punaisena.
+Testeillä testataan koodin toimintaa ja yksi testimetodi testaa yhtä asiaa pelkästään. Siksi testimetodeja tulee yleensä useita per luokka/metodi.
+
+##Nimeämiskäytännöt
+Testimetodeja tulee yleensä paljon, siksi on erittäin tärkeään käyttää yhtenäistä ja kuvaavaa nimeämiskäytäntöä. Testin nimestä pitäisi pystyä päättelemään mitä toimintoa testataan, mitä tilannetta ja mikä on oletettu lopputulos. Esimerkkejä nimeämiskäytännöstä löytyy paljon, tiivis kuvaus löytyy esimerkiksi osoitteesta https://www.baeldung.com/java-unit-testing-best-practices
+
+
+
 
 
 ```quiz
@@ -56,41 +69,31 @@ Yksikkötestausta käsitellään tämän kurssin näkökulmasta oheisissa [Power
 Lisäksi suosittelen perehtymään [JUnit-testaustyökalun omiin käyttöohjeisiin](https://junit.org/junit5/docs/current/user-guide/).
 
 
-### JUnit-teoriavideot
-
-[**JUnit-testin luonti ja assertiot**](https://video.haaga-helia.fi/media/JUnit-testin+luonti+ja+assertiot/0_pl76xbuy) <small>9:21</small>
-
-<iframe src="https://d38ynedpfya4s8.cloudfront.net/p/288/sp/28800/embedIframeJs/uiconf_id/23448708/partner_id/288?iframeembed=true&playerId=kaltura_player&entry_id=0_pl76xbuy&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_bvt6dx1t" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
+## Lyhyt oppimäärä JUnit-testin tekemiseen
 
 Testiluokan luominen ja suorittaminen sekä käsitteet **testiluokka**, **annotaatio**, **testimetodi** ja **assertio**.
 
-&nbsp;
-
-[**Luokan testaaminen JUnit-työkalulla**](https://video.haaga-helia.fi/media/Luokan+testaaminen+JUnit-ty%C3%B6kalulla/0_1gkcscbe) <small>7:10</small>
-
-<iframe src="https://d38ynedpfya4s8.cloudfront.net/p/288/sp/28800/embedIframeJs/uiconf_id/23448708/partner_id/288?iframeembed=true&playerId=kaltura_player&entry_id=0_1gkcscbe&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_6si1l0my" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
-
 Luokan metodien testaaminen erillisen testiluokan ja JUnit-kirjaston avulla.
 
-&nbsp;
+Seuraava esimerkki esittelee lyhyesti yksikkötestaamista ja lisäksi TDD-menetelmää (Test- Driven Development),  jossa tehdään ensi testit ja sitten vasta toteutetaan luokat ja metodit.
 
-[**Testin alustaminen ja @BeforeEach**](https://video.haaga-helia.fi/media/Testin+alustaminen+ja+%40BeforeEach/0_poklvdms) <small>3:54</small>
-
-<iframe id="kaltura_player" src="https://d38ynedpfya4s8.cloudfront.net/p/288/sp/28800/embedIframeJs/uiconf_id/23448708/partner_id/288?iframeembed=true&playerId=kaltura_player&entry_id=0_poklvdms&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=0_reca7zwj" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
-
-Useille testimetodeille yhteisten alustustoimenpiteiden tekeminen erillisessä alustusmetodissa.
-
-&nbsp;
-
-<!-- palindromi-video: https://video.haaga-helia.fi/media/t/0_m8y5zv8k -->
-
-
-**module-info.java ja "The import cannot be resolved"-virhe**
-
-Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit projektia luodessasi vaihtoehdon *"Create a new module-info.java file"*, saatat joutua tekemään muutoksia `module-info.java`-tiedostoon jotta Java löytää JUnit-kirjaston. Kurssin esimerkeissä moduulijärjestelmää ei hyödynnetä, joten niissä `module-info.java`-tiedostoa ei ole. Voit korjata ongelman poistamalla kyseisen tiedoston, tai tutustua muihin vaihtoehtoihin mm. [tässä keskustelussa](https://stackoverflow.com/a/52581442).
+1. tee uusi Gradle-projekti
+2. tee build
+3. tee testiluokka ja siihen yksi testimetodi 
+4. tee testattava luokka ja toteuta niin, että ensimmäinen testi menee läpi
+5. tee seuraava testi ja koodaa niin että testi menee läpi
+6. palaa takaisin kohtaa 5 ja toista kunnes kaikki mahdolliset testitapaukset on katettu
 
 
 &nbsp;
+
+[seille testimetodeille yhteisten alustustoimenpiteiden tekeminen erillisessä alustusmetodissa.
+
+&nbsp;
+
+
+
+
 
 
 ## Testaaminen käytännössä:
@@ -107,11 +110,6 @@ Videoilla käsitellyt lähdekoodit löytyvät [täältä](/03_yksikkotestaus/yks
 
 &nbsp;
 
-> 🔐 **Huom!** Seuraavien videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun @myy.haaga-helia.fi- käyttäjätunnuksellasi. Jos videot eivät aukea, selaimesi tai selaimen lisäosat saattavat estää evästeiden välittämisen videopalveluun. Kokeile tässä tapauksessa avata videon suoraan MS Stream:issa klikkaamalla videon yllä olevaa otsikkoa tai videon oikeassa yläkulmassa olevaa 🗗-kuvaketta.
->
-> Mikäli olet tai olet ollut samanaikaisesti kirjautuneena kaksilla eri Microsoft-tunnuksilla, voi ongelma johtua siitä, että Stream tunnistaa sinut tunnuksella, jolla ei ole katseluoikeutta. Kokeile tässä tapauksessa avata video "incognito"-näkymässä, jossa nykyiset kirjautumisesi eivät ole voimassa. Klikkaa siis videon otsikkoa kakkospainikkeella ja valitse linkin avaaminen yksityisessä tilassa. Sen jälkeen sinun tulee kirjautua sisään @myy.haaga-helia.fi-tunnuksellasi.
-
-&nbsp;
 
 ```quiz
 ### Mikä on JUnitin rooli ohjelmistokehityksessä?
@@ -121,35 +119,11 @@ Videoilla käsitellyt lähdekoodit löytyvät [täältä](/03_yksikkotestaus/yks
 - [ ] JUnit on työkalu tietokantojen hallintaan.
 ```
 
-**[EtunimiTilasto-tehtävän yksikkötestaus, osa 1/3](https://web.microsoftstream.com/video/80c680e7-a853-4962-a9fb-19e7ef1f8d0b)** <small>19:06</small>
 
-{% include msstream.html id="80c680e7-a853-4962-a9fb-19e7ef1f8d0b" %}
 
-Tällä videolla sovelletaan yksikkötestausta käytännössä Map-tehtävistä tutun EtunimiTilasto-tehtävän kanssa. Videolla huomataan, että yksikkötestaus voi olla haastavaa, mikäli ohjelman rakenne ei mahdollista sen osien käsittelyä toisistaan irrallisina. Videolla pilkotaan ohjelma testattaviin paloihin, joille kirjoitetaan testejä.
-
-&nbsp;
-
-**[EtunimiTilasto-tehtävän yksikkötestaus, osa 2/3](https://web.microsoftstream.com/video/144d7504-7f0f-465d-a473-130e9fd3a2b8)** <small>17:56</small>
-
-{% include msstream.html id="144d7504-7f0f-465d-a473-130e9fd3a2b8" %}
-
-Tällä videolla toteutetaan logiikka CSV-rivien muuttamiseksi `HashMap`-tietorakenteeksi siten, että logiikka on yksikkötesttavissa.
-
-&nbsp;
-
-**[EtunimiTilasto-tehtävän tiedostonkäsittely, osa 3/3](https://web.microsoftstream.com/video/2180450b-4663-430d-9cb4-a5aa89db17f3)** <small>12:26</small>
-
-{% include msstream.html id="2180450b-4663-430d-9cb4-a5aa89db17f3" %}
-
-Tällä videolla toteutetaan ja yksikkötestataan EtunimiTilasto-tehtävän tiedostojenkäsittelyä koskeva osuus. Videolla käsitellään aineistona [etunimet.csv-tiedostoa](https://gist.githubusercontent.com/swd1tn002/f6b4c367cba9eecce0c2a1ba9de6854a/raw/fecefc85b1915bfcaf9aaf2ede7bf7503c2bffb0/etunimet.csv). Valmis TiedostonLukija.java -apuluokka löytyy [täältä](https://gist.github.com/swd1tn002/5842d9bb5d4152799e11d0f7742ecc91).
-
-*Aineiston lisenssi: [Digi- ja väestötietovirasto](https://www.avoindata.fi/data/fi/organization/digi_ja_vaestotietovirasto) on julkaissut tietoaineiston [Väestötietojärjestelmän suomalaisten nimiaineistot](https://www.avoindata.fi/data/fi/dataset/none) lisenssillä [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).*
-
-&nbsp;
 
 ### Lisämateriaali
 
-Lisäksi sinun kannattaa tutustua tämän viikon tehtävän alkuperäiseen lähteeseen, josta löydät tekstimateriaaleja sekä videoita tehtävään liittyen: [https://web.mit.edu/6.005/www/fa16/classes/04-code-review/](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/)
 
 
 ```quiz

@@ -3,6 +3,8 @@ title: Verkkosovellus kolmikerrosarkkitehtuurilla
 layout: default
 nav_order: 7
 parent: Arkisto
+search_exclude: true
+nav_exclude: true
 ---
 
 # Verkkosovellus kolmikerrosarkkitehtuurilla

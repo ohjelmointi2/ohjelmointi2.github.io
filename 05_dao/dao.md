@@ -24,19 +24,6 @@ Lopulta tavoitteenamme on sovellus, joka on ensinnäkin toimiva, mutta sen lisä
 
 Voit tutustua tavoittelemaamme lopputulokseen jo etukäteen osoitteessa [https://shoppinglist-6xnh.onrender.com/](https://shoppinglist-6xnh.onrender.com/)! *Huom, tämä sovellus toimii [render](https://render.com/)-pilvipalvelun ilmaisilla resursseilla, ja sen käynnistyminen voi kestää jopa minuutin.*
 
-<!--## Malliratkaisu
-
-Tämän tehtävän palautusaika on umpeutunut. Voit katsoa malliratkaisun [tältä videolta](https://web.microsoftstream.com/video/61360881-77bb-4610-b22c-4a6ef3b298a6).-->
-
-
-## Video 1: [JDBC-aiheen kertaus](https://web.microsoftstream.com/video/aea9daea-9811-4ba2-bd14-943658e381a1) <small>13:03</small>
-
-{% include msstream.html id="aea9daea-9811-4ba2-bd14-943658e381a1" %}
-
-Tällä videolla kerrataan [edellisellä viikolla](/04_tietokantaohjelmointi/jdbc) käsitellyt JDBC-aiheeseen liittyvät käsitteet ja työkalut kuten ajuri, tietokantatiedosto, build path, SQLite tools, yhteysosoite ja prepared statement. Mikäli edellisen JDBC-aiheen sisältö ehti jo unohtua, sinun kannattaa aloittaa tästä videosta.
-
-&nbsp;
-
 
 ## DAO (Data Access Object)
 
@@ -49,18 +36,10 @@ Tietokantalogiikan eriyttämiseksi muusta koodista käytetään usein ns. **DAO*
 > DigitalOcean. DAO Design Pattern. [https://www.digitalocean.com/community/tutorials/dao-design-pattern](https://www.digitalocean.com/community/tutorials/dao-design-pattern)
 
 
-## Video 2: [Intro DAO-patterniin](https://web.microsoftstream.com/video/ec6e052c-ba95-4c59-975f-6322c81097e6?st=33) <small>3:53</small>
-
-{% include msstream.html id="ec6e052c-ba95-4c59-975f-6322c81097e6" %}
-
 Tällä videolla esitellään motivaatio tietokantapohjaisen Java-ohjelman rakenteen parantamiseksi DAO-kehitysmallin avulla. Videolla käsiteltävän luokan `TietokantaanYhdistaminen.java` löydät [täältä](/04_tietokantaohjelmointi/videoiden_lahdekoodit).
 
 &nbsp;
 
-
-## Video 3: [ShoppingListApp-sovelluksen ensimmäinen vaihe](https://web.microsoftstream.com/video/8efb239a-4700-444a-a4a8-f6ef9bac10e9) <small>41:41</small>
-
-{% include msstream.html id="8efb239a-4700-444a-a4a8-f6ef9bac10e9" %}
 
 Tällä videolla toteutamme ShoppingListApp-sovelluksen käyttöliittymän ensimmäisiä komentoja [switch-case-rakenteella](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html). Videoilla esiintyvä PowerPoint-esitys on ladattavissa [tästä](/kalvot/jdbc.pdf). Käyttöliittymän erillinen ohje löytyy omalta sivultaan.
 
@@ -68,10 +47,6 @@ Videon lopussa käsitellään `finally`-lohkon käyttämistä JDBC-resurssien su
 
 &nbsp;
 
-
-## Video 4: [DAO-käsitteen esittely ja ostoslistan DAO-luokat](https://web.microsoftstream.com/video/0c7e026d-5064-4ceb-8afc-58940bfeced7) <small>27:48</small>
-
-{% include msstream.html id="0c7e026d-5064-4ceb-8afc-58940bfeced7" %}
 
 Tällä videolla parannamme ShoppingListApp-sovelluksemme rakennetta hyödyntämällä DAO-luokkaa. Videolla hyödynnämme seuraavaa model-luokkaa ja rajapintaa:
 

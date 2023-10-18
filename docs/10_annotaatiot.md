@@ -16,7 +16,7 @@ Luultavasti olet nähnyt @Override -annotaation toString-metodin perinnän yhtey
 ```java
 @Override
 public String toString() {
-    return "Pelaaja  + nimi + ", pisteitä koossa " + pisteet;
+    return "Pelaaja " + nimi + ", pisteitä koossa " + pisteet;
 }
 ```
 Yllä oleva Pelaaja-luokka kääntyy, vaikka annotaation ottaa pois lähdekoodista. @Override-annotaatio kuitenkin kannattaa laittaa koodiin, koska silloin kääntäjä pystyy tarkistamaan että kantaluokassa (yliluokassa) on varmasti sama metodi ylikirjoitettavaksi. Jos ei ole, niin kääntäjä antaa virheilmoituksen. Samalla tällä annotaatiolla dokumentoit omaan koodiisi ylikirjoitettavat metodit.

@@ -99,10 +99,15 @@ Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisäl
 ### Tiedonvälitys ja metodit, mikä on vähiten väärä vastaus? 
 
 - [ ] Metodi voi palauttaa useita arvoja
+    > Metodi voi palauttaa kokoelman, mutta siinäkin tapauksessa vain yhden kokoelman
 - [ ] Parametriä ei tarvitse välittää kutsussa, jos sille on määritelty oletusarvo
+    > Javassa ei ole mahdollista määritellä parametreille oletusarvoja
 - [ ] Kahta samannimistä metodia ei voi olla yhdessä luokassa
+    > Metodit voivat olla samannimisiä, kunhan niiden parametrit ovat eri. Tätä kutsutaan termillä "kuormittaminen".
 - [x] Parametria välitetty olio voi muuttua metodin suorituksen aikana (sivuvaikutus)
+    > Oikein! Oliot välitetään viittauksina, eli niitä ei kopioida metodia kutsuttaessa.
 - [ ] Parametrina voi välittää vain perustietotyyppejä (int, double, char, boolean)
+    > Kaikki tietotyypit kelpaavat parametreiksi.
 ```
 
 ```quiz

@@ -62,6 +62,7 @@ Tämän kurssin aikana ei käytetä Scanner-luokkaa kovinkaan paljoa. Koodia tes
 
 ```quiz
 ### Mikä on Java-metodien nimeämiskäytäntö?
+
 - [ ] UpperCamelCase
 - [ ] MiddleCAMELcase
 - [x] lowerCamelCase
@@ -69,6 +70,7 @@ Tämän kurssin aikana ei käytetä Scanner-luokkaa kovinkaan paljoa. Koodia tes
 
 ```quiz
 ### Montako valintalauseketta (ehtolause tai operaattori) Javassa on? 
+
 - [ ] 1
 - [ ] 2
 - [x] 3
@@ -76,6 +78,7 @@ Tämän kurssin aikana ei käytetä Scanner-luokkaa kovinkaan paljoa. Koodia tes
 
 ```quiz
 ### Tiedonvälitys ja metodit, mikä on vähiten väärä vastaus? 
+
 - [ ] Metodi voi palauttaa useita arvoja
 - [ ] Parametriä ei tarvitse välittää kutsussa, jos sille on määritelty oletusarvo
 - [ ] Kahta samannimistä metodia ei voi olla yhdessä luokassa
@@ -94,6 +97,7 @@ Tämän kurssin aikana ei käytetä Scanner-luokkaa kovinkaan paljoa. Koodia tes
 
 ```quiz
 ### Mikä väite on totta?
+
 - [ ] Listan (List<>) koko ei voi muuttua suorituksen aikana
 - [x] Listan alkoiden lukumäärän saa selville size()-metodilla
 - [ ] Käytä aina taulukkoa, ei listaa
@@ -102,12 +106,12 @@ Tämän kurssin aikana ei käytetä Scanner-luokkaa kovinkaan paljoa. Koodia tes
 
 ```quiz
 ### Mikä väite pätee luokkien ja tiedostojen nimeämiseen?
+
 - [ ] Luokan nimi kirjoitetaan isoilla tai pienellä alkukirjaimella
 - [x] Luokan ja tiedoston nimet pitää olla täsmälleen samat
 - [ ] Yhdessä tiedostossa ei saa olla kuin yksi luokka
 - [ ] Luokan ja paketin nimen pitää olla täsmälleen sama
 ```
-
 
 
 

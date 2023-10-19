@@ -42,15 +42,13 @@ Missä tahansa Java-projektissa voi olla yksikkötestajä. On kuitenkin luontevi
 
 Mikäli olisimme kehittämässä esimerkiksi verkkokauppaa ja siihen liittyvää laskujen viitenumeroiden generointia, voisi viitenumeroiden generoinnin testaaminen käyttöliittymän kautta edellyttää meiltä esimerkiksi sisäänkirjautumista, tuotteiden lisäämistä ostoskoriin, toimitustavan valintaa ja lukuisia muita erillisiä työvaiheita ennen pääsyä varsinaiseen testattavaan osaan. Testaus käyttöliittymän kautta onkin monessa tapauksessa erittäin aikaavievää. Yksikkötestauksen avulla voimme testata viitenumeroiden generoinnin erillään kaikesta muusta koodista, omana yksikkönään.
 
-##Testit
+## Testit
 Testi on jossain luokassa oleva metodi, joka määritellään testiksi @Test annotaatiolla. Yleensä kuitenkin on käytössä Maven- tai Gradle-projekti, joissa testit ovat omassa hakemistorakenteessaan, näin saadaan helpommin ylläpidettävä projekti. 
-Testit voidaan ajaa VS Codessa ja Eclipsessä yksi kerrallaan vain vaikka kaikki yhdellä komennolla. Jos testi menee läpi, näkyy se testityökalussa vihreänä, muutoin punaisena.
+Testit voidaan ajaa VS Codessa ja Eclipsessä yksi kerrallaan vain vaikka kaikki yhdellä komennolla. Jos testi menee läpi, näkyy se testityökalussa vihreänä, muutoin punaisena. Lisäksi testit voidaan ajaa ilman IDE:ä komentoriviltä käsin jolloin saadaan enemmän automaatiota.
 Testeillä testataan koodin toimintaa ja yksi testimetodi testaa yhtä asiaa pelkästään. Siksi testimetodeja tulee yleensä useita per luokka/metodi.
 
-##Nimeämiskäytännöt
+## Nimeämiskäytännöt
 Testimetodeja tulee yleensä paljon, siksi on erittäin tärkeään käyttää yhtenäistä ja kuvaavaa nimeämiskäytäntöä. Testin nimestä pitäisi pystyä päättelemään mitä toimintoa testataan, mitä tilannetta ja mikä on oletettu lopputulos. Esimerkkejä nimeämiskäytännöstä löytyy paljon, tiivis kuvaus löytyy esimerkiksi osoitteesta https://www.baeldung.com/java-unit-testing-best-practices
-
-
 
 
 

@@ -132,6 +132,5 @@ Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisäl
 - [ ] Luokan ja paketin nimen pitää olla täsmälleen sama
 ```
 
-
-
+{% include quiz.html %}
 

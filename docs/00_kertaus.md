@@ -75,7 +75,11 @@ Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisäl
 
 **Rinnakkaisuus** ja siihen liittyvä termi asynkronisuus ovat mukana hyvin monessa asiassa. Esimerkiksi web-sovellukselle tulevat pyynnöt selaimilta prosessoidaan palvelimella rinnakkain. Jokaisen mobiilisovelluksen toiminnot ovat toteutettu asynkronisesti. Esimerkkejä löytyisi lukuisia lisää. Rinnakkaisuuden avulla saadaan myös paremmin hyödynnettyä laitteiston kapasitettia. Toisaalta rinnakkaisuuteen liittyy asioita, jotka pitää tietää ja ymmärtää. EHkä isoin asia on datan käsittelyyn liittyvä asia, poissulkemisongelma (critical section, race condition) eli mistä se johtuu ja miten ratkaistaan. Tarkoituksena tällä kurssilla ei ole käsitellä syvällisesti kaikki rinnakkaisuuteen ja rinnakkaisuuden hallintaan liittyvät tekniikat, vaan antaa yleiskäsitys mitä rinnakkaisuus on ja mitä pitää huomioida rinnakkaisissa toiminnoissa.
 
-**Tietokantakäsittely** liittyy jossain muodossa lähes jokaiseen sovellukseen. Java-sovelluksissa tietokantaa voidaan käyttää joko JDBC:llä tai JPA:lla. Tällä kurssilla käsitellään yksinkertaisempi JDBC ja JPA-tekniikka tulee esille Back-end -kurssilla. 
+**Tietokantakäsittely** liittyy jossain muodossa lähes jokaiseen sovellukseen. Java-sovelluksissa tietokantaa voidaan käyttää joko JDBC:llä tai JPA:lla. Tällä kurssilla käsitellään yksinkertaisempi JDBC ja JPA-tekniikka tulee esille Back-end -kurssilla. TGietokantaan tehdään erilaisia hakuja sekä ylläpito-operaatioita (CRUD). Lisäksi opetellaan heti alkumeterillä välttämään yksi tietoturvaongelma eli SQL Injection käyttämällä suorittettavissa parametrejä.
+
+Näistä kaikista mainituista asioista lisää kurssin aikana teoria, harjoitusten ja lähdelinkkien avulla.
+
+----------
 
 ## Kertauskysymyksiä
 
@@ -114,8 +118,10 @@ Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisäl
 ### Mikä väite ei ole totta?
 
 - [x] Konstruktorilla ei voi olla parametrejä
-- [ ] Konstruktori voi kutsua toista konstruktoria
+- [ ] Konstruktori voi kutsua toista saman luokan konstruktoria
+    > Kyllä voi käyttämällä this-määrettä
 - [ ] Konstruktoria ei ole pakko kirjoittaa
+    > konstruktorin kirjoittaminen ei ole pakollista, kääntäjä tekee automaattisesti oletuskonstruktorin jos lähdekoodista puuttuu konstruktorimetodi
 - [ ] Konstruktori-metodin nimi on pakko olla sama kuin luokan nimi
 ```
 
@@ -123,18 +129,25 @@ Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisäl
 ### Mikä väite on totta?
 
 - [ ] Listan (List<>) koko ei voi muuttua suorituksen aikana
+    > List on dynaaminen eli koko voi muuttua
 - [x] Listan alkoiden lukumäärän saa selville size()-metodilla
 - [ ] Käytä aina taulukkoa, ei listaa
+    > List on yleensä kätevämpi
 - [ ] Voit lisätä listaan alkiota vain loppuun, ei alkuun
+    > List mahdollistaa hyvin monipuolisen käsittelyn, myös lisäyksen haluttuun kohtaan
+- [ ] Listasta ei voi poistaa mitään, pelkästää lisätä uusi alkioita
 ```
 
 ```quiz
 ### Mikä väite pätee luokkien ja tiedostojen nimeämiseen?
 
 - [ ] Luokan nimi kirjoitetaan isoilla tai pienellä alkukirjaimella
+    > Luokan nimi kirjoitataan aina isolla alkukirjaimelle, on nimeämiskäytäntö jota on syytä noudattaa, Java-kääntäjä ei asiasta välitä
 - [x] Luokan ja tiedoston nimet pitää olla täsmälleen samat
 - [ ] Yhdessä tiedostossa ei saa olla kuin yksi luokka
+    > Vain yksi public luokka per tiedosto, muutoin ei rajoitusta 
 - [ ] Luokan ja paketin nimen pitää olla täsmälleen sama
+    > Ei ole sama, paketti on käytännössä sama kuin talletushakemiston polku ja luokka sama kuin tiedostonimi
 ```
 
 {% include quiz.html %}

@@ -83,6 +83,7 @@ Seuraava esimerkki esittelee lyhyesti yksikkötestaamista ja lisäksi TDD-menete
 6. palaa takaisin kohtaa 5 ja toista kunnes kaikki mahdolliset testitapaukset on katettu
 
 
+
 &nbsp;
 
 [seille testimetodeille yhteisten alustustoimenpiteiden tekeminen erillisessä alustusmetodissa.

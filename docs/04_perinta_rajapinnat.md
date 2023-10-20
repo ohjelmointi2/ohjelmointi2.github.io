@@ -10,7 +10,7 @@ permalink: /perintä-ja-rajapinnat/
 # Perintä ja rajapinnat
 {: .no_toc }
 
-Perintä (inheritance) ja rajapinnat (interfaces) ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi.
+Perintä (inheritance) ja rajapinnat (interfaces) ovat olio-ohjelmoinnin ratkaisuja koodin uudelleenkäytettävyyden ja yhteensopivuuden edistämiseksi. Interface ei pääsääntöisesti lisää toiminnallisuutta.
 {: .fs-6 }
 
 ---

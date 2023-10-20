@@ -1,5 +1,5 @@
 ---
-title: Rinnakkaisuus
+title: 🚧 Rinnakkaisuus
 layout: default
 nav_order: 11
 permalink: /rinnakkaisuus/

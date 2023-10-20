@@ -26,7 +26,7 @@ Kurssin päivitys on käynnissä ja sisältö uudistuu syksyksi 2023.
 
 ## ✅ Osallistumisen vahvistaminen
 
-**Kurssin osallistumisen vahvistaminen edellyttää kahden ensimmäisen viikon tehtävien palauttamista määräaikaan mennessä.** Ensimmäiset tehtävät ovat luonteeltaan aikaisempaa osaamista kertaavia ja tehtäviin on saatavissa vinkkejä sekä tukea kurssin keskustelukanavalla.
+**Kurssin osallistumisen vahvistaminen edellyttää ensimmäisen viikon tehtävien palauttamista määräaikaan mennessä.** Ensimmäiset tehtävät ovat luonteeltaan aikaisempaa osaamista kertaavia ja tehtäviin on saatavissa vinkkejä sekä tukea kurssin keskustelukanavalla.
 
 > *"Opiskelija vahvistaa paikkansa opintojaksototeutuksella olemalla läsnä opetuksen alkaessa tai muutoin opettajan ilmoittamalla tavalla, joka voi esimerkiksi olla ensimmäisen oppimistehtävän palautus."*
 >
@@ -41,17 +41,11 @@ Kurssin keskeyttäminen ei ole Haaga-Helian linjauksia noudattaen mahdollista en
 > [https://mynet.haaga-helia.fi/group/pakki/toteutukselle-ilmoittautuminen](https://mynet.haaga-helia.fi/group/pakki/toteutukselle-ilmoittautuminen)
 
 
-## 💬 Viestintäkanavat
-
-Tällä kurssilla viestintä tapahtuu toteutuksesta riippuen Moodlessa tai MS Teams -palvelussa. Jos jäät jumiin koodisi kanssa tai et ymmärrä materiaaleja tai tehtävänantoja, kysy rohkeasti vinkkejä. Todennäköisesti samaa ongelmaa pohtii kanssasi myös moni muu, joten lähetäthän sisältöä ja tehtävänantoja koskevat kysymykset yhteiselle kanavalle eikä yksityisviestinä.
-
-
 ## 📥 Palautettavat tehtävät
 
 Kurssilla on viikoittaisia tehtäviä, jotka tulee palauttaa annettuihin määräaikoihin mennessä. Toteutuksesta riippuen palautus tehdään joko GitHubiin, Teamsiin tai Moodleen. Tarkemmat ohjeet löytyvät oman toteutuksesi ohjeista.
 
 Apua tehtävien tekoon on saatavissa kurssin keskustelukanavalla niin opettajalta kuin muiltakin opiskelijoilta.
-
 
 ## 📊 Arviointi
 
@@ -60,7 +54,7 @@ Kurssi arvioidaan asteikolla 0-5. Kurssin loppuarvosana lasketaan kurssin tehtä
 
 ## ⏱️ Kurssin työmäärä
 
-Opintojakso kestää 8 viikkoa ja on laajuudeltaan 5 opintopistettä, joten sen [laskennallinen työmäärä on noin 135 tuntia](https://www.haaga-helia.fi/fi/ects-jarjestelma-ja-tutkintotodistuksen-liite-eli-diploma-supplement). Ttyömäärä vastaa laskennallisesti noin 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko:
+Opintojakso kestää 8 viikkoa ja on laajuudeltaan 5 opintopistettä, joten sen [laskennallinen työmäärä on noin 135 tuntia](https://www.haaga-helia.fi/fi/ects-jarjestelma-ja-tutkintotodistuksen-liite-eli-diploma-supplement). Työmäärä vastaa laskennallisesti noin 17 tuntia viikossa, joten varaa kurssin suorittamiseen runsaasti aikaa joka viikko:
 
 ```java
 public class KurssinTyomaara {

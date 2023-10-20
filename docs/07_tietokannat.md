@@ -9,7 +9,7 @@ permalink: /tietokannat/
 # Tietokantaohjelmointi
 {: .no_toc }
 
-Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement.
+Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement. JDBC:n latauksen syntaksi on vuosien varrella Java-kielessä muuttunut.
 {: .fs-6 }
 
 ---

@@ -11,7 +11,7 @@ nav_exclude: true
 
 Tähän saakka kaikki kursseilla tehdyt sovellukset ovat käynnistyneet main-metodin ensimmäisestä lauseesta ja suoritus on edennyt lause kerrallaan kunnes main-metosi on suoritettu kokonaan. Jokaisella hetkellä on suorituksessa vain yksi sovelluksen kohta. 
 On mahdollista, että sovelluksen (prosessin) sisällä on useita samaan aikaan suorituksessa olevia koodinosia, tällöin puhutaan rinnakkaisuudesta.
-
+<!-- 
 esimerkki thread:lla, sitten runnable
 seuraavana rinnakkaisuudesta aiheutuvia 'ongelmia'
 silmukassa laskurin kasvatus ==> ei toimi jos tarpeeksi kierroksia ==> joskus menee pieleen 
@@ -25,4 +25,4 @@ tässä voisi olla jopa Singleton pattern käytössä. Jos tarpeeksi generoi ID-
 
 Thread /Runnable
 Executor
-java.util.concurrent-paketti ==> Executor ja ExecutorService rajapinnat ja niiden käyttö
+java.util.concurrent-paketti ==> Executor ja ExecutorService rajapinnat ja niiden käyttö -->

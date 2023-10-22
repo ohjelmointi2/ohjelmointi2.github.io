@@ -7,7 +7,7 @@ permalink: /stream-lambda/
 
 #Lambda
 
-johdatus funktionaaliseen ohjelmointiin esimerkin avulla.
+<!-- johdatus funktionaaliseen ohjelmointiin esimerkin avulla.
 lambda on anonyymi funktio, jossa syntaksia on vielä tiivistetty
 Luokka, joka sisältää jonkin listan esimerkiksi tuotteita
 - ensin tavallisina funktioina poimiKalliit ja poimiPunaiset ==> kovakoodattu ratkaisu
@@ -16,11 +16,11 @@ Luokka, joka sisältää jonkin listan esimerkiksi tuotteita
 - toteutus niin, että valintafunktion voi välittää poiminta-funktiolle
 - java.util.function-paketti ja Predicate
 - edellisen toteutus prodikaatin avulla, ensin funktiona ja sitten käyttäen lambda-syntaksia
-- muita: consumer, supplier
+- muita: consumer, supplier -->
 
 #Stream
 
-lyhyt kuvaus mikä on stream
+<!-- lyhyt kuvaus mikä on stream
 sitten edellinen esimerkki, oikea toteutus käyttäen streamia 
 ja vaikka kokonaan ilman erillistä luokkaa koska jos on lista, siitä voidaan käsitellä streamin ja lambdojen avulla 
 
@@ -42,4 +42,4 @@ datafunktioita
 - sum(), count(), max(), min() , average()
 
 Stream toimintoja
--collect() , sort()
+-collect() , sort() -->

@@ -46,10 +46,6 @@ Videolla esiintyvät lähdekoodit löytyvät [gist.github.com-palvelusta](https:
 
 ### Perintä osa 2: [metodien ylikirjoittaminen](https://web.microsoftstream.com/video/10d75407-1851-44b6-b43c-d9401fa46160) <small>33:39</small>
 
-{% include msstream.html id="788b9504-8600-4419-8e96-673ecd0a1ea2" %}
-
-{% include msstream.html id="10d75407-1851-44b6-b43c-d9401fa46160" %}
-
 Tällä videolla muodostamme eri tyyppisille ilmoituksille omat HTML-esityksensä ja ylikirjoitamme yliluokan metodeja eri aliluokkien tarpeet huomioiden. Sivuamme samalla myös for-each-toistorakennetta, `@Override`-annotaatiota ja monirivisiä merkkijonoja.
 
 💡 Videon katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.

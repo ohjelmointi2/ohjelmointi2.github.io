@@ -10,7 +10,7 @@ permalink: /testaus/
 # Yksikkötestauksen perusteet
 {: .no_toc }
 
-Tällä viikolla tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
+Tässä osassa tutustumme yksikkötestaukseen ja testaamme valmista virheellisesti toimivaa ja tyylillisesti heikosti toteutettua metodia. Tutustumme lisäksi koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
 {: .fs-6 }
 
 ---
@@ -51,7 +51,6 @@ Testeillä testataan koodin toimintaa ja yksi testimetodi testaa yhtä asiaa pel
 Testimetodeja tulee yleensä paljon, siksi on erittäin tärkeään käyttää yhtenäistä ja kuvaavaa nimeämiskäytäntöä. Testin nimestä pitäisi pystyä päättelemään mitä toimintoa testataan, mitä tilannetta ja mikä on oletettu lopputulos. Esimerkkejä nimeämiskäytännöstä löytyy paljon, tiivis kuvaus löytyy esimerkiksi osoitteesta https://www.baeldung.com/java-unit-testing-best-practices
 
 
-
 ```quiz
 ### Miksi yksikkötestaus on tärkeä osa ohjelmistokehitystä?
 
@@ -84,12 +83,7 @@ Seuraava esimerkki esittelee lyhyesti yksikkötestaamista ja lisäksi TDD-menete
 
 
 
-&nbsp;
-
-[seille testimetodeille yhteisten alustustoimenpiteiden tekeminen erillisessä alustusmetodissa.
-
-&nbsp;
-
+**Demo**
 
 
 

@@ -41,19 +41,9 @@ Tällä videolla esitellään motivaatio tietokantapohjaisen Java-ohjelman raken
 &nbsp;
 
 
-Tällä videolla toteutamme ShoppingListApp-sovelluksen käyttöliittymän ensimmäisiä komentoja [switch-case-rakenteella](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html). Videoilla esiintyvä PowerPoint-esitys on ladattavissa [tästä](/kalvot/jdbc.pdf). Käyttöliittymän erillinen ohje löytyy omalta sivultaan.
+PowerPoint-esitys on ladattavissa [tästä](/kalvot/jdbc.pdf). Käyttöliittymän erillinen ohje löytyy omalta sivultaan.
 
 Videon lopussa käsitellään `finally`-lohkon käyttämistä JDBC-resurssien sulkemiseen kyselyn tekemisen jälkeen. Vaikka videon alkuosa olisi sinulle jo tuttua, katso yhteyksien sulkemista koskeva osuus kohdasta 29:50 alkaen.
-
-&nbsp;
-
-
-Tällä videolla parannamme ShoppingListApp-sovelluksemme rakennetta hyödyntämällä DAO-luokkaa. Videolla hyödynnämme seuraavaa model-luokkaa ja rajapintaa:
-
-* [ShoppingListItem](https://github.com/haagahelia/ShoppingListExample/blob/master/src/main/java/model/ShoppingListItem.java)-luokka
-
-* [ShoppingListItemDao](https://github.com/haagahelia/ShoppingListExample/blob/master/src/main/java/database/ShoppingListItemDao.java)-rajapinta
-
 
 &nbsp;
 

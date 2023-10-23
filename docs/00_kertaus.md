@@ -52,7 +52,7 @@ Ohjelmointi 2 -kurssi jatkaa siitä, mihin Ohjelmointi 1 päättyi. Tällä kurs
 
 Osaat siis olio-ohjelmoinnin osalta osaat tehdä luokkia, niihin konstruktorit sekä setter/getter-metodit kenttien käsittelyyn. Tällä kurssilla otetaan mukaan olio-ohjelmoinnista lisää käsitteitä kuten periytyminen ja rajapinnat. Molemmat ovat tärkeitä ymmärtää ja aivan varmasti joudut myös hyödyntämään ja soveltamaan käytännön ohjelmointityössä.
 
-List<T> on yleisesti käytetty tietorakenne, jos et saanut siitä tarpeeksi harjoitusta Ohjelmointi 1-kurssilla, tämä kurssi korjaa asiaa tältäkin osalta. Hyvin monessa harjoituksessa on List<> käytössä. Ja kurssilla myös selviää myös mikä oikeastaan on <>-notaatio List-luokan yhteydessä (generics).
+List<T> on yleisesti käytetty tietorakenne, jos et saanut siitä tarpeeksi harjoitusta Ohjelmointi 1-kurssilla, tämä kurssi korjaa asiaa tältäkin osalta. Hyvin monessa harjoituksessa on List<> käytössä. Ja kurssilla myös selviää myös mikä oikeastaan on <>-notaatio List-luokan yhteydessä (generics). Usein, jos tietoa luetaan vaikka tiedostosta tietorakenne, johon tieto ensin luetaan on lista.
 
 Muuttujat, kontrollirakenteet, metodit parametreineen ja paluuarvoineen oletetaan tutuiksi, niitä sovelletaan koko kurssin ajan tehtävissä ja jos tuntuu, että niissä on vielä kertaamista, kannattaa mainita asiasta opettajalle.
 

@@ -60,7 +60,7 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 
 ## Vaihe 4: Suorita testit paikallisesti
 
-9. Koodin kirjoittamisen jälkeen testaa se paikallisesti varmistaaksesi, että se toimii odotetusti. Ohjeet ratkaisun testaamiseksi löydät tehtävänannosta.
+9. Koodin kirjoittamisen jälkeen testaa se paikallisesti varmistaaksesi, että se toimii odotetusti. Tarkemmat ohjeet ratkaisun testaamiseksi löydät tehtävänannosta.
 
 
 ## Vaihe 5: `git status`, `git add` ja `git commit`
@@ -71,7 +71,7 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
     cd <tehtävä_hakemisto>
     ```
 
-11. Käytä seuraavia komentoja muutosten lisäämiseen ja sitouttamiseen:
+11. Käytä seuraavia komentoja muutosten lisäämiseen ja commitointiin:
 
     ```bash
     git status     # näyttää muuttuneet tiedostot
@@ -84,11 +84,8 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 12. Päivitä tekemäsi commit etärepositorioon GitHubissa:
 
     ```bash
-    git push origin main
+    git push
     ```
-
-   Huomioi, että `main`-kehityshaaran nimi voi vaihdella riippuen tehtävästä.
-
 
 ## Vaihe 7: Tarkastele automaattisen arvioinnin tuloksia
 
@@ -99,7 +96,7 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 
 ## Vaihe 8: Tee korjauksia (tarvittaessa)
 
-15. Mikäli automaattinen arviointi paljastaa ongelmia tai virheitä, palaa takaisin koodiisi, tee tarvittavat korjaukset ja toista vaiheet 4–7.
+15. Mikäli automaattinen arviointi paljastaa ongelmia tai virheitä, palaa takaisin koodiisi, tee tarvittavat korjaukset ja toista vaiheet 4–7. Voit palauttaa tehtävät niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti.
 
 
 ## Vaihe 9: Lähetä tehtävä

@@ -371,6 +371,6 @@ Yllä esitetyn käyttöliittymän teknisen toteutuksen tueksi on kirjoitettu [om
 
 ## Tehtävän palauttaminen
 
-Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin määräaikaan mennessä. Palauta tiedostot yksittäin, eli ei pakattuna. Älä palauta tietokantaa äläkä ajuria.
+Palauta kaikki tehtävissä kirjoittamasi **lähdekoodit** Teamsiin tai Moodleen määräaikaan mennessä. Palauta tiedostot yksittäin, eli ei pakattuna. Älä palauta tietokantaa äläkä ajuria.
 
-Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen. Muista myös, että voit pyytää apua tehtävässä kohtaamiisi ongelmiin Teamsissa!
+Ratkaisusi ei tarvitse olla laajuudeltaan tai toimivuudeltaan täydellinen, vaan myös osittain toimivat ratkaisut arvostellaan. Osittain ratkaistut palautukset arvostellaan suhteessa niiden toimivuuteen ja valmiusasteeseen. Muista myös, että voit pyytää apua tehtäviin opettajalta!

@@ -41,7 +41,7 @@ Ohjelmointi 2 -kurssi jatkaa siitä, mihin Ohjelmointi 1 päättyi. Tällä kurs
 * List<> ja ArrrayList<>, dynaamiset kokoelmat
 
 ### tiedostokäsittely
-* tekstitiedoston lukeminen (java-nio-paketti)
+* tekstitiedoston lukeminen (java.nio-paketti)
 * tekstitiedoston kirjoittaminen
 
 ### olio-ohjelmoinnin perusteet

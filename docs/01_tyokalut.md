@@ -64,6 +64,8 @@ Gitin voit asentaa itsellesi osoitteesta [https://git-scm.com/](https://git-scm.
 
 Hyödynnämme kurssilla näitä työkaluja tarpeen mukaan, mutta emme varsinaisesti perehdy niiden teoriaan. Mikäli haluat tutustua Gradleen tarkemmin, suosittelemme katsomaan videon [Gradle tutorial for complete beginners](https://youtu.be/-dtcEMLNmn0) tai lukemaan artikkelin [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
+💡 *Huom! Gradlea tai Mavenia ei tarvitse asentaa itselleen tällä kurssilla.*
+
 
 ## Kyselyt
 

@@ -50,7 +50,7 @@ import java.util.Map;
 Toisin kuin listoissa, arvoja ei käsitellä pelkästään numeeristen indeksien avulla, vaan voimme määritellä avaimiksi halutessamme vaikka merkkijonoja:
 
 ```java
-HashMap<String, String> postinumerot = new HashMap<String, String>();
+HashMap<String, String> postinumerot = new HashMap<>(); // tai new HashMap<String, String>();
 
 postinumerot.put("00710", "Helsinki");
 postinumerot.put("90014", "Oulu");
@@ -106,7 +106,7 @@ Hajautustaulua luodessa tarvitaan kaksi tyyppiparametria:
 Tyyppiparametrit määritellään kulmasulkeisiin, kuten teimme Ohjelmointi 1:ssä ArrayList:in kanssa. Koska tyyppiparametreja on tällä kertaa kaksi, ne kirjoitetaan pilkulla eroteltuna:
 
 ```java
-Map<String, String> tietovarasto = new HashMap<String, String>();
+Map<String, String> tietovarasto = new HashMap<>(); // tai new HashMap<String, String>();
 ```
 
 Kulmasuluissa ensimmäinen tyyppi on avaimen tyyppi, toinen tallennettavien arvojen tyyppi. Tässä esimerkissä molemmat sattuvat olemaan merkkijonoja, eli `String`.
@@ -151,7 +151,7 @@ Get-metodille annetaan parametrina se avain, jonka arvoa haetaan.
 Kuten listoille, myös map-tietorakenteeseen voidaan tallentaa ainoastaan viittaustyyppisiä arvoja. Siksi esimerkiksi `int`-tyypin sijaan käytetään `Integer`-tyyppiä:
 
 ```java
-Map<String, Integer> opintopisteet = new HashMap<String, Integer>();
+Map<String, Integer> opintopisteet = new HashMap<>();
 
 // Lisätään arvoja tietyille avaimille:
 opintopisteet.put("swd1tn001", 5);
@@ -341,60 +341,6 @@ Entry-olioiden käyttäminen muuttujissa edellyttää luokan alkuun seuraavan im
 ```java
 import java.util.Map.Entry;
 ```
-
-&nbsp;
-
-
-## Harjoitustehtävät
-
-Tällä tehtäväkierroksella Viopessa on useita ladattavia tiedostoja, joita tarvitsette tehtävien ratkaisemiseksi. Teksti- ja lähdekooditiedostoihin liittyy ajoittain ongelmia merkistöjen suhteen, kun tiedosto on tallennettu eri merkistöllä kuin sen avaava ohjelma olettaa. Hyvä kirjoitus eri merkistöjen ymmärtämiseksi on ["The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)"](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/).
-
-Tehtäväkierroksen liitetiedostot on tallennettu **UTF-8** -merkistössä, jota suositellaan yleisesti mm. verkkosivujen merkistöksi sen laajan yhteensopivuuden vuoksi. Valitettavasti kuitenkin erityisesti Windows-sovellukset käyttävät usein heikommin yhteensopivia merkistöä. Jos kirjaimet näkyvät tiedostoissa väärin, voit joutua vaihtamaan Eclipsen projektin asetuksista merkistöksi UTF-8:n.
-
-Eclipsessä projektin merkistö vaihdetaan klikkaamalla projektia hiiren kakkospainikkeella ja valitsemalla "properties" → "resource" → "text file encoding" → "other" → "UTF-8" ([Google-haku](https://www.google.com/search?q=eclipse+change+file+encoding+to+utf-8)).
-
-
-### Viope
-
-Tarkat tehtävänannot ja tehtävissä tarvittavat tiedostot löytyvät [Viopesta](https://vw4.viope.com/).
-
-1. **Lempinimet**
-
-    Tässä tehtävässä harjoittelemme Map-tietorakenteen luomista ja arvojen lisäämistä. Opit myös yhden konkreettisen eron `HashMap`-luokan ja `TreeMap`-luokan välillä.
-
-    Tehtävästä on saatavilla [videotallenne](https://video.haaga-helia.fi/media/MapA+Lempinimet-teht%C3%A4v%C3%A4/0_1b186p5w), jota suositellaan katsottavaksi, mikäli et pääse tehtävässä eteenpäin.
-
-1. **Etunimitilasto**
-
-    Tässä tehtävässä harjoittelemme aineiston lukemista CSV-tiedostosta ja Map-tietorakenteeseen. Opit myös päivittämään Map:issa olevaa valmista arvoa arvon korvaamisen sijaan.
-
-    Mikäli törmäät tehtävässä `java.nio.charset.MalformedInputException`-tyyppiseen virheeseen, varmista, että olet tallentanut etunimet.csv-tiedoston sellaisenaan ja oikeassa merkistössä (UTF-8). Jos tiedoston sisällön kopioi selaimessa ja liittää leikepöydän kautta tekstieditoriin, on monta mahdollisuutta sille, että joko selain, leikepöytä tai editori muokkaa merkit omaan merkistöönsä. Varminta on siis avata csv-tiedosto selaimessa ja käyttää selaimen "save as"-toimintoa, joka tallentaa tiedoston muuttamattomana.
-
-    Tehtävästä on saatavilla [videotallenne](https://video.haaga-helia.fi/media/Map+ja+taulukotA+EtunimiTilasto/0_zkjqwbha), jota suositellaan katsottavaksi, mikäli et pääse tehtävässä eteenpäin.
-
-1. **Sanakirja**
-
-    Tässä tehtävässä harjoittelemme Map:in käyttämistä Sanakirja-olioiden sisäisenä tietovarastona. Tämä tehtävä on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/#exercise-3-sanakirja) ja se on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
-
-1. **Postitoimipaikka**
-
-    Tässä tehtävässä harjoittelemme projektin kloonaamista GitHubista. Toteutamme logiikan, joka selvittää Postin postinumeroaineistosta tiettyyn postinumeroon liittyvän postitoimipaikan nimen.
-
-    Aineisto ja valmis tehtäväpohja löytyvät GitHubista osoitteesta [https://github.com/ohjelmointi2/postinumerot](https://github.com/ohjelmointi2/postinumerot).
-
-1. **Postinumerot**
-
-    Tässä tehtävässä harjoittelemme Map:in sisällön läpikäyntiä avain-arvo-pareina, ja etsimme kaikki tiettyyn postitoimipaikkaan liittyvät postinumerot Postin postinumeroaineistosta.
-
-    Aineisto ja valmis tehtäväpohja löytyvät GitHubista osoitteesta [https://github.com/ohjelmointi2/postinumerot](https://github.com/ohjelmointi2/postinumerot).
-
-
-1. **⭐ Bonus ⭐ Usean käännöksen sanakirja**
-
-    Tämä on edistynyt bonustehtävä, jonka pisteet lasketaan mukaan tehtävien yhteispisteisiin, mutta jonka tekemättä jättäminen ei vaikuta arvosanaasi. Tehtävässä samalle avaimelle tallennetaan useita arvoja hyödyntämällä samalla sekä Map-tietorakennetta että listoja.
-
-    Tämä tehtävä on lainattu [Helsingin yliopiston Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/#exercise-3-sanakirja) ja se on lisensoitu Creative Commons BY-NC-SA-lisenssillä.
-
 Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viopesta](https://vw4.viope.com/).
 
 

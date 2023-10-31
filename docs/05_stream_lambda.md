@@ -1,11 +1,11 @@
 ---
 title: 🚧 Streamit ja lambdat
 layout: default
-nav_order: 5
+nav_order: 6
 permalink: /stream-lambda/
 ---
 
-#Lambda
+# Streamit ja Lambda-lausekkeet
 
 <!-- johdatus funktionaaliseen ohjelmointiin esimerkin avulla.
 lambda on anonyymi funktio, jossa syntaksia on vielä tiivistetty

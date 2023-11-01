@@ -341,7 +341,5 @@ Entry-olioiden käyttäminen muuttujissa edellyttää luokan alkuun seuraavan im
 ```java
 import java.util.Map.Entry;
 ```
-Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viopesta](https://vw4.viope.com/).
 
 
-{% include quiz.html %}

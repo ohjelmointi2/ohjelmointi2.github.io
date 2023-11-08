@@ -64,34 +64,118 @@ classDiagram
     Exercise <|-- PadelExercise
 ```
 
-### Perintään liittyvät tehtävät (Viope)
+### Perintäesimerkki 
 
-Seuraavat tehtävät on lainattu Helsingin yliopiston mooc-kurssilta. Sinulle voi olla hyödyksi tutustua myös [HY:n oppimateriaaliin tästä aiheesta](https://ohjelmointi-20.mooc.fi/osa-9/1-perinta) tehtäviä ratkoessasi.
+**Henkilo-luokka**
+```java
+package perinta;
 
-1. **Henkilö-tehtävä**
+public class Henkilo {
+    String etunimi;
+    String sukunimi;
+    String email;
+    
+    public Henkilo(String etunimi, String sukunimi, String email) {
+        this.etunimi = etunimi;
+        this.sukunimi = sukunimi;
+        this.email = email;
+    }
 
-    Tässä tehtävässä kerrataan olio-ohjelmoinnin perusrakenteet (oliomuuttujat, konstruktori, metodit, toString) ja luodaan yliluokka, jota hyödynnetään seuraavissa tehtävissä.
+    public String getEtunimi() {
+        return etunimi;
+    }
 
-    Mikäli olio-ohjelmointitaitosi ovat ruosteessa, voit kerrata olio-ohjelmoinnin peruskäsitteet [tätä tehtävää käsittelevän videon](https://video.haaga-helia.fi/media/Henkilo-luokka/0_xe1vpvfl) avulla.
+    public String getSukunimi() {
+        return sukunimi;
+    }
 
-1. **Opiskelija-tehtävä**
+    public String getEmail() {
+        return email;
+    }
 
-    Tässä tehtävässä harjoitellaan perimään valmis luokka ja toteutetaan aliluokkaan oma yksittäinen opintopisteet-ominaisuus.
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    Tehtävän avuksi on tarjolla [videotallenne](https://video.haaga-helia.fi/media/Luokan+periminenA+Opiskelija-luokka/0_pwgch6v9).
+    @Override
+    public String toString() {
+        return "Henkilo [etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", email=" + email + "]";
+    }
+}
 
-1. **Opiskelijalle toString**
+```
 
-    Tässä tehtävässä harjoittelemme yliluokan ominaisuuksien ylikirjoittamista (override) sekä yliluokan metodien kutsumista aliluokasta.
+Henkilo-luokka sisältää henkilön perustietoja, jos ollaan tekemässä oppilaitoksen järjestelmään, tarvitaan vielä ainakin Opiskelija-luokka. Oppilaalla on nimi, sähköposti ja lisäksi opiskelijanumero ja aloitusvuosi (toki oikeasti paljon muitakin ominaisuuksia). Periytyminse avulla voidaan hyödyntää Henkilo-luokkaa Opiskelija-luokkaa määriteltäessä. Huomaa seuraavassa koodiesimerkissä varatut sanat **extends**, **super** ja annotaatio **@Override**. 
 
-1. **Henkilöiden tulostaminen**
+```java
+package perinta;
 
-    Tässä tehtävässä kokeilemme aikaisemmista tehtävistä tuttujen Opiskelija- ja Henkilö-olioiden yhteiskäyttöä samalla listalla ja saman tulostuslogiikan kanssa.
+public class Opiskelija extends Henkilo {
+    String opiskelijanumero;
+    int aloitusvuosi;
+    
+    public Opiskelija(String etunimi, String sukunimi, String email, String opiskelijanumero, int aloitusvuosi) {
+        super(etunimi, sukunimi, email);
+        this.opiskelijanumero = opiskelijanumero;
+        this.aloitusvuosi = aloitusvuosi;
+    }
 
-Tarkemmat tehtävänannot ja tehtäviä koskevat videotallenteet löydät [Viopesta](https://vw4.viope.com/).
+    public String getOpiskelijanumero() {
+        return opiskelijanumero;
+    }
 
-Tehtävät on lainattu Helsingin Yliopiston Agile Education Research –tutkimusryhmän [oppimateriaalista](https://materiaalit.github.io/ohjelmointi-18/part10/), joka on lisensoitu [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi) -lisenssillä.
+    public int getAloitusvuosi() {
+        return aloitusvuosi;
+    }
+  
+    @Override
+    public String toString() {
+        return super.toString() +  " Opiskelija [opiskelijanumero=" + opiskelijanumero + ", aloitusvuosi=" + aloitusvuosi + "]";
+    }
+}
+```
 
+Henkilo-luokka on yliluokka (yläluokka, super class), käytetään myös termiä kantaluokka (base class). Opiskelija-luokka on aliluokka (sub class) tai johdettu luokka (derived class). Opiskelija-luokka perii kaikki kentät ja metodit kantaluokalta, periminen määritellään extends sanalla. **Luokka voi periä vain yhden luokan**, moniperiytyminen on estetty Java-kielessä. Luokka voi toteuttaa useita rajapintoja.
+
+Opiskelija-luokassa huomaa miten aliluokassa käytetään hyväksi yliluokan konstruktoria (super(etunimi, sukunimi, email);) sekä toString-metodissa super.toString(). Super viittaa aina kantaluokkaan. Kontruktorissa kantaluokan konstruktorin kutsuminen super-määrittelyllä on pakko olla ensimmäinen lause.
+
+Henkilo-luokassa on toString()-metodi määritelty. Metodit voidaan ylikirjoittaa aliluokissa, tässä esimerkissä tulostataan nimen lisäksi opiskelijanumero ja aloitusvuosi. Ylikirjoitus on syytä toteuttaa käyttämällä @Override-annotaatiota.
+
+Lisätään vielä Opettaja-luokka:
+```java
+package perinta;
+
+public class Opettaja extends Henkilo {
+    String opettajanumero;
+
+    public Opettaja(String etunimi, String sukunimi, String email, String opettajanumero) {
+        super(etunimi, sukunimi, email);
+        this.opettajanumero = opettajanumero;
+    }
+
+    public String getOpettajanumero() {
+        return opettajanumero;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Opettaja [opettajanumero=" + opettajanumero + "]";
+    }
+}
+```
+Sekä opettaja että opiskelija sisältävät nimen ja sähköpostiosoitteen. Näiden lisäksi molemmilla aliluokilla on jotain omina ominaisuuksia. Koska molemmilla on sama yliluokka, voidaan niitä käsitellä täysin samalla tavalla. Tehdään vaikka pieni koodipätkä, jolla tehdään lista opettajista ja oppilaista, jotka osallistuvat ohjattuun taukojumppaan. 
+```java
+List<Henkilo> osallistujat = new ArrayList<>();
+osallistujat.add(new Opettaja("Teemu", "Terävä", "tt@hotmail.com", "h1234"));
+osallistujat.add(new Opiskelija("Olivia", "Ahkera", "b987@hh.fi", "b987", 2018));
+osallistujat.add(new Opiskelija("Olli", "Oppilas", "b123@hh.fi", "b123", 2023));
+osallistujat.add(new Opettaja("Jukka", "Nokkela", "juno@gmail.com", "h9876"));
+
+System.out.println("Taukotilaisuuteen osallistujat: ");
+for (Henkilo h : osallistujat) {
+    System.out.println(h);
+}
+```
 
 &nbsp;
 
@@ -108,7 +192,6 @@ Tehtävät on lainattu Helsingin Yliopiston Agile Education Research –tutkimus
 
 [PowerPoint-kalvot](/kalvot/perinta-ja-rajapinnat.pdf)
 
-Huom! Oheisella videolla mainitaan rajapintojen lisäksi abstraktit luokat, jotka eivät kuulu tämän kurssitoteutuksen sisältöön.
 
 
 ### Tehtävä: Maat (Comparable-rajapinta)

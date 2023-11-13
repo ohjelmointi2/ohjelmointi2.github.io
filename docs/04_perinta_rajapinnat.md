@@ -179,6 +179,19 @@ for (Henkilo h : osallistujat) {
 
 &nbsp;
 
+Jossain tilanteissa pitää pystyä selvittämään suorituksen aikana muuttujan tyyppi. Tähän voi käyttää Java-kielessä instanceof -operaattoria.
+```java
+if (hlo instanceof Opettaja) {
+    // hlo-muuttuja on Opettaja-luokan instanssi
+} 
+else {
+    // jostain muusta luokasta on kysymys
+}
+```
+Instanceof-operaattorin lisäksi suorituksen aikana voi olion tyyppitiedon kysyä getClass()-funktiolla. Funktio palauttaa T-olion, joka sisältää luokan tyyppitiedon, esimerkiksi luokan nimen tai mitä rajapintoja olio toteuttaa.
+```java
+String luokanNimi = hlo.getClass().getName();
+```
 ---
 
 ## Rajapinnat

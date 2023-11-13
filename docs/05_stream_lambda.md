@@ -123,6 +123,7 @@ Funktiomuuttuja nimenTulostusFunktio sisältää nyt osoitteen funktioon, jolla 
 nimet.stream().foreach( n -> System.out.println("Nimi: " + n));
 ```
 Vielä muutaman huomio lambda-lausekkeista:
+- nuolimerkintä -> on pakollinen, sen perusteella kääntäjä tunnistaa lambda-lausekkeen
 - parametrilistan sulkuja ei tarvita, jos parametreja on yksi. Muutoin sulut on pakolliset.
 - parametrien tyyppejä ei tarvitse koskaan kirjoittaa.
 - jos funktion sisältää vain yhden lauseen, ei lohkosulkuja tarvita.
@@ -155,6 +156,64 @@ public void fillSampleList() {
     products.add(new Product(6, "Is Java ancient?", 29.90, "Book"));
 }
 ```
+Esimerkin aineisto on tarkoituksella pieni, sen avulla on helppo hahmottaa esimerkkejä ja lopputulokset.
+Ensimmäisenä tehdään poiminta, lasketaan montako tietokonetta on listalla. Tämä on helppo tehdä perinteisellä tavalla:
+```java
+int lkm = 0;
+for (Product product : products) {
+    if(product.type().equals("Computer")) {
+        lkm++;
+    }
+}
+```
+Jos sama tehdään streamin avulla, päästään paljon vähemmillä koodiriveillä. Sama streamilla:
+```java
+long lkm = products.stream().filter(p -> p.type().equals("Computer")).count();
+```
+Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-funktion avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-funktiolla. Funktiolle filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi monimutkainen kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-funktioita voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
+
+```java
+// funktiot voidaan kirjoittaa omille riveille selvyyden vuoksi
+lkm = products.stream()
+    .filter(p -> p.type().equals("Computer"))
+    .filter(p -> p.price() > 100.0)
+    .count();
+// nämä molemmat esimerkit tuottavat sama lopputuloksen
+lkm = products.stream()
+    .filter(p -> p.type().equals("Computer") && p.price() > 100.0)
+    .count();
+```
+
+Filter-funktiolla parametrina annettava lambda on predikaattifunktio, se palauttaa boolean-arvon ja on tyypiltään rajapinta 
+```java
+@FunctionalInterface
+public interface Predicate<T> {
+        public boolean test(T t);
+     }
+```
+Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee automaatio.
+Streamia käsitellään seuraavan tyyppisillä toiminnoilla
+**Intermediate** streamin läpikäynti jatkuu funktio jälkeen
+- filter()   
+- map()  
+- peek()
+
+**Terminal** päättää streamin suorituksen
+- forEach()  
+- count()  
+- sum() 
+- average()   
+- min()   
+- max()  
+- collect()
+
+**Terminal short-circuit** päättää  suorituksen riippuen käsiteltävästä datasta
+- findFirst()  
+- findAny()  
+- anyMatch()  
+- allMatch()  
+- noneMatch()
+
 
 
 <!-- 

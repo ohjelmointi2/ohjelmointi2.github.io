@@ -142,6 +142,19 @@ Lisää lambda-lausekkeista löytyy mm.:
 - https://www.baeldung.com/java-8-lambda-expressions-tips
 
 ### Takaisin stream-käsittelyyn ###
+Olemme nyt oppineet sekä Lambda-lauseen syntaksin sekä streamin perustoiminnon eli jonkin kokoelman läpikäynnin. Seuraavaksi tutkitaan miten streamia ja lambdoja voidaan hyödyntää tehokkaammin datan käsittelyssä.
+Seuraavissa esimerkeissä käytetään listaa, joka sisältää tuotteita:
+```java
+List<Product> products = new ArrayList<>();
+public void fillSampleList() {
+    products.add(new Product(1, "Mouse", 10, "Accessory"));
+    products.add(new Product(2, "SSD disk", 199.99, "Accessory"));
+    products.add(new Product(3, "Laptop XYZ", 1000, "Computer"));
+    products.add(new Product(4, "Levoton X1", 10, "Computer"));
+    products.add(new Product(5, "Power cable", 20, "Accessory"));
+    products.add(new Product(6, "Is Java ancient?", 29.90, "Book"));
+}
+```
 
 
 <!-- 

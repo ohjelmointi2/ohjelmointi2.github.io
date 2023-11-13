@@ -71,9 +71,9 @@ classDiagram
 package perinta;
 
 public class Henkilo {
-    String etunimi;
-    String sukunimi;
-    String email;
+    private String etunimi;
+    private String sukunimi;
+    private String email;
     
     public Henkilo(String etunimi, String sukunimi, String email) {
         this.etunimi = etunimi;
@@ -111,8 +111,8 @@ Henkilo-luokka sisältää henkilön perustietoja, jos ollaan tekemässä oppila
 package perinta;
 
 public class Opiskelija extends Henkilo {
-    String opiskelijanumero;
-    int aloitusvuosi;
+    private String opiskelijanumero;
+    private int aloitusvuosi;
     
     public Opiskelija(String etunimi, String sukunimi, String email, String opiskelijanumero, int aloitusvuosi) {
         super(etunimi, sukunimi, email);
@@ -146,7 +146,7 @@ Lisätään vielä Opettaja-luokka:
 package perinta;
 
 public class Opettaja extends Henkilo {
-    String opettajanumero;
+    private String opettajaprivate numero;
 
     public Opettaja(String etunimi, String sukunimi, String email, String opettajanumero) {
         super(etunimi, sukunimi, email);

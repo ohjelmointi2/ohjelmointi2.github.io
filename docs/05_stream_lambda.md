@@ -8,7 +8,7 @@ permalink: /stream-lambda/
 # Streamit ja Lambda-lausekkeet
 
 Stream ja Lambda käsitteinä ovat hankalia ymmärtää pelkästä termin nimestä. Stream on 'oliovirta', jonka avulla voidaan käsitellä jossain kokoelmaluokassa tai taulukossa olevia oliota tai primitiiviarvoja. Lambda on matemaattinen notaatio noin sadan vuoden takaa, jonka syntaksi on lainattu moneen ohjelmointikieleen kuvaamaan hyvin tiiviisti kirjoitettua nimetöntä funktiota (*matematiikkaa ei tarvitse osata yhtään!*). Lambda-notaatio on käytössä monessa muussa ohjelmointikielessä Javan lisäksi. Ensimmäisen kerran Lambda oli käytössä Lisp-ohjelmointikielessä 1960, ei siis mikään uusi keksintö. 
-Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-lausekkeet ratkaisevat eli miksi ne ovat Java-kielessä mukana, mitä toimintoja niihin liittyy ja miten niitä käytetään. Lambdan idea on myös, että funktio kirjoitetaan inlinena ja sitä kutsutaan implisiittisesti heti, ja se saattaa suorittaa tehtäviä asynkronisesti.
+Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-lausekkeet ratkaisevat eli miksi ne ovat Java-kielessä mukana, mitä toimintoja niihin liittyy ja miten niitä käytetään. Lambdan idea on myös, että funktio kirjoitetaan inlinena ja sitä kutsutaan implisiittisesti heti.
 
 **Johdanto esimerkin avulla**
 

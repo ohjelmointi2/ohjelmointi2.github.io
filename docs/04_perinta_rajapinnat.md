@@ -188,7 +188,7 @@ else {
     // jostain muusta luokasta on kysymys
 }
 ```
-Instanceof-operaattorin lisäksi suorituksen aikana voi olion tyyppitiedon kysyä getClass()-funktiolla. Funktio palauttaa T-olion, joka sisältää luokan tyyppitiedon, esimerkiksi luokan nimen tai mitä rajapintoja olio toteuttaa.
+instanceof-operaattorin lisäksi suorituksen aikana voi olion tyyppitiedon kysyä getClass()-funktiolla. Funktio palauttaa T-olion, joka sisältää luokan tyyppitiedon, esimerkiksi luokan nimen tai mitä rajapintoja olio toteuttaa.
 ```java
 String luokanNimi = hlo.getClass().getName();
 ```

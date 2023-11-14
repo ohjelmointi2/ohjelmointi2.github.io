@@ -189,7 +189,7 @@ Filter-funktiolla parametrina annettava lambda on predikaattifunktio, se palautt
 @FunctionalInterface
 public interface Predicate<T> {
         public boolean test(T t);
-     }
+}
 ```
 Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee automaatio.
 Streamia käsitellään seuraavan tyyppisillä toiminnoilla

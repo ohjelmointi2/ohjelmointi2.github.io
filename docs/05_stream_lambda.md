@@ -193,6 +193,7 @@ public interface Predicate<T> {
 ```
 Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee automaatio.
 Streamia käsitellään seuraavan tyyppisillä toiminnoilla
+
 **Intermediate** streamin läpikäynti jatkuu funktio jälkeen
 - filter()   
 - map()  
@@ -207,12 +208,14 @@ Streamia käsitellään seuraavan tyyppisillä toiminnoilla
 - max()  
 - collect()
 
-**Terminal short-circuit** päättää  suorituksen riippuen käsiteltävästä datasta
+**Terminal short-circuit** päättää suorituksen riippuen käsiteltävästä datasta
 - findFirst()  
 - findAny()  
 - anyMatch()  
 - allMatch()  
 - noneMatch()
+
+Kattava kuvaus stream API:sta löytyy esimerkiksi https://dev.java/learn/api/streams/ sivustolta.
 
 
 

@@ -65,12 +65,12 @@ Streamin avulla voidaan mm.:
 - poimia halutut nimet eli muodostaa uusi stream
 - järjestää aakkosjärjestykseen tai mihin tahansa haluttuun järjestykseen merkkijonon sisällön perusteella
 - tehdä joku toiminto jokaiselle merkkijonolle (oliolle)
-- etsiä joku merkkijono määritellyn kriteerin perusteella tai kysyä löytyykä listalta joku tietty nimi
+- etsiä joku merkkijono määritellyn kriteerin perusteella tai kysyä löytyykö listalta joku tietty nimi
 
-Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-funktiolla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä foreach()-funktiota,  jolle annetaan parametrina funktio, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamallaan parametrilla, tässä tapauksessa tulostaa sen konsolille.  
+Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-funktiolla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä foreach()-funktiota,  jolle annetaan parametrina funktio, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamalla parametrilla, tässä tapauksessa tulostaa sen konsolille.  
 
 ```java
-class SDemo {
+public class SDemo {
     // Consumer-funktio
     void tulostaNimi(String n) {
         System.out.println("Nimi: " + n);

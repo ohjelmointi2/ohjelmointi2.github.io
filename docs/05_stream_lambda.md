@@ -22,7 +22,7 @@ for (int i = 0; i < luvut.length; i++) {
     summa += luvut[i];
     suurin = Math.max(suurin, luvut[i]);
 }
-System.out.println("Taulukon arvojen summa on " + summa + "ja suurin luku on " + suurin);
+System.out.println("Taulukon arvojen summa on " + summa + " ja suurin luku on " + suurin);
 ```
 Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Suurimman luvun voisi etsiä myös vertaamalla if-lauseella kutakin lukua viimeksi suurimpaan. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että for-silmukan voi korvata foreach-silmukalla, joka olisi tässä esimerkissä hieman kompaktimpi tapa.
 
@@ -32,7 +32,7 @@ for (int luku : luvut) {
     suurin = Math.max(suurin, luku); // tai sama if-lauseella
 }
 ```
-Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyttöön Arrays-luokan staattisen metodin avulla.
+Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyttöön Arrays-luokan staattisen metodin avulla. Staattinen metodi tarkoittaa aina sitä, että metodia kutsutaan luokan eikä olion kautta eli luokan nimi alkaa aina isolla kirjaimella.
 ```java
 IntStream luvutStream = Arrays.stream(luvut);
 ```

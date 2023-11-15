@@ -24,7 +24,7 @@ for (int i = 0; i < luvut.length; i++) {
 }
 System.out.println("Taulukon arvojen summa on " + summa + "ja suurin luku on " + suurin);
 ```
-Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että for-silmukan voi korvata foreach-silmukalla, joka olisi tässä esimerkissä hieman luontevampi tapa.
+Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Suurimman luvun voisi etsiä myös vertaamalla if-lauseella kutakin lukua viimeksi suurimpaan. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että for-silmukan voi korvata foreach-silmukalla, joka olisi tässä esimerkissä hieman kompaktimpi tapa.
 
 ```java
 for (int luku : luvut) {

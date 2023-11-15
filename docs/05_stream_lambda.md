@@ -87,7 +87,7 @@ public class SDemo {
 Tämä esimerkki vaatii selityksen, tai vähintään suorituksen debuggerin avulla, jotta toiminto selviää. 
 1. luodaan stream nimilistasta stream()-funktiolla
 2. Stream sisältää kaikki listan alkiot, jotka ovat String-olioita
-3. foreach()-funktio tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina funktiolle, joka on määritelty foreach()-parametrina (tämä on funktionaalista ohjelmointia)
+3. foreach()-funktio tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina funktiolle, joka on määritelty foreach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse funktioon, ei funktion kutsua.
 
 Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin funktion arvonaan, Consumer<T> voi sisältää osoitteen funktioon, joka on muotoa void funktionNimi(T t) {}. 
 

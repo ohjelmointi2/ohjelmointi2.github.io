@@ -37,7 +37,7 @@ Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyt
 IntStream luvutStream = Arrays.stream(luvut);
 ```
 Primitiivien osalta on valmiit Stream-rajapinnat int, boolean, double -tyypeille (tässä IntStream). Olioita käsitellään geneerisellä tavalla, johon pääsemme tuota pikaa. IntStream-rajapinnasta löytyy valmiita toimintoja, joita ei siis enää tarvitse koodaajan itse toteuttaa. Merkittävä asia on siis se, että löytyy paljon toimintoja, joita ei koodaajan enää tarvitse itse toteuttaa, vaan voi keskittyä varsinaisen ohjelmalogiikan kirjoittamiseen.
-Streamin avulla käydään läpi kaikki kokoelman alkio ja tehdään joku toiminto, tässä esimerkissä lasketaan kaikki kokonaislukualkio yhteen sum()-funktiolla. Stream vastaa silmukkaa ja sum toimintoa silmukan sisällä. Seuraava esimerkki näyttää miten edellisen esimerkin summan laskenta ja suurimmat luvun etsintä voidaan tehdä käyttäen stream:ia, kunhan stream on ensi luotu.  
+Streamin avulla käydään läpi kaikki kokoelman alkiot ja tehdään joku toiminto, tässä esimerkissä lasketaan kaikki kokonaislukualkiot yhteen sum()-funktiolla. Stream vastaa silmukkaa ja sum toimintoa silmukan sisällä. Seuraava esimerkki näyttää miten edellisen esimerkin summan laskenta ja suurimman luvun etsintä voidaan tehdä käyttäen stream:ia, kunhan stream on ensin luotu.  
 
 ```java
 summa = luvutStream.sum();

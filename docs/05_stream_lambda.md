@@ -56,7 +56,7 @@ osatStream.close();
 // HUOM: tässä ei stream tuo lisäarvoa, osat-taulukon size() ja sarakelkm ovat samat
 ```
 
-###Stream ja toiminnot###
+### Stream ja toiminnot ###
 Stream on siis olio'virta' jostain kokoelmaluokasta. Kokeillaan ensin miten merkkijonoja sisältävää listaa voidaan käsitellä streamin avulla. Käytetään seuraavilla esimerkeissä seuraavaa listaa: 
 ```java
 List<String> nimet = List.of("Aku", "Pelle", "Roope", "Iines", "Leenu", "Lupu", "Tiinu", "Mikki", "Minni", "Simo Sisu");

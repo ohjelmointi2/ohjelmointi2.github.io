@@ -128,6 +128,7 @@ Vielä muutaman huomio lambda-lausekkeista:
 - parametrien tyyppejä ei tarvitse koskaan kirjoittaa.
 - jos funktion sisältää vain yhden lauseen, ei lohkosulkuja tarvita.
 - return-lausetta ei tarvitse kirjoittaa, jos on vain yksi lause.
+- parametrin nimi voi olla pitkä ja kuvaava, yleensä käytetään lyhyttä yhden kirjaimen parametria koska pitkästä nimestä ei tule mitään lisäarvoa.
 
 ```java
 // esimerkkejä
@@ -192,7 +193,7 @@ public interface Predicate<T> {
 }
 ```
 Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee automaatio.
-Streamia käsitellään seuraavan tyyppisillä toiminnoilla
+Streamia käsitellään seuraavan tyyppisillä toiminnoilla:
 
 **Intermediate** streamin läpikäynti jatkuu funktio jälkeen
 - filter()   
@@ -208,14 +209,67 @@ Streamia käsitellään seuraavan tyyppisillä toiminnoilla
 - max()  
 - collect()
 
-**Terminal short-circuit** päättää suorituksen riippuen käsiteltävästä datasta
+**Terminal short-circuit** päättää suorituksen riippuen käsiteltävästä datasta 
 - findFirst()  
 - findAny()  
 - anyMatch()  
 - allMatch()  
 - noneMatch()
+- toList()
 
 Kattava kuvaus stream API:sta löytyy esimerkiksi https://dev.java/learn/api/streams/ sivustolta.
+
+Stream-käsittelyyn liittyy aina kolme osaa:
+1. tietolähde (data source)
+2. yksi tai useampi välioperaatio (intermediate operation)
+3. nolla tai yksi päättävä operaatio (terminal operation)
+
+Filter on aika suoraviivainen toiminnoltaan, tutkitaan seuraavana mitä map() ja peek() tekevät.
+Peek()-funktio on tarkoitettu vain debuggaustarkoituksiin. Sen avulla voi 'kurkistaa' käsiteltävään olioon ja esimerkiksi tulostaa lokiin tai konsolille olion kenttiä. Käytössä kannattaa huomata, että optimointisyistä peek() ei tee mitään, jos streamin olioiden lukumäärä on tiedossa, tämä muutos tapahtui Java 9 -versiossa. Peek()-funktion saa toimimaan tosin helposti kun lisää vaikka käsittelyyn mukaan **.filter(a ->true)** -lambdan, koska mukana nyt on filter, ei streamin koko ole etukäteen tiedossa, vaikka filterin funktio palauttaa aina true-arvon.  
+
+```java
+long lkm = products
+    .stream()
+    .filter(p -> true) // tämä pois niin peek ei tee mitään
+    .peek(p -> System.out.println("dbg: " + p.name()))
+    .count();
+System.out.println("Tuotteita " + lkm + " kpl");
+```
+
+**map()**-funktio on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
+Esimerkkinä olkoon aluksi tarve saada lista tuotteiden nimistä.  
+
+```java
+List<String> pnames = products
+        .stream()
+        .map(p -> p.name()) // poimitaan tuotteesta nimi (String)
+        .toList();          // muodostetaan lista
+System.out.println("==Nimilista==");
+pnames.forEach(n -> System.out.println(n));
+```
+
+Toinen esimerkki, lasketaan tuotteiden hinnat yhteen, mutta mukana on ALV:
+```java
+double sumVAT = products.stream()
+        .map(p -> p.price() * 1.24)       // palauttaa double-tyypin
+        .mapToDouble(Double::doubleValue) // muunnetaan Double:ksi käsittelyä varten
+        .sum();
+```
+
+
+
+*Hyvä tietää:* 
+**switch**-lauseesta on uudempikin versio, jossa on käytössä lambda-notaatio. Esimerkki:
+```java
+int kvartaali = switch(LocalDate.now().getMonth()) {
+    case JANUARY, FEBRUARY, MARCH -> 1;
+    case APRIL, MAY, JUNE -> 2;
+    case JULY, AUGUST, SEPTEMBER -> 3;
+    default -> 4; 
+};
+System.out.println("Kvartaali: " + kvartaali);
+```
+
 
 
 

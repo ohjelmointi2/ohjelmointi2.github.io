@@ -339,18 +339,18 @@ System.out.println("Kvartaali: " + kvartaali);
 ```
 
 ```quiz
-### Tiedonvälitys ja metodit, mikä on vähiten väärä vastaus? 
+### Stream, valitse oikeat väitteet? 
 
-- [ ] Metodi voi palauttaa useita arvoja
-    > Metodi voi palauttaa kokoelman, mutta siinäkin tapauksessa vain yhden kokoelman
-- [ ] Parametriä ei tarvitse välittää kutsussa, jos sille on määritelty oletusarvo
-    > Javassa ei ole mahdollista määritellä parametreille oletusarvoja
-- [ ] Kahta samannimistä metodia ei voi olla yhdessä luokassa
-    > Metodit voivat olla samannimisiä, kunhan niiden parametrit ovat eri. Tätä kutsutaan termillä "kuormittaminen".
-- [x] Parametria välitetty olio voi muuttua metodin suorituksen aikana (sivuvaikutus)
-    > Oikein! Oliot välitetään viittauksina, eli niitä ei kopioida metodia kutsuttaessa.
-- [ ] Parametrina voi välittää vain perustietotyyppejä (int, double, char, boolean)
-    > Kaikki tietotyypit kelpaavat parametreiksi.
+- [x] kokoelmaluokan sisällön käsittelyä
+    > kokoelmaluokan kaikki alkiot käsitellään
+- [ ] stream palauttaa aina yhden arvon
+    > stream voi palauttaa streamin, listan, skalaarin, melkein mitä tahansa
+- [ ] Kahta samannimistä streamin käsittelyfunktiota ei saa olla samassa lauseessa
+    > toki voi olla, katso vaikka edellisiä esimerkkejä filteristä
+- [x] lambda-lausekkeet ovat luontevia käyttää stream-käsittelyssä
+    > Ilman lambda-notaatiota kukaan ei käyttäisi Stream:ia
+- [x] stream on hyvä osata
+    > Ehdottomasti, voit toki lopulta itse päättää milloin käytät streameja ja lambdoja
 ```
 
 

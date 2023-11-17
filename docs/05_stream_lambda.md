@@ -92,10 +92,10 @@ Tämä esimerkki vaatii selityksen, tai vähintään suorituksen debuggerin avul
 Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin funktion arvonaan, Consumer<T> voi sisältää osoitteen funktioon, joka on muotoa void funktionNimi(T t) {}. 
 
 ```java
-    Consumer<String> nimenTulostusFunktio = SDemo::tulostaNimi;
-    // ja nyt funktio voidaan välittää muuttujan kautta, 
-    // edellinen esimerkki kirjoitetaan muotoon:
-     nimet.stream().foreach(nimenTulostusFunktio);
+Consumer<String> nimenTulostusFunktio = SDemo::tulostaNimi;
+// ja nyt funktio voidaan välittää muuttujan kautta, 
+// edellinen esimerkki kirjoitetaan muotoon:
+ nimet.stream().foreach(nimenTulostusFunktio);
 ```
 Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on funktioita joita käytetään vain yhdessä kohdassa koodia ikään kuin apufunktiona. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apufunktioita luokassa. Tämän ratkaiseen lammbda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu funktiomääritys. 
 
@@ -144,8 +144,9 @@ Lisää lambda-lausekkeista löytyy mm.:
 - https://www.baeldung.com/java-8-lambda-expressions-tips
 
 ### Takaisin stream-käsittelyyn ###
-Olemme nyt oppineet sekä Lambda-lauseen syntaksin sekä streamin perustoiminnon eli jonkin kokoelman läpikäynnin. Seuraavaksi tutkitaan miten streamia ja lambdoja voidaan hyödyntää tehokkaammin datan käsittelyssä.
-Seuraavissa esimerkeissä käytetään listaa, joka sisältää tuotteita:
+Olemme nyt oppineet sekä Lambda-lauseen syntaksin sekä streamin perustoiminnon eli jonkin kokoelman läpikäynnin. Streamin avulla teetetään toimintoja silmukassa, silmukoita ei tarvitse enää itse koodata kokoelmien käsittelyä varten. Seuraavaksi tutkitaan miten streamia ja lambdoja voidaan hyödyntää tehokkaammin datan käsittelyssä.
+
+Esimerkeissä käytetään listaa, joka sisältää tuotteita:
 ```java
 List<Product> products = new ArrayList<>();
 public void fillSampleList() {
@@ -236,7 +237,7 @@ long lkm = products
 System.out.println("Tuotteita " + lkm + " kpl");
 ```
 
-**map()**-funktio on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
+**map()**-funktio on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisää muunnetun olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
 Esimerkkinä olkoon aluksi tarve saada lista tuotteiden nimistä.  
 
 ```java
@@ -256,7 +257,62 @@ double sumVAT = products.stream()
         .sum();
 ```
 
+Tutki seuraavaa koodia ja koeta ymmärtää mitä se tekee. 
+```java
+ boolean onAnagrammi(String lause1, String lause2) {
+    return lause1.toUpperCase().chars()
+            .sorted()
+            .mapToObj(c -> (char) c)
+            .filter(c -> Character.isAlphabetic(c))
+            .map(c -> c.toString())
+            .collect(Collectors.joining())
+            .equals(lause2.toUpperCase().chars()
+                    .sorted()
+                    .mapToObj(c -> (char) c)
+                    .filter(c -> Character.isAlphabetic(c))
+                    .map(c -> c.toString())
+                    .collect(Collectors.joining()));
+}
+```
 
+Otetaan vielä esimerkki findFirst()-funktioista. findFirst() on päättävä funktio, ja se palauttaa streamista ensimmäisen olion. 
+```java
+Optional<Product> firstProduct = products.stream().findFirst();
+if (firstProduct.isPresent()) {
+    System.out.println("Tuote 1.: " + firstProduct.get());
+}
+else {
+    System.out.println("Tuotetta ei löytynyt");
+}
+firstProduct = products.stream().filter(p->p.price()>50.0).findFirst();
+if (firstProduct.isPresent()) {
+    System.out.println(firstProduct.get());
+}
+```
+findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. tilanteen saa selville isPresent()-funktiolla. Jos stream, johon find...() -funktio kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
+
+### Peräkkäinen vai rinnakkainen käsittely? 
+Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla myöhemmin. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia.
+Rinnakkaisen käsittelyn toteuttaminen on todella helppoa, käytetään parallelStream()-funktiota. Rinnakkaisuuden toteutuksesta vastaa JDK:n kirjastot kokonaan ja suoritusjärjestys voi olla joka kerta erilainen.
+
+```java
+// listan käsittelyä peräkkäin ja rinnakkain
+List<Integer> listOfNumbers = Arrays.asList(1, 2, 3, 4, 8, 3, 2);
+System.out.println("--sequential--");
+listOfNumbers.stream().forEach(number -> System.out.println(number + " " + Thread.currentThread().getName()));
+System.out.println("--parallel--");
+listOfNumbers.parallelStream()
+        .forEach(number -> System.out.println(number + " " + Thread.currentThread().getName()));
+```
+
+Enempää tässä vaiheessa ei rinnakkaisuutta käsitellä. 
+Lisää tietoa parallelStream():sta löytyy mm.:
+- https://www.baeldung.com/java-when-to-use-parallel-stream
+- https://dev.java/learn/api/streams/parallel-streams/
+
+
+
+---
 
 *Hyvä tietää:* 
 **switch**-lauseesta on uudempikin versio, jossa on käytössä lambda-notaatio. Esimerkki:
@@ -271,7 +327,34 @@ System.out.println("Kvartaali: " + kvartaali);
 ```
 
 
+```quiz
+### Mikä on Lambda-lauseke?
 
+- [x] Nimetön metodi.
+    > Juurikin näin, vain parametrit ja metodin koodi ovat olemassa
+- [x] Tiivis esitysmuoto metodille, jota tyypillisesti käytetään stram:ien yhdeydessä.
+    > Kaikki ylimääräinen tarpeeton poistettu syntaksista
+- [ ] Matemaattinen operaatio.
+    > Lambda ei ole matematiikkaa Java-kielessä
+```
+
+```quiz
+### Tiedonvälitys ja metodit, mikä on vähiten väärä vastaus? 
+
+- [ ] Metodi voi palauttaa useita arvoja
+    > Metodi voi palauttaa kokoelman, mutta siinäkin tapauksessa vain yhden kokoelman
+- [ ] Parametriä ei tarvitse välittää kutsussa, jos sille on määritelty oletusarvo
+    > Javassa ei ole mahdollista määritellä parametreille oletusarvoja
+- [ ] Kahta samannimistä metodia ei voi olla yhdessä luokassa
+    > Metodit voivat olla samannimisiä, kunhan niiden parametrit ovat eri. Tätä kutsutaan termillä "kuormittaminen".
+- [x] Parametria välitetty olio voi muuttua metodin suorituksen aikana (sivuvaikutus)
+    > Oikein! Oliot välitetään viittauksina, eli niitä ei kopioida metodia kutsuttaessa.
+- [ ] Parametrina voi välittää vain perustietotyyppejä (int, double, char, boolean)
+    > Kaikki tietotyypit kelpaavat parametreiksi.
+```
+
+
+{% include quiz.html %}
 
 <!-- 
 ```java

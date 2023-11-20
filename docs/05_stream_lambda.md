@@ -53,7 +53,7 @@ String[] osat = "Hiiri;Punainen;1024;19.99".split(";");
 Stream<String> osatStream = Arrays.stream(osat);
 long sarakelkm = osatStream.count(); 
 osatStream.close();
-// HUOM: tässä ei stream tuo lisäarvoa, osat-taulukon size() ja sarakelkm ovat samat
+// HUOM: tässä ei stream tuo lisäarvoa, osat-taulukon length() ja sarakelkm ovat samat
 ```
 
 ### Stream ja toiminnot ###
@@ -139,9 +139,9 @@ a -> a + 42;    // tämä tiiviimpi, mutta sama kuin edellinen rivi
 ```
 
 Lisää lambda-lausekkeista löytyy mm.:
-- https://www.w3schools.com/java/java_lambda.asp
-- https://dev.java/learn/lambdas/first-lambdas/
-- https://www.baeldung.com/java-8-lambda-expressions-tips
+- [https://www.w3schools.com/java/java_lambda.asp](https://www.w3schools.com/java/java_lambda.asp)
+- [https://dev.java/learn/lambdas/first-lambdas](https://dev.java/learn/lambdas/first-lambdas/)
+- [https://www.baeldung.com/java-8-lambda-expressions-tips](https://www.baeldung.com/java-8-lambda-expressions-tips)
 
 ### Takaisin stream-käsittelyyn ###
 Olemme nyt oppineet sekä Lambda-lauseen syntaksin sekä streamin perustoiminnon eli jonkin kokoelman läpikäynnin. Streamin avulla teetetään toimintoja silmukassa, silmukoita ei tarvitse enää itse koodata kokoelmien käsittelyä varten. Seuraavaksi tutkitaan miten streamia ja lambdoja voidaan hyödyntää tehokkaammin datan käsittelyssä.

@@ -24,7 +24,7 @@ for (int i = 0; i < luvut.length; i++) {
 }
 System.out.println("Taulukon arvojen summa on " + summa + " ja suurin luku on " + suurin);
 ```
-Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Suurimman luvun voisi etsiä myös vertaamalla if-lauseella kutakin lukua viimeksi suurimpaan. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että for-silmukan voi korvata foreach-silmukalla, joka olisi tässä esimerkissä hieman kompaktimpi tapa.
+Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Suurimman luvun voisi etsiä myös vertaamalla if-lauseella kutakin lukua viimeksi suurimpaan. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että for-silmukan voi korvata forEach-silmukalla, joka olisi tässä esimerkissä hieman kompaktimpi tapa.
 
 ```java
 for (int luku : luvut) {
@@ -67,7 +67,7 @@ Streamin avulla voidaan mm.:
 - tehdä joku toiminto jokaiselle merkkijonolle (oliolle)
 - etsiä joku merkkijono määritellyn kriteerin perusteella tai kysyä löytyykö listalta joku tietty nimi
 
-Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-funktiolla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä foreach()-funktiota,  jolle annetaan parametrina funktio, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamalla parametrilla, tässä tapauksessa tulostaa sen konsolille.  
+Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-funktiolla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä forEach()-funktiota,  jolle annetaan parametrina funktio, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamalla parametrilla, tässä tapauksessa tulostaa sen konsolille.  
 
 ```java
 public class SDemo {
@@ -78,8 +78,8 @@ public class SDemo {
     // seuraavana koodia, nimilistan tulostukseen streamin avulla
     void esimerkki() {
         // nimet-lista on näkyvillä tässä kohtaa koodia
-        nimet.stream().foreach(SDemo::tulostaNimi); 
-        // foreach-funktio kutsuu tulostaNimi-funktiota jokaiselle listalta löytävälle nimelle (String)
+        nimet.stream().forEach(SDemo::tulostaNimi); 
+        // forEach-funktio kutsuu tulostaNimi-funktiota jokaiselle listalta löytävälle nimelle (String)
         // ja parametrina on aina käsiteltävä ('kulutettava') nimi 
     }
 }
@@ -87,7 +87,7 @@ public class SDemo {
 Tämä esimerkki vaatii selityksen, tai vähintään suorituksen debuggerin avulla, jotta toiminto selviää. 
 1. luodaan stream nimilistasta stream()-funktiolla
 2. Stream sisältää kaikki listan alkiot, jotka ovat String-olioita
-3. foreach()-funktio tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina funktiolle, joka on määritelty foreach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse funktioon, ei funktion kutsua.
+3. forEach()-funktio tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina funktiolle, joka on määritelty forEach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse funktioon, ei funktion kutsua.
 
 Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin funktion arvonaan, Consumer<T> voi sisältää osoitteen funktioon, joka on muotoa void funktionNimi(T t) {}. 
 
@@ -95,7 +95,7 @@ Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan v
 Consumer<String> nimenTulostusFunktio = SDemo::tulostaNimi;
 // ja nyt funktio voidaan välittää muuttujan kautta, 
 // edellinen esimerkki kirjoitetaan muotoon:
- nimet.stream().foreach(nimenTulostusFunktio);
+ nimet.stream().forEach(nimenTulostusFunktio);
 ```
 Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on funktioita joita käytetään vain yhdessä kohdassa koodia ikään kuin apufunktiona. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apufunktioita luokassa. Tämän ratkaiseen lammbda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu funktiomääritys. 
 
@@ -109,18 +109,18 @@ Näiden avulla voidaan täysin määritellä ja kirjoittaa funktio (parametrit, 
 ```java
 // korvataan tulostaNimi-funktio lambda-lauseella
 Consumer<String> nimenTulostusFunktio = (String n) -> { System.out.println("Nimi: " + n); };
-nimet.stream().foreach(nimenTulostusFunktio);
+nimet.stream().forEach(nimenTulostusFunktio);
 ```
 Tätäkin voidaan tiivistää, jos on vain yksi parametrien tyypit voidaan jättää pois, koska kääntäjä tietää joka tapauksessa aika käyttötilanteen mukaan mitä parametrien tyypit ovat. Jos on vain yksi parametri, ei parametrisulkuja tarvita. Jos koodi sisältää vain yhden lauseen, ei tarvita lohkosulkuja. Näin ollen voidaan vielä koodia lyhentää:
 ```java
 // lambda-lauseketta
 Consumer<String> nimenTulostusFunktio = n -> System.out.println("Nimi: " + n);
-nimet.stream().foreach(nimenTulostusFunktio);
+nimet.stream().forEach(nimenTulostusFunktio);
 ```
 Funktiomuuttuja nimenTulostusFunktio sisältää nyt osoitteen funktioon, jolla tulostetaan merkkijono konsolille. Ihan samoin kuin muutenkin parametrien välityksessä, ei tarvitse käyttää apumuuttujaa, vaan koodin voi kirjoittaa näin: 
 ```java
 // tämä on lopulta normaali tapa kirjoittaa ja käyttää lambda-lauseita streamien yhteydessä
-nimet.stream().foreach( n -> System.out.println("Nimi: " + n));
+nimet.stream().forEach( n -> System.out.println("Nimi: " + n));
 ```
 Vielä muutaman huomio lambda-lausekkeista:
 - nuolimerkintä -> on pakollinen, sen perusteella kääntäjä tunnistaa lambda-lausekkeen

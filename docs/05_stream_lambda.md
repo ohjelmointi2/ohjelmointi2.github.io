@@ -218,7 +218,7 @@ Streamia käsitellään seuraavan tyyppisillä toiminnoilla:
 - noneMatch()
 - toList()
 
-Kattava kuvaus stream API:sta löytyy esimerkiksi https://dev.java/learn/api/streams/ sivustolta.
+Kattava kuvaus stream API:sta löytyy esimerkiksi [https://dev.java/learn/api/streams/](https://dev.java/learn/api/streams/) sivustolta.
 
 Stream-käsittelyyn liittyy aina kolme osaa:
 1. tietolähde (data source)

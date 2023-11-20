@@ -53,7 +53,7 @@ String[] osat = "Hiiri;Punainen;1024;19.99".split(";");
 Stream<String> osatStream = Arrays.stream(osat);
 long sarakelkm = osatStream.count(); 
 osatStream.close();
-// HUOM: tässä ei stream tuo lisäarvoa, osat-taulukon length() ja sarakelkm ovat samat
+// HUOM: tässä ei stream tuo lisäarvoa, osat-taulukon length ja sarakelkm ovat samat
 ```
 
 ### Stream ja toiminnot ###

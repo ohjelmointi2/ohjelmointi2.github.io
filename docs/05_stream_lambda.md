@@ -8,7 +8,7 @@ permalink: /stream-lambda/
 # Streamit ja Lambda-lausekkeet
 
 Stream ja Lambda käsitteinä ovat hankalia ymmärtää pelkästä termin nimestä. Stream on 'oliovirta', jonka avulla voidaan käsitellä jossain kokoelmaluokassa tai taulukossa olevia oliota tai primitiiviarvoja. Lambda on matemaattinen notaatio noin sadan vuoden takaa, jonka syntaksi on lainattu moneen ohjelmointikieleen kuvaamaan hyvin tiiviisti kirjoitettua nimetöntä funktiota (*matematiikkaa ei tarvitse osata yhtään!*). Lambda-notaatio on käytössä monessa muussa ohjelmointikielessä Javan lisäksi. Ensimmäisen kerran Lambda oli käytössä Lisp-ohjelmointikielessä 1960, ei siis mikään uusi keksintö. 
-Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-lausekkeet ratkaisevat eli miksi ne ovat Java-kielessä mukana, mitä toimintoja niihin liittyy ja miten niitä käytetään. Lambdan idea on myös, että funktio kirjoitetaan inlinena ja sitä kutsutaan implisiittisesti heti.
+Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-lausekkeet ratkaisevat eli miksi ne ovat Java-kielessä mukana, mitä toimintoja niihin liittyy ja miten niitä käytetään. Lambdan idea on myös, että metodi kirjoitetaan inlinena ja sitä kutsutaan implisiittisesti heti.
 
 **Johdanto esimerkin avulla**
 
@@ -32,7 +32,7 @@ for (int luku : luvut) {
     suurin = Math.max(suurin, luku); // tai sama if-lauseella
 }
 ```
-Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyttöön Arrays-luokan staattisen metodin avulla. Staattinen metodi tarkoittaa aina sitä, että metodia kutsutaan luokan eikä olion kautta eli luokan nimi alkaa aina isolla kirjaimella.
+Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyttöön Arrays-luokan staattisen metodin avulla. Staattinen metodi tarkoittaa aina sitä, että metodia kutsutaan luokan eikä olion kautta, luokan nimi alkaa aina isolla kirjaimella.
 ```java
 IntStream luvutStream = Arrays.stream(luvut);
 ```
@@ -67,11 +67,11 @@ Streamin avulla voidaan mm.:
 - tehdä joku toiminto jokaiselle merkkijonolle (oliolle)
 - etsiä joku merkkijono määritellyn kriteerin perusteella tai kysyä löytyykö listalta joku tietty nimi
 
-Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-funktiolla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä forEach()-funktiota,  jolle annetaan parametrina funktio, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamalla parametrilla, tässä tapauksessa tulostaa sen konsolille.  
+Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-metodilla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä forEach()-metodia,  jolle annetaan parametrina metodi, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio (metodi) eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamalla parametrilla, tässä tapauksessa tulostaa sen konsolille.  
 
 ```java
 public class SDemo {
-    // Consumer-funktio
+    // Consumer-metodi
     void tulostaNimi(String n) {
         System.out.println("Nimi: " + n);
     }
@@ -79,45 +79,45 @@ public class SDemo {
     void esimerkki() {
         // nimet-lista on näkyvillä tässä kohtaa koodia
         nimet.stream().forEach(SDemo::tulostaNimi); 
-        // forEach-funktio kutsuu tulostaNimi-funktiota jokaiselle listalta löytävälle nimelle (String)
+        // forEach-metodi kutsuu tulostaNimi-metodia jokaiselle listalta löytävälle nimelle (String)
         // ja parametrina on aina käsiteltävä ('kulutettava') nimi 
     }
 }
 ```
 Tämä esimerkki vaatii selityksen, tai vähintään suorituksen debuggerin avulla, jotta toiminto selviää. 
-1. luodaan stream nimilistasta stream()-funktiolla
+1. luodaan stream nimilistasta stream()-metodilla
 2. Stream sisältää kaikki listan alkiot, jotka ovat String-olioita
-3. forEach()-funktio tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina funktiolle, joka on määritelty forEach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse funktioon, ei funktion kutsua.
+3. forEach()-metodi tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina metodille, joka on määritelty forEach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse metodiin, ei metodin kutsua.
 
-Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin funktion arvonaan, Consumer<T> voi sisältää osoitteen funktioon, joka on muotoa void funktionNimi(T t) {}. 
+Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin metodin arvonaan, Consumer<T> voi sisältää osoitteen metodiin, joka on muotoa void metodinNimi(T t) {}. 
 
 ```java
-Consumer<String> nimenTulostusFunktio = SDemo::tulostaNimi;
+Consumer<String> nimenTulostusMetodi = SDemo::tulostaNimi;
 // ja nyt funktio voidaan välittää muuttujan kautta, 
 // edellinen esimerkki kirjoitetaan muotoon:
- nimet.stream().forEach(nimenTulostusFunktio);
+ nimet.stream().forEach(nimenTulostusMetodi);
 ```
-Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on funktioita joita käytetään vain yhdessä kohdassa koodia ikään kuin apufunktiona. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apufunktioita luokassa. Tämän ratkaiseen lammbda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu funktiomääritys. 
+Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on metodeja, joita käytetään vain yhdessä kohdassa koodia ikään kuin apumetodina. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apumetodeja luokassa. Tämän ratkaiseen lammbda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu metodimääritys. 
 
 ### Lambda-lauseke ###
 Lambda-lauseke muodostuu kolmesta osasta:
 1. Parametrit  (Parameter list)
 2. Nuoli symboli -> (Arrow token)
 3. Toiminnallinen osuus (expression body)
-Näiden avulla voidaan täysin määritellä ja kirjoittaa funktio (parametrit, koodi ja paluuarvo), mutta funktiolla ei ole nimeä. Tähän saakka funktiolla (metodi) on aina ollut nimi jotta sitä pystyisi kutsumaan. Jos funktiolta puuttuu nimi, sitä käytetään joko funktiomuuttujan kautta tai sitten funktio kirjoitetaan suoraan käyttökohtaan.
+Näiden avulla voidaan täysin määritellä ja kirjoittaa metodi (parametrit, koodi ja paluuarvo), mutta metodilla ei ole nimeä. Tähän saakka metodilla on aina ollut nimi jotta sitä pystyisi kutsumaan. Jos metodilta puuttuu nimi, sitä käytetään joko muuttujan kautta tai sitten metodi kirjoitetaan suoraan käyttökohtaan.
 
 ```java
-// korvataan tulostaNimi-funktio lambda-lauseella
-Consumer<String> nimenTulostusFunktio = (String n) -> { System.out.println("Nimi: " + n); };
-nimet.stream().forEach(nimenTulostusFunktio);
+// korvataan tulostaNimi-metodi lambda-lauseella
+Consumer<String> nimenTulostusMetodi = (String n) -> { System.out.println("Nimi: " + n); };
+nimet.stream().forEach(nimenTulostusMetodi);
 ```
 Tätäkin voidaan tiivistää, jos on vain yksi parametrien tyypit voidaan jättää pois, koska kääntäjä tietää joka tapauksessa aika käyttötilanteen mukaan mitä parametrien tyypit ovat. Jos on vain yksi parametri, ei parametrisulkuja tarvita. Jos koodi sisältää vain yhden lauseen, ei tarvita lohkosulkuja. Näin ollen voidaan vielä koodia lyhentää:
 ```java
 // lambda-lauseketta
-Consumer<String> nimenTulostusFunktio = n -> System.out.println("Nimi: " + n);
-nimet.stream().forEach(nimenTulostusFunktio);
+Consumer<String> nimenTulostusMetodi = n -> System.out.println("Nimi: " + n);
+nimet.stream().forEach(nimenTulostusMetodi);
 ```
-Funktiomuuttuja nimenTulostusFunktio sisältää nyt osoitteen funktioon, jolla tulostetaan merkkijono konsolille. Ihan samoin kuin muutenkin parametrien välityksessä, ei tarvitse käyttää apumuuttujaa, vaan koodin voi kirjoittaa näin: 
+Funktiomuuttuja nimenTulostusMetodi sisältää nyt osoitteen metodiin, jolla tulostetaan merkkijono konsolille. Ihan samoin kuin muutenkin parametrien välityksessä, ei tarvitse käyttää apumuuttujaa, vaan koodin voi kirjoittaa näin: 
 ```java
 // tämä on lopulta normaali tapa kirjoittaa ja käyttää lambda-lauseita streamien yhteydessä
 nimet.stream().forEach( n -> System.out.println("Nimi: " + n));
@@ -126,7 +126,7 @@ Vielä muutaman huomio lambda-lausekkeista:
 - nuolimerkintä -> on pakollinen, sen perusteella kääntäjä tunnistaa lambda-lausekkeen
 - parametrilistan sulkuja ei tarvita, jos parametreja on yksi. Muutoin sulut on pakolliset.
 - parametrien tyyppejä ei tarvitse koskaan kirjoittaa.
-- jos funktion sisältää vain yhden lauseen, ei lohkosulkuja tarvita.
+- jos metodin sisältää vain yhden lauseen, ei lohkosulkuja tarvita.
 - return-lausetta ei tarvitse kirjoittaa, jos on vain yksi lause.
 - parametrin nimi voi olla pitkä ja kuvaava, yleensä käytetään lyhyttä yhden kirjaimen parametria koska pitkästä nimestä ei tule mitään lisäarvoa.
 
@@ -172,10 +172,10 @@ Jos sama tehdään streamin avulla, päästään paljon vähemmillä koodiriveil
 ```java
 long lkm = products.stream().filter(p -> p.type().equals("Computer")).count();
 ```
-Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-funktion avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-funktiolla. Funktiolle filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi monimutkainen kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-funktioita voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
+Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-metodin avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi monimutkainen kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
 
 ```java
-// funktiot voidaan kirjoittaa omille riveille selvyyden vuoksi
+// metodit voidaan kirjoittaa omille riveille selvyyden vuoksi
 lkm = products.stream()
     .filter(p -> p.type().equals("Computer"))
     .filter(p -> p.price() > 100.0)
@@ -186,7 +186,7 @@ lkm = products.stream()
     .count();
 ```
 
-Filter-funktiolla parametrina annettava lambda on predikaattifunktio, se palauttaa boolean-arvon ja on tyypiltään rajapinta 
+Filter-metodilla parametrina annettava lambda on predikaattimetodi, se palauttaa boolean-arvon ja on tyypiltään rajapinta 
 ```java
 @FunctionalInterface
 public interface Predicate<T> {
@@ -196,7 +196,7 @@ public interface Predicate<T> {
 Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee automaatio.
 Streamia käsitellään seuraavan tyyppisillä toiminnoilla:
 
-**Intermediate** streamin läpikäynti jatkuu funktio jälkeen
+**Intermediate** streamin läpikäynti jatkuu metodi jälkeen
 - filter()   
 - map()  
 - peek()
@@ -226,7 +226,7 @@ Stream-käsittelyyn liittyy aina kolme osaa:
 3. nolla tai yksi päättävä operaatio (terminal operation)
 
 Filter on aika suoraviivainen toiminnoltaan, tutkitaan seuraavana mitä map() ja peek() tekevät.
-Peek()-funktio on tarkoitettu vain debuggaustarkoituksiin. Sen avulla voi 'kurkistaa' käsiteltävään olioon ja esimerkiksi tulostaa lokiin tai konsolille olion kenttiä. Käytössä kannattaa huomata, että optimointisyistä peek() ei tee mitään, jos streamin olioiden lukumäärä on tiedossa, tämä muutos tapahtui Java 9 -versiossa. Peek()-funktion saa toimimaan tosin helposti kun lisää vaikka käsittelyyn mukaan **.filter(a ->true)** -lambdan, koska mukana nyt on filter, ei streamin koko ole etukäteen tiedossa, vaikka filterin funktio palauttaa aina true-arvon.  
+Peek()-metodi on tarkoitettu vain debuggaustarkoituksiin. Sen avulla voi 'kurkistaa' käsiteltävään olioon ja esimerkiksi tulostaa lokiin tai konsolille olion kenttiä. Käytössä kannattaa huomata, että optimointisyistä peek() ei tee mitään, jos streamin olioiden lukumäärä on tiedossa, tämä muutos tapahtui Java 9 -versiossa. Peek()-metodin saa toimimaan tosin helposti kun lisää vaikka käsittelyyn mukaan **.filter(a ->true)** -lambdan, koska mukana nyt on filter, ei streamin koko ole etukäteen tiedossa, vaikka filterin metodi palauttaa aina true-arvon.  
 
 ```java
 long lkm = products
@@ -237,7 +237,7 @@ long lkm = products
 System.out.println("Tuotteita " + lkm + " kpl");
 ```
 
-**map()**-funktio on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisää muunnetun olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
+**map()**-metodi on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisää muunnetun olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
 Esimerkkinä olkoon aluksi tarve saada lista tuotteiden nimistä.  
 
 ```java
@@ -275,7 +275,7 @@ Tutki seuraavaa koodia ja koeta ymmärtää mitä se tekee.
 }
 ```
 
-Otetaan vielä esimerkki findFirst()-funktioista. findFirst() on päättävä funktio, ja se palauttaa streamista ensimmäisen olion. 
+Otetaan vielä esimerkki findFirst()-metodista. findFirst() on päättävä metodi, ja se palauttaa streamista ensimmäisen olion. 
 ```java
 Optional<Product> firstProduct = products.stream().findFirst();
 if (firstProduct.isPresent()) {
@@ -289,7 +289,7 @@ if (firstProduct.isPresent()) {
     System.out.println(firstProduct.get());
 }
 ```
-findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. tilanteen saa selville isPresent()-funktiolla. Jos stream, johon find...() -funktio kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
+findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. tilanteen saa selville isPresent()-metodilla. Jos stream, johon find...() -metodi kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
 
 ### Peräkkäinen vai rinnakkainen käsittely? 
 Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla myöhemmin. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia.
@@ -345,7 +345,7 @@ System.out.println("Kvartaali: " + kvartaali);
     > kokoelmaluokan kaikki alkiot käsitellään
 - [ ] stream palauttaa aina yhden arvon
     > stream voi palauttaa streamin, listan, skalaarin, melkein mitä tahansa
-- [ ] Kahta samannimistä streamin käsittelyfunktiota ei saa olla samassa lauseessa
+- [ ] Kahta samannimistä streamin käsittelymetodia ei saa olla samassa lauseessa
     > toki voi olla, katso vaikka edellisiä esimerkkejä filteristä
 - [x] lambda-lausekkeet ovat luontevia käyttää stream-käsittelyssä
     > Ilman lambda-notaatiota kukaan ei käyttäisi Stream:ia

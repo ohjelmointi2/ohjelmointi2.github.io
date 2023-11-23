@@ -14,7 +14,8 @@ Oppimateriaali generoidaan HTML-sivustoksi markdown-muotoisten tekstitiedostojen
 Sivusto saadaan päivitettyä ja tarjoiltua paikallisesti portista 4000 seuraavalla komennolla:
 
 ```
-$ bundle exec jekyll serve
+$ bundle install            # asenna riippuvuudet
+$ bundle exec jekyll serve  # käynnistä kehityspalvelin
 ```
 
 

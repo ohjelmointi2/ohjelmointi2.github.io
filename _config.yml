@@ -19,6 +19,9 @@ mermaid:
 callouts:
   highlight:
     color: yellow
+  think:
+    title: 🤔 pohdittavaa
+    color: yellow
   important:
     title: Important
     color: blue
@@ -39,6 +42,9 @@ callouts:
     color: green
   vinkki:
     title: Vinkki
+    color: green
+  chatgpt:
+    title: ChatGPT
     color: green
 
 gh_edit_link: true

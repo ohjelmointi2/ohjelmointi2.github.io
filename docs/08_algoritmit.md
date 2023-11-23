@@ -24,15 +24,23 @@ Ohjelmointiongelmien ratkaisemisessa algoritmien lisäksi myös tietorakenteilla
 
 Esimerkiksi `ArrayList` on toteutettu nimensä mukaisesti sisäisesti taulukon avulla:
 
+<!--index | value
+------|------
+0     | `"one"`
+1     | `"two"`
+2     | `"three"`
+3     | `"four"`-->
+
 ```mermaid
 graph LR
     subgraph ArrayList
-        A[0: 'one']
-        B[1: 'two']
-        C[2: 'three']
-        D[3: 'four']
+        0 --> 'one'
+        1 --> 'two'
+        3 --> 'three'
+        4 --> 'four'
     end
 ```
+
 
 `LinkedList`-tietorakenteessa puolestaan arvot on "linkitetty" toisiinsa:
 

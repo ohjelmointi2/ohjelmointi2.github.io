@@ -1,5 +1,5 @@
 ---
-title: 🚧 Tietokannat
+title: Tietokannat
 layout: default
 nav_order: 7
 permalink: /tietokannat/
@@ -9,13 +9,10 @@ permalink: /tietokannat/
 # Tietokantaohjelmointi
 {: .no_toc }
 
-Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement. JDBC:n latauksen syntaksi on vuosien varrella Java-kielessä muuttunut.
+Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement. 
 {: .fs-6 }
 
 ---
-
-{: .huom }
-Materiaalissa olevien videoiden katsomiseksi sinun täytyy kirjautua sisään Microsoft Stream -palveluun Haaga-Helian käyttäjätunnuksellasi.
 
 ## Tällä sivulla:
 {: .no_toc .text-delta }
@@ -64,7 +61,7 @@ Toteutamme tällä kurssilla tietokantalogiikan Java-koodeissamme siten, että s
 
 Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Maven](https://maven.apache.org/) ja [Gradle](https://gradle.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös Eclipsessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
 
-Jotta kurssilla ei tulisi kerralla liikaa uusia työkaluja, haemme tarvittavan ajurin manuaalisesti Mavenin tietovarastosta. Myöhemmin kurssilla opettelemme lisäämään saman ajurin projektiimme Mavenin avulla.
+Jos teen projektin ilman hallintatyökaluja, on tässä ohjeet siihen. Kurssilla käytetään pääsääntöisesti Gradle-projekteja joten ohjeistuksessa on myös miten riippuvuuksien avulla saadaan tietokanta-ajurit ladattua projektin käyttöön.
 
 
 **Ajurin tallentaminen**
@@ -87,7 +84,29 @@ Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "b
 
 Voit ladata tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shoppingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
+**Ajurin lisääminen VS Code -projektiin**
+VS Code:ssa Java-projektissa on valmiina lib-hakemisto. Eclipsen ohjeiden mukaan lataa ajuri ja kopioi/siirrä se projektin lib-hakemistoon.
 
+---
+**Ajurin lisääminen Gradle -projektiin**
+Gradle, Maven ja muut projektinhallintatyökalut ovat tehty helpottamaan mm. kirjastojen (riippuviiksien) latauksia ja hallinnointia. Riittää että on määritelty mitä kirjastoja tai ajureita sovellus tarvitsee ja kirjastot latautuvat build:in yhteydessä ilman että niitä tarvitsee itse asentaa projektiin. 
+Mavenin repositorysta löytyy määritykset, miten SQLite tai MySQL -ajurit lisätään projektiin. Siirry ensin mavenin [repositoryyn](https://mvnrepository.com/) ja kirjoita hakukenttään vaikka sqlite, valitse ensimmäinen SQLite JDBC. Seuraavana valitse version, ota vaikka uusin ja sitten valitse käyttämäsi projektityyppi (Maven Gradle, Gradle (Short), Gradle (Kotlin), jne...) ja lisää määritys gradle.build-tiedostoon dependencies-kohtaan. Tiedosto voi tämän jälkeen käyttää vaikka tältä (vain osa tiedostosta näkyvillä):
+
+```java
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // SQLite driver: https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    implementation 'org.xerial:sqlite-jdbc:3.43.0.0'
+
+    // MySQL driver: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    implementation 'com.mysql:mysql-connector-j:8.1.0'
+}
+```
+Esimerkissä on mukana myös MySQL-ajuri. 
+Samalla tavalla pystyt ottamaan käyttöön minkä tahansa muun tietokannan ajurit, esimerkiksi SQL Server, Oracle, MariaDB, PostgreSQL jne.
 
 
 ### SQLite-tietokannan käyttäminen Javan ulkopuolelta (valinnainen)
@@ -107,26 +126,6 @@ Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [h
 
  [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
-### module-info.java ja ClassNotFoundException
-
-Mikäli hyödynnät Java-projektissasi [Javan moduulijärjestelmää](https://www.oracle.com/corporate/features/understanding-java-9-modules.html), eli valitsit Eclipsessä projektia luodessasi vaihtoehdon *"Create a new module-info.java file"*, tulee sinun lisätä projektisi `module-info.java`-tiedostoon seuraavat uudet `requires`-rivit:
-
-```java
-module omamoduuli {
-    requires sqlite.jdbc;
-    requires java.sql;
-}
-```
-
-Moduulijärjestelmä muuttaa Javan tapaa ladata luokkia, joten käyttäessäsi `module-info.java`-tiedostoa seuraava rivi aiheuttaa todennäköisesti poikkeuksen:
-
-```java
-Class.forName("org.sqlite.JDBC"); // Saattaa aiheuttaa ClassNotFoundException-poikkeuksen!
-```
-
-Ratkaisuna ongelmaan voit joko jättää yllä mainitun rivin pois koodista, tai poistaa projektistasi `module-info.java`-tiedoston. Kurssin esimerkeissä `module-info.java` on poistettu.
-
-
 
 ## SQLite-tietokannan yhteysosoite
 
@@ -142,13 +141,12 @@ private static final String JDBC_URL = "jdbc:sqlite:C:\\sqlite\\shoppingList.sql
 
 MySQL-tietokantaan yhdistettäisiin vastaavasti esim. osoitteella `"jdbc:mysql://127.0.0.1:3306/shoppinglist"`. Tällöin sinun tulee myös [lisätä projektiisi MySQL-ajuri](https://www.mysql.com/products/connector/), aivan kuten lisäsimme aikaisemmin SQLite-ajurin.
 
-Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten seuraavalla viikolla opettelemme siirtämään ns. kovakoodatun tietokannan osoitteen lähdekoodista ympäristömuuttujaan:
+Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten tyypillisesti sovellus lukee ,yhteysosoitteen joko ymoäristömuuttujasta tai konfiguraatiotiedostosta. Esimerkki ymoäristömuuttujan käytöstä Java-koodissa:
 
 ```java
-// tästä lisää seuraavalla viikolla:
+// luetaan asetus käyttöjärjestelmän ympäristömuuttujasta
 private static final String JDBC_URL = System.getenv("JDBC_DATABASE_URL");
 ```
-
 
 Älä koskaan muodosta SQL-kyselyitä käsin yhdistelemällä merkkijonoja, koska kyselyn teko merkkijonoja yhdistelemällä aiheuttaa mm. tietoturvaongelmia:
 

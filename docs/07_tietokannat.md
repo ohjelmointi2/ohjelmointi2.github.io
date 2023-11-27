@@ -30,7 +30,7 @@ flowchart TD
     B --> C[Tietokanta]
 ```
 
-JDBC ei rajoita sitä, minkä SQL-pohjaisten tietokantojen kanssa sitä voidaan käyttää, vaan eri tietokantoja voidaan hyödyntää käyttämällä niille toteutettuja valmiita ajureita. Sillä ei siis Java-koodisi näkökulmasta ole eroa, käytätkö tietokantana esimerkiksi [MySQL](https://www.mysql.com/)-, [PostgreSQL](https://www.postgresql.org/)- vai [SQLite](https://www.sqlite.org/index.html)-tyyppistä tietokantaa. Tällä kurssilla hyödynnämme **SQLite**-tietokantoja niiden tiedostopohjaisuuden ja helppokäyttöisyyden vuoksi.
+JDBC ei rajoita sitä, minkä SQL-pohjaisten tietokantojen kanssa sitä voidaan käyttää, vaan eri tietokantoja voidaan hyödyntää käyttämällä niille toteutettuja valmiita ajureita. Sillä ei siis Java-koodisi näkökulmasta ole eroa, käytätkö tietokantana esimerkiksi [MySQL](https://www.mysql.com/)-, [PostgreSQL](https://www.postgresql.org/)- vai [SQLite](https://www.sqlite.org/index.html)-tyyppistä tietokantaa. Tällä kurssilla hyödynnämme oletuksena **SQLite**-tietokantoja niiden tiedostopohjaisuuden ja helppokäyttöisyyden vuoksi.
 
 
 ## SQLite
@@ -59,7 +59,7 @@ Toteutamme tällä kurssilla tietokantalogiikan Java-koodeissamme siten, että s
 
 ## JDBC:n SQLite-ajuri
 
-Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Maven](https://maven.apache.org/) ja [Gradle](https://gradle.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös Eclipsessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
+Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Gradle](https://gradle.org/) ja [Maven](https://maven.apache.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös Eclipsessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
 
 Jos teen projektin ilman hallintatyökaluja, on tässä ohjeet siihen. Kurssilla käytetään pääsääntöisesti Gradle-projekteja joten ohjeistuksessa on myös miten riippuvuuksien avulla saadaan tietokanta-ajurit ladattua projektin käyttöön.
 
@@ -85,11 +85,15 @@ Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "b
 Voit ladata tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https://github.com/ohjelmointi2/ohjelmointi2.github.io/blob/main/sql/shoppingList.sqlite?raw=true). Tallenna tiedosto johonkin hakemistoon, jonka osoite on helposti kopioitavissa Java-koodiisi (esim. `C:\sqlite\shoppingList.sqlite` tai `/home/omanimi/sqlite/shoppingList.sqlite`).
 
 **Ajurin lisääminen VS Code -projektiin**
+
 VS Code:ssa Java-projektissa on valmiina lib-hakemisto. Eclipsen ohjeiden mukaan lataa ajuri ja kopioi/siirrä se projektin lib-hakemistoon.
 
 ---
+
 **Ajurin lisääminen Gradle -projektiin**
-Gradle, Maven ja muut projektinhallintatyökalut ovat tehty helpottamaan mm. kirjastojen (riippuviiksien) latauksia ja hallinnointia. Riittää että on määritelty mitä kirjastoja tai ajureita sovellus tarvitsee ja kirjastot latautuvat build:in yhteydessä ilman että niitä tarvitsee itse asentaa projektiin. 
+
+Gradle, Maven ja muut projektinhallintatyökalut ovat tehty helpottamaan mm. kirjastojen (riippuviiksien) latauksia ja hallinnointia. Riittää että on määritelty mitä kirjastoja tai ajureita sovellus tarvitsee ja kirjastot latautuvat build:in yhteydessä ilman että niitä tarvitsee itse asentaa projektiin.
+
 Mavenin repositorysta löytyy määritykset, miten SQLite tai MySQL -ajurit lisätään projektiin. Siirry ensin mavenin [repositoryyn](https://mvnrepository.com/) ja kirjoita hakukenttään vaikka sqlite, valitse ensimmäinen SQLite JDBC. Seuraavana valitse version, ota vaikka uusin ja sitten valitse käyttämäsi projektityyppi (Maven Gradle, Gradle (Short), Gradle (Kotlin), jne...) ja lisää määritys gradle.build-tiedostoon dependencies-kohtaan. Tiedosto voi tämän jälkeen käyttää vaikka tältä (vain osa tiedostosta näkyvillä):
 
 ```java
@@ -105,8 +109,8 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:8.1.0'
 }
 ```
-Esimerkissä on mukana myös MySQL-ajuri. 
-Samalla tavalla pystyt ottamaan käyttöön minkä tahansa muun tietokannan ajurit, esimerkiksi SQL Server, Oracle, MariaDB, PostgreSQL jne.
+
+Esimerkissä on mukana myös MySQL-ajuri. Samalla tavalla pystyt ottamaan käyttöön minkä tahansa muun tietokannan ajurit, esimerkiksi SQL Server, Oracle, MariaDB, PostgreSQL jne.
 
 
 ### SQLite-tietokannan käyttäminen Javan ulkopuolelta (valinnainen)
@@ -117,14 +121,9 @@ Tietokannan käyttäminen Java-ohjelmasi ulkopuolella ei ole tällä kurssilla v
 
 Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [https://sqlite.org/download.html](https://sqlite.org/download.html). Työkalut löytyvät esimerkiksi Windowsille otsikon "Precompiled Binaries for Windows" alta (sqlite-tools-win32-x86-VERSIO.zip). Pura `sqlite3.exe`-tiedosto zip-paketista esimerkiksi samaan kansioon tietokantasi kanssa. Jos käytät eri käyttöjärjestelmää, sovella ohjeita oman käyttöjärjestelmäsi työkaluversion mukaisesti.
 
-[Tällä sivulla](/04_tietokantaohjelmointi/komentorivityokalu) on esimerkki SQLite-komentorivityökalun käyttämisestä tämän kurssin harjoitustyötietokannan kanssa. Lisää ohjeita löydät SQLiten omilta sivuilta osoitteesta [https://sqlite.org/cli.html](https://sqlite.org/cli.html) ja alla olevista videoista.
+[Tällä sivulla](/04_tietokantaohjelmointi/komentorivityokalu) on esimerkki SQLite-komentorivityökalun käyttämisestä tämän kurssin tehtävässä käytettävän tietokannan kanssa. Lisää ohjeita löydät SQLiten omilta sivuilta osoitteesta [https://sqlite.org/cli.html](https://sqlite.org/cli.html) ja alla olevista videoista.
 
-<!--[![SQLite tools](https://api.kaltura.nordu.net/p/288/sp/28800/thumbnail/entry_id/0_pez4r54j/version/100012/width/435/height/260)](https://video.haaga-helia.fi/media/SQLite+tools/0_pez4r54j)
-
-[SQLite tools -komentorivityökalun käyttöohje](https://video.haaga-helia.fi/media/SQLite+tools/0_pez4r54j)-->
-
-
- [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
+[PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
 
 ## SQLite-tietokannan yhteysosoite

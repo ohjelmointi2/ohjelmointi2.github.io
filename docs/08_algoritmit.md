@@ -56,10 +56,10 @@ Koska `ArrayList`-rakenteen sisältämän taulukon pituus ei voi muuttua, varata
 
 ```mermaid
 graph LR
-    A[LinkedList] --> B1['One']
-    B1 --> B2['Two']
-    B2 --> B3['Three']
-    B3 --> B4['Four']
+    A[LinkedList] <--> B1['One']
+    B1 <--> B2['Two']
+    B2 <--> B3['Three']
+    B3 <--> B4['Four']
 ```
 
 {: .chatgpt }

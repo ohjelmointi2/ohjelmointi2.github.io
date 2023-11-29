@@ -251,7 +251,7 @@ Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmotta
 
 [https://jenkov.com/tutorials/jdbc/index.html](https://jenkov.com/tutorials/jdbc/index.html)
 
-Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodirivi `Class.forName("org.h2.Driver");`. Ajurin lataus manuualisesti ei usein ole erikseen tarpeellista, mutta vastaava rivi SQLite-tietokannan ajurin lataamiseksi on:
+Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodirivi `Class.forName("org.h2.Driver");`. Ajurin lataus manuualisesti ei nykyään oleensä ole tarpeellista, jos ajurista on tarpeeksi uusi versio, mutta vastaava rivi SQLite-tietokannan ajurin lataamiseksi on:
 
 ```java
 Class.forName("org.sqlite.JDBC");

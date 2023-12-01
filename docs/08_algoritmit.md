@@ -163,20 +163,32 @@ JSON-muodossa edellinen tietorakenne olisi havainnollistettavissa seuraavasti:
 Jos tarkoituksesi olisi selvittää postinumeroa `74700` vastaava postitoimipaikan nimi, mitä sen selvittäminen vaatisi yllä esitetyillä tietorakenteilla? Entä mikä tietorakenne olisi myöhemmin helpommin laajennettavissa, jos postinumeroalueita varten halutaan tallentaa toimipaikan nimen lisäksi myös muita tietoja?
 
 ```quiz
+---
+shuffleQuestions: false
+shuffleAnswers: false
+---
+
 ### Mistä yllä esitetyistä tietorakenteista on yksinkertaisinta etsiä postinumeroa vastaava toimipaikan nimi?
 
 - [ ] String postinumerot
 - [x] Map<String, String> postinumerot
+  > Edellä esitetystä Map-tietorakenteesta postinumeroa vastaava nimi löytyy suoraan get()-metodilla.
 - [ ] List<Postinumero> postinumerot 
 - [ ] Map<String, List<String>> postinumerot
 ```
 
 ```quiz
+---
+shuffleQuestions: false
+shuffleAnswers: false
+---
+
 ### Mihin yllä esitetyistä tietorakenteista olisi suoraviivaisinta lisätä uusia tietoja, kuten postitoimipaikan ruotsin- ja englanninkieliset nimet?
 
 - [ ] String postinumerot
 - [ ] Map<String, String> postinumerot
-- [x] List<Postinumero> postinumerot 
+- [x] List<Postinumero> postinumerot
+  > Postinumero-luokkaa voidaan muuttaa ilman, että tähän tietorakenteeseen joudutaan koskemaan
 - [ ] Map<String, List<String>> postinumerot
 ```
 
@@ -251,6 +263,11 @@ Lajittelualgoritmit ovat erinomainen tapa harjoitella algoritmien toteuttamista.
 Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, vaan joudut perehtymään kysymyksissä esiintyviin termehin ja väitteisiin hyödyntäen muita lähteitä.
 
 ```quiz
+---
+shuffleQuestions: false
+shuffleAnswers: false
+---
+
 ### Mitkä seuraavista tietorakenteita koskevista väitteistä ovat totta?
 
 - [ ] Map-tietorakenne voi sisältää saman avaimen moneen kertaan
@@ -270,11 +287,17 @@ Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, v
 ```
 
 ```quiz
+---
+shuffleQuestions: false
+shuffleAnswers: false
+---
+
 ### HashMap-olioilla on tietty kapasiteetti. Mitkä seuraavista kapasiteettia koskevista väitteistä ovat totta?
 
 - [ ] Täyden kapasiteetin saavuttaminen aiheuttaa poikkeuksen
-  > HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+  > Väärin. HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
 - [x] HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+  > Totta. Kehittäjän näkökulmastas kaikki tapahtuu automaattisesti taustalla.
 - [ ] HashMap poistaa vanhimpia arvoja sitä mukaan kun se tarvitsee tilaa uusille
   > HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
 - [x] Kehittäjän ei tarvitse itse huolehtia HashMap:in koon muuttamisesta
@@ -286,6 +309,11 @@ Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, v
 
 
 ```quiz
+---
+shuffleQuestions: false
+shuffleAnswers: false
+---
+
 ### Mitkä seuraavista algoritmeja koskevista väitteistä ovat totta?
 
 - [x] Algoritmi, jonka suoritusaika on "n", suorittaa yhden operaation jokaista syötteen arvoa kohden

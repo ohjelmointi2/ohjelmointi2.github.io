@@ -75,12 +75,21 @@ Linkitetyssä listassa arvojen ei tarvitse olla muistissa peräkkäin, joten lis
 Yllä esitettyjä suorituskykyeroja havainnollistetaan kurssin [wordplay-exercise](https://github.com/ohjelmointi2/wordplay-exercise)-esimerkkiprojektissa sekä videolla [LinkedList vs ArrayList in Java Tutorial - Which Should You Use? (Coding with John, YouTube)](https://youtu.be/5dscMs2hnDI?t=22)
 
 ```quiz
+---
+shuffleQuestions: false
+shuffleAnswers: false
+---
+
 ### Miksi Javassa on erillinen ArrayList, kun siellä on jo taulukkorakenne (array)?
 
 - [x] ArrayList mahdollistaa pituuden kasvattamisen ja vähentämisen dynaamisesti, kun taas taulukoilla on kiinteä koko niiden luomisen jälkeen.
+  > Tämä väite on tosi
 - [x] ArrayList tarjoaa lisämetodeja arvojen helppoon lisäämiseen, poistamiseen ja etsimiseen, joita taulukot eivät tue.
+  > Tämä väite on tosi
 - [x] ArrayList sisältää apumetodeja kuten toString(), equals() ja contains(), joita taulukoilta ei suoraan löydy.
+  > Tämä väite on tosi
 - [x] ArrayList mahdollistaa soveltavien tietorakenteiden, kuten pinon (stack) ja jonon (queue), toteuttamisen sen tarjoamien metodien avulla.
+  > Tämä väite on tosi
 ```
 
 
@@ -171,10 +180,13 @@ shuffleAnswers: false
 ### Mistä yllä esitetyistä tietorakenteista on yksinkertaisinta etsiä postinumeroa vastaava toimipaikan nimi?
 
 - [ ] String postinumerot
+  > Jos koko tietoaineisto on yhtenä merkkijonona, etsittävä postinumero ja sitä vastaava nimi saattavat sijaita missä tahansa
 - [x] Map<String, String> postinumerot
   > Edellä esitetystä Map-tietorakenteesta postinumeroa vastaava nimi löytyy suoraan get()-metodilla.
-- [ ] List<Postinumero> postinumerot 
+- [ ] List<Postinumero> postinumerot
+  > Väärin. Postinumeron etsiminen edellyttää koko listan läpikäyntiä ja jokaisen toimipaikan tarkastamista.
 - [ ] Map<String, List<String>> postinumerot
+  > Väärin. Tässä tietorakenteessa avaimina olivat toimipaikkojen nimet ja arvoina postinumerot. Postinumerolla etsiminen edellyttäisi siis map:in sisältämien listojen läpikäyntiä ja oikeaa listaa vastaavan avaimen, eli nimen, valitsemista.
 ```
 
 ```quiz

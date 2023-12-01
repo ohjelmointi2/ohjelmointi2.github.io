@@ -299,7 +299,7 @@ Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, v
 - [x] Listan "contains()"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
   > Tämä väite on totta. Listan "contains()"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi.
 - [ ] HashMapin "containsKey"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki avaimet läpi
-  > Tämä väite on väärin. Eri tyyppiset Map:it tallentavat avaimet eri logiikoilla siten, että jokaiselle avaimelle on vain yksi "oikea paikka", josta etsiä.
+  > Tämä väite on väärin. Eri tyyppiset Map:it tallentavat avaimet eri logiikoilla siten, että jokaiselle avaimelle on vain yksi "oikea paikka", josta etsiä. Kaikista paikoista joudutaan etsimään vain äärimmäisessä tapauksessa, jossa avainten hajautusfunktio tuottaa kaikille avaimille saman sijainnin muistissa.
 - [x] HashMapin "containsValue"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
   > Tämä väite on totta. Toisin kuin avaimet, mapiin tallennetut arvot saattavat sijaita missä vain kohdassa, joten ne on kaikki käytävä läpi.
 ```

@@ -46,11 +46,10 @@ graph LR
         5 --> B(( ))
         6 --> C(( ))
         7 --> D(( ))
-        8 --> E(( ))
     end
 ```
 
-Koska `ArrayList`-rakenteen sisältämän taulukon pituus ei voi muuttua, varataan siihen tyypillisesti hieman "kasvuvaraa", jotta taulukkoa ei jouduta korvaamaan isommalla heti seuraavaa arvoa lisättäessä. Yllä olevassa kuvaajassa indeksit 5-8 havainnollistavat tätä kasvuvaraa.
+Koska `ArrayList`-rakenteen sisältämän taulukon pituus ei voi muuttua, varataan siihen tyypillisesti hieman "kasvuvaraa", jotta taulukkoa ei jouduta korvaamaan isommalla heti seuraavaa arvoa lisättäessä. Yllä olevassa kuvaajassa indeksit 5-7 havainnollistavat tätä kasvuvaraa.
 
 `LinkedList`-tietorakenteessa puolestaan arvot on "linkitetty" toisiinsa:
 
@@ -62,6 +61,8 @@ graph LR
     B3 <--> B4['Four']
 ```
 
+Linkitetyssä listassa arvojen ei tarvitse olla muistissa peräkkäin, joten listan keskelle ja alkuun voidaan lisätä uusia arvoja siirtämättä ainuttakaan olemassa olevaa arvoa. Listan kasvattaminen ei myöskään edellytä sisällön kopioimista suurempaan muistialueeseen. Javan tapauksessa `LinkedList` on toteutettu molempiin suuntiin linkitettynä, joten listaa voidaan käydä läpi myös lopusta alkuun, mikäli etsittävä indeksi sijaitsee lähempänä listan loppua.
+
 {: .chatgpt }
 > "Javan `ArrayList` ja `LinkedList` ovat kaksi erilaista tietorakennetta, joilla on omat vahvuutensa ja heikkoutensa.
 >
@@ -71,8 +72,16 @@ graph LR
 >
 > Suorituskyvyn osalta `ArrayList` sopii paremmin tilanteisiin, joissa tarvitaan paljon satunnaista pääsyä tietoihin, kun taas `LinkedList` voi olla tehokkaampi useiden lisäysten ja poistojen tapauksessa listan keskeltä."
 
-Yllä esitettyjä suorituskykyeroja havainnollistetaan kurssin [wordplay-exercise](https://github.com/ohjelmointi2/wordplay-exercise)-esimerkkiprojektissa.
+Yllä esitettyjä suorituskykyeroja havainnollistetaan kurssin [wordplay-exercise](https://github.com/ohjelmointi2/wordplay-exercise)-esimerkkiprojektissa sekä videolla [LinkedList vs ArrayList in Java Tutorial - Which Should You Use? (Coding with John, YouTube)](https://youtu.be/5dscMs2hnDI?t=22)
 
+```quiz
+### Miksi Javassa on erillinen ArrayList, kun siellä on jo taulukkorakenne (array)?
+
+- [x] ArrayList mahdollistaa pituuden kasvattamisen ja vähentämisen dynaamisesti, kun taas taulukoilla on kiinteä koko niiden luomisen jälkeen.
+- [x] ArrayList tarjoaa lisämetodeja arvojen helppoon lisäämiseen, poistamiseen ja etsimiseen, joita taulukot eivät tue.
+- [x] ArrayList sisältää apumetodeja kuten toString(), equals() ja contains(), joita taulukoilta ei suoraan löydy.
+- [x] ArrayList mahdollistaa soveltavien tietorakenteiden, kuten pinon (stack) ja jonon (queue), toteuttamisen sen tarjoamien metodien avulla.
+```
 
 
 ## Tiedon tallentaminen omissa sovelluksissamme
@@ -153,6 +162,23 @@ JSON-muodossa edellinen tietorakenne olisi havainnollistettavissa seuraavasti:
 {: .think }
 Jos tarkoituksesi olisi selvittää postinumeroa `74700` vastaava postitoimipaikan nimi, mitä sen selvittäminen vaatisi yllä esitetyillä tietorakenteilla? Entä mikä tietorakenne olisi myöhemmin helpommin laajennettavissa, jos postinumeroalueita varten halutaan tallentaa toimipaikan nimen lisäksi myös muita tietoja?
 
+```quiz
+### Mistä yllä esitetyistä tietorakenteista on yksinkertaisinta etsiä postinumeroa vastaava toimipaikan nimi?
+
+- [ ] String postinumerot
+- [x] Map<String, String> postinumerot
+- [ ] List<Postinumero> postinumerot 
+- [ ] Map<String, List<String>> postinumerot
+```
+
+```quiz
+### Mihin yllä esitetyistä tietorakenteista olisi suoraviivaisinta lisätä uusia tietoja, kuten postitoimipaikan ruotsin- ja englanninkieliset nimet?
+
+- [ ] String postinumerot
+- [ ] Map<String, String> postinumerot
+- [x] List<Postinumero> postinumerot 
+- [ ] Map<String, List<String>> postinumerot
+```
 
 ## Suositeltu oheismateriaali
 
@@ -214,8 +240,70 @@ public static void bubbleSort(int[] arr) {
 }
 ```
 
-Vaikka kuplalajittelun tehokkuus riittää erinomaisesti kymmenien, satojen tai jopa tuhansien arvojen lajittelemiseen, sen suorituskyky heikkenee aina neliöllisesti suhteessa aineiston kokoon. Jos siis taulukon pituus kymmenkertaistuu, suoritusaika kasvaa satakertaisesti.
+Vaikka kuplalajittelun tehokkuus riittää erinomaisesti kymmenien, satojen tai jopa tuhansien arvojen lajittelemiseen, sen suorituskyky heikkenee aina neliöllisesti suhteessa aineiston kokoon. Jos siis taulukon pituus kymmenkertaistuu, suoritusaika kasvaa satakertaisesti. Vaikka kuplalajittelu monien muiden lajittelualgoritmien tavoin ei sovellu suurten tietomäärien järjestämiseen, se on silti kohtuullisen yksinkertainen toteuttaa ja ymmärtää, minkä vuoksi se sopii ohjelmoinnin harjoitteluun.
 
 {: .huom }
 Lajittelualgoritmit ovat erinomainen tapa harjoitella algoritmien toteuttamista. Oikeassa ohjelmassa käytät todennäköisesti Javan valmista lajittelualgoritmia esimerkiksi listan `sort`-metodin tai stream:in `sorted`-metodin avulla. Javan [sisäänrakennettu lajittelualgoritmi](https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/TimSort.java) perustuu [TimSort-algoritmiin](https://en.wikipedia.org/wiki/Timsort).
 
+
+## Kyselyt
+
+Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, vaan joudut perehtymään kysymyksissä esiintyviin termehin ja väitteisiin hyödyntäen muita lähteitä.
+
+```quiz
+### Mitkä seuraavista tietorakenteita koskevista väitteistä ovat totta?
+
+- [ ] Map-tietorakenne voi sisältää saman avaimen moneen kertaan
+  > Map-tietorakenne ei voi sisältää samaa avainta useaan kertaan. Jokainen avain on uniikki, ja se liitetään yhteen arvoon.
+- [x] Map-tietorakenne voi sisältää saman arvon moneen kertaan
+  > Map-tietorakenne voi sisältää saman arvon useaan kertaan eri avaimilla. Arvot eivät kuitenkaan ole uniikkeja.
+- [x] ArrayList ja LinkedList voivat sisältää saman arvon moneen kertaan
+  > Sekä ArrayList että LinkedList voivat sisältää saman arvon useaan kertaan.
+- [x] TreeMap järjestää sisältönsä aina avaimen perusteella "kasvavaan" järjestykseen
+  TreeMap järjestää avaimet luonnolliseen eli kasvavaan järjestykseen
+- [x] HashMap pyrkii hajauttamaan sisältönsä mahdollisimman satunnaisesti
+  > HashMap pyrkii hajauttamaan avaimet mahdollisimman satunnaisesti käyttäen hashCode-funktiota.
+- [x] Map-tietorakenteessa arvoina voi olla myös muita kokoelmia, kuten listoja
+  > Map-tietorakenteessa arvoina voi olla muita kokoelmia, kuten listoja, jotka ovat hyödyllisiä monimutkaisemman datan tallentamisessa.
+- [x] Listoissa arvoina voi olla myös muita kokoelmia, kuten Map:eja
+  > Listoissa arvoina voi olla muita kokoelmia, kuten Map:eja, mikä mahdollistaa monipuolisten tietorakenteiden luomisen ja käytön.
+```
+
+```quiz
+### HashMap-olioilla on tietty kapasiteetti. Mitkä seuraavista kapasiteettia koskevista väitteistä ovat totta?
+
+- [ ] Täyden kapasiteetin saavuttaminen aiheuttaa poikkeuksen
+  > HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+- [x] HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+- [ ] HashMap poistaa vanhimpia arvoja sitä mukaan kun se tarvitsee tilaa uusille
+  > HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+- [x] Kehittäjän ei tarvitse itse huolehtia HashMap:in koon muuttamisesta
+  > HashMap varaa muistia ja siirtää sisältönsä automaattisesti taustalla
+- [ ] HashMap:in suorituskyky paranee sitä mukaa, mitä täydempi se on
+  > Väärin. Täysi HashMap voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
+- [ ] HashMap:in suorituskyky heikkenee sitä mukaa, mitä täydempi se on
+  > Totta. Täysi HashMap voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
+
+
+```quiz
+### Mitkä seuraavista algoritmeja koskevista väitteistä ovat totta?
+
+- [x] Algoritmi, jonka suoritusaika on "n", suorittaa yhden operaation jokaista syötteen arvoa kohden
+  > Tämä väite on totta. Algoritmi, jonka suoritusaika on "n", suorittaa yhden operaation jokaista syötteen arvoa kohti.
+- [x] Algoritmi, jonka suoritusaika on "n^2", suorittaa saamansa syötteen verran operaatioita jokaista syötteen arvoa kohden
+  > Tämä väite on totta. Algoritmi, jonka suoritusaika on "n^2", suorittaa saamansa syötteen verran operaatioita jokaista syötteen arvoa kohti.
+- [x] Puolitushaku edellyttää, että läpikäytävä kokoelma on järjestyksessä
+  > Tämä väite on totta. Puolitushaku edellyttää, että läpikäytävä kokoelma on järjestyksessä.
+- [x] HashMap kutsuu lisättävien avainten hashCode-metodia selvittääkseen, mihin kohtaan avain tallennetaan muistissa
+  > Tämä väite on totta. HashMap käyttää avainten hashCode-metodia selvittääkseen, mihin kohtaan avain tallennetaan muistissa.
+- [x] Listan "contains()"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
+  > Tämä väite on totta. Listan "contains()"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi.
+- [ ] HashMapin "containsKey"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki avaimet läpi
+  > Tämä väite on väärin. Eri tyyppiset Map:it tallentavat avaimet eri logiikoilla siten, että jokaiselle avaimelle on vain yksi "oikea paikka", josta etsiä.
+- [x] HashMapin "containsValue"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
+  > Tämä väite on totta. Toisin kuin avaimet, mapiin tallennetut arvot saattavat sijaita missä vain kohdassa, joten ne on kaikki käytävä läpi.
+```
+
+
+
+{% include quiz.html %}

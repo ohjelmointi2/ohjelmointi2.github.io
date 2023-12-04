@@ -318,7 +318,7 @@ shuffleAnswers: false
   > Väärin. Täysi HashMap voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
 - [ ] HashMap:in suorituskyky heikkenee sitä mukaa, mitä täydempi se on
   > Totta. Täysi HashMap voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
-
+```
 
 ```quiz
 ---

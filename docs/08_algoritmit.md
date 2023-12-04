@@ -181,11 +181,11 @@ shuffleAnswers: false
 
 - [ ] String postinumerot
   > Jos koko tietoaineisto on yhtenä merkkijonona, etsittävä postinumero ja sitä vastaava nimi saattavat sijaita missä tahansa
-- [x] Map<String, String> postinumerot
+- [x] Map&lt;String, String&gt; postinumerot
   > Edellä esitetystä Map-tietorakenteesta postinumeroa vastaava nimi löytyy suoraan get()-metodilla.
-- [ ] List<Postinumero> postinumerot
+- [ ] List&lt;Postinumero&gt; postinumerot
   > Väärin. Postinumeron etsiminen edellyttää koko listan läpikäyntiä ja jokaisen toimipaikan tarkastamista.
-- [ ] Map<String, List<String>> postinumerot
+- [ ] Map&lt;String, List&lt;String&gt;&gt; postinumerot
   > Väärin. Tässä tietorakenteessa avaimina olivat toimipaikkojen nimet ja arvoina postinumerot. Postinumerolla etsiminen edellyttäisi siis map:in sisältämien listojen läpikäyntiä ja oikeaa listaa vastaavan avaimen, eli nimen, valitsemista.
 ```
 
@@ -198,10 +198,10 @@ shuffleAnswers: false
 ### Mihin yllä esitetyistä tietorakenteista olisi suoraviivaisinta lisätä uusia tietoja, kuten postitoimipaikan ruotsin- ja englanninkieliset nimet?
 
 - [ ] String postinumerot
-- [ ] Map<String, String> postinumerot
-- [x] List<Postinumero> postinumerot
+- [ ] Map&lt;String, String&gt; postinumerot
+- [x] List&lt;Postinumero&gt; postinumerot
   > Postinumero-luokkaa voidaan muuttaa ilman, että tähän tietorakenteeseen joudutaan koskemaan
-- [ ] Map<String, List<String>> postinumerot
+- [ ] Map&lt;String, List&lt;String&gt;&gt; postinumerot
 ```
 
 ## Suositeltu oheismateriaali

@@ -1,5 +1,5 @@
 ---
-title: Map
+title:🗺️ Map
 layout: default
 nav_order: 3
 permalink: /map/

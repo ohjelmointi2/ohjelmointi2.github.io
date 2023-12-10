@@ -344,6 +344,69 @@ shuffleAnswers: false
   > Tämä väite on totta. Toisin kuin avaimet, mapiin tallennetut arvot saattavat sijaita missä vain kohdassa, joten ne on kaikki käytävä läpi.
 ```
 
+# Rekursio
+
+> Rekursio on matemaattinen keino määritellä funktioita niin, että funktion arvo tietyssä pisteessä riippuu funktion arvosta edellisessä pisteessä. 
+> Myös tietotekniikassa käytetään rekursiivisia ohjelmarutiineja. [Wikipedia](https://fi.wikipedia.org/wiki/Rekursio)
+
+Kertoma on hyvin tyypillinen esimerkki tilanteesta missä voi soveltaa rekursiota tai rekursiivista algoritmia. Kertoma on tuttu koulun matematiikan tunnilta, mutta kertauksen vuoksi todettakoon että esimerksi viiden kertoma (5!) on 1 * 2 * 3 * 4 * 5 = 120.
+Kertoma on laskettavissa toistorakenteen avulla:
+```java
+int tulos = 1;
+int luku = 5;
+for (int i = 1; i <= luku; i++) {
+    tulos *= i;
+}
+System.out.println("Luvun " + luku + " kertoma on " + tulos);
+```
+Toinen mahdollisuus on käyttää rekursiivista metodia kertoman laskentaan. Rekursiivinen metodi kutsuu itseään. 
+```java
+int kertoma(int n) {
+    if (n == 1) return 1;
+    return n * kertoma(n-1);
+}
+```
+Tässä tapauksessa metodia kutsutaan näin: 
+```java
+System.out.println("Luvun " + luku + " kertoma on " + kertoma(luku));
+```
+Toiminta selviää parhaiten joko kynän ja paperin avulla tai vielä helpommin debuggaamalla koodia. Rekursiivisissa -metodeissa on erittäin tärkeää, että rekursio (itsensä kutsuminen) päättyy joskus. Rekursiivisia algoritmeja voidaan käyttää vaikka puumaisten rekenteiden läpikäynnissä. Puusta puhuttaessa, tutkitaan miten kuusen tulostaminen voidaan tehdä rekursion avulla. Seuraava koodiesimerkki tulostaa merkkigrafiikalla konsolille kuusen, kun annetaan kuusen korkeus. 
+
+```java
+// kuusi tulostetaan kutsulla
+System.out.print("Anna kuusen korkeus: ");
+int k = new Scanner(System.in).nextInt();
+tulostaKuusi(k, System.out);
+
+public static void tulostaKuusi(int korkeus, PrintStream output) {
+    String s = kuusi(1, korkeus);
+    output.println(s);
+}
+
+public static String kuusi(int oksa, int korkeus) {
+    return oksa < korkeus ? " ".repeat(korkeus - oksa) + "/".repeat(oksa) + "\\".repeat(oksa) + "\n" + kuusi(oksa + 1, korkeus) 
+        : (" ".repeat(korkeus - 1) + "||");
+}
+```
+Edellinen tulostuskoodi on tehtävissä ilman rekursiota silmukoiden avulla. Luultavasti vielä yksinkertaisemmin ja helpommin ymmärrettävästi.
+Rekursio käsitteenä on syytä tuntea ja ymmärtää sen toiminta, vaikka kovin usein et joudukaan rekursiivista koodia toteuttamaan.
+
+Aito esimerkki puumaisen rakenteen läpikäynnistä on rekursiolla toteutettu hakemiston alla olevien tiedostojen laskenta.
+```java
+public static int laskeTiedostot(String hakemisto) throws IOException {
+    int laskuri = 0;
+    var fl = Files.list(Paths.get(hakemisto)).toList();
+    for (Path polku : fl) {
+        if (Files.isDirectory(polku)) {
+                laskuri += laskeTiedostot(polku.toString());   
+        }
+        else{ 
+            laskuri++;
+        }
+    }
+    return laskuri;
+}
+```
 
 
 {% include quiz.html %}

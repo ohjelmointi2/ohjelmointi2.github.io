@@ -7,7 +7,7 @@ search_exclude: true
 nav_exclude: true
 ---
 
-#Generics
+# Generics
 
 Mikä on generics ja mitä hyötyä
 esimerkki generics-luokasta: KeyValuePair 

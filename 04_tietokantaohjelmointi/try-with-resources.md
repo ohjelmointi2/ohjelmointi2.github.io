@@ -34,7 +34,7 @@ public class TryWithResources {
         ResultSet result = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:c:/sqlite/shoppingList.sqlite");
+            connection = DriverManager.getConnection("jdbc:sqlite:shoppingList.sqlite");
 
             statement = connection.prepareStatement(SELECT_ALL);
             result = statement.executeQuery();

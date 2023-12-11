@@ -23,6 +23,7 @@ Sovelluksian tehtäessä tulee usein esille samankaltaisia ongelmia ja tilanteit
 Tässä ei ole tarkoitus käydä enempää läpi erilaisia suunnittelumalleja, vaan ne jäkinä omatoimisen opiskelun varaan. Seuraavissa koodiesimerkeissä käytetty numerogeneraattori toteuttaa Singleton (Ainokainen) suunnittelumallin. Singleton on olio, joita on olemassa vain ja ainoastaan yksi ilmentymä koodin suorituksen aikana ja tyypillisesti Singleton on käytössä ja näkyvissä koko sovellukselle.
 
 IDGenerator-luokan koodi:
+
 ```java
 public class IDGenerator {
     private static int id = 0;
@@ -44,6 +45,7 @@ public class IDGenerator {
 }
 ```
 Kun sovelluskoodissa tarvitaan yksilöllinen kokonaisluku, esimerkiksi avaimen generoimiseksi oliolle, voidaan missä tahansa koodissa tehdä se IDGenerator-luokan avulla.
+
 ```java
 IDGenerator idg = IDGenerator.getIDGenerator();
 int id = idg.nextID();
@@ -66,7 +68,9 @@ for (int i = 0; i < 5; i++) {
     new Thread(run).start();
 }
 ```
+
 Saman voi kirjoittaa lyhyemmin käyttämällä lambda-syntaksia.
+
 ```java
 // lambda käytössä
 System.out.println("Pääsäie: " + Thread.currentThread().getName());
@@ -76,6 +80,7 @@ for (int i = 0; i < 5; i++) {
     new Thread(run).start();
 }
 ```
+
 Ja jos käytetään luokassa olevaa run()-metodia:
 
 ```java
@@ -106,6 +111,7 @@ try {
 }
 System.out.println("Säie 2 päättynyt");
 ```
+
 Testataan seuraavana miten numeroiden generointi onnistuu useasta eri säikeestä ja toimiiko IDGenerator-luokka kuten halutaan. Sitä varten tehdään uusi luokka IDConsumer:
 
 ```java
@@ -139,6 +145,7 @@ public class IDConsumer implements Runnable {
 ```
 
 Nyt kokeillaan ensimmäisen kerran seuraavalla koodilla ja kaikki näyttää olevan kunnossa.
+
 ```java
 IDConsumer idc1 = new IDConsumer(5, false);
 IDConsumer idc2 = new IDConsumer(5, false);
@@ -162,6 +169,7 @@ Olemme päätyneet tilanteeseen, josta käytetään termiä Critical Section (kr
 
 Koodilohkoa käytettäessä tarvitaan jokin olio lukitukseen. Jokaisessa Java-oliossa on sisäänrakennettu lukko-bitti, joka ei näy mitenkään vaan se pitää tietää. 
 Turvallinen ja toimiva nextID()-metodin toteutus voi olla seuraava:
+
 ```java
 private static Object mutex = new Object();
 public int nextID() {
@@ -170,12 +178,15 @@ public int nextID() {
      }
 }
 ```
+
 Jos koko metodin koodi halutaan suorittaa synkronoituna, voidaan käyttää lyhennettyä versiota ja koko metodi merkitä synkronoiduksi:
+
 ```java
 public synchronized int nextID() {
     return ++id;
 }
 ```
+
 Nyt korjattu versio toimii kaikissa tilanteissa oikein. Säikeiden käynnistäminen ei ole vaikeaa, huomattavasti hankalampaa on niiden hallinnointi, löytää sopivat käyttötilanteet ja ymmärtää seuraamukset vaikka yhteisten muuttujien käsittelyn osalta.
 
 Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös rajalliset ja jos säikeen run()-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttällä Executor-luokkaa hyväksi.  
@@ -224,7 +235,7 @@ class IDConsumerCallable implements Callable<Integer> {
         return id;
     }
 }
-
+```
 
 Tämä ei ole kattava kokonaisuus Javan rinnakkaisuudesta, oleellisinta on saada perusteista käsitys ja varsinkin miksi synchronized varattua sanaa pitää käyttää ja miten.
 Lisää aiheesta löytyy mm.:

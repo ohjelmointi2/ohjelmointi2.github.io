@@ -237,7 +237,7 @@ Tehokkuutta mitataan usein sekä muistin käytön että algoritmin suorittamien 
 
 Tyypillinen ilmaisutapa algoritmin suoritusajalle on ns. "iso-O -notaatio", joka kuvaa askelien lukumäärää, joka algoritmilta kuluu maksimissaan halutun lopputuloksen saavuttamiseksi.
 
-Seuraava koodiesimerkki havainnollistaa [kuuluisan kuplalajittelun (bubble sort)](http://www.righto.com/2012/11/obama-on-sorting-1m-integers-bubble.html) toimintalogiikkaa ja siinä esiintyvää toistoa, joka suoritetaan pahimmillaan <code>O(n<sup>2</sup>)</code> kertaa:
+Seuraava koodiesimerkki havainnollistaa [kuuluisan kuplalajittelun (bubble sort)](https://www.righto.com/2012/11/obama-on-sorting-1m-integers-bubble.html) toimintalogiikkaa ja siinä esiintyvää toistoa, joka suoritetaan pahimmillaan <code>O(n<sup>2</sup>)</code> kertaa:
 
 ```java
 // kuplalajittelu järjestää annetun kokonaislukutaulukon kasvavaan järjestykseen

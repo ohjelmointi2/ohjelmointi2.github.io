@@ -121,7 +121,7 @@ Tietokannan käyttäminen Java-ohjelmasi ulkopuolella ei ole tällä kurssilla v
 
 Voit ladata itsellesi kyseisen `sqlite3.exe`-komentorivityökalun osoitteesta [https://sqlite.org/download.html](https://sqlite.org/download.html). Työkalut löytyvät esimerkiksi Windowsille otsikon "Precompiled Binaries for Windows" alta (sqlite-tools-win32-x86-VERSIO.zip). Pura `sqlite3.exe`-tiedosto zip-paketista esimerkiksi samaan kansioon tietokantasi kanssa. Jos käytät eri käyttöjärjestelmää, sovella ohjeita oman käyttöjärjestelmäsi työkaluversion mukaisesti.
 
-[Tällä sivulla](/04_tietokantaohjelmointi/komentorivityokalu) on esimerkki SQLite-komentorivityökalun käyttämisestä tämän kurssin tehtävässä käytettävän tietokannan kanssa. Lisää ohjeita löydät SQLiten omilta sivuilta osoitteesta [https://sqlite.org/cli.html](https://sqlite.org/cli.html) ja alla olevista videoista.
+[Tällä sivulla](/tietokannat/sqlite-cli/) on esimerkki SQLite-komentorivityökalun käyttämisestä tämän kurssin tehtävässä käytettävän tietokannan kanssa. Lisää ohjeita löydät SQLiten omilta sivuilta osoitteesta [https://sqlite.org/cli.html](https://sqlite.org/cli.html).
 
 [PowerPoint-esitys on ladattavissa tästä](/kalvot/jdbc.pdf).
 
@@ -242,7 +242,7 @@ Toinen vaihtoehto yhteyksien sulkemisen suoraviivaistamiseksi on Javan Try with 
 
 Javassa on olemassa lisäksi [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) -niminen rakenne, joka huolehtii automaattisesti siinä määriteltyjen resurssien sulkemisesta, eli niiden `close()`-metodin kutsumisesta lohkon jälkeen.
 
-Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](/04_tietokantaohjelmointi/try-with-resources).
+Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmottaa eikä se ole osa ohjelmointi 2:n oppimistavoitteita. Voit halutessasi lukea lisää try-with-resources -rakenteesta ja katsoa siihen liittyvät esimerkit [tällä erillisellä sivulla](/tietokannat/try-with-resources/).
 
 
 ## Lisämateriaali

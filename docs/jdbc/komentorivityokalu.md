@@ -1,7 +1,8 @@
 ---
 title: SQLite-komentorivityökalun käyttö
 layout: default
-parent: Tietokantaohjelmointi
+parent: Tietokannat
+permalink: /tietokannat/sqlite-cli/
 ---
 
 

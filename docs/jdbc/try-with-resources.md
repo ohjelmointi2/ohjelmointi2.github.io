@@ -1,7 +1,8 @@
 ---
 title: "Try with resources"
 layout: default
-parent: Tietokantaohjelmointi
+parent: Tietokannat
+permalink: /tietokannat/try-with-resources/
 ---
 
 # Extra: Try with resources

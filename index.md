@@ -14,7 +14,7 @@ Tällä kurssilla syvennämme ohjelmointiosaamistamme ja sovellamme aiemmin oppi
 {: .fs-6 }
 
 {: .huom }
-Kurssin päivitys on käynnissä ja sisältö uudistuu syksyksi 2023.
+Kurssin päivitys on käynnissä ja sisältö uudistuu kevään aikana 2024.
 
 ---
 ## Tällä sivulla:

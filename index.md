@@ -13,8 +13,6 @@ Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A!
 Tällä kurssilla syvennämme ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja mm. tietokantojen parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen, automaatiotyökaluihin sekä versionhallintaan.
 {: .fs-6 }
 
-{: .huom }
-Kurssin päivitys on käynnissä ja sisältö uudistuu kevään aikana 2024.
 
 ---
 ## Tällä sivulla:

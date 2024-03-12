@@ -41,9 +41,12 @@ Kurssin keskeyttäminen ei ole Haaga-Helian linjauksia noudattaen mahdollista en
 
 ## 📥 Palautettavat tehtävät
 
-Kurssilla on viikoittaisia tehtäviä, jotka tulee palauttaa annettuihin määräaikoihin mennessä. Toteutuksesta riippuen palautus tehdään joko GitHubiin, Teamsiin tai Moodleen. Tarkemmat ohjeet löytyvät oman toteutuksesi ohjeista.
+Kurssilla on viikoittaisia tehtäviä, jotka tulee palauttaa annettuihin määräaikoihin mennessä. Toteutuksesta riippuen palautus tehdään joko GitHubiin, Teamsiin tai Moodleen. Tarkemmat ohjeet ja aikataulut löytyvät oman toteutuksesi ohjeista.
 
 Apua tehtävien tekoon on saatavissa kurssin keskustelukanavalla niin opettajalta kuin muiltakin opiskelijoilta.
+
+**Kaikki kurssin GitHub:iin, Moodleen ja MS Teams -ryhmään lähetetyt tehtäväpalautukset poistetaan vaaditun säilytysajan päätyttyä.** Jos haluat säilyttää tehtäviesi ratkaisut pidempään, säilytäthän niistä kopiot omilla laitteillasi. Voit myös tehdä omista [GitHub-repositorioistasi kopiot omalle käyttäjätunnuksellesi GitHubissa](https://www.google.com/search?q=git+clone+and+push+to+new+repo).
+
 
 ## 📊 Arviointi
 

@@ -97,7 +97,7 @@ Consumer<String> nimenTulostusMetodi = SDemo::tulostaNimi;
 // edellinen esimerkki kirjoitetaan muotoon:
  nimet.stream().forEach(nimenTulostusMetodi);
 ```
-Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on metodeja, joita käytetään vain yhdessä kohdassa koodia ikään kuin apumetodina. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apumetodeja luokassa. Tämän ratkaiseen lammbda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu metodimääritys. 
+Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on metodeja, joita käytetään vain yhdessä kohdassa koodia ikään kuin apumetodina. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apumetodeja luokassa. Tämän ratkaisee lambda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu metodimääritys. 
 
 ### Lambda-lauseke ###
 Lambda-lauseke muodostuu kolmesta osasta:
@@ -111,7 +111,7 @@ Näiden avulla voidaan täysin määritellä ja kirjoittaa metodi (parametrit, k
 Consumer<String> nimenTulostusMetodi = (String n) -> { System.out.println("Nimi: " + n); };
 nimet.stream().forEach(nimenTulostusMetodi);
 ```
-Tätäkin voidaan tiivistää, jos on vain yksi parametrien tyypit voidaan jättää pois, koska kääntäjä tietää joka tapauksessa aika käyttötilanteen mukaan mitä parametrien tyypit ovat. Jos on vain yksi parametri, ei parametrisulkuja tarvita. Jos koodi sisältää vain yhden lauseen, ei tarvita lohkosulkuja. Näin ollen voidaan vielä koodia lyhentää:
+Tätäkin voidaan tiivistää, parametrien tyypit voidaan jättää pois, koska kääntäjä tietää joka tapauksessa aika käyttötilanteen mukaan mitä parametrien tyypit ovat. Jos on vain yksi parametri, ei parametrisulkuja tarvita. Jos koodi sisältää vain yhden lauseen, ei tarvita lohkosulkuja. Näin ollen voidaan vielä koodia lyhentää:
 ```java
 // lambda-lauseketta
 Consumer<String> nimenTulostusMetodi = n -> System.out.println("Nimi: " + n);
@@ -172,7 +172,7 @@ Jos sama tehdään streamin avulla, päästään paljon vähemmillä koodiriveil
 ```java
 long lkm = products.stream().filter(p -> p.type().equals("Computer")).count();
 ```
-Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-metodin avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi monimutkainen kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
+Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-metodin avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi monimutkainen, kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
 
 ```java
 // metodit voidaan kirjoittaa omille riveille selvyyden vuoksi
@@ -193,7 +193,7 @@ public interface Predicate<T> {
         public boolean test(T t);
 }
 ```
-Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee automaatio.
+Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee helposti automaatio, kunhan näitä käyttää riittävän kauan.
 Streamia käsitellään seuraavan tyyppisillä toiminnoilla:
 
 **Intermediate** streamin läpikäynti jatkuu metodi jälkeen
@@ -226,7 +226,7 @@ Stream-käsittelyyn liittyy aina kolme osaa:
 3. nolla tai yksi päättävä operaatio (terminal operation)
 
 Filter on aika suoraviivainen toiminnoltaan, tutkitaan seuraavana mitä map() ja peek() tekevät.
-Peek()-metodi on tarkoitettu vain debuggaustarkoituksiin. Sen avulla voi 'kurkistaa' käsiteltävään olioon ja esimerkiksi tulostaa lokiin tai konsolille olion kenttiä. Käytössä kannattaa huomata, että optimointisyistä peek() ei tee mitään, jos streamin olioiden lukumäärä on tiedossa, tämä muutos tapahtui Java 9 -versiossa. Peek()-metodin saa toimimaan tosin helposti kun lisää vaikka käsittelyyn mukaan **.filter(a ->true)** -lambdan, koska mukana nyt on filter, ei streamin koko ole etukäteen tiedossa, vaikka filterin metodi palauttaa aina true-arvon.  
+Peek()-metodi on tarkoitettu vain debuggaustarkoituksiin. Sen avulla voi 'kurkistaa' käsiteltävään olioon ja esimerkiksi tulostaa lokiin tai konsolille olion kenttiä. Käytössä kannattaa huomata, että optimointisyistä peek() ei tee mitään, jos streamin olioiden lukumäärä on tiedossa. Tämä muutos tapahtui Java 9 -versiossa. Peek()-metodin saa toimimaan tosin helposti, kun lisää käsittelyyn mukaan **.filter(a ->true)** -lambdan, koska mukana nyt on filter, ei streamin koko ole etukäteen tiedossa, vaikka filterin metodi palauttaa aina true-arvon.  
 
 ```java
 long lkm = products
@@ -237,7 +237,7 @@ long lkm = products
 System.out.println("Tuotteita " + lkm + " kpl");
 ```
 
-**map()**-metodi on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisää muunnetun olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
+**map()**-metodi on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisätään muunnettu olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double, joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
 Esimerkkinä olkoon aluksi tarve saada lista tuotteiden nimistä.  
 
 ```java

@@ -20,7 +20,7 @@ Ihan ensimmäisenä tarvitaan joku sopiva esimerkkitoiminta, jonka avulla rinnak
 ### Design Patterns - suunnittelumallit 
 Sovelluksian tehtäessä tulee usein esille samankaltaisia ongelmia ja tilanteita. Joka kerta ei tarvitse miettiä ratkaisua alusta saakka uudelleen, vaan voidaan käyttää suunnittelumalleja eli Design Patterneja apua. Yleisesti käytetään englanninkielistä termiä Design Pattern, vaikka tässä tapauksessa suomennos suunnittelumalli on hyvä. Olio-ohjelmointia on tehty piitkäään ja 90-luvulla neljän kopla (Gang of Four, GoF) kirjoitti kirjan **Design Patterns: Elements of Reusable Object-Oriented Software** ja siitä saakka on Design Pattern-käsite ollut mukana sovelluskehitysprojekteissa. 
 
-Tässä ei ole tarkoitus käydä enempää läpi erilaisia suunnittelumalleja, vaan ne jäkinä omatoimisen opiskelun varaan. Seuraavissa koodiesimerkeissä käytetty numerogeneraattori toteuttaa Singleton (Ainokainen) suunnittelumallin. Singleton on olio, joita on olemassa vain ja ainoastaan yksi ilmentymä koodin suorituksen aikana ja tyypillisesti Singleton on käytössä ja näkyvissä koko sovellukselle.
+Tässä ei ole tarkoitus käydä enempää läpi erilaisia suunnittelumalleja, vaan ne jää omatoimisen opiskelun varaan. Seuraavissa koodiesimerkeissä käytetty numerogeneraattori toteuttaa Singleton (Ainokainen) suunnittelumallin. Singleton on olio, joita on olemassa vain ja ainoastaan yksi ilmentymä koodin suorituksen aikana ja tyypillisesti Singleton on käytössä ja näkyvissä koko sovellukselle.
 
 IDGenerator-luokan koodi:
 
@@ -57,10 +57,10 @@ Sitten siirrytään takaisin rinnakkaiseen ohjelmointiin ja käytetään tätä 
 
 ### Thread - Säie
 
-Javassa säie on lyhyesti sanottuna metodi (void run()), joka on suorituksessa itsenäisesti. Säikeen luonnissa konstruktorin parametrina annetaan Runnable-tyyppinen olio. Runnable on rajapinta (functional), joten tässäkin voi käyttää lambda-lauseketta. Yksinkertainen esimerkki, jossa säie ei tee mitään muuta kuin tulostaa säikeen nimen. Sen avulla on helppo nähdä että samaan aikaan on suorituksessa useita säikeitä. Jokainen säie voi suorittaa eri metodia, tässä esimerkissä kaikki ovat samoja.
+Javassa säie on lyhyesti sanottuna metodi (void run()), joka on suorituksessa itsenäisesti samaan aikaan (rinnakkain) muiden säikeiden kanssa. Säikeen luonnissa konstruktorin parametrina annetaan Runnable-tyyppinen olio. Runnable on rajapinta (FunctionalInterface), joten tässäkin voi käyttää lambda-lauseketta. Seuraavana yksinkertainen esimerkki, jossa säie ei tee mitään muuta kuin tulostaa säikeen nimen. Sen avulla on helppo nähdä, että samaan aikaan on suorituksessa useita säikeitä. Jokainen säie voi suorittaa eri metodia, tässä esimerkissä kaikki ovat samoja.
 
 ```java
-Runnable run = ()->System.out.println("Käynnistetty säie: " + Thread.currentThread().getName());
+Runnable run = () -> System.out.println("Käynnistetty säie: " + Thread.currentThread().getName());
 System.out.println("Pääsäie: " + Thread.currentThread().getName());
 Thread t = new Thread(run);
 t.start();
@@ -74,7 +74,7 @@ Saman voi kirjoittaa lyhyemmin käyttämällä lambda-syntaksia.
 ```java
 // lambda käytössä
 System.out.println("Pääsäie: " + Thread.currentThread().getName());
-Thread t = new Thread(()->System.out.println("Käynnistetty säie: " + Thread.currentThread().getName()));
+Thread t = new Thread(() -> System.out.println("Käynnistetty säie: " + Thread.currentThread().getName()));
 t.start();
 for (int i = 0; i < 5; i++) {
     new Thread(run).start();
@@ -95,7 +95,7 @@ class DemoSäie implements Runnable {
     }
 }
 ```
-Usein on tarpeen tietää milloin säie on päättynyt. Säikeen suoritus päättyy kun run()-metodi on suoritettu tai koodi kaatuu virheeseen. Säie ei ilmoita päättymisestä silloin kun käytetään säikeitä tähän mennessä näkyvien esimerkkien mukaisesti. On olemassa myös toimintomalli, jossa saadaan ilmoitus käynnistävälle koodille säikeen päättymisestä. Muutoin on vaihtoehtona kysyä pollaamalla säikeen tilaa tai 'liittyä' säikeeseen join()-metodilla. Näissä pitää huolehtia mahdollisesti poikkeuksesta. metodi sleep() aiheuttaa säikeen siirtymisen pois suorituksesta parametrian olevan millisekuntimäärän ajaksi. Pollaavassa versiossa kannattaa odottaa tovi ennen kuin kysyy uudelleen säikeen tilaa isAlive()-metodilla.
+Usein on tarpeen tietää milloin säie on päättynyt. Säikeen suoritus päättyy, kun run()-metodi on suoritettu tai koodi kaatuu virheeseen. Säie ei ilmoita päättymisestä silloin kun käytetään säikeitä tähän mennessä näkyvien esimerkkien mukaisesti. On olemassa myös toimintomalli, jossa saadaan ilmoitus käynnistävälle koodille säikeen päättymisestä. Muutoin on vaihtoehtona kysyä pollaamalla säikeen tilaa tai 'liittyä' säikeeseen join()-metodilla. Näissä pitää huolehtia mahdollisesti poikkeuksesta. metodi sleep() aiheuttaa säikeen siirtymisen pois suorituksesta parametrian olevan millisekuntimäärän ajaksi. Pollaavassa versiossa kannattaa odottaa tovi ennen kuin kysyy uudelleen säikeen tilaa isAlive()-metodilla. Pollaus tarkoittaa sitä, että kysytään (poll) säikeen tilaa, joku siis aktiivisesti seuraa tilaa. 
 
 ```java
 while (t3.isAlive()) { // join() on parempi!
@@ -165,9 +165,9 @@ System.out.println("ID: " + id); // tulostaa ID: 10
 ```
 Todellisuudessa tämä koodi toimii vain vahingossa oikein, jos lisätään kierrosten lukumäärää, alkaa laskuri tuottaa outoja arvoja. IDGenerator-luokan nextID()-metodi näyttää tekevän vain yhden operaation. Näin ei kuitenkaan ole, vaan suorituksen aikana kokonaisluvun kasvattaminen ovat monta erillistä käskyä prosessoritasolla. Säikeitä suoritetaan aika aikaviipale kerrallaan (järjestelmän päättämä aika ja prioriteetit vaikuttaa myös). Jos aikaviipale päättyy kesken muuttujan päivityksen ja toinen säie pääsee suoritukseen, osa päivitysoperaatioista 'katoaa'. Tämä riski on aina mahdollista, kun eri säikeistä käsitellään samaa muuttujaa (olion kenttää).
 
-Olemme päätyneet tilanteeseen, josta käytetään termiä Critical Section (kriittinen alue). Critical section on koodia, joka pitää suorittaa säikeessä atomaarisesti niin, ettei muut säikeet pääse suorittamaan samaa koodia. Javassa tähän on ollut yksinkertainen ratkaisu olemassa jo aivan ensimmäisestä versiosta saakka ja se on synchronized sanalla toteutettavissa. Synchronized-toiminnolla saadaan lukittua koodilohko tai kokonainen metodi niin, että säie saa suorittaa metodin tai koodilohkon loppuun saakka ilman että mikään muu säie pääsee suorittamaan samaa koodia. 
+Olemme päätyneet tilanteeseen, josta käytetään termiä Critical Section (kriittinen alue). Critical section on koodia, joka pitää suorittaa säikeessä atomaarisesti niin, ettei muut säikeet pääse suorittamaan samaa koodia tai käsittelemään samaa muuttujaa. Javassa tähän on ollut yksinkertainen ratkaisu olemassa jo aivan ensimmäisestä versiosta saakka ja se on synchronized sanalla toteutettavissa. Synchronized-toiminnolla saadaan lukittua koodilohko tai kokonainen metodi niin, että säie saa suorittaa metodin tai koodilohkon loppuun saakka ilman että mikään muu säie pääsee suorittamaan samaa koodia. 
 
-Koodilohkoa käytettäessä tarvitaan jokin olio lukitukseen. Jokaisessa Java-oliossa on sisäänrakennettu lukko-bitti, joka ei näy mitenkään vaan se pitää tietää. 
+Koodilohkoa käytettäessä tarvitaan jokin olio lukitukseen. Jokaisessa Java-oliossa on sisäänrakennettu lukko-bitti, joka ei näy mitenkään, vaan se pitää tietää. 
 Turvallinen ja toimiva nextID()-metodin toteutus voi olla seuraava:
 
 ```java

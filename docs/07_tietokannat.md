@@ -92,9 +92,9 @@ VS Code:ssa Java-projektissa on valmiina lib-hakemisto. Eclipsen ohjeiden mukaan
 
 **Ajurin lisääminen Gradle -projektiin**
 
-Gradle, Maven ja muut projektinhallintatyökalut ovat tehty helpottamaan mm. kirjastojen (riippuviiksien) latauksia ja hallinnointia. Riittää että on määritelty mitä kirjastoja tai ajureita sovellus tarvitsee ja kirjastot latautuvat build:in yhteydessä ilman että niitä tarvitsee itse asentaa projektiin.
+Gradle, Maven ja muut projektinhallintatyökalut ovat tehty helpottamaan mm. kirjastojen (riippuvuuksien) latauksia ja hallinnointia. Riittää että on määritelty mitä kirjastoja tai ajureita sovellus tarvitsee ja kirjastot latautuvat build:in yhteydessä ilman että niitä tarvitsee itse asentaa projektiin.
 
-Mavenin repositorysta löytyy määritykset, miten SQLite tai MySQL -ajurit lisätään projektiin. Siirry ensin mavenin [repositoryyn](https://mvnrepository.com/) ja kirjoita hakukenttään vaikka sqlite, valitse ensimmäinen SQLite JDBC. Seuraavana valitse version, ota vaikka uusin ja sitten valitse käyttämäsi projektityyppi (Maven Gradle, Gradle (Short), Gradle (Kotlin), jne...) ja lisää määritys gradle.build-tiedostoon dependencies-kohtaan. Tiedosto voi tämän jälkeen käyttää vaikka tältä (vain osa tiedostosta näkyvillä):
+Mavenin repositorysta löytyy määritykset, miten SQLite tai MySQL -ajurit lisätään projektiin. Siirry ensin mavenin [repositoryyn](https://mvnrepository.com/) ja kirjoita hakukenttään esimerkiksi sqlite, valitse ensimmäinen SQLite JDBC. Seuraavana valitse version, ota vaikka uusin ja sitten valitse käyttämäsi projektityyppi (Maven Gradle, Gradle (Short), Gradle (Kotlin), jne...) ja lisää määritys gradle.build-tiedostoon dependencies-kohtaan. Tiedosto voi tämän jälkeen käyttää vaikka tältä (vain osa tiedostosta näkyvillä):
 
 ```groovy
 dependencies {
@@ -140,7 +140,7 @@ private static final String JDBC_URL = "jdbc:sqlite:C:\\sqlite\\shoppingList.sql
 
 MySQL-tietokantaan yhdistettäisiin vastaavasti esim. osoitteella `"jdbc:mysql://127.0.0.1:3306/shoppinglist"`. Tällöin sinun tulee myös [lisätä projektiisi MySQL-ajuri](https://www.mysql.com/products/connector/), aivan kuten lisäsimme aikaisemmin SQLite-ajurin.
 
-Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten tyypillisesti sovellus lukee ,yhteysosoitteen joko ymoäristömuuttujasta tai konfiguraatiotiedostosta. Esimerkki ymoäristömuuttujan käytöstä Java-koodissa:
+Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten tyypillisesti sovellus lukee ,yhteysosoitteen joko ympäristömuuttujasta tai konfiguraatiotiedostosta. Esimerkki ympäristömuuttujan käytöstä Java-koodissa:
 
 ```java
 // luetaan asetus käyttöjärjestelmän ympäristömuuttujasta

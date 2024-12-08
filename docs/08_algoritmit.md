@@ -31,34 +31,37 @@ Esimerkiksi `ArrayList` on toteutettu nimensä mukaisesti sisäisesti taulukon a
 
 <!--index | value
 ------|------
-0     | `"one"`
-1     | `"two"`
-2     | `"three"`
-3     | `"four"`-->
+0     | `"Heinävesi"`
+1     | `"Pyhänkoski"`
+2     | `"Kierinki"`
+3     | `"Helsinki"`-->
 
 ```mermaid
 graph LR
     subgraph ArrayList
-        0 --> 'one'
-        1 --> 'two'
-        3 --> 'three'
-        4 --> 'four'
-        5 --> B(( ))
-        6 --> C(( ))
-        7 --> D(( ))
+        0 --> 'Heinävesi'
+        1 --> 'Pyhänkoski'
+        2 --> 'Kierinki'
+        3 --> 'Helsinki'
+        4 --> A((null))
+        5 --> B((null))
+        6 --> C((null))
+        7 --> D((null))
     end
 ```
 
-Koska `ArrayList`-rakenteen sisältämän taulukon pituus ei voi muuttua, varataan siihen tyypillisesti hieman "kasvuvaraa", jotta taulukkoa ei jouduta korvaamaan isommalla heti seuraavaa arvoa lisättäessä. Yllä olevassa kuvaajassa indeksit 5-7 havainnollistavat tätä kasvuvaraa.
+Koska `ArrayList`-rakenteen sisältämän taulukon pituus ei voi muuttua, varataan siihen tyypillisesti hieman "kasvuvaraa", jotta taulukkoa ei jouduta korvaamaan isommalla heti seuraavaa arvoa lisättäessä. Yllä olevassa kuvaajassa indeksit 4-7 havainnollistavat tätä kasvuvaraa.
 
 `LinkedList`-tietorakenteessa puolestaan arvot on "linkitetty" toisiinsa:
 
 ```mermaid
 graph LR
-    A[LinkedList] <--> B1['One']
-    B1 <--> B2['Two']
-    B2 <--> B3['Three']
-    B3 <--> B4['Four']
+    subgraph LinkedList
+        direction LR
+        B1['Heinävesi'] <--> B2['Pyhänkoski']
+        B2 <--> B3['Kierinki']
+        B3 <--> B4['Helsinki']
+    end
 ```
 
 Linkitetyssä listassa arvojen ei tarvitse olla muistissa peräkkäin, joten listan keskelle ja alkuun voidaan lisätä uusia arvoja siirtämättä ainuttakaan olemassa olevaa arvoa. Listan kasvattaminen ei myöskään edellytä sisällön kopioimista suurempaan muistialueeseen. Javan tapauksessa `LinkedList` on toteutettu molempiin suuntiin linkitettynä, joten listaa voidaan käydä läpi myös lopusta alkuun, mikäli etsittävä indeksi sijaitsee lähempänä listan loppua.

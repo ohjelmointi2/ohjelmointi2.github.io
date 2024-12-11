@@ -189,7 +189,21 @@ public synchronized int nextID() {
 
 Nyt korjattu versio toimii kaikissa tilanteissa oikein. Säikeiden käynnistäminen ei ole vaikeaa, huomattavasti hankalampaa on niiden hallinnointi, löytää sopivat käyttötilanteet ja ymmärtää seuraamukset vaikka yhteisten muuttujien käsittelyn osalta.
 
-Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös rajalliset ja jos säikeen run()-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttällä Executor-luokkaa hyväksi.  
+Synchronized-lohko tai metodi ei ole riittävä tai sopiva kaikkiin tilanteisiin. Lukituksen voi tehdä vain yhden metodin sisällä ja synkronointi ei ymmärrä tilannetta missä sama säie yrittää päästä synkronoidulle lohkolle. Näitä tilanteita korjaa ReentrantLock-luokka. Luokan olion avulla voidaan lukitus ja vapautus (siis kriittinen alue) tehdä eksplisiittisesti, edellinen esimerkki uudelleen kirjoitettuna:
+
+```java
+private static ReentrantLock lock = new ReentrantLock(true);
+public int nextID() {
+    lock.lock(); // pyydetään lukkoa, jos vapaana pääsee säie jatkamaan
+                 // muutoin jää odottamaan
+    return ++id;
+    lock.unlock(); // vapautetaan lukko
+}
+```
+
+ReentrantLock-oliolle voidaan konstruktorin parametrilla määrittää miten säikeet pääsevät eteenpäin, true päästää pitkään lukkoa odottaneet säikeet 'reilummin' suoritukseen kuin false-arvolla. Parametrin nimi onkin fair.
+
+Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös jossain määrin rajalliset ja jos säikeen run()-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttällä Executor-luokkaa hyväksi.  
 
 Tutustu esimerkkikoodiin, jossa on käytetty ExecutorService:ä ja Future-luokkaa:
 
@@ -237,7 +251,10 @@ class IDConsumerCallable implements Callable<Integer> {
 }
 ```
 
-Tämä ei ole kattava kokonaisuus Javan rinnakkaisuudesta, oleellisinta on saada perusteista käsitys ja varsinkin miksi synchronized varattua sanaa pitää käyttää ja miten.
+Enempää ei Executoria tai Futurea käsitellä tässä materiaalissa.
+
+Tämä ei ole kattava kokonaisuus Javan rinnakkaisuudesta, oleellisinta on saada perusteista käsitys ja varsinkin miksi synchronized varattua sanaa pitää käyttää ja miten.  
+
 Lisää aiheesta löytyy mm.:
 * [dev.java](https://dev.java/learn/new-features/virtual-threads/) 
 * [oracle](https://docs.oracle.com/javase/tutorial/essential/concurrency/) 

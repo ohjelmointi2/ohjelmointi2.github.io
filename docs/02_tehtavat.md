@@ -65,7 +65,7 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 
 ## Vaihe 5: `git status`, `git add` ja `git commit`
 
-10. Terminaalissa tai Git Bashissa siirry tehtävähakemistoon:
+10. Komentotulkissa, terminaalissa tai Git Bashissa siirry tehtävähakemistoon:
 
     ```bash
     cd <tehtävä_hakemisto>
@@ -79,7 +79,7 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
     git commit -m "Tehtävä suoritettu"
     ```
 
-## Vaihe 6: Päivitä muutoksesi etärepoitorioon
+## Vaihe 6: Päivitä muutoksesi etärepositorioon
 
 12. Päivitä tekemäsi commit etärepositorioon GitHubissa:
 

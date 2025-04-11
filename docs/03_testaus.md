@@ -49,7 +49,7 @@ Testeillä testataan koodin toimintaa ja yksi testimetodi testaa yhtä asiaa pel
 
 ## Nimeämiskäytännöt
 Testimetodeja tulee yleensä paljon, siksi on erittäin tärkeään käyttää yhtenäistä ja kuvaavaa nimeämiskäytäntöä. Testin nimestä pitäisi pystyä päättelemään mitä toimintoa testataan, mitä tilannetta ja mikä on oletettu lopputulos. Esimerkkejä nimeämiskäytännöstä löytyy paljon, tiivis kuvaus löytyy esimerkiksi [täältä](https://www.baeldung.com/java-unit-testing-best-practices).
-
+ 
 
 ```quiz
 ### Miksi yksikkötestaus on tärkeä osa ohjelmistokehitystä?

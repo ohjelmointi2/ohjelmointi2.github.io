@@ -1,5 +1,5 @@
 ---
-title: Perintä ja rajapinnat
+title: 📚 Perintä ja rajapinnat
 layout: default
 nav_order: 5
 permalink: /perintä-ja-rajapinnat/

@@ -21,7 +21,12 @@ Perintä (inheritance) ja rajapinnat (interfaces) ovat olio-ohjelmoinnin ratkais
 * Sisällysluettelo
 {:toc}
 
-Jos esimerkiksi netin kauppapaikalla on myynnissä monenlaisia tuotteita esineistä asuntoihin ja ajoneuvoihin, voidaan kaikille tuotteille yhteiset ominaisuudet toteuttaa yhteen luokkaan, jota voidaan laajentaa tapauskohtaisten aliluokkien avulla. Näin vältetään toteuttamasta samoja yhteisiä ominaisuuksia moneen luokkaan. Samalla koodin yhteensopivuus paranee, kun aliluokkien oliot ovat yhteensopivia yliluokan olioiden kanssa. Perinnän avulla sekä autoja, asuntoja että muita tuotteita voidaankin tarvittaessa käsitellä esimerkiksi samalla listalla.
+Periytymisen ideaa voisi kuvailla sillä, että kuviteltaisiin netin kauppapaika, jossa on myynnissä monenlaisia tuotteita esineistä asuntoihin ja ajoneuvoihin. Kaikille tuotteille yhteiset ominaisuudet voitaisiin toteuttaa yhtään luokkaan, jota voidaan laajentaa tapauskohtaisten aliluokkien avulla. Näin vältetään toteuttamasta samoja yhteisiä ominaisuuksia moneen luokkaan. Samalla koodin yhteensopivuus paranee, kun aliluokkien oliot ovat yhteensopivia yliluokan olioiden kanssa. Perinnän avulla sekä autoja, asuntoja että muita tuotteita voidaankin tarvittaessa käsitellä esimerkiksi samalla listalla.
+
+![Esimerkki perinnän ideasta](img/periytyminen-asunto-esimerkki.png)
+
+
+Käytännössä kuitenkin periytymisessä oleellisinta on vain ymmärtää sen periaate ja ymmärtää miten se toimii Javan sisäisissä ja siihen lisätyissä kirjastossa. Oman periytymishierarkian toteuttaminen teollisuuden oikeaan tarpeeseen on suhteellisen harvinaista eikä ensimmäinen poikkeustapaus, jota pitäisi aina punnita. 
 
 Perintää käytetään usein tilanteissa, joissa on olemassa jo jokin toteutus, jota halutaan laajentaa erityistapauksen avulla. Rajapintoja puolestaan käytetään usein tilanteissa, joissa selvää yhteistä toteutusta ei ole. Toisin kuin luokat, rajapinnat ovat abstrakteja, eli niistä ei voida luoda olioita. Rajapintojen avulla voidaan kuitenkin määritellä yksi tai useampia metodeja, jotka rajapinnan täyttävien luokkien on toteutettava.
 
@@ -192,6 +197,10 @@ instanceof-operaattorin lisäksi suorituksen aikana voi olion tyyppitiedon kysy�
 ```java
 String luokanNimi = hlo.getClass().getName();
 ```
+
+**Perintä on ohjelmoinnissa keino rakentaa luokkien välistä hierarkiaa niin, että aliluokka (esim. `Opiskelija`) saa automaattisesti käyttöönsä yliluokan (esim. `Henkilo`) ominaisuudet ja metodit. Tämä säästää toistoa ja mahdollistaa yhteiskäsittelyn: eri aliluokkia voidaan käyttää samassa listassa, koska ne kaikki periytyvät samasta kantaluokasta. Java-kielessä perintä tehdään `extends`-sanalla, ja yliluokan metodeja voidaan ylikirjoittaa `@Override`-merkinnällä.**
+
+
 ---
 
 ## Rajapinnat
@@ -199,6 +208,73 @@ String luokanNimi = hlo.getClass().getName();
 > *"Rajapinnan (engl. interface) avulla määritellään luokalta vaadittu käyttäytyminen, eli sen metodit. Rajapinnat määritellään kuten normaalit Javan luokat, mutta luokan alussa olevan määrittelyn "public class ..." sijaan käytetään määrittelyä "public interface ...". Rajapinnat määrittelevät käyttäytymisen metodien niminä ja palautusarvoina, mutta ne eivät aina sisällä metodien konkreettista toteutusta. Näkyvyysmäärettä rajapintoihin ei erikseen merkitä, sillä se on aina public."*
 >
 > Lähde: [Helsingin Yliopiston Agile Education Research –tutkimusryhmä. Rajapinta. mooc.fi](https://ohjelmointi-20.mooc.fi/osa-9/2-rajapinta)
+
+**Rajapinta (interface)** on Javan tapa sanoa:  
+**"Tässä on joukko metodeja, jotka _pitää_ olla, mutta _en kerro miten ne tehdään_."**
+
+Ajattele rajapintaa kuin **sopimus** tai **to do -lista** luokalle. Kun luokka **"toteuttaa" (`implements`)** rajapinnan, se **lupaa** kirjoittaa ne metodit itse.
+
+---
+
+### Yksinkertainen esimerkki
+
+Ajattele että rajapinta on **"Ajettava"** (interface `Ajettava`) — se sanoo vain:
+
+> "Kaikilla ajettavilla asioilla pitää olla `aja()`-metodi."
+
+Mutta se **ei kerro, miten ajetaan**. Se jää jokaisen ajettavan olion omaksi hommaksi.
+
+```java
+public interface Ajettava {
+    void aja();
+}
+```
+
+Nyt voit tehdä vaikka:
+
+```java
+public class Auto implements Ajettava {
+    public void aja() {
+        System.out.println("Auto ajaa moottoritiellä");
+    }
+}
+```
+
+```java
+public class Polkupyora implements Ajettava {
+    public void aja() {
+        System.out.println("Polkupyörä rullaa pyörätiellä");
+    }
+}
+```
+
+Molemmat **toteuttavat saman rajapinnan**, joten niitä voi käsitellä samassa listassa:
+
+```java
+List<Ajettava> kulkuneuvot = new ArrayList<>();
+kulkuneuvot.add(new Auto());
+kulkuneuvot.add(new Polkupyora());
+
+for (Ajettava a : kulkuneuvot) {
+    a.aja();  // kutsuu oikeaa versiota
+}
+```
+
+---
+
+### Miksi rajapintoja tarvitaan?
+
+- **Suurissa ohjelmissa:** Rajapinnat irrottavat "mitä tehdään" ja "miten se tehdään" toisistaan.
+- **Testauksessa:** Voit testata luokkia rajapinnan kautta ilman että tiedät toteutuksen.
+- **Frameworkeissa:** Spring, Android, yms. käyttävät rajapintoja paljon.
+- **Yksi luokka voi toteuttaa monta rajapintaa** — toisin kuin perinnässä, jossa voi periä vain yhden luokan.
+
+---
+
+### Yhteenveto
+
+> **Rajapinta on sopimus siitä, mitä metodit pitää olla. Se ei kerro miten ne toimii — sen tekee toteuttava luokka.**  
+> Rajapinnat ovat välttämättömiä jatkokursseilla, isoissa projekteissa ja ammattimaisessa ohjelmoinnissa. Opettele nyt, käytät varmasti myöhemmin.
 
 
 ### [Rajapinnat]

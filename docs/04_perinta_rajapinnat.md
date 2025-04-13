@@ -140,11 +140,11 @@ public class Opiskelija extends Henkilo {
 }
 ```
 
-Henkilo-luokka on yliluokka (yläluokka, `super` `class`), käytetään myös termiä kantaluokka (base `class`). Opiskelija-luokka on aliluokka (sub `class`) tai johdettu luokka (derived `class`). Opiskelija-luokka perii kaikki kentät ja metodit kantaluokalta, periminen määritellään `extends` sanalla. **Luokka voi periä vain yhden luokan**, moniperiytyminen on estetty Java-kielessä. Luokka voi toteuttaa useita rajapintoja. Moniperiytyminen on tarkoituksellisesti jätetty pois Java-kielestä, sen hallitsematon käyttö aiheuttaa enemmän ongelmia kuin tuo hyötyjä, lisäksi rajoituksen voi käytännössä kiertää rajapintojen avulla.
+`Henkilo`-luokka on yliluokka (yläluokka, `super` `class`), käytetään myös termiä kantaluokka (base `class`). Opiskelija-luokka on aliluokka (sub `class`) tai johdettu luokka (derived `class`). Opiskelija-luokka perii kaikki kentät ja metodit kantaluokalta, periminen määritellään `extends` sanalla. **Luokka voi periä vain yhden luokan**, moniperiytyminen on estetty Java-kielessä. Luokka voi toteuttaa useita rajapintoja. Moniperiytyminen on tarkoituksellisesti jätetty pois Java-kielestä, sen hallitsematon käyttö aiheuttaa enemmän ongelmia kuin tuo hyötyjä, lisäksi rajoituksen voi käytännössä kiertää rajapintojen avulla.
 
-Opiskelija-luokassa huomaa miten aliluokassa käytetään hyväksi yliluokan konstruktoria (`super`(etunimi, sukunimi, email);) sekä `toString`-metodissa `super`.`toString`(). Super viittaa aina kantaluokkaan. Konstruktorissa kantaluokan konstruktorin kutsuminen `super`-määrittelyllä on pakko olla ensimmäinen lause.
+`Opiskelija`-luokassa huomaa miten aliluokassa käytetään hyväksi yliluokan konstruktoria (`super`(etunimi, sukunimi, email);) sekä `toString`-metodissa `super`.`toString`(). Super viittaa aina kantaluokkaan. Konstruktorissa kantaluokan konstruktorin kutsuminen `super`-määrittelyllä on pakko olla ensimmäinen lause.
 
-Henkilo-luokassa on määritelty `toString`()-metodi. Metodit voidaan ylikirjoittaa aliluokissa, tässä esimerkissä tulostataan nimen lisäksi opiskelijanumero ja aloitusvuosi. Ylikirjoitus on syytä toteuttaa käyttämällä `@Override`-annotaatiota.
+`Henkilo`-luokassa on määritelty `toString`()-metodi. Metodit voidaan ylikirjoittaa aliluokissa, tässä esimerkissä tulostataan nimen lisäksi opiskelijanumero ja aloitusvuosi. Ylikirjoitus on syytä toteuttaa käyttämällä `@Override`-annotaatiota.
 
 Lisätään vielä Opettaja-luokka:
 ```java

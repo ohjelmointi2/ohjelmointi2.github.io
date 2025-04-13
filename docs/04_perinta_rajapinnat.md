@@ -102,15 +102,15 @@ public class Henkilo {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
+    `@Override`
+    public String `toString`() {
         return "Henkilo [etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", email=" + email + "]";
     }
 }
 
 ```
 
-Henkilo-luokka sisältää henkilön perustietoja, jos ollaan tekemässä oppilaitoksen järjestelmään, tarvitaan vielä ainakin Opiskelija-luokka. Oppilaalla on nimi, sähköposti ja lisäksi opiskelijanumero ja aloitusvuosi (toki oikeasti paljon muitakin ominaisuuksia). Periytymisen avulla voidaan hyödyntää Henkilo-luokkaa Opiskelija-luokkaa määriteltäessä. Huomaa seuraavassa koodiesimerkissä varatut sanat **`extends`**, **`super`** ja annotaatio **@Override**. 
+Henkilo-luokka sisältää henkilön perustietoja, jos ollaan tekemässä oppilaitoksen järjestelmään, tarvitaan vielä ainakin Opiskelija-luokka. Oppilaalla on nimi, sähköposti ja lisäksi opiskelijanumero ja aloitusvuosi (toki oikeasti paljon muitakin ominaisuuksia). Periytymisen avulla voidaan hyödyntää Henkilo-luokkaa Opiskelija-luokkaa määriteltäessä. Huomaa seuraavassa koodiesimerkissä varatut sanat **`extends`**, **`super`** ja annotaatio **`@Override`**. 
 
 ```java
 package perinta;
@@ -133,18 +133,18 @@ public class Opiskelija extends Henkilo {
         return aloitusvuosi;
     }
   
-    @Override
-    public String toString() {
-        return super.toString() +  " Opiskelija [opiskelijanumero=" + opiskelijanumero + ", aloitusvuosi=" + aloitusvuosi + "]";
+    `@Override`
+    public String `toString`() {
+        return super.`toString`() +  " Opiskelija [opiskelijanumero=" + opiskelijanumero + ", aloitusvuosi=" + aloitusvuosi + "]";
     }
 }
 ```
 
 Henkilo-luokka on yliluokka (yläluokka, `super` `class`), käytetään myös termiä kantaluokka (base `class`). Opiskelija-luokka on aliluokka (sub `class`) tai johdettu luokka (derived `class`). Opiskelija-luokka perii kaikki kentät ja metodit kantaluokalta, periminen määritellään `extends` sanalla. **Luokka voi periä vain yhden luokan**, moniperiytyminen on estetty Java-kielessä. Luokka voi toteuttaa useita rajapintoja. Moniperiytyminen on tarkoituksellisesti jätetty pois Java-kielestä, sen hallitsematon käyttö aiheuttaa enemmän ongelmia kuin tuo hyötyjä, lisäksi rajoituksen voi käytännössä kiertää rajapintojen avulla.
 
-Opiskelija-luokassa huomaa miten aliluokassa käytetään hyväksi yliluokan konstruktoria (`super`(etunimi, sukunimi, email);) sekä toString-metodissa `super`.toString(). Super viittaa aina kantaluokkaan. Konstruktorissa kantaluokan konstruktorin kutsuminen `super`-määrittelyllä on pakko olla ensimmäinen lause.
+Opiskelija-luokassa huomaa miten aliluokassa käytetään hyväksi yliluokan konstruktoria (`super`(etunimi, sukunimi, email);) sekä `toString`-metodissa `super`.`toString`(). Super viittaa aina kantaluokkaan. Konstruktorissa kantaluokan konstruktorin kutsuminen `super`-määrittelyllä on pakko olla ensimmäinen lause.
 
-Henkilo-luokassa on määritelty toString()-metodi. Metodit voidaan ylikirjoittaa aliluokissa, tässä esimerkissä tulostataan nimen lisäksi opiskelijanumero ja aloitusvuosi. Ylikirjoitus on syytä toteuttaa käyttämällä @Override-annotaatiota.
+Henkilo-luokassa on määritelty `toString`()-metodi. Metodit voidaan ylikirjoittaa aliluokissa, tässä esimerkissä tulostataan nimen lisäksi opiskelijanumero ja aloitusvuosi. Ylikirjoitus on syytä toteuttaa käyttämällä `@Override`-annotaatiota.
 
 Lisätään vielä Opettaja-luokka:
 ```java
@@ -162,9 +162,9 @@ public class Opettaja extends Henkilo {
         return opettajanumero;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + "Opettaja [opettajanumero=" + opettajanumero + "]";
+    `@Override`
+    public String `toString`() {
+        return super.`toString`() + "Opettaja [opettajanumero=" + opettajanumero + "]";
     }
 }
 ```
@@ -181,7 +181,7 @@ for (Henkilo h : osallistujat) {
     System.out.println(h);
 }
 ```
-Aikaisemmin toString()-metodiin liitetty @Override-annotaatio ei ole (aivan) pakollinen, mutta sitä kannattaa käyttää. Sen avulla kääntäjä voi tarkistaa että kantaluokassa on varmasti olemassa ylikirjoitettava metodi, kääntäjä voi tehdä optimointia sekä dokumentoidaan koodin ylläpitäjälle ylikirjoituksesta. Muutoin koodia luettaessa ei pysty päättelemään pelkästä metodista, onko kyseessä ylikirjoitus vai ei.
+Aikaisemmin `toString`()-metodiin liitetty `@Override`-annotaatio ei ole (aivan) pakollinen, mutta sitä kannattaa käyttää. Sen avulla kääntäjä voi tarkistaa että kantaluokassa on varmasti olemassa ylikirjoitettava metodi, kääntäjä voi tehdä optimointia sekä dokumentoidaan koodin ylläpitäjälle ylikirjoituksesta. Muutoin koodia luettaessa ei pysty päättelemään pelkästä metodista, onko kyseessä ylikirjoitus vai ei.
 &nbsp; 
 
 Jossain tilanteissa pitää pystyä selvittämään suorituksen aikana muuttujan tyyppi. Tähän voi käyttää Java-kielessä `instanceof` -operaattoria.
@@ -198,7 +198,7 @@ else {
 String luokanNimi = hlo.getClass().getName();
 ```
 
-**Perintä on ohjelmoinnissa keino rakentaa luokkien välistä hierarkiaa niin, että aliluokka (esim. `Opiskelija`) saa automaattisesti käyttöönsä yliluokan (esim. `Henkilo`) ominaisuudet ja metodit. Tämä säästää toistoa ja mahdollistaa yhteiskäsittelyn: eri aliluokkia voidaan käyttää samassa listassa, koska ne kaikki periytyvät samasta kantaluokasta. Java-kielessä perintä tehdään ``extends``-sanalla, ja yliluokan metodeja voidaan ylikirjoittaa `@Override`-merkinnällä.**
+**Perintä on ohjelmoinnissa keino rakentaa luokkien välistä hierarkiaa niin, että aliluokka (esim. `Opiskelija`) saa automaattisesti käyttöönsä yliluokan (esim. `Henkilo`) ominaisuudet ja metodit. Tämä säästää toistoa ja mahdollistaa yhteiskäsittelyn: eri aliluokkia voidaan käyttää samassa listassa, koska ne kaikki periytyvät samasta kantaluokasta. Java-kielessä perintä tehdään ``extends``-sanalla, ja yliluokan metodeja voidaan ylikirjoittaa ``@Override``-merkinnällä.**
 
 
 ---

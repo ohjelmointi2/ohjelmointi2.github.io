@@ -133,7 +133,7 @@ public class Opiskelija extends Henkilo {
         return aloitusvuosi;
     }
   
-    `@Override`
+    @Override
     public String toString() {
         return super.toString() +  " Opiskelija [opiskelijanumero=" + opiskelijanumero + ", aloitusvuosi=" + aloitusvuosi + "]";
     }

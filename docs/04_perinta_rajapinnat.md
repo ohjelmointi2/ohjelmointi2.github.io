@@ -110,7 +110,7 @@ public class Henkilo {
 
 ```
 
-Henkilo-luokka sisältää henkilön perustietoja, jos ollaan tekemässä oppilaitoksen järjestelmään, tarvitaan vielä ainakin Opiskelija-luokka. Oppilaalla on nimi, sähköposti ja lisäksi opiskelijanumero ja aloitusvuosi (toki oikeasti paljon muitakin ominaisuuksia). Periytymisen avulla voidaan hyödyntää Henkilo-luokkaa Opiskelija-luokkaa määriteltäessä. Huomaa seuraavassa koodiesimerkissä varatut sanat **`extends`**, **`super`** ja annotaatio **`@Override`**. 
+`Henkilo`-luokka sisältää henkilön perustietoja, jos ollaan tekemässä oppilaitoksen järjestelmään, tarvitaan vielä ainakin `Opiskelija`-luokka. Oppilaalla on `nimi`, `sähköposti` ja lisäksi `opiskelijanumero` ja `aloitusvuosi` (toki oikeasti paljon muitakin ominaisuuksia). Periytymisen avulla voidaan hyödyntää `Henkilo`-luokkaa `Opiskelija`-luokkaa määriteltäessä. Huomaa seuraavassa koodiesimerkissä varatut sanat **`extends`**, **`super`** ja annotaatio **`@Override`**. 
 
 ```java
 package perinta;

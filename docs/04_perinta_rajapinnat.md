@@ -102,8 +102,8 @@ public class Henkilo {
         this.email = email;
     }
 
-    `@Override`
-    public String `toString`() {
+    @Override
+    public String toString() {
         return "Henkilo [etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", email=" + email + "]";
     }
 }
@@ -134,8 +134,8 @@ public class Opiskelija extends Henkilo {
     }
   
     `@Override`
-    public String `toString`() {
-        return super.`toString`() +  " Opiskelija [opiskelijanumero=" + opiskelijanumero + ", aloitusvuosi=" + aloitusvuosi + "]";
+    public String toString() {
+        return super.toString() +  " Opiskelija [opiskelijanumero=" + opiskelijanumero + ", aloitusvuosi=" + aloitusvuosi + "]";
     }
 }
 ```

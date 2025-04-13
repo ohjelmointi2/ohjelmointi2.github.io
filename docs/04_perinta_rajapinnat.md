@@ -162,9 +162,9 @@ public class Opettaja extends Henkilo {
         return opettajanumero;
     }
 
-    `@Override`
-    public String `toString`() {
-        return super.`toString`() + "Opettaja [opettajanumero=" + opettajanumero + "]";
+    @Override
+    public String toString() {
+        return super.toString() + "Opettaja [opettajanumero=" + opettajanumero + "]";
     }
 }
 ```

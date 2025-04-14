@@ -21,7 +21,7 @@ Perintä (inheritance) ja rajapinnat (interfaces) ovat olio-ohjelmoinnin ratkais
 * 🔹 Sisällysluettelo
 {:toc}
 
-Periytymisen ideaa voisi kuvailla sillä, että kuviteltaisiin netin kauppapaika, jossa on myynnissä monenlaisia tuotteita esineistä asuntoihin ja ajoneuvoihin. Kaikille tuotteille yhteiset ominaisuudet voitaisiin toteuttaa yhteen luokkaan, jota voidaan laajentaa tapauskohtaisten aliluokkien avulla. Näin vältetään toteuttamasta samoja yhteisiä ominaisuuksia moneen luokkaan. Samalla koodin yhteensopivuus paranee, kun aliluokkien oliot ovat yhteensopivia yliluokan olioiden kanssa. Perinnän avulla sekä autoja, asuntoja että muita tuotteita voidaankin tarvittaessa käsitellä esimerkiksi samalla listalla.
+Periytymisen ideaa voisi kuvailla sillä, että kuviteltaisiin netin kauppapaikka, jossa on myynnissä monenlaisia tuotteita esineistä asuntoihin ja ajoneuvoihin. Kaikille tuotteille yhteiset ominaisuudet voitaisiin toteuttaa yhteen luokkaan, jota voidaan laajentaa tapauskohtaisten aliluokkien avulla. Näin vältetään toteuttamasta samoja yhteisiä ominaisuuksia moneen luokkaan. Samalla koodin yhteensopivuus paranee, kun aliluokkien oliot ovat yhteensopivia yliluokan olioiden kanssa. Perinnän avulla sekä autoja, asuntoja että muita tuotteita voidaankin tarvittaessa käsitellä esimerkiksi samalla listalla.
 
 ![Esimerkki perinnän ideasta](../img/periytyminen-asunto-esimerkki.png)
 

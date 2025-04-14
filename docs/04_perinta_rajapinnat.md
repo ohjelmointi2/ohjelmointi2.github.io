@@ -198,7 +198,7 @@ else {
 String luokanNimi = hlo.getClass().getName();
 ```
 
-**Perintä on ohjelmoinnissa keino rakentaa luokkien välistä hierarkiaa niin, että aliluokka (esim. `Opiskelija`) saa automaattisesti käyttöönsä yliluokan (esim. `Henkilo`) ominaisuudet ja metodit. Tämä säästää toistoa ja mahdollistaa yhteiskäsittelyn: eri aliluokkia voidaan käyttää samassa listassa, koska ne kaikki periytyvät samasta kantaluokasta. Java-kielessä perintä tehdään ``extends``-sanalla, ja yliluokan metodeja voidaan ylikirjoittaa ``@Override``-merkinnällä.**
+**Perintä** on ohjelmoinnissa keino rakentaa luokkien välistä hierarkiaa niin, että aliluokka (esim. `Opiskelija`) saa automaattisesti käyttöönsä yliluokan (esim. `Henkilo`) ominaisuudet ja metodit. Tämä säästää toistoa ja mahdollistaa yhteiskäsittelyn: eri aliluokkia voidaan käyttää samassa listassa, koska ne kaikki periytyvät samasta kantaluokasta. Java-kielessä perintä tehdään ``extends``-sanalla, ja yliluokan metodeja voidaan ylikirjoittaa ``@Override``-merkinnällä.
 
 
 ---

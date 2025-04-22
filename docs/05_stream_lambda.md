@@ -12,7 +12,7 @@ Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-
 
 **Johdanto esimerkin avulla**
 
-Ohjelmointi 1-kurssilla käsiteltiin mm. taulukoita. Taulukoissa viitataan johonkin tiettyyn soluun tai käydään koko taulukko läpi ja tehdään taulukon sisältämille arvoille joku operaatio, nämä siis yleisimmän käsittelytavat. Esimerkki kokonaislukutaulukon alkioiden yhteelaskusta: 
+Ohjelmointi 1-kurssilla käsiteltiin mm. taulukoita. Taulukoissa viitataan johonkin tiettyyn soluun tai käydään koko taulukko läpi ja tehdään taulukon sisältämille arvoille joku operaatio, nämä siis yleisimmän käsittelytavat. Esimerkki kokonaislukutaulukon alkioiden yhteenlaskusta: 
 
 ```java
 int[] luvut = { 1, 2, 4, 56, 6, 3, 2, 2, 4, 5, 3, 2, 23, 66, 35, 23, 200, 100 };
@@ -67,7 +67,7 @@ Streamin avulla voidaan mm.:
 - tehdä joku toiminto jokaiselle merkkijonolle (oliolle)
 - etsiä joku merkkijono määritellyn kriteerin perusteella tai kysyä löytyykö listalta joku tietty nimi
 
-Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-metodilla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä forEach()-metodia,  jolle annetaan parametrina metodi, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio (metodi) eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamalla parametrilla, tässä tapauksessa tulostaa sen konsolille.  
+Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostaminen. Listan alkioiden käsittely (vaikkapa juurikin tulostaminen) onnistuu aivan hyvin ilman stream:ia, aloitetaan kuitenkin yksinkertaisesta asiasta ja lisätään toimintoja, joita olisi työläs toteuttaa ilman stream-käsitettä. Listasta saadaan stream()-metodilla kaikki alkiot käsiteltäväksi peräkkäin. Streamin jokainen alkio voidaan 'kuluttaa' käyttämällä forEach()-metodia,  jolle annetaan parametrina metodi, joka saa itse parametrinaan tässä tapauksessa yhden String-tyyppisen parametrin. Kuluttajafunktio (metodi) eli Consumer ei palauta mitään ja saa yhden parametrin jonka tyyppi on kokoelmaluokan alkion tyyppi, kuluttajafunktio tekee jotain saamallaan parametrilla, tässä tapauksessa tulostaa sen konsolille.  
 
 ```java
 public class SDemo {
@@ -89,7 +89,7 @@ Tämä esimerkki vaatii selityksen, tai vähintään suorituksen debuggerin avul
 2. Stream sisältää kaikki listan alkiot, jotka ovat String-olioita
 3. forEach()-metodi tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina metodille, joka on määritelty forEach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse metodiin, ei metodin kutsua.
 
-Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin metodin arvonaan, Consumer<T> voi sisältää osoitteen metodiin, joka on muotoa void metodinNimi(T t) {}. 
+Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin metodin arvonaan, Consumer<T> voi sisältää osoitteen metodiin, joka on muotoa <br>*void metodinNimi(T t) {}*. 
 
 ```java
 Consumer<String> nimenTulostusMetodi = SDemo::tulostaNimi;
@@ -172,7 +172,7 @@ Jos sama tehdään streamin avulla, päästään paljon vähemmillä koodiriveil
 ```java
 long lkm = products.stream().filter(p -> p.type().equals("Computer")).count();
 ```
-Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-metodin avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi monimutkainen, kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
+Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-metodin avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi olla monimutkainen, kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
 
 ```java
 // metodit voidaan kirjoittaa omille riveille selvyyden vuoksi
@@ -193,7 +193,7 @@ public interface Predicate<T> {
         public boolean test(T t);
 }
 ```
-Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee helposti automaatio, kunhan näitä käyttää riittävän kauan.
+Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee helposti automaatio, kunhan näitä käyttää riittävän kauan ja usein.
 Streamia käsitellään seuraavan tyyppisillä toiminnoilla:
 
 **Intermediate** streamin läpikäynti jatkuu metodi jälkeen
@@ -292,7 +292,7 @@ if (firstProduct.isPresent()) {
 findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. tilanteen saa selville isPresent()-metodilla. Jos stream, johon find...() -metodi kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
 
 ### Peräkkäinen vai rinnakkainen käsittely? 
-Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla myöhemmin. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia.
+Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla myöhemmin. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia samaan aikaan.
 Rinnakkaisen käsittelyn toteuttaminen on todella helppoa, käytetään parallelStream()-funktiota. Rinnakkaisuuden toteutuksesta vastaa JDK:n kirjastot kokonaan ja suoritusjärjestys voi olla joka kerta erilainen.
 
 ```java

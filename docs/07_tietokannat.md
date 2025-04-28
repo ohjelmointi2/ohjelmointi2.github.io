@@ -1,5 +1,5 @@
 ---
-title: Tietokannat
+title: 💾 Tietokannat
 layout: default
 nav_order: 7
 permalink: /tietokannat/
@@ -147,6 +147,10 @@ Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelm
 private static final String JDBC_URL = System.getenv("JDBC_DATABASE_URL");
 ```
 
+
+
+
+
 Älä koskaan muodosta SQL-kyselyitä käsin yhdistelemällä merkkijonoja, koska kyselyn teko merkkijonoja yhdistelemällä aiheuttaa mm. tietoturvaongelmia:
 
 {: .warning :}
@@ -164,7 +168,32 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 > statement.setString(1, name);
 > ```
 
-
+### Esimerkki tietokantayhteyden luomisesta ja sulkemisesta
+{: .esim :}
+> ```java
+>    public static void main(String[] args) throws SQLException {
+>        // 1. CONNECTION STRING 
+>        String JDBC_URL = "jdbc:sqlite:data/Chinook_Sqlite.sqlite";
+>        // 2. YHTEYDEN MUODOSTAMINEN - PALJASTAA JOS ESIMERKIKSI CONNECTION
+>        // STRING ON IHAN VAARIN
+>        Connection yhteys = DriverManager.getConnection(JDBC_URL);
+>
+>        // 3. MUODOSTETAAN KYSELY
+>        PreparedStatement sqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
+>        // 4. SUORITETAAN KYSELY
+>        ResultSet haunTulokset = sqlLause.executeQuery();
+>        // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET TYYPPISENA OLIONA
+>        while(haunTulokset.next()) {
+>            String yksiRivi = haunTulokset.getString("Name");
+>            System.out.println(yksiRivi);
+>        }
+>
+>        // 6. KAIKKIEN RESURSSIEN SULKEMINEN
+>        haunTulokset.close();
+>        sqlLause.close();
+>        yhteys.close();
+>    }
+> ```
 
 ### Esimerkki SQL-injektiosta
 

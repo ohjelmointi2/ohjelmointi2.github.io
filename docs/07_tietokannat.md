@@ -171,28 +171,28 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 ### Esimerkki tietokantayhteyden luomisesta ja sulkemisesta
 {: .esim :}
 ```java
-01. public static void main(String[] args) throws SQLException {
-02.     // 1. CONNECTION STRING 
-03.     String JDBC_URL = "jdbc:sqlite:data/Chinook_Sqlite.sqlite";
-04.     // 2. YHTEYDEN MUODOSTAMINEN - PALJASTAA JOS ESIMERKIKSI CONNECTION
-05.     // STRING ON IHAN VAARIN
-06.     Connection yhteys = DriverManager.getConnection(JDBC_URL);
-07.     
-08.     // 3. MUODOSTETAAN KYSELY
-09.     PreparedStatement sqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
-10.    // 4. SUORITETAAN KYSELY
-11.    ResultSet haunTulokset = sqlLause.executeQuery();
-12.    // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET-TYYPPISENÄ OLIONA
-13.    while(haunTulokset.next()) {
-14.        String yksiRivi = haunTulokset.getString("Name");
-15.        System.out.println(yksiRivi);
-16.    }
-17.    
-18.    // 6. KAIKKIEN RESURSSIEN SULKEMINEN
-19.    haunTulokset.close();
-20.    sqlLause.close();
-21.    yhteys.close();
-22. }
+<span style="color:gray;">01.</span> public static void <span style="color:green;">main</span>(String[] args) throws SQLException {
+<span style="color:gray;">02.</span>     // 1. CONNECTION STRING 
+<span style="color:gray;">03.</span>     String JDBC_URL = "jdbc:sqlite:data/Chinook_Sqlite.sqlite";
+<span style="color:gray;">04.</span>     // 2. YHTEYDEN MUODOSTAMINEN - PALJASTAA JOS ESIMERKIKSI CONNECTION
+<span style="color:gray;">05.</span>     // STRING ON IHAN VAARIN
+<span style="color:gray;">06.</span>     <span style="color:blue;">Connection</span> yhteys = <span style="color:blue;">DriverManager</span>.getConnection(JDBC_URL);
+<span style="color:gray;">07.</span>     
+<span style="color:gray;">08.</span>     // 3. MUODOSTETAAN KYSELY
+<span style="color:gray;">09.</span>     <span style="color:blue;">PreparedStatement</span> sqlLause = yhteys.<span style="color:green;">prepareStatement</span>("SELECT * FROM Artist"); 
+<span style="color:gray;">10.</span>    // 4. SUORITETAAN KYSELY
+<span style="color:gray;">11.</span>    <span style="color:blue;">ResultSet</span> haunTulokset = sqlLause.<span style="color:green;">executeQuery</span>();
+<span style="color:gray;">12.</span>    // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET-TYYPPISENÄ OLIONA
+<span style="color:gray;">13.</span>    while(haunTulokset.<span style="color:green;">next</span>()) {
+<span style="color:gray;">14.</span>        String yksiRivi = haunTulokset.<span style="color:green;">getString</span>("Name");
+<span style="color:gray;">15.</span>        System.out.println(yksiRivi);
+<span style="color:gray;">16.</span>    }
+<span style="color:gray;">17.</span>    
+<span style="color:gray;">18.</span>    // 6. KAIKKIEN RESURSSIEN SULKEMINEN
+<span style="color:gray;">19.</span>    haunTulokset.<span style="color:green;">close</span>();
+<span style="color:gray;">20.</span>    sqlLause.<span style="color:green;">close</span>();
+<span style="color:gray;">21.</span>    yhteys.<span style="color:green;">close</span>();
+<span style="color:gray;">22.</span> }
 ```
 
 ### Esimerkki SQL-injektiosta

@@ -59,7 +59,7 @@ Toteutamme tällä kurssilla tietokantalogiikan Java-koodeissamme siten, että s
 
 ## JDBC:n SQLite-ajuri
 
-Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Gradle](https://gradle.org/) ja [Maven](https://maven.apache.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös Eclipsessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
+Tietokannan käyttämiseksi Javasta käsin tarvitsemme erillisen JDBC-ajurin. Erilliset Java-kirjastot jaellaan tyypillisesti `.jar`-tiedostoina (Java Archive), jotka asennetaan pääsääntöisesti automaatiotyökalujen avulla. Suosituimpia automaatiotyökaluja Javalle ovat [Gradle](https://gradle.org/) ja [Maven](https://maven.apache.org/). Automaatiotyökalujen avulla monimutkaistenkin riippuvuuksien hallinta on kohtuullisen yksinkertaista ja myös VS Codessä on hyvät integraatiota automaatiotyökalujen hyödyntämiseksi.
 
 Jos teen projektin ilman hallintatyökaluja, on tässä ohjeet siihen. Kurssilla käytetään pääsääntöisesti Gradle-projekteja joten ohjeistuksessa on myös miten riippuvuuksien avulla saadaan tietokanta-ajurit ladattua projektin käyttöön.
 
@@ -71,7 +71,7 @@ Siirry Maven-repositorioon osoitteeseen [https://mvnrepository.com/artifact/org.
 ![Lataa ajuri JAR-linkkiä klikkaamalla](/img/maven-sqlite-jdbc.png)
 
 
-**Ajurin lisääminen Eclipse-projektiin**
+**Ajurin lisääminen VS Code-projektiin**
 
 Ajurin käyttöönotto projektissasi edellyttää sen lisäämistä projektin "build path":iin. Build path on lista sijainneista, joissa ohjelmasi käyttämät Java-luokat sijaitsevat. Ajurin lisääminen onnistuu helpoiten seuraavasti:
 
@@ -86,7 +86,7 @@ Voit ladata tietokantatiedoston itsellesi tästä: [shoppingList.sqlite](https:/
 
 **Ajurin lisääminen VS Code -projektiin**
 
-VS Code:ssa Java-projektissa on valmiina lib-hakemisto. Eclipsen ohjeiden mukaan lataa ajuri ja kopioi/siirrä se projektin lib-hakemistoon.
+VS Code:ssa Java-projektissa on valmiina lib-hakemisto. VS Coden ohjeiden mukaan lataa ajuri ja kopioi/siirrä se projektin lib-hakemistoon.
 
 ---
 
@@ -163,6 +163,19 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 > PreparedStatement statement = connection.prepareStatement("SELECT * FROM Artist WHERE Name = ?");
 > statement.setString(1, name);
 > ```
+
+
+
+### Esimerkki SQL-injektiosta
+
+Alla on esimerkki URL-osoitteesta, jolla voisi päästä järjestelmään ilman oikeaa salasanaa, mikäli kysely tehdään suoraan merkkijonoja yhdistelemällä ilman `PreparedStatement`-luokkaa:
+
+```
+https://esimerkki.fi/login?username=admin'--&password=salasana
+```
+
+Tässä tapauksessa `'--` katkaisee alkuperäisen SQL-lauseen ja kommentoi loput pois.
+
 
 ### SQL-kyselyiden tietoturva
 

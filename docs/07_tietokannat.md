@@ -181,9 +181,9 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 08.     // 3. MUODOSTETAAN KYSELY
 09.     PreparedStatementsqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
 10.    // 4. SUORITETAAN KYSELY
-11.    ResultSet haunTulokset = sqlLause.executeQuery</span>();
+11.    ResultSet haunTulokset = sqlLause.executeQuery();
 12.    // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET-TYYPPISENÄ OLIONA
-13.    while(haunTulokset.next</span>()) {
+13.    while(haunTulokset.next()) {
 14.        String yksiRivi = haunTulokset.getString("Name");
 15.        System.out.println(yksiRivi);
 16.    }

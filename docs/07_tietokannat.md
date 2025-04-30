@@ -193,7 +193,7 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 20.    sqlLause.close();
 21.    yhteys.close();
 22. }
-
+```
 
 ### Esimerkki SQL-injektiosta
 

@@ -176,7 +176,7 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 03.     String JDBC_URL = "jdbc:sqlite:data/Chinook_Sqlite.sqlite";
 04.     // 2. YHTEYDEN MUODOSTAMINEN - PALJASTAA JOS ESIMERKIKSI CONNECTION
 05.     // STRING ON IHAN VAARIN
-06.     Connection yhteys = DriverManager</span>.getConnection(JDBC_URL);
+06.     Connection yhteys = DriverManager.getConnection(JDBC_URL);
 07.     
 08.     // 3. MUODOSTETAAN KYSELY
 09.     PreparedStatementsqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 

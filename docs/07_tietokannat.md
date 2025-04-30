@@ -171,27 +171,27 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 ### Esimerkki tietokantayhteyden luomisesta ja sulkemisesta
 {: .esim :}
 ```java
-01. public static void <span style="color:green;">main</span>(String[] args) throws SQLException {
+01. public static void main(String[] args) throws SQLException {
 02.     // 1. CONNECTION STRING 
 03.     String JDBC_URL = "jdbc:sqlite:data/Chinook_Sqlite.sqlite";
 04.     // 2. YHTEYDEN MUODOSTAMINEN - PALJASTAA JOS ESIMERKIKSI CONNECTION
 05.     // STRING ON IHAN VAARIN
-06.     <span style="color:blue;">Connection</span> yhteys = <span style="color:blue;">DriverManager</span>.getConnection(JDBC_URL);
+06.     Connection yhteys = DriverManager</span>.getConnection(JDBC_URL);
 07.     
 08.     // 3. MUODOSTETAAN KYSELY
-09.     <span style="color:blue;">PreparedStatement</span> sqlLause = yhteys.<span style="color:green;">prepareStatement</span>("SELECT * FROM Artist"); 
+09.     PreparedStatementsqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
 10.    // 4. SUORITETAAN KYSELY
-11.    <span style="color:blue;">ResultSet</span> haunTulokset = sqlLause.<span style="color:green;">executeQuery</span>();
+11.    ResultSet haunTulokset = sqlLause.executeQuery</span>();
 12.    // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET-TYYPPISENÄ OLIONA
-13.    while(haunTulokset.<span style="color:green;">next</span>()) {
-14.        String yksiRivi = haunTulokset.<span style="color:green;">getString</span>("Name");
+13.    while(haunTulokset.next</span>()) {
+14.        String yksiRivi = haunTulokset.getString("Name");
 15.        System.out.println(yksiRivi);
 16.    }
 17.     
 18.    // 6. KAIKKIEN RESURSSIEN SULKEMINEN
-19.    haunTulokset.<span style="color:green;">close</span>();
-20.    sqlLause.<span style="color:green;">close</span>();
-21.    yhteys.<span style="color:green;">close</span>();
+19.    haunTulokset.close();
+20.    sqlLause.close();
+21.    yhteys.close();
 22. }
 
 

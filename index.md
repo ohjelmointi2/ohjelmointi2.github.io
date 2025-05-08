@@ -152,6 +152,8 @@ Sivuston sivupohjana käytetään [Just the Docs](https://github.com/just-the-do
 ## Tämän oppimateriaalin lisenssi
 {: .no_toc }
 
-Tämän oppimateriaalin on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä.
+Tämän oppimateriaalin on kehittänyt Teemu Havulinna, Heikki Raatikainen ja Jukka Juslin. Materiaali on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä.
+
+Materiaalin kehittämisessä on käytetty hyväksi myös muiden tekijöiden materiaaleja, jotka on mainittu erikseen. Lisäksi kehityksessä on hyödynnetty tekoälytyötyökaluja, kuten ChatGPT:tä ja GitHub Copilotia.
 
 Sivuston lähdekoodit löydät osoitteesta [https://github.com/ohjelmointi2/ohjelmointi2.github.io](https://github.com/ohjelmointi2/ohjelmointi2.github.io).

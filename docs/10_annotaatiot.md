@@ -9,7 +9,7 @@ permalink: /annotaatiot/
 # Annotaatiot
 {: .no_toc }
 
-Annotaatio on kähdekoodissa oleva @-alkuinen merkintä, jolla lisätään koodiin metadataa. Annotaatio liittyy seuraavaan koodissa olevaan osaan. luokkaan, kenttään, metodiin jne.  Annotaatio voi olla kääntäjän ohjaukseen tarkoitettu ja se ei tallennu käännettyyn byte-koodiin, tai sitten annotaatiota käytetään suorituksen aikana jolloin annotaatio on tallessa tyyppitiedossa metadatana.
+Annotaatio on lähdekoodissa oleva @-alkuinen merkintä, jolla lisätään koodiin metadataa. Annotaatio liittyy seuraavaan koodissa olevaan osaan: luokkaan, kenttään, metodiin jne.  Annotaatio voi olla kääntäjän ohjaukseen tarkoitettu ja silloin se ei tallennu käännettyyn byte-koodiin, tai sitten annotaatiota käytetään suorituksen aikana jolloin annotaatio on tallessa tyyppitiedossa metadatana.
 
 Luultavasti olet nähnyt @Override -annotaation toString-metodin perinnän yhteydessä. Tämä on hyvä esimerkki miten annotaatioita käytetään ja miten ne toimii. 
 

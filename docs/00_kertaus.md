@@ -63,13 +63,13 @@ Tämä kurssi sisältää niitä keskeisiä asioita, joita jokainen ohjelmoija t
 
 Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisällön opiskeluun. Lähes kaikkia tämän kurssin asioita hyödynnetään esimerkiksi BackEnd-ohjelmointikurssilla.
 
-**Projektityökalut** otetaan tällä kurssi vaivihkaa käyttöön. Java-projekti ei ole mikään yksiselitteinen käsite, se voi olla vain jonkin IDE:n tapa helpottaa useiden java-tiedostohen kääntämistä ja paketointia jar-tiedostoksi. Nykyään käytetään pääasiassa erillisiä projektinhallintavälineitä, esimerkiksi Mavenia tai Gradlea. Ne määrittelevät projektin rakenteen (hakemistot, konfigurointitiedostot) ja työkalut, joilla tehtään projektin käännökset, ajataan testit ja lisätään riippuvuuksia sovelluksessa käytettäviin kirjastoihin. Riippuvuuksien hallinta onkin yksi tärkeä piirre, miksi erillisiä projektityökaluja käytetään. Kurssi ei erityisesti opeta syvällisesti miten Gradle ja Maven toimii, vaan kaikki tehtävät ovat valmiina Gradle-projekteina, joten sen tuomia hyötyjä vain käytetään hyväksi.
+**Projektityökalut** otetaan tällä kurssilla vaivihkaa käyttöön. Java-projekti ei ole mikään yksiselitteinen käsite, se voi olla vain jonkin IDE:n tapa helpottaa useiden java-tiedostohen kääntämistä ja paketointia jar-tiedostoksi. Nykyään käytetään pääasiassa erillisiä projektinhallintavälineitä, esimerkiksi Mavenia tai Gradlea. Ne määrittelevät projektin rakenteen (hakemistot, konfigurointitiedostot) ja työkalut, joilla tehtään projektin käännökset, ajataan testit ja lisätään riippuvuuksia sovelluksessa käytettäviin kirjastoihin. Riippuvuuksien hallinta onkin yksi tärkeä piirre, miksi erillisiä projektityökaluja käytetään. Kurssi ei erityisesti opeta syvällisesti miten Gradle ja Maven toimii, vaan kaikki tehtävät ovat valmiina Gradle-projekteina, joten sen tuomia hyötyjä vain käytetään hyväksi.
 
 **Periytyminen ja rajapinnat** ovat olio-ohjelmoinnin keskeisiä piirteitä. Periytymisen avulla hyödynnetään olemassa olevia luokkia (lähdekoodia ilman koodin kopiointia) laajentamalla luokan sisältämää dataa, metodeja ja voideen ylikirjoittaa kantaluokasta peritytyviä toimintoja. Rajapinta on toimintojen abstraktointitapa, jolla saadaan tyyppiyhteensopivuus eri luokkien välille, vaikka luokat eivät olisi samassa periytymishierarkiassa.
 
 **Streamit ja lambdat** ovat keskeisiä tapoja käsitellä eri kokoelmaluokkia. Streamin avulla läpikäydään kokoelmaluokan sisältämiä olioita, muokataan niitä, tehdään poimintoja, suoritetaan laskentaa muutama esimerkki mainittuna. Käsittelysäännöt määritellään anonyymeinä metodeina, jotka kirjoitataan käyttäen lambda-syntaksia.
 
-**Design Patterns** on joukko kieliriippumattomia malleja erilaisten yleistan ohjelmointi'ongelmien' ratkaisemiseen. Käsite *design pattern* on syytä ymmärtää, jokaista erilaista valmista patternia ei tarvitse muistaa tai osata ulkoa. Tällä kurssilla sivutaan Singleton design patternia.
+**Design Patterns** on joukko kieliriippumattomia malleja erilaisten yleisten ohjelmointi'ongelmien' ratkaisemiseen. Käsite *design pattern* on syytä ymmärtää, jokaista erilaista valmista patternia ei tarvitse muistaa tai osata ulkoa. Tällä kurssilla sivutaan Singleton design patternia.
 
 **Map** on yleisesti käytetty kokoelmaluokka.
 
@@ -77,7 +77,7 @@ Tavoitteena on antaa myös hyvät edellytykset tästä seuraavien kurssin sisäl
 
 **Tietokantakäsittely** liittyy jossain muodossa lähes jokaiseen sovellukseen. Java-sovelluksissa tietokantaa voidaan käyttää joko JDBC:llä tai JPA:lla. Tällä kurssilla käsitellään yksinkertaisempi JDBC ja JPA-tekniikka tulee esille BackEnd -kurssilla. Tietokantaan tehdään erilaisia hakuja sekä ylläpito-operaatioita (CRUD). Lisäksi opetellaan heti alkumeterillä välttämään yksi tietoturvaongelma eli SQL Injection käyttämällä suoritettavissa lauseissa parametrejä.
 
-Näistä kaikista mainituista asioista lisää kurssin aikana teoria, harjoitusten ja lähdelinkkien avulla.
+Näistä kaikista mainituista asioista lisää kurssin aikana teorian, harjoitusten ja lähdelinkkien avulla.
 
 ----------
 

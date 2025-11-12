@@ -151,7 +151,7 @@ Lisätään vielä Opettaja-luokka:
 package perinta;
 
 public class Opettaja extends Henkilo {
-    private String opettajaprivate numero;
+    private String opettajanumero;
 
     public Opettaja(String etunimi, String sukunimi, String email, String opettajanumero) {
         super(etunimi, sukunimi, email);

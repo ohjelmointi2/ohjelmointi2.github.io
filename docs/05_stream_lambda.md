@@ -252,7 +252,7 @@ pnames.forEach(n -> System.out.println(n));
 Toinen esimerkki, lasketaan tuotteiden hinnat yhteen, mutta mukana on ALV:
 ```java
 double sumVAT = products.stream()
-        .map(p -> p.price() * 1.24)       // palauttaa double-tyypin
+        .map(p -> p.price() * 1.225)      // palauttaa double-tyypin
         .mapToDouble(Double::doubleValue) // muunnetaan Double:ksi käsittelyä varten
         .sum();
 ```
@@ -289,11 +289,11 @@ if (firstProduct.isPresent()) {
     System.out.println(firstProduct.get());
 }
 ```
-findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. tilanteen saa selville isPresent()-metodilla. Jos stream, johon find...() -metodi kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
+findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. Tilanteen saa selville isPresent()-metodilla. Jos stream, johon find...() -metodi kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
 
 ### Peräkkäinen vai rinnakkainen käsittely? 
-Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla myöhemmin. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia samaan aikaan.
-Rinnakkaisen käsittelyn toteuttaminen on todella helppoa, käytetään parallelStream()-funktiota. Rinnakkaisuuden toteutuksesta vastaa JDK:n kirjastot kokonaan ja suoritusjärjestys voi olla joka kerta erilainen.
+Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla viimeisellä viikolla. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia samaan aikaan.
+Rinnakkaisen käsittelyn toteuttaminen on streamien avulla todella helppoa, käytetään parallelStream()-funktiota. Rinnakkaisuuden toteutuksesta vastaa JDK:n kirjastot kokonaan ja suoritusjärjestys voi olla joka kerta erilainen.
 
 ```java
 // listan käsittelyä peräkkäin ja rinnakkain

@@ -72,11 +72,11 @@ Tehdään ensin vaikka jokaisen alkion eli tässä tapauksessa nimen tulostamine
 ```java
 public class SDemo {
     // Consumer-metodi
-    void tulostaNimi(String n) {
+    public void tulostaNimi(String n) {
         System.out.println("Nimi: " + n);
     }
     // seuraavana koodia, nimilistan tulostukseen streamin avulla
-    void esimerkki() {
+    public void esimerkki() {
         // nimet-lista on näkyvillä tässä kohtaa koodia
         nimet.stream().forEach(SDemo::tulostaNimi); 
         // forEach-metodi kutsuu tulostaNimi-metodia jokaiselle listalta löytävälle nimelle (String)

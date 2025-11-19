@@ -7,24 +7,32 @@ permalink: /stream-lambda/
 
 # Streamit ja Lambda-lausekkeet
 
-Stream ja Lambda käsitteinä ovat hankalia ymmärtää pelkästä termin nimestä. Stream on 'oliovirta', jonka avulla voidaan käsitellä jossain kokoelmaluokassa tai taulukossa olevia oliota tai primitiiviarvoja. Lambda on matemaattinen notaatio noin sadan vuoden takaa, jonka syntaksi on lainattu moneen ohjelmointikieleen kuvaamaan hyvin tiiviisti kirjoitettua nimetöntä funktiota (*matematiikkaa ei tarvitse osata yhtään!*). Lambda-notaatio on käytössä monessa muussa ohjelmointikielessä Javan lisäksi. Ensimmäisen kerran Lambda oli käytössä Lisp-ohjelmointikielessä 1960, ei siis mikään uusi keksintö. 
-Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-lausekkeet ratkaisevat eli miksi ne ovat Java-kielessä mukana, mitä toimintoja niihin liittyy ja miten niitä käytetään. Lambdan idea on myös, että metodi kirjoitetaan inlinena ja sitä kutsutaan implisiittisesti heti.
+Stream ja Lambda käsitteinä ovat hankalia ymmärtää pelkästä termin nimestä. Stream on 'oliovirta', jonka avulla voidaan käsitellä jossain kokoelmaluokassa tai taulukossa olevia arvoja. Lambda on matemaattinen notaatio noin sadan vuoden takaa, jonka syntaksi on lainattu moneen ohjelmointikieleen kuvaamaan hyvin tiiviisti kirjoitettua nimetöntä funktiota (*matematiikkaa ei tarvitse osata yhtään!*). 
 
-**Johdanto esimerkin avulla**
+Lambda-notaatio on käytössä monessa muussa ohjelmointikielessä Javan lisäksi. Ensimmäisen kerran Lambda oli käytössä Lisp-ohjelmointikielessä 1960, ei siis mikään uusi keksintö. 
+
+Tämän materiaalin tavoitteena on selittää, minkä ongelman Stream ja Lambda-lausekkeet ratkaisevat eli miksi ne ovat Java-kielessä mukana, mitä toimintoja niihin liittyy ja miten niitä käytetään.
+
+
+## Johdanto esimerkin avulla
 
 Ohjelmointi 1-kurssilla käsiteltiin mm. taulukoita. Taulukoissa viitataan johonkin tiettyyn soluun tai käydään koko taulukko läpi ja tehdään taulukon sisältämille arvoille joku operaatio, nämä siis yleisimmän käsittelytavat. Esimerkki kokonaislukutaulukon alkioiden yhteenlaskusta: 
 
 ```java
 int[] luvut = { 1, 2, 4, 56, 6, 3, 2, 2, 4, 5, 3, 2, 23, 66, 35, 23, 200, 100 };
+
 int summa = 0;
 int suurin = Integer.MIN_VALUE;
+
 for (int i = 0; i < luvut.length; i++) {
     summa += luvut[i];
     suurin = Math.max(suurin, luvut[i]);
 }
+
 System.out.println("Taulukon arvojen summa on " + summa + " ja suurin luku on " + suurin);
 ```
-Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Suurimman luvun voisi etsiä myös vertaamalla if-lauseella kutakin lukua viimeksi suurimpaan. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että for-silmukan voi korvata forEach-silmukalla, joka olisi tässä esimerkissä hieman kompaktimpi tapa.
+
+Silmukassa tehdään summan laskenta ja etsitään suurin luku taulukosta. Suurimman luvun voisi etsiä myös vertaamalla `if`-lauseella kutakin lukua viimeksi suurimpaan. Nämä ovat tyypillisiä esimerkkejä taulukkokäsittelyä opeteltaessa. Huomaa, että `for`-silmukan voi korvata `forEach`-silmukalla, joka olisi tässä esimerkissä hieman kompaktimpi tapa:
 
 ```java
 for (int luku : luvut) {
@@ -32,35 +40,84 @@ for (int luku : luvut) {
     suurin = Math.max(suurin, luku); // tai sama if-lauseella
 }
 ```
-Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyttöön Arrays-luokan staattisen metodin avulla. Staattinen metodi tarkoittaa aina sitä, että metodia kutsutaan luokan eikä olion kautta, luokan nimi alkaa aina isolla kirjaimella.
+
+Taulukkoa voidaan käsitellä myös Stream-rajapinnan kautta, joka saadaan käyttöön `Arrays`-luokan staattisen metodin avulla. Staattinen metodi tarkoittaa aina sitä, että metodia kutsutaan luokan eikä olion kautta, luokan nimi alkaa aina isolla kirjaimella:
+
 ```java
 IntStream luvutStream = Arrays.stream(luvut);
 ```
-Primitiivien osalta on valmiit Stream-rajapinnat int, boolean, double -tyypeille (tässä IntStream). Olioita käsitellään geneerisellä tavalla, johon pääsemme tuota pikaa. IntStream-rajapinnasta löytyy valmiita toimintoja, joita ei siis enää tarvitse koodaajan itse toteuttaa. Merkittävä asia on siis se, että löytyy paljon toimintoja, joita ei koodaajan enää tarvitse itse toteuttaa, vaan voi keskittyä varsinaisen ohjelmalogiikan kirjoittamiseen.
-Streamin avulla käydään läpi kaikki kokoelman alkiot ja tehdään joku toiminto, tässä esimerkissä lasketaan kaikki kokonaislukualkiot yhteen sum()-funktiolla. Stream vastaa silmukkaa ja sum toimintoa silmukan sisällä. Seuraava esimerkki näyttää miten edellisen esimerkin summan laskenta ja suurimman luvun etsintä voidaan tehdä käyttäen stream:ia, kunhan stream on ensin luotu.  
+
+Primitiivien osalta on valmiit Stream-rajapinnat `int`-, `boolean`- ja `double`-tyypeille (tässä [IntStream](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html)). Olioita käsitellään geneerisellä tavalla, johon pääsemme tuota pikaa. `IntStream`-rajapinnasta löytyy valmiita toimintoja, joita ei siis enää tarvitse koodaajan itse toteuttaa, esimerkiksi:
+
+* [sum()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#sum()) laskee summan
+* [max()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#max()) etsii suurimman arvon
+* [min()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#min()) etsii pienimmän arvon
+* [average()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#average()) laskee keskiarvon
+* [summaryStatistics()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#summaryStatistics()) laskee tilastotietoa
+* [sorted()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#sorted()) lajittelee arvot
+* [distinct()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#distinct()) poistaa duplikaatit
+
+Merkittävä asia on siis se, että löytyy paljon toimintoja, joita ei koodaajan enää tarvitse itse toteuttaa, vaan voi keskittyä varsinaisen ohjelmalogiikan kirjoittamiseen.
+
+Streamin avulla käydään läpi kaikki kokoelman alkiot ja tehdään jokin toiminto, seuraavassa esimerkissä lasketaan kaikki kokonaislukualkiot yhteen `sum()`-funktiolla. Stream vastaa silmukkaa ja sum toimintoa silmukan sisällä. Seuraava esimerkki näyttää miten edellisen esimerkin summan laskenta ja suurimman luvun etsintä voidaan tehdä käyttäen stream:ia, kunhan stream on ensin luotu:
 
 ```java
-summa = luvutStream.sum();
-luvutStream.close();
-luvutStream = Arrays.stream(luvut);
-suurin = luvutStream.max();
-luvutStream.close();
+int[] luvut = { 1, 2, 4, 56, 6, 3, 2, 2, 4, 5, 3, 2, 23, 66, 35, 23, 200, 100 };
+
+IntStream luvutStream = Arrays.stream(luvut);
+int summa = luvutStream.sum();
 ```
-Valitettavasti stream pitää sulkea ennen seuraavaa operaatiota, jos taustalla oleva tietorakenne on taulukko. Kokoelmaluokkien osalta stream on paljon joustavampi ja kun suurin osa stream-käsitelystä kohdistuu kokoelmiin (List<>), niin keskitymme enemmän niihin.
-Vielä esimerkki String-taulukosta, joka toimii myös mallina minkä tahansa oliotaulukon käsittelyyn.
+
+Yllä oleva koodi hyödyntää siis `IntStream`-luokan `sum`-metodia, jolla saadaan laskettua "tietovirrassa" olevien arvojen summa ilman, että arvoja käydään läpi tai lasketaan yhteen itse.
+
+Hieman vastaavasti voitaisiin etsiä "tietovirrasta" suurin arvo `max`-metodilla:
+
 ```java
-String[] osat = "Hiiri;Punainen;1024;19.99".split(";");
-Stream<String> osatStream = Arrays.stream(osat);
-long sarakelkm = osatStream.count(); 
-osatStream.close();
-// HUOM: tässä ei stream tuo lisäarvoa, osat-taulukon length ja sarakelkm ovat samat
+int[] luvut = { 1, 2, 4, 56, 6, 3, 2, 2, 4, 5, 3, 2, 23, 66, 35, 23, 200, 100 };
+IntStream luvutStream = Arrays.stream(luvut);
+
+OptionalInt max = luvutStream.max();
+if (max.isPresent()) {
+    System.out.println(max.getAsInt());
+}
 ```
+
+Toisin kuin `sum`-metodin kanssa, `max` palauttaa yllä `OptionalInt`-tyyppisen arvon. Ero johtuu siitä, että summaa laskettaessa tyhjän tietovirran summa on nolla, mutta maksimiarvoa etsittäessä tyhjästä tietovirrasta ei ole olemassa suurinta arvoa.
+
+
+## Streamit ovat kertakäyttöisiä
+
+Streamit käsittelevät niiden taustalla olevaa dataa tietovirran tavoin. Arvoja käydään sisäisesti läpi yksi kerrallaan ja kun tietovirta on käyty läpi, siinä ei voida palata enää takaisin. Jos siis yrittäisimme yhdistää edelliset esimerkit, ja laskea sekä summan että etsiä maksimiarvon samasta tietovirrasta eri operaatioilla, aiheutuisi siitä virhe:
+
+```java
+int[] luvut = { 1, 2, 4, 56, 6, 3, 2, 2, 4, 5, 3, 2, 23, 66, 35, 23, 200, 100 };
+IntStream luvutStream = Arrays.stream(luvut);
+
+// ensimmäinen operaatio, joka käy streamin läpi:
+int summa = luvutStream.sum();
+
+// toinen operaatio ei voi enää käyttää samaa tietovirtaa, vaan syntyy virhe:
+OptionalInt max = luvutStream.max(); // <-- IllegalStateException: stream has already been operated upon or closed
+```
+
+Onneksi kertakäyttöisyys ei aiheuta tyypillisesti ongelmia, koska streamit yleensä luodaan uudelleen aina kun niitä tarvitaan. Vaihtoehtoisesti operaatiot voivat tehdä myös loogisesti useita asioita kerralla, kuten `IntStream`-streamien tapauksessa [summaryStatistics()](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/stream/IntStream.html#summaryStatistics())-metodi tekee.
+
+Alla olevassa esimerkissä `summaryStatistics()` palauttaa [IntSummaryStatistics](https://docs.oracle.com/en/java/javase/25/docs/api//java.base/java/util/IntSummaryStatistics.html)-tyyppisen olion, josta löytyy kerralla tyypillisimmät kokonaislukujen tilastoinnissa käytettävät arvot:
+
+```java
+IntSummaryStatistics tilasto = luvutStream.summaryStatistics();
+System.out.println(tilasto); // {count=18, sum=537, min=1, average=29,833333, max=200}
+```
+
 
 ### Stream ja toiminnot ###
-Stream on siis olio'virta' jostain kokoelmaluokasta. Kokeillaan ensin miten merkkijonoja sisältävää listaa voidaan käsitellä streamin avulla. Käytetään seuraavilla esimerkeissä seuraavaa listaa: 
+
+Stream on siis "oliovirta". Kokeillaan ensin miten merkkijonoja sisältävää listaa voidaan käsitellä streamin avulla. Käytetään seuraavilla esimerkeissä seuraavaa listaa: 
+
 ```java
 List<String> nimet = List.of("Aku", "Pelle", "Roope", "Iines", "Leenu", "Lupu", "Tiinu", "Mikki", "Minni", "Simo Sisu");
 ```
+
 Streamin avulla voidaan mm.:
 - poimia halutut nimet eli muodostaa uusi stream
 - järjestää aakkosjärjestykseen tai mihin tahansa haluttuun järjestykseen merkkijonon sisällön perusteella
@@ -89,7 +146,7 @@ Tämä esimerkki vaatii selityksen, tai vähintään suorituksen debuggerin avul
 2. Stream sisältää kaikki listan alkiot, jotka ovat String-olioita
 3. forEach()-metodi tulee suoritettavaksi jokaiselle oliolle streamissa ja olio (String) välitetään parametrina metodille, joka on määritelty forEach()-parametrina (tämä on funktionaalista ohjelmointia). Eli tässä tulee ajatella, että tulostaNimi-funktiosta eli metodista lähetetään viittaus itse metodiin, ei metodin kutsua.
 
-Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan Consumer<T>, joka on määritelty annotaatiolla @FunctionalInterface. Tämän tyyppinen muuttuja sisältää jonkin metodin arvonaan, Consumer<T> voi sisältää osoitteen metodiin, joka on muotoa <br>*void metodinNimi(T t) {}*. 
+Koodia saadaan vielä siistittyä ja lyhennettyä paljon. Seuraavana tutkitaan vaihe vaiheelta miten lopulta päädytään käyttämään lambda-lauseita stream-käsittelyssä. Ensin tutustutaan yhteen rajapintaan `Consumer<T>`, joka on määritelty annotaatiolla `@FunctionalInterface`. Tämän tyyppinen muuttuja sisältää jonkin metodin arvonaan, `Consumer<T>` voi sisältää osoitteen metodiin, joka on muotoa `void metodinNimi(T t) {}`.
 
 ```java
 Consumer<String> nimenTulostusMetodi = SDemo::tulostaNimi;
@@ -100,10 +157,12 @@ Consumer<String> nimenTulostusMetodi = SDemo::tulostaNimi;
 Tämä ei varsinaisesti lyhennä tai paranna koodia, vaan on vain yksi välivaihe matkalla kohti tiiviimpää koodia. Jos koodia kirjoitetaan näin, päädytään tilanteeseen, jossa on metodeja, joita käytetään vain yhdessä kohdassa koodia ikään kuin apumetodina. Tämä on ihan hyvä tapa pilkkoa ongelmat pienempiin osiin, mutta lopputuloksena on paljon pieniä apumetodeja luokassa. Tämän ratkaisee lambda-lauseke, joka on nimetön tiiviiseen muotoon kirjoitettu metodimääritys. 
 
 ### Lambda-lauseke ###
+
 Lambda-lauseke muodostuu kolmesta osasta:
 1. Parametrit  (Parameter list)
 2. Nuoli symboli -> (Arrow token)
 3. Toiminnallinen osuus (expression body)
+
 Näiden avulla voidaan täysin määritellä ja kirjoittaa metodi (parametrit, koodi ja paluuarvo), mutta metodilla ei ole nimeä. Tähän saakka metodilla on aina ollut nimi jotta sitä pystyisi kutsumaan. Jos metodilta puuttuu nimi, sitä käytetään joko muuttujan kautta tai sitten metodi kirjoitetaan suoraan käyttökohtaan.
 
 ```java
@@ -111,17 +170,22 @@ Näiden avulla voidaan täysin määritellä ja kirjoittaa metodi (parametrit, k
 Consumer<String> nimenTulostusMetodi = (String n) -> { System.out.println("Nimi: " + n); };
 nimet.stream().forEach(nimenTulostusMetodi);
 ```
+
 Tätäkin voidaan tiivistää, parametrien tyypit voidaan jättää pois, koska kääntäjä tietää joka tapauksessa aika käyttötilanteen mukaan mitä parametrien tyypit ovat. Jos on vain yksi parametri, ei parametrisulkuja tarvita. Jos koodi sisältää vain yhden lauseen, ei tarvita lohkosulkuja. Näin ollen voidaan vielä koodia lyhentää:
+
 ```java
 // lambda-lauseketta
 Consumer<String> nimenTulostusMetodi = n -> System.out.println("Nimi: " + n);
 nimet.stream().forEach(nimenTulostusMetodi);
 ```
+
 Funktiomuuttuja nimenTulostusMetodi sisältää nyt osoitteen metodiin, jolla tulostetaan merkkijono konsolille. Ihan samoin kuin muutenkin parametrien välityksessä, ei tarvitse käyttää apumuuttujaa, vaan koodin voi kirjoittaa näin: 
+
 ```java
 // tämä on lopulta normaali tapa kirjoittaa ja käyttää lambda-lauseita streamien yhteydessä
 nimet.stream().forEach( n -> System.out.println("Nimi: " + n));
 ```
+
 Vielä muutaman huomio lambda-lausekkeista:
 - nuolimerkintä -> on pakollinen, sen perusteella kääntäjä tunnistaa lambda-lausekkeen
 - parametrilistan sulkuja ei tarvita, jos parametreja on yksi. Muutoin sulut on pakolliset.
@@ -355,49 +419,3 @@ System.out.println("Kvartaali: " + kvartaali);
 
 
 {% include quiz.html %}
-
-<!-- 
-```java
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
-import java.util.stream.*;
-```
-
-johdatus funktionaaliseen ohjelmointiin esimerkin avulla.
-lambda on anonyymi funktio, jossa syntaksia on vielä tiivistetty
-Luokka, joka sisältää jonkin listan esimerkiksi tuotteita
-- ensin tavallisina funktioina poimiKalliit ja poimiPunaiset ==> kovakoodattu ratkaisu
-- seuraavana sisäinen toteutus niin, että valinta on omana funktiona
-- funktio-osoitin ja miten se toimii
-- toteutus niin, että valintafunktion voi välittää poiminta-funktiolle
-- java.util.function-paketti ja Predicate
-- edellisen toteutus prodikaatin avulla, ensin funktiona ja sitten käyttäen lambda-syntaksia
-- muita: consumer, supplier -->
-
-
-
-<!-- lyhyt kuvaus mikä on stream
-sitten edellinen esimerkki, oikea toteutus käyttäen streamia 
-ja vaikka kokonaan ilman erillistä luokkaa koska jos on lista, siitä voidaan käsitellä streamin ja lambdojen avulla 
-
-näiden esittely:
-Operaatiot streamien yhteydessä
-Intermediate (streamin läpikäynti jatkuu)
--filter()   map()  peek()
-
-Terminal (päättää streamin suorituksen)
--forEach()  count()  sum() average()   min()   max()  collect()
-
-Terminal short-circuit (päättää  suorituksen riippuen käsiteltävästä datasta)
--findFirst()  findAny()  anyMatch()  allMatch()  noneMatch()
-
-Poiminta 
--map(), peek()
-
-datafunktioita
-- sum(), count(), max(), min() , average()
-
-Stream toimintoja
--collect() , sort() -->

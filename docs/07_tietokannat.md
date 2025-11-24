@@ -189,11 +189,11 @@ public class MusiikkiTietokantaSoitinOhjelma {
         ResultSet haunTulokset = sqlLause.executeQuery();
         // 5. KAY LAPI KAIKKI TULOKSET
         while (haunTulokset.next()) {
-            String yksiRivi = haunTulokset.getString("Name");
-            System.out.println(yksiRivi);
+            String artistinNimi = haunTulokset.getString("Name");
+            System.out.println(artistinNimi);
         }
-
         // 6. SULJE KAIKKI YHTEYDET
+        haunTulokset.close();
         sqlLause.close();
         yhteys.close();
     }

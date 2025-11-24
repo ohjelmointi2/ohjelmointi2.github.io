@@ -177,16 +177,15 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 04.     // 2. YHTEYDEN MUODOSTAMINEN - PALJASTAA JOS ESIMERKIKSI CONNECTION
 05.     // STRING ON IHAN VAARIN
 06.     Connection yhteys = DriverManager.getConnection(JDBC_URL);
-07.     
+07. 
 08.     // 3. MUODOSTETAAN KYSELY
 09.     PreparedStatement sqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
-
 10.    // 4. SUORITETAAN KYSELY
 11.    ResultSet haunTulokset = sqlLause.executeQuery();
 12.    // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET-TYYPPISENÄ OLIONA
 13.    while (haunTulokset.next()) {
-14.        String yksiRivi = haunTulokset.getString("Name");
-15.        System.out.println(yksiRivi);
+14.        String artistinNimi = haunTulokset.getString("Name");
+15.        System.out.println(artistinNimi);
 16.    }
 17.     
 18.    // 6. KAIKKIEN RESURSSIEN SULKEMINEN

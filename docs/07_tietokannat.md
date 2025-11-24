@@ -179,11 +179,12 @@ Kun kyselyissä tarvitaan ajonaikaisesti muodostettavia parametreja, kuten id ta
 06.     Connection yhteys = DriverManager.getConnection(JDBC_URL);
 07.     
 08.     // 3. MUODOSTETAAN KYSELY
-09.     PreparedStatement preparedStatementsqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
+09.     PreparedStatement sqlLause = yhteys.prepareStatement("SELECT * FROM Artist"); 
+
 10.    // 4. SUORITETAAN KYSELY
 11.    ResultSet haunTulokset = sqlLause.executeQuery();
 12.    // 5. KÄYDÄÄN TULOKSET LÄPI - TULEE RESULTSET-TYYPPISENÄ OLIONA
-13.    while(haunTulokset.next()) {
+13.    while (haunTulokset.next()) {
 14.        String yksiRivi = haunTulokset.getString("Name");
 15.        System.out.println(yksiRivi);
 16.    }

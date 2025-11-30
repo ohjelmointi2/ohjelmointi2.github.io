@@ -305,6 +305,230 @@ Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodiri
 Class.forName("org.sqlite.JDBC");
 ```
 
+## INSERT-, UPDATE- ja DELETE-lauseet PreparedStatementilla (Pankkitili)
+
+CRUD-operaatioista:
+
+- **INSERT** = luo uusi rivi (Create)  
+- **UPDATE** = päivittää olemassa olevaa riviä (Update)  
+- **DELETE** = poistaa rivin (Delete)  
+
+Näitä kutsutaan usein **DML-lauseiksi** (Data Manipulation Language). JDBC:ssä ne suoritetaan yleensä `PreparedStatement`-olion avulla metodilla `executeUpdate()`, joka palauttaa **päivitettyjen rivien lukumäärän**.
+
+Alla olevissa esimerkeissä käytämme taulua **Pankkitili**, jossa on:
+
+- `tilinumero` – pankkitilin numero, tyyppi `TEXT` (Javassa `String`)  
+- `saldo` – pankkitilin saldo, tyyppi `REAL` (Javassa `double`)  
+
+Taulu voisi esimerkiksi olla luotu seuraavasti:
+
+```sql
+CREATE TABLE Pankkitili (
+    tilinumero TEXT PRIMARY KEY,
+    saldo REAL NOT NULL
+);
+```
+
+### Miksi PreparedStatement myös INSERT/UPDATE/DELETE-lauseissa?
+
+Sama periaate kuin SELECT-kyselyissä:
+
+- **Kyselyä ei rakenneta merkkijonoja yhdistelemällä**, vaan SQL-lauseessa käytetään **kysymysmerkkejä (?)** parametreille.  
+- Arvot asetetaan erikseen `setString`, `setDouble` jne. -metodeilla.  
+- Tämä:
+  - estää **SQL-injektiota**,  
+  - hoitaa **tyyppimuunnokset** puolestasi,  
+  - mahdollistaa tietokanta-ajurille kyselyn optimoinnin.
+
+---
+
+### INSERT – uuden pankkitilin lisääminen
+
+Seuraava esimerkki lisää uuden pankkitilin tietokantaan:
+
+{: .esim }
+> ```java
+> import java.sql.Connection;
+> import java.sql.DriverManager;
+> import java.sql.PreparedStatement;
+> 
+> public class PankkitiliLisaysEsimerkki {
+> 
+>     public static void main(String[] args) throws Exception {
+>         // 1. Muodosta yhteys tietokantaan
+>         String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
+>         Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+> 
+>         // 2. Muodosta INSERT SQL -lause, jossa käytetään parametreja (?)
+>         String sql = "INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)";
+>         PreparedStatement lause = yhteys.prepareStatement(sql);
+> 
+>         // 3. Aseta parametriarvot PreparedStatementiin
+>         String uusiTilinumero = "FI11 1234 5600 0007";
+>         double alkuSaldo = 1000.00;
+> 
+>         lause.setString(1, uusiTilinumero); // 1. parametri: tilinumero
+>         lause.setDouble(2, alkuSaldo);      // 2. parametri: saldo
+> 
+>         // 4. Suorita INSERT-lause
+>         int paivitetytRivit = lause.executeUpdate();
+>         System.out.println("Lisättiin rivejä: " + paivitetytRivit);
+> 
+>         // 5. Sulje resurssit
+>         lause.close();
+>         yhteys.close();
+>     }
+> }
+> ```
+
+**Teoriaa INSERT-esimerkistä**
+
+- `INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)`  
+  - SQL-lauseessa ei vielä ole arvoja, vain paikat arvoille (`?`).  
+- `lause.setString(1, uusiTilinumero)`  
+  - Asettaa **ensimmäisen** `?`-kohdan arvoksi tilinumeron (`String`). Indeksointi alkaa numerosta 1.  
+- `lause.setDouble(2, alkuSaldo)`  
+  - Asettaa **toisen** `?`-kohdan arvoksi saldon (`double`).  
+- `executeUpdate()`  
+  - Palauttaa lisättyjen rivien lukumäärän (tyypillisesti 1, jos yksi tili lisättiin).
+
+---
+
+### UPDATE – pankkitilin saldon muuttaminen
+
+Seuraava esimerkki **päivittää pankkitilin saldon** tilinumeron perusteella:
+
+{: .esim }
+> ```java
+> import java.sql.Connection;
+> import java.sql.DriverManager;
+> import java.sql.PreparedStatement;
+> 
+> public class PankkitiliPaivitysEsimerkki {
+> 
+>     public static void main(String[] args) throws Exception {
+>         // 1. Muodosta yhteys tietokantaan
+>         String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
+>         Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+> 
+>         // 2. Muodosta UPDATE SQL -lause
+>         String sql = "UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?";
+>         PreparedStatement lause = yhteys.prepareStatement(sql);
+> 
+>         // 3. Aseta parametriarvot
+>         String muokattavaTilinumero = "FI11 1234 5600 0007";
+>         double uusiSaldo = 1500.50;
+> 
+>         lause.setDouble(1, uusiSaldo);            // 1. parametri: uusi saldo
+>         lause.setString(2, muokattavaTilinumero); // 2. parametri: tilinumero
+> 
+>         // 4. Suorita UPDATE-lause
+>         int paivitetytRivit = lause.executeUpdate();
+>         System.out.println("Päivitettiin rivejä: " + paivitetytRivit);
+> 
+>         // 5. Sulje resurssit
+>         lause.close();
+>         yhteys.close();
+>     }
+> }
+> ```
+
+**Teoriaa UPDATE-esimerkistä**
+
+- `UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?`  
+  - Päivittää **vain ne rivit**, joiden `tilinumero` vastaa toista parametria.  
+- Parametrien järjestys on tärkeä:
+  - 1. `?` → `saldo` → `setDouble(1, uusiSaldo)`  
+  - 2. `?` → `tilinumero` → `setString(2, muokattavaTilinumero)`  
+- Jos `paivitetytRivit` on 0, mikään rivi ei vastannut ehtoa (tilinumeroa ei löytynyt).
+
+---
+
+### UPDATE – saldon kasvattaminen/alentaminen (esim. tilitapahtuma)
+
+Usein halutaan **lisätä tai vähentää saldoa**, ei vain asettaa sitä kiinteäksi arvoksi. Tämä voidaan tehdä SQL:ssä käyttämällä nykyistä arvoa:
+
+{: .esim }
+> ```java
+> String sql = "UPDATE Pankkitili SET saldo = saldo + ? WHERE tilinumero = ?";
+> PreparedStatement lause = yhteys.prepareStatement(sql);
+> 
+> double summa = -50.00; // miinus = vähennetään, plus = lisätään
+> String tilinumero = "FI11 1234 5600 0007";
+> 
+> lause.setDouble(1, summa);
+> lause.setString(2, tilinumero);
+> 
+> int paivitetytRivit = lause.executeUpdate();
+> ```
+
+Tässä:
+
+- `saldo = saldo + ?`  
+  - käyttää **nykyistä saldoa** ja lisää siihen parametrin arvon (voi olla positiivinen tai negatiivinen).  
+- Tätä mallia käytetään tyypillisesti **tilitapahtumien** kirjauksessa.
+
+---
+
+### DELETE – pankkitilin poistaminen
+
+DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. tilinumero) perusteella:
+
+{: .warning }
+> DELETE-lauseiden kanssa kannattaa olla erityisen varovainen.  
+> Unohdettu `WHERE`-ehto voi poistaa **kaikki rivit** taulusta!
+
+{: .esim }
+> ```java
+> import java.sql.Connection;
+> import java.sql.DriverManager;
+> import java.sql.PreparedStatement;
+> 
+> public class PankkitiliPoistoEsimerkki {
+> 
+>     public static void main(String[] args) throws Exception {
+>         // 1. Muodosta yhteys tietokantaan
+>         String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
+>         Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+> 
+>         // 2. Muodosta DELETE SQL -lause
+>         String sql = "DELETE FROM Pankkitili WHERE tilinumero = ?";
+>         PreparedStatement lause = yhteys.prepareStatement(sql);
+> 
+>         // 3. Aseta poistettavan tilin tilinumero
+>         String poistettavaTilinumero = "FI11 1234 5600 0007";
+>         lause.setString(1, poistettavaTilinumero);
+> 
+>         // 4. Suorita DELETE-lause
+>         int poistetutRivit = lause.executeUpdate();
+>         System.out.println("Poistettiin rivejä: " + poistetutRivit);
+> 
+>         // 5. Sulje resurssit
+>         lause.close();
+>         yhteys.close();
+>     }
+> }
+> ```
+
+**Teoriaa DELETE-esimerkistä**
+
+- `DELETE FROM Pankkitili WHERE tilinumero = ?`  
+  - Poistaa vain ne rivit, joiden `tilinumero` vastaa parametria.  
+- `executeUpdate()` palauttaa poistettujen rivien lukumäärän.  
+- Pankkisovelluksissa tietoja ei usein poisteta oikeasti, vaan käytetään esimerkiksi **"aktiivinen"/"suljettu"** -statusta. Tällöin käytetään `UPDATE`-lausetta poistamisen sijaan.
+
+---
+
+### Yhteenveto: INSERT / UPDATE / DELETE PreparedStatementilla
+
+- Käytä aina **`PreparedStatement`-luokkaa** myös INSERT-, UPDATE- ja DELETE-lauseissa.  
+- Kirjoita SQL-lauseeseen **?-merkit** parametreille ja aseta arvot `setXxx`-metodeilla.  
+- Kutsu **`executeUpdate()`**:
+  - palauttaa lisättyjen, päivitettyjen tai poistettujen rivien määrän.  
+- Muista sulkea `PreparedStatement` ja `Connection` kuten sivun aiemmissa esimerkeissä on näytetty (`close()` tai try-with-resources).
+
+
+
 Jenkov.com:in tutoriaalin lisäksi myös Oraclella on [kattava oppimateriaali](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html) JDBC:n opetteluun: [https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html)
 
 Hyviä ohjeita löytyy myös YouTubesta sekä Googlettamalla tarkemmin yksittäisiä JDBC-aiheita.

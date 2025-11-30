@@ -304,7 +304,6 @@ Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodiri
 ```java
 Class.forName("org.sqlite.JDBC");
 ```
-
 ## INSERT-, UPDATE- ja DELETE-lauseet PreparedStatementilla (Pankkitili)
 
 CRUD-operaatioista:
@@ -355,35 +354,35 @@ Seuraava esimerkki lisää uuden pankkitilin tietokantaan:
 <div class="code-example">
   <button class="copy-button" type="button" onclick="kopioiKoodi('code-insert-1')">Kopioi koodi</button>
   <pre class="line-numbers"><code id="code-insert-1" class="language-java">
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.Connection</span>;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.DriverManager</span>;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.PreparedStatement</span>;
 
-public class PankkitiliLisaysEsimerkki {
+<span class="token-keyword">public class</span> <span class="token-type">PankkitiliLisaysEsimerkki</span> {
 
-    public static void main(String[] args) throws Exception {
-        // 1. Muodosta yhteys tietokantaan
-        String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
-        Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+    <span class="token-keyword">public static void</span> <span class="token-function">main</span>(<span class="token-type">String</span>[] <span class="token-var">args</span>) <span class="token-keyword">throws</span> <span class="token-type">Exception</span> {
+        <span class="token-comment">// 1. Muodosta yhteys tietokantaan</span>
+        <span class="token-type">String</span> <span class="token-var">JDBC_URLI</span> = <span class="token-string">"jdbc:sqlite:data/pankki.sqlite"</span>;
+        <span class="token-type">Connection</span> <span class="token-var">yhteys</span> = <span class="token-type">DriverManager</span>.getConnection(<span class="token-var">JDBC_URLI</span>);
 
-        // 2. Muodosta INSERT SQL -lause, jossa käytetään parametreja (?)
-        String sql = "INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)";
-        PreparedStatement lause = yhteys.prepareStatement(sql);
+        <span class="token-comment">// 2. Muodosta INSERT SQL -lause, jossa käytetään parametreja (?)</span>
+        <span class="token-type">String</span> <span class="token-var">sql</span> = <span class="token-string">"INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)"</span>;
+        <span class="token-type">PreparedStatement</span> <span class="token-var">lause</span> = <span class="token-var">yhteys</span>.prepareStatement(<span class="token-var">sql</span>);
 
-        // 3. Aseta parametriarvot PreparedStatementiin
-        String uusiTilinumero = "FI11 1234 5600 0007";
-        double alkuSaldo = 1000.00;
+        <span class="token-comment">// 3. Aseta parametriarvot PreparedStatementiin</span>
+        <span class="token-type">String</span> <span class="token-var">uusiTilinumero</span> = <span class="token-string">"FI11 1234 5600 0007"</span>;
+        <span class="token-type">double</span> <span class="token-var">alkuSaldo</span> = <span class="token-number">1000.00</span>;
 
-        lause.setString(1, uusiTilinumero); // 1. parametri: tilinumero
-        lause.setDouble(2, alkuSaldo);      // 2. parametri: saldo
+        <span class="token-var">lause</span>.setString(<span class="token-number">1</span>, <span class="token-var">uusiTilinumero</span>); <span class="token-comment">// 1. parametri: tilinumero</span>
+        <span class="token-var">lause</span>.setDouble(<span class="token-number">2</span>, <span class="token-var">alkuSaldo</span>);      <span class="token-comment">// 2. parametri: saldo</span>
 
-        // 4. Suorita INSERT-lause
-        int paivitetytRivit = lause.executeUpdate();
-        System.out.println("Lisättiin rivejä: " + paivitetytRivit);
+        <span class="token-comment">// 4. Suorita INSERT-lause</span>
+        <span class="token-type">int</span> <span class="token-var">paivitetytRivit</span> = <span class="token-var">lause</span>.executeUpdate();
+        <span class="token-type">System</span>.out.println(<span class="token-string">"Lisättiin rivejä: "</span> + <span class="token-var">paivitetytRivit</span>);
 
-        // 5. Sulje resurssit
-        lause.close();
-        yhteys.close();
+        <span class="token-comment">// 5. Sulje resurssit</span>
+        <span class="token-var">lause</span>.close();
+        <span class="token-var">yhteys</span>.close();
     }
 }
   </code></pre>
@@ -412,35 +411,35 @@ Seuraava esimerkki **päivittää pankkitilin saldon** tilinumeron perusteella:
 <div class="code-example">
   <button class="copy-button" type="button" onclick="kopioiKoodi('code-update-1')">Kopioi koodi</button>
   <pre class="line-numbers"><code id="code-update-1" class="language-java">
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.Connection</span>;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.DriverManager</span>;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.PreparedStatement</span>;
 
-public class PankkitiliPaivitysEsimerkki {
+<span class="token-keyword">public class</span> <span class="token-type">PankkitiliPaivitysEsimerkki</span> {
 
-    public static void main(String[] args) throws Exception {
-        // 1. Muodosta yhteys tietokantaan
-        String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
-        Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+    <span class="token-keyword">public static void</span> <span class="token-function">main</span>(<span class="token-type">String</span>[] <span class="token-var">args</span>) <span class="token-keyword">throws</span> <span class="token-type">Exception</span> {
+        <span class="token-comment">// 1. Muodosta yhteys tietokantaan</span>
+        <span class="token-type">String</span> <span class="token-var">JDBC_URLI</span> = <span class="token-string">"jdbc:sqlite:data/pankki.sqlite"</span>;
+        <span class="token-type">Connection</span> <span class="token-var">yhteys</span> = <span class="token-type">DriverManager</span>.getConnection(<span class="token-var">JDBC_URLI</span>);
 
-        // 2. Muodosta UPDATE SQL -lause
-        String sql = "UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?";
-        PreparedStatement lause = yhteys.prepareStatement(sql);
+        <span class="token-comment">// 2. Muodosta UPDATE SQL -lause</span>
+        <span class="token-type">String</span> <span class="token-var">sql</span> = <span class="token-string">"UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?"</span>;
+        <span class="token-type">PreparedStatement</span> <span class="token-var">lause</span> = <span class="token-var">yhteys</span>.prepareStatement(<span class="token-var">sql</span>);
 
-        // 3. Aseta parametriarvot
-        String muokattavaTilinumero = "FI11 1234 5600 0007";
-        double uusiSaldo = 1500.50;
+        <span class="token-comment">// 3. Aseta parametriarvot</span>
+        <span class="token-type">String</span> <span class="token-var">muokattavaTilinumero</span> = <span class="token-string">"FI11 1234 5600 0007"</span>;
+        <span class="token-type">double</span> <span class="token-var">uusiSaldo</span> = <span class="token-number">1500.50</span>;
 
-        lause.setDouble(1, uusiSaldo);            // 1. parametri: uusi saldo
-        lause.setString(2, muokattavaTilinumero); // 2. parametri: tilinumero
+        <span class="token-var">lause</span>.setDouble(<span class="token-number">1</span>, <span class="token-var">uusiSaldo</span>);            <span class="token-comment">// 1. parametri: uusi saldo</span>
+        <span class="token-var">lause</span>.setString(<span class="token-number">2</span>, <span class="token-var">muokattavaTilinumero</span>); <span class="token-comment">// 2. parametri: tilinumero</span>
 
-        // 4. Suorita UPDATE-lause
-        int paivitetytRivit = lause.executeUpdate();
-        System.out.println("Päivitettiin rivejä: " + paivitetytRivit);
+        <span class="token-comment">// 4. Suorita UPDATE-lause</span>
+        <span class="token-type">int</span> <span class="token-var">paivitetytRivit</span> = <span class="token-var">lause</span>.executeUpdate();
+        <span class="token-type">System</span>.out.println(<span class="token-string">"Päivitettiin rivejä: "</span> + <span class="token-var">paivitetytRivit</span>);
 
-        // 5. Sulje resurssit
-        lause.close();
-        yhteys.close();
+        <span class="token-comment">// 5. Sulje resurssit</span>
+        <span class="token-var">lause</span>.close();
+        <span class="token-var">yhteys</span>.close();
     }
 }
   </code></pre>
@@ -467,16 +466,16 @@ Usein halutaan **lisätä tai vähentää saldoa**, ei vain asettaa sitä kiinte
 <div class="code-example">
   <button class="copy-button" type="button" onclick="kopioiKoodi('code-update-2')">Kopioi koodi</button>
   <pre class="line-numbers"><code id="code-update-2" class="language-java">
-String sql = "UPDATE Pankkitili SET saldo = saldo + ? WHERE tilinumero = ?";
-PreparedStatement lause = yhteys.prepareStatement(sql);
+<span class="token-type">String</span> <span class="token-var">sql</span> = <span class="token-string">"UPDATE Pankkitili SET saldo = saldo + ? WHERE tilinumero = ?"</span>;
+<span class="token-type">PreparedStatement</span> <span class="token-var">lause</span> = <span class="token-var">yhteys</span>.prepareStatement(<span class="token-var">sql</span>);
 
-double summa = -50.00; // miinus = vähennetään, plus = lisätään
-String tilinumero = "FI11 1234 5600 0007";
+<span class="token-type">double</span> <span class="token-var">summa</span> = <span class="token-number">-50.00</span>; <span class="token-comment">// miinus = vähennetään, plus = lisätään</span>
+<span class="token-type">String</span> <span class="token-var">tilinumero</span> = <span class="token-string">"FI11 1234 5600 0007"</span>;
 
-lause.setDouble(1, summa);
-lause.setString(2, tilinumero);
+<span class="token-var">lause</span>.setDouble(<span class="token-number">1</span>, <span class="token-var">summa</span>);
+<span class="token-var">lause</span>.setString(<span class="token-number">2</span>, <span class="token-var">tilinumero</span>);
 
-int paivitetytRivit = lause.executeUpdate();
+<span class="token-type">int</span> <span class="token-var">paivitetytRivit</span> = <span class="token-var">lause</span>.executeUpdate();
   </code></pre>
 </div>
 
@@ -502,32 +501,32 @@ DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. ti
 <div class="code-example">
   <button class="copy-button" type="button" onclick="kopioiKoodi('code-delete-1')">Kopioi koodi</button>
   <pre class="line-numbers"><code id="code-delete-1" class="language-java">
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.Connection</span>;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.DriverManager</span>;
+<span class="token-keyword">import</span> <span class="token-type">java.sql.PreparedStatement</span>;
 
-public class PankkitiliPoistoEsimerkki {
+<span class="token-keyword">public class</span> <span class="token-type">PankkitiliPoistoEsimerkki</span> {
 
-    public static void main(String[] args) throws Exception {
-        // 1. Muodosta yhteys tietokantaan
-        String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
-        Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+    <span class="token-keyword">public static void</span> <span class="token-function">main</span>(<span class="token-type">String</span>[] <span class="token-var">args</span>) <span class="token-keyword">throws</span> <span class="token-type">Exception</span> {
+        <span class="token-comment">// 1. Muodosta yhteys tietokantaan</span>
+        <span class="token-type">String</span> <span class="token-var">JDBC_URLI</span> = <span class="token-string">"jdbc:sqlite:data/pankki.sqlite"</span>;
+        <span class="token-type">Connection</span> <span class="token-var">yhteys</span> = <span class="token-type">DriverManager</span>.getConnection(<span class="token-var">JDBC_URLI</span>);
 
-        // 2. Muodosta DELETE SQL -lause
-        String sql = "DELETE FROM Pankkitili WHERE tilinumero = ?";
-        PreparedStatement lause = yhteys.prepareStatement(sql);
+        <span class="token-comment">// 2. Muodosta DELETE SQL -lause</span>
+        <span class="token-type">String</span> <span class="token-var">sql</span> = <span class="token-string">"DELETE FROM Pankkitili WHERE tilinumero = ?"</span>;
+        <span class="token-type">PreparedStatement</span> <span class="token-var">lause</span> = <span class="token-var">yhteys</span>.prepareStatement(<span class="token-var">sql</span>);
 
-        // 3. Aseta poistettavan tilin tilinumero
-        String poistettavaTilinumero = "FI11 1234 5600 0007";
-        lause.setString(1, poistettavaTilinumero);
+        <span class="token-comment">// 3. Aseta poistettavan tilin tilinumero</span>
+        <span class="token-type">String</span> <span class="token-var">poistettavaTilinumero</span> = <span class="token-string">"FI11 1234 5600 0007"</span>;
+        <span class="token-var">lause</span>.setString(<span class="token-number">1</span>, <span class="token-var">poistettavaTilinumero</span>);
 
-        // 4. Suorita DELETE-lause
-        int poistetutRivit = lause.executeUpdate();
-        System.out.println("Poistettiin rivejä: " + poistetutRivit);
+        <span class="token-comment">// 4. Suorita DELETE-lause</span>
+        <span class="token-type">int</span> <span class="token-var">poistetutRivit</span> = <span class="token-var">lause</span>.executeUpdate();
+        <span class="token-type">System</span>.out.println(<span class="token-string">"Poistettiin rivejä: "</span> + <span class="token-var">poistetutRivit</span>);
 
-        // 5. Sulje resurssit
-        lause.close();
-        yhteys.close();
+        <span class="token-comment">// 5. Sulje resurssit</span>
+        <span class="token-var">lause</span>.close();
+        <span class="token-var">yhteys</span>.close();
     }
 }
   </code></pre>
@@ -554,6 +553,16 @@ public class PankkitiliPoistoEsimerkki {
 
 <!-- Yksinkertainen copy-paste -toiminnallisuus: ei sisällä rivinumeroita,
      koska kopiointi tapahtuu suoraan &lt;code&gt;-elementin tekstistä. -->
+
+<style>
+.code-example .token-keyword { color: #d73a49; }
+.code-example .token-type { color: #005cc5; }
+.code-example .token-var { color: #24292e; }
+.code-example .token-string { color: #032f62; }
+.code-example .token-number { color: #005cc5; }
+.code-example .token-comment { color: #6a737d; font-style: italic; }
+</style>
+
 <script>
 function kopioiKoodi(id) {
   var codeElement = document.getElementById(id);
@@ -567,6 +576,7 @@ function kopioiKoodi(id) {
   });
 }
 </script>
+
 
 
 

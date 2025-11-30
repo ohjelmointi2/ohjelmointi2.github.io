@@ -322,12 +322,15 @@ Alla olevissa esimerkeissä käytämme taulua **Pankkitili**, jossa on:
 
 Taulu voisi esimerkiksi olla luotu seuraavasti:
 
-```sql
+<div class="code-example">
+  <button class="copy-button" type="button" onclick="kopioiKoodi('code-sql-pankkitili')">Kopioi koodi</button>
+  <pre class="line-numbers"><code id="code-sql-pankkitili" class="language-sql">
 CREATE TABLE Pankkitili (
     tilinumero TEXT PRIMARY KEY,
     saldo REAL NOT NULL
 );
-```
+  </code></pre>
+</div>
 
 ### Miksi PreparedStatement myös INSERT/UPDATE/DELETE-lauseissa?
 
@@ -347,39 +350,44 @@ Sama periaate kuin SELECT-kyselyissä:
 Seuraava esimerkki lisää uuden pankkitilin tietokantaan:
 
 {: .esim }
-> ```java
-> import java.sql.Connection;
-> import java.sql.DriverManager;
-> import java.sql.PreparedStatement;
-> 
-> public class PankkitiliLisaysEsimerkki {
-> 
->     public static void main(String[] args) throws Exception {
->         // 1. Muodosta yhteys tietokantaan
->         String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
->         Connection yhteys = DriverManager.getConnection(JDBC_URLI);
-> 
->         // 2. Muodosta INSERT SQL -lause, jossa käytetään parametreja (?)
->         String sql = "INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)";
->         PreparedStatement lause = yhteys.prepareStatement(sql);
-> 
->         // 3. Aseta parametriarvot PreparedStatementiin
->         String uusiTilinumero = "FI11 1234 5600 0007";
->         double alkuSaldo = 1000.00;
-> 
->         lause.setString(1, uusiTilinumero); // 1. parametri: tilinumero
->         lause.setDouble(2, alkuSaldo);      // 2. parametri: saldo
-> 
->         // 4. Suorita INSERT-lause
->         int paivitetytRivit = lause.executeUpdate();
->         System.out.println("Lisättiin rivejä: " + paivitetytRivit);
-> 
->         // 5. Sulje resurssit
->         lause.close();
->         yhteys.close();
->     }
-> }
-> ```
+> Esimerkki pankkitilin lisäämisestä `PreparedStatement`-luokan avulla.
+
+<div class="code-example">
+  <button class="copy-button" type="button" onclick="kopioiKoodi('code-insert-1')">Kopioi koodi</button>
+  <pre class="line-numbers"><code id="code-insert-1" class="language-java">
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class PankkitiliLisaysEsimerkki {
+
+    public static void main(String[] args) throws Exception {
+        // 1. Muodosta yhteys tietokantaan
+        String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
+        Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+
+        // 2. Muodosta INSERT SQL -lause, jossa käytetään parametreja (?)
+        String sql = "INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)";
+        PreparedStatement lause = yhteys.prepareStatement(sql);
+
+        // 3. Aseta parametriarvot PreparedStatementiin
+        String uusiTilinumero = "FI11 1234 5600 0007";
+        double alkuSaldo = 1000.00;
+
+        lause.setString(1, uusiTilinumero); // 1. parametri: tilinumero
+        lause.setDouble(2, alkuSaldo);      // 2. parametri: saldo
+
+        // 4. Suorita INSERT-lause
+        int paivitetytRivit = lause.executeUpdate();
+        System.out.println("Lisättiin rivejä: " + paivitetytRivit);
+
+        // 5. Sulje resurssit
+        lause.close();
+        yhteys.close();
+    }
+}
+  </code></pre>
+</div>
 
 **Teoriaa INSERT-esimerkistä**
 
@@ -399,39 +407,44 @@ Seuraava esimerkki lisää uuden pankkitilin tietokantaan:
 Seuraava esimerkki **päivittää pankkitilin saldon** tilinumeron perusteella:
 
 {: .esim }
-> ```java
-> import java.sql.Connection;
-> import java.sql.DriverManager;
-> import java.sql.PreparedStatement;
-> 
-> public class PankkitiliPaivitysEsimerkki {
-> 
->     public static void main(String[] args) throws Exception {
->         // 1. Muodosta yhteys tietokantaan
->         String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
->         Connection yhteys = DriverManager.getConnection(JDBC_URLI);
-> 
->         // 2. Muodosta UPDATE SQL -lause
->         String sql = "UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?";
->         PreparedStatement lause = yhteys.prepareStatement(sql);
-> 
->         // 3. Aseta parametriarvot
->         String muokattavaTilinumero = "FI11 1234 5600 0007";
->         double uusiSaldo = 1500.50;
-> 
->         lause.setDouble(1, uusiSaldo);            // 1. parametri: uusi saldo
->         lause.setString(2, muokattavaTilinumero); // 2. parametri: tilinumero
-> 
->         // 4. Suorita UPDATE-lause
->         int paivitetytRivit = lause.executeUpdate();
->         System.out.println("Päivitettiin rivejä: " + paivitetytRivit);
-> 
->         // 5. Sulje resurssit
->         lause.close();
->         yhteys.close();
->     }
-> }
-> ```
+> Esimerkki pankkitilin saldon päivittämisestä.
+
+<div class="code-example">
+  <button class="copy-button" type="button" onclick="kopioiKoodi('code-update-1')">Kopioi koodi</button>
+  <pre class="line-numbers"><code id="code-update-1" class="language-java">
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class PankkitiliPaivitysEsimerkki {
+
+    public static void main(String[] args) throws Exception {
+        // 1. Muodosta yhteys tietokantaan
+        String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
+        Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+
+        // 2. Muodosta UPDATE SQL -lause
+        String sql = "UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?";
+        PreparedStatement lause = yhteys.prepareStatement(sql);
+
+        // 3. Aseta parametriarvot
+        String muokattavaTilinumero = "FI11 1234 5600 0007";
+        double uusiSaldo = 1500.50;
+
+        lause.setDouble(1, uusiSaldo);            // 1. parametri: uusi saldo
+        lause.setString(2, muokattavaTilinumero); // 2. parametri: tilinumero
+
+        // 4. Suorita UPDATE-lause
+        int paivitetytRivit = lause.executeUpdate();
+        System.out.println("Päivitettiin rivejä: " + paivitetytRivit);
+
+        // 5. Sulje resurssit
+        lause.close();
+        yhteys.close();
+    }
+}
+  </code></pre>
+</div>
 
 **Teoriaa UPDATE-esimerkistä**
 
@@ -449,18 +462,23 @@ Seuraava esimerkki **päivittää pankkitilin saldon** tilinumeron perusteella:
 Usein halutaan **lisätä tai vähentää saldoa**, ei vain asettaa sitä kiinteäksi arvoksi. Tämä voidaan tehdä SQL:ssä käyttämällä nykyistä arvoa:
 
 {: .esim }
-> ```java
-> String sql = "UPDATE Pankkitili SET saldo = saldo + ? WHERE tilinumero = ?";
-> PreparedStatement lause = yhteys.prepareStatement(sql);
-> 
-> double summa = -50.00; // miinus = vähennetään, plus = lisätään
-> String tilinumero = "FI11 1234 5600 0007";
-> 
-> lause.setDouble(1, summa);
-> lause.setString(2, tilinumero);
-> 
-> int paivitetytRivit = lause.executeUpdate();
-> ```
+> Esimerkki saldon muuttamisesta suhteessa nykyiseen saldoon.
+
+<div class="code-example">
+  <button class="copy-button" type="button" onclick="kopioiKoodi('code-update-2')">Kopioi koodi</button>
+  <pre class="line-numbers"><code id="code-update-2" class="language-java">
+String sql = "UPDATE Pankkitili SET saldo = saldo + ? WHERE tilinumero = ?";
+PreparedStatement lause = yhteys.prepareStatement(sql);
+
+double summa = -50.00; // miinus = vähennetään, plus = lisätään
+String tilinumero = "FI11 1234 5600 0007";
+
+lause.setDouble(1, summa);
+lause.setString(2, tilinumero);
+
+int paivitetytRivit = lause.executeUpdate();
+  </code></pre>
+</div>
 
 Tässä:
 
@@ -479,36 +497,41 @@ DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. ti
 > Unohdettu `WHERE`-ehto voi poistaa **kaikki rivit** taulusta!
 
 {: .esim }
-> ```java
-> import java.sql.Connection;
-> import java.sql.DriverManager;
-> import java.sql.PreparedStatement;
-> 
-> public class PankkitiliPoistoEsimerkki {
-> 
->     public static void main(String[] args) throws Exception {
->         // 1. Muodosta yhteys tietokantaan
->         String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
->         Connection yhteys = DriverManager.getConnection(JDBC_URLI);
-> 
->         // 2. Muodosta DELETE SQL -lause
->         String sql = "DELETE FROM Pankkitili WHERE tilinumero = ?";
->         PreparedStatement lause = yhteys.prepareStatement(sql);
-> 
->         // 3. Aseta poistettavan tilin tilinumero
->         String poistettavaTilinumero = "FI11 1234 5600 0007";
->         lause.setString(1, poistettavaTilinumero);
-> 
->         // 4. Suorita DELETE-lause
->         int poistetutRivit = lause.executeUpdate();
->         System.out.println("Poistettiin rivejä: " + poistetutRivit);
-> 
->         // 5. Sulje resurssit
->         lause.close();
->         yhteys.close();
->     }
-> }
-> ```
+> Esimerkki pankkitilin poistamisesta tietokannasta.
+
+<div class="code-example">
+  <button class="copy-button" type="button" onclick="kopioiKoodi('code-delete-1')">Kopioi koodi</button>
+  <pre class="line-numbers"><code id="code-delete-1" class="language-java">
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class PankkitiliPoistoEsimerkki {
+
+    public static void main(String[] args) throws Exception {
+        // 1. Muodosta yhteys tietokantaan
+        String JDBC_URLI = "jdbc:sqlite:data/pankki.sqlite";
+        Connection yhteys = DriverManager.getConnection(JDBC_URLI);
+
+        // 2. Muodosta DELETE SQL -lause
+        String sql = "DELETE FROM Pankkitili WHERE tilinumero = ?";
+        PreparedStatement lause = yhteys.prepareStatement(sql);
+
+        // 3. Aseta poistettavan tilin tilinumero
+        String poistettavaTilinumero = "FI11 1234 5600 0007";
+        lause.setString(1, poistettavaTilinumero);
+
+        // 4. Suorita DELETE-lause
+        int poistetutRivit = lause.executeUpdate();
+        System.out.println("Poistettiin rivejä: " + poistetutRivit);
+
+        // 5. Sulje resurssit
+        lause.close();
+        yhteys.close();
+    }
+}
+  </code></pre>
+</div>
 
 **Teoriaa DELETE-esimerkistä**
 
@@ -526,6 +549,26 @@ DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. ti
 - Kutsu **`executeUpdate()`**:
   - palauttaa lisättyjen, päivitettyjen tai poistettujen rivien määrän.  
 - Muista sulkea `PreparedStatement` ja `Connection` kuten sivun aiemmissa esimerkeissä on näytetty (`close()` tai try-with-resources).
+
+---
+
+<!-- Yksinkertainen copy-paste -toiminnallisuus: ei sisällä rivinumeroita,
+     koska kopiointi tapahtuu suoraan &lt;code&gt;-elementin tekstistä. -->
+<script>
+function kopioiKoodi(id) {
+  var codeElement = document.getElementById(id);
+  if (!codeElement) return;
+
+  var text = codeElement.innerText || codeElement.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    console.log("Koodi kopioitu leikepöydälle.");
+  }, function(err) {
+    console.error("Koodin kopiointi epäonnistui:", err);
+  });
+}
+</script>
+
+
 
 
 

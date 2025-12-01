@@ -493,7 +493,7 @@ DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. ti
 
 {: .warning }
 > DELETE-lauseiden kanssa kannattaa olla erityisen varovainen.  
-> Unohdettu `WHERE`-ehto voi poistaa **kaikki rivit** taulusta!
+> Unohdettu `WHERE`-ehto poistaa **kaikki rivit** taulusta!
 
 {: .esim }
 > Esimerkki pankkitilin poistamisesta tietokannasta.

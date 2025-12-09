@@ -95,7 +95,7 @@ class DemoSäie implements Runnable {
     }
 }
 ```
-Usein on tarpeen tietää milloin säie on päättynyt. Säikeen suoritus päättyy, kun run()-metodi on suoritettu tai koodi kaatuu virheeseen. Säie ei ilmoita päättymisestä silloin kun käytetään säikeitä tähän mennessä näkyvien esimerkkien mukaisesti. On olemassa myös toimintomalli, jossa saadaan ilmoitus käynnistävälle koodille säikeen päättymisestä. Muutoin on vaihtoehtona kysyä pollaamalla säikeen tilaa tai 'liittyä' säikeeseen join()-metodilla. Näissä pitää huolehtia mahdollisesta poikkeuksesta. Metodi sleep() aiheuttaa säikeen siirtymisen pois suorituksesta parametrina olevan millisekuntimäärän ajaksi. Pollaavassa versiossa kannattaa odottaa tovi ennen kuin kysyy uudelleen säikeen tilaa isAlive()-metodilla. Pollaus tarkoittaa sitä, että kysytään (poll) säikeen tilaa, koodissa siis aktiivisesti seurataan säikeen suorituksen tilaa. 
+Usein on tarpeen tietää milloin säie on päättynyt. Säikeen suoritus päättyy, kun run()-metodi on suoritettu loppuun tai koodi kaatuu virheeseen. Säie ei ilmoita päättymisestä silloin kun käytetään säikeitä tähän mennessä näkyvien esimerkkien mukaisesti. On olemassa myös toimintomalli, jossa saadaan ilmoitus käynnistävälle koodille säikeen päättymisestä. Muutoin on vaihtoehtona kysyä pollaamalla säikeen tilaa tai 'liittyä' säikeeseen join()-metodilla. Näissä pitää huolehtia mahdollisesta poikkeuksesta. Metodi sleep() aiheuttaa säikeen siirtymisen pois suorituksesta parametrina olevan millisekuntimäärän ajaksi. Pollaavassa versiossa kannattaa odottaa tovi ennen kuin kysyy uudelleen säikeen tilaa isAlive()-metodilla. Pollaus tarkoittaa sitä, että kysytään (poll) säikeen tilaa, koodissa siis aktiivisesti seurataan säikeen suorituksen tilaa. 
 
 ```java
 while (t3.isAlive()) { // join() on parempi!
@@ -106,7 +106,7 @@ while (t3.isAlive()) { // join() on parempi!
 }
 System.out.println("Säie 3 päättynyt");
 try {
-    t2.join();
+    t2.join();      // tämä on oikea tapa, ei kuluta resursseja
 } catch (InterruptedException e) {
 }
 System.out.println("Säie 2 päättynyt");
@@ -167,7 +167,8 @@ Todellisuudessa tämä koodi toimii vain vahingossa oikein. Jos lisätään kier
 
 Olemme päätyneet tilanteeseen, josta käytetään termiä Critical Section (kriittinen alue). Critical section on koodia, joka pitää suorittaa säikeessä atomaarisesti niin, ettei muut säikeet pääse suorittamaan samaa koodia tai käsittelemään samaa muuttujaa. Javassa tähän on ollut yksinkertainen ratkaisu olemassa jo aivan ensimmäisestä versiosta saakka ja se on synchronized sanalla toteutettavissa. Synchronized-toiminnolla saadaan lukittua koodilohko tai kokonainen metodi niin, että säie saa suorittaa metodin tai koodilohkon loppuun saakka ilman että mikään muu säie pääsee suorittamaan samaa koodia. 
 
-Koodilohkoa käytettäessä tarvitaan jokin olio lukitukseen. Jokaisessa Java-oliossa on sisäänrakennettu lukko-bitti, joka ei näy mitenkään, vaan se pitää tietää. 
+Koodilohkoa käytettäessä tarvitaan jokin olio lukitukseen. Jokaisessa Java-oliossa on sisäänrakennettu lukko-bitti, joka ei näy mitenkään, vaan se pitää tietää. Kriittisen alueen toteutukseen käytetään Mutex-tyyppistä lukitusta (Mutual exclusion) josta syystä esimerkissä lukitukseen käytettävän muuttujan nimi on *mutex*.
+
 Turvallinen ja toimiva nextID()-metodin toteutus voi olla seuraava:
 
 ```java

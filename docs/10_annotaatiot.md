@@ -49,11 +49,11 @@ Nimest채 voi p채채tell채, ett채 annotaatio liittyy merkkijonon pituuteen. T채ss�
 public class Product {
     private int id;
     @StringLengthRule(minlen = 2, maxlen = 8)
-    private String Name;
+    private String name;
 
     public Product(int id, String name) {
         this.id = id;
-        Name = name;
+        this.name = name;
     }
     // ... loput luokan koodista j채tetty pois
 ```

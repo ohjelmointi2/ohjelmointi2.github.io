@@ -32,7 +32,7 @@ public @interface Override {
 
 Tässä @Target-annotaatiolla määritellään mihin koodinosaan @Override:n voi liittää (metodiin) ja @Retention:lla määritetään pysyvyys, SOURCE on vain käännösaikana käytössä, eikä talletu käännettyyn koodiin. RedentionPolicy.CLASS -annotaatiot tallettuvat käännettyyn class-tiedostoon (ja on byte-koodia), mutta eivät ole suorituksen aikana olemassa, tämä on oletus. RUNTIME-tyyppiset annotaatiot ovat suorituksen aikana olemassa ja luettavissa.
 
-On mahdollista tehdä myös omia annotaatioita, toki yleensä käytetään valmiiksi määriteltyjä jotka ovat erilaisissa kirjatoissa. Esimerkkeinä vaikka Spring Boot-kirjasto tai JSON-käsittelykirjastot. 
+On mahdollista tehdä myös omia annotaatioita, toki yleensä käytetään valmiiksi määriteltyjä jotka ovat erilaisissa kirjastoissa. Esimerkkeinä vaikka Spring Boot-kirjasto tai JSON-käsittelykirjastot. 
 
 Seuraavana esimerkki omasta annotaatiosta. 
 ```java

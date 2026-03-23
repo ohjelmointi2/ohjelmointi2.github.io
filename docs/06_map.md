@@ -24,19 +24,19 @@ Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai tauluko
 
 [Java Collections Framework](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/package-summary.html#CollectionsFramework) sisältää mm. seuraavat rajapinnat ja luokat:
 
-* [List](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/List.html) *(ArrayList ja LinkedList)*
-* [Map](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Map.html) *(HashMap ja TreeMap)*
-* [Set](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Set.html) *(HashSet ja TreeSet)*
+* [List](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/List.html) *(`ArrayList` ja `LinkedList`)*
+* [Map](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Map.html) *(`HashMap` ja `TreeMap`)*
+* [Set](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Set.html) *(`HashSet` ja `TreeSet`)*
 * [Queue](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Queue.html), [Stack](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/Stack.html), jne *(ei käsitellä tällä kurssilla)*
 
-Tällä kurssilla keskitymme Javan Map-tietorakenteeseen ja erityisesti sen HashMap-toteutukseen, eli ns. hajautustauluun.
+Tällä kurssilla keskitymme Javan `Map`-tietorakenteeseen ja erityisesti sen `HashMap`-toteutukseen, eli ns. hajautustauluun.
 
 Opiskelun tueksi erinomainen lisämateriaali hajautustauluista on Helsingin yliopiston MOOC-oppimateriaali [https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu), jonka sisältöä on lainattu myös tässä materiaalissa ja materiaaliin liittyvissä videoissa ja tehtävissä.
 
 
 ## Hajautustaulu eli HashMap
 
-> *"Hajautustaulu eli HashMap on ArrayListin lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
+> *"Hajautustaulu eli `HashMap` on `ArrayList`in lisäksi eniten käytettyjä Javan valmiiksi tarjoamia tietorakenteita. Hajautustaulua käytetään kun tietoa käsitellään avain-arvo -pareina, missä avaimen perusteella voidaan lisätä, hakea ja poistaa arvo."*
 >
 > *[Agile Education Research –tutkimusryhmä, mooc.fi](https://ohjelmointi-20.mooc.fi/osa-8/2-hajautustaulu)*
 
@@ -103,7 +103,7 @@ Hajautustaulua luodessa tarvitaan kaksi tyyppiparametria:
 * avainmuuttujan tyyppi
 * lisättävän arvon tyyppi.
 
-Tyyppiparametrit määritellään kulmasulkeisiin, kuten teimme Ohjelmointi 1:ssä ArrayList:in kanssa. Koska tyyppiparametreja on tällä kertaa kaksi, ne kirjoitetaan pilkulla eroteltuna:
+Tyyppiparametrit määritellään kulmasulkeisiin, kuten teimme Ohjelmointi 1:ssä `ArrayList`:in kanssa. Koska tyyppiparametreja on tällä kertaa kaksi, ne kirjoitetaan pilkulla eroteltuna:
 
 ```java
 Map<String, String> tietovarasto = new HashMap<>(); // tai new HashMap<String, String>();
@@ -188,7 +188,7 @@ System.out.println(kaannos); // Ein
 <small>Tämä esimerkki on lainattu [Agile Education Research –tutkimusryhmän oppimateriaalista](https://2017-ohjelmointi.github.io/part8/), joka on lisensoitu Creative Commons BY-NC-SA-lisenssillä.</small>
 
 
-### Arvojen poistaminen (remove) ja tarkastaminen (containsKey)
+### Arvojen poistaminen (`remove`) ja tarkastaminen (`containsKey`)
 
 ```java
 HashMap<String, String> countries = new HashMap<>();
@@ -203,11 +203,11 @@ countries.remove("Ruotsi");
 countries.containsKey("Ruotsi"); // false
 ```
 
-### Null-viittaukset
+### `Null`-viittaukset
 
 Jos mapista haetaan arvoa avaimella, jota ei löydy, palautuu tuloksena `null`-arvo, eli tyhjä viittaus.
 
-Mikäli null-arvon sijasta halutaan käyttää jotain toista arvoa oletusarvona, voidaan käyttää mapin `getOrDefault`-metodia:
+Mikäli `null`-arvon sijasta halutaan käyttää jotain toista arvoa oletusarvona, voidaan käyttää mapin `getOrDefault`-metodia:
 
 ```java
 Map<String, Integer> pistelaskuri = new HashMap<>();
@@ -308,7 +308,7 @@ for (Integer arvo : arvot) {
 >
 > Oracle. Collection. [https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
 
-Collection-tyyppisen kokoelman käyttämiseksi tarvitset luokkaasi seuraavan import-rivin:
+`Collection`-tyyppisen kokoelman käyttämiseksi tarvitset luokkaasi seuraavan `import`-rivin:
 
 ```java
 import java.util.Collection;
@@ -336,7 +336,7 @@ for (Entry<String, Integer> pari : parit) {
 
 Jokaisella `Entry`-oliolla on siis sisässään yksi avain ja yksi arvo, jotka saadaan yllä olevan esimerkin mukaisesti pyydettyä `getKey()`- ja `getValue()`-metodeilla.
 
-Entry-olioiden käyttäminen muuttujissa edellyttää luokan alkuun seuraavan import-rivin:
+`Entry`-olioiden käyttäminen muuttujissa edellyttää luokan alkuun seuraavan `import`-rivin:
 
 ```java
 import java.util.Map.Entry;

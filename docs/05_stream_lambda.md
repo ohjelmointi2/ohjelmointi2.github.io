@@ -236,7 +236,7 @@ Jos sama tehdään streamin avulla, päästään paljon vähemmillä koodiriveil
 ```java
 long lkm = products.stream().filter(p -> p.type().equals("Computer")).count();
 ```
-Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stream suodatetaan eli poimitaan sieltä filter()-metodin avulla osa tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi olla monimutkainen, kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
+Esimerkissä `stream()` palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stream suodatetaan eli poimitaan sieltä `filter()`-metodin avulla osa tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan `count()`-metodilla. Metodille `filter()` annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi olla monimutkainen, kunhan lambda-lauseke palauttaa `boolean`-arvon (`true` == otetaan mukaan, `false` == ei oteta mukaan). `filter`-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
 
 ```java
 // metodit voidaan kirjoittaa omille riveille selvyyden vuoksi
@@ -250,7 +250,7 @@ lkm = products.stream()
     .count();
 ```
 
-Filter-metodilla parametrina annettava lambda on predikaattimetodi, se palauttaa boolean-arvon ja on tyypiltään rajapinta 
+`filter`-metodilla parametrina annettava lambda on predikaattimetodi, se palauttaa `boolean`-arvon ja on tyypiltään rajapinta 
 ```java
 @FunctionalInterface
 public interface Predicate<T> {
@@ -301,7 +301,7 @@ long lkm = products
 System.out.println("Tuotteita " + lkm + " kpl");
 ```
 
-**map()**-metodi on eri asia kuin Map-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisätään muunnettu olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos Product ==> String) tai hinta lisättynä veron osuudella (Product ==> double, joka vielä pitää muuttaa Double:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
+**`map()`**-metodi on eri asia kuin `Map`-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisätään muunnettu olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos `Product` ==> `String`) tai hinta lisättynä veron osuudella (`Product` ==> `double`, joka vielä pitää muuttaa `Double`:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
 Esimerkkinä olkoon aluksi tarve saada lista tuotteiden nimistä.  
 
 ```java
@@ -339,7 +339,7 @@ Tutki seuraavaa koodia ja koeta ymmärtää mitä se tekee.
 }
 ```
 
-Otetaan vielä esimerkki findFirst()-metodista. findFirst() on päättävä metodi, ja se palauttaa streamista ensimmäisen olion. 
+Otetaan vielä esimerkki `findFirst()`-metodista. `findFirst()` on päättävä metodi, ja se palauttaa streamista ensimmäisen olion. 
 ```java
 Optional<Product> firstProduct = products.stream().findFirst();
 if (firstProduct.isPresent()) {
@@ -353,11 +353,11 @@ if (firstProduct.isPresent()) {
     System.out.println(firstProduct.get());
 }
 ```
-findFirst() palauttaa Optional-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. Tilanteen saa selville isPresent()-metodilla. Jos stream, johon find...() -metodi kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään Optional-luokan avulla.
+`findFirst()` palauttaa `Optional`-tyyppisen arvon. Nimensä mukaisesti se joko sisältää arvon (olion) tai sitten ei. Tilanteen saa selville `isPresent()`-metodilla. Jos stream, johon `find...()`-metodi kohdistuu, on tyhjä, saadaan lopputuloksena 'ei mitään'. Tämä tilanne käsitellään `Optional`-luokan avulla.
 
-### Peräkkäinen vai rinnakkainen käsittely? 
-Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (Thread) käsitellään kurssilla viimeisellä viikolla. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia samaan aikaan.
-Rinnakkaisen käsittelyn toteuttaminen on streamien avulla todella helppoa, käytetään parallelStream()-funktiota. Rinnakkaisuuden toteutuksesta vastaa JDK:n kirjastot kokonaan ja suoritusjärjestys voi olla joka kerta erilainen.
+### Peräkkäinen vai rinnakkainen käsittely?
+Kun teet itse omalla koodilla kokoelmaluokan käsittelyä, tapahtuu kaikki käsittely peräkkäisesti (sequential) yhdellä säikeellä. Stream-käsittely voidaan myös suorittaa rinnakkain (parallel) niin, että käsittely hajautuu useammalle rinnakkaiselle säikeelle. Säie (`Thread`) käsitellään kurssilla viimeisellä viikolla. Rinnakkaisuudella saadaan mahdollisesti suorituskykyhyötyä, kun prosessointi jakaantuu samanaikaisesti suoritettaviin toimintoihin. Käytännössä tämä tarkoittaa (hieman yksinkertaistettuna), että peräkkäisessä suorituksessa prosessorin yksi ydin on käytössä ja rinnakkaisessa on useita prosessorin ytimiä suorittamassa koodia samaan aikaan.
+Rinnakkaisen käsittelyn toteuttaminen on streamien avulla todella helppoa, käytetään `parallelStream()`-funktiota. Rinnakkaisuuden toteutuksesta vastaa JDK:n kirjastot kokonaan ja suoritusjärjestys voi olla joka kerta erilainen.
 
 ```java
 // listan käsittelyä peräkkäin ja rinnakkain
@@ -370,7 +370,7 @@ listOfNumbers.parallelStream()
 ```
 
 Enempää tässä vaiheessa ei rinnakkaisuutta käsitellä. 
-Lisää tietoa parallelStream():sta löytyy mm.:
+Lisää tietoa `parallelStream()`:sta löytyy mm.:
 - https://www.baeldung.com/java-when-to-use-parallel-stream
 - https://dev.java/learn/api/streams/parallel-streams/
 

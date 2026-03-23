@@ -9,9 +9,9 @@ nav_exclude: false
 
 # Rinnakkaisuus
 
-Tähän saakka kaikki kursseilla tehdyt sovellukset ovat käynnistyneet main-metodin ensimmäisestä lauseesta ja suoritus on edennyt lause kerrallaan kunnes main-metodi on suoritettu kokonaan. Jokaisella hetkellä on suorituksessa vain yksi sovelluksen kohta. 
+Tähän saakka kaikki kursseilla tehdyt sovellukset ovat käynnistyneet `main`-metodin ensimmäisestä lauseesta ja suoritus on edennyt lause kerrallaan kunnes `main`-metodi on suoritettu kokonaan. Jokaisella hetkellä on suorituksessa vain yksi sovelluksen kohta. 
 On mahdollista, että sovelluksen (prosessin) sisällä on useita samaan aikaan suorituksessa olevia koodinosia, tällöin puhutaan rinnakkaisuudesta.
-Rinnakkaisuuden toteutukseen Javassa on käytetty Thread-luokkaa (Säie). On olemassa myös 'kehittyneempiä' tapoja rinnakkaisuuden hallintaan, mutta kaikissa tilanteissa alimmaisena käsitteenä on Thread. 
+Rinnakkaisuuden toteutukseen Javassa on käytetty `Thread`-luokkaa (Säie). On olemassa myös 'kehittyneempiä' tapoja rinnakkaisuuden hallintaan, mutta kaikissa tilanteissa alimmaisena käsitteenä on `Thread`. 
 
 Miksi rinnakkaisuutta tarvitaan? Yksi syy on suorituskyky, rinnakkain toimivien säikeiden avulla saadaan prosessori paremmin hyödynnettyä sovelluksen suoritukseen. Toinen aika suoraviivainen tarve löytyy vaikka web-sovelluksien toteutuksesta. Sovellus käsittelee selaimelta tulevia pyyntöjä (esim. HTTP-protokollan GET). Sovelluksessa toteutetaan yksittäisten pyyntöjen käsittely ja varsinainen suoritusympäristö käsittelee samanaikaisesti rinnakkain selaimilta tulevia pyyntöjä. Rinnakkaisuuteen liittyy myös käsite asynkronisuus. Yleensä sillä tarkoitetaan metodin kutsumista niin, että ei jäädä odottamaan metodin suorituksen päättymistä, vaan kutsuva koodi jatkaa suoritustaan ja mahdollinen paluuarvo käsitellään myöhemmin. Tämänkin taustalla on säikeet joihin tutustumme seuraavana, selvitellään rinnakkaisuuteen liittyviä sarjallistamisasioita ja poissulkemisongelmaa sekä lyhyt katsaus uusiin piirteisiin Javan rinnakkaisuudessa.
 
@@ -22,7 +22,7 @@ Sovelluksia tehtäessä tulee usein esille samankaltaisia ongelmia ja tilanteita
 
 Tässä ei ole tarkoitus käydä enempää läpi erilaisia suunnittelumalleja, vaan ne jää omatoimisen opiskelun varaan. Seuraavissa koodiesimerkeissä käytetty numerogeneraattori toteuttaa Singleton (Ainokainen) suunnittelumallin. Singleton on olio, joita on olemassa vain ja ainoastaan yksi ilmentymä koodin suorituksen aikana ja tyypillisesti Singleton on käytössä ja näkyvissä koko sovellukselle.
 
-IDGenerator-luokan koodi:
+`IDGenerator`-luokan koodi:
 
 ```java
 public class IDGenerator {
@@ -44,7 +44,7 @@ public class IDGenerator {
     }
 }
 ```
-Kun sovelluskoodissa tarvitaan yksilöllinen kokonaisluku, esimerkiksi avaimen generoimiseksi oliolle, voidaan missä tahansa koodissa tehdä se IDGenerator-luokan avulla.
+Kun sovelluskoodissa tarvitaan yksilöllinen kokonaisluku, esimerkiksi avaimen generoimiseksi oliolle, voidaan missä tahansa koodissa tehdä se `IDGenerator`-luokan avulla.
 
 ```java
 IDGenerator idg = IDGenerator.getIDGenerator();
@@ -57,7 +57,7 @@ Sitten siirrytään takaisin rinnakkaiseen ohjelmointiin ja käytetään tätä 
 
 ### Thread - Säie
 
-Javassa säie on lyhyesti sanottuna metodi (void run()), joka on suorituksessa itsenäisesti samaan aikaan (rinnakkain) muiden säikeiden kanssa. Säikeen luonnissa konstruktorin parametrina annetaan Runnable-tyyppinen olio. Runnable on rajapinta (FunctionalInterface), joten tässäkin voi käyttää lambda-lauseketta. Seuraavana yksinkertainen esimerkki, jossa säie ei tee mitään muuta kuin tulostaa säikeen nimen. Sen avulla on helppo nähdä, että samaan aikaan on suorituksessa useita säikeitä. Jokainen säie voi suorittaa eri metodia, tässä esimerkissä kaikki ovat samoja.
+Javassa säie on lyhyesti sanottuna metodi (`void run()`), joka on suorituksessa itsenäisesti samaan aikaan (rinnakkain) muiden säikeiden kanssa. Säikeen luonnissa konstruktorin parametrina annetaan `Runnable`-tyyppinen olio. `Runnable` on rajapinta (`FunctionalInterface`), joten tässäkin voi käyttää lambda-lauseketta. Seuraavana yksinkertainen esimerkki, jossa säie ei tee mitään muuta kuin tulostaa säikeen nimen. Sen avulla on helppo nähdä, että samaan aikaan on suorituksessa useita säikeitä. Jokainen säie voi suorittaa eri metodia, tässä esimerkissä kaikki ovat samoja.
 
 ```java
 Runnable run = () -> System.out.println("Käynnistetty säie: " + Thread.currentThread().getName());
@@ -81,7 +81,7 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
-Ja jos käytetään luokassa olevaa run()-metodia:
+Ja jos käytetään luokassa olevaa `run()`-metodia:
 
 ```java
 Thread t3 = new Thread(new DemoSäie() );
@@ -95,7 +95,7 @@ class DemoSäie implements Runnable {
     }
 }
 ```
-Usein on tarpeen tietää milloin säie on päättynyt. Säikeen suoritus päättyy, kun run()-metodi on suoritettu loppuun tai koodi kaatuu virheeseen. Säie ei ilmoita päättymisestä silloin kun käytetään säikeitä tähän mennessä näkyvien esimerkkien mukaisesti. On olemassa myös toimintomalli, jossa saadaan ilmoitus käynnistävälle koodille säikeen päättymisestä. Muutoin on vaihtoehtona kysyä pollaamalla säikeen tilaa tai 'liittyä' säikeeseen join()-metodilla. Näissä pitää huolehtia mahdollisesta poikkeuksesta. Metodi sleep() aiheuttaa säikeen siirtymisen pois suorituksesta parametrina olevan millisekuntimäärän ajaksi. Pollaavassa versiossa kannattaa odottaa tovi ennen kuin kysyy uudelleen säikeen tilaa isAlive()-metodilla. Pollaus tarkoittaa sitä, että kysytään (poll) säikeen tilaa, koodissa siis aktiivisesti seurataan säikeen suorituksen tilaa. 
+Usein on tarpeen tietää milloin säie on päättynyt. Säikeen suoritus päättyy, kun `run()`-metodi on suoritettu loppuun tai koodi kaatuu virheeseen. Säie ei ilmoita päättymisestä silloin kun käytetään säikeitä tähän mennessä näkyvien esimerkkien mukaisesti. On olemassa myös toimintomalli, jossa saadaan ilmoitus käynnistävälle koodille säikeen päättymisestä. Muutoin on vaihtoehtona kysyä pollaamalla säikeen tilaa tai 'liittyä' säikeeseen `join()`-metodilla. Näissä pitää huolehtia mahdollisesta poikkeuksesta. Metodi `sleep()` aiheuttaa säikeen siirtymisen pois suorituksesta parametrina olevan millisekuntimäärän ajaksi. Pollaavassa versiossa kannattaa odottaa tovi ennen kuin kysyy uudelleen säikeen tilaa `isAlive()`-metodilla. Pollaus tarkoittaa sitä, että kysytään (poll) säikeen tilaa, koodissa siis aktiivisesti seurataan säikeen suorituksen tilaa. 
 
 ```java
 while (t3.isAlive()) { // join() on parempi!
@@ -112,7 +112,7 @@ try {
 System.out.println("Säie 2 päättynyt");
 ```
 
-Testataan seuraavana miten numeroiden generointi onnistuu useasta eri säikeestä ja toimiiko IDGenerator-luokka kuten halutaan. Sitä varten tehdään uusi luokka IDConsumer:
+Testataan seuraavana miten numeroiden generointi onnistuu useasta eri säikeestä ja toimiiko `IDGenerator`-luokka kuten halutaan. Sitä varten tehdään uusi luokka `IDConsumer`:
 
 ```java
 public class IDConsumer implements Runnable {
@@ -163,9 +163,9 @@ IDGenerator idg = IDGenerator.getIDGenerator();
 int id = idg.getLastId();
 System.out.println("ID: " + id); // tulostaa ID: 10 
 ```
-Todellisuudessa tämä koodi toimii vain vahingossa oikein. Jos lisätään kierrosten lukumäärää, alkaa laskuri tuottaa outoja arvoja. IDGenerator-luokan nextID()-metodi näyttää tekevän vain yhden operaation. Näin ei kuitenkaan ole, vaan suorituksen aikana kokonaisluvun kasvattaminen on monta erillistä käskyä prosessoritasolla. Säikeitä suoritetaan aika aikaviipale kerrallaan (järjestelmän päättämä aika ja prioriteetit vaikuttaa myös). Jos aikaviipale päättyy kesken muuttujan päivityksen ja toinen säie pääsee suoritukseen, osa päivitysoperaatioista 'katoaa'. Tämä riski on aina mahdollista, kun eri säikeistä käsitellään samaa muuttujaa (olion kenttää).
+Todellisuudessa tämä koodi toimii vain vahingossa oikein. Jos lisätään kierrosten lukumäärää, alkaa laskuri tuottaa outoja arvoja. `IDGenerator`-luokan `nextID()`-metodi näyttää tekevän vain yhden operaation. Näin ei kuitenkaan ole, vaan suorituksen aikana kokonaisluvun kasvattaminen on monta erillistä käskyä prosessoritasolla. Säikeitä suoritetaan aika aikaviipale kerrallaan (järjestelmän päättämä aika ja prioriteetit vaikuttaa myös). Jos aikaviipale päättyy kesken muuttujan päivityksen ja toinen säie pääsee suoritukseen, osa päivitysoperaatioista 'katoaa'. Tämä riski on aina mahdollista, kun eri säikeistä käsitellään samaa muuttujaa (olion kenttää).
 
-Olemme päätyneet tilanteeseen, josta käytetään termiä Critical Section (kriittinen alue). Critical section on koodia, joka pitää suorittaa säikeessä atomaarisesti niin, ettei muut säikeet pääse suorittamaan samaa koodia tai käsittelemään samaa muuttujaa. Javassa tähän on ollut yksinkertainen ratkaisu olemassa jo aivan ensimmäisestä versiosta saakka ja se on synchronized sanalla toteutettavissa. Synchronized-toiminnolla saadaan lukittua koodilohko tai kokonainen metodi niin, että säie saa suorittaa metodin tai koodilohkon loppuun saakka ilman että mikään muu säie pääsee suorittamaan samaa koodia. 
+Olemme päätyneet tilanteeseen, josta käytetään termiä Critical Section (kriittinen alue). Critical section on koodia, joka pitää suorittaa säikeessä atomaarisesti niin, ettei muut säikeet pääse suorittamaan samaa koodia tai käsittelemään samaa muuttujaa. Javassa tähän on ollut yksinkertainen ratkaisu olemassa jo aivan ensimmäisestä versiosta saakka ja se on `synchronized`-sanalla toteutettavissa. `synchronized`-toiminnolla saadaan lukittua koodilohko tai kokonainen metodi niin, että säie saa suorittaa metodin tai koodilohkon loppuun saakka ilman että mikään muu säie pääsee suorittamaan samaa koodia. 
 
 Koodilohkoa käytettäessä tarvitaan jokin olio lukitukseen. Jokaisessa Java-oliossa on sisäänrakennettu lukko-bitti, joka ei näy mitenkään, vaan se pitää tietää. Kriittisen alueen toteutukseen käytetään Mutex-tyyppistä lukitusta (Mutual exclusion) josta syystä esimerkissä lukitukseen käytettävän muuttujan nimi on *mutex*.
 
@@ -190,7 +190,7 @@ public synchronized int nextID() {
 
 Nyt korjattu versio toimii kaikissa tilanteissa oikein. Säikeiden käynnistäminen ei ole vaikeaa, huomattavasti hankalampaa on niiden hallinnointi, löytää sopivat käyttötilanteet ja ymmärtää seuraamukset vaikka yhteisten muuttujien käsittelyn osalta.
 
-Synchronized-lohko tai metodi ei ole riittävä tai sopiva kaikkiin tilanteisiin. Lukituksen voi tehdä vain yhden metodin sisällä ja synkronointi ei ymmärrä tilannetta missä sama säie yrittää päästä synkronoidulle lohkolle. Näitä tilanteita korjaa ReentrantLock-luokka. Luokan olion avulla voidaan lukitus ja vapautus (siis kriittinen alue) tehdä eksplisiittisesti, edellinen esimerkki uudelleen kirjoitettuna:
+`synchronized`-lohko tai metodi ei ole riittävä tai sopiva kaikkiin tilanteisiin. Lukituksen voi tehdä vain yhden metodin sisällä ja synkronointi ei ymmärrä tilannetta missä sama säie yrittää päästä synkronoidulle lohkolle. Näitä tilanteita korjaa `ReentrantLock`-luokka. Luokan olion avulla voidaan lukitus ja vapautus (siis kriittinen alue) tehdä eksplisiittisesti, edellinen esimerkki uudelleen kirjoitettuna:
 
 ```java
 private static ReentrantLock lock = new ReentrantLock(true);
@@ -202,11 +202,11 @@ public int nextID() {
 }
 ```
 
-ReentrantLock-oliolle voidaan konstruktorin parametrilla määrittää miten säikeet pääsevät eteenpäin, true päästää pitkään lukkoa odottaneet säikeet 'reilummin' suoritukseen kuin false-arvolla. Parametrin nimi onkin fair.
+`ReentrantLock`-oliolle voidaan konstruktorin parametrilla määrittää miten säikeet pääsevät eteenpäin, `true` päästää pitkään lukkoa odottaneet säikeet 'reilummin' suoritukseen kuin `false`-arvolla. Parametrin nimi onkin `fair`.
 
-Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös jossain määrin rajalliset ja jos säikeen run()-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttämällä Executor-luokkaa hyväksi.  
+Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös jossain määrin rajalliset ja jos säikeen `run()`-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttämällä `Executor`-luokkaa hyväksi.  
 
-Tutustu esimerkkikoodiin, jossa on käytetty ExecutorService:ä ja Future-luokkaa:
+Tutustu esimerkkikoodiin, jossa on käytetty `ExecutorService`:ä ja `Future`-luokkaa:
 
 ```java
 public class AppExecutor {
@@ -252,9 +252,9 @@ class IDConsumerCallable implements Callable<Integer> {
 }
 ```
 
-Enempää ei Executoria tai Futurea käsitellä tässä materiaalissa.
+Enempää ei `Executor`ia tai `Future`a käsitellä tässä materiaalissa.
 
-Tämä ei ole kattava kokonaisuus Javan rinnakkaisuudesta, oleellisinta on saada perusteista käsitys ja varsinkin miksi synchronized varattua sanaa pitää käyttää ja miten.  
+Tämä ei ole kattava kokonaisuus Javan rinnakkaisuudesta, oleellisinta on saada perusteista käsitys ja varsinkin miksi `synchronized`-varattua sanaa pitää käyttää ja miten.  
 
 Lisää aiheesta löytyy mm.:
 * [dev.java](https://dev.java/learn/new-features/virtual-threads/) 

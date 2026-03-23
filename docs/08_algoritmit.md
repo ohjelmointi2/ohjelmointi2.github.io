@@ -85,13 +85,13 @@ shuffleAnswers: false
 
 ### Miksi Javassa on erillinen ArrayList, kun siellä on jo taulukkorakenne (array)?
 
-- [x] ArrayList mahdollistaa pituuden kasvattamisen ja vähentämisen dynaamisesti, kun taas taulukoilla on kiinteä koko niiden luomisen jälkeen.
+- [x] `ArrayList` mahdollistaa pituuden kasvattamisen ja vähentämisen dynaamisesti, kun taas taulukoilla on kiinteä koko niiden luomisen jälkeen.
   > Tämä väite on tosi
-- [x] ArrayList tarjoaa lisämetodeja arvojen helppoon lisäämiseen, poistamiseen ja etsimiseen, joita taulukot eivät tue.
+- [x] `ArrayList` tarjoaa lisämetodeja arvojen helppoon lisäämiseen, poistamiseen ja etsimiseen, joita taulukot eivät tue.
   > Tämä väite on tosi
-- [x] ArrayList sisältää apumetodeja kuten toString(), equals() ja contains(), joita taulukoilta ei suoraan löydy.
+- [x] `ArrayList` sisältää apumetodeja kuten `toString()`, `equals()` ja `contains()`, joita taulukoilta ei suoraan löydy.
   > Tämä väite on tosi
-- [x] ArrayList mahdollistaa soveltavien tietorakenteiden, kuten pinon (stack) ja jonon (queue), toteuttamisen sen tarjoamien metodien avulla.
+- [x] `ArrayList` mahdollistaa soveltavien tietorakenteiden, kuten pinon (stack) ja jonon (queue), toteuttamisen sen tarjoamien metodien avulla.
   > Tämä väite on tosi
 ```
 
@@ -115,7 +115,7 @@ String postinumerot = """
 // miten etsin nimen postinumerolle 97390?! 😢
 ```
 
-Sen sijaan datan esittäminen `Map`-tietorakenteen avulla tekee siitä helpommin käsiteltävää:
+Sen sijaan datan esittäminen `Map`-tietorakenteen avulla tekee siitä helpommin käsitteltävää:
 
 ```java
 Map<String, String> postinumerot = Map.of(
@@ -184,11 +184,11 @@ shuffleAnswers: false
 
 - [ ] String postinumerot
   > Jos koko tietoaineisto on yhtenä merkkijonona, etsittävä postinumero ja sitä vastaava nimi saattavat sijaita missä tahansa
-- [x] Map&lt;String, String&gt; postinumerot
-  > Edellä esitetystä Map-tietorakenteesta postinumeroa vastaava nimi löytyy suoraan get()-metodilla.
-- [ ] List&lt;Postinumero&gt; postinumerot
+- [x] `Map<String, String>` postinumerot
+  > Edellä esitetystä `Map`-tietorakenteesta postinumeroa vastaava nimi löytyy suoraan `get()`-metodilla.
+- [ ] `List<Postinumero>` postinumerot
   > Väärin. Postinumeron etsiminen edellyttää koko listan läpikäyntiä ja jokaisen toimipaikan tarkastamista.
-- [ ] Map&lt;String, List&lt;String&gt;&gt; postinumerot
+- [ ] `Map<String, List<String>>` postinumerot
   > Väärin. Tässä tietorakenteessa avaimina olivat toimipaikkojen nimet ja arvoina postinumerot. Postinumerolla etsiminen edellyttäisi siis map:in sisältämien listojen läpikäyntiä ja oikeaa listaa vastaavan avaimen, eli nimen, valitsemista.
 ```
 
@@ -201,10 +201,10 @@ shuffleAnswers: false
 ### Mihin yllä esitetyistä tietorakenteista olisi suoraviivaisinta lisätä uusia tietoja, kuten postitoimipaikan ruotsin- ja englanninkieliset nimet?
 
 - [ ] String postinumerot
-- [ ] Map&lt;String, String&gt; postinumerot
-- [x] List&lt;Postinumero&gt; postinumerot
-  > Postinumero-luokkaa voidaan muuttaa ilman, että tähän tietorakenteeseen joudutaan koskemaan
-- [ ] Map&lt;String, List&lt;String&gt;&gt; postinumerot
+- [ ] `Map<String, String>` postinumerot
+- [x] `List<Postinumero>` postinumerot
+  > `Postinumero`-luokkaa voidaan muuttaa ilman, että tähän tietorakenteeseen joudutaan koskemaan
+- [ ] `Map<String, List<String>>` postinumerot
 ```
 
 ## Suositeltu oheismateriaali
@@ -285,20 +285,20 @@ shuffleAnswers: false
 
 ### Mitkä seuraavista tietorakenteita koskevista väitteistä ovat totta?
 
-- [ ] Map-tietorakenne voi sisältää saman avaimen moneen kertaan
-  > Map-tietorakenne ei voi sisältää samaa avainta useaan kertaan. Jokainen avain on uniikki, ja se liitetään yhteen arvoon.
-- [x] Map-tietorakenne voi sisältää saman arvon moneen kertaan
-  > Map-tietorakenne voi sisältää saman arvon useaan kertaan eri avaimilla. Arvot eivät kuitenkaan ole uniikkeja.
-- [x] ArrayList ja LinkedList voivat sisältää saman arvon moneen kertaan
-  > Sekä ArrayList että LinkedList voivat sisältää saman arvon useaan kertaan.
-- [x] TreeMap järjestää sisältönsä aina avaimen perusteella "kasvavaan" järjestykseen
-  TreeMap järjestää avaimet luonnolliseen eli kasvavaan järjestykseen
-- [x] HashMap pyrkii hajauttamaan sisältönsä mahdollisimman satunnaisesti
-  > HashMap pyrkii hajauttamaan avaimet mahdollisimman satunnaisesti käyttäen hashCode-funktiota.
-- [x] Map-tietorakenteessa arvoina voi olla myös muita kokoelmia, kuten listoja
-  > Map-tietorakenteessa arvoina voi olla muita kokoelmia, kuten listoja, jotka ovat hyödyllisiä monimutkaisemman datan tallentamisessa.
-- [x] Listoissa arvoina voi olla myös muita kokoelmia, kuten Map:eja
-  > Listoissa arvoina voi olla muita kokoelmia, kuten Map:eja, mikä mahdollistaa monipuolisten tietorakenteiden luomisen ja käytön.
+- [ ] `Map`-tietorakenne voi sisältää saman avaimen moneen kertaan
+  > `Map`-tietorakenne ei voi sisältää samaa avainta useaan kertaan. Jokainen avain on uniikki, ja se liitetään yhteen arvoon.
+- [x] `Map`-tietorakenne voi sisältää saman arvon moneen kertaan
+  > `Map`-tietorakenne voi sisältää saman arvon useaan kertaan eri avaimilla. Arvot eivät kuitenkaan ole uniikkeja.
+- [x] `ArrayList` ja `LinkedList` voivat sisältää saman arvon moneen kertaan
+  > Sekä `ArrayList` että `LinkedList` voivat sisältää saman arvon useaan kertaan.
+- [x] `TreeMap` järjestää sisältönsä aina avaimen perusteella "kasvavaan" järjestykseen
+  `TreeMap` järjestää avaimet luonnolliseen eli kasvavaan järjestykseen
+- [x] `HashMap` pyrkii hajauttamaan sisältönsä mahdollisimman satunnaisesti
+  > `HashMap` pyrkii hajauttamaan avaimet mahdollisimman satunnaisesti käyttäen `hashCode`-funktiota.
+- [x] `Map`-tietorakenteessa arvoina voi olla myös muita kokoelmia, kuten listoja
+  > `Map`-tietorakenteessa arvoina voi olla muita kokoelmia, kuten listoja, jotka ovat hyödyllisiä monimutkaisemman datan tallentamisessa.
+- [x] Listoissa arvoina voi olla myös muita kokoelmia, kuten `Map`:eja
+  > Listoissa arvoina voi olla muita kokoelmia, kuten `Map`:eja, mikä mahdollistaa monipuolisten tietorakenteiden luomisen ja käytön.
 ```
 
 ```quiz
@@ -310,17 +310,17 @@ shuffleAnswers: false
 ### HashMap-olioilla on tietty kapasiteetti. Mitkä seuraavista kapasiteettia koskevista väitteistä ovat totta?
 
 - [ ] Täyden kapasiteetin saavuttaminen aiheuttaa poikkeuksen
-  > Väärin. HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
-- [x] HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+  > Väärin. `HashMap` laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+- [x] `HashMap` laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
   > Totta. Kehittäjän näkökulmastas kaikki tapahtuu automaattisesti taustalla.
-- [ ] HashMap poistaa vanhimpia arvoja sitä mukaan kun se tarvitsee tilaa uusille
-  > HashMap laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
-- [x] Kehittäjän ei tarvitse itse huolehtia HashMap:in koon muuttamisesta
-  > HashMap varaa muistia ja siirtää sisältönsä automaattisesti taustalla
-- [ ] HashMap:in suorituskyky paranee sitä mukaa, mitä täydempi se on
-  > Väärin. Täysi HashMap voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
-- [ ] HashMap:in suorituskyky heikkenee sitä mukaa, mitä täydempi se on
-  > Totta. Täysi HashMap voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
+- [ ] `HashMap` poistaa vanhimpia arvoja sitä mukaan kun se tarvitsee tilaa uusille
+  > `HashMap` laajenee automaattisesti ja siirtää kaiken datan uuteen, suurempaan taulukkoon
+- [x] Kehittäjän ei tarvitse itse huolehtia `HashMap`:in koon muuttamisesta
+  > `HashMap` varaa muistia ja siirtää sisältönsä automaattisesti taustalla
+- [ ] `HashMap`:in suorituskyky paranee sitä mukaa, mitä täydempi se on
+  > Väärin. Täysi `HashMap` voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
+- [ ] `HashMap`:in suorituskyky heikkenee sitä mukaa, mitä täydempi se on
+  > Totta. Täysi `HashMap` voi hidastaa suorituskykyä, jos eri avaimet eivät pääse "oikeille" paikoilleen. Tällöin avaimia joudutaan etsimään vaihtoehtoisista sijainneista.
 ```
 
 ```quiz
@@ -337,13 +337,13 @@ shuffleAnswers: false
   > Tämä väite on totta. Algoritmi, jonka suoritusaika on "n^2", suorittaa saamansa syötteen verran operaatioita jokaista syötteen arvoa kohti.
 - [x] Puolitushaku edellyttää, että läpikäytävä kokoelma on järjestyksessä
   > Tämä väite on totta. Puolitushaku edellyttää, että läpikäytävä kokoelma on järjestyksessä.
-- [x] HashMap kutsuu lisättävien avainten hashCode-metodia selvittääkseen, mihin kohtaan avain tallennetaan muistissa
-  > Tämä väite on totta. HashMap käyttää avainten hashCode-metodia selvittääkseen, mihin kohtaan avain tallennetaan muistissa.
-- [x] Listan "contains()"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
-  > Tämä väite on totta. Listan "contains()"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi.
-- [ ] HashMapin "containsKey"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki avaimet läpi
-  > Tämä väite on väärin. Eri tyyppiset Map:it tallentavat avaimet eri logiikoilla siten, että jokaiselle avaimelle on vain yksi "oikea paikka", josta etsiä. Kaikista paikoista joudutaan etsimään vain äärimmäisessä tapauksessa, jossa avainten hajautusfunktio tuottaa kaikille avaimille saman sijainnin muistissa.
-- [x] HashMapin "containsValue"-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
+- [x] `HashMap` kutsuu lisättävien avainten `hashCode`-metodia selvittääkseen, mihin kohtaan avain tallennetaan muistissa
+  > Tämä väite on totta. `HashMap` käyttää avainten `hashCode`-metodia selvittääkseen, mihin kohtaan avain tallennetaan muistissa.
+- [x] Listan `contains()`-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
+  > Tämä väite on totta. Listan `contains()`-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi.
+- [ ] `HashMap`in `containsKey`-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki avaimet läpi
+  > Tämä väite on väärin. Eri tyyppiset `Map`:it tallentavat avaimet eri logiikoilla siten, että jokaiselle avaimelle on vain yksi "oikea paikka", josta etsiä. Kaikista paikoista joudutaan etsimään vain äärimmäisessä tapauksessa, jossa avainten hajautusfunktio tuottaa kaikille avaimille saman sijainnin muistissa.
+- [x] `HashMap`in `containsValue`-metodi suorittaa lineaarisen haun ja käy tarvittaessa kaikki arvot läpi
   > Tämä väite on totta. Toisin kuin avaimet, mapiin tallennetut arvot saattavat sijaita missä vain kohdassa, joten ne on kaikki käytävä läpi.
 ```
 
@@ -362,7 +362,7 @@ for (int i = 1; i <= luku; i++) {
 }
 System.out.println("Luvun " + luku + " kertoma on " + tulos);
 ```
-Toinen mahdollisuus on käyttää rekursiivista metodia kertoman laskentaan. Rekursiivinen metodi kutsuu itseään. 
+Toinen mahdollisuus on käyttää rekursiivista metodia kertoman laskentaan. Rekursiivinen metodi kutsuu itseään.
 ```java
 int kertoma(int n) {
     if (n == 1) return 1;
@@ -373,7 +373,7 @@ Tässä tapauksessa metodia kutsutaan näin:
 ```java
 System.out.println("Luvun " + luku + " kertoma on " + kertoma(luku));
 ```
-Toiminta selviää parhaiten joko kynän ja paperin avulla tai vielä helpommin debuggaamalla koodia. Rekursiivisissa -metodeissa on erittäin tärkeää, että rekursio (itsensä kutsuminen) päättyy joskus. Rekursiivisia algoritmeja voidaan käyttää vaikka puumaisten rakenteiden läpikäynnissä. Puusta puhuttaessa, tutkitaan miten kuusen tulostaminen voidaan tehdä rekursion avulla. Seuraava koodiesimerkki tulostaa merkkigrafiikalla konsolille kuusen, kun annetaan kuusen korkeus. 
+Toiminta selviää parhaiten joko kynän ja paperin avulla tai vielä helpommin debuggaamalla koodia. Rekursiivisissa -metodeissa on erittäin tärkeää, että rekursio (itsensä kutsuminen) päättyy joskus. Rekursiivisia algoritmeja voidaan käyttää vaikka puumaisten rakenteiden läpikäynnissä. Puusta puhuttaessa, tutkitaan miten kuusen tulostaminen voidaan tehdä rekursion avulla. Seuraava koodiesimerkki tulostaa merkkigrafiikalla konsolille kuusen, kun annetaan kuusen korkeus.
 
 ```java
 // kuusi tulostetaan kutsulla
@@ -387,7 +387,7 @@ public static void tulostaKuusi(int korkeus, PrintStream output) {
 }
 
 public static String kuusi(int oksa, int korkeus) {
-    return oksa < korkeus ? " ".repeat(korkeus - oksa) + "/".repeat(oksa) + "\\".repeat(oksa) + "\n" + kuusi(oksa + 1, korkeus) 
+    return oksa < korkeus ? " ".repeat(korkeus - oksa) + "/".repeat(oksa) + "\\".repeat(oksa) + "\n" + kuusi(oksa + 1, korkeus)
         : (" ".repeat(korkeus - 1) + "||");
 }
 ```
@@ -401,9 +401,9 @@ public static int laskeTiedostot(String hakemisto) throws IOException {
     var fl = Files.list(Paths.get(hakemisto)).toList();
     for (Path polku : fl) {
         if (Files.isDirectory(polku)) {
-                laskuri += laskeTiedostot(polku.toString());   
+                laskuri += laskeTiedostot(polku.toString());
         }
-        else{ 
+        else {
             laskuri++;
         }
     }

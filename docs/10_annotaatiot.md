@@ -1,5 +1,5 @@
 ---
-title: Annotaatiot
+title: 🔧 Annotaatiot
 layout: default
 nav_order: 10
 permalink: /annotaatiot/

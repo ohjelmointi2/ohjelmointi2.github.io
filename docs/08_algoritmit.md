@@ -1,5 +1,5 @@
 ---
-title: Tietorakenteet & algoritmit
+title: 🫧 Tietorakenteet & algoritmit
 layout: default
 nav_order: 8
 permalink: /algoritmit/
@@ -115,7 +115,7 @@ String postinumerot = """
 // miten etsin nimen postinumerolle 97390?! 😢
 ```
 
-Sen sijaan datan esittäminen `Map`-tietorakenteen avulla tekee siitä helpommin käsitteltävää:
+Sen sijaan datan esittäminen `Map`-tietorakenteen avulla tekee siitä helpommin käsiteltävää:
 
 ```java
 Map<String, String> postinumerot = Map.of(

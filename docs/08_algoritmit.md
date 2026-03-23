@@ -275,7 +275,7 @@ Lajittelualgoritmit ovat erinomainen tapa harjoitella algoritmien toteuttamista.
 
 ## Kyselyt
 
-Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, vaan joudut perehtymään kysymyksissä esiintyviin termehin ja väitteisiin hyödyntäen muita lähteitä.
+Seuraavien kyselyiden vastaukset eivät löydy suoraan kurssin materiaaleista, vaan joudut perehtymään kysymyksissä esiintyviin termeihin ja väitteisiin hyödyntäen muita lähteitä.
 
 ```quiz
 ---
@@ -352,7 +352,7 @@ shuffleAnswers: false
 > Rekursio on matemaattinen keino määritellä funktioita niin, että funktion arvo tietyssä pisteessä riippuu funktion arvosta edellisessä pisteessä. 
 > Myös tietotekniikassa käytetään rekursiivisia ohjelmarutiineja. [Wikipedia](https://fi.wikipedia.org/wiki/Rekursio)
 
-Kertoma on hyvin tyypillinen esimerkki tilanteesta missä voi soveltaa rekursiota tai rekursiivista algoritmia. Kertoma on tuttu koulun matematiikan tunnilta, mutta kertauksen vuoksi todettakoon että esimerksi viiden kertoma (5!) on 1 * 2 * 3 * 4 * 5 = 120.
+Kertoma on hyvin tyypillinen esimerkki tilanteesta missä voi soveltaa rekursiota tai rekursiivista algoritmia. Kertoma on tuttu koulun matematiikan tunnilta, mutta kertauksen vuoksi todettakoon että esimerkiksi viiden kertoma (5!) on 1 * 2 * 3 * 4 * 5 = 120.
 Kertoma on laskettavissa toistorakenteen avulla:
 ```java
 int tulos = 1;
@@ -373,7 +373,7 @@ Tässä tapauksessa metodia kutsutaan näin:
 ```java
 System.out.println("Luvun " + luku + " kertoma on " + kertoma(luku));
 ```
-Toiminta selviää parhaiten joko kynän ja paperin avulla tai vielä helpommin debuggaamalla koodia. Rekursiivisissa -metodeissa on erittäin tärkeää, että rekursio (itsensä kutsuminen) päättyy joskus. Rekursiivisia algoritmeja voidaan käyttää vaikka puumaisten rekenteiden läpikäynnissä. Puusta puhuttaessa, tutkitaan miten kuusen tulostaminen voidaan tehdä rekursion avulla. Seuraava koodiesimerkki tulostaa merkkigrafiikalla konsolille kuusen, kun annetaan kuusen korkeus. 
+Toiminta selviää parhaiten joko kynän ja paperin avulla tai vielä helpommin debuggaamalla koodia. Rekursiivisissa -metodeissa on erittäin tärkeää, että rekursio (itsensä kutsuminen) päättyy joskus. Rekursiivisia algoritmeja voidaan käyttää vaikka puumaisten rakenteiden läpikäynnissä. Puusta puhuttaessa, tutkitaan miten kuusen tulostaminen voidaan tehdä rekursion avulla. Seuraava koodiesimerkki tulostaa merkkigrafiikalla konsolille kuusen, kun annetaan kuusen korkeus. 
 
 ```java
 // kuusi tulostetaan kutsulla

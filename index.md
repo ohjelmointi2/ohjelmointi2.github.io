@@ -10,7 +10,7 @@ nav_order: 0
 Tervetuloa kurssille Ohjelmointi 2, SOF001AS3A!
 {: .fs-6 }
 
-Tällä kurssilla syvennämme ohjelmointiosaamistamme ja sovellamme aiemmin oppimianne ohjelmointitaitoja mm. tietokantojen parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen, automaatiotyökaluihin sekä versionhallintaan.
+Tällä kurssilla syvennämme ohjelmointiosaamistamme ja sovellamme aiemmin oppimiamme ohjelmointitaitoja mm. tietokantojen parissa. Syvennymme kielen syntaksin ja tarvittavien kirjastojen lisäksi myös yksikkötestaukseen, automaatiotyökaluihin sekä versionhallintaan.
 {: .fs-6 }
 
 
@@ -154,6 +154,6 @@ Sivuston sivupohjana käytetään [Just the Docs](https://github.com/just-the-do
 
 Tämän oppimateriaalin on kehittänyt Teemu Havulinna, Heikki Raatikainen ja Jukka Juslin. Materiaali on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä.
 
-Materiaalin kehittämisessä on käytetty hyväksi myös muiden tekijöiden materiaaleja, jotka on mainittu erikseen. Lisäksi kehityksessä on hyödynnetty tekoälytyötyökaluja, kuten ChatGPT:tä ja GitHub Copilotia.
+Materiaalin kehittämisessä on käytetty hyväksi myös muiden tekijöiden materiaaleja, jotka on mainittu erikseen. Lisäksi kehityksessä on hyödynnetty tekoälytyökaluja, kuten ChatGPT:tä ja GitHub Copilotia.
 
 Sivuston lähdekoodit löydät osoitteesta [https://github.com/ohjelmointi2/ohjelmointi2.github.io](https://github.com/ohjelmointi2/ohjelmointi2.github.io).

@@ -29,7 +29,7 @@ Ohjelmistotestauksen käsitteistöön kuuluu oleellisena osana eri testausmenete
 
 Tällä viikolla perehdymme tarkemmin yksikkötestaukseen ja Javan [JUnit-kirjastoon](https://junit.org/junit5/), joka on vakiintunut ratkaisu yksikkötestien toteuttamiseksi Javalla. JUnit integroituu moniin laadunvarmistusjärjestelmiin ja sovelluskehittimiin, minkä vuoksi samat testit voidaan suorittaa automatisoidusti niin kehittäjän omalla koneella kuin erillisessä testausympäristössä. Myös VS Codessa ja Eclipsessä on erittäin hyvät työkalut JUnit-testien kirjoittamiseksi ja suorittamiseksi. Lisäksi tutustumme koodin laatuun vaikuttaviin tekijöihin ja sovellamme niitä annetun valmiin koodin parantamiseksi.
 
-Missä tahansa Java-projektissa voi olla yksikkötestajä. On kuitenkin luontevinta käyttää jotain projektityökalua, joka jo valmiiksi tukee testaamista. Esimerkiksi Maven ja Gradle-projektit sisältävät valmiiksi JUnit-kirjaston ja testihakemiston ja -luokan. 
+Missä tahansa Java-projektissa voi olla yksikkötestejä. On kuitenkin luontevinta käyttää jotain projektityökalua, joka jo valmiiksi tukee testaamista. Esimerkiksi Maven ja Gradle-projektit sisältävät valmiiksi JUnit-kirjaston ja testihakemiston ja -luokan. 
 
 
 ## Yksikkötestaus
@@ -48,7 +48,7 @@ Testit voidaan ajaa VS Codessa ja Eclipsessä yksi kerrallaan vain vaikka kaikki
 Testeillä testataan koodin toimintaa ja yksi testimetodi testaa yhtä asiaa pelkästään. Siksi testimetodeja tulee yleensä useita per luokka/metodi.
 
 ## Nimeämiskäytännöt
-Testimetodeja tulee yleensä paljon, siksi on erittäin tärkeään käyttää yhtenäistä ja kuvaavaa nimeämiskäytäntöä. Testin nimestä pitäisi pystyä päättelemään mitä toimintoa testataan, mitä tilannetta ja mikä on oletettu lopputulos. Esimerkkejä nimeämiskäytännöstä löytyy paljon, tiivis kuvaus löytyy esimerkiksi [täältä](https://www.baeldung.com/java-unit-testing-best-practices).
+Testimetodeja tulee yleensä paljon, siksi on erittäin tärkeää käyttää yhtenäistä ja kuvaavaa nimeämiskäytäntöä. Testin nimestä pitäisi pystyä päättelemään mitä toimintoa testataan, mitä tilannetta ja mikä on oletettu lopputulos. Esimerkkejä nimeämiskäytännöstä löytyy paljon, tiivis kuvaus löytyy esimerkiksi [täältä](https://www.baeldung.com/java-unit-testing-best-practices).
  
 
 ```quiz
@@ -72,14 +72,14 @@ Testiluokan luominen ja suorittaminen sekä käsitteet **testiluokka**, **annota
 
 Luokan metodien testaaminen erillisen testiluokan ja JUnit-kirjaston avulla.
 
-Seuraava esimerkki esittelee lyhyesti yksikkötestaamista ja lisäksi TDD-menetelmää (Test- Driven Development),  jossa tehdään ensi testit ja sitten vasta toteutetaan luokat ja metodit.
+Seuraava esimerkki esittelee lyhyesti yksikkötestaamista ja lisäksi TDD-menetelmää (Test-Driven Development), jossa tehdään ensin testit ja sitten vasta toteutetaan luokat ja metodit.
 
 1. tee uusi Gradle-projekti
 2. tee build
 3. tee testiluokka ja siihen yksi testimetodi 
 4. tee testattava luokka ja toteuta niin, että ensimmäinen testi menee läpi
 5. tee seuraava testi ja koodaa niin että testi menee läpi
-6. palaa takaisin kohtaa 5 ja toista kunnes kaikki mahdolliset testitapaukset on katettu
+6. palaa takaisin kohtaan 5 ja toista kunnes kaikki mahdolliset testitapaukset on katettu
 
 
 

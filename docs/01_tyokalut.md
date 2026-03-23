@@ -46,7 +46,7 @@ Kurssilla tuetaan virallisesti viimeisintä [LTS-versiota (long-term support)](h
 >
 > [https://git-scm.com/](https://git-scm.com/)
 
-Kurssin tehävien ja esimerkkien yhteydessä hyödynnämme Git-versionhallintaa ja GitHub-palvelua. Gitin käytön opetteluun voit käyttää esimerkiksi Haaga-Helian tietojenkäsittelyn opiskelijoiden kollektiivisesti kirjoittamaa [Git 101 -opasta](https://github.com/mruonavaara/git101) tai Helsingin yliopiston "Tietokone Työvälineenä" -kurssin [Git-materiaalia](https://tkt-lapio.github.io/git/).
+Kurssin tehtävien ja esimerkkien yhteydessä hyödynnämme Git-versionhallintaa ja GitHub-palvelua. Gitin käytön opetteluun voit käyttää esimerkiksi Haaga-Helian tietojenkäsittelyn opiskelijoiden kollektiivisesti kirjoittamaa [Git 101 -opasta](https://github.com/mruonavaara/git101) tai Helsingin yliopiston "Tietokone Työvälineenä" -kurssin [Git-materiaalia](https://tkt-lapio.github.io/git/).
 
 Gitin voit asentaa itsellesi osoitteesta [https://git-scm.com/](https://git-scm.com/). Vaikka Git tuntuisi aluksi vaikealta tai ahdistavalta, sinun ei tarvitse opetella kaikkea kerralla, vaan tee vain sen verran mistä on sinulle välitöntä hyötyä. Lisäksi tarvitset GitHub-käyttäjätunnuksen, jotka voit luoda osoitteessa [https://github.com/](https://github.com/).
 
@@ -60,7 +60,7 @@ Gitin voit asentaa itsellesi osoitteesta [https://git-scm.com/](https://git-scm.
 
 ## Gradle ja Maven
 
-[Gradle](https://gradle.org/) ja [Maven](https://maven.apache.org/) ovat suosittuja "build automation"-työkalu, jotka helpottavat projektien sekä niiden riippuvuuksien hallintaa. Automaatiotyökalu mahdollistaa mm. koodin kääntämisen, riippuvuuksien asentamisen, testien suorittamisen ja sovelluksen paketoinnin yhdellä komennolla.
+[Gradle](https://gradle.org/) ja [Maven](https://maven.apache.org/) ovat suosittuja "build automation"-työkaluja, jotka helpottavat projektien sekä niiden riippuvuuksien hallintaa. Automaatiotyökalu mahdollistaa mm. koodin kääntämisen, riippuvuuksien asentamisen, testien suorittamisen ja sovelluksen paketoinnin yhdellä komennolla.
 
 Hyödynnämme kurssilla näitä työkaluja tarpeen mukaan, mutta emme varsinaisesti perehdy niiden teoriaan. Mikäli haluat tutustua Gradleen tarkemmin, suosittelemme katsomaan videon [Gradle tutorial for complete beginners](https://youtu.be/-dtcEMLNmn0) tai lukemaan artikkelin [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 

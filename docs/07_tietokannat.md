@@ -140,7 +140,7 @@ private static final String JDBC_URL = "jdbc:sqlite:C:\\sqlite\\shoppingList.sql
 
 MySQL-tietokantaan yhdistettäisiin vastaavasti esim. osoitteella `"jdbc:mysql://127.0.0.1:3306/shoppinglist"`. Tällöin sinun tulee myös [lisätä projektiisi MySQL-ajuri](https://www.mysql.com/products/connector/), aivan kuten lisäsimme aikaisemmin SQLite-ajurin.
 
-Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten tyypillisesti sovellus lukee ,yhteysosoitteen joko ympäristömuuttujasta tai konfiguraatiotiedostosta. Esimerkki ympäristömuuttujan käytöstä Java-koodissa:
+Kovakoodatut arvot, kuten yllä oleva yhteysosoite, eivät edusta hyvää ohjelmointityyliä, joten tyypillisesti sovellus lukee yhteysosoitteen joko ympäristömuuttujasta tai konfiguraatiotiedostosta. Esimerkki ympäristömuuttujan käytöstä Java-koodissa:
 
 ```java
 // luetaan asetus käyttöjärjestelmän ympäristömuuttujasta
@@ -299,7 +299,7 @@ Rakenne on syntaktisesti hieman muita tuntemiamme rakenteita hankalampi hahmotta
 
 [https://jenkov.com/tutorials/jdbc/index.html](https://jenkov.com/tutorials/jdbc/index.html)
 
-Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodirivi `Class.forName("org.h2.Driver");`. Ajurin lataus manuualisesti ei nykyään enää ole tarpeellista, jos ajurista on tarpeeksi uusi versio, mutta vastaava rivi SQLite-tietokannan ajurin lataamiseksi on:
+Jenkov.com:in tutoriaalissa H2-tietokannan ajuri ladataan kirjoittamalla koodirivi `Class.forName("org.h2.Driver");`. Ajurin lataus manuaalisesti ei nykyään enää ole tarpeellista, jos ajurista on tarpeeksi uusi versio, mutta vastaava rivi SQLite-tietokannan ajurin lataamiseksi on:
 
 ```java
 Class.forName("org.sqlite.JDBC");
@@ -586,4 +586,4 @@ Jenkov.com:in tutoriaalin lisäksi myös Oraclella on [kattava oppimateriaali](h
 
 Hyviä ohjeita löytyy myös YouTubesta sekä Googlettamalla tarkemmin yksittäisiä JDBC-aiheita.
 
-**HUOM!** Varsinainen tehtävä on CitHub Classroom:ssa kuten muutkin tämän kurssin tehtävät. 
+**HUOM!** Varsinainen tehtävä on GitHub Classroom:ssa kuten muutkin tämän kurssin tehtävät.

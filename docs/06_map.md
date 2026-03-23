@@ -9,7 +9,7 @@ permalink: /map/
 # Map-tietorakenne
 {: .no_toc }
 
-Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai taulukoita (`String[]`), kun olemme halunneet käsitellä useita saman typpisiä asioita. Javassa on myös lukuisia muita **kokoelmia**, joihin voimme koota dataa. Kokoelma tarkoittaa yksinkertaisesti oliota, joka kokoaa alkioita yhteen ([Oracle.com](https://docs.oracle.com/javase/tutorial/collections/intro/index.html)).
+Olemme ohjelmointi 1:ssä käyttäneet listoja (`ArrayList<String>`) tai taulukoita (`String[]`), kun olemme halunneet käsitellä useita samantyyppisiä asioita. Javassa on myös lukuisia muita **kokoelmia**, joihin voimme koota dataa. Kokoelma tarkoittaa yksinkertaisesti oliota, joka kokoaa alkioita yhteen ([Oracle.com](https://docs.oracle.com/javase/tutorial/collections/intro/index.html)).
 {: .fs-6 }
 
 ---
@@ -61,7 +61,7 @@ System.out.println(postinumerot.get("00710")); // tulostaa "Helsinki"
 
 ```
 
-Yllä esitetty koodi muodostaa kutakuinkin seuraavan laisen tietorakenteen, jossa jokainen avain viittaa sille asetettuun arvoon:
+Yllä esitetty koodi muodostaa kutakuinkin seuraavanlaisen tietorakenteen, jossa jokainen avain viittaa sille asetettuun arvoon:
 
 Avain   | Arvo
 --------|-----------
@@ -334,7 +334,7 @@ for (Entry<String, Integer> pari : parit) {
 }
 ```
 
-Jokaisella `Entry`-oliolla on siis sisässään yksi avain ja yksi arvo, jotka saadaan yllä olevan esimerkin mukaisesti pyydettyä `getKey()`- ja `ketValue()`-metodeilla.
+Jokaisella `Entry`-oliolla on siis sisässään yksi avain ja yksi arvo, jotka saadaan yllä olevan esimerkin mukaisesti pyydettyä `getKey()`- ja `getValue()`-metodeilla.
 
 Entry-olioiden käyttäminen muuttujissa edellyttää luokan alkuun seuraavan import-rivin:
 

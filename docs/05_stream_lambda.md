@@ -236,7 +236,7 @@ Jos sama tehdään streamin avulla, päästään paljon vähemmillä koodiriveil
 ```java
 long lkm = products.stream().filter(p -> p.type().equals("Computer")).count();
 ```
-Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stram suodatetaan eli poimitaan sieltä filter()-metodin avulla osan tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi olla monimutkainen, kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
+Esimerkissä stream() palauttaa 'oliovirran', jonka avulla käydään jokainen tuote läpi. Tämä stream suodatetaan eli poimitaan sieltä filter()-metodin avulla osa tuotteista ja näistä valituista tulee uusi stream, jonka alkioiden lukumäärä lasketaan count()-metodilla. Metodille filter() annetaan suodatusehto lambda-lausekkeella. Suodatusehto voi olla monimutkainen, kunhan lambda-lauseke palauttaa boolean-arvon (true == otetaan mukaan, false == ei oteta mukaan). Filter-metodeja voi laittaa peräkkäin useita tai sitten yhdistää ehtoja samaan lambda-lauseeseen.
 
 ```java
 // metodit voidaan kirjoittaa omille riveille selvyyden vuoksi
@@ -260,7 +260,7 @@ public interface Predicate<T> {
 Onneksi näitä rajapintoja ei tarvitse jatkuvasti aktiivisesti muistaa, lambda-lausekkeiden käyttö on sen verran luontevaa, että niiden kirjoittamiseen tulee helposti automaatio, kunhan näitä käyttää riittävän kauan ja usein.
 Streamia käsitellään seuraavan tyyppisillä toiminnoilla:
 
-**Intermediate** streamin läpikäynti jatkuu metodi jälkeen
+**Intermediate** streamin läpikäynti jatkuu metodin jälkeen
 - filter()   
 - map()  
 - peek()
@@ -396,7 +396,7 @@ System.out.println("Kvartaali: " + kvartaali);
 
 - [x] Nimetön metodi.
     > Juurikin näin, vain parametrit ja metodin koodi ovat olemassa
-- [x] Tiivis esitysmuoto metodille, jota tyypillisesti käytetään stram:ien yhdeydessä.
+- [x] Tiivis esitysmuoto metodille, jota tyypillisesti käytetään streamien yhteydessä.
     > Kaikki ylimääräinen tarpeeton poistettu syntaksista
 - [ ] Matemaattinen operaatio.
     > Lambda ei ole matematiikkaa Java-kielessä

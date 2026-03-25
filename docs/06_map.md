@@ -229,7 +229,7 @@ int teppo = pistelaskuri.get("Teppo"); // null-arvoa ei voida asettaa int-muuttu
 
 ### Usean arvon tallentaminen samalle avaimelle
 
-Map:issa voidaan säilyttää vain yhtä arvoa kutakin avainta kohden. Säilytettävät arvot voivat kuitenkin olla muita kokoelmia. Map:issa voidaan siis säilyttää samalla avaimella useita arvoja, kun käsittelemmä Mapin sisällä listoja tai muita kokoelmia.
+Map:issa voidaan säilyttää vain yhtä arvoa kutakin avainta kohden. Säilytettävät arvot voivat kuitenkin olla muita kokoelmia. Map:issa voidaan siis säilyttää samalla avaimella useita arvoja, kun käsittelemme Mapin sisällä listoja tai muita kokoelmia.
 
 Tässä esimerkissä säilytämme map-tietorakenteessa listoja, joista kukin sisältää tiettyyn maahan kuuluvien kaupunkien nimiä:
 
@@ -271,7 +271,7 @@ Mapin sisältö voidaan käydä helposti läpi joko avainten, arvojen tai avain-
 
 #### Avaimet
 
-Jos haluamme käsitellä mapin arvoja, ne voidaan pyytää mapin `keySet`-metodilla:
+Jos haluamme käsitellä mapin avaimia, ne voidaan pyytää mapin `keySet`-metodilla:
 
 ```java
 Set<String> avaimet = data.keySet();

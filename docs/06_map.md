@@ -271,7 +271,7 @@ Mapin sisältö voidaan käydä helposti läpi joko avainten, arvojen tai avain-
 
 #### Avaimet
 
-Jos haluamme käsitellä mapin arvoja, ne voidaan pyytää mapin `keySet`-metodilla:
+Jos haluamme käsitellä mapin avaimia, ne voidaan pyytää mapin `keySet`-metodilla:
 
 ```java
 Set<String> avaimet = data.keySet();

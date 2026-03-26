@@ -168,7 +168,7 @@ public class Opettaja extends Henkilo {
     }
 }
 ```
-Sekä opettaja että opiskelija sisältävät nimen ja sähköpostiosoitteen. Näiden lisäksi molemmilla aliluokilla on jotain omina ominaisuuksia. Koska molemmilla on sama yliluokka, voidaan niitä käsitellä täysin samalla tavalla. Tehdään vaikka pieni koodipätkä, jolla tehdään lista opettajista ja oppilaista, jotka osallistuvat ohjattuun taukojumppaan. 
+Sekä opettaja että opiskelija sisältävät nimen ja sähköpostiosoitteen. Näiden lisäksi molemmilla aliluokilla on jotain omia ominaisuuksia. Koska molemmilla on sama yliluokka, voidaan niitä käsitellä täysin samalla tavalla. Tehdään vaikka pieni koodipätkä, jolla tehdään lista opettajista ja oppilaista, jotka osallistuvat ohjattuun taukojumppaan. 
 ```java
 List<Henkilo> osallistujat = new ArrayList<>();
 osallistujat.add(new Opettaja("Teemu", "Terävä", "tt@hotmail.com", "h1234"));
@@ -184,7 +184,7 @@ for (Henkilo h : osallistujat) {
 Aikaisemmin `toString`()-metodiin liitetty `@Override`-annotaatio ei ole (aivan) pakollinen, mutta sitä kannattaa käyttää. Sen avulla kääntäjä voi tarkistaa että kantaluokassa on varmasti olemassa ylikirjoitettava metodi, kääntäjä voi tehdä optimointia sekä dokumentoidaan koodin ylläpitäjälle ylikirjoituksesta. Muutoin koodia luettaessa ei pysty päättelemään pelkästä metodista, onko kyseessä ylikirjoitus vai ei.
 &nbsp; 
 
-Jossain tilanteissa pitää pystyä selvittämään suorituksen aikana muuttujan tyyppi. Tähän voi käyttää Java-kielessä `instanceof` -operaattoria.
+Joissakin tilanteissa pitää pystyä selvittämään suorituksen aikana muuttujan tyyppi. Tähän voi käyttää Java-kielessä `instanceof` -operaattoria.
 ```java
 if (hlo instanceof Opettaja) {
     // hlo-muuttuja on Opettaja-luokan instanssi

@@ -44,7 +44,7 @@ Mikäli olisimme kehittämässä esimerkiksi verkkokauppaa ja siihen liittyvää
 
 ## Testit
 Testi on jossain luokassa oleva metodi, joka määritellään testiksi `@Test`-annotaatiolla. Yleensä kuitenkin on käytössä Maven- tai Gradle-projekti, joissa testit ovat omassa hakemistorakenteessaan, näin saadaan helpommin ylläpidettävä projekti. 
-Testit voidaan ajaa VS Codessa ja Eclipsessä yksi kerrallaan vain vaikka kaikki yhdellä komennolla. Jos testi menee läpi, näkyy se testityökalussa vihreänä, muutoin punaisena. Lisäksi testit voidaan ajaa ilman IDE:ä komentoriviltä käsin jolloin saadaan enemmän automaatiota.
+Testit voidaan ajaa VS Codessa ja Eclipsessä yksi kerrallaan tai vaikka kaikki yhdellä komennolla. Jos testi menee läpi, näkyy se testityökalussa vihreänä, muutoin punaisena. Lisäksi testit voidaan ajaa ilman IDE:ä komentoriviltä käsin jolloin saadaan enemmän automaatiota.
 Testeillä testataan koodin toimintaa ja yksi testimetodi testaa yhtä asiaa pelkästään. Siksi testimetodeja tulee yleensä useita per luokka/metodi.
 
 ## Nimeämiskäytännöt
@@ -112,3 +112,4 @@ Seuraava esimerkki esittelee lyhyesti yksikkötestaamista ja lisäksi TDD-menete
 
 
 {% include quiz.html %}
+````

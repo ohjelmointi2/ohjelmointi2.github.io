@@ -186,11 +186,11 @@ Funktiomuuttuja nimenTulostusMetodi sisältää nyt osoitteen metodiin, jolla tu
 nimet.stream().forEach( n -> System.out.println("Nimi: " + n));
 ```
 
-Vielä muutaman huomio lambda-lausekkeista:
+Vielä muutama huomio lambda-lausekkeista:
 - nuolimerkintä -> on pakollinen, sen perusteella kääntäjä tunnistaa lambda-lausekkeen
 - parametrilistan sulkuja ei tarvita, jos parametreja on yksi. Muutoin sulut on pakolliset.
 - parametrien tyyppejä ei tarvitse koskaan kirjoittaa.
-- jos metodin sisältää vain yhden lauseen, ei lohkosulkuja tarvita.
+- jos metodi sisältää vain yhden lauseen, ei lohkosulkuja tarvita.
 - return-lausetta ei tarvitse kirjoittaa, jos on vain yksi lause.
 - parametrin nimi voi olla pitkä ja kuvaava, yleensä käytetään lyhyttä yhden kirjaimen parametria koska pitkästä nimestä ei tule mitään lisäarvoa.
 
@@ -301,7 +301,7 @@ long lkm = products
 System.out.println("Tuotteita " + lkm + " kpl");
 ```
 
-**`map()`**-metodi on eri asia kuin `Map`-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisätään muunnettu olion uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos `Product` ==> `String`) tai hinta lisättynä veron osuudella (`Product` ==> `double`, joka vielä pitää muuttaa `Double`:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
+**`map()`**-metodi on eri asia kuin `Map`-tietorakenne, sen avulla muunnetaan streamissa oleva olio johonkin toiseen muotoon ja lisätään muunnettu olio uuteen oliovirtaan. Esimerkiksi poimitaan tuotteesta nimi (muunnos `Product` ==> `String`) tai hinta lisättynä veron osuudella (`Product` ==> `double`, joka vielä pitää muuttaa `Double`:ksi). Muunnettuun oliovirtaan voidaan taas edelleen tehdä operaatioita.
 Esimerkkinä olkoon aluksi tarve saada lista tuotteiden nimistä.  
 
 ```java

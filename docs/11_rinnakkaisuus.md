@@ -204,7 +204,7 @@ public int nextID() {
 
 `ReentrantLock`-oliolle voidaan konstruktorin parametrilla määrittää miten säikeet pääsevät eteenpäin, `true` päästää pitkään lukkoa odottaneet säikeet 'reilummin' suoritukseen kuin `false`-arvolla. Parametrin nimi onkin `fair`.
 
-Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös jossain määrin rajalliset ja jos säikeen `run()`-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttämällä `Executor`-luokkaa hyväksi.  
+Säikeet ovat perusrakenne rinnakkaisuuden toteutuksessa. Valitettavasti ominaisuudet ovat myös jossain määrin rajallisia ja jos säikeen `run()`-metodille pitäisi välittää parametreja tai sen pitäisi palauttaa arvo, loppuu ominaisuudet kesken. Onneksi on myös edistyneempiä tapoja tehdä rinnakkaisuutta käyttämällä `Executor`-luokkaa hyväksi.  
 
 Tutustu esimerkkikoodiin, jossa on käytetty `ExecutorService`:ä ja `Future`-luokkaa:
 

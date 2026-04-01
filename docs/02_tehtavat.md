@@ -34,7 +34,7 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 
 4. Avaa terminaali, Git Bash tai Git-työkalu tietokoneellasi.
 
-5. Siirry hakemistoon, johon haluat tallentaa tehtäväsi.
+5. Siirry hakemistoon, johon haluat tallentaa tehtäväsi. **Huom:** Tämän hakemisto pitää olla oman koneen paikallisella levyllä, älä kloonaa OneDriveen tai muuhun pilvipalvelujakoon, viimeisimmän versiot löytyvät aina GitHubista joten OneDriven käytöstä ei saa mitään hyötyä, mutta voi aiheuttaa käännösohgelmia.
 
 6. Käytä seuraavaa komentoa repositorion kloonaamiseen (korvaa `<repository_url>` tehtävän repositorion URL-osoitteella):
 

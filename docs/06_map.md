@@ -196,11 +196,11 @@ countries.put("Suomi", "Finland");
 countries.put("Ruotsi", "Sweden");
 countries.put("Norja", "Norway");
 
-countries.containsKey("Ruotsi"); // true
+boolean avainOlemassa = countries.containsKey("Ruotsi"); // true
 
 countries.remove("Ruotsi");
 
-countries.containsKey("Ruotsi"); // false
+avainOlemassa = countries.containsKey("Ruotsi"); // false
 ```
 
 ### `Null`-viittaukset

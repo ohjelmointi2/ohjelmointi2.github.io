@@ -273,9 +273,9 @@ Rajapinta voi sisältää:
 Abstrakti metodi on juuri se mitä aikaisemmin materiaalissa on käyty läpi. 
 Oletusmetodi on metodi, jolla on oletustoteutus rajapinnassa. Jos luokka ei toteuta oletusmetodia, käytetään silloin rajapinnassa olevaan koodia.
 Rajapinnassa olevat muuttujat (kentät) ovat vakioita ja vastaavasti static-metodeja voi kutsua kuten luokan static-metodia.
-Näista muut ovat aika harvinaisia, paitsi aluksi esitelty abstrakti metodi. Abstraktilla metodilla ei ole toteutusta vaan pelkkä otsikko ja rajapinnan toteuttava luokka sisältää metodin toteutuksen eli koodin.
+Näista muut ovat aika harvinaisia, paitsi aluksi esitelty abstrakti metodi. Abstraktilla metodilla ei ole toteutusta vaan pelkkä otsikko ja rajapinnan toteuttava luokka sisältää metodin toteutuksen eli koodin. Tarkennus vielä että kaikki rajapinnan metodit ovat Javassa automaattisesti abstrakteja, ei tarvitse käyttää varattua sanaa abstract, eikä muutenkaan puheessa korosteta asiaa kun puhutaan rajapinnoista ja niiden metodeista.
 
-**Esimerkki rajapinnan toiminnoista**
+### Esimerkki rajapinnan toiminnoista
 
 ```java
 public interface DemoRajapinta {

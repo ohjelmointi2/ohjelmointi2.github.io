@@ -275,7 +275,8 @@ Oletusmetodi on metodi, jolla on oletustoteutus rajapinnassa. Jos luokka ei tote
 Rajapinnassa olevat muuttujat (kentät) ovat vakioita ja vastaavasti static-metodeja voi kutsua kuten luokan static-metodia.
 Näista muut ovat aika harvinaisia, paitsi aluksi esitelty abstrakti metodi. Abstraktilla metodilla ei ole toteutusta vaan pelkkä otsikko ja rajapinnan toteuttava luokka sisältää metodin toteutuksen eli koodin.
 
-**Esimerkkirajapinta**
+**Esimerkki rajapinnan toiminnoista**
+
 ```java
 public interface DemoRajapinta {
 

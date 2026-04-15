@@ -284,7 +284,7 @@ public interface DemoRajapinta {
 
     String kuvaus(); // tämä on toteutettava!
 
-    // stattiiset kuten missä tahansa luokassa
+    // staattiset kuten missä tahansa luokassa
     static boolean onOk(String data) {
         return data != null && data.length() >= 2 && data.length() <= 5;
     }

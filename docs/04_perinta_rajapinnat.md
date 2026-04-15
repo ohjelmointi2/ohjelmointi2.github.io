@@ -267,6 +267,7 @@ for (Ajettava a : kulkuneuvot) {
 - **Suurissa ohjelmissa:** Rajapinnat irrottavat "mitä tehdään" ja "miten se tehdään" toisistaan.
 - **Testauksessa:** Voit testata luokkia rajapinnan kautta ilman että tiedät toteutuksen.
 - **Frameworkeissa:** Spring, Android, yms. käyttävät rajapintoja paljon.
+- **Kirjastoissa:** Monet kirjastot edellyttävät Frameworking käyttöä - esimerkiksi Telegram kirjasto.
 - **Yksi luokka voi toteuttaa monta rajapintaa** — toisin kuin perinnässä, jossa voi periä vain yhden luokan.
 
 ---

@@ -262,6 +262,42 @@ for (Ajettava a : kulkuneuvot) {
 
 ---
 
+## Mitä rajapinnassa voi olla?
+Tyypillisesti rajapinnassa on määritelty joukko metodeja eikä muuta. Näin olikin tilanne Javan alkuaikoina, mutta kehitys kehittyy ja rajapintoihin on tullut lisää ominaisuuksia.
+Rajapinta voi sisältää:
+- vakiomuuttujia (constant variables)
+- abstrakteja metodeja (abstract methods)
+- static-metodeja (static methods)
+- oletusmetodeja (default methods)
+
+Abstrakti metodi on juuri se mitä aikaisemmin materiaalissa on käyty läpi. 
+Oletusmetodi on metodi, jolla on oletustoteutus rajapinnassa. Jos luokka ei toteuta oletusmetodia, käytetään silloin rajapinnassa olevaan koodia.
+Rajapinnassa olevat muuttujat (kentät) ovat vakioita ja vastaavasti static-metodeja voi kutsua kuten luokan static-metodia.
+Näista muut ovat aika harvinaisia, paitsi aluksi esitelty abstrakti metodi. Abstraktilla metodilla ei ole toteutusta vaan pelkkä otsikko ja rajapinnan toteuttava luokka sisältää metodin toteutuksen eli koodin.
+
+**Esimerkkirajapinta**
+```java
+public interface DemoRajapinta {
+
+    int MAXKOKO = 1024; // vakio
+
+    String kuvaus(); // tämä on toteutettava!
+
+    // stattiiset kuten missä tahansa luokassa
+    static boolean onOk(String data) {
+        return data != null && data.length() >= 2 && data.length() <= 5;
+    }
+
+    // tätä ei ole pakko toteuttaa implementoivassa luokassa
+    default void tulostaTiedot() {
+        System.out.println("Oletustoteutus");
+    }
+}
+
+``` 
+
+
+
 ### ❓ Miksi rajapintoja tarvitaan?
 
 - **Suurissa ohjelmissa:** Rajapinnat irrottavat "mitä tehdään" ja "miten se tehdään" toisistaan.

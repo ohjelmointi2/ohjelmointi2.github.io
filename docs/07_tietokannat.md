@@ -9,7 +9,7 @@ permalink: /tietokannat/
 # Tietokantaohjelmointi
 {: .no_toc }
 
-Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement. 
+Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjelmasta käsin ja tekemään yksinkertaisia CRUD-toimenpiteitä (Create, Read, Update & Delete). Tutustumme mm. käsitteisiin JDBC ja PreparedStatement.
 {: .fs-6 }
 
 ---
@@ -23,7 +23,7 @@ Tällä viikolla opettelemme ensin muodostamaan yhteyden tietokantaan Java-ohjel
 ## JDBC – Java Database Connectivity
 
 Javan standardikirjastoon määritelty JDBC (Java Database Connectivity) -ohjelmointirajapinta mahdollistaa Java-sovellusten yhdistämisen eri tyyppisiin SQL-tietokantoihin ja erilaisten kyselyiden sekä päivitysten tekemisen Java-koodista käsin.
- 
+
 ```mermaid
 flowchart TD
     A[Sovellus] -->B(JDBC API/Driver)
@@ -308,16 +308,16 @@ Class.forName("org.sqlite.JDBC");
 
 CRUD-operaatioista:
 
-- **INSERT** = luo uusi rivi (Create)  
-- **UPDATE** = päivittää olemassa olevaa riviä (Update)  
-- **DELETE** = poistaa rivin (Delete)  
+- **INSERT** = luo uusi rivi (Create)
+- **UPDATE** = päivittää olemassa olevaa riviä (Update)
+- **DELETE** = poistaa rivin (Delete)
 
 Näitä kutsutaan usein **DML-lauseiksi** (Data Manipulation Language). JDBC:ssä ne suoritetaan yleensä `PreparedStatement`-olion avulla metodilla `executeUpdate()`, joka palauttaa **päivitettyjen rivien lukumäärän**.
 
 Alla olevissa esimerkeissä käytämme taulua **Pankkitili**, jossa on:
 
-- `tilinumero` – pankkitilin numero, tyyppi `TEXT` (Javassa `String`)  
-- `saldo` – pankkitilin saldo, tyyppi `REAL` (Javassa `double`)  
+- `tilinumero` – pankkitilin numero, tyyppi `TEXT` (Javassa `String`)
+- `saldo` – pankkitilin saldo, tyyppi `REAL` (Javassa `double`)
 
 Taulu voisi esimerkiksi olla luotu seuraavasti:
 
@@ -335,11 +335,11 @@ CREATE TABLE Pankkitili (
 
 Sama periaate kuin SELECT-kyselyissä:
 
-- **Kyselyä ei rakenneta merkkijonoja yhdistelemällä**, vaan SQL-lauseessa käytetään **kysymysmerkkejä (?)** parametreille.  
-- Arvot asetetaan erikseen `setString`, `setDouble` jne. -metodeilla.  
+- **Kyselyä ei rakenneta merkkijonoja yhdistelemällä**, vaan SQL-lauseessa käytetään **kysymysmerkkejä (?)** parametreille.
+- Arvot asetetaan erikseen `setString`, `setDouble` jne. -metodeilla.
 - Tämä:
-  - estää **SQL-injektiota**,  
-  - hoitaa **tyyppimuunnokset** puolestasi,  
+  - estää **SQL-injektiota**,
+  - hoitaa **tyyppimuunnokset** puolestasi,
   - mahdollistaa tietokanta-ajurille kyselyn optimoinnin.
 
 ---
@@ -390,13 +390,13 @@ Seuraava esimerkki lisää uuden pankkitilin tietokantaan:
 
 **Teoriaa INSERT-esimerkistä**
 
-- `INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)`  
-  - SQL-lauseessa ei vielä ole arvoja, vain paikat arvoille (`?`).  
-- `lause.setString(1, uusiTilinumero)`  
-  - Asettaa **ensimmäisen** `?`-kohdan arvoksi tilinumeron (`String`). Indeksointi alkaa numerosta 1.  
-- `lause.setDouble(2, alkuSaldo)`  
-  - Asettaa **toisen** `?`-kohdan arvoksi saldon (`double`).  
-- `executeUpdate()`  
+- `INSERT INTO Pankkitili (tilinumero, saldo) VALUES (?, ?)`
+  - SQL-lauseessa ei vielä ole arvoja, vain paikat arvoille (`?`).
+- `lause.setString(1, uusiTilinumero)`
+  - Asettaa **ensimmäisen** `?`-kohdan arvoksi tilinumeron (`String`). Indeksointi alkaa numerosta 1.
+- `lause.setDouble(2, alkuSaldo)`
+  - Asettaa **toisen** `?`-kohdan arvoksi saldon (`double`).
+- `executeUpdate()`
   - Palauttaa lisättyjen rivien lukumäärän (tyypillisesti 1, jos yksi tili lisättiin).
 
 ---
@@ -447,11 +447,11 @@ Seuraava esimerkki **päivittää pankkitilin saldon** tilinumeron perusteella:
 
 **Teoriaa UPDATE-esimerkistä**
 
-- `UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?`  
-  - Päivittää **vain ne rivit**, joiden `tilinumero` vastaa toista parametria.  
+- `UPDATE Pankkitili SET saldo = ? WHERE tilinumero = ?`
+  - Päivittää **vain ne rivit**, joiden `tilinumero` vastaa toista parametria.
 - Parametrien järjestys on tärkeä:
-  - 1. `?` → `saldo` → `setDouble(1, uusiSaldo)`  
-  - 2. `?` → `tilinumero` → `setString(2, muokattavaTilinumero)`  
+  - 1. `?` → `saldo` → `setDouble(1, uusiSaldo)`
+  - 2. `?` → `tilinumero` → `setString(2, muokattavaTilinumero)`
 - Jos `paivitetytRivit` on 0, mikään rivi ei vastannut ehtoa (tilinumeroa ei löytynyt).
 
 ---
@@ -481,8 +481,8 @@ Usein halutaan **lisätä tai vähentää saldoa**, ei vain asettaa sitä kiinte
 
 Tässä:
 
-- `saldo = saldo + ?`  
-  - käyttää **nykyistä saldoa** ja lisää siihen parametrin arvon (voi olla positiivinen tai negatiivinen).  
+- `saldo = saldo + ?`
+  - käyttää **nykyistä saldoa** ja lisää siihen parametrin arvon (voi olla positiivinen tai negatiivinen).
 - Tätä mallia käytetään tyypillisesti **tilitapahtumien** kirjauksessa.
 
 ---
@@ -492,7 +492,7 @@ Tässä:
 DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. tilinumero) perusteella:
 
 {: .warning }
-> DELETE-lauseiden kanssa kannattaa olla erityisen varovainen.  
+> DELETE-lauseiden kanssa kannattaa olla erityisen varovainen.
 > Unohdettu `WHERE`-ehto poistaa **kaikki rivit** taulusta!
 
 {: .esim }
@@ -534,19 +534,19 @@ DELETE-lause poistaa rivejä taulusta. Yleensä **poistetaan avaimen** (esim. ti
 
 **Teoriaa DELETE-esimerkistä**
 
-- `DELETE FROM Pankkitili WHERE tilinumero = ?`  
-  - Poistaa vain ne rivit, joiden `tilinumero` vastaa parametria.  
-- `executeUpdate()` palauttaa poistettujen rivien lukumäärän.  
+- `DELETE FROM Pankkitili WHERE tilinumero = ?`
+  - Poistaa vain ne rivit, joiden `tilinumero` vastaa parametria.
+- `executeUpdate()` palauttaa poistettujen rivien lukumäärän.
 - Pankkisovelluksissa tietoja ei usein poisteta oikeasti, vaan käytetään esimerkiksi **"aktiivinen"/"suljettu"** -statusta. Tällöin käytetään `UPDATE`-lausetta poistamisen sijaan.
 
 ---
 
 ### Yhteenveto: INSERT / UPDATE / DELETE PreparedStatementilla
 
-- Käytä aina **`PreparedStatement`-luokkaa** myös INSERT-, UPDATE- ja DELETE-lauseissa.  
-- Kirjoita SQL-lauseeseen **?-merkit** parametreille ja aseta arvot `setXxx`-metodeilla.  
+- Käytä aina **`PreparedStatement`-luokkaa** myös INSERT-, UPDATE- ja DELETE-lauseissa.
+- Kirjoita SQL-lauseeseen **?-merkit** parametreille ja aseta arvot `setXxx`-metodeilla.
 - Kutsu **`executeUpdate()`**:
-  - palauttaa lisättyjen, päivitettyjen tai poistettujen rivien määrän.  
+  - palauttaa lisättyjen, päivitettyjen tai poistettujen rivien määrän.
 - Muista sulkea `PreparedStatement` ja `Connection` kuten sivun aiemmissa esimerkeissä on näytetty (`close()` tai try-with-resources).
 
 ---
@@ -585,5 +585,3 @@ function kopioiKoodi(id) {
 Jenkov.com:in tutoriaalin lisäksi myös Oraclella on [kattava oppimateriaali](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html) JDBC:n opetteluun: [https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html)
 
 Hyviä ohjeita löytyy myös YouTubesta sekä Googlettamalla tarkemmin yksittäisiä JDBC-aiheita.
-
-**HUOM!** Varsinainen tehtävä on GitHub Classroom:ssa kuten muutkin tämän kurssin tehtävät.

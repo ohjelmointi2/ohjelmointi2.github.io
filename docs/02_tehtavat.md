@@ -21,21 +21,32 @@ Osa opintojakson tehtävänannoista löytyy GitHub-palvelusta, kukin omana repos
 
 VS Code:lla on [omat ohjeet versionhallinnan käytöstä](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git), joita kannattaa hyödyntää näiden ohjeiden ohessa.
 
-## Vaihe 1: Tehtävän hyväksyminen
+Tehtäviä aloitettaessa sinulla tulee olla GitHub-tili ja Git-versionhallintaohjelma asennettuna koneellesi. Lisäksi sinun tulee olla kirjautuneena GitHubiin sekä selaimella että Git-työkalullasi. Käyttötavat vaihtelevat eri käyttöjärjestelmien ja Git-työkalujen välillä, joten etsi omaan käyttöösi sopivat ohjeet tarpeidesi mukaan.
 
-1. Kirjaudu sisään GitHub-tilillesi.
+Tehtävien tekemiseen tarvitset myös Java-kehitysympäristön ja VS Code:n. Tehtävien tekemiseen liittyvät ohjeet löytyvät tämän sivun lopusta.
 
-2. Avaa linkki, jonka opettajasi on antanut sinulle päästäksesi tehtävään käsiksi.
 
-3. Klikkaa "Accept" -painiketta. Tämä luo sinulle yksityisen kopion repositoriosta, jossa voit työskennellä tehtävän parissa.
+## Kurssin organisaatio
+
+Tehtävät ratkotaan kukin omassa GitHub-repositoriossaan. Repositoriot luodaan kurssin GitHub-organisaation alle, joten sinun tulee liittyä ennen tehtävien aloittamista kyseiseen organisaatioon.
+
+Ilmoita GitHub-käyttäjänimesi kurssin opettajalle oman kurssisi ohjeiden mukaisesti. Opettaja kutsuu sinut kurssin GitHub-organisaatioon, jonka jälkeen sinun tulee vielä hyväksyä kutsu GitHubissa. Kun olet hyväksynyt kutsun, pääset tekemään kurssin tehtäviä.
+
+
+## Vaihe 1: Luo oma kopio tehtävästä
+
+Jokaiselle tehtävälle löytyy oma luontilinkkinsä, jota käyttämällä saat oman henkilökohtaisen kopion tehtävästä. Luo omat repositoriosi aina käyttämällä annettuja linkkejä, älä tee kopioita itse GitHubissa. Tehtävien linkit löytyvät kurssin ohjeista.
+
+Kun olet luonut oman kopiosi tehtävästä, kopioi sen URL-osoite GitHubista. URL-osoite löytyy repositoriosi sivulta, "Code"-painikkeen alta. Valitse HTTPS-vaihtoehto ja kopioi osoite leikepöydälle.
+
 
 ## Vaihe 2: Kloonaa repositorio
 
-4. Avaa terminaali, Git Bash tai Git-työkalu tietokoneellasi.
+- Avaa terminaali, Git Bash, GitHub Desktop, VS Code:n source control tai muu Git-työkalu tietokoneellasi.
 
-5. Siirry hakemistoon, johon haluat tallentaa tehtäväsi. **Huom:** Tämän hakemisto pitää olla oman koneen paikallisella levyllä, älä kloonaa OneDriveen tai muuhun pilvipalvelujakoon, viimeisimmän versiot löytyvät aina GitHubista joten OneDriven käytöstä ei saa mitään hyötyä, mutta voi aiheuttaa käännösohgelmia.
+- Siirry hakemistoon, johon haluat tallentaa tehtäväsi. **Huom:** Tämän hakemisto pitää olla oman koneen paikallisella levyllä, älä kloonaa OneDriveen tai muuhun pilvipalvelujakoon, viimeisimmän versiot löytyvät aina GitHubista joten OneDriven käytöstä ei saa mitään hyötyä, mutta voi aiheuttaa käännösohgelmia.
 
-6. Käytä seuraavaa komentoa repositorion kloonaamiseen (korvaa `<repository_url>` tehtävän repositorion URL-osoitteella):
+- Käytä seuraavaa komentoa repositorion kloonaamiseen (korvaa `<repository_url>` tehtävän repositorion URL-osoitteella):
 
    ```bash
    git clone <repository_url>
@@ -46,37 +57,37 @@ VS Code:lla on [omat ohjeet versionhallinnan käytöstä](https://code.visualstu
 
 ## Vaihe 3: Tee muutoksia
 
-7. Avaa tehtävässä annetut tiedostot valitsemassasi IDE:ssä.
+- Avaa tehtävässä annetut tiedostot valitsemassasi IDE:ssä.
 
     * VS Code -koodieditorin Java-ohjeistus löytyy sivustolta [Java in Visual Studio Code ](https://code.visualstudio.com/docs/languages/java). Seuraa sivun ohjeita ja asenna itsellesi editorin suosittelema paketti ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack).
 
-8. Kirjoita ohjelmakoodia tehtävänannon ohjeiden mukaisesti.
+- Kirjoita ohjelmakoodia tehtävänannon ohjeiden mukaisesti. Tehtävän ohjeet löytyvät aina repositorion readme-tiedostosta, ja tarkemmat ohjeet kustakin muokattavasta Java-luokasta.
 
 
 ## Vaihe 4: Suorita testit paikallisesti
 
-9. Koodin kirjoittamisen jälkeen testaa se paikallisesti varmistaaksesi, että se toimii odotetusti. Tarkemmat ohjeet ratkaisun testaamiseksi löydät tehtävänannosta.
+- Koodin kirjoittamisen jälkeen testaa se paikallisesti varmistaaksesi, että se toimii odotetusti. Tarkemmat ohjeet ratkaisun testaamiseksi löydät kunkin tehtävän tehtävänannosta.
 
 
 ## Vaihe 5: `git status`, `git add` ja `git commit`
 
-10. Komentotulkissa, terminaalissa tai Git Bashissa siirry tehtävähakemistoon:
+- Komentotulkissa, terminaalissa tai Git Bashissa siirry tehtävähakemistoon:
 
     ```bash
     cd <tehtävä_hakemisto>
     ```
 
-11. Käytä seuraavia komentoja muutosten lisäämiseen ja commitointiin:
+- Käytä seuraavia komentoja muutosten lisäämiseen ja commitointiin:
 
     ```bash
     git status     # näyttää muuttuneet tiedostot
-    git add <muutettu tiedosto>
+    git add <tiedosto1> <tiedosto2> ...  # lisää muutokset staging-tilaan
     git commit -m "Tehtävä suoritettu"
     ```
 
 ## Vaihe 6: Päivitä muutoksesi etärepositorioon
 
-12. Päivitä tekemäsi commit etärepositorioon GitHubissa:
+- Päivitä tekemäsi commit etärepositorioon GitHubissa:
 
     ```bash
     git push
@@ -84,20 +95,19 @@ VS Code:lla on [omat ohjeet versionhallinnan käytöstä](https://code.visualstu
 
 ## Vaihe 7: Tarkastele automaattisen arvioinnin tuloksia
 
-13. Odota, että automaattinen arviointiprosessi suoritetaan GitHub actions -työkalulla.
+- Odota, että automaattinen arviointiprosessi suoritetaan GitHub actions -työkalulla.
 
-14. Tarkastele automaattisen arvioinnin tuloksia käymällä oman repositoriosi sivulla GitHubissa. Löydät automaattisten testien tuottamat tulokset ja pistemäärän "actions"-välilehden alta.
+- Tarkastele automaattisen arvioinnin tuloksia käymällä oman repositoriosi sivulla GitHubissa. Löydät automaattisten testien tuottamat tulokset ja pistemäärän "actions"-välilehden alta.
 
 
 ## Vaihe 8: Tee korjauksia (tarvittaessa)
 
-15. Mikäli automaattinen arviointi paljastaa ongelmia tai virheitä, palaa takaisin koodiisi, tee tarvittavat korjaukset ja toista vaiheet 4–7. Voit palauttaa tehtävät niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti.
+- Mikäli automaattinen arviointi paljastaa ongelmia tai virheitä, palaa takaisin koodiisi, tee tarvittavat korjaukset ja toista vaiheet 3–7. Voit palauttaa tehtävät niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti.
 
 
 ## Vaihe 9: Lähetä tehtävä
 
-16. Kun olet tyytyväinen koodiisi ja testien tuloksiin, tehtävä on suoritettu.
+- Kun olet tyytyväinen koodiisi, testien tuloksiin ja saamiisi pisteisiin, tehtävä on suoritettu.
 
-17. Noudata mahdollisia kurssitoteutuskohtaisia lisäohjeita, kuten repositorion linkin lisääminen Teamsiin tai Moodleen.
+- Tehtäviä ei pääsääntöisesti tarvitse palauttaa erikseen muuta kautta, kunhan olet luonut tehtävärepositoriosi ohjeiden mukaan ja se sijaitsee kurssin organisaatiossa.
 
-Tämä ohjeistus luotiin [ChatGPT:n](https://chat.openai.com/) avulla.

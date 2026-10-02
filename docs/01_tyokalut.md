@@ -9,7 +9,7 @@ permalink: /työkalut/
 # Kurssin työkalut
 {: .no_toc }
 
-Edeltävillä kursseilla olet hyödyntänyt todennäköisesti Eclipse- ja VS Code -koodieditoreja sekä Viope-tehtäväjärjestelmää. Tällä opintojaksolla laajennamme työkalujen valikoimaa ja hyödynnämme mm. versionhallintaa, automaatiotyökalua sekä testaustyökalua.
+Edeltävillä kursseilla olet hyödyntänyt todennäköisesti VS Code -koodieditoria sekä Viope-tehtäväjärjestelmää. Tällä opintojaksolla laajennamme työkalujen valikoimaa ja hyödynnämme mm. versionhallintaa, automaatiotyökalua sekä testaustyökalua.
 {: .fs-5 }
 
 Tavoitteenamme on, että sovellusta voidaan suorittaa suoraviivaisesti myös koodieditorin ulkopuolella ja että sen kääntäminen, riippuvuuksien asentaminen, paketointi sekä testaaminen voidaan tarvittaessa automatisoida. Näitä taitoja tulet tarvitsemaan niin Java-kielisissä kuin myös muissa ohjelmistoprojekteissa.
@@ -26,11 +26,11 @@ Tällä kurssilla käytettävät Git, Gradle sekä JUnit ovat Java-projekteissa 
 * Sisällysluettelo
 {:toc}
 
-## VS Code tai Eclipse
+## VS Code
 
-Kurssin ohjeet ja esimerkit on tehty [VS Code](https://code.visualstudio.com/docs/languages/java)- ja [Eclipse](https://www.eclipse.org/downloads/packages/) -sovelluskehittimillä Windows-käyttöjärjestelmässä. Tehtäviä ja esimerkkejä testataan myös Linux-ympäristössä. Voit hyödyntää kurssilla myös muita työkaluja ja käyttöjärjestelmiä, mutta emme voi tarjota niihin samanlaatuista ohjausta.
+Kurssin ohjeet ja esimerkit on tehty [VS Code](https://code.visualstudio.com/docs/languages/java) -sovelluskehittimellä Windows-käyttöjärjestelmässä. Tehtäviä ja esimerkkejä testataan myös Linux-ympäristössä. Voit hyödyntää kurssilla myös muita työkaluja ja käyttöjärjestelmiä, mutta emme voi tarjota niihin samanlaatuista ohjausta.
 
-Käyttäessäsi VS Code:a asenna itsellesi [Java-kehityksessä tarvittavat työkalut](https://code.visualstudio.com/docs/languages/java). Vastaavasti käyttäessäsi Eclipseä asenna itsellesi [Java-kehitykseen tarkoitettu paketti](https://www.eclipse.org/downloads/packages/).
+Käyttäessäsi VS Code:a asenna itsellesi [Java-kehityksessä tarvittavat työkalut](https://code.visualstudio.com/docs/languages/java).
 
 
 ## JDK
@@ -46,7 +46,7 @@ Kurssilla tuetaan virallisesti viimeisintä [LTS-versiota (long-term support)](h
 >
 > [https://git-scm.com/](https://git-scm.com/)
 
-Kurssin tehtävien ja esimerkkien yhteydessä hyödynnämme Git-versionhallintaa ja GitHub-palvelua. Gitin käytön opetteluun voit käyttää esimerkiksi Haaga-Helian tietojenkäsittelyn opiskelijoiden kollektiivisesti kirjoittamaa [Git 101 -opasta](https://github.com/mruonavaara/git101) tai Helsingin yliopiston "Tietokone Työvälineenä" -kurssin [Git-materiaalia](https://tkt-lapio.github.io/git/).
+Kurssin tehtävien ja esimerkkien yhteydessä hyödynnämme Git-versionhallintaa ja GitHub-palvelua. Gitin käytön opetteluun voit käyttää esimerkiksi Haaga-Helian tietojenkäsittelyn opiskelijoiden kollektiivisesti kirjoittamaa [Git 101 -opasta](https://mruonavaara.github.io/git101/) tai Helsingin yliopiston "Tietokone Työvälineenä" -kurssin [Git-materiaalia](https://tkt-lapio.github.io/git/).
 
 Gitin voit asentaa itsellesi osoitteesta [https://git-scm.com/](https://git-scm.com/). Vaikka Git tuntuisi aluksi vaikealta tai ahdistavalta, sinun ei tarvitse opetella kaikkea kerralla, vaan tee vain sen verran mistä on sinulle välitöntä hyötyä. Lisäksi tarvitset GitHub-käyttäjätunnuksen, jotka voit luoda osoitteessa [https://github.com/](https://github.com/).
 
@@ -64,7 +64,7 @@ Gitin voit asentaa itsellesi osoitteesta [https://git-scm.com/](https://git-scm.
 
 Hyödynnämme kurssilla näitä työkaluja tarpeen mukaan, mutta emme varsinaisesti perehdy niiden teoriaan. Mikäli haluat tutustua Gradleen tarkemmin, suosittelemme katsomaan videon [Gradle tutorial for complete beginners](https://youtu.be/-dtcEMLNmn0) tai lukemaan artikkelin [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
-💡 *Huom! Gradlea tai Mavenia ei tarvitse asentaa itselleen tällä kurssilla. Mikäli näitä työkaluja tarvitaan, ne tulevat valmiiksi tehtävärepositorion mukana.*
+💡 *Huom! Gradlea tai Mavenia ei tarvitse asentaa erikseen tällä kurssilla. Työkalut tulevat valmiiksi tehtäväpakettien mukana.*
 
 
 ## Kyselyt

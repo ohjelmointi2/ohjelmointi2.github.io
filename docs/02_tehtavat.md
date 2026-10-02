@@ -5,10 +5,10 @@ nav_order: 2
 permalink: /tehtavat/
 ---
 
-# GitHub classroom -tehtävät
+# GitHub-tehtävät
 {: .no_toc }
 
-Osa opintojakson tehtävänannoista löytyy GitHub-palvelusta, kukin omana repositorionaan. Kyseisissä tehtävissä hyödynnetään tehtävien automaattista tarkastusta [GitHub classroom](https://classroom.github.com/) -palvelun avulla. Tehtäväkohtaiset ohjeet löydät aina kustakin repositoriosta, mutta tehtävien yhteiset ohjeet on kirjattu alle.
+Osa opintojakson tehtävänannoista löytyy GitHub-palvelusta, kukin omana repositorionaan. Kyseisissä tehtävissä hyödynnetään tehtävien automaattista tarkastusta [GitHub actions](https://docs.github.com/en/actions) -palvelun avulla. Tehtäväkohtaiset ohjeet löydät aina kustakin repositoriosta, mutta tehtävien yhteiset ohjeet on kirjattu alle.
 {: .fs-5 }
 
 ---
@@ -19,8 +19,7 @@ Osa opintojakson tehtävänannoista löytyy GitHub-palvelusta, kukin omana repos
 * Sisällysluettelo
 {:toc}
 
-{: .vinkki }
-Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa seuraamalla [VS Code:n omia ohjeita](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git) tai lukuisia [Eclipsen ohjeita](https://www.google.com/search?q=eclipse+git).
+VS Code:lla on [omat ohjeet versionhallinnan käytöstä](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git), joita kannattaa hyödyntää näiden ohjeiden ohessa.
 
 ## Vaihe 1: Tehtävän hyväksyminen
 
@@ -47,13 +46,9 @@ Voit soveltaa näitä ohjeita esim. VS Code -koodieditorin tai Eclipsen kanssa s
 
 ## Vaihe 3: Tee muutoksia
 
-7. Avaa tehtävässä annetut tiedostot valitsemassasi Java-kehitysympäristössä.
+7. Avaa tehtävässä annetut tiedostot valitsemassasi IDE:ssä.
 
-    * VS Code -koodieditorin Java-ohjeistus löytyy sivustolta [Java in Visual Studio Code ](https://code.visualstudio.com/docs/languages/java). Seuraa sivun ohjeita ja asenna itsellesi editorin suosittelema Java-laajennus ["Language Support for Java"](https://marketplace.visualstudio.com/items?itemName=redhat.java).
-
-    * Eclipse -koodieditorille löytyy [lukuisia epävirallisia ohjeita](https://www.google.com/search?q=eclipse+smart+import+project) Java-projektin lisäämiseksi työtilaan.
-
-      Suosittelemme, että kloonaat projektin ensin Eclipsen ulkopuolella ja lisäät kloonatun projektin Eclipseen seuraavasti: `File` - `Import` - `Gradle` - `Existing Gradle Project`. Mikäli käytät Windows-käyttöjärjestelmää, joudut mahdollisesti asettamaan Eclipsen työtilaan UTF-8-merkistökoodauksen, jotta ääkköset ja erikoismerkit toimivat oikein. Merkistökoodaus asetetaan `Window`-valikon `Preferences`-kohdasta [tämän kuvan mukaisesti](/img/eclipse-workspace-encoding.jpg).
+    * VS Code -koodieditorin Java-ohjeistus löytyy sivustolta [Java in Visual Studio Code ](https://code.visualstudio.com/docs/languages/java). Seuraa sivun ohjeita ja asenna itsellesi editorin suosittelema paketti ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack).
 
 8. Kirjoita ohjelmakoodia tehtävänannon ohjeiden mukaisesti.
 

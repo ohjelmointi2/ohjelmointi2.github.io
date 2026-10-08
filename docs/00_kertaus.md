@@ -5,6 +5,7 @@ nav_order: 1
 permalink: /kertaus/
 ---
 
+
 # Kertaus Ohjelmointi 1 -kurssin asioista
 
 ## Esitietovaatimukset
